@@ -326,7 +326,8 @@
       "home_team": "Notre Dame Fighting Irish",
       "away_team": "Wisconsin Badgers",
       "created_at": "2026-09-04T13:38:36",
-      "id": 14
+      "id": 14,
+      "wr_confidence": 73.0
     },
     {
       "report_id": 6,
