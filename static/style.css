@@ -646,3 +646,26 @@ body.intro-active { overflow: hidden; }
   cursor: pointer;
 }
 .intro-skip:hover { background: rgba(163, 51, 193, 0.3); }
+
+/* ---------------- Site footer / disclaimer ---------------- */
+.site-footer {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 20px 32px 32px;
+  color: var(--text-faint);
+  font-size: 0.75rem;
+  line-height: 1.6;
+  border-top: 1px solid var(--border);
+}
+.site-footer a { color: var(--text-faint); text-decoration: underline; }
+.site-footer a:hover { color: var(--gold-bright); }
+
+.disclaimer-page { max-width: 720px; }
+.disclaimer-page h2 {
+  font-size: 0.95rem;
+  color: var(--gold-bright);
+  margin: 28px 0 8px;
+}
+.disclaimer-page h2:first-child { margin-top: 0; }
+.disclaimer-page p { line-height: 1.6; color: var(--text); }
+.disclaimer-page a { color: var(--gold-bright); }

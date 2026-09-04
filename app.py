@@ -796,6 +796,11 @@ def latest_reports():
     )
 
 
+@app.route("/disclaimer")
+def disclaimer():
+    return render_template("disclaimer.html")
+
+
 def create_report(fields):
     """
     Shared by the HTML "Add Report" form and POST /api/reports: fields is
