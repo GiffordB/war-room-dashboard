@@ -1,6 +1,6 @@
 {
   "next_report_id": 8,
-  "next_pick_id": 20,
+  "next_pick_id": 21,
   "reports": [
     {
       "source": "ChatGPT",
@@ -418,6 +418,29 @@
       "away_team": "San Jos\u00e9 State Spartans",
       "created_at": "2026-09-04T22:33:37",
       "id": 19
+    },
+    {
+      "report_id": 7,
+      "category": "best_bet",
+      "matchup": "UCLA Bruins @ California Golden Bears",
+      "selection": "UCLA -1.5",
+      "odds": -110,
+      "stake": 50.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "Clear second-best number on the board. Recheck Pinnacle Saturday afternoon -- if the market has drifted back to -1.5 or -2, the edge is gone and the correct play is to pass.",
+      "wr_confidence": 68.0,
+      "war_room_line": "Pinnacle: UCLA -2.5 (51.2% no-vig)",
+      "edge": "Sheet gives UCLA a full point better than Pinnacle, capturing the two-point margin (~3% of outcomes) -- ~4% EV, clear of the 2% minimum",
+      "price_discipline": "Bet only if Pinnacle is still -2.5 or wider by ~6:00 PM CT Saturday; pass if it has come back to -2 or -1.5.",
+      "espn_event_id": "401858210",
+      "bet_type": "spread",
+      "bet_side": "away",
+      "bet_line": -1.5,
+      "home_team": "California Golden Bears",
+      "away_team": "UCLA Bruins",
+      "created_at": "2026-09-04T22:33:40",
+      "id": 20
     }
   ],
   "next_wallet_id": 6,
