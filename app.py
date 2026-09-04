@@ -1399,6 +1399,42 @@ def wallet_stats_by_source(data):
     return result
 
 
+def wr_confidence_buckets():
+    """The 10 fixed 10-point WR Confidence Score buckets, low to high, as (key, label) pairs."""
+    buckets = []
+    for lo in range(0, 100, 10):
+        hi = lo + 9 if lo < 90 else 100
+        buckets.append((f"{lo}-{hi}", f"{lo}–{hi}%"))
+    return buckets
+
+
+def wallet_stats_by_wr_bucket(data):
+    """
+    {bucket_key: stats} for every 10-point WR Confidence Score bucket
+    that has at least one wallet bet - keyed off wr_confidence_at_bet
+    (the frozen score at the moment the bet was logged), not a pick's
+    possibly-since-revised live score. Answers "does trusting a higher
+    WR score actually pay off for bets I've placed" - only meaningful
+    once there's enough real betting history to fill more than one or
+    two buckets.
+    """
+    keys = [k for k, _ in wr_confidence_buckets()]
+    result = {}
+    for e in data["wallet_entries"]:
+        score = e.get("wr_confidence_at_bet")
+        if score is None:
+            continue
+        key = keys[min(int(score) // 10, 9)]
+        stats = result.setdefault(key, empty_stats())
+        if e["result"] == "pending":
+            stats["pending"] += 1
+        elif e["result"] in ("win", "loss", "push"):
+            _apply_result(stats, e)
+    for stats in result.values():
+        _finalize(stats)
+    return result
+
+
 def wallet_cumulative_chart(data):
     """Line-chart series: running real-dollar profit/loss, per source, over the dates the user's own bets were placed."""
     rows = []
@@ -1442,8 +1478,23 @@ def my_wallet():
     entries = sorted(data["wallet_entries"], key=lambda e: e["id"], reverse=True)
     overall = wallet_overall_stats(data)
     by_source = wallet_stats_by_source(data)
+    wr_buckets = wr_confidence_buckets()
+    wr_bucket_stats = wallet_stats_by_wr_bucket(data)
     chart_dates, chart_series = wallet_cumulative_chart(data)
     profit_chart = charts.line_chart(chart_dates, chart_series, unit="$") if chart_dates else None
+
+    # Live/final score badges, same as the dashboard's own pick rows -
+    # each entry borrows its linked pick's espn_event_id/bet_type/etc.,
+    # tagged with the entry's own snapshotted league since a pick dict
+    # alone doesn't carry one.
+    picks_by_id = {p["id"]: p for p in data["picks"]}
+    status_inputs = []
+    for e in entries:
+        pick = picks_by_id.get(e["pick_id"])
+        if pick:
+            status_inputs.append({**pick, "wallet_entry_id": e["id"], "league": e["league"]})
+    game_by_entry_id = {p["wallet_entry_id"]: p["game"] for p in attach_game_status(status_inputs)}
+    entries = [{**e, "game": game_by_entry_id.get(e["id"])} for e in entries]
 
     reports_by_id = {r["id"]: r for r in data["reports"]}
     pending_picks = []
@@ -1472,6 +1523,8 @@ def my_wallet():
         entries=entries,
         overall=overall,
         by_source=by_source,
+        wr_buckets=wr_buckets,
+        wr_bucket_stats=wr_bucket_stats,
         profit_chart=profit_chart,
         pending_picks=pending_picks,
     )

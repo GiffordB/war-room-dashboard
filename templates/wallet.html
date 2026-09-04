@@ -83,6 +83,42 @@
   </section>
 
   <section>
+    <h2 class="section-label">Win Rate by WR Confidence Score</h2>
+    {% if wr_bucket_stats %}
+      <p class="muted small">Grouped by the WR Confidence Score frozen on each bet at the moment it was logged, in 10-point bands — does trusting a higher score actually pay off?</p>
+      <div class="table-scroll">
+        <table class="data-table category-table">
+          <thead>
+            <tr>
+              <th>WR Confidence</th>
+              <th>Record</th>
+              <th>Win%</th>
+              <th>Profit</th>
+              <th>ROI</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for key, label in wr_buckets %}
+              {% if key in wr_bucket_stats %}
+                {% set st = wr_bucket_stats[key] %}
+                <tr>
+                  <td>{{ label }}</td>
+                  <td>{{ st.wins }}-{{ st.losses }}{% if st.pushes %}-{{ st.pushes }}{% endif %}{% if st.pending %}<span class="muted"> (+{{ st.pending }}p)</span>{% endif %}</td>
+                  <td class="muted">{% if st.win_pct is not none %}{{ '%.0f'|format(st.win_pct) }}%{% else %}—{% endif %}</td>
+                  <td class="{{ 'pos' if st.profit > 0 else 'neg' if st.profit < 0 else 'muted' }}">{{ '%+.0f'|format(st.profit) }}$</td>
+                  <td class="muted">{% if st.roi is not none %}{{ '%+.1f'|format(st.roi) }}%{% else %}—{% endif %}</td>
+                </tr>
+              {% endif %}
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    {% else %}
+      <p class="empty">No WR-scored bets yet — this fills in as you log bets tied to scored picks.</p>
+    {% endif %}
+  </section>
+
+  <section>
     <h2 class="section-label">My Bets</h2>
     {% if entries %}
       <div class="table-scroll">
@@ -110,6 +146,13 @@
                 <td>
                   <a href="{{ url_for('report_detail', report_id=e.report_id) }}">{{ e.matchup }} — {{ e.selection }}</a>
                   {% if e.notes %}<div class="muted small">{{ e.notes }}</div>{% endif %}
+                  {% if e.game %}
+                    <div>
+                      <span class="badge-live badge-live-{{ e.game.status }}">
+                        {{ '🏁 FINAL' if e.game.final else '🔴 LIVE' }} {{ e.game.score }} · {{ e.game.label }}
+                      </span>
+                    </div>
+                  {% endif %}
                 </td>
                 <td>
                   {% if e.get('wr_confidence_at_bet') is not none %}
