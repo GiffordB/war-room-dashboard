@@ -223,10 +223,12 @@
           Stake ($, {{ sportsbook_for(report.league) }})
           <input type="number" step="0.01" min="0" name="stake" placeholder="e.g. 100" required>
         </label>
-        <label>
-          Confidence % (optional)
-          <input type="number" step="1" min="0" max="100" name="confidence" placeholder="e.g. 65">
-        </label>
+        {% if report.league in soccer_leagues %}
+          <label>
+            Confidence % (optional)
+            <input type="number" step="1" min="0" max="100" name="confidence" placeholder="e.g. 65">
+          </label>
+        {% endif %}
       </div>
 
       <div class="form-row">

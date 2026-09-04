@@ -634,6 +634,11 @@ def confidence_locks(data, league=None):
     three sources to independently agree on the same game); this is any
     one source's own highest-conviction call, standing alone. Sorted by
     confidence, highest first.
+
+    Confidence is the soccer-prediction bot's own output - restricted to
+    EPL/UCL regardless of the requested league scope, since CFB/NFL picks
+    are the AI sources' war-room calls and never carry a real confidence
+    number even if one slipped into the data.
     """
     reports = {r["id"]: r for r in data["reports"]}
     locks = []
@@ -644,7 +649,7 @@ def confidence_locks(data, league=None):
         if confidence is None or confidence < LOCK_CONFIDENCE:
             continue
         r = reports.get(p["report_id"])
-        if not r or not _league_matches(r["league"], league):
+        if not r or not _league_matches(r["league"], league) or r["league"] not in SOCCER_LEAGUES:
             continue
         locks.append(
             {
@@ -1005,6 +1010,14 @@ def create_pick(report_id, fields):
     bet_line = fields.get("bet_line")
     confidence = fields.get("confidence")
 
+    reports_by_id = {r["id"]: r for r in store.load_data()["reports"]}
+    report = reports_by_id.get(report_id)
+    # Confidence is the soccer bot's own win-probability estimate - CFB/NFL
+    # picks are the AI sources' war-room calls, not bot predictions, so a
+    # confidence value never applies to them even if one is submitted.
+    if confidence not in (None, "") and (not report or report["league"] not in SOCCER_LEAGUES):
+        raise ValueError("confidence only applies to Premier League/Champions League picks")
+
     new_pick = {
         "report_id": report_id,
         "category": fields["category"],
@@ -1097,6 +1110,9 @@ def api_update_pick(pick_id, report_id):
                 return jsonify({"error": "confidence must be a number"}), 400
             if not (0 <= value <= 100):
                 return jsonify({"error": "confidence must be between 0 and 100"}), 400
+            report = next((r for r in data["reports"] if r["id"] == report_id), None)
+            if not report or report["league"] not in SOCCER_LEAGUES:
+                return jsonify({"error": "confidence only applies to Premier League/Champions League picks"}), 400
             pick["confidence"] = value
     for key in ("notes", "war_room_line", "edge", "price_discipline"):
         if key in updates:
