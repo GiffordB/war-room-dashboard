@@ -251,7 +251,7 @@
       "result": "pending",
       "profit_loss": 0.0,
       "notes": "Stacks the report's three highest-rated match-result sides across the slate: Man City (-575), Brentford (-150), Hull City (+310). Combined probability is naturally lower than any single leg -- logged here as the Good-If-It-Goes play, not a confidence-bar pick on its own.",
-      "confidence": 34.0,
+      "confidence": null,
       "espn_event_id": null,
       "bet_type": null,
       "bet_side": null,
