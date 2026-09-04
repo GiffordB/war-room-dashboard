@@ -124,37 +124,21 @@ RESULT_COLORS = {
     "void": "#64748b",
 }
 
-# The confidence (0-100) at and above which a pick is "Lock" tier - see
-# confidence_label() and confidence_locks() below, which both key off
-# this one constant so the dashboard's Locks section and a report's own
-# confidence badge always agree on what counts as a lock.
+# The WR Confidence Score (0-100) at and above which a pick is "Lock"
+# tier - see confidence_locks() below, which keys off this one constant
+# so the dashboard's Locks section and a report's own WR badge always
+# agree on what counts as a lock.
 LOCK_CONFIDENCE = 90
-
-def confidence_label(confidence):
-    """
-    A numeric confidence (0-100) as a War-Room-style text tier, or None
-    if there isn't one. Low is 59 and under - below the playbook's own
-    60% recommendation threshold - so a pick that actually cleared the
-    bar to be made never reads as "Low" on the report.
-    """
-    if confidence is None:
-        return None
-    if confidence >= LOCK_CONFIDENCE:
-        return "Lock"
-    if confidence >= 75:
-        return "High"
-    if confidence >= 60:
-        return "Medium"
-    return "Low"
 
 
 def wr_confidence_label(score):
     """
     A WR Confidence Score (0-100) as a text tier, or None if unscored.
-    Separate scale from confidence_label() - this isn't the soccer bot's
-    win probability, it's the War Room's own holistic read on a pick
-    (today: a judgment call weighing the edge, the roster notes, and the
-    price discipline together; more structured inputs fold in later).
+    This is the War Room's own holistic read on a pick - today, a
+    judgment call weighing the edge, the roster notes, and the price
+    discipline together (more structured inputs fold in later) - and,
+    for EPL/UCL, the same number the prediction model itself reports:
+    one score per pick, not two, since it's the same model either way.
     """
     if score is None:
         return None
@@ -182,7 +166,6 @@ app.jinja_env.globals.update(
     result_color=lambda r: RESULT_COLORS.get(r, "#8b94a7"),
     sportsbook=SPORTSBOOK,
     sportsbook_for=lambda league: odds.sportsbook_for(league) or SPORTSBOOK,
-    confidence_label=confidence_label,
     lock_confidence=LOCK_CONFIDENCE,
     wr_confidence_label=wr_confidence_label,
     unit_size=UNIT_SIZE,
@@ -650,27 +633,23 @@ def war_room_locks(data, league=None):
 
 def confidence_locks(data, league=None):
     """
-    Every still-pending pick at Lock-tier confidence (>= LOCK_CONFIDENCE)
-    - not the same thing as war_room_locks() above (which requires all
-    three sources to independently agree on the same game); this is any
-    one source's own highest-conviction call, standing alone. Sorted by
-    confidence, highest first.
-
-    Confidence is the soccer-prediction bot's own output - restricted to
-    EPL/UCL regardless of the requested league scope, since CFB/NFL picks
-    are the AI sources' war-room calls and never carry a real confidence
-    number even if one slipped into the data.
+    Every still-pending pick at Lock-tier WR Confidence Score
+    (>= LOCK_CONFIDENCE) - not the same thing as war_room_locks() above
+    (which requires all three sources to independently agree on the same
+    game); this is any one pick's own highest-conviction score, standing
+    alone. Applies across every league (WR Confidence Score isn't
+    soccer-specific). Sorted by score, highest first.
     """
     reports = {r["id"]: r for r in data["reports"]}
     locks = []
     for p in data["picks"]:
         if p["result"] != "pending":
             continue
-        confidence = p.get("confidence")
-        if confidence is None or confidence < LOCK_CONFIDENCE:
+        score = p.get("wr_confidence")
+        if score is None or score < LOCK_CONFIDENCE:
             continue
         r = reports.get(p["report_id"])
-        if not r or not _league_matches(r["league"], league) or r["league"] not in SOCCER_LEAGUES:
+        if not r or not _league_matches(r["league"], league):
             continue
         locks.append(
             {
@@ -681,10 +660,10 @@ def confidence_locks(data, league=None):
                 "matchup": p["matchup"],
                 "selection": p["selection"],
                 "odds": p["odds"],
-                "confidence": confidence,
+                "wr_confidence": score,
             }
         )
-    locks.sort(key=lambda lock: lock["confidence"], reverse=True)
+    locks.sort(key=lambda lock: lock["wr_confidence"], reverse=True)
     return locks
 
 
@@ -991,25 +970,22 @@ def api_update_report(report_id):
 def create_pick(report_id, fields):
     """
     Shared by the HTML "Add a Pick" form and POST /api/reports/<id>/picks
-    - see create_report() above for the same split. `confidence` is the
-    bot's (or a human's) own win-probability estimate for this exact
-    side/line, 0-100; optional, and purely informational - it's not used
-    in grading or payout math, only shown alongside the pick.
-    `war_room_line`/`edge`/`price_discipline` are the same kind of thing:
-    shown on the report, never touched by grading. `war_room_line` is the
-    model's own independent number for this market (e.g. "Miami -23
-    (range -20.5 to -26)" or, for a 3-way soccer market, a probability
-    breakdown); `edge` is the gap between that and the posted line (e.g.
-    "Stanford +1.5"); `price_discipline` is free text, one stake tier per
-    line (e.g. "+25.5: $100\n+24: $25-50\n+23.5 or worse: pass").
+    - see create_report() above for the same split. `war_room_line`/
+    `edge`/`price_discipline` are shown on the report, never touched by
+    grading. `war_room_line` is the model's own independent number for
+    this market (e.g. "Miami -23 (range -20.5 to -26)" or, for a 3-way
+    soccer market, a probability breakdown); `edge` is the gap between
+    that and the posted line (e.g. "Stanford +1.5"); `price_discipline`
+    is free text, one stake tier per line (e.g. "+25.5: $100\n+24: $25-
+    50\n+23.5 or worse: pass").
 
-    `wr_confidence` is a separate score (0-100) from `confidence`: it's
-    the War Room's own holistic conviction rating - today a judgment call
-    made when the pick is logged (weighing the edge, the injury/roster
-    notes, the price discipline, everything on the card), not a formula.
-    Unlike `confidence` it isn't tied to the soccer bot and applies to a
-    pick from any league. More structured inputs will fold into it later;
-    for now it's the single number a reader can scan across every pick.
+    `wr_confidence` is the War Room's own holistic conviction rating
+    (0-100), optional and purely informational - not used in grading or
+    payout math. Today it's a judgment call made when the pick is logged
+    (weighing the edge, the injury/roster notes, the price discipline,
+    everything on the card), not a formula; more structured inputs will
+    fold into it later. For EPL/UCL it's the same number the prediction
+    model itself reports - one score per pick, not two.
     """
     if fields.get("category") not in CATEGORIES:
         raise ValueError(f"category must be one of {CATEGORY_ORDER}")
@@ -1017,16 +993,7 @@ def create_pick(report_id, fields):
         raise ValueError("matchup and selection are required")
 
     bet_line = fields.get("bet_line")
-    confidence = fields.get("confidence")
     wr_confidence = fields.get("wr_confidence")
-
-    reports_by_id = {r["id"]: r for r in store.load_data()["reports"]}
-    report = reports_by_id.get(report_id)
-    # Confidence is the soccer bot's own win-probability estimate - CFB/NFL
-    # picks are the AI sources' war-room calls, not bot predictions, so a
-    # confidence value never applies to them even if one is submitted.
-    if confidence not in (None, "") and (not report or report["league"] not in SOCCER_LEAGUES):
-        raise ValueError("confidence only applies to Premier League/Champions League picks")
     if wr_confidence not in (None, "") and not (0 <= float(wr_confidence) <= 100):
         raise ValueError("wr_confidence must be between 0 and 100")
 
@@ -1040,7 +1007,6 @@ def create_pick(report_id, fields):
         "result": "pending",
         "profit_loss": 0.0,
         "notes": (fields.get("notes") or "").strip(),
-        "confidence": float(confidence) if confidence not in (None, "") else None,
         "wr_confidence": float(wr_confidence) if wr_confidence not in (None, "") else None,
         "war_room_line": (fields.get("war_room_line") or "").strip() or None,
         "edge": (fields.get("edge") or "").strip() or None,
@@ -1053,8 +1019,6 @@ def create_pick(report_id, fields):
         "away_team": fields.get("away_team") or None,
         "created_at": datetime.utcnow().isoformat(timespec="seconds"),
     }
-    if new_pick["confidence"] is not None and not (0 <= new_pick["confidence"] <= 100):
-        raise ValueError("confidence must be between 0 and 100")
 
     def _mutate(data):
         new_pick["id"] = data["next_pick_id"]
@@ -1069,13 +1033,13 @@ def create_pick(report_id, fields):
 def api_update_pick(pick_id, report_id):
     """
     Correct a pick's own analysis fields after the fact - notes,
-    confidence, wr_confidence, war_room_line, edge, price_discipline -
-    without touching its bet/grading fields (odds, stake, bet_type/side/
-    line, espn_event_id). If one of those is wrong, delete and re-add the
+    wr_confidence, war_room_line, edge, price_discipline - without
+    touching its bet/grading fields (odds, stake, bet_type/side/line,
+    espn_event_id). If one of those is wrong, delete and re-add the
     pick instead - they're load-bearing for auto-grade and payout math,
     so this endpoint deliberately can't touch them.
     """
-    editable = {"notes", "confidence", "wr_confidence", "war_room_line", "edge", "price_discipline"}
+    editable = {"notes", "wr_confidence", "war_room_line", "edge", "price_discipline"}
     body = request.get_json(silent=True) or {}
     updates = {k: v for k, v in body.items() if k in editable}
     if not updates:
@@ -1086,21 +1050,6 @@ def api_update_pick(pick_id, report_id):
     if pick is None:
         return jsonify({"error": f"no pick #{pick_id} on report #{report_id}"}), 404
 
-    if "confidence" in updates:
-        value = updates["confidence"]
-        if value in (None, ""):
-            pick["confidence"] = None
-        else:
-            try:
-                value = float(value)
-            except (TypeError, ValueError):
-                return jsonify({"error": "confidence must be a number"}), 400
-            if not (0 <= value <= 100):
-                return jsonify({"error": "confidence must be between 0 and 100"}), 400
-            report = next((r for r in data["reports"] if r["id"] == report_id), None)
-            if not report or report["league"] not in SOCCER_LEAGUES:
-                return jsonify({"error": "confidence only applies to Premier League/Champions League picks"}), 400
-            pick["confidence"] = value
     if "wr_confidence" in updates:
         value = updates["wr_confidence"]
         if value in (None, ""):

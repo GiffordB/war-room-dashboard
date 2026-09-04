@@ -52,8 +52,8 @@
       {% endif %}
 
       {% if confidence_lock_picks %}
-        <h3 class="lock-subhead">By Confidence</h3>
-        <p class="muted small">A single source's own {{ lock_confidence }}%+ call — still pending.</p>
+        <h3 class="lock-subhead">By WR Score</h3>
+        <p class="muted small">A single pick's own {{ lock_confidence }}%+ WR Confidence Score — still pending.</p>
         <div class="locks-grid">
           {% for lock in confidence_lock_picks %}
             <a class="lock-card lock-card-link" href="{{ url_for('report_detail', report_id=lock.report_id) }}">
@@ -67,7 +67,7 @@
                   <span class="badge-source" style="background: {{ source_color(lock.source) }};">{{ lock.source }}</span>
                   <span>{{ lock.selection }}</span>
                   <span class="muted">{{ '%+d'|format(lock.odds) }}</span>
-                  <span class="badge-confidence">{{ lock.confidence | round | int }}%</span>
+                  <span class="badge-wr-confidence">WR {{ lock.wr_confidence | round | int }}%</span>
                 </div>
               </div>
             </a>
@@ -254,7 +254,6 @@
               <span class="pick-matchup"><a href="{{ url_for('report_detail', report_id=p.report_id) }}">{{ p.matchup }} — {{ p.selection }}</a></span>
               <span class="muted">{{ '%+d'|format(p.odds) }}</span>
               <span class="muted">${{ '{:,.0f}'.format(p.stake) }}</span>
-              {% if p.get('confidence') is not none %}<span class="badge-confidence">{{ p.confidence | round | int }}%</span>{% endif %}
               {% if p.get('wr_confidence') is not none %}<span class="badge-wr-confidence">WR {{ p.wr_confidence | round | int }}%</span>{% endif %}
               <span class="badge-result" style="background: {{ result_color(p.result) }};">{{ result_label(p.result) }}</span>
               {% if p.game %}

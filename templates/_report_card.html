@@ -38,7 +38,7 @@
         <table class="data-table">
           <thead>
             <tr>
-              <th>Confidence</th>
+              <th>WR Score</th>
               <th>Call</th>
               <th>Status</th>
               <th>Matchup</th>
@@ -51,13 +51,9 @@
             {% for p in picks %}
               <tr>
                 <td>
-                  {% if p.get('confidence') is not none %}
-                    <span class="badge-confidence">{{ confidence_label(p.confidence) | upper }} · {{ p.confidence | round | int }}%</span>
-                  {% endif %}
                   {% if p.get('wr_confidence') is not none %}
-                    <span class="badge-wr-confidence">WR {{ wr_confidence_label(p.wr_confidence) | upper }} · {{ p.wr_confidence | round | int }}%</span>
-                  {% endif %}
-                  {% if p.get('confidence') is none and p.get('wr_confidence') is none %}<span class="muted">—</span>{% endif %}
+                    <span class="badge-wr-confidence">{{ wr_confidence_label(p.wr_confidence) | upper }} · {{ p.wr_confidence | round | int }}%</span>
+                  {% else %}<span class="muted">—</span>{% endif %}
                 </td>
                 <td class="pos">PLAY ${{ '{:,.0f}'.format(p.stake) }}</td>
                 <td>
