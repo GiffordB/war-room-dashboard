@@ -1,6 +1,6 @@
 {
   "next_report_id": 7,
-  "next_pick_id": 13,
+  "next_pick_id": 14,
   "reports": [
     {
       "source": "ChatGPT",
@@ -278,6 +278,29 @@
       "away_team": "Western Michigan Broncos",
       "created_at": "2026-09-04T13:38:31",
       "id": 12
+    },
+    {
+      "report_id": 6,
+      "category": "best_bet",
+      "matchup": "UCLA Bruins @ California Golden Bears",
+      "selection": "California +2.5",
+      "odds": -110,
+      "stake": 50.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "DraftKings moved from Cal -1.5 to UCLA -2.5 -- a four-point reversal through pick'em.\nCal owns proven QB continuity; UCLA brings major transfer and system turnover.\nWar Room makes Cal a slight favorite. Berkeley weather is excellent.",
+      "confidence": 80.0,
+      "war_room_line": "Cal -0.5 (slight favorite)",
+      "edge": "Cal +3",
+      "price_discipline": "+2.5: $50\n+2: still playable\n+1: $25 lean\nPick'em or worse: pass",
+      "espn_event_id": "401858210",
+      "bet_type": "spread",
+      "bet_side": "home",
+      "bet_line": 2.5,
+      "home_team": "California Golden Bears",
+      "away_team": "UCLA Bruins",
+      "created_at": "2026-09-04T13:38:33",
+      "id": 13
     }
   ]
 }
