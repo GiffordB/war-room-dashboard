@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% import "_intel_macros.html" as intel %}
+{% block title %}{{ info.away_name }} @ {{ info.home_name }} · Matchup Intel{% endblock %}
+{% block content %}
+  <div class="page-head">
+    <h1>{{ info.away_name }} @ {{ info.home_name }}</h1>
+    <a class="btn btn-outline btn-sm" href="{{ url_for('intel_picker', league=league) }}">&larr; {{ leagues[league] }} Table</a>
+  </div>
+  <p class="muted small">{{ info.name }}, {{ info.city }}{% if info.country %}, {{ info.country }}{% endif %}</p>
+
+  <section>
+    <h2 class="section-label">Head to Head</h2>
+    {% if h2h %}
+      <p>{{ h2h.summary }}{% if h2h.series_score %} ({{ h2h.series_score }}){% endif %}</p>
+      {% if h2h.meetings %}
+        <div class="table-scroll">
+          <table class="data-table">
+            <thead><tr><th>Date</th><th>Matchup</th><th>Score</th></tr></thead>
+            <tbody>
+              {% for m in h2h.meetings %}
+                <tr><td class="muted">{{ m.date[:10] if m.date }}</td><td>{{ m.matchup }}</td><td>{{ m.score }}</td></tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      {% endif %}
+    {% else %}
+      <p class="empty">No recent-meetings data from ESPN for this pairing.</p>
+    {% endif %}
+  </section>
+
+  <section>
+    <h2 class="section-label">Match-Day Weather</h2>
+    {% if weather %}
+      <div class="note-card">
+        <p>
+          <strong>{{ weather.temp_c }}°C</strong> in {{ weather.city }} ·
+          {{ weather.precip_probability_pct }}% chance of precipitation
+          ({{ weather.precip_mm }}mm) ·
+          wind {{ weather.wind_kmh }} km/h ·
+          {{ weather.cloud_cover_pct }}% cloud cover
+        </p>
+        <p class="muted small">City-level forecast for {{ weather.forecast_hour }} UTC, not stadium-precise. Rain and wind tend to push a match under the total; check back closer to kickoff as forecasts firm up.</p>
+      </div>
+    {% else %}
+      <p class="empty">No forecast available — either the kickoff is more than ~16 days out, or the venue city couldn't be matched.</p>
+    {% endif %}
+  </section>
+
+  <section>
+    <h2 class="section-label">{{ info.home_name }} <span class="badge-league">HOME</span></h2>
+    {{ intel.team_card(league, home.team_id, home.club_name, home.standing, home.table_size, home.form, home.split, home.roster, home.espn_news, home.club_news) }}
+  </section>
+
+  <section>
+    <h2 class="section-label">{{ info.away_name }} <span class="badge-league">AWAY</span></h2>
+    {{ intel.team_card(league, away.team_id, away.club_name, away.standing, away.table_size, away.form, away.split, away.roster, away.espn_news, away.club_news) }}
+  </section>
+{% endblock %}

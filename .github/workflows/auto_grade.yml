@@ -1,23 +1,18 @@
 name: Auto-grade finished games
 
-# Runs hourly across the football window - Thursday 7pm ET through
-# Tuesday 8am ET - hitting the live app's own auto-grade-all endpoint
-# (no auth needed, it's a plain POST). Split into three schedules
-# because a single cron entry can't express "hour 23 on Thursdays, every
-# hour Friday-Monday, hour 0-12 on Tuesdays" at once.
+# Runs hourly, every day, year-round - hitting the live app's own
+# auto-grade-all endpoint (no auth needed, it's a plain POST).
 #
-# Cron is UTC. These are written for EDT (UTC-4), which is what's in
-# effect for the September-through-early-November part of the season.
-# Once clocks fall back to EST (UTC-5) in early November, the actual ET
-# window drifts an hour later (e.g. the close would land ~9am ET instead
-# of 8am) - harmless for this job (grading is idempotent, an extra or
-# missed hour doesn't hurt anything), but worth shifting by -1 hour on
-# each entry below if you want it exact for the rest of the season.
+# Used to be scoped to just the CFB/NFL football window (Thursday
+# evening through Tuesday morning ET), but EPL/UCL fixtures land on
+# every day of the week across most of the year (UCL is usually
+# Tue/Wed, EPL is Sat/Sun plus midweek rounds), so there's no clean
+# "off" window left to skip. Grading is idempotent - an hourly run that
+# finds nothing pending to settle is a no-op - so running around the
+# clock costs nothing extra on a public repo's free GitHub Actions.
 on:
   schedule:
-    - cron: "0 23 * * 4"      # Thursday 7pm ET (23:00 UTC)
-    - cron: "0 * * * 5,6,0,1" # Friday through Monday, every hour
-    - cron: "0 0-12 * * 2"    # Tuesday midnight-noon UTC (through 8am ET)
+    - cron: "0 * * * *"
   workflow_dispatch: {}
 
 jobs:

@@ -58,6 +58,7 @@
               <th>Selection</th>
               <th>Odds</th>
               <th>Stake</th>
+              <th>Conf.</th>
               <th>Result</th>
               <th>P/L</th>
               <th></th>
@@ -70,7 +71,7 @@
                 <td>{{ p.matchup }}</td>
                 <td>
                   {{ p.selection }}
-                  {% if p.espn_event_id %}<span class="badge-auto" title="Linked to a live DraftKings line — can be auto-graded from the final score">🔗 auto</span>{% endif %}
+                  {% if p.espn_event_id %}<span class="badge-auto" title="Linked to a live {{ sportsbook_for(report.league) }} line — can be auto-graded from the final score">🔗 auto</span>{% endif %}
                   {% if p.game %}
                     <div>
                       <span class="badge-live badge-live-{{ p.game.status }}">
@@ -82,6 +83,7 @@
                 </td>
                 <td>{{ '%+d'|format(p.odds) }}</td>
                 <td>${{ '{:,.0f}'.format(p.stake) }} <span class="muted small">({{ '%.2f'|format(p.stake / unit_size) }}u)</span></td>
+                <td>{% if p.get('confidence') is not none %}<span class="badge-confidence">{{ p.confidence | round | int }}%</span>{% else %}<span class="muted">—</span>{% endif %}</td>
                 <td>
                   <form class="settle-form" method="post" action="{{ url_for('settle_pick', pick_id=p.id) }}">
                     <select name="result" onchange="this.form.requestSubmit()">
@@ -112,7 +114,7 @@
   </section>
 
   <section>
-    <h2 class="section-label">Look Up {{ sportsbook }} Odds</h2>
+    <h2 class="section-label">Look Up {{ sportsbook_for(report.league) }} Odds</h2>
     <div class="odds-lookup">
       <div class="form-row odds-lookup-row">
         <label>
@@ -130,6 +132,9 @@
       </label>
       <p id="odds-status" class="muted small"></p>
       <div id="odds-lines" class="odds-lines" hidden></div>
+      {% if report.league in soccer_leagues %}
+        <p id="odds-intel-link" hidden><a id="odds-intel-anchor" href="#" target="_blank" rel="noopener">📋 View Matchup Intel for this game</a> — form, standings, squad, news, weather.</p>
+      {% endif %}
       <p class="muted small">Click a line below to fill in the pick — it also links the pick to this game, so <strong>Auto-Grade Finished Games</strong> can settle it once the game is final.</p>
     </div>
   </section>
@@ -162,8 +167,12 @@
           <input type="number" id="odds" name="odds" placeholder="-110 or +150" required>
         </label>
         <label>
-          Stake ($, {{ sportsbook }})
+          Stake ($, {{ sportsbook_for(report.league) }})
           <input type="number" step="0.01" min="0" name="stake" placeholder="e.g. 100" required>
+        </label>
+        <label>
+          Confidence % (optional)
+          <input type="number" step="1" min="0" max="100" name="confidence" placeholder="e.g. 65">
         </label>
       </div>
 
@@ -194,6 +203,8 @@
 <script>
 (function () {
   const league = {{ report.league | tojson }};
+  const isSoccer = {{ (report.league in soccer_leagues) | tojson }};
+  const sportsbookLabel = {{ sportsbook_for(report.league) | tojson }};
   const dateInput = document.getElementById('odds-date');
   const findBtn = document.getElementById('odds-find-btn');
   const gamesWrap = document.getElementById('odds-games-wrap');
@@ -202,6 +213,8 @@
   const linesEl = document.getElementById('odds-lines');
   const matchupInput = document.getElementById('matchup');
   const selectionInput = document.getElementById('selection');
+  const intelLink = document.getElementById('odds-intel-link');
+  const intelAnchor = document.getElementById('odds-intel-anchor');
   let gamesById = {};
 
   const fmt = (n) => {
@@ -265,7 +278,18 @@
         () => fill(matchup, `Under ${line.total}`, line.under_odds,
           { ...base, betType: 'total', betSide: 'under', betLine: line.total })));
     }
-    if (line.away_moneyline !== null && line.away_moneyline !== undefined) {
+    if (line.draw_moneyline !== null && line.draw_moneyline !== undefined) {
+      // Soccer: a real 3-way market (home/draw/away), not a 2-way moneyline.
+      linesEl.appendChild(pill(`${game.away} to Win (${fmt(line.away_moneyline)})`,
+        () => fill(matchup, `${game.away} to Win`, line.away_moneyline,
+          { ...base, betType: 'match_result', betSide: 'away', betLine: null })));
+      linesEl.appendChild(pill(`Draw (${fmt(line.draw_moneyline)})`,
+        () => fill(matchup, 'Draw', line.draw_moneyline,
+          { ...base, betType: 'match_result', betSide: 'draw', betLine: null })));
+      linesEl.appendChild(pill(`${game.home} to Win (${fmt(line.home_moneyline)})`,
+        () => fill(matchup, `${game.home} to Win`, line.home_moneyline,
+          { ...base, betType: 'match_result', betSide: 'home', betLine: null })));
+    } else if (line.away_moneyline !== null && line.away_moneyline !== undefined) {
       linesEl.appendChild(pill(`${game.away} ML (${fmt(line.away_moneyline)})`,
         () => fill(matchup, `${game.away} ML`, line.away_moneyline,
           { ...base, betType: 'moneyline', betSide: 'away', betLine: null })));
@@ -274,7 +298,7 @@
           { ...base, betType: 'moneyline', betSide: 'home', betLine: null })));
     }
     linesEl.hidden = linesEl.children.length === 0;
-    if (!linesEl.children.length) setStatus('No DraftKings line posted for this game yet.');
+    if (!linesEl.children.length) setStatus(`No ${sportsbookLabel} line posted for this game yet.`);
   }
 
   findBtn.addEventListener('click', async () => {
@@ -283,6 +307,7 @@
     setStatus('Loading games…');
     linesEl.hidden = true;
     gamesWrap.hidden = true;
+    if (intelLink) intelLink.hidden = true;
     try {
       const res = await fetch(`/api/games?league=${encodeURIComponent(league)}&date=${date}`);
       const games = await res.json();
@@ -315,13 +340,19 @@
     const game = gamesById[gameSelect.value];
     if (!game) return;
     const requestedId = gameSelect.value;
-    setStatus('Loading DraftKings line…');
+    setStatus(`Loading ${sportsbookLabel} line…`);
     linesEl.hidden = true;
+
+    if (isSoccer && intelLink) {
+      intelAnchor.href = `/intel/${encodeURIComponent(league)}/match/${encodeURIComponent(game.id)}`;
+      intelLink.hidden = false;
+    }
+
     try {
       const res = await fetch(`/api/odds?league=${encodeURIComponent(league)}&event_id=${game.id}`);
       if (gameSelect.value !== requestedId) return; // selection changed while this was in flight
       if (!res.ok) {
-        setStatus('No DraftKings line available for this game yet.');
+        setStatus(`No ${sportsbookLabel} line available for this game yet.`);
         return;
       }
       const line = await res.json();
