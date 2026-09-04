@@ -340,16 +340,26 @@ def attach_game_status(picks, league=None):
 
 def recent_picks_by_week(data, league=None, limit=4):
     """
-    Every pick, grouped by (report.league, report.week_number), for the
-    most recent `limit` weeks that have any picks in this league scope -
-    newest week first, picks within a week newest-first. Grouping is
-    keyed by league as well as week_number - not week_number alone -
-    since week numbering resets per league (EPL/UCL matchweeks vs.
-    CFB/NFL season weeks aren't the same sequence, so two different
-    leagues' "Week 3" must never land in the same bucket). The label
-    spells out the league too whenever this view can span more than one
-    (All Leagues, All Football/Futbol) so "Week 3" is never ambiguous on
-    screen; a single-league view keeps the plain label.
+    Every pick, grouped by (report.league, report.week_number,
+    report.week_label), for the most recent `limit` groups that have any
+    picks in this league scope - newest first, picks within a group
+    newest-first.
+
+    week_label is part of the key, not just week_number, so two reports
+    that share a week_number but describe different slates (e.g. a CFB
+    "Week 1 -- Thursday Card" and a separate "Week 1 -- Friday Card")
+    never get silently merged under whichever label happened to be seen
+    first - each distinctly-labeled card gets its own group. Reports
+    that share the same label (typically multiple sources reporting on
+    the same slate, or any report left with a blank week_label - which
+    all default to the same "Week N" text) still merge together, which
+    is the point: comparing sources on the same card. league is part of
+    the key too, since week numbering resets per league (EPL/UCL
+    matchweeks vs. CFB/NFL season weeks aren't the same sequence).
+
+    The label spells out the league too whenever this view can span more
+    than one (All Leagues, All Football/Futbol) so "Week 3" is never
+    ambiguous on screen; a single-league view keeps the plain label.
 
     Each pick carries a `game` status badge (see attach_game_status) so a
     settled pick still shows the final score for context, not just the
@@ -362,16 +372,22 @@ def recent_picks_by_week(data, league=None, limit=4):
         r = reports.get(p["report_id"])
         if not r or not _league_matches(r["league"], league):
             continue
-        wk = (r["league"], r["week_number"])
+        wk = (r["league"], r["week_number"], r["week_label"])
         if wk not in by_week:
             base_label = r["week_label"] or f"Week {r['week_number']}"
             label = f"{base_label} — {LEAGUES[r['league']]}" if multi_league else base_label
-            by_week[wk] = {"week_key": wk, "label": label, "picks": []}
+            by_week[wk] = {"week_key": wk, "label": label, "picks": [], "latest_date": r["report_date"]}
+        group = by_week[wk]
+        group["latest_date"] = max(group["latest_date"], r["report_date"])
         merged = dict(p)
         merged.update(source=r["source"], league=r["league"], report_date=r["report_date"])
-        by_week[wk]["picks"].append(merged)
+        group["picks"].append(merged)
 
-    weeks = sorted(by_week.values(), key=lambda g: (g["week_key"][1], g["week_key"][0]), reverse=True)[:limit]
+    weeks = sorted(
+        by_week.values(),
+        key=lambda g: (g["week_key"][1], g["latest_date"], g["week_key"][0]),
+        reverse=True,
+    )[:limit]
     for group in weeks:
         group["picks"].sort(key=lambda p: p["id"], reverse=True)
         group["picks"] = attach_game_status(group["picks"])
