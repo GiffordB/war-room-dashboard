@@ -21,31 +21,59 @@
     {% endfor %}
   </div>
 
-  {% if locks %}
+  {% if locks or confidence_lock_picks %}
     <section class="locks-section">
-      <h2 class="section-label lock-label">🔒 War Room Locks of the Week</h2>
-      <p class="muted small">Claude, Grok, and ChatGPT all landed on the same side of the same game — still pending.</p>
-      <div class="locks-grid">
-        {% for lock in locks %}
-          <div class="lock-card">
-            <div class="lock-card-head">
-              <span class="badge-league">{{ lock.league }}</span>
-              <span style="color: {{ categories[lock.category].color }};">{{ categories[lock.category].icon }} {{ categories[lock.category].label }}</span>
+      <h2 class="section-label lock-label">🔒 Locks of the Week</h2>
+
+      {% if locks %}
+        <h3 class="lock-subhead">Consensus</h3>
+        <p class="muted small">Claude, Grok, and ChatGPT all landed on the same side of the same game — still pending.</p>
+        <div class="locks-grid">
+          {% for lock in locks %}
+            <div class="lock-card">
+              <div class="lock-card-head">
+                <span class="badge-league">{{ lock.league }}</span>
+                <span style="color: {{ categories[lock.category].color }};">{{ categories[lock.category].icon }} {{ categories[lock.category].label }}</span>
+              </div>
+              <div class="lock-matchup">{{ lock.matchup }}</div>
+              <div class="lock-sources">
+                {% for s in sources %}
+                  {% set entry = lock.by_source[s] %}
+                  <div class="lock-source-row">
+                    <span class="badge-source" style="background: {{ source_color(s) }};">{{ s }}</span>
+                    <span>{{ entry.pick.selection }}</span>
+                    <span class="muted">{{ '%+d'|format(entry.pick.odds) }}</span>
+                  </div>
+                {% endfor %}
+              </div>
             </div>
-            <div class="lock-matchup">{{ lock.matchup }}</div>
-            <div class="lock-sources">
-              {% for s in sources %}
-                {% set entry = lock.by_source[s] %}
+          {% endfor %}
+        </div>
+      {% endif %}
+
+      {% if confidence_lock_picks %}
+        <h3 class="lock-subhead">By Confidence</h3>
+        <p class="muted small">A single source's own {{ lock_confidence }}%+ call — still pending.</p>
+        <div class="locks-grid">
+          {% for lock in confidence_lock_picks %}
+            <a class="lock-card lock-card-link" href="{{ url_for('report_detail', report_id=lock.report_id) }}">
+              <div class="lock-card-head">
+                <span class="badge-league">{{ lock.league }}</span>
+                <span style="color: {{ categories[lock.category].color }};">{{ categories[lock.category].icon }} {{ categories[lock.category].label }}</span>
+              </div>
+              <div class="lock-matchup">{{ lock.matchup }}</div>
+              <div class="lock-sources">
                 <div class="lock-source-row">
-                  <span class="badge-source" style="background: {{ source_color(s) }};">{{ s }}</span>
-                  <span>{{ entry.pick.selection }}</span>
-                  <span class="muted">{{ '%+d'|format(entry.pick.odds) }}</span>
+                  <span class="badge-source" style="background: {{ source_color(lock.source) }};">{{ lock.source }}</span>
+                  <span>{{ lock.selection }}</span>
+                  <span class="muted">{{ '%+d'|format(lock.odds) }}</span>
+                  <span class="badge-confidence">{{ lock.confidence | round | int }}%</span>
                 </div>
-              {% endfor %}
-            </div>
-          </div>
-        {% endfor %}
-      </div>
+              </div>
+            </a>
+          {% endfor %}
+        </div>
+      {% endif %}
     </section>
   {% endif %}
 

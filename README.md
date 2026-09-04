@@ -122,6 +122,13 @@ Units follow the report's own convention: **$100 staked = 1 unit.**
 
 ## Features
 
+- **Locks of the Week** — pending picks worth surfacing before you dig
+  into the full reports, in two ways: **Consensus** (Claude, Grok, and
+  ChatGPT all independently landed on the same side of the same game)
+  and **By Confidence** (any single source's own 90%+ conviction call —
+  the "Lock" tier, same threshold as the confidence badge on a report).
+  Shows on the dashboard whenever either kind exists for the current
+  league filter.
 - **Dashboard** — three-way head-to-head cards (record, win rate, units,
   profit, ROI, total staked), a **win-rate-by-week line chart** and a
   weekly results table (the core "is one system trending better than the
