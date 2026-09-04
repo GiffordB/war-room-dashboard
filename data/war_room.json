@@ -381,7 +381,8 @@
       "home_team": "USC Trojans",
       "away_team": "Fresno State Bulldogs",
       "created_at": "2026-09-04T15:01:22",
-      "id": 18
+      "id": 18,
+      "wr_confidence": 58.0
     }
   ]
 }
