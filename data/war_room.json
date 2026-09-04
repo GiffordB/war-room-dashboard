@@ -101,7 +101,10 @@
       "home_team": "Manchester City",
       "away_team": "Coventry City",
       "created_at": "2026-09-04T11:40:33",
-      "id": 4
+      "id": 4,
+      "war_room_line": "Model: City ~90% to win outright",
+      "edge": "Market implies ~85% at -575; model ~90% -- thin but real, and the gap is exactly why this stays a match-result play and not the -2.5 spread",
+      "price_discipline": "-575 or better: $500\n-650 to -576: $250\n-700 or worse: pass"
     },
     {
       "report_id": 4,
