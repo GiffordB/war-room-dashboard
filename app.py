@@ -125,7 +125,12 @@ RESULT_COLORS = {
 }
 
 def confidence_label(confidence):
-    """A numeric confidence (0-100) as a War-Room-style text tier, or None if there isn't one."""
+    """
+    A numeric confidence (0-100) as a War-Room-style text tier, or None
+    if there isn't one. "Low" is 59 and under - below the playbook's own
+    60% recommendation threshold - so a pick that actually cleared the
+    bar to be made never reads as "Low" on the report.
+    """
     if confidence is None:
         return None
     if confidence >= 90:
@@ -134,7 +139,7 @@ def confidence_label(confidence):
         return "Medium-High"
     if confidence >= 70:
         return "Medium"
-    if confidence >= 65:
+    if confidence >= 60:
         return "Medium-Low"
     return "Low"
 
