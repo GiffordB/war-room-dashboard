@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% import "_intel_macros.html" as intel %}
+{% block title %}{{ club_name or ('Team ' ~ team_id) }} · Team Intel{% endblock %}
+{% block content %}
+  <div class="page-head">
+    <h1>{{ club_name or ('Team #' ~ team_id) }}</h1>
+    <a class="btn btn-outline btn-sm" href="{{ url_for('intel_picker', league=league) }}">&larr; {{ leagues[league] }} Table</a>
+  </div>
+
+  {{ intel.team_card(league, team_id, club_name, standing, table_size, form, split, roster, espn_news, club_news) }}
+{% endblock %}

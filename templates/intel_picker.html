@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block title %}Team Intel · War Room{% endblock %}
+{% block content %}
+  <div class="page-head">
+    <h1>Team Intel</h1>
+  </div>
+  <p class="muted">
+    Prediction research for one club — form, standings, squad, manager history,
+    home/away trends, and news. Pick a team from the table, or open a specific
+    matchup from the odds-lookup widget on a report's Add a Pick form.
+  </p>
+
+  <div class="league-tabs">
+    {% for code in league_order %}
+      {% if code in soccer_leagues %}
+        <a class="league-tab {{ 'active' if current_league == code }}" href="{{ url_for('intel_picker', league=code) }}">{{ leagues[code] }}</a>
+      {% endif %}
+    {% endfor %}
+  </div>
+
+  {% if table %}
+    <div class="table-scroll">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>#</th><th>Club</th><th>P</th><th>W</th><th>D</th><th>L</th><th>GF</th><th>GA</th><th>GD</th><th>Pts</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for t in table %}
+            <tr>
+              <td>{{ t.rank }}</td>
+              <td>
+                <a href="{{ url_for('intel_team', league=current_league, team_id=t.team_id) }}">
+                  {% if t.logo %}<img class="intel-table-logo" src="{{ t.logo }}" alt="">{% endif %}
+                  {{ t.name }}
+                </a>
+              </td>
+              <td>{{ t.played }}</td>
+              <td>{{ t.wins }}</td>
+              <td>{{ t.draws }}</td>
+              <td>{{ t.losses }}</td>
+              <td>{{ t.gf | round | int if t.gf is not none }}</td>
+              <td>{{ t.ga | round | int if t.ga is not none }}</td>
+              <td>{{ '%+d'|format(t.gd) if t.gd is not none }}</td>
+              <td><strong>{{ t.points | round | int if t.points is not none }}</strong></td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  {% else %}
+    <p class="empty">ESPN has no table up for this league right now — try again once fixtures start, or check back closer to matchday.</p>
+  {% endif %}
+{% endblock %}

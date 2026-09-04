@@ -1,0 +1,101 @@
+{% macro team_card(league, team_id, club_name, standing, table_size, form, split, roster, espn_news, club_news) %}
+  <div class="intel-card">
+    <div class="intel-card-head">
+      {% if standing and standing.logo %}<img class="intel-crest" src="{{ standing.logo }}" alt="">{% endif %}
+      <div>
+        <h3>{{ club_name or ('Team #' ~ team_id) }}</h3>
+        {% if standing %}
+          <span class="muted small">#{{ standing.rank }} of {{ table_size }} · {{ standing.wins }}-{{ standing.draws }}-{{ standing.losses }} · {{ standing.points | round | int }} pts</span>
+        {% else %}
+          <span class="muted small">Not in the current {{ leagues[league] }} table (cup-only entrant, or table not live yet)</span>
+        {% endif %}
+      </div>
+    </div>
+
+    <div class="intel-section">
+      <div class="intel-section-label">Form (last {{ form|length }})</div>
+      {% if form %}
+        <div class="form-pills">
+          {% for g in form %}
+            <span class="form-pill form-pill-{{ g.result|lower }}" title="{{ g.opponent }} ({{ 'H' if g.home_away == 'home' else 'A' }}) {{ g.team_score }}-{{ g.opp_score }}">{{ g.result }}</span>
+          {% endfor %}
+        </div>
+      {% else %}
+        <p class="empty small">No completed games yet this season.</p>
+      {% endif %}
+    </div>
+
+    <div class="intel-section">
+      <div class="intel-section-label">Home / Away Split</div>
+      <div class="table-scroll">
+        <table class="data-table intel-split-table">
+          <thead><tr><th></th><th>W</th><th>D</th><th>L</th><th>GF</th><th>GA</th></tr></thead>
+          <tbody>
+            <tr><td>Home</td><td>{{ split.home.w }}</td><td>{{ split.home.d }}</td><td>{{ split.home.l }}</td><td>{{ split.home.gf }}</td><td>{{ split.home.ga }}</td></tr>
+            <tr><td>Away</td><td>{{ split.away.w }}</td><td>{{ split.away.d }}</td><td>{{ split.away.l }}</td><td>{{ split.away.gf }}</td><td>{{ split.away.ga }}</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    {% if roster.coaches %}
+      <div class="intel-section">
+        <div class="intel-section-label">Manager History <span class="muted small">(ESPN's club list — not flagged as "current"; cross-check the news below)</span></div>
+        <p>{{ roster.coaches | join(', ') }}</p>
+      </div>
+    {% endif %}
+
+    {% if roster.players %}
+      <div class="intel-section">
+        <div class="intel-section-label">Squad ({{ roster.players | length }})</div>
+        <div class="table-scroll">
+          <table class="data-table intel-squad-table">
+            <thead><tr><th>#</th><th>Player</th><th>Pos</th><th>Age</th><th>Nat.</th><th>Status</th></tr></thead>
+            <tbody>
+              {% for p in roster.players %}
+                <tr>
+                  <td class="muted">{{ p.jersey }}</td>
+                  <td>{{ p.name }}</td>
+                  <td class="muted">{{ p.position }}</td>
+                  <td class="muted">{{ p.age }}</td>
+                  <td class="muted">{{ p.nationality }}</td>
+                  <td>
+                    {% if p.injury %}<span class="badge-live badge-live-loss">{{ p.injury }}</span>
+                    {% elif p.status and p.status != 'Active' %}<span class="muted small">{{ p.status }}</span>
+                    {% endif %}
+                  </td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    {% endif %}
+
+    <div class="intel-section">
+      <div class="intel-section-label">ESPN News</div>
+      {% if espn_news %}
+        <ul class="intel-news-list">
+          {% for a in espn_news %}
+            <li><a href="{{ a.link }}" target="_blank" rel="noopener">{{ a.headline }}</a></li>
+          {% endfor %}
+        </ul>
+      {% else %}
+        <p class="empty small">Nothing in ESPN's feed for this club right now.</p>
+      {% endif %}
+    </div>
+
+    <div class="intel-section">
+      <div class="intel-section-label">Local / Beat Coverage <span class="muted small">(regional papers, club site — via Google News)</span></div>
+      {% if club_news %}
+        <ul class="intel-news-list">
+          {% for a in club_news %}
+            <li><a href="{{ a.link }}" target="_blank" rel="noopener">{{ a.headline }}</a> <span class="muted small">— {{ a.source }}</span></li>
+          {% endfor %}
+        </ul>
+      {% else %}
+        <p class="empty small">No local coverage found.</p>
+      {% endif %}
+    </div>
+  </div>
+{% endmacro %}

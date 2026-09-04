@@ -37,6 +37,10 @@ app = Flask(__name__)
 # $100 staked = 1 "unit", matching the report's own convention.
 UNIT_SIZE = 100.0
 
+# CFB/NFL picks are priced against DraftKings, per the original report
+# template. EPL/UCL picks are priced against ESPN BET instead - ESPN's
+# soccer feed doesn't carry DraftKings lines, and ESPN BET is the one
+# odds.py sources for those two leagues (see odds.LEAGUE_CONFIG).
 SPORTSBOOK = "DraftKings"
 
 # The bettable pick types from the report template, in report order. Each
@@ -87,10 +91,13 @@ SOURCE_STYLE = {
 }
 
 # Every report belongs to one league - a source writes a separate report
-# for College Football and for the NFL, even in the same week, since the
-# slates (and the analysis behind them) don't overlap.
-LEAGUES = {"CFB": "College Football", "NFL": "NFL"}
+# per league, even in the same week, since the slates (and the analysis
+# behind them) don't overlap. EPL/UCL share the same report template and
+# pick categories as CFB/NFL; only the odds market (odds.py) and the
+# research data behind a pick (the Team Intel page) differ by sport.
+LEAGUES = {"CFB": "College Football", "NFL": "NFL", "EPL": "Premier League", "UCL": "Champions League"}
 LEAGUE_ORDER = list(LEAGUES.keys())
+SOCCER_LEAGUES = {code for code in LEAGUE_ORDER if odds.is_soccer(code)}
 
 RESULTS = ["pending", "win", "loss", "push", "void"]
 RESULT_LABELS = {
@@ -115,10 +122,12 @@ app.jinja_env.globals.update(
     source_color=lambda s: SOURCE_STYLE.get(s, {}).get("color", "#8b94a7"),
     leagues=LEAGUES,
     league_order=LEAGUE_ORDER,
+    soccer_leagues=SOCCER_LEAGUES,
     results=RESULTS,
     result_label=lambda r: RESULT_LABELS.get(r, r),
     result_color=lambda r: RESULT_COLORS.get(r, "#8b94a7"),
     sportsbook=SPORTSBOOK,
+    sportsbook_for=lambda league: odds.sportsbook_for(league) or SPORTSBOOK,
     unit_size=UNIT_SIZE,
 )
 
@@ -146,8 +155,11 @@ def grade_pick(pick, final):
     """
     Win/loss/push for one pick against a final score, per its structured
     bet_type/bet_side/bet_line (set only for picks pulled via the
-    DraftKings-odds widget). Spread/total lines use the standard "push on
-    an exact tie" rule; moneyline pushes only on an actual tied score.
+    odds-lookup widget). Spread/total lines use the standard "push on an
+    exact tie" rule; two-way moneyline pushes only on an actual tied
+    score - that's the right rule for CFB/NFL, where a tie is a fluke.
+    Soccer uses "match_result" instead: a real 3-way market (home/draw/
+    away) where a draw is its own outcome, never a push.
     """
     home, away = final["home_score"], final["away_score"]
     side, line = pick.get("bet_side"), pick.get("bet_line") or 0.0
@@ -157,6 +169,14 @@ def grade_pick(pick, final):
             return "push"
         home_won = home > away
         return "win" if (home_won if side == "home" else not home_won) else "loss"
+
+    if pick.get("bet_type") == "match_result":
+        if side == "draw":
+            return "win" if home == away else "loss"
+        if side == "home":
+            return "win" if home > away else "loss"
+        if side == "away":
+            return "win" if away > home else "loss"
 
     if pick.get("bet_type") == "spread":
         margin = (home - away) if side == "home" else (away - home)
@@ -816,14 +836,14 @@ def api_games():
 
 @app.route("/api/odds")
 def api_odds():
-    """Current DraftKings line for one game, keyed by ESPN event id."""
+    """Current line for one game, keyed by ESPN event id."""
     league = resolve_league(request.args.get("league"))
     event_id = request.args.get("event_id", "")
     if not league or not event_id:
         return jsonify({"error": "league and event_id are required"}), 400
     line = odds.game_odds(league, event_id)
     if line is None:
-        return jsonify({"error": "no DraftKings line available for this game"}), 404
+        return jsonify({"error": f"no {odds.sportsbook_for(league) or SPORTSBOOK} line available for this game"}), 404
     return jsonify(line)
 
 
@@ -838,6 +858,71 @@ def delete_pick(pick_id):
     data["picks"] = [p for p in data["picks"] if p["id"] != pick_id]
     store.save(data, token, message=f"Delete pick #{pick_id}")
     return redirect(url_for("report_detail", report_id=report_id))
+
+
+# ---------------------------------------------------------------------
+# Team Intel — soccer prediction research (form, standings, squad,
+# manager history, home/away trends, news, weather). Everything here is
+# read-only lookups against odds.py; nothing is stored, so there's
+# nothing to grade or settle.
+# ---------------------------------------------------------------------
+def _team_intel(league, team_id):
+    table = odds.standings(league)
+    standing = next((t for t in table if t["team_id"] == str(team_id)), None)
+    club_name = standing["name"] if standing else None
+    return {
+        "team_id": team_id,
+        "club_name": club_name,
+        "standing": standing,
+        "table_size": len(table),
+        "form": odds.team_form(league, team_id),
+        "split": odds.home_away_split(league, team_id),
+        "roster": odds.team_roster(league, team_id),
+        "espn_news": odds.team_news(league, team_id),
+        "club_news": odds.local_news(club_name) if club_name else [],
+    }
+
+
+@app.route("/intel")
+@app.route("/intel/<league>")
+def intel_picker(league=None):
+    league = resolve_league(league)
+    if league not in SOCCER_LEAGUES:
+        league = "EPL"
+    return render_template("intel_picker.html", current_league=league, table=odds.standings(league))
+
+
+@app.route("/intel/<league>/team/<team_id>")
+def intel_team(league, team_id):
+    league = resolve_league(league)
+    if league not in SOCCER_LEAGUES:
+        return redirect(url_for("intel_picker"))
+    return render_template("intel_team.html", league=league, **_team_intel(league, team_id))
+
+
+@app.route("/intel/<league>/match/<event_id>")
+def intel_match(league, event_id):
+    league = resolve_league(league)
+    if league not in SOCCER_LEAGUES:
+        return redirect(url_for("intel_picker"))
+
+    info = odds.match_info(league, event_id)
+    if info is None:
+        return redirect(url_for("intel_picker", league=league))
+
+    weather = odds.match_weather(info["city"], info["country"], info["kickoff"])
+    h2h = odds.head_to_head(league, event_id)
+
+    return render_template(
+        "intel_match.html",
+        league=league,
+        event_id=event_id,
+        info=info,
+        weather=weather,
+        h2h=h2h,
+        home=_team_intel(league, info["home_id"]),
+        away=_team_intel(league, info["away_id"]),
+    )
 
 
 if __name__ == "__main__":
