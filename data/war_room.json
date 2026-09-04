@@ -232,7 +232,8 @@
       "id": 9,
       "war_room_line": "Model total: ~4.1 goals",
       "edge": "Market total 3.5 at -110 (implied ~52%); model ~63% over -- City averaging 3 goals/game, Coventry already conceding 2/game",
-      "price_discipline": "-110 or better: $50\n-125 to -111: $35\n-135 or worse: pass"
+      "price_discipline": "-110 or better: $50\n-125 to -111: $35\n-135 or worse: pass",
+      "wr_confidence": 74.0
     },
     {
       "report_id": 4,
