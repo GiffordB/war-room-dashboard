@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% import "_report_card.html" as rc %}
+{% block title %}Latest Reports · War Room{% endblock %}
+{% block content %}
+  <div class="page-head">
+    <h1>Latest Reports</h1>
+    <span class="muted small">Most recent Premier League and Champions League report, side by side.</span>
+  </div>
+
+  <div class="latest-grid">
+    <section>
+      <h2 class="section-label">{{ leagues['EPL'] }}</h2>
+      {% if epl_report %}
+        {{ rc.report_card(epl_report, epl_picks) }}
+      {% else %}
+        <p class="empty">No Premier League reports yet.</p>
+      {% endif %}
+    </section>
+
+    <section>
+      <h2 class="section-label">{{ leagues['UCL'] }}</h2>
+      {% if ucl_report %}
+        {{ rc.report_card(ucl_report, ucl_picks) }}
+      {% else %}
+        <p class="empty">No Champions League reports yet.</p>
+      {% endif %}
+    </section>
+  </div>
+{% endblock %}

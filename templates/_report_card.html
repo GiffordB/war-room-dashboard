@@ -1,0 +1,78 @@
+{% macro report_card(report, picks) %}
+  <div class="report-card">
+    <div class="page-head">
+      <h1 class="report-card-title">
+        <span class="badge-source" style="background: {{ source_color(report.source) }};">{{ report.source }}</span>
+        <span class="badge-league">{{ report.league }}</span>
+        {{ report.report_date }}
+        <span class="muted">— {{ report.week_label or ('Week ' ~ report.week_number) }}</span>
+      </h1>
+      <a class="btn btn-outline btn-sm" href="{{ url_for('report_detail', report_id=report.id) }}">Open Full Report →</a>
+    </div>
+
+    {% if report.blind_spot_notes or report.lsu_review_notes %}
+      <section class="notes-grid">
+        {% if report.blind_spot_notes %}
+          <div class="note-card">
+            <div class="note-card-head">👁 Vegas Blind Spot</div>
+            <p>{{ report.blind_spot_notes }}</p>
+          </div>
+        {% endif %}
+        {% if report.lsu_review_notes %}
+          <div class="note-card">
+            <div class="note-card-head">🐯 LSU Objective Review</div>
+            <p>{{ report.lsu_review_notes }}</p>
+          </div>
+        {% endif %}
+      </section>
+    {% endif %}
+
+    {% if picks %}
+      <div class="table-scroll">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Category</th>
+              <th>Matchup</th>
+              <th>Selection</th>
+              <th>Odds</th>
+              <th>Stake</th>
+              <th>Conf.</th>
+              <th>Result</th>
+              <th>P/L</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for p in picks %}
+              <tr>
+                <td style="color: {{ categories[p.category].color }};">{{ categories[p.category].icon }} {{ categories[p.category].label }}</td>
+                <td>{{ p.matchup }}</td>
+                <td>
+                  {{ p.selection }}
+                  {% if p.espn_event_id %}<span class="badge-auto" title="Linked to a live {{ sportsbook_for(report.league) }} line — can be auto-graded from the final score">🔗 auto</span>{% endif %}
+                  {% if p.game %}
+                    <div>
+                      <span class="badge-live badge-live-{{ p.game.status }}">
+                        {{ '🏁 FINAL' if p.game.final else '🔴 LIVE' }} {{ p.game.score }} · {{ p.game.label }}
+                      </span>
+                    </div>
+                  {% endif %}
+                  {% if p.notes %}<div class="muted small">{{ p.notes }}</div>{% endif %}
+                </td>
+                <td>{{ '%+d'|format(p.odds) }}</td>
+                <td>${{ '{:,.0f}'.format(p.stake) }} <span class="muted small">({{ '%.2f'|format(p.stake / unit_size) }}u)</span></td>
+                <td>{% if p.get('confidence') is not none %}<span class="badge-confidence">{{ p.confidence | round | int }}%</span>{% else %}<span class="muted">—</span>{% endif %}</td>
+                <td><span class="badge-result" style="background: {{ result_color(p.result) }};">{{ result_label(p.result) }}</span></td>
+                <td class="{{ 'pos' if p.profit_loss > 0 else 'neg' if p.profit_loss < 0 else 'muted' }}">
+                  {% if p.result != 'pending' %}{{ '%+.0f'|format(p.profit_loss) }}${% endif %}
+                </td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    {% else %}
+      <p class="empty">No picks logged for this report yet.</p>
+    {% endif %}
+  </div>
+{% endmacro %}

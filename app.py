@@ -314,25 +314,38 @@ def attach_game_status(picks, league=None):
 
 def recent_picks_by_week(data, league=None, limit=4):
     """
-    Every pick, grouped by its report's week_number, for the most recent
-    `limit` weeks that have any picks in this league scope - newest week
-    first, picks within a week newest-first. Each pick carries a `game`
-    status badge (see attach_game_status) so a settled pick still shows
-    the final score for context, not just the graded result.
+    Every pick, grouped by (report.league, report.week_number), for the
+    most recent `limit` weeks that have any picks in this league scope -
+    newest week first, picks within a week newest-first. Grouping is
+    keyed by league as well as week_number - not week_number alone -
+    since week numbering resets per league (EPL/UCL matchweeks vs.
+    CFB/NFL season weeks aren't the same sequence, so two different
+    leagues' "Week 3" must never land in the same bucket). The label
+    spells out the league too whenever this view can span more than one
+    (All Leagues, All Football/Futbol) so "Week 3" is never ambiguous on
+    screen; a single-league view keeps the plain label.
+
+    Each pick carries a `game` status badge (see attach_game_status) so a
+    settled pick still shows the final score for context, not just the
+    graded result.
     """
     reports = {r["id"]: r for r in data["reports"]}
+    multi_league = league is None or isinstance(league, (set, frozenset))
     by_week = {}
     for p in data["picks"]:
         r = reports.get(p["report_id"])
         if not r or not _league_matches(r["league"], league):
             continue
-        wn = r["week_number"]
-        group = by_week.setdefault(wn, {"week_number": wn, "label": f"Week {wn}", "picks": []})
+        wk = (r["league"], r["week_number"])
+        if wk not in by_week:
+            base_label = r["week_label"] or f"Week {r['week_number']}"
+            label = f"{base_label} — {LEAGUES[r['league']]}" if multi_league else base_label
+            by_week[wk] = {"week_key": wk, "label": label, "picks": []}
         merged = dict(p)
         merged.update(source=r["source"], league=r["league"], report_date=r["report_date"])
-        group["picks"].append(merged)
+        by_week[wk]["picks"].append(merged)
 
-    weeks = sorted(by_week.values(), key=lambda g: g["week_number"], reverse=True)[:limit]
+    weeks = sorted(by_week.values(), key=lambda g: (g["week_key"][1], g["week_key"][0]), reverse=True)[:limit]
     for group in weeks:
         group["picks"].sort(key=lambda p: p["id"], reverse=True)
         group["picks"] = attach_game_status(group["picks"])
@@ -482,13 +495,19 @@ def cumulative_profit_chart(data, league=None):
 def weekly_stats(data, league=None):
     """
     Per-week, per-source stats - the core "is one system trending better"
-    view. Weeks are keyed by report.week_number (not the raw date), since
-    that's what lines picks up across sources/leagues that report on
-    slightly different calendar days for the "same" week.
+    view. Weeks are keyed by (report.league, report.week_number) - not
+    week_number alone - since week numbering resets per league (EPL/UCL
+    matchweeks vs. CFB/NFL season weeks aren't the same sequence: a
+    league's own "Week 3" must never merge with another league's "Week
+    3"). The label spells out the league too whenever this view can span
+    more than one (All Leagues, All Football/Futbol) so "Week 3" is never
+    ambiguous on screen; a single-league view keeps the plain label.
 
-    Returns (week_numbers sorted ascending, {week_number: label}, {(week_number, source): stats}).
+    Returns (week_keys sorted, {week_key: label}, {(week_key, source): stats})
+    where week_key is (league, week_number).
     """
     reports = {r["id"]: r for r in data["reports"]}
+    multi_league = league is None or isinstance(league, (set, frozenset))
     week_labels = {}
     result = {}
     for p in data["picks"]:
@@ -498,9 +517,11 @@ def weekly_stats(data, league=None):
         if not r or not _league_matches(r["league"], league):
             continue
 
-        wn = r["week_number"]
-        week_labels.setdefault(wn, r["week_label"] or f"Week {wn}")
-        key = (wn, r["source"])
+        wk = (r["league"], r["week_number"])
+        if wk not in week_labels:
+            base_label = r["week_label"] or f"Week {r['week_number']}"
+            week_labels[wk] = f"{base_label} — {LEAGUES[r['league']]}" if multi_league else base_label
+        key = (wk, r["source"])
         if key not in result:
             result[key] = empty_stats(r["source"])
         _apply_result(result[key], p)
@@ -508,8 +529,8 @@ def weekly_stats(data, league=None):
     for bucket in result.values():
         _finalize(bucket)
 
-    week_numbers = sorted(week_labels.keys())
-    return week_numbers, week_labels, result
+    week_keys = sorted(week_labels.keys(), key=lambda wk: (wk[1], wk[0]))
+    return week_keys, week_labels, result
 
 
 def weekly_win_pct_chart(week_numbers, week_labels, data):
@@ -731,6 +752,31 @@ def reports_list():
     )
 
 
+def _latest_report(data, league):
+    """(report, picks) for the most recent report in `league` (by report_date, then id), or (None, [])."""
+    candidates = [r for r in data["reports"] if r["league"] == league]
+    if not candidates:
+        return None, []
+    report = max(candidates, key=lambda r: (r["report_date"], r["id"]))
+    picks = sorted((p for p in data["picks"] if p["report_id"] == report["id"]), key=lambda p: p["id"])
+    picks = attach_game_status(picks, league=league)
+    return report, picks
+
+
+@app.route("/latest")
+def latest_reports():
+    data = store.load_data()
+    epl_report, epl_picks = _latest_report(data, "EPL")
+    ucl_report, ucl_picks = _latest_report(data, "UCL")
+    return render_template(
+        "latest.html",
+        epl_report=epl_report,
+        epl_picks=epl_picks,
+        ucl_report=ucl_report,
+        ucl_picks=ucl_picks,
+    )
+
+
 def create_report(fields):
     """
     Shared by the HTML "Add Report" form and POST /api/reports: fields is
@@ -817,6 +863,39 @@ def delete_report(report_id):
 
     store.mutate(_mutate, message=f"Delete report #{report_id}")
     return redirect(url_for("reports_list"))
+
+
+@app.route("/api/reports/<int:report_id>", methods=["PATCH"])
+def api_update_report(report_id):
+    """
+    Correct a report's own metadata after the fact - week_number,
+    week_label, or the two notes fields - without touching its picks.
+    Identity fields (source/league/report_date) aren't editable here;
+    if one of those is wrong, delete and recreate the report instead.
+    Only the fields present in the JSON body are changed.
+    """
+    editable = {"week_number", "week_label", "blind_spot_notes", "lsu_review_notes"}
+    body = request.get_json(silent=True) or {}
+    updates = {k: v for k, v in body.items() if k in editable}
+    if not updates:
+        return jsonify({"error": f"no editable fields given (allowed: {sorted(editable)})"}), 400
+
+    data, token = store.load_for_update()
+    report = next((r for r in data["reports"] if r["id"] == report_id), None)
+    if report is None:
+        return jsonify({"error": f"no report #{report_id}"}), 404
+
+    if "week_number" in updates:
+        try:
+            report["week_number"] = int(updates["week_number"])
+        except (TypeError, ValueError):
+            return jsonify({"error": "week_number must be an integer"}), 400
+    for key in ("week_label", "blind_spot_notes", "lsu_review_notes"):
+        if key in updates:
+            report[key] = str(updates[key]).strip()
+
+    store.save(data, token, message=f"Update report #{report_id}")
+    return jsonify({"id": report_id})
 
 
 def create_pick(report_id, fields):

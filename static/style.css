@@ -376,6 +376,23 @@ section { margin-bottom: 44px; }
 .note-card-head { font-weight: 700; margin-bottom: 8px; color: var(--gold-bright); }
 .note-card p { margin: 0; color: var(--text); line-height: 1.5; white-space: pre-wrap; }
 
+/* ---------------- Latest reports (side-by-side) ---------------- */
+.latest-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+  gap: 32px;
+  align-items: start;
+}
+.report-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 20px 22px;
+}
+.report-card .page-head { margin-bottom: 18px; }
+.report-card-title { font-size: 1.1rem; }
+.report-card .notes-grid { grid-template-columns: 1fr; margin-bottom: 20px; }
+
 /* ---------------- Recent picks list ---------------- */
 .week-group-label {
   color: var(--muted);
