@@ -592,6 +592,55 @@ section { margin-bottom: 44px; }
 .form-row { display: flex; gap: 16px; }
 .form-row label { flex: 1; }
 
+.bet-mode-toggle { display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px; max-width: 560px; }
+.bet-mode-option {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 14px 16px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface-2);
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+}
+.bet-mode-option:hover { border-color: var(--neon-purple); }
+.bet-mode-option input[type="radio"] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+.bet-mode-radio {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  margin-top: 1px;
+  border-radius: 50%;
+  border: 2px solid var(--muted);
+  position: relative;
+  transition: border-color 0.15s;
+}
+.bet-mode-option input:checked ~ .bet-mode-radio { border-color: var(--gold-bright); }
+.bet-mode-option input:checked ~ .bet-mode-radio::after {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--gold-bright);
+}
+.bet-mode-option:has(input:checked) {
+  border-color: var(--gold-bright);
+  background: rgba(253, 208, 35, 0.1);
+}
+.bet-mode-text { display: block; }
+.bet-mode-text strong { display: block; font-size: 0.95rem; font-weight: 600; }
+.bet-mode-text small { display: block; color: var(--muted); font-weight: 400; margin-top: 3px; font-size: 0.82rem; }
+
 .empty { color: var(--muted); }
 
 .empty-state {

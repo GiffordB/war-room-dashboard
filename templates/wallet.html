@@ -229,9 +229,23 @@
 
   <section>
     <h2 class="section-label">Log a Bet</h2>
-    <div class="form-row" style="margin-bottom: 6px;">
-      <label><input type="radio" name="bet_mode" value="pick" id="wallet-mode-pick" checked> From War Room picks</label>
-      <label><input type="radio" name="bet_mode" value="custom" id="wallet-mode-custom"> Custom / off-site bet</label>
+    <div class="bet-mode-toggle">
+      <label class="bet-mode-option" for="wallet-mode-pick">
+        <input type="radio" name="bet_mode" value="pick" id="wallet-mode-pick" checked>
+        <span class="bet-mode-radio"></span>
+        <span class="bet-mode-text">
+          <strong>From War Room picks</strong>
+          <small>Link this bet to a pick one of the AI sources already made.</small>
+        </span>
+      </label>
+      <label class="bet-mode-option" for="wallet-mode-custom">
+        <input type="radio" name="bet_mode" value="custom" id="wallet-mode-custom">
+        <span class="bet-mode-radio"></span>
+        <span class="bet-mode-text">
+          <strong>Custom / off-site bet</strong>
+          <small>Something none of the sources covered — entered and settled by hand.</small>
+        </span>
+      </label>
     </div>
     <form class="form" method="post" action="{{ url_for(add_endpoint) }}">
       <div id="wallet-pick-fields">
