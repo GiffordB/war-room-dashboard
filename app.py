@@ -1075,8 +1075,13 @@ def api_update_pick(pick_id, report_id):
 def auto_grade_report(report_id):
     data, token = store.load_for_update()
     graded, still_pending = auto_grade_pending(data, report_id=report_id)
-    if graded:
-        store.save(data, token, message=f"Auto-grade report #{report_id}: {graded} pick(s) settled")
+    synced = sync_wallet_entries(data)
+    if graded or synced:
+        store.save(
+            data,
+            token,
+            message=f"Auto-grade report #{report_id}: {graded} pick(s) settled, {synced} wallet entr{'y' if synced == 1 else 'ies'} synced",
+        )
     return redirect(
         url_for("report_detail", report_id=report_id, graded=graded, still_pending=still_pending)
     )
@@ -1086,8 +1091,13 @@ def auto_grade_report(report_id):
 def auto_grade_all():
     data, token = store.load_for_update()
     graded, still_pending = auto_grade_pending(data)
-    if graded:
-        store.save(data, token, message=f"Auto-grade all reports: {graded} pick(s) settled")
+    synced = sync_wallet_entries(data)
+    if graded or synced:
+        store.save(
+            data,
+            token,
+            message=f"Auto-grade all reports: {graded} pick(s) settled, {synced} wallet entr{'y' if synced == 1 else 'ies'} synced",
+        )
     return redirect(url_for("reports_list", graded=graded, still_pending=still_pending))
 
 
@@ -1104,6 +1114,7 @@ def settle_pick(pick_id):
 
     pick["result"] = result_value
     pick["profit_loss"] = profit_for_result(pick["stake"], pick["odds"], result_value)
+    sync_wallet_entries(data)
     store.save(data, token, message=f"Settle pick #{pick_id}: {result_value}")
     return redirect(url_for("report_detail", report_id=pick["report_id"]))
 
@@ -1289,6 +1300,245 @@ def api_create_pick(report_id):
     except (ValueError, KeyError, TypeError) as e:
         return jsonify({"error": str(e)}), 400
     return jsonify({"id": pick_id}), 201
+
+
+# ---------------------------------------------------------------------
+# MyWallet - the user's own real-money bets. Always tied to a specific
+# dashboard pick (fields["pick_id"]), but snapshotted into its own
+# record rather than a live pointer: the odds/stake actually placed can
+# differ from the report's own card number, and the bet's history has to
+# survive even if the underlying pick is later deleted.
+# ---------------------------------------------------------------------
+def create_wallet_entry(fields):
+    pick_id = int(fields["pick_id"])
+    data = store.load_data()
+    pick = next((p for p in data["picks"] if p["id"] == pick_id), None)
+    if pick is None:
+        raise ValueError(f"no pick #{pick_id}")
+    report = next((r for r in data["reports"] if r["id"] == pick["report_id"]), None)
+    if report is None:
+        raise ValueError("pick has no report")
+
+    odds = int(fields["odds"])
+    stake = float(fields["stake"])
+    new_entry = {
+        "pick_id": pick["id"],
+        "report_id": report["id"],
+        "source": report["source"],
+        "league": report["league"],
+        "category": pick["category"],
+        "matchup": pick["matchup"],
+        "selection": pick["selection"],
+        "odds": odds,
+        "stake": stake,
+        "result": pick["result"],
+        "profit_loss": profit_for_result(stake, odds, pick["result"]) if pick["result"] != "pending" else 0.0,
+        "notes": (fields.get("notes") or "").strip() or None,
+        "created_at": datetime.utcnow().isoformat(timespec="seconds"),
+    }
+
+    def _mutate(data):
+        new_entry["id"] = data["next_wallet_id"]
+        data["next_wallet_id"] += 1
+        data["wallet_entries"].append(new_entry)
+        return new_entry["id"]
+
+    return store.mutate(
+        _mutate, message=f"Log wallet bet: {new_entry['matchup']} -- {new_entry['selection']} (${stake:.0f})"
+    )
+
+
+def sync_wallet_entries(data):
+    """
+    Copy a pending wallet entry's result from its linked pick once that
+    pick is itself no longer pending - using the entry's OWN odds/stake
+    for the payout math, not the pick's, since what was actually wagered
+    can differ from the report's card number. Called alongside
+    auto_grade_pending() so both settle together. Returns how many synced.
+    """
+    picks_by_id = {p["id"]: p for p in data["picks"]}
+    synced = 0
+    for entry in data["wallet_entries"]:
+        if entry["result"] != "pending":
+            continue
+        pick = picks_by_id.get(entry["pick_id"])
+        if not pick or pick["result"] == "pending":
+            continue
+        entry["result"] = pick["result"]
+        entry["profit_loss"] = profit_for_result(entry["stake"], entry["odds"], pick["result"])
+        synced += 1
+    return synced
+
+
+def wallet_overall_stats(data):
+    stats = empty_stats()
+    for e in data["wallet_entries"]:
+        if e["result"] == "pending":
+            stats["pending"] += 1
+        elif e["result"] in ("win", "loss", "push"):
+            _apply_result(stats, e)
+    return _finalize(stats)
+
+
+def wallet_stats_by_source(data):
+    """{source: stats} - every AI source the user has ever placed a real bet on."""
+    result = {s: empty_stats(s) for s in SOURCES}
+    for e in data["wallet_entries"]:
+        stats = result.setdefault(e["source"], empty_stats(e["source"]))
+        if e["result"] == "pending":
+            stats["pending"] += 1
+        elif e["result"] in ("win", "loss", "push"):
+            _apply_result(stats, e)
+    for stats in result.values():
+        _finalize(stats)
+    return result
+
+
+def wallet_cumulative_chart(data):
+    """Line-chart series: running real-dollar profit/loss, per source, over the dates the user's own bets were placed."""
+    rows = []
+    for e in data["wallet_entries"]:
+        if e["result"] not in ("win", "loss", "push"):
+            continue
+        rows.append((e["created_at"][:10], e["id"], e["source"], e["profit_loss"]))
+    rows.sort(key=lambda row: (row[0], row[1]))
+
+    all_dates = sorted({row[0] for row in rows})
+    if not all_dates:
+        return [], []
+
+    sources = sorted({row[2] for row in rows} | set(SOURCES))
+    running = {s: 0.0 for s in sources}
+    by_source_date = {s: {} for s in sources}
+    for placed_date, _entry_id, src, profit_loss in rows:
+        running[src] += profit_loss
+        by_source_date[src][placed_date] = running[src]
+
+    series = []
+    for s in sources:
+        values = []
+        last = None
+        started = False
+        for d in all_dates:
+            if d in by_source_date[s]:
+                last = by_source_date[s][d]
+                started = True
+            values.append(last if started else None)
+        series.append(
+            {"name": s, "slug": s.lower(), "color": SOURCE_STYLE.get(s, {}).get("color", "#8b94a7"), "values": values}
+        )
+
+    return all_dates, series
+
+
+@app.route("/MyWallet")
+def my_wallet():
+    data = store.load_data()
+    entries = sorted(data["wallet_entries"], key=lambda e: e["id"], reverse=True)
+    overall = wallet_overall_stats(data)
+    by_source = wallet_stats_by_source(data)
+    chart_dates, chart_series = wallet_cumulative_chart(data)
+    profit_chart = charts.line_chart(chart_dates, chart_series, unit="$") if chart_dates else None
+
+    reports_by_id = {r["id"]: r for r in data["reports"]}
+    pending_picks = []
+    for p in data["picks"]:
+        if p["result"] != "pending":
+            continue
+        r = reports_by_id.get(p["report_id"])
+        if not r:
+            continue
+        pending_picks.append(
+            {
+                "id": p["id"],
+                "league": r["league"],
+                "source": r["source"],
+                "category": CATEGORIES[p["category"]]["label"],
+                "matchup": p["matchup"],
+                "selection": p["selection"],
+                "odds": p["odds"],
+            }
+        )
+    pending_picks.sort(key=lambda p: p["id"], reverse=True)
+
+    return render_template(
+        "wallet.html",
+        entries=entries,
+        overall=overall,
+        by_source=by_source,
+        profit_chart=profit_chart,
+        pending_picks=pending_picks,
+    )
+
+
+@app.route("/wallet/add", methods=["POST"])
+def add_wallet_entry():
+    create_wallet_entry(
+        {
+            "pick_id": request.form.get("pick_id"),
+            "odds": request.form.get("odds"),
+            "stake": request.form.get("stake"),
+            "notes": request.form.get("notes", ""),
+        }
+    )
+    return redirect(url_for("my_wallet"))
+
+
+@app.route("/wallet/<int:entry_id>/delete", methods=["POST"])
+def delete_wallet_entry(entry_id):
+    data, token = store.load_for_update()
+    data["wallet_entries"] = [e for e in data["wallet_entries"] if e["id"] != entry_id]
+    store.save(data, token, message=f"Delete wallet entry #{entry_id}")
+    return redirect(url_for("my_wallet"))
+
+
+@app.route("/api/wallet", methods=["POST"])
+def api_create_wallet_entry():
+    body = request.get_json(silent=True) or {}
+    try:
+        entry_id = create_wallet_entry(body)
+    except (ValueError, KeyError, TypeError) as e:
+        return jsonify({"error": str(e)}), 400
+    return jsonify({"id": entry_id}), 201
+
+
+@app.route("/api/wallet/<int:entry_id>", methods=["PATCH"])
+def api_update_wallet_entry(entry_id):
+    """
+    Correct a wallet entry's own odds/stake/notes after the fact. Result
+    and profit_loss stay derived from the linked pick via
+    sync_wallet_entries() and shouldn't be hand-set here - but if the
+    entry is already settled, changing odds/stake recomputes profit_loss
+    against that same stored result immediately.
+    """
+    editable = {"odds", "stake", "notes"}
+    body = request.get_json(silent=True) or {}
+    updates = {k: v for k, v in body.items() if k in editable}
+    if not updates:
+        return jsonify({"error": f"no editable fields given (allowed: {sorted(editable)})"}), 400
+
+    data, token = store.load_for_update()
+    entry = next((e for e in data["wallet_entries"] if e["id"] == entry_id), None)
+    if entry is None:
+        return jsonify({"error": f"no wallet entry #{entry_id}"}), 404
+
+    if "odds" in updates:
+        try:
+            entry["odds"] = int(updates["odds"])
+        except (TypeError, ValueError):
+            return jsonify({"error": "odds must be an integer"}), 400
+    if "stake" in updates:
+        try:
+            entry["stake"] = float(updates["stake"])
+        except (TypeError, ValueError):
+            return jsonify({"error": "stake must be a number"}), 400
+    if "notes" in updates:
+        entry["notes"] = str(updates["notes"]).strip() or None
+    if entry["result"] != "pending":
+        entry["profit_loss"] = profit_for_result(entry["stake"], entry["odds"], entry["result"])
+
+    store.save(data, token, message=f"Update wallet entry #{entry_id}")
+    return jsonify({"id": entry_id})
 
 
 if __name__ == "__main__":

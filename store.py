@@ -33,7 +33,26 @@ LOCAL_PATH = Path(__file__).resolve().parent / ".local_dev_data" / "war_room.jso
 GITHUB_PAT = os.environ.get("GITHUB_PAT", "")
 GITHUB_REPO = os.environ.get("GITHUB_REPO", "GiffordB/war-room-dashboard")
 
-EMPTY_STATE = {"next_report_id": 1, "next_pick_id": 1, "reports": [], "picks": []}
+EMPTY_STATE = {
+    "next_report_id": 1,
+    "next_pick_id": 1,
+    "next_wallet_id": 1,
+    "reports": [],
+    "picks": [],
+    "wallet_entries": [],
+}
+
+
+def _normalize(data):
+    """Backfill keys added after the original data file was created, so
+    every caller can just do data["wallet_entries"] etc. unconditionally.
+    Each missing list gets its own fresh [] - never the same list object
+    EMPTY_STATE holds, which every caller would otherwise share and could
+    mutate in place."""
+    for key, default in EMPTY_STATE.items():
+        if key not in data:
+            data[key] = [] if isinstance(default, list) else default
+    return data
 
 
 def _use_github():
@@ -60,7 +79,7 @@ def _load_github():
     payload = resp.json()
     content = base64.b64decode(payload["content"]).decode("utf-8")
     data = json.loads(content) if content.strip() else dict(EMPTY_STATE)
-    return data, payload["sha"]
+    return _normalize(data), payload["sha"]
 
 
 def _save_github(data, sha, message):
@@ -77,7 +96,8 @@ def _save_github(data, sha, message):
 def _load_local():
     if LOCAL_PATH.exists():
         text = LOCAL_PATH.read_text()
-        return json.loads(text) if text.strip() else dict(EMPTY_STATE)
+        data = json.loads(text) if text.strip() else dict(EMPTY_STATE)
+        return _normalize(data)
     return dict(EMPTY_STATE)
 
 

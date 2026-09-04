@@ -1,0 +1,233 @@
+{% extends "base.html" %}
+{% block title %}My Wallet · War Room{% endblock %}
+{% block content %}
+
+  <div class="page-head">
+    <h1>My Wallet</h1>
+    <a class="btn btn-outline" href="{{ url_for('dashboard') }}">← Back to Dashboard</a>
+  </div>
+  <p class="sportsbook-tag" style="display: inline-block; margin-bottom: 24px;">
+    Your own real bets — usually one of the picks above, at whatever stake and price you actually got.
+  </p>
+
+  <section>
+    <h2 class="section-label">Overall Performance</h2>
+    <div class="leaderboard-row" style="--accent: var(--gold);">
+      <div class="leaderboard-stat">
+        <div class="source-stat-num">{{ overall.wins }}-{{ overall.losses }}{% if overall.pushes %}-{{ overall.pushes }}{% endif %}</div>
+        <div class="source-stat-label">Record</div>
+      </div>
+      <div class="leaderboard-stat">
+        <div class="source-stat-num">{% if overall.win_pct is not none %}{{ '%.0f'|format(overall.win_pct) }}%{% else %}—{% endif %}</div>
+        <div class="source-stat-label">Win Rate</div>
+      </div>
+      <div class="leaderboard-stat">
+        <div class="source-stat-num {{ 'pos' if overall.profit > 0 else 'neg' if overall.profit < 0 else '' }}">{{ '%+.0f'|format(overall.profit) }}$</div>
+        <div class="source-stat-label">Profit</div>
+      </div>
+      <div class="leaderboard-stat">
+        <div class="source-stat-num">{% if overall.roi is not none %}{{ '%+.1f'|format(overall.roi) }}%{% else %}—{% endif %}</div>
+        <div class="source-stat-label">ROI</div>
+      </div>
+      <div class="leaderboard-stat">
+        <div class="source-stat-num">${{ '{:,.0f}'.format(overall.staked) }}</div>
+        <div class="source-stat-label">Staked</div>
+      </div>
+      {% if overall.pending %}
+        <div class="leaderboard-stat">
+          <div class="source-stat-num muted">{{ overall.pending }}</div>
+          <div class="source-stat-label">Pending</div>
+        </div>
+      {% endif %}
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-label">Profit Over Time</h2>
+    {% if profit_chart %}
+      <div class="chart-card">{{ profit_chart }}</div>
+    {% else %}
+      <p class="empty">No settled bets yet — this fills in once your bets are graded.</p>
+    {% endif %}
+  </section>
+
+  <section>
+    <h2 class="section-label">Performance by Source</h2>
+    <div class="table-scroll">
+      <table class="data-table category-table">
+        <thead>
+          <tr>
+            <th>Source</th>
+            <th>Record</th>
+            <th>Win%</th>
+            <th>Profit</th>
+            <th>ROI</th>
+            <th>Staked</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for s in sources %}
+            {% set st = by_source[s] %}
+            <tr>
+              <td><span class="badge-source" style="background: {{ source_color(s) }};">{{ s }}</span></td>
+              <td>{{ st.wins }}-{{ st.losses }}{% if st.pushes %}-{{ st.pushes }}{% endif %}{% if st.pending %}<span class="muted"> (+{{ st.pending }}p)</span>{% endif %}</td>
+              <td class="muted">{% if st.win_pct is not none %}{{ '%.0f'|format(st.win_pct) }}%{% else %}—{% endif %}</td>
+              <td class="{{ 'pos' if st.profit > 0 else 'neg' if st.profit < 0 else 'muted' }}">{{ '%+.0f'|format(st.profit) }}$</td>
+              <td class="muted">{% if st.roi is not none %}{{ '%+.1f'|format(st.roi) }}%{% else %}—{% endif %}</td>
+              <td class="muted">${{ '{:,.0f}'.format(st.staked) }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-label">My Bets</h2>
+    {% if entries %}
+      <div class="table-scroll">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Source</th>
+              <th>League</th>
+              <th>Bet</th>
+              <th>Odds</th>
+              <th>Stake</th>
+              <th>Result</th>
+              <th>Profit</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for e in entries %}
+              <tr>
+                <td class="muted">{{ e.created_at[:10] }}</td>
+                <td><span class="badge-source" style="background: {{ source_color(e.source) }};">{{ e.source }}</span></td>
+                <td><span class="badge-league">{{ e.league }}</span></td>
+                <td>
+                  <a href="{{ url_for('report_detail', report_id=e.report_id) }}">{{ e.matchup }} — {{ e.selection }}</a>
+                  {% if e.notes %}<div class="muted small">{{ e.notes }}</div>{% endif %}
+                </td>
+                <td class="muted">{{ '%+d'|format(e.odds) }}</td>
+                <td>${{ '{:,.0f}'.format(e.stake) }}</td>
+                <td><span class="badge-result" style="background: {{ result_color(e.result) }};">{{ result_label(e.result) }}</span></td>
+                <td class="{{ 'pos' if e.profit_loss > 0 else 'neg' if e.profit_loss < 0 else 'muted' }}">
+                  {% if e.result != 'pending' %}{{ '%+.0f'|format(e.profit_loss) }}${% endif %}
+                </td>
+                <td>
+                  <form method="post" action="{{ url_for('delete_wallet_entry', entry_id=e.id) }}"
+                        onsubmit="return confirm('Delete this bet from your wallet?');">
+                    <button class="btn-link" type="submit">Delete</button>
+                  </form>
+                </td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    {% else %}
+      <p class="empty">No bets logged yet — add your first one below.</p>
+    {% endif %}
+  </section>
+
+  <section>
+    <h2 class="section-label">Log a Bet</h2>
+    <form class="form" method="post" action="{{ url_for('add_wallet_entry') }}">
+      <div class="form-row">
+        <label>
+          League
+          <select id="wallet-league">
+            <option value="">All Leagues</option>
+            {% for code in league_order %}
+              <option value="{{ code }}">{{ leagues[code] }}</option>
+            {% endfor %}
+          </select>
+        </label>
+        <label>
+          Pick
+          <select id="wallet-pick" required>
+            <option value="">Select a pick…</option>
+          </select>
+        </label>
+      </div>
+      <p id="wallet-pick-preview" class="muted small" hidden></p>
+
+      <div class="form-row">
+        <label>
+          Odds you got (American)
+          <input type="number" id="wallet-odds" name="odds" placeholder="-110 or +150" required>
+        </label>
+        <label>
+          Amount you staked ($)
+          <input type="number" step="0.01" min="0" name="stake" placeholder="e.g. 50" required>
+        </label>
+      </div>
+
+      <label>
+        Notes (optional)
+        <textarea name="notes" rows="2" placeholder="e.g. hedged half at halftime"></textarea>
+      </label>
+
+      <input type="hidden" id="wallet-pick-id" name="pick_id">
+
+      <div class="actions">
+        <button class="btn" type="submit">Log This Bet</button>
+      </div>
+    </form>
+  </section>
+{% endblock %}
+
+{% block scripts %}
+<script>
+(function () {
+  var picks = {{ pending_picks | tojson }};
+  var leagueSelect = document.getElementById('wallet-league');
+  var pickSelect = document.getElementById('wallet-pick');
+  var pickIdInput = document.getElementById('wallet-pick-id');
+  var oddsInput = document.getElementById('wallet-odds');
+  var previewEl = document.getElementById('wallet-pick-preview');
+
+  function fmtOdds(n) { return n > 0 ? '+' + n : String(n); }
+
+  function populatePicks(league) {
+    pickSelect.innerHTML = '';
+    var placeholder = document.createElement('option');
+    placeholder.value = '';
+    placeholder.textContent = 'Select a pick…';
+    pickSelect.appendChild(placeholder);
+
+    picks
+      .filter(function (p) { return !league || p.league === league; })
+      .forEach(function (p) {
+        var opt = document.createElement('option');
+        opt.value = p.id;
+        opt.textContent = p.source + ' — ' + p.matchup + ' — ' + p.selection + ' (' + fmtOdds(p.odds) + ')';
+        pickSelect.appendChild(opt);
+      });
+
+    pickIdInput.value = '';
+    oddsInput.value = '';
+    previewEl.hidden = true;
+  }
+
+  leagueSelect.addEventListener('change', function () { populatePicks(leagueSelect.value); });
+
+  pickSelect.addEventListener('change', function () {
+    var pick = picks.filter(function (p) { return String(p.id) === pickSelect.value; })[0];
+    if (!pick) {
+      pickIdInput.value = '';
+      previewEl.hidden = true;
+      return;
+    }
+    pickIdInput.value = pick.id;
+    oddsInput.value = pick.odds;
+    previewEl.hidden = false;
+    previewEl.textContent = pick.category + ' · ' + pick.matchup + ' · ' + pick.selection + ' — line on the dashboard: ' + fmtOdds(pick.odds);
+  });
+
+  populatePicks('');
+})();
+</script>
+{% endblock %}
