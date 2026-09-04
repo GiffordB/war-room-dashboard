@@ -1,6 +1,6 @@
 {
   "next_report_id": 4,
-  "next_pick_id": 1,
+  "next_pick_id": 2,
   "reports": [
     {
       "source": "ChatGPT",
@@ -14,5 +14,25 @@
       "id": 3
     }
   ],
-  "picks": []
+  "picks": [
+    {
+      "report_id": 3,
+      "category": "best_bet",
+      "matchup": "Miami Hurricanes @ Stanford Cardinal",
+      "selection": "Stanford Cardinal +24.5",
+      "odds": -115,
+      "stake": 50.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "War Room number: Miami -23 (range -20.5 to -26); est. edge Stanford +1.5; confidence medium-low.",
+      "espn_event_id": "401858206",
+      "bet_type": "spread",
+      "bet_side": "home",
+      "bet_line": 24.5,
+      "home_team": "Stanford Cardinal",
+      "away_team": "Miami Hurricanes",
+      "created_at": "2026-09-04T02:29:21",
+      "id": 1
+    }
+  ]
 }
