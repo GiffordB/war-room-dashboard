@@ -14,7 +14,7 @@
       </label>
       <label>
         League
-        <select name="league" required>
+        <select name="league" id="league" required>
           {% for code in league_order %}<option value="{{ code }}">{{ leagues[code] }}</option>{% endfor %}
         </select>
       </label>
@@ -23,17 +23,23 @@
     <div class="form-row">
       <label>
         Report Date
-        <input type="date" name="report_date" value="{{ today }}" required>
+        <input type="date" name="report_date" id="report_date" value="{{ today }}" required>
       </label>
       <label>
         Week #
-        <input type="number" name="week_number" min="1" max="40" value="1" required>
+        <input type="number" name="week_number" id="week_number" min="1" max="40" value="1" required>
+        <span id="week-status" class="muted small"></span>
       </label>
     </div>
 
     <label>
       Week / Slate label (optional)
       <input type="text" name="week_label" placeholder="e.g. Week 1 — CFB Openers">
+    </label>
+
+    <label>
+      Philosophy tagline (optional)
+      <input type="text" name="philosophy" placeholder="e.g. Contrarian spots, fair numbers, no forced action.">
     </label>
 
     <label>
@@ -51,4 +57,44 @@
       <a class="btn btn-outline" href="{{ url_for('reports_list') }}">Cancel</a>
     </div>
   </form>
+{% endblock %}
+
+{% block scripts %}
+<script>
+(function () {
+  // Auto-fills Week # from ESPN's own current-week data (see
+  // odds.season_week()) instead of leaving it to be hand-counted and
+  // mislabeled - stops adjusting once the field is edited by hand.
+  const leagueSelect = document.getElementById('league');
+  const dateInput = document.getElementById('report_date');
+  const weekInput = document.getElementById('week_number');
+  const statusEl = document.getElementById('week-status');
+  let userEdited = false;
+
+  weekInput.addEventListener('input', () => {
+    userEdited = true;
+    statusEl.textContent = '';
+  });
+
+  async function fillWeek() {
+    if (userEdited) return;
+    const league = leagueSelect.value;
+    const date = dateInput.value ? dateInput.value.replace(/-/g, '') : '';
+    statusEl.textContent = 'looking up…';
+    try {
+      const res = await fetch(`/api/week?league=${encodeURIComponent(league)}&date=${date}`);
+      if (!res.ok || userEdited) { statusEl.textContent = ''; return; }
+      const data = await res.json();
+      weekInput.value = data.week;
+      statusEl.textContent = 'auto-filled from ESPN';
+    } catch (err) {
+      statusEl.textContent = '';
+    }
+  }
+
+  leagueSelect.addEventListener('change', fillWeek);
+  dateInput.addEventListener('change', fillWeek);
+  fillWeek();
+})();
+</script>
 {% endblock %}

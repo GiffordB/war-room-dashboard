@@ -136,7 +136,15 @@ Units follow the report's own convention: **$100 staked = 1 unit.**
   whichever word you think in.
 - **Reports** — every report ever logged, with its league, record, and
   profit at a glance, and a link into the full detail page (notes + picks
-  + grading).
+  + grading). A report's own page reads as a full "War Room Card": a
+  tagline (sportsbook, unit size, an optional one-line philosophy), an
+  At a Glance table (each pick's line, the report's own independent
+  number for that market, the estimated edge between them, confidence,
+  and the call), then one numbered card per pick with **The Case**
+  (bulleted reasoning) and, where given, **Price Discipline** (stake
+  tiers by how the line moves) — closing with a plain-text card recap
+  and a "Fun-First Charter" disclaimer. `/latest` renders the same card
+  read-only.
 - **Add Report / Add Pick** — simple forms matching the report template's
   own categories and stake guidance (shown right in the dropdown).
 - **Look Up Odds** — on the Add a Pick form, pick a date and hit "Find
@@ -194,12 +202,22 @@ The bot writes through the same JSON API a human could script against:
 
 - `GET /api/standings`, `/api/team_intel`, `/api/match_intel` — the Team
   Intel research, machine-readable.
+- `GET /api/week` — the league's actual current week/matchweek (ESPN's
+  own `week.number` for CFB/NFL; derived from the standings for EPL/UCL,
+  which don't expose one directly). Also auto-fills Week # on the Add
+  Report form as soon as a league/date is picked, so it's never
+  hand-counted (and mislabeled) again.
 - `POST /api/reports`, `POST /api/reports/<id>/picks` — create a report
-  and its picks in one call each, no HTML form needed. Picks accept an
-  optional `confidence` (0-100) alongside the usual fields; it's shown
-  next to the pick but isn't used in grading or payout math.
-- `PATCH /api/reports/<id>` — fix a report's own week_number/week_label/
-  notes after the fact without touching its picks.
+  and its picks in one call each, no HTML form needed. A report accepts
+  an optional `philosophy` tagline; a pick accepts optional `confidence`
+  (0-100), `war_room_line` (the report's own independent number for that
+  market), `edge` (the gap between that and the posted line), and
+  `price_discipline` (stake tiers, one per line) — all shown on the
+  report, none used in grading or payout math.
+- `PATCH /api/reports/<id>`, `PATCH /api/reports/<id>/picks/<id>` — fix
+  a report's or pick's own analysis fields after the fact (week number,
+  notes, confidence, war room line, edge, price discipline, philosophy)
+  without touching picks, grading, or bet fields.
 
 ## What's next
 
