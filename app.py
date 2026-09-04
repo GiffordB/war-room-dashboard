@@ -1334,6 +1334,11 @@ def create_wallet_entry(fields):
         "result": pick["result"],
         "profit_loss": profit_for_result(stake, odds, pick["result"]) if pick["result"] != "pending" else 0.0,
         "notes": (fields.get("notes") or "").strip() or None,
+        # A frozen snapshot of the pick's WR Confidence Score at the
+        # moment this bet was logged - deliberately never touched again,
+        # even if the pick's own wr_confidence is later revised (e.g. on
+        # fresh injury news). What mattered was the read at bet time.
+        "wr_confidence_at_bet": pick.get("wr_confidence"),
         "created_at": datetime.utcnow().isoformat(timespec="seconds"),
     }
 
@@ -1457,6 +1462,7 @@ def my_wallet():
                 "matchup": p["matchup"],
                 "selection": p["selection"],
                 "odds": p["odds"],
+                "wr_confidence": p.get("wr_confidence"),
             }
         )
     pending_picks.sort(key=lambda p: p["id"], reverse=True)

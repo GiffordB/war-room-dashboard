@@ -93,6 +93,7 @@
               <th>Source</th>
               <th>League</th>
               <th>Bet</th>
+              <th>WR % at Bet</th>
               <th>Odds</th>
               <th>Stake</th>
               <th>Result</th>
@@ -109,6 +110,11 @@
                 <td>
                   <a href="{{ url_for('report_detail', report_id=e.report_id) }}">{{ e.matchup }} — {{ e.selection }}</a>
                   {% if e.notes %}<div class="muted small">{{ e.notes }}</div>{% endif %}
+                </td>
+                <td>
+                  {% if e.get('wr_confidence_at_bet') is not none %}
+                    <span class="badge-wr-confidence" title="Frozen at the moment this bet was logged — doesn't move if the pick's live WR score is later revised">{{ e.wr_confidence_at_bet | round | int }}%</span>
+                  {% else %}<span class="muted">—</span>{% endif %}
                 </td>
                 <td class="muted">{{ '%+d'|format(e.odds) }}</td>
                 <td>${{ '{:,.0f}'.format(e.stake) }}</td>
@@ -203,7 +209,8 @@
       .forEach(function (p) {
         var opt = document.createElement('option');
         opt.value = p.id;
-        opt.textContent = p.source + ' — ' + p.matchup + ' — ' + p.selection + ' (' + fmtOdds(p.odds) + ')';
+        var wr = (p.wr_confidence !== null && p.wr_confidence !== undefined) ? ', WR ' + Math.round(p.wr_confidence) + '%' : '';
+        opt.textContent = p.source + ' — ' + p.matchup + ' — ' + p.selection + ' (' + fmtOdds(p.odds) + wr + ')';
         pickSelect.appendChild(opt);
       });
 
@@ -224,7 +231,10 @@
     pickIdInput.value = pick.id;
     oddsInput.value = pick.odds;
     previewEl.hidden = false;
-    previewEl.textContent = pick.category + ' · ' + pick.matchup + ' · ' + pick.selection + ' — line on the dashboard: ' + fmtOdds(pick.odds);
+    var wrText = (pick.wr_confidence !== null && pick.wr_confidence !== undefined)
+      ? ' · WR Confidence Score right now: ' + Math.round(pick.wr_confidence) + '% (this gets frozen onto the bet the moment you log it)'
+      : '';
+    previewEl.textContent = pick.category + ' · ' + pick.matchup + ' · ' + pick.selection + ' — line on the dashboard: ' + fmtOdds(pick.odds) + wrText;
   });
 
   populatePicks('');
