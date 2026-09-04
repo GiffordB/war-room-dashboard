@@ -1,6 +1,6 @@
 {
   "next_report_id": 8,
-  "next_pick_id": 19,
+  "next_pick_id": 20,
   "reports": [
     {
       "source": "ChatGPT",
@@ -395,6 +395,29 @@
       "created_at": "2026-09-04T15:01:22",
       "id": 18,
       "wr_confidence": 58.0
+    },
+    {
+      "report_id": 7,
+      "category": "best_bet",
+      "matchup": "San Jos\u00e9 State Spartans @ Eastern Michigan Eagles",
+      "selection": "San Jose State +3",
+      "odds": -110,
+      "stake": 100.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "Eastern Michigan opened -4, the sheet printed -3, Pinnacle has kept sliding to -1 at 50.7% no-vig -- a five-point drop from the opener in a MAC game usually means a QB story. Est. cover 54% (+8% push), certainty 70%, EV near +10.6% net of vig -- the only number on this board that would survive a skeptic. Priced at the sheet book carrying the stale -3, not necessarily DraftKings live.",
+      "wr_confidence": 80.0,
+      "war_room_line": "Pinnacle: EMU -1 (has drifted from an opening -4 to -1)",
+      "edge": "Sheet still prints EMU -3, ~3 points of stale line -- the best number on the board",
+      "price_discipline": "Bet now -- the stale number is gone at kickoff.",
+      "espn_event_id": "401864495",
+      "bet_type": "spread",
+      "bet_side": "away",
+      "bet_line": 3.0,
+      "home_team": "Eastern Michigan Eagles",
+      "away_team": "San Jos\u00e9 State Spartans",
+      "created_at": "2026-09-04T22:33:37",
+      "id": 19
     }
   ],
   "next_wallet_id": 6,
