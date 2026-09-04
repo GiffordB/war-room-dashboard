@@ -341,15 +341,21 @@ def attach_game_status(picks, league=None):
 def recent_picks_by_week(data, league=None, limit=4):
     """
     Every pick, grouped by (report.league, report.week_number), for the
-    most recent `limit` weeks that have any picks in this league scope -
-    newest week first, picks within a week newest-first. Grouping is
+    most recent `limit` groups that have any picks in this league scope -
+    truly-newest-first, picks within a group newest-first. Grouping is
     keyed by league as well as week_number - not week_number alone -
     since week numbering resets per league (EPL/UCL matchweeks vs.
     CFB/NFL season weeks aren't the same sequence, so two different
-    leagues' "Week 3" must never land in the same bucket). The label
-    spells out the league too whenever this view can span more than one
-    (All Leagues, All Football/Futbol) so "Week 3" is never ambiguous on
-    screen; a single-league view keeps the plain label.
+    leagues' "Week 3" must never land in the same bucket). Groups are
+    ordered by the latest report's created_at, not by the raw week
+    number, so a same-week second card (e.g. a Friday slate added after
+    a Thursday one) always sorts as most recent instead of getting
+    silently outranked by an unrelated league's higher week number. The
+    label spells out the league too whenever this view can span more
+    than one (All Leagues, All Football/Futbol) so "Week 3" is never
+    ambiguous on screen; a single-league view keeps the plain label, and
+    always reflects the most-recently-created report's own week_label
+    (e.g. "Friday Card") rather than whichever report was seen first.
 
     Each pick carries a `game` status badge (see attach_game_status) so a
     settled pick still shows the final score for context, not just the
@@ -363,15 +369,16 @@ def recent_picks_by_week(data, league=None, limit=4):
         if not r or not _league_matches(r["league"], league):
             continue
         wk = (r["league"], r["week_number"])
-        if wk not in by_week:
+        group = by_week.setdefault(wk, {"week_key": wk, "label": "", "latest_created_at": "", "picks": []})
+        if r["created_at"] > group["latest_created_at"]:
+            group["latest_created_at"] = r["created_at"]
             base_label = r["week_label"] or f"Week {r['week_number']}"
-            label = f"{base_label} — {LEAGUES[r['league']]}" if multi_league else base_label
-            by_week[wk] = {"week_key": wk, "label": label, "picks": []}
+            group["label"] = f"{base_label} — {LEAGUES[r['league']]}" if multi_league else base_label
         merged = dict(p)
         merged.update(source=r["source"], league=r["league"], report_date=r["report_date"])
-        by_week[wk]["picks"].append(merged)
+        group["picks"].append(merged)
 
-    weeks = sorted(by_week.values(), key=lambda g: (g["week_key"][1], g["week_key"][0]), reverse=True)[:limit]
+    weeks = sorted(by_week.values(), key=lambda g: g["latest_created_at"], reverse=True)[:limit]
     for group in weeks:
         group["picks"].sort(key=lambda p: p["id"], reverse=True)
         group["picks"] = attach_game_status(group["picks"])
@@ -535,6 +542,7 @@ def weekly_stats(data, league=None):
     reports = {r["id"]: r for r in data["reports"]}
     multi_league = league is None or isinstance(league, (set, frozenset))
     week_labels = {}
+    week_label_created_at = {}
     result = {}
     for p in data["picks"]:
         if p["result"] not in ("win", "loss", "push"):
@@ -544,7 +552,12 @@ def weekly_stats(data, league=None):
             continue
 
         wk = (r["league"], r["week_number"])
-        if wk not in week_labels:
+        # Use the most-recently-created report's label for this week, not
+        # the first one seen - otherwise a week stays branded with its
+        # earliest card's name (e.g. "Thursday Card") even after a later
+        # card (e.g. "Friday Card") for the same week is added.
+        if wk not in week_label_created_at or r["created_at"] > week_label_created_at[wk]:
+            week_label_created_at[wk] = r["created_at"]
             base_label = r["week_label"] or f"Week {r['week_number']}"
             week_labels[wk] = f"{base_label} — {LEAGUES[r['league']]}" if multi_league else base_label
         key = (wk, r["source"])
