@@ -147,7 +147,10 @@
       "home_team": "Hull City",
       "away_team": "Aston Villa",
       "created_at": "2026-09-04T11:40:37",
-      "id": 6
+      "id": 6,
+      "war_room_line": "Model: Hull ~40% to win outright",
+      "edge": "Market implies ~24% at +310; model's 40% is the real gap here -- Villa are the only PL side with zero shots on target this season",
+      "price_discipline": "+310 or better: $25\n+275 to +309: $25\n+250 or worse: pass"
     },
     {
       "report_id": 4,
