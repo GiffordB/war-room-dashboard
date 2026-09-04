@@ -14,6 +14,34 @@
     {% endfor %}
   </div>
 
+  {% if locks %}
+    <section class="locks-section">
+      <h2 class="section-label lock-label">🔒 War Room Locks of the Week</h2>
+      <p class="muted small">Claude, Grok, and ChatGPT all landed on the same side of the same game — still pending.</p>
+      <div class="locks-grid">
+        {% for lock in locks %}
+          <div class="lock-card">
+            <div class="lock-card-head">
+              <span class="badge-league">{{ lock.league }}</span>
+              <span style="color: {{ categories[lock.category].color }};">{{ categories[lock.category].icon }} {{ categories[lock.category].label }}</span>
+            </div>
+            <div class="lock-matchup">{{ lock.matchup }}</div>
+            <div class="lock-sources">
+              {% for s in sources %}
+                {% set entry = lock.by_source[s] %}
+                <div class="lock-source-row">
+                  <span class="badge-source" style="background: {{ source_color(s) }};">{{ s }}</span>
+                  <span>{{ entry.pick.selection }}</span>
+                  <span class="muted">{{ '%+d'|format(entry.pick.odds) }}</span>
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </section>
+  {% endif %}
+
   {% if report_count == 0 %}
     <p class="empty">No reports logged yet for this view. <a href="{{ url_for('add_report') }}">Add your first report</a> to start tracking picks.</p>
   {% endif %}
@@ -32,46 +60,46 @@
 
   <section>
     <h2 class="section-label">Head to Head</h2>
-    <div class="source-grid">
-      {% for s in sources %}
+    <div class="leaderboard">
+      {% for s in ranked %}
         {% set st = stats[s] %}
-        <div class="source-card" style="--accent: {{ source_color(s) }};">
-          <div class="source-card-head">
+        {% set delta = movement.get(s, 0) %}
+        <div class="leaderboard-row" style="--accent: {{ source_color(s) }};">
+          <div class="leaderboard-rank">
+            <span class="rank-num">#{{ loop.index }}</span>
+            {% if delta > 0 %}
+              <span class="rank-arrow rank-up" title="Moved up a spot on the last result">▲</span>
+            {% elif delta < 0 %}
+              <span class="rank-arrow rank-down" title="Moved down a spot on the last result">▼</span>
+            {% endif %}
+          </div>
+          <div class="leaderboard-source">
             <span class="source-dot" style="background: {{ source_color(s) }};"></span>
-            <h2>{{ s }}</h2>
+            <strong>{{ s }}</strong>
           </div>
-          <div class="source-record">{{ st.wins }}-{{ st.losses }}{% if st.pushes %}-{{ st.pushes }}{% endif %}
-            <span class="muted">{{ st.settled }} settled{% if st.pending %} · {{ st.pending }} pending{% endif %}</span>
+          <div class="leaderboard-stat">
+            <div class="source-stat-num">{{ st.wins }}-{{ st.losses }}{% if st.pushes %}-{{ st.pushes }}{% endif %}</div>
+            <div class="source-stat-label">Record</div>
           </div>
-          <div class="source-stat-row">
-            <div>
-              <div class="source-stat-num">
-                {% if st.win_pct is not none %}{{ '%.0f'|format(st.win_pct) }}%{% else %}—{% endif %}
-              </div>
-              <div class="source-stat-label">Win Rate</div>
-            </div>
-            <div>
-              <div class="source-stat-num {{ 'pos' if st.profit > 0 else 'neg' if st.profit < 0 else '' }}">
-                {{ '%+.2f'|format(st.units) }} u
-              </div>
-              <div class="source-stat-label">Units</div>
-            </div>
-            <div>
-              <div class="source-stat-num {{ 'pos' if st.profit > 0 else 'neg' if st.profit < 0 else '' }}">
-                {{ '%+.0f'|format(st.profit) }}$
-              </div>
-              <div class="source-stat-label">Profit</div>
-            </div>
-            <div>
-              <div class="source-stat-num">
-                {% if st.roi is not none %}{{ '%+.1f'|format(st.roi) }}%{% else %}—{% endif %}
-              </div>
-              <div class="source-stat-label">ROI</div>
-            </div>
-            <div>
-              <div class="source-stat-num">${{ '{:,.0f}'.format(st.staked) }}</div>
-              <div class="source-stat-label">Staked</div>
-            </div>
+          <div class="leaderboard-stat">
+            <div class="source-stat-num">{% if st.win_pct is not none %}{{ '%.0f'|format(st.win_pct) }}%{% else %}—{% endif %}</div>
+            <div class="source-stat-label">Win Rate</div>
+          </div>
+          <div class="leaderboard-stat">
+            <div class="source-stat-num {{ 'pos' if st.profit > 0 else 'neg' if st.profit < 0 else '' }}">{{ '%+.2f'|format(st.units) }} u</div>
+            <div class="source-stat-label">Units</div>
+          </div>
+          <div class="leaderboard-stat">
+            <div class="source-stat-num {{ 'pos' if st.profit > 0 else 'neg' if st.profit < 0 else '' }}">{{ '%+.0f'|format(st.profit) }}$</div>
+            <div class="source-stat-label">Profit</div>
+          </div>
+          <div class="leaderboard-stat">
+            <div class="source-stat-num">{% if st.roi is not none %}{{ '%+.1f'|format(st.roi) }}%{% else %}—{% endif %}</div>
+            <div class="source-stat-label">ROI</div>
+          </div>
+          <div class="leaderboard-stat">
+            <div class="source-stat-num">${{ '{:,.0f}'.format(st.staked) }}</div>
+            <div class="source-stat-label">Staked</div>
           </div>
         </div>
       {% endfor %}
@@ -148,6 +176,11 @@
 
   <section>
     <h2 class="section-label">Category Breakdown</h2>
+    <ul class="category-legend">
+      {% for c in category_order %}
+        <li><span style="color: {{ categories[c].color }};">{{ categories[c].icon }} {{ categories[c].label }}</span> — {{ categories[c].guidance }}</li>
+      {% endfor %}
+    </ul>
     <div class="table-scroll">
       <table class="data-table category-table">
         <thead>
@@ -194,6 +227,12 @@
             <span class="muted">{{ '%+d'|format(p.odds) }}</span>
             <span class="muted">${{ '{:,.0f}'.format(p.stake) }}</span>
             <span class="badge-result" style="background: {{ result_color(p.result) }};">{{ result_label(p.result) }}</span>
+            {% if p.live %}
+              <span class="badge-live badge-live-{{ p.live.status }}">
+                {{ '⏳ FINAL' if p.live.final else '🔴 LIVE' }} {{ p.live.score }} ·
+                {{ 'Winning' if p.live.status == 'win' else 'Losing' if p.live.status == 'loss' else 'Push' }}
+              </span>
+            {% endif %}
             <span class="{{ 'pos' if p.profit_loss > 0 else 'neg' if p.profit_loss < 0 else 'muted' }}">
               {% if p.result != 'pending' %}{{ '%+.0f'|format(p.profit_loss) }}${% endif %}
             </span>

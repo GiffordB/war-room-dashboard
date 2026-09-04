@@ -164,6 +164,44 @@ section { margin-bottom: 44px; }
   border-color: var(--gold);
 }
 
+/* ---------------- War Room Locks ---------------- */
+.locks-section { margin-bottom: 32px; }
+.lock-label { color: var(--gold-bright); }
+
+.locks-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 14px;
+  margin-top: 10px;
+}
+
+.lock-card {
+  background: var(--surface);
+  border: 1px solid var(--gold);
+  box-shadow: 0 0 0 1px rgba(253, 208, 35, 0.08);
+  border-radius: 14px;
+  padding: 16px 18px;
+}
+
+.lock-card-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.lock-matchup { font-weight: 700; margin-bottom: 12px; }
+
+.lock-sources { display: flex; flex-direction: column; gap: 6px; }
+.lock-source-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.88rem;
+}
+
 /* ---------------- Vs banner ---------------- */
 .vs-banner {
   background: var(--surface);
@@ -175,32 +213,44 @@ section { margin-bottom: 44px; }
   font-size: 0.95rem;
 }
 
-/* ---------------- Source comparison cards ---------------- */
-.source-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 16px;
-}
+/* ---------------- Leaderboard ---------------- */
+.leaderboard { display: flex; flex-direction: column; gap: 10px; }
 
-.source-card {
+.leaderboard-row {
   background: var(--surface);
   border: 1px solid var(--border);
-  border-top: 3px solid var(--accent, var(--gold));
-  border-radius: 14px;
-  padding: 20px 22px;
+  border-left: 4px solid var(--accent, var(--gold));
+  border-radius: 12px;
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  flex-wrap: wrap;
 }
 
-.source-card-head { display: flex; align-items: center; gap: 10px; }
-.source-card-head h2 { margin: 0; font-size: 1.1rem; }
+.leaderboard-rank { display: flex; align-items: center; gap: 4px; min-width: 40px; }
+.rank-num { font-size: 1.3rem; font-weight: 800; color: var(--muted); }
+.rank-arrow { font-size: 0.85rem; font-weight: 800; }
+.rank-up { color: var(--green); }
+.rank-down { color: var(--red); }
+
+.leaderboard-source {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.05rem;
+  min-width: 110px;
+}
 
 .source-dot { width: 12px; height: 12px; border-radius: 999px; flex-shrink: 0; }
 
-.source-record { margin: 8px 0 16px; font-size: 1.3rem; font-weight: 800; }
-.source-record .muted { font-size: 0.8rem; font-weight: 500; margin-left: 6px; }
+.leaderboard-stat { min-width: 70px; }
+.source-stat-num { font-size: 1.05rem; font-weight: 700; }
+.source-stat-label { color: var(--muted); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.05em; margin-top: 2px; }
 
-.source-stat-row { display: flex; gap: 20px; flex-wrap: wrap; }
-.source-stat-num { font-size: 1.15rem; font-weight: 700; }
-.source-stat-label { color: var(--muted); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; margin-top: 2px; }
+@media (max-width: 720px) {
+  .leaderboard-row { gap: 14px 20px; }
+}
 
 .pos { color: var(--green); }
 .neg { color: var(--red); }
@@ -217,6 +267,18 @@ section { margin-bottom: 44px; }
 .chart-legend { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 10px; font-size: 0.85rem; }
 .legend-item { display: inline-flex; align-items: center; gap: 6px; }
 .legend-item i { width: 10px; height: 10px; border-radius: 3px; display: inline-block; }
+
+.category-legend {
+  list-style: none;
+  margin: 0 0 14px;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 18px;
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+.category-legend li { white-space: nowrap; }
 
 /* ---------------- Tables ---------------- */
 .table-scroll { overflow-x: auto; }
@@ -280,6 +342,19 @@ section { margin-bottom: 44px; }
   border-radius: 999px;
   margin-left: 6px;
 }
+
+.badge-live {
+  display: inline-block;
+  font-weight: 700;
+  font-size: 0.72rem;
+  padding: 2px 9px;
+  border-radius: 999px;
+  margin-top: 4px;
+  white-space: nowrap;
+}
+.badge-live-win { background: rgba(34, 197, 94, 0.16); color: var(--green); border: 1px solid var(--green); }
+.badge-live-loss { background: rgba(239, 68, 68, 0.16); color: var(--red); border: 1px solid var(--red); }
+.badge-live-push { background: rgba(234, 179, 8, 0.16); color: var(--gold-bright); border: 1px solid var(--gold); }
 
 /* ---------------- Notes ---------------- */
 .notes-grid {

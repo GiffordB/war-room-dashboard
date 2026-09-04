@@ -219,6 +219,41 @@ def auto_grade_pending(data, report_id=None):
     return graded, still_pending
 
 
+def attach_live_status(picks, league=None):
+    """
+    Live-preview copies of `picks`: for each still-pending, ESPN-linked
+    pick whose game has actually started, adds a `live` dict {status:
+    'win'|'loss'|'push', score: 'AWAY-HOME', final: bool} - "if the game
+    ended right now, is this pick good." A game not yet started shows
+    nothing (a 0-0 score would be a meaningless preview). This never
+    changes `result` - that only happens for real once the game is final
+    and Auto-Grade runs. `league` is used for every pick if given
+    (report_detail, one league for the whole page); otherwise each pick's
+    own 'league' key is used (the dashboard's cross-league recent list).
+    """
+    score_cache = {}
+    result = []
+    for original in picks:
+        pick = dict(original)
+        pick["live"] = None
+        pick_league = league or pick.get("league")
+        if pick["result"] == "pending" and pick.get("espn_event_id") and pick.get("bet_type") and pick_league:
+            key = (pick_league, pick["espn_event_id"])
+            if key not in score_cache:
+                score_cache[key] = odds.final_score(pick_league, pick["espn_event_id"])
+            final = score_cache[key]
+            if final and final["state"] in ("in", "post"):
+                outcome = grade_pick(pick, final)
+                if outcome:
+                    pick["live"] = {
+                        "status": outcome,
+                        "score": f"{final['away_score']}-{final['home_score']}",
+                        "final": final["state"] == "post",
+                    }
+        result.append(pick)
+    return result
+
+
 def empty_stats(source=None):
     return {
         "source": source,
@@ -402,9 +437,90 @@ def weekly_win_pct_chart(week_numbers, week_labels, data):
     return categories, series
 
 
+def war_room_locks(data, league=None):
+    """
+    Consensus picks: still pending (upcoming, not graded yet) and picked
+    by all three sources on the same game, market, and side. Grouped by
+    espn_event_id rather than the free-text matchup, since that's the
+    only reliable way to tell "same game" across sources that word their
+    matchup text differently - so only picks pulled from the DraftKings-
+    odds widget (the ones carrying that id) are eligible at all. The bet
+    line itself isn't part of the match, since it can move slightly
+    between when each source wrote its report; agreeing on the same team
+    on the same side of the same market is what "consensus" means here.
+    """
+    reports = {r["id"]: r for r in data["reports"]}
+    groups = {}
+    for p in data["picks"]:
+        if p["result"] != "pending" or not p.get("espn_event_id") or not p.get("bet_type"):
+            continue
+        r = reports.get(p["report_id"])
+        if not r or (league and r["league"] != league):
+            continue
+
+        key = (p["espn_event_id"], p["bet_type"], p["bet_side"])
+        by_source = groups.setdefault(key, {})
+        current = by_source.get(r["source"])
+        if current is None or p["id"] > current["pick"]["id"]:
+            by_source[r["source"]] = {"pick": p, "report": r}
+
+    locks = []
+    for by_source in groups.values():
+        if not all(s in by_source for s in SOURCES):
+            continue
+        sample = next(iter(by_source.values()))
+        locks.append(
+            {
+                "matchup": sample["pick"]["matchup"],
+                "league": sample["report"]["league"],
+                "category": sample["pick"]["category"],
+                "by_source": by_source,
+            }
+        )
+
+    locks.sort(key=lambda lock: lock["matchup"])
+    return locks
+
+
 def rank_sources(stats):
     """Sources ordered by profit, best first."""
     return sorted(SOURCES, key=lambda s: stats[s]["profit"], reverse=True)
+
+
+def rank_movement(data, league=None):
+    """
+    {source: delta} where delta is +1 if that source's rank improved
+    (moved up a spot) as of the very last settled pick to come in, -1 if
+    it dropped a spot, 0 otherwise. Compares the standings right before
+    that last result against the standings after it - "recently moved"
+    meaning "the last result changed the order", not any fixed time
+    window like "since yesterday".
+    """
+    reports = {r["id"]: r for r in data["reports"]}
+    rows = []
+    for p in data["picks"]:
+        if p["result"] not in ("win", "loss", "push"):
+            continue
+        r = reports.get(p["report_id"])
+        if not r or (league and r["league"] != league):
+            continue
+        rows.append((r["report_date"], p["id"], r["source"], p["profit_loss"]))
+    rows.sort(key=lambda row: (row[0], row[1]))
+
+    if len(rows) < 2:
+        return {s: 0 for s in SOURCES}
+
+    def ranks_at(upto):
+        profit = {s: 0.0 for s in SOURCES}
+        for _date, _id, src, pl in rows[:upto]:
+            if src in SOURCES:
+                profit[src] += pl
+        order = sorted(SOURCES, key=lambda s: profit[s], reverse=True)
+        return {s: i for i, s in enumerate(order)}
+
+    before = ranks_at(len(rows) - 1)
+    after = ranks_at(len(rows))
+    return {s: before[s] - after[s] for s in SOURCES}  # positive = moved up
 
 
 def resolve_league(value):
@@ -419,8 +535,11 @@ def dashboard():
     data = store.load_data()
     league = resolve_league(request.args.get("league"))
 
+    locks = war_room_locks(data, league)
+
     stats = {s: source_stats(data, s, league) for s in SOURCES}
     ranked = rank_sources(stats)
+    movement = rank_movement(data, league)
     any_settled = any(stats[s]["settled"] for s in SOURCES)
 
     chart_dates, chart_series = cumulative_units_chart(data, league)
@@ -454,13 +573,16 @@ def dashboard():
         merged = dict(p)
         merged.update(source=r["source"], league=r["league"], report_date=r["report_date"], week_label=r["week_label"])
         recent.append(merged)
+    recent = attach_live_status(recent)
 
     report_count = sum(1 for r in data["reports"] if not league or r["league"] == league)
 
     return render_template(
         "index.html",
+        locks=locks,
         stats=stats,
         ranked=ranked,
+        movement=movement,
         any_settled=any_settled,
         units_chart=units_chart,
         win_pct_chart=win_pct_chart,
@@ -551,6 +673,7 @@ def report_detail(report_id):
 
     picks = sorted((p for p in data["picks"] if p["report_id"] == report_id), key=lambda p: p["id"])
     auto_gradable = sum(1 for p in picks if p["result"] == "pending" and p.get("espn_event_id"))
+    picks = attach_live_status(picks, league=report["league"])
 
     return render_template(
         "report_detail.html",

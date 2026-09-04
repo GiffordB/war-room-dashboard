@@ -118,10 +118,13 @@ def game_odds(league, event_id):
 
 def final_score(league, event_id):
     """
-    {'completed': bool, 'home_score': int, 'away_score': int} for one
-    event, or None if the game/event can't be found at all. `completed`
-    is False for a game that's scheduled or in progress - callers should
-    leave those picks pending rather than grading off a partial score.
+    {'completed': bool, 'state': 'pre'|'in'|'post', 'home_score': int,
+    'away_score': int} for one event, or None if the game/event can't be
+    found at all. `completed` is False for a game that's scheduled or in
+    progress - callers grading a pick off this should only do so once
+    it's True. `state` lets a caller show a *live* preview (score so far,
+    winning/losing right now) for a game that's 'in' progress without
+    treating that partial score as a final grade.
     """
     sport_path = SPORT_PATHS.get(league)
     if not sport_path or not event_id:
@@ -134,12 +137,13 @@ def final_score(league, event_id):
 
     try:
         comp = data["header"]["competitions"][0]
-        completed = bool(comp["status"]["type"]["completed"])
+        status_type = comp["status"]["type"]
         competitors = comp["competitors"]
         home = next(c for c in competitors if c["homeAway"] == "home")
         away = next(c for c in competitors if c["homeAway"] == "away")
         return {
-            "completed": completed,
+            "completed": bool(status_type["completed"]),
+            "state": status_type.get("state", "pre"),
             "home_score": int(home["score"]),
             "away_score": int(away["score"]),
         }
