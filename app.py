@@ -22,6 +22,7 @@ Shape of this file:
 """
 
 import re
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime
 
 from flask import Flask, jsonify, redirect, render_template, request, url_for
@@ -281,6 +282,29 @@ def auto_grade_pending(data, report_id=None):
     return graded, still_pending
 
 
+def _parallel_map(fn, items, max_workers=8):
+    """
+    Run fn(item) for every item concurrently and return {item: result}.
+    These calls are all I/O-bound network round-trips to ESPN, so plain
+    threads (not real parallelism, but enough while waiting on sockets)
+    turn what used to be N sequential round-trips into roughly one
+    round-trip's worth of wall-clock time. A failing call yields None
+    for that item rather than blowing up the whole batch.
+    """
+    if not items:
+        return {}
+    results = {}
+    with ThreadPoolExecutor(max_workers=min(max_workers, len(items))) as pool:
+        future_to_item = {pool.submit(fn, item): item for item in items}
+        for future in as_completed(future_to_item):
+            item = future_to_item[future]
+            try:
+                results[item] = future.result()
+            except Exception:
+                results[item] = None
+    return results
+
+
 def attach_game_status(picks, league=None):
     """
     Score-badge copies of `picks`: for each ESPN-linked pick whose game
@@ -301,11 +325,28 @@ def attach_game_status(picks, league=None):
     for every pick if given (report_detail, one league for the whole
     page); otherwise each pick's own 'league' key is used (the
     dashboard's cross-league recent list).
+
+    Every distinct (league, event_id) that actually needs a live score
+    is fetched in parallel up front - with a dozen-plus pending picks
+    across a dozen-plus different games, one round-trip at a time was
+    the single biggest thing slowing every page that shows recent picks.
     """
     settled_labels = {"win": "Won", "loss": "Lost", "push": "Push"}
     live_labels = {"win": "Winning", "loss": "Losing", "push": "Push"}
 
-    score_cache = {}
+    needed_keys = set()
+    for original in picks:
+        pick_league = league or original.get("league")
+        if (
+            original["result"] != "void"
+            and original.get("espn_event_id")
+            and original.get("bet_type")
+            and pick_league
+        ):
+            needed_keys.add((pick_league, original["espn_event_id"]))
+
+    score_cache = _parallel_map(lambda key: odds.final_score(key[0], key[1]), list(needed_keys))
+
     result = []
     for original in picks:
         pick = dict(original)
@@ -318,9 +359,7 @@ def attach_game_status(picks, league=None):
             and pick_league
         ):
             key = (pick_league, pick["espn_event_id"])
-            if key not in score_cache:
-                score_cache[key] = odds.final_score(pick_league, pick["espn_event_id"])
-            final = score_cache[key]
+            final = score_cache.get(key)
             if final and final["state"] in ("in", "post"):
                 score_str = f"{final['away_score']}-{final['home_score']}"
                 if pick["result"] == "pending":
@@ -1534,27 +1573,48 @@ def wallet_news_alerts(entries, picks_by_id, limit_per_team=4):
     lineup/suspension language - a nudge to read it, not a verdict that
     it actually swings this bet, so the headline itself is always shown
     either way.
+
+    Two batches, each fetched in parallel rather than one round-trip at
+    a time: first match_info() for every unique game (to get team ids),
+    then team_news() for every unique (league, team) pair across all of
+    them - the second batch has to wait on the first (it needs the team
+    ids), but within each batch every call fires at once.
     """
-    seen_events = set()
-    watches = []
+    event_matchups = {}
     for e in entries:
         if e["result"] != "pending":
             continue
         pick = picks_by_id.get(e["pick_id"])
         if not pick or not pick.get("espn_event_id"):
             continue
-        event_key = (e["league"], pick["espn_event_id"])
-        if event_key in seen_events:
-            continue
-        seen_events.add(event_key)
+        event_matchups.setdefault((e["league"], pick["espn_event_id"]), e["matchup"])
 
-        info = odds.match_info(e["league"], pick["espn_event_id"])
+    if not event_matchups:
+        return []
+
+    match_infos = _parallel_map(lambda key: odds.match_info(key[0], key[1]), list(event_matchups.keys()))
+
+    team_lookup = {}
+    for (event_league, _event_id), info in match_infos.items():
+        if not info:
+            continue
+        team_lookup[(event_league, info["home_id"])] = info["home_name"]
+        team_lookup[(event_league, info["away_id"])] = info["away_name"]
+
+    news_by_team = _parallel_map(
+        lambda key: odds.team_news(key[0], key[1], limit=limit_per_team), list(team_lookup.keys())
+    )
+
+    watches = []
+    for event_key, matchup in event_matchups.items():
+        event_league, _event_id = event_key
+        info = match_infos.get(event_key)
         if not info:
             continue
 
         headlines = []
         for team_id, team_name in ((info["home_id"], info["home_name"]), (info["away_id"], info["away_name"])):
-            for article in odds.team_news(e["league"], team_id, limit=limit_per_team):
+            for article in news_by_team.get((event_league, team_id)) or []:
                 if not article.get("headline"):
                     continue
                 headlines.append(
@@ -1570,7 +1630,7 @@ def wallet_news_alerts(entries, picks_by_id, limit_per_team=4):
             continue
         headlines.sort(key=lambda h: h["published"] or "", reverse=True)
         headlines.sort(key=lambda h: h["flagged"], reverse=True)
-        watches.append({"matchup": e["matchup"], "league": e["league"], "headlines": headlines[:8]})
+        watches.append({"matchup": matchup, "league": event_league, "headlines": headlines[:8]})
 
     return watches
 
