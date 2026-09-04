@@ -1,0 +1,28 @@
+name: Auto-grade finished games
+
+# Runs hourly across the football window - Thursday 7pm ET through
+# Tuesday 8am ET - hitting the live app's own auto-grade-all endpoint
+# (no auth needed, it's a plain POST). Split into three schedules
+# because a single cron entry can't express "hour 23 on Thursdays, every
+# hour Friday-Monday, hour 0-12 on Tuesdays" at once.
+#
+# Cron is UTC. These are written for EDT (UTC-4), which is what's in
+# effect for the September-through-early-November part of the season.
+# Once clocks fall back to EST (UTC-5) in early November, the actual ET
+# window drifts an hour later (e.g. the close would land ~9am ET instead
+# of 8am) - harmless for this job (grading is idempotent, an extra or
+# missed hour doesn't hurt anything), but worth shifting by -1 hour on
+# each entry below if you want it exact for the rest of the season.
+on:
+  schedule:
+    - cron: "0 23 * * 4"      # Thursday 7pm ET (23:00 UTC)
+    - cron: "0 * * * 5,6,0,1" # Friday through Monday, every hour
+    - cron: "0 0-12 * * 2"    # Tuesday midnight-noon UTC (through 8am ET)
+  workflow_dispatch: {}
+
+jobs:
+  auto-grade:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Auto-grade finished games
+        run: curl -sf --max-time 120 -X POST "https://war-room-dashboard-fus7.onrender.com/reports/auto_grade_all"

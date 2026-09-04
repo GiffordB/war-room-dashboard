@@ -131,14 +131,22 @@ Units follow the report's own convention: **$100 staked = 1 unit.**
   hand. Games still in progress are left pending and counted separately
   in the confirmation banner. Manually-typed picks (no `🔗 auto` tag)
   are never touched by this and still grade from the dropdown.
+- **Runs on its own, too** — `.github/workflows/auto_grade.yml` hits the
+  live app's auto-grade-all endpoint once an hour, Thursday 7pm ET
+  through Tuesday 8am ET (the football window), so finished games get
+  settled without anyone clicking the button. Free (GitHub Actions on a
+  public repo), no secrets needed since the endpoint has no auth. The
+  schedule is written for EDT (UTC-4); once the season runs past when
+  clocks fall back to EST in early November, the actual ET window drifts
+  about an hour later — harmless (grading is idempotent), but shift each
+  cron entry by an hour if you want it exact. Trigger it by hand anytime
+  from the repo's Actions tab (`workflow_dispatch`).
 
 ## What's next
 
 - Add authentication if more than one person needs to log picks.
 - Track closing-line value: snapshot the line pulled at pick time vs. the
   closing line, and compare that alongside raw win/loss.
-- Auto-refresh: a scheduled job that hits Auto-Grade automatically (e.g.
-  once daily) instead of requiring a manual click.
 - If this ever needs more concurrent writers than one commit-per-change
   comfortably supports, migrate `store.py` to a real database at that
   point — the JSON-in-git approach is a fine trade for staying free at
