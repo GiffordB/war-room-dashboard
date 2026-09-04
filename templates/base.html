@@ -50,11 +50,20 @@
         sessionStorage.setItem('warRoomIntroPlayed', '1');
         splash.classList.add('intro-splash-fade');
         document.body.classList.remove('intro-active');
-        setTimeout(function () { splash.hidden = true; }, 400);
+        setTimeout(function () {
+          splash.hidden = true;
+          splash.style.display = 'none';
+        }, 400);
       }
 
       video.addEventListener('ended', dismiss);
-      skipBtn.addEventListener('click', dismiss);
+      skipBtn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        dismiss();
+      });
+      // Tapping anywhere on the splash (not just the small skip button)
+      // dismisses it - a full-screen overlay is an easy miss-tap otherwise.
+      splash.addEventListener('click', dismiss);
       // Autoplay can still be blocked in rare cases even when muted - don't
       // leave a frozen video covering the page if play() never resolves.
       var playPromise = video.play();

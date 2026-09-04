@@ -468,7 +468,8 @@ body.intro-active { overflow: hidden; }
   opacity: 1;
   transition: opacity 0.4s ease;
 }
-.intro-splash-fade { opacity: 0; }
+.intro-splash[hidden] { display: none; }
+.intro-splash-fade { opacity: 0; pointer-events: none; }
 
 .intro-video {
   max-height: 92vh;
