@@ -1,6 +1,6 @@
 {
   "next_report_id": 7,
-  "next_pick_id": 15,
+  "next_pick_id": 16,
   "reports": [
     {
       "source": "ChatGPT",
@@ -324,6 +324,29 @@
       "away_team": "Wisconsin Badgers",
       "created_at": "2026-09-04T13:38:36",
       "id": 14
+    },
+    {
+      "report_id": 6,
+      "category": "sexy_moneyline",
+      "matchup": "Western Michigan Broncos @ Michigan Wolverines",
+      "selection": "Western Michigan ML +2000",
+      "odds": 2000,
+      "stake": 25.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "Fun flier -- not a high-confidence play.",
+      "confidence": null,
+      "war_room_line": "War Room implied win probability: ~6%",
+      "edge": "DK implied ~4.8% vs. War Room ~6%",
+      "price_discipline": null,
+      "espn_event_id": "401858428",
+      "bet_type": "moneyline",
+      "bet_side": "away",
+      "bet_line": null,
+      "home_team": "Michigan Wolverines",
+      "away_team": "Western Michigan Broncos",
+      "created_at": "2026-09-04T13:38:38",
+      "id": 15
     }
   ]
 }
