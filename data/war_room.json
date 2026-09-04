@@ -1,6 +1,6 @@
 {
   "next_report_id": 7,
-  "next_pick_id": 18,
+  "next_pick_id": 19,
   "reports": [
     {
       "source": "ChatGPT",
@@ -347,6 +347,29 @@
       "away_team": "Western Michigan Broncos",
       "created_at": "2026-09-04T13:38:38",
       "id": 15
+    },
+    {
+      "report_id": 6,
+      "category": "best_bet",
+      "matchup": "Fresno State Bulldogs @ USC Trojans",
+      "selection": "Fresno State +22.5",
+      "odds": -118,
+      "stake": 25.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "Fresno went 9-4 and returns seven starters from a top-10 defense.\nBulldogs ranked 2nd nationally against the pass, with 20 interceptions.\nUSC returns 15 starters and its entire OL -- not a blind public fade.\nFresno QB Jayden Mandal is making only his 2nd collegiate start -- the major red flag.",
+      "confidence": null,
+      "war_room_line": "USC -20.5",
+      "edge": "Fresno +2",
+      "price_discipline": "+23 or better: $50\n+22.5: $25 test\n+21.5 or worse: pass\nFresno moneyline: pass\nTotal 51.5: under lean only",
+      "espn_event_id": "401858436",
+      "bet_type": "spread",
+      "bet_side": "away",
+      "bet_line": 22.5,
+      "home_team": "USC Trojans",
+      "away_team": "Fresno State Bulldogs",
+      "created_at": "2026-09-04T15:01:22",
+      "id": 18
     }
   ]
 }
