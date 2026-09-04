@@ -60,27 +60,27 @@
         <table class="data-table">
           <thead>
             <tr>
+              <th>Confidence</th>
+              <th>Call</th>
               <th>Matchup</th>
               <th>{{ sportsbook_for(report.league) }}</th>
               <th>War Room</th>
               <th>Est. Edge</th>
-              <th>Confidence</th>
-              <th>Call</th>
             </tr>
           </thead>
           <tbody>
             {% for p in picks %}
               <tr>
-                <td>{{ p.matchup }}</td>
-                <td>{{ p.selection }} ({{ '%+d'|format(p.odds) }})</td>
-                <td class="muted">{{ p.get('war_room_line') or '—' }}</td>
-                <td class="muted">{{ p.get('edge') or '—' }}</td>
                 <td>
                   {% if p.get('confidence') is not none %}
                     <span class="badge-confidence">{{ confidence_label(p.confidence) | upper }} · {{ p.confidence | round | int }}%</span>
                   {% else %}<span class="muted">—</span>{% endif %}
                 </td>
                 <td class="pos">PLAY ${{ '{:,.0f}'.format(p.stake) }}</td>
+                <td>{{ p.matchup }}</td>
+                <td>{{ p.selection }} ({{ '%+d'|format(p.odds) }})</td>
+                <td class="muted">{{ p.get('war_room_line') or '—' }}</td>
+                <td class="muted">{{ p.get('edge') or '—' }}</td>
               </tr>
             {% endfor %}
           </tbody>

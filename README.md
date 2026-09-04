@@ -167,9 +167,9 @@ Units follow the report's own convention: **$100 staked = 1 unit.**
   (temperature, rain chance, wind) from Open-Meteo. All free, all live,
   no API keys. Everything here is read-only research; nothing on this
   page is stored or graded.
-- **Latest** (`/latest`) — the most recent Premier League report and the
-  most recent Champions League report, side by side, each with a link
-  into its full page. The quickest way to check what the scheduled
+- **Futbol Report** (`/latest`) — the most recent Premier League report
+  and the most recent Champions League report, side by side, each with a
+  link into its full page. The quickest way to check what the scheduled
   prediction-bot runs actually posted.
 - **Auto-Grade Finished Games** — a button on the Reports page (grades
   every report) and on each report's own page (grades just that report)
