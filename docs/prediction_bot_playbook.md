@@ -113,10 +113,19 @@ fine for a category to end up empty.
 
 ## 5. Submit the report and picks
 
-Compute `week_number` as the **ISO week number of the report date**
-(Python: `date.today().isocalendar()[1]`) — this needs no lookup against
-prior reports and stays consistent within a league/source over time,
-which is all the dashboard's weekly trend view needs.
+Compute `week_number` as the league's actual **matchweek number** — the
+number a fan would recognize ("Matchweek 3"), not an arbitrary counter.
+`GET /api/standings?league=<L>` already gives you this for free: take
+the most common `played` value across the table entries and add 1 (a
+team that's played 2 games is walking into matchweek 3). Use the most
+common value rather than any single team's, since a postponed match can
+leave one or two teams a game behind the rest of the table.
+
+Leave `week_label` **empty** unless you have something genuinely
+descriptive to add beyond the number — the dashboard already renders
+"Week 3 — Premier League" on its own from `week_number` + `league`
+wherever a view can show more than one league at once, and a set
+`week_label` overrides that generated text instead of adding to it.
 
 ```
 POST /api/reports
@@ -125,8 +134,8 @@ Content-Type: application/json
   "source": "Claude",
   "league": "UCL",            // or "EPL"
   "report_date": "YYYY-MM-DD", // today, ET
-  "week_number": <iso week>,
-  "week_label": "UCL Matchday — Wed Sep 9"   // or "PL Weekend — Sep 12-14"
+  "week_number": <matchweek>,
+  "week_label": ""             // leave blank - see above
 }
 → {"id": <report_id>}
 ```
@@ -159,6 +168,15 @@ line you pulled — this is what lets the hourly auto-grade job settle the
 pick automatically once the match finishes. A 400 response means a field
 is wrong (bad category, missing required field) — fix and retry that one
 pick; don't abandon the rest of the slate over one bad request.
+
+If you catch a mistake in the report's own metadata after submitting
+(wrong `week_number`, a typo in the notes), fix it in place rather than
+deleting and resubmitting the whole report:
+`PATCH /api/reports/<report_id>` with a JSON body of just the field(s)
+to change (`week_number`, `week_label`, `blind_spot_notes`,
+`lsu_review_notes`). It leaves the report's picks untouched. A wrong
+`source`, `league`, or `report_date` isn't editable this way — that
+needs a delete + resubmit instead.
 
 ## 6. Done
 

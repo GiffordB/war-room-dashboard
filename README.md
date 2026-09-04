@@ -159,6 +159,10 @@ Units follow the report's own convention: **$100 staked = 1 unit.**
   (temperature, rain chance, wind) from Open-Meteo. All free, all live,
   no API keys. Everything here is read-only research; nothing on this
   page is stored or graded.
+- **Latest** (`/latest`) — the most recent Premier League report and the
+  most recent Champions League report, side by side, each with a link
+  into its full page. The quickest way to check what the scheduled
+  prediction-bot runs actually posted.
 - **Auto-Grade Finished Games** — a button on the Reports page (grades
   every report) and on each report's own page (grades just that report)
   that checks every pending, `🔗 auto`-tagged pick's game for a final
@@ -194,6 +198,8 @@ The bot writes through the same JSON API a human could script against:
   and its picks in one call each, no HTML form needed. Picks accept an
   optional `confidence` (0-100) alongside the usual fields; it's shown
   next to the pick but isn't used in grading or payout math.
+- `PATCH /api/reports/<id>` — fix a report's own week_number/week_label/
+  notes after the fact without touching its picks.
 
 ## What's next
 
