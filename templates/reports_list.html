@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% block title %}Reports · War Room{% endblock %}
+{% block content %}
+  <div class="page-head">
+    <h1>Reports</h1>
+    <div class="actions">
+      {% if auto_gradable %}
+        <form method="post" action="{{ url_for('auto_grade_all') }}">
+          <button class="btn btn-outline" type="submit">🔄 Auto-Grade Finished Games ({{ auto_gradable }})</button>
+        </form>
+      {% endif %}
+      <a class="btn" href="{{ url_for('add_report') }}">+ New Report</a>
+    </div>
+  </div>
+
+  {% if graded is not none %}
+    <div class="vs-banner">
+      {% if graded %}Graded {{ graded }} pick{{ 's' if graded != 1 }} from final scores.{% endif %}
+      {% if still_pending %}{{ still_pending }} auto-gradable pick{{ 's' if still_pending != 1 }} still waiting on a final score.{% endif %}
+      {% if not graded and not still_pending %}Nothing to grade yet.{% endif %}
+    </div>
+  {% endif %}
+
+  <div class="league-tabs">
+    <a class="league-tab {{ 'active' if not current_league }}" href="{{ url_for('reports_list') }}">All Leagues</a>
+    {% for code in league_order %}
+      <a class="league-tab {{ 'active' if current_league == code }}" href="{{ url_for('reports_list', league=code) }}">{{ leagues[code] }}</a>
+    {% endfor %}
+  </div>
+
+  {% if reports %}
+    <div class="table-scroll">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Source</th>
+            <th>League</th>
+            <th>Week</th>
+            <th>Picks</th>
+            <th>Record</th>
+            <th>Profit</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for r in reports %}
+            {% set s = report_stats[r.id] %}
+            <tr>
+              <td>{{ r.report_date }}</td>
+              <td><span class="badge-source" style="background: {{ source_color(r.source) }};">{{ r.source }}</span></td>
+              <td><span class="badge-league">{{ r.league }}</span></td>
+              <td class="muted">{{ r.week_label or ('Week ' ~ r.week_number) }}</td>
+              <td>{{ s.pick_count }}</td>
+              <td>{{ s.wins }}-{{ s.losses }}{% if s.pushes %}-{{ s.pushes }}{% endif %}{% if s.pending %}<span class="muted"> (+{{ s.pending }}p)</span>{% endif %}</td>
+              <td class="{{ 'pos' if s.profit > 0 else 'neg' if s.profit < 0 else 'muted' }}">{{ '%+.0f'|format(s.profit) }}$</td>
+              <td class="row-actions">
+                <a class="btn btn-sm btn-outline" href="{{ url_for('report_detail', report_id=r.id) }}">Open</a>
+                <form method="post" action="{{ url_for('delete_report', report_id=r.id) }}"
+                      onsubmit="return confirm('Delete this report and all its picks?');">
+                  <button class="btn-link" type="submit">Delete</button>
+                </form>
+              </td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  {% else %}
+    <p class="empty">No reports yet for this view. <a href="{{ url_for('add_report') }}">Add your first one</a>.</p>
+  {% endif %}
+{% endblock %}

@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block title %}New Report · War Room{% endblock %}
+{% block content %}
+  <div class="page-head">
+    <h1>New Report</h1>
+  </div>
+  <form class="form" method="post" action="{{ url_for('add_report') }}">
+    <div class="form-row">
+      <label>
+        Source
+        <select name="source" required>
+          {% for s in sources %}<option value="{{ s }}">{{ s }}</option>{% endfor %}
+        </select>
+      </label>
+      <label>
+        League
+        <select name="league" required>
+          {% for code in league_order %}<option value="{{ code }}">{{ leagues[code] }}</option>{% endfor %}
+        </select>
+      </label>
+    </div>
+
+    <div class="form-row">
+      <label>
+        Report Date
+        <input type="date" name="report_date" value="{{ today }}" required>
+      </label>
+      <label>
+        Week #
+        <input type="number" name="week_number" min="1" max="25" value="1" required>
+      </label>
+    </div>
+
+    <label>
+      Week / Slate label (optional)
+      <input type="text" name="week_label" placeholder="e.g. Week 1 — CFB Openers">
+    </label>
+
+    <label>
+      👁 Vegas Blind Spot notes (optional)
+      <textarea name="blind_spot_notes" rows="3" placeholder="Teams the market keeps missing — QB leap, new scheme, covers with substance."></textarea>
+    </label>
+
+    <label>
+      🐯 LSU Objective Review notes (optional)
+      <textarea name="lsu_review_notes" rows="3" placeholder="Same scorecard, same discipline. Pass means pass."></textarea>
+    </label>
+
+    <div class="actions">
+      <button class="btn" type="submit">Create Report</button>
+      <a class="btn btn-outline" href="{{ url_for('reports_list') }}">Cancel</a>
+    </div>
+  </form>
+{% endblock %}

@@ -1,0 +1,360 @@
+:root {
+  --purple: #461d7c;
+  --purple-bright: #6b3fa0;
+  --purple-deep: #2a1050;
+  --gold: #fdd023;
+  --gold-bright: #ffe066;
+  --bg: #0e0620;
+  --surface: #1e1038;
+  --surface-2: #2a1a4d;
+  --text: #f5f2fb;
+  --muted: #a292c4;
+  --border: #43326b;
+  --green: #22c55e;
+  --red: #ef4444;
+  --text-faint: #6f5a99;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+a { color: var(--gold-bright); }
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 32px;
+  background: linear-gradient(90deg, var(--purple-deep), var(--purple), var(--purple-deep));
+  border-bottom: 3px solid var(--gold);
+  color: white;
+}
+
+.brand {
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  letter-spacing: 0.02em;
+}
+
+.brand-mark {
+  background: linear-gradient(135deg, var(--gold-bright), var(--gold));
+  color: #1c1300;
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+}
+
+.brand-sub { font-weight: 400; opacity: 0.8; font-size: 0.85rem; color: var(--gold-bright); }
+
+.topbar-right { display: flex; align-items: center; gap: 24px; }
+
+.topbar nav a { color: white; text-decoration: none; margin-left: 24px; opacity: 0.85; }
+.topbar nav a:hover { opacity: 1; text-decoration: underline; }
+
+.content { max-width: 1120px; margin: 0 auto; padding: 32px; }
+
+.page-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+h1 { margin: 0; }
+section { margin-bottom: 44px; }
+.section-head-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+.section-head-row .section-label { margin-bottom: 0; }
+.section-label, h2.section-label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  margin: 0 0 14px;
+  font-weight: 700;
+}
+
+.sportsbook-tag {
+  font-size: 0.8rem;
+  color: var(--gold-bright);
+  border: 1px solid var(--gold);
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+.actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 4px; }
+
+.btn {
+  background: linear-gradient(135deg, var(--gold-bright), var(--gold));
+  color: #1c1300;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 0.95rem;
+  display: inline-block;
+}
+.btn:hover { filter: brightness(1.08); }
+
+.btn-outline {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+.btn-outline:hover { background: var(--surface-2); }
+
+.btn-sm { padding: 6px 12px; font-size: 0.85rem; }
+
+.btn-link {
+  background: none;
+  border: none;
+  color: #f87171;
+  cursor: pointer;
+  text-decoration: underline;
+  font-size: 0.85rem;
+  padding: 0;
+}
+
+/* ---------------- League tabs ---------------- */
+.league-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+.league-tab {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+}
+.league-tab:hover { color: var(--text); border-color: var(--gold); }
+.league-tab.active {
+  background: var(--gold);
+  color: #241800;
+  border-color: var(--gold);
+}
+
+/* ---------------- Vs banner ---------------- */
+.vs-banner {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--gold);
+  border-radius: 10px;
+  padding: 14px 18px;
+  margin-bottom: 24px;
+  font-size: 0.95rem;
+}
+
+/* ---------------- Source comparison cards ---------------- */
+.source-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.source-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--accent, var(--gold));
+  border-radius: 14px;
+  padding: 20px 22px;
+}
+
+.source-card-head { display: flex; align-items: center; gap: 10px; }
+.source-card-head h2 { margin: 0; font-size: 1.1rem; }
+
+.source-dot { width: 12px; height: 12px; border-radius: 999px; flex-shrink: 0; }
+
+.source-record { margin: 8px 0 16px; font-size: 1.3rem; font-weight: 800; }
+.source-record .muted { font-size: 0.8rem; font-weight: 500; margin-left: 6px; }
+
+.source-stat-row { display: flex; gap: 20px; flex-wrap: wrap; }
+.source-stat-num { font-size: 1.15rem; font-weight: 700; }
+.source-stat-label { color: var(--muted); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; margin-top: 2px; }
+
+.pos { color: var(--green); }
+.neg { color: var(--red); }
+
+/* ---------------- Charts (hand-rolled SVG, no CDN) ---------------- */
+.chart-card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 18px; }
+.chart { width: 100%; height: auto; display: block; }
+.chart-empty { color: var(--text-faint); font-size: 0.9rem; }
+
+.grid-line { stroke: var(--border); stroke-width: 1; }
+.axis-label { fill: var(--text-faint); font-size: 10px; }
+.end-label { font-size: 11px; font-weight: 700; }
+
+.chart-legend { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 10px; font-size: 0.85rem; }
+.legend-item { display: inline-flex; align-items: center; gap: 6px; }
+.legend-item i { width: 10px; height: 10px; border-radius: 3px; display: inline-block; }
+
+/* ---------------- Tables ---------------- */
+.table-scroll { overflow-x: auto; }
+.data-table { width: 100%; border-collapse: collapse; background: var(--surface); border-radius: 12px; overflow: hidden; }
+.data-table th, .data-table td { text-align: left; padding: 10px 14px; border-bottom: 1px solid var(--border); white-space: nowrap; }
+.data-table th { background: var(--surface-2); font-size: 0.8rem; text-transform: uppercase; color: var(--muted); }
+.category-table .sub-head th { font-size: 0.72rem; text-transform: none; }
+.row-actions { display: flex; gap: 10px; align-items: center; }
+.muted { color: var(--muted); }
+.small { font-size: 0.78rem; }
+
+.settle-form select {
+  padding: 5px 8px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--surface-2);
+  color: var(--text);
+  font-size: 0.85rem;
+}
+
+/* ---------------- Badges ---------------- */
+.badge-source {
+  display: inline-block;
+  color: #0b0f1a;
+  font-weight: 800;
+  font-size: 0.78rem;
+  padding: 3px 10px;
+  border-radius: 999px;
+}
+
+.badge-result {
+  display: inline-block;
+  color: #0b0f1a;
+  font-weight: 700;
+  font-size: 0.75rem;
+  padding: 3px 10px;
+  border-radius: 999px;
+}
+
+.badge-league {
+  display: inline-block;
+  color: var(--gold-bright);
+  border: 1px solid var(--gold);
+  font-weight: 700;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 2px 9px;
+  border-radius: 999px;
+}
+
+.badge-auto {
+  display: inline-block;
+  color: var(--green);
+  border: 1px solid var(--green);
+  font-weight: 700;
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  padding: 1px 7px;
+  border-radius: 999px;
+  margin-left: 6px;
+}
+
+/* ---------------- Notes ---------------- */
+.notes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+  margin-bottom: 36px;
+}
+.note-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 16px 18px; }
+.note-card-head { font-weight: 700; margin-bottom: 8px; color: var(--gold-bright); }
+.note-card p { margin: 0; color: var(--text); line-height: 1.5; white-space: pre-wrap; }
+
+/* ---------------- Recent picks list ---------------- */
+.pick-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.pick-row {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  font-size: 0.88rem;
+}
+.pick-cat { font-weight: 600; }
+.pick-matchup { flex: 1 1 220px; }
+.pick-matchup a { color: var(--text); text-decoration: none; }
+.pick-matchup a:hover { text-decoration: underline; }
+
+/* ---------------- Odds lookup widget ---------------- */
+.odds-lookup {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px 22px;
+  max-width: 560px;
+}
+.odds-lookup label { display: block; margin-bottom: 14px; font-weight: 600; font-size: 0.9rem; }
+.odds-lookup input, .odds-lookup select {
+  width: 100%;
+  margin-top: 6px;
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  background: var(--surface-2);
+  color: var(--text);
+}
+.odds-lookup-row { align-items: flex-end; }
+.odds-find-label { flex: 0 0 auto; }
+.odds-find-label button { white-space: nowrap; }
+.odds-lines { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
+.odds-pill { font-family: inherit; }
+
+/* ---------------- Forms ---------------- */
+.form { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 24px; max-width: 560px; }
+.form label { display: block; margin-bottom: 16px; font-weight: 600; font-size: 0.9rem; }
+.form input, .form select, .form textarea {
+  width: 100%;
+  margin-top: 6px;
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  background: var(--surface-2);
+  color: var(--text);
+}
+.form input:focus, .form select:focus, .form textarea:focus {
+  outline: none;
+  border-color: var(--gold);
+}
+.form-row { display: flex; gap: 16px; }
+.form-row label { flex: 1; }
+
+.empty { color: var(--muted); }

@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: war-room-dashboard
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9
+      # Lets the app persist reports/picks by committing data/war_room.json
+      # into this repo via the GitHub Contents API, instead of a database
+      # this free web service has nowhere to put. Needs a GitHub Personal
+      # Access Token with `repo` scope (classic) or Contents read/write
+      # (fine-grained, scoped to this repo) -- set it manually after the
+      # first deploy under this service's Environment tab. Without it the
+      # app still runs, but falls back to a local file that's wiped on
+      # every restart.
+      - key: GITHUB_PAT
+        sync: false
+      - key: GITHUB_REPO
+        value: GiffordB/war-room-dashboard

@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}Football Betting War Room{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  {% block head %}{% endblock %}
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="{{ url_for('dashboard') }}">
+      <span class="brand-mark">⚡</span> Football Betting <span class="brand-sub">War Room</span>
+    </a>
+    <div class="topbar-right">
+      <nav>
+        <a href="{{ url_for('dashboard') }}">Dashboard</a>
+        <a href="{{ url_for('reports_list') }}">Reports</a>
+      </nav>
+      <a class="btn btn-sm" href="{{ url_for('add_report') }}">+ New Report</a>
+    </div>
+  </header>
+  <main class="content">
+    {% block content %}{% endblock %}
+  </main>
+  {% block scripts %}{% endblock %}
+</body>
+</html>

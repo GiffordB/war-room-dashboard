@@ -1,0 +1,7 @@
+venv/
+__pycache__/
+*.pyc
+# Local-dev-only data file (no GITHUB_PAT set). In production this same
+# path is a file *inside the repo*, committed via the GitHub Contents API
+# -- see store.py. Never commit your own local scratch copy over it.
+data/war_room.json

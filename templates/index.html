@@ -1,0 +1,207 @@
+{% extends "base.html" %}
+{% block title %}Dashboard · War Room{% endblock %}
+{% block content %}
+
+  <div class="page-head">
+    <h1>Claude vs. Grok vs. ChatGPT</h1>
+    <span class="sportsbook-tag">{{ sportsbook }} only · $100 = 1 unit</span>
+  </div>
+
+  <div class="league-tabs">
+    <a class="league-tab {{ 'active' if not current_league }}" href="{{ url_for('dashboard') }}">All Leagues</a>
+    {% for code in league_order %}
+      <a class="league-tab {{ 'active' if current_league == code }}" href="{{ url_for('dashboard', league=code) }}">{{ leagues[code] }}</a>
+    {% endfor %}
+  </div>
+
+  {% if report_count == 0 %}
+    <p class="empty">No reports logged yet for this view. <a href="{{ url_for('add_report') }}">Add your first report</a> to start tracking picks.</p>
+  {% endif %}
+
+  {% if any_settled %}
+    <div class="vs-banner">
+      {% for s in ranked %}
+        <strong style="color: {{ source_color(s) }}">{{ s }}</strong>
+        <span class="{{ 'pos' if stats[s].profit > 0 else 'neg' if stats[s].profit < 0 else 'muted' }}">{{ '%+.2f'|format(stats[s].units) }} u</span>
+        {%- if not loop.last %} <span class="muted">·</span> {% endif %}
+      {% endfor %}
+    </div>
+  {% elif report_count > 0 %}
+    <div class="vs-banner">No settled picks yet in this view.</div>
+  {% endif %}
+
+  <section>
+    <h2 class="section-label">Head to Head</h2>
+    <div class="source-grid">
+      {% for s in sources %}
+        {% set st = stats[s] %}
+        <div class="source-card" style="--accent: {{ source_color(s) }};">
+          <div class="source-card-head">
+            <span class="source-dot" style="background: {{ source_color(s) }};"></span>
+            <h2>{{ s }}</h2>
+          </div>
+          <div class="source-record">{{ st.wins }}-{{ st.losses }}{% if st.pushes %}-{{ st.pushes }}{% endif %}
+            <span class="muted">{{ st.settled }} settled{% if st.pending %} · {{ st.pending }} pending{% endif %}</span>
+          </div>
+          <div class="source-stat-row">
+            <div>
+              <div class="source-stat-num">
+                {% if st.win_pct is not none %}{{ '%.0f'|format(st.win_pct) }}%{% else %}—{% endif %}
+              </div>
+              <div class="source-stat-label">Win Rate</div>
+            </div>
+            <div>
+              <div class="source-stat-num {{ 'pos' if st.profit > 0 else 'neg' if st.profit < 0 else '' }}">
+                {{ '%+.2f'|format(st.units) }} u
+              </div>
+              <div class="source-stat-label">Units</div>
+            </div>
+            <div>
+              <div class="source-stat-num {{ 'pos' if st.profit > 0 else 'neg' if st.profit < 0 else '' }}">
+                {{ '%+.0f'|format(st.profit) }}$
+              </div>
+              <div class="source-stat-label">Profit</div>
+            </div>
+            <div>
+              <div class="source-stat-num">
+                {% if st.roi is not none %}{{ '%+.1f'|format(st.roi) }}%{% else %}—{% endif %}
+              </div>
+              <div class="source-stat-label">ROI</div>
+            </div>
+            <div>
+              <div class="source-stat-num">${{ '{:,.0f}'.format(st.staked) }}</div>
+              <div class="source-stat-label">Staked</div>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-label">Win Rate by Week</h2>
+    {% if win_pct_chart %}
+      <div class="chart-card">{{ win_pct_chart }}</div>
+    {% else %}
+      <p class="empty">No settled picks yet — this fills in week by week as reports get graded.</p>
+    {% endif %}
+  </section>
+
+  {% if week_numbers %}
+    <section>
+      <h2 class="section-label">Weekly Results</h2>
+      <div class="table-scroll">
+        <table class="data-table category-table">
+          <thead>
+            <tr>
+              <th>Week</th>
+              {% for s in sources %}
+                <th colspan="3" style="color: {{ source_color(s) }};">{{ s }}</th>
+              {% endfor %}
+            </tr>
+            <tr class="sub-head">
+              <th></th>
+              {% for s in sources %}
+                <th>Record</th><th>Win%</th><th>Units</th>
+              {% endfor %}
+            </tr>
+          </thead>
+          <tbody>
+            {% for wn in week_numbers|reverse %}
+              <tr>
+                <td>{{ week_labels[wn] }}</td>
+                {% for s in sources %}
+                  {% set b = weekly_data.get((wn, s)) %}
+                  {% if b %}
+                    <td>{{ b.wins }}-{{ b.losses }}{% if b.pushes %}-{{ b.pushes }}{% endif %}</td>
+                    <td class="muted">{% if b.win_pct is not none %}{{ '%.0f'|format(b.win_pct) }}%{% else %}—{% endif %}</td>
+                    <td class="{{ 'pos' if b.profit > 0 else 'neg' if b.profit < 0 else 'muted' }}">{{ '%+.2f'|format(b.units) }}</td>
+                  {% else %}
+                    <td class="muted">—</td><td class="muted">—</td><td class="muted">—</td>
+                  {% endif %}
+                {% endfor %}
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  {% endif %}
+
+  <section>
+    <h2 class="section-label">Cumulative Units Over Time</h2>
+    {% if units_chart %}
+      <div class="chart-card">{{ units_chart }}</div>
+    {% else %}
+      <p class="empty">No settled picks yet — results here as reports get graded.</p>
+    {% endif %}
+  </section>
+
+  <section>
+    <h2 class="section-label">Picks Logged by Category</h2>
+    {% if counts_chart %}
+      <div class="chart-card">{{ counts_chart }}</div>
+    {% else %}
+      <p class="empty">No picks logged yet.</p>
+    {% endif %}
+  </section>
+
+  <section>
+    <h2 class="section-label">Category Breakdown</h2>
+    <div class="table-scroll">
+      <table class="data-table category-table">
+        <thead>
+          <tr>
+            <th>Category</th>
+            {% for s in sources %}
+              <th colspan="3" style="color: {{ source_color(s) }};">{{ s }}</th>
+            {% endfor %}
+          </tr>
+          <tr class="sub-head">
+            <th></th>
+            {% for s in sources %}
+              <th>Record</th><th>Units</th><th>ROI</th>
+            {% endfor %}
+          </tr>
+        </thead>
+        <tbody>
+          {% for cat in category_order %}
+            <tr>
+              <td>{{ categories[cat].icon }} {{ categories[cat].label }}</td>
+              {% for s in sources %}
+                {% set b = breakdown[cat][s] %}
+                <td>{{ b.wins }}-{{ b.losses }}{% if b.pushes %}-{{ b.pushes }}{% endif %}{% if b.pending %}<span class="muted"> (+{{ b.pending }}p)</span>{% endif %}</td>
+                <td class="{{ 'pos' if b.profit > 0 else 'neg' if b.profit < 0 else 'muted' }}">{{ '%+.2f'|format(b.units) }}</td>
+                <td class="muted">{% if b.roi is not none %}{{ '%+.0f'|format(b.roi) }}%{% else %}—{% endif %}</td>
+              {% endfor %}
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-label">Recent Picks</h2>
+    {% if recent %}
+      <ul class="pick-list">
+        {% for p in recent %}
+          <li class="pick-row">
+            <span class="badge-source" style="background: {{ source_color(p.source) }};">{{ p.source }}</span>
+            <span class="badge-league">{{ p.league }}</span>
+            <span class="pick-cat" style="color: {{ categories[p.category].color }};">{{ categories[p.category].icon }} {{ categories[p.category].label }}</span>
+            <span class="pick-matchup"><a href="{{ url_for('report_detail', report_id=p.report_id) }}">{{ p.matchup }} — {{ p.selection }}</a></span>
+            <span class="muted">{{ '%+d'|format(p.odds) }}</span>
+            <span class="muted">${{ '{:,.0f}'.format(p.stake) }}</span>
+            <span class="badge-result" style="background: {{ result_color(p.result) }};">{{ result_label(p.result) }}</span>
+            <span class="{{ 'pos' if p.profit_loss > 0 else 'neg' if p.profit_loss < 0 else 'muted' }}">
+              {% if p.result != 'pending' %}{{ '%+.0f'|format(p.profit_loss) }}${% endif %}
+            </span>
+          </li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p class="empty">No picks yet.</p>
+    {% endif %}
+  </section>
+{% endblock %}
