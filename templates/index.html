@@ -43,7 +43,10 @@
   {% endif %}
 
   {% if report_count == 0 %}
-    <p class="empty">No picks logged yet for this view.</p>
+    <div class="empty-state">
+      <img class="empty-state-crest" src="{{ url_for('static', filename='crest-logo.png') }}" alt="">
+      <p class="empty">No picks logged yet for this view.</p>
+    </div>
   {% endif %}
 
   <section>

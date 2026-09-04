@@ -13,6 +13,9 @@
   --green: #22c55e;
   --red: #ef4444;
   --text-faint: #6f5a99;
+  /* Sampled straight from the War Room crest video's glow ring. */
+  --neon-purple: #a333c1;
+  --neon-purple-bright: #fd63ff;
 }
 
 * { box-sizing: border-box; }
@@ -47,16 +50,12 @@ a { color: var(--gold-bright); }
   letter-spacing: 0.02em;
 }
 
-.brand-mark {
-  background: linear-gradient(135deg, var(--gold-bright), var(--gold));
-  color: #1c1300;
-  width: 28px;
-  height: 28px;
-  border-radius: 6px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 800;
+.brand-crest {
+  width: 30px;
+  height: 30px;
+  border-radius: 7px;
+  object-fit: cover;
+  box-shadow: 0 0 8px 1px rgba(163, 51, 193, 0.65);
 }
 
 .brand-sub { font-weight: 400; opacity: 0.8; font-size: 0.85rem; color: var(--gold-bright); }
@@ -443,3 +442,52 @@ section { margin-bottom: 44px; }
 .form-row label { flex: 1; }
 
 .empty { color: var(--muted); }
+
+.empty-state {
+  text-align: center;
+  padding: 28px 0 36px;
+}
+.empty-state-crest {
+  width: 120px;
+  opacity: 0.85;
+  filter: drop-shadow(0 0 22px rgba(163, 51, 193, 0.55));
+  margin-bottom: 14px;
+}
+
+/* ---------------- Intro splash ---------------- */
+body.intro-active { overflow: hidden; }
+
+.intro-splash {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: #05010a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+  transition: opacity 0.4s ease;
+}
+.intro-splash-fade { opacity: 0; }
+
+.intro-video {
+  max-height: 92vh;
+  max-width: 92vw;
+  border-radius: 14px;
+  box-shadow: 0 0 60px 10px rgba(163, 51, 193, 0.45);
+}
+
+.intro-skip {
+  position: absolute;
+  bottom: 28px;
+  right: 28px;
+  background: rgba(10, 4, 20, 0.7);
+  border: 1px solid var(--neon-purple);
+  color: var(--text);
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 8px 16px;
+  border-radius: 999px;
+  cursor: pointer;
+}
+.intro-skip:hover { background: rgba(163, 51, 193, 0.3); }
