@@ -1,6 +1,6 @@
 {
   "next_report_id": 9,
-  "next_pick_id": 26,
+  "next_pick_id": 27,
   "reports": [
     {
       "source": "ChatGPT",
@@ -568,6 +568,29 @@
       "away_team": "Coventry City",
       "created_at": "2026-09-04T23:24:45",
       "id": 25
+    },
+    {
+      "report_id": 8,
+      "category": "best_bet",
+      "matchup": "Aston Villa @ Hull City",
+      "selection": "Hull City +0.5",
+      "odds": -115,
+      "stake": 125.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "Hull are the first promoted club to win their opening two PL matches in nine years and haven't conceded yet this season.\nAston Villa have lost both league games without scoring (0-1 Arsenal, 0-4 Brighton) under mounting pressure on Unai Emery.\nVilla's Joao Gomes (calf) is a doubt and Tammy Abraham's fitness status is unclear; Johan Manzambi still hasn't debuted.\nHull do carry the league's longest individual injury list, but it hasn't dented results yet.",
+      "wr_confidence": null,
+      "war_room_line": "Hull 40% / Draw 29% / Villa 31% (Hull draw-or-better roughly 69%)",
+      "edge": "Villa are -115 favorites on reputation alone; Hull are 2-0 with a +3 goal difference and zero goals conceded, while Villa have been shut out in both league games. The form gap runs the opposite direction from the price.",
+      "price_discipline": "-115 or better: $125\n-116 to -130: $75\nWorse than -130: pass",
+      "espn_event_id": "401878781",
+      "bet_type": "spread",
+      "bet_side": "home",
+      "bet_line": 0.5,
+      "home_team": "Hull City",
+      "away_team": "Aston Villa",
+      "created_at": "2026-09-04T23:25:13",
+      "id": 26
     }
   ],
   "next_wallet_id": 6,
