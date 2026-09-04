@@ -1360,6 +1360,7 @@ WALLETS = {
         "view_endpoint": "my_wallet",
         "add_endpoint": "add_wallet_entry",
         "delete_endpoint": "delete_wallet_entry",
+        "settle_endpoint": "settle_wallet_entry",
     },
     "jesse": {
         "entries_key": "jesse_wallet_entries",
@@ -1368,42 +1369,86 @@ WALLETS = {
         "view_endpoint": "jesse_wallet",
         "add_endpoint": "add_wallet_entry_jesse",
         "delete_endpoint": "delete_wallet_entry_jesse",
+        "settle_endpoint": "settle_wallet_entry_jesse",
     },
 }
 
 
 def create_wallet_entry(fields, wallet):
-    pick_id = int(fields["pick_id"])
-    data = store.load_data()
-    pick = next((p for p in data["picks"] if p["id"] == pick_id), None)
-    if pick is None:
-        raise ValueError(f"no pick #{pick_id}")
-    report = next((r for r in data["reports"] if r["id"] == pick["report_id"]), None)
-    if report is None:
-        raise ValueError("pick has no report")
+    """
+    Two shapes, chosen by whether fields["pick_id"] is given:
 
-    odds = int(fields["odds"])
-    stake = float(fields["stake"])
-    new_entry = {
-        "pick_id": pick["id"],
-        "report_id": report["id"],
-        "source": report["source"],
-        "league": report["league"],
-        "category": pick["category"],
-        "matchup": pick["matchup"],
-        "selection": pick["selection"],
-        "odds": odds,
-        "stake": stake,
-        "result": pick["result"],
-        "profit_loss": profit_for_result(stake, odds, pick["result"]) if pick["result"] != "pending" else 0.0,
-        "notes": (fields.get("notes") or "").strip() or None,
-        # A frozen snapshot of the pick's WR Confidence Score at the
-        # moment this bet was logged - deliberately never touched again,
-        # even if the pick's own wr_confidence is later revised (e.g. on
-        # fresh injury news). What mattered was the read at bet time.
-        "wr_confidence_at_bet": pick.get("wr_confidence"),
-        "created_at": datetime.utcnow().isoformat(timespec="seconds"),
-    }
+    Linked (usual case) - tied to a specific dashboard pick, snapshotting
+    its source/league/category/matchup/selection/wr_confidence at entry
+    time, and settled automatically by sync_wallet_entries() once that
+    pick grades.
+
+    Custom (fields["pick_id"] empty/absent) - a bet on something none of
+    the AI sources covered (a different game, a prop, an off-site play).
+    Entered by hand in full (source/league/matchup/selection are free
+    text, not looked up), starts pending with no WR score, and can only
+    be settled by hand too - see settle_wallet_entry() - since there's no
+    linked pick for auto-grading to ever catch up with.
+    """
+    pick_id = fields.get("pick_id")
+    if pick_id not in (None, ""):
+        pick_id = int(pick_id)
+        data = store.load_data()
+        pick = next((p for p in data["picks"] if p["id"] == pick_id), None)
+        if pick is None:
+            raise ValueError(f"no pick #{pick_id}")
+        report = next((r for r in data["reports"] if r["id"] == pick["report_id"]), None)
+        if report is None:
+            raise ValueError("pick has no report")
+
+        odds = int(fields["odds"])
+        stake = float(fields["stake"])
+        new_entry = {
+            "pick_id": pick["id"],
+            "report_id": report["id"],
+            "source": report["source"],
+            "league": report["league"],
+            "category": pick["category"],
+            "matchup": pick["matchup"],
+            "selection": pick["selection"],
+            "odds": odds,
+            "stake": stake,
+            "result": pick["result"],
+            "profit_loss": profit_for_result(stake, odds, pick["result"]) if pick["result"] != "pending" else 0.0,
+            "notes": (fields.get("notes") or "").strip() or None,
+            # A frozen snapshot of the pick's WR Confidence Score at the
+            # moment this bet was logged - deliberately never touched
+            # again, even if the pick's own wr_confidence is later
+            # revised (e.g. on fresh injury news). What mattered was the
+            # read at bet time.
+            "wr_confidence_at_bet": pick.get("wr_confidence"),
+            "created_at": datetime.utcnow().isoformat(timespec="seconds"),
+        }
+    else:
+        source = (fields.get("source") or "").strip()
+        league = (fields.get("league") or "").strip()
+        matchup = (fields.get("matchup") or "").strip()
+        selection = (fields.get("selection") or "").strip()
+        if not source or not league or not matchup or not selection:
+            raise ValueError("source, league, matchup, and selection are required for a custom bet")
+        odds = int(fields["odds"])
+        stake = float(fields["stake"])
+        new_entry = {
+            "pick_id": None,
+            "report_id": None,
+            "source": source,
+            "league": league,
+            "category": "custom",
+            "matchup": matchup,
+            "selection": selection,
+            "odds": odds,
+            "stake": stake,
+            "result": "pending",
+            "profit_loss": 0.0,
+            "notes": (fields.get("notes") or "").strip() or None,
+            "wr_confidence_at_bet": None,
+            "created_at": datetime.utcnow().isoformat(timespec="seconds"),
+        }
 
     entries_key, next_id_key = wallet["entries_key"], wallet["next_id_key"]
 
@@ -1697,6 +1742,7 @@ def _render_wallet(wallet_key):
         wallet_label=wallet["label"],
         add_endpoint=wallet["add_endpoint"],
         delete_endpoint=wallet["delete_endpoint"],
+        settle_endpoint=wallet["settle_endpoint"],
         entries=entries,
         overall=overall,
         by_source=by_source,
@@ -1713,6 +1759,10 @@ def _add_wallet_entry_form(wallet_key):
     create_wallet_entry(
         {
             "pick_id": request.form.get("pick_id"),
+            "source": request.form.get("source", ""),
+            "league": request.form.get("league_custom", ""),
+            "matchup": request.form.get("matchup", ""),
+            "selection": request.form.get("selection", ""),
             "odds": request.form.get("odds"),
             "stake": request.form.get("stake"),
             "notes": request.form.get("notes", ""),
@@ -1731,6 +1781,32 @@ def _delete_wallet_entry(entry_id, wallet_key):
     return redirect(url_for(wallet["view_endpoint"]))
 
 
+def _settle_wallet_entry(entry_id, wallet_key):
+    """
+    Manually set a custom (not linked to a dashboard pick) entry's
+    result - the only way one ever settles, since sync_wallet_entries()
+    has no pick to grade it from. A no-op on a linked entry: that one
+    settles automatically, and hand-editing it here would just drift
+    from (or get overwritten by) the pick it's tied to.
+    """
+    wallet = WALLETS[wallet_key]
+    result_value = request.form.get("result", "pending")
+    if result_value not in RESULTS:
+        result_value = "pending"
+
+    data, token = store.load_for_update()
+    entry = next((e for e in data[wallet["entries_key"]] if e["id"] == entry_id), None)
+    if entry is None or entry.get("pick_id") is not None:
+        return redirect(url_for(wallet["view_endpoint"]))
+
+    entry["result"] = result_value
+    entry["profit_loss"] = (
+        profit_for_result(entry["stake"], entry["odds"], result_value) if result_value != "pending" else 0.0
+    )
+    store.save(data, token, message=f"Settle {wallet['label']} entry #{entry_id}: {result_value}")
+    return redirect(url_for(wallet["view_endpoint"]))
+
+
 def _api_create_wallet_entry(wallet_key):
     body = request.get_json(silent=True) or {}
     try:
@@ -1742,14 +1818,15 @@ def _api_create_wallet_entry(wallet_key):
 
 def _api_update_wallet_entry(entry_id, wallet_key):
     """
-    Correct a wallet entry's own odds/stake/notes after the fact. Result
-    and profit_loss stay derived from the linked pick via
-    sync_wallet_entries() and shouldn't be hand-set here - but if the
-    entry is already settled, changing odds/stake recomputes profit_loss
-    against that same stored result immediately.
+    Correct a wallet entry's own odds/stake/notes after the fact. `result`
+    is also editable, but only for a custom entry (no pick_id) - a linked
+    entry's result stays derived from the pick via sync_wallet_entries()
+    and shouldn't be hand-set here. If the entry is already settled,
+    changing odds/stake recomputes profit_loss against that same stored
+    result immediately.
     """
     wallet = WALLETS[wallet_key]
-    editable = {"odds", "stake", "notes"}
+    editable = {"odds", "stake", "notes", "result"}
     body = request.get_json(silent=True) or {}
     updates = {k: v for k, v in body.items() if k in editable}
     if not updates:
@@ -1760,6 +1837,12 @@ def _api_update_wallet_entry(entry_id, wallet_key):
     if entry is None:
         return jsonify({"error": f"no {wallet['label']} entry #{entry_id}"}), 404
 
+    if "result" in updates:
+        if entry.get("pick_id") is not None:
+            return jsonify({"error": "result is derived automatically for bets linked to a dashboard pick"}), 400
+        if updates["result"] not in RESULTS:
+            return jsonify({"error": f"result must be one of {RESULTS}"}), 400
+        entry["result"] = updates["result"]
     if "odds" in updates:
         try:
             entry["odds"] = int(updates["odds"])
@@ -1772,8 +1855,9 @@ def _api_update_wallet_entry(entry_id, wallet_key):
             return jsonify({"error": "stake must be a number"}), 400
     if "notes" in updates:
         entry["notes"] = str(updates["notes"]).strip() or None
-    if entry["result"] != "pending":
-        entry["profit_loss"] = profit_for_result(entry["stake"], entry["odds"], entry["result"])
+    entry["profit_loss"] = (
+        profit_for_result(entry["stake"], entry["odds"], entry["result"]) if entry["result"] != "pending" else 0.0
+    )
 
     store.save(data, token, message=f"Update {wallet['label']} entry #{entry_id}")
     return jsonify({"id": entry_id})
@@ -1799,6 +1883,11 @@ def delete_wallet_entry(entry_id):
     return _delete_wallet_entry(entry_id, "mine")
 
 
+@app.route("/wallet/<int:entry_id>/settle", methods=["POST"])
+def settle_wallet_entry(entry_id):
+    return _settle_wallet_entry(entry_id, "mine")
+
+
 @app.route("/api/wallet", methods=["POST"])
 def api_create_wallet_entry():
     return _api_create_wallet_entry("mine")
@@ -1817,6 +1906,11 @@ def add_wallet_entry_jesse():
 @app.route("/jesse-wallet/<int:entry_id>/delete", methods=["POST"])
 def delete_wallet_entry_jesse(entry_id):
     return _delete_wallet_entry(entry_id, "jesse")
+
+
+@app.route("/jesse-wallet/<int:entry_id>/settle", methods=["POST"])
+def settle_wallet_entry_jesse(entry_id):
+    return _settle_wallet_entry(entry_id, "jesse")
 
 
 @app.route("/api/jesse-wallet", methods=["POST"])

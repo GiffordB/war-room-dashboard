@@ -172,7 +172,12 @@
                 <td><span class="badge-source" style="background: {{ source_color(e.source) }};">{{ e.source }}</span></td>
                 <td><span class="badge-league">{{ e.league }}</span></td>
                 <td>
-                  <a href="{{ url_for('report_detail', report_id=e.report_id) }}">{{ e.matchup }} — {{ e.selection }}</a>
+                  {% if e.report_id %}
+                    <a href="{{ url_for('report_detail', report_id=e.report_id) }}">{{ e.matchup }} — {{ e.selection }}</a>
+                  {% else %}
+                    {{ e.matchup }} — {{ e.selection }}
+                    <span class="muted small">(custom)</span>
+                  {% endif %}
                   {% if e.notes %}<div class="muted small">{{ e.notes }}</div>{% endif %}
                   {% if e.game %}
                     <div>
@@ -189,7 +194,20 @@
                 </td>
                 <td class="muted">{{ '%+d'|format(e.odds) }}</td>
                 <td>${{ '{:,.0f}'.format(e.stake) }}</td>
-                <td><span class="badge-result" style="background: {{ result_color(e.result) }};">{{ result_label(e.result) }}</span></td>
+                <td>
+                  {% if e.pick_id is none and e.result == 'pending' %}
+                    <form method="post" action="{{ url_for(settle_endpoint, entry_id=e.id) }}">
+                      <select name="result" onchange="this.form.requestSubmit()">
+                        {% for r in results %}
+                          <option value="{{ r }}" {% if r == e.result %}selected{% endif %}>{{ result_label(r) }}</option>
+                        {% endfor %}
+                      </select>
+                      <noscript><button class="btn btn-sm" type="submit">Update</button></noscript>
+                    </form>
+                  {% else %}
+                    <span class="badge-result" style="background: {{ result_color(e.result) }};">{{ result_label(e.result) }}</span>
+                  {% endif %}
+                </td>
                 <td class="{{ 'pos' if e.profit_loss > 0 else 'neg' if e.profit_loss < 0 else 'muted' }}">
                   {% if e.result != 'pending' %}{{ '%+.0f'|format(e.profit_loss) }}${% endif %}
                 </td>
@@ -211,25 +229,55 @@
 
   <section>
     <h2 class="section-label">Log a Bet</h2>
+    <div class="form-row" style="margin-bottom: 6px;">
+      <label><input type="radio" name="bet_mode" value="pick" id="wallet-mode-pick" checked> From War Room picks</label>
+      <label><input type="radio" name="bet_mode" value="custom" id="wallet-mode-custom"> Custom / off-site bet</label>
+    </div>
     <form class="form" method="post" action="{{ url_for(add_endpoint) }}">
-      <div class="form-row">
-        <label>
-          League
-          <select id="wallet-league">
-            <option value="">All Leagues</option>
-            {% for code in league_order %}
-              <option value="{{ code }}">{{ leagues[code] }}</option>
-            {% endfor %}
-          </select>
-        </label>
-        <label>
-          Pick
-          <select id="wallet-pick" required>
-            <option value="">Select a pick…</option>
-          </select>
-        </label>
+      <div id="wallet-pick-fields">
+        <div class="form-row">
+          <label>
+            League
+            <select id="wallet-league">
+              <option value="">All Leagues</option>
+              {% for code in league_order %}
+                <option value="{{ code }}">{{ leagues[code] }}</option>
+              {% endfor %}
+            </select>
+          </label>
+          <label>
+            Pick
+            <select id="wallet-pick" required>
+              <option value="">Select a pick…</option>
+            </select>
+          </label>
+        </div>
+        <p id="wallet-pick-preview" class="muted small" hidden></p>
       </div>
-      <p id="wallet-pick-preview" class="muted small" hidden></p>
+
+      <div id="wallet-custom-fields" hidden>
+        <p class="muted small">A bet on something none of the AI sources covered - entered in full by hand, and settled by hand too once it's decided (see the Result column on My Bets below).</p>
+        <div class="form-row">
+          <label>
+            Source
+            <input type="text" id="wallet-source" name="source" placeholder="e.g. Claude, Grok, my own pick">
+          </label>
+          <label>
+            League
+            <input type="text" id="wallet-league-custom" name="league_custom" placeholder="e.g. CFB, NFL, NBA">
+          </label>
+        </div>
+        <div class="form-row">
+          <label>
+            Matchup
+            <input type="text" id="wallet-matchup" name="matchup" placeholder="e.g. Duke @ UNC">
+          </label>
+          <label>
+            Selection
+            <input type="text" id="wallet-selection" name="selection" placeholder="e.g. Duke -4.5">
+          </label>
+        </div>
+      </div>
 
       <div class="form-row">
         <label>
@@ -265,6 +313,34 @@
   var pickIdInput = document.getElementById('wallet-pick-id');
   var oddsInput = document.getElementById('wallet-odds');
   var previewEl = document.getElementById('wallet-pick-preview');
+
+  var modePickRadio = document.getElementById('wallet-mode-pick');
+  var modeCustomRadio = document.getElementById('wallet-mode-custom');
+  var pickFieldsEl = document.getElementById('wallet-pick-fields');
+  var customFieldsEl = document.getElementById('wallet-custom-fields');
+  var customInputs = [
+    document.getElementById('wallet-source'),
+    document.getElementById('wallet-league-custom'),
+    document.getElementById('wallet-matchup'),
+    document.getElementById('wallet-selection'),
+  ];
+
+  function applyMode() {
+    var custom = modeCustomRadio.checked;
+    pickFieldsEl.hidden = custom;
+    customFieldsEl.hidden = !custom;
+    pickSelect.required = !custom;
+    customInputs.forEach(function (el) { el.required = custom; });
+    if (custom) {
+      pickIdInput.value = '';
+      previewEl.hidden = true;
+    } else {
+      customInputs.forEach(function (el) { el.value = ''; });
+    }
+  }
+
+  modePickRadio.addEventListener('change', applyMode);
+  modeCustomRadio.addEventListener('change', applyMode);
 
   function fmtOdds(n) { return n > 0 ? '+' + n : String(n); }
 
@@ -308,6 +384,7 @@
     previewEl.textContent = pick.category + ' · ' + pick.matchup + ' · ' + pick.selection + ' — line on the dashboard: ' + fmtOdds(pick.odds) + wrText;
   });
 
+  applyMode();
   populatePicks('');
 })();
 </script>
