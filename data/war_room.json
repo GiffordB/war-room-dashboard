@@ -1,6 +1,18 @@
 {
-  "next_report_id": 3,
+  "next_report_id": 4,
   "next_pick_id": 1,
-  "reports": [],
+  "reports": [
+    {
+      "source": "ChatGPT",
+      "league": "CFB",
+      "report_date": "2026-09-03",
+      "week_number": 2,
+      "week_label": "Week 2 -- Thursday Card",
+      "blind_spot_notes": "",
+      "lsu_review_notes": "",
+      "created_at": "2026-09-04T02:29:18",
+      "id": 3
+    }
+  ],
   "picks": []
 }
