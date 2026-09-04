@@ -62,6 +62,7 @@
             <tr>
               <th>Confidence</th>
               <th>Call</th>
+              <th>Status</th>
               <th>Matchup</th>
               <th>{{ sportsbook_for(report.league) }}</th>
               <th>War Room</th>
@@ -77,6 +78,16 @@
                   {% else %}<span class="muted">—</span>{% endif %}
                 </td>
                 <td class="pos">PLAY ${{ '{:,.0f}'.format(p.stake) }}</td>
+                <td>
+                  <span class="badge-result" style="background: {{ result_color(p.result) }};">{{ result_label(p.result) }}</span>
+                  {% if p.game %}
+                    <div>
+                      <span class="badge-live badge-live-{{ p.game.status }}">
+                        {{ '🏁 FINAL' if p.game.final else '🔴 LIVE' }} {{ p.game.score }} · {{ p.game.label }}
+                      </span>
+                    </div>
+                  {% endif %}
+                </td>
                 <td>{{ p.matchup }}</td>
                 <td>{{ p.selection }} ({{ '%+d'|format(p.odds) }})</td>
                 <td class="muted">{{ p.get('war_room_line') or '—' }}</td>
@@ -96,6 +107,7 @@
               <strong>{{ p.selection }}</strong>
               <span class="muted">${{ '{:,.0f}'.format(p.stake) }} ({{ '%.2f'|format(p.stake / unit_size) }}u)</span>
               {% if p.espn_event_id %}<span class="badge-auto" title="Linked to a live {{ sportsbook_for(report.league) }} line — can be auto-graded from the final score">🔗 auto</span>{% endif %}
+              <span class="badge-result" style="background: {{ result_color(p.result) }};">{{ result_label(p.result) }}</span>
               {% if p.game %}
                 <span class="badge-live badge-live-{{ p.game.status }}">
                   {{ '🏁 FINAL' if p.game.final else '🔴 LIVE' }} {{ p.game.score }} · {{ p.game.label }}
