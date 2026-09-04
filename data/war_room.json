@@ -1,6 +1,6 @@
 {
   "next_report_id": 9,
-  "next_pick_id": 24,
+  "next_pick_id": 25,
   "reports": [
     {
       "source": "ChatGPT",
@@ -522,6 +522,29 @@
       "away_team": "Sunderland",
       "created_at": "2026-09-04T23:24:01",
       "id": 23
+    },
+    {
+      "report_id": 8,
+      "category": "best_bet",
+      "matchup": "Crystal Palace @ Fulham",
+      "selection": "Fulham to Win",
+      "odds": 135,
+      "stake": 60.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "Both sides are winless early (Fulham 0-2, Palace 0-2), but Palace have been the leakier and blunter of the two (1 goal for, 6 against vs Fulham's 2-4).\nPalace's Ismaila Sarr (groin) and Jean-Philippe Mateta (thigh, ~3 weeks) are both out -- their two most dangerous attackers.\nFulham's only absence is Tom Cairney (knee); their deadline-day arrivals aren't matchfit to start.\nPalace lead the h2h series 4-0-1, but that history predates this year's injury list.",
+      "wr_confidence": null,
+      "war_room_line": "Fulham 62% / Draw 21% / Palace 17%",
+      "edge": "+135 implies only ~43% for Fulham; we're well above that because Palace are missing both of their live attacking threats (Sarr, Mateta) while Fulham's only absence (Cairney) is a squad piece, not a difference-maker.",
+      "price_discipline": "+135 or better: $60\n+115 to +134: $40\nWorse than +115: pass",
+      "espn_event_id": "401879289",
+      "bet_type": "match_result",
+      "bet_side": "home",
+      "bet_line": null,
+      "home_team": "Fulham",
+      "away_team": "Crystal Palace",
+      "created_at": "2026-09-04T23:24:21",
+      "id": 24
     }
   ],
   "next_wallet_id": 6,
