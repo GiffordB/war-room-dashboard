@@ -1,5 +1,5 @@
 {
-  "next_report_id": 8,
+  "next_report_id": 9,
   "next_pick_id": 23,
   "reports": [
     {
@@ -48,6 +48,18 @@
       "lsu_review_notes": "",
       "created_at": "2026-09-04T22:33:15",
       "id": 7
+    },
+    {
+      "source": "Claude",
+      "league": "EPL",
+      "report_date": "2026-09-04",
+      "week_number": 3,
+      "week_label": "",
+      "philosophy": "Fade the badge, back the form -- clean sheets and empty nets tell the real story this week.",
+      "blind_spot_notes": "",
+      "lsu_review_notes": "",
+      "created_at": "2026-09-04T23:23:25",
+      "id": 8
     }
   ],
   "picks": [
@@ -542,5 +554,7 @@
       "created_at": "2026-09-04T17:30:47",
       "id": 5
     }
-  ]
+  ],
+  "next_jesse_wallet_id": 1,
+  "jesse_wallet_entries": []
 }
