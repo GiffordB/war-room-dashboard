@@ -124,7 +124,10 @@
       "home_team": "Brentford",
       "away_team": "Sunderland",
       "created_at": "2026-09-04T11:40:35",
-      "id": 5
+      "id": 5,
+      "war_room_line": "Model: Brentford ~64% to win",
+      "edge": "Market implies ~60% at -150; model ~64% -- Sunderland's away record and the fresh Diarra knock look undersold",
+      "price_discipline": "-150 or better: $100\n-165 to -151: $50\n-175 or worse: pass"
     },
     {
       "report_id": 4,
