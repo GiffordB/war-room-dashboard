@@ -1,6 +1,6 @@
 {
   "next_report_id": 7,
-  "next_pick_id": 14,
+  "next_pick_id": 15,
   "reports": [
     {
       "source": "ChatGPT",
@@ -301,6 +301,29 @@
       "away_team": "UCLA Bruins",
       "created_at": "2026-09-04T13:38:33",
       "id": 13
+    },
+    {
+      "report_id": 6,
+      "category": "totals_radar",
+      "matchup": "Wisconsin Badgers @ Notre Dame Fighting Irish",
+      "selection": "Under 46.5",
+      "odds": -108,
+      "stake": 50.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "The available public feed is overwhelmingly on the over while the total fell from 47.5.\nWisconsin has a new QB and major roster turnover; Notre Dame can win without a shootout.\nWar Room total: 44. Weather is neutral to slightly under-friendly.",
+      "confidence": 79.0,
+      "war_room_line": "Total 44",
+      "edge": "Under +2.5",
+      "price_discipline": "Under 46.5: $50\nUnder 46: playable\nUnder 45.5: $25\n44.5 or lower: pass",
+      "espn_event_id": "401858438",
+      "bet_type": "total",
+      "bet_side": "under",
+      "bet_line": 46.5,
+      "home_team": "Notre Dame Fighting Irish",
+      "away_team": "Wisconsin Badgers",
+      "created_at": "2026-09-04T13:38:36",
+      "id": 14
     }
   ]
 }
