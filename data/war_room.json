@@ -1,18 +1,6 @@
 {
   "next_report_id": 3,
   "next_pick_id": 1,
-  "reports": [
-    {
-      "source": "Claude",
-      "league": "CFB",
-      "report_date": "2026-09-04",
-      "week_number": 1,
-      "week_label": "PAT smoke test",
-      "blind_spot_notes": "",
-      "lsu_review_notes": "",
-      "created_at": "2026-09-04T02:25:43",
-      "id": 2
-    }
-  ],
+  "reports": [],
   "picks": []
 }
