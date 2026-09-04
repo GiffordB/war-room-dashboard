@@ -1015,6 +1015,19 @@ def api_games():
     return jsonify(odds.scoreboard(league, date_str))
 
 
+@app.route("/api/week")
+def api_week():
+    """The league's actual current week/matchweek - see odds.season_week(). Auto-fills the Add Report form."""
+    league = resolve_league(request.args.get("league"))
+    date_str = (request.args.get("date") or "").replace("-", "")
+    if not league:
+        return jsonify({"error": "league is required"}), 400
+    week = odds.season_week(league, date_str or None)
+    if week is None:
+        return jsonify({"error": "could not determine the current week for this league"}), 404
+    return jsonify({"week": week})
+
+
 @app.route("/api/odds")
 def api_odds():
     """Current line for one game, keyed by ESPN event id."""

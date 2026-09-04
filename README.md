@@ -194,6 +194,11 @@ The bot writes through the same JSON API a human could script against:
 
 - `GET /api/standings`, `/api/team_intel`, `/api/match_intel` — the Team
   Intel research, machine-readable.
+- `GET /api/week` — the league's actual current week/matchweek (ESPN's
+  own `week.number` for CFB/NFL; derived from the standings for EPL/UCL,
+  which don't expose one directly). Also auto-fills Week # on the Add
+  Report form as soon as a league/date is picked, so it's never
+  hand-counted (and mislabeled) again.
 - `POST /api/reports`, `POST /api/reports/<id>/picks` — create a report
   and its picks in one call each, no HTML form needed. Picks accept an
   optional `confidence` (0-100) alongside the usual fields; it's shown

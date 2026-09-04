@@ -113,13 +113,10 @@ fine for a category to end up empty.
 
 ## 5. Submit the report and picks
 
-Compute `week_number` as the league's actual **matchweek number** — the
-number a fan would recognize ("Matchweek 3"), not an arbitrary counter.
-`GET /api/standings?league=<L>` already gives you this for free: take
-the most common `played` value across the table entries and add 1 (a
-team that's played 2 games is walking into matchweek 3). Use the most
-common value rather than any single team's, since a postponed match can
-leave one or two teams a game behind the rest of the table.
+Get `week_number` from `GET /api/week?league=<L>` — it returns the
+league's actual current matchweek (`{"week": 3}`), the number a fan
+would recognize, not an arbitrary counter. Use this rather than
+computing your own guess.
 
 Leave `week_label` **empty** unless you have something genuinely
 descriptive to add beyond the number — the dashboard already renders

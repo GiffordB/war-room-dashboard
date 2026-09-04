@@ -146,6 +146,54 @@ def scoreboard(league, date_str):
     return games
 
 
+def season_week(league, date_str=None):
+    """
+    The league's current "week" - what a report's own week_number should
+    be, so nobody has to guess or hand-count it (see the "week 0 vs. week
+    1" CFB mislabeling this was added to fix).
+
+    CFB/NFL: ESPN's scoreboard response carries this directly as
+    `week.number` - authoritative, no guessing. `date_str` ('YYYYMMDD')
+    scopes it to that day's slate; omit for "whatever week it is right
+    now".
+
+    EPL/UCL: ESPN's soccer scoreboard doesn't expose an equivalent field,
+    so this falls back to the standings: the most common `played` count
+    across the table, plus 1 (a team that's played 2 games is walking
+    into matchweek 3). Uses the most common value rather than any single
+    team's, since a postponed match can leave a team a game behind the
+    rest of the table. `date_str` is ignored for soccer - there's no
+    per-date lookup, just "the current matchweek".
+
+    None if it can't be determined (bad/missing data, or an unrecognized
+    league).
+    """
+    cfg = LEAGUE_CONFIG.get(league)
+    if not cfg:
+        return None
+
+    if cfg["family"] == "football":
+        params = dict(cfg["extra_params"])
+        if date_str:
+            params["dates"] = date_str
+        url = _site_url(league, "scoreboard")
+        if params:
+            url = f"{url}?{urllib.parse.urlencode(params)}"
+        data = _get_json(url)
+        if not data:
+            return None
+        return (data.get("week") or {}).get("number")
+
+    if cfg["family"] == "soccer":
+        played = [t["played"] for t in standings(league) if t.get("played") is not None]
+        if not played:
+            return None
+        mode = max(set(played), key=played.count)
+        return int(mode) + 1
+
+    return None
+
+
 def game_odds(league, event_id):
     """
     Current line for one event, or None if unavailable (game already
