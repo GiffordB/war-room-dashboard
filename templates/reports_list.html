@@ -23,6 +23,9 @@
 
   <div class="league-tabs">
     <a class="league-tab {{ 'active' if not current_league }}" href="{{ url_for('reports_list') }}">All Leagues</a>
+    {% for key in league_group_order %}
+      <a class="league-tab {{ 'active' if current_league == key }}" href="{{ url_for('reports_list', league=key) }}">{{ league_group_label(key) }}</a>
+    {% endfor %}
     {% for code in league_order %}
       <a class="league-tab {{ 'active' if current_league == code }}" href="{{ url_for('reports_list', league=code) }}">{{ leagues[code] }}</a>
     {% endfor %}
