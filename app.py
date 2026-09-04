@@ -124,6 +124,12 @@ RESULT_COLORS = {
     "void": "#64748b",
 }
 
+# The confidence (0-100) at and above which a pick is "Lock" tier - see
+# confidence_label() and confidence_locks() below, which both key off
+# this one constant so the dashboard's Locks section and a report's own
+# confidence badge always agree on what counts as a lock.
+LOCK_CONFIDENCE = 90
+
 def confidence_label(confidence):
     """
     A numeric confidence (0-100) as a War-Room-style text tier, or None
@@ -133,7 +139,7 @@ def confidence_label(confidence):
     """
     if confidence is None:
         return None
-    if confidence >= 90:
+    if confidence >= LOCK_CONFIDENCE:
         return "Lock"
     if confidence >= 75:
         return "High"
@@ -158,6 +164,7 @@ app.jinja_env.globals.update(
     sportsbook=SPORTSBOOK,
     sportsbook_for=lambda league: odds.sportsbook_for(league) or SPORTSBOOK,
     confidence_label=confidence_label,
+    lock_confidence=LOCK_CONFIDENCE,
     unit_size=UNIT_SIZE,
 )
 
@@ -607,6 +614,41 @@ def war_room_locks(data, league=None):
     return locks
 
 
+def confidence_locks(data, league=None):
+    """
+    Every still-pending pick at Lock-tier confidence (>= LOCK_CONFIDENCE)
+    - not the same thing as war_room_locks() above (which requires all
+    three sources to independently agree on the same game); this is any
+    one source's own highest-conviction call, standing alone. Sorted by
+    confidence, highest first.
+    """
+    reports = {r["id"]: r for r in data["reports"]}
+    locks = []
+    for p in data["picks"]:
+        if p["result"] != "pending":
+            continue
+        confidence = p.get("confidence")
+        if confidence is None or confidence < LOCK_CONFIDENCE:
+            continue
+        r = reports.get(p["report_id"])
+        if not r or not _league_matches(r["league"], league):
+            continue
+        locks.append(
+            {
+                "report_id": r["id"],
+                "source": r["source"],
+                "league": r["league"],
+                "category": p["category"],
+                "matchup": p["matchup"],
+                "selection": p["selection"],
+                "odds": p["odds"],
+                "confidence": confidence,
+            }
+        )
+    locks.sort(key=lambda lock: lock["confidence"], reverse=True)
+    return locks
+
+
 def rank_sources(stats):
     """Sources ordered by profit, best first."""
     return sorted(SOURCES, key=lambda s: stats[s]["profit"], reverse=True)
@@ -688,6 +730,7 @@ def dashboard():
     current_league, league = resolve_league_filter(request.args.get("league"))
 
     locks = war_room_locks(data, league)
+    confidence_lock_picks = confidence_locks(data, league)
 
     stats = {s: source_stats(data, s, league) for s in SOURCES}
     ranked = rank_sources(stats)
@@ -717,6 +760,7 @@ def dashboard():
     return render_template(
         "index.html",
         locks=locks,
+        confidence_lock_picks=confidence_lock_picks,
         stats=stats,
         ranked=ranked,
         movement=movement,

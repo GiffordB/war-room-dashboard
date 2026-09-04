@@ -167,6 +167,16 @@ section { margin-bottom: 44px; }
 .locks-section { margin-bottom: 32px; }
 .lock-label { color: var(--gold-bright); }
 
+.lock-subhead {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  margin: 20px 0 2px;
+}
+.lock-subhead:first-of-type { margin-top: 10px; }
+
 .locks-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -180,6 +190,17 @@ section { margin-bottom: 44px; }
   box-shadow: 0 0 0 1px rgba(253, 208, 35, 0.08);
   border-radius: 14px;
   padding: 16px 18px;
+}
+
+.lock-card-link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+.lock-card-link:hover {
+  box-shadow: 0 0 0 1px var(--gold), 0 4px 14px rgba(253, 208, 35, 0.18);
+  transform: translateY(-1px);
 }
 
 .lock-card-head {
