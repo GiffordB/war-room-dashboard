@@ -148,6 +148,25 @@ def confidence_label(confidence):
     return "Low"
 
 
+def wr_confidence_label(score):
+    """
+    A WR Confidence Score (0-100) as a text tier, or None if unscored.
+    Separate scale from confidence_label() - this isn't the soccer bot's
+    win probability, it's the War Room's own holistic read on a pick
+    (today: a judgment call weighing the edge, the roster notes, and the
+    price discipline together; more structured inputs fold in later).
+    """
+    if score is None:
+        return None
+    if score >= 85:
+        return "Elite"
+    if score >= 70:
+        return "Strong"
+    if score >= 55:
+        return "Playable"
+    return "Thin"
+
+
 app.jinja_env.globals.update(
     categories=CATEGORIES,
     category_order=CATEGORY_ORDER,
@@ -165,6 +184,7 @@ app.jinja_env.globals.update(
     sportsbook_for=lambda league: odds.sportsbook_for(league) or SPORTSBOOK,
     confidence_label=confidence_label,
     lock_confidence=LOCK_CONFIDENCE,
+    wr_confidence_label=wr_confidence_label,
     unit_size=UNIT_SIZE,
 )
 
@@ -1001,6 +1021,14 @@ def create_pick(report_id, fields):
     breakdown); `edge` is the gap between that and the posted line (e.g.
     "Stanford +1.5"); `price_discipline` is free text, one stake tier per
     line (e.g. "+25.5: $100\n+24: $25-50\n+23.5 or worse: pass").
+
+    `wr_confidence` is a separate score (0-100) from `confidence`: it's
+    the War Room's own holistic conviction rating - today a judgment call
+    made when the pick is logged (weighing the edge, the injury/roster
+    notes, the price discipline, everything on the card), not a formula.
+    Unlike `confidence` it isn't tied to the soccer bot and applies to a
+    pick from any league. More structured inputs will fold into it later;
+    for now it's the single number a reader can scan across every pick.
     """
     if fields.get("category") not in CATEGORIES:
         raise ValueError(f"category must be one of {CATEGORY_ORDER}")
@@ -1009,6 +1037,7 @@ def create_pick(report_id, fields):
 
     bet_line = fields.get("bet_line")
     confidence = fields.get("confidence")
+    wr_confidence = fields.get("wr_confidence")
 
     reports_by_id = {r["id"]: r for r in store.load_data()["reports"]}
     report = reports_by_id.get(report_id)
@@ -1017,6 +1046,8 @@ def create_pick(report_id, fields):
     # confidence value never applies to them even if one is submitted.
     if confidence not in (None, "") and (not report or report["league"] not in SOCCER_LEAGUES):
         raise ValueError("confidence only applies to Premier League/Champions League picks")
+    if wr_confidence not in (None, "") and not (0 <= float(wr_confidence) <= 100):
+        raise ValueError("wr_confidence must be between 0 and 100")
 
     new_pick = {
         "report_id": report_id,
@@ -1029,6 +1060,7 @@ def create_pick(report_id, fields):
         "profit_loss": 0.0,
         "notes": (fields.get("notes") or "").strip(),
         "confidence": float(confidence) if confidence not in (None, "") else None,
+        "wr_confidence": float(wr_confidence) if wr_confidence not in (None, "") else None,
         "war_room_line": (fields.get("war_room_line") or "").strip() or None,
         "edge": (fields.get("edge") or "").strip() or None,
         "price_discipline": (fields.get("price_discipline") or "").strip() or None,
@@ -1064,6 +1096,7 @@ def add_pick(report_id):
             "stake": request.form["stake"],
             "notes": request.form.get("notes", ""),
             "confidence": request.form.get("confidence", ""),
+            "wr_confidence": request.form.get("wr_confidence", ""),
             "war_room_line": request.form.get("war_room_line", ""),
             "edge": request.form.get("edge", ""),
             "price_discipline": request.form.get("price_discipline", ""),
@@ -1082,13 +1115,13 @@ def add_pick(report_id):
 def api_update_pick(pick_id, report_id):
     """
     Correct a pick's own analysis fields after the fact - notes,
-    confidence, war_room_line, edge, price_discipline - without touching
-    its bet/grading fields (odds, stake, bet_type/side/line,
-    espn_event_id). If one of those is wrong, delete and re-add the pick
-    instead - they're load-bearing for auto-grade and payout math, so
-    this endpoint deliberately can't touch them.
+    confidence, wr_confidence, war_room_line, edge, price_discipline -
+    without touching its bet/grading fields (odds, stake, bet_type/side/
+    line, espn_event_id). If one of those is wrong, delete and re-add the
+    pick instead - they're load-bearing for auto-grade and payout math,
+    so this endpoint deliberately can't touch them.
     """
-    editable = {"notes", "confidence", "war_room_line", "edge", "price_discipline"}
+    editable = {"notes", "confidence", "wr_confidence", "war_room_line", "edge", "price_discipline"}
     body = request.get_json(silent=True) or {}
     updates = {k: v for k, v in body.items() if k in editable}
     if not updates:
@@ -1114,6 +1147,18 @@ def api_update_pick(pick_id, report_id):
             if not report or report["league"] not in SOCCER_LEAGUES:
                 return jsonify({"error": "confidence only applies to Premier League/Champions League picks"}), 400
             pick["confidence"] = value
+    if "wr_confidence" in updates:
+        value = updates["wr_confidence"]
+        if value in (None, ""):
+            pick["wr_confidence"] = None
+        else:
+            try:
+                value = float(value)
+            except (TypeError, ValueError):
+                return jsonify({"error": "wr_confidence must be a number"}), 400
+            if not (0 <= value <= 100):
+                return jsonify({"error": "wr_confidence must be between 0 and 100"}), 400
+            pick["wr_confidence"] = value
     for key in ("notes", "war_room_line", "edge", "price_discipline"):
         if key in updates:
             value = str(updates[key]).strip()

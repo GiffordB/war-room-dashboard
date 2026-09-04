@@ -255,6 +255,7 @@
               <span class="muted">{{ '%+d'|format(p.odds) }}</span>
               <span class="muted">${{ '{:,.0f}'.format(p.stake) }}</span>
               {% if p.get('confidence') is not none %}<span class="badge-confidence">{{ p.confidence | round | int }}%</span>{% endif %}
+              {% if p.get('wr_confidence') is not none %}<span class="badge-wr-confidence">WR {{ p.wr_confidence | round | int }}%</span>{% endif %}
               <span class="badge-result" style="background: {{ result_color(p.result) }};">{{ result_label(p.result) }}</span>
               {% if p.game %}
                 <span class="badge-live badge-live-{{ p.game.status }}">

@@ -53,7 +53,11 @@
                 <td>
                   {% if p.get('confidence') is not none %}
                     <span class="badge-confidence">{{ confidence_label(p.confidence) | upper }} · {{ p.confidence | round | int }}%</span>
-                  {% else %}<span class="muted">—</span>{% endif %}
+                  {% endif %}
+                  {% if p.get('wr_confidence') is not none %}
+                    <span class="badge-wr-confidence">WR {{ wr_confidence_label(p.wr_confidence) | upper }} · {{ p.wr_confidence | round | int }}%</span>
+                  {% endif %}
+                  {% if p.get('confidence') is none and p.get('wr_confidence') is none %}<span class="muted">—</span>{% endif %}
                 </td>
                 <td class="pos">PLAY ${{ '{:,.0f}'.format(p.stake) }}</td>
                 <td>

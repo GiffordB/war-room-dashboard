@@ -360,6 +360,16 @@ section { margin-bottom: 44px; }
   border-radius: 999px;
 }
 
+.badge-wr-confidence {
+  display: inline-block;
+  color: var(--gold-bright);
+  border: 1px solid var(--gold);
+  font-weight: 800;
+  font-size: 0.75rem;
+  padding: 2px 9px;
+  border-radius: 999px;
+}
+
 .badge-auto {
   display: inline-block;
   color: var(--green);
