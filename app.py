@@ -124,6 +124,21 @@ RESULT_COLORS = {
     "void": "#64748b",
 }
 
+def confidence_label(confidence):
+    """A numeric confidence (0-100) as a War-Room-style text tier, or None if there isn't one."""
+    if confidence is None:
+        return None
+    if confidence >= 90:
+        return "High"
+    if confidence >= 80:
+        return "Medium-High"
+    if confidence >= 70:
+        return "Medium"
+    if confidence >= 65:
+        return "Medium-Low"
+    return "Low"
+
+
 app.jinja_env.globals.update(
     categories=CATEGORIES,
     category_order=CATEGORY_ORDER,
@@ -139,6 +154,7 @@ app.jinja_env.globals.update(
     result_color=lambda r: RESULT_COLORS.get(r, "#8b94a7"),
     sportsbook=SPORTSBOOK,
     sportsbook_for=lambda league: odds.sportsbook_for(league) or SPORTSBOOK,
+    confidence_label=confidence_label,
     unit_size=UNIT_SIZE,
 )
 
@@ -798,6 +814,7 @@ def create_report(fields):
         "report_date": fields["report_date"],
         "week_number": int(fields.get("week_number") or 1),
         "week_label": (fields.get("week_label") or "").strip(),
+        "philosophy": (fields.get("philosophy") or "").strip(),
         "blind_spot_notes": (fields.get("blind_spot_notes") or "").strip(),
         "lsu_review_notes": (fields.get("lsu_review_notes") or "").strip(),
         "created_at": datetime.utcnow().isoformat(timespec="seconds"),
@@ -825,6 +842,7 @@ def add_report():
                 "report_date": request.form["report_date"],
                 "week_number": request.form.get("week_number"),
                 "week_label": request.form.get("week_label", ""),
+                "philosophy": request.form.get("philosophy", ""),
                 "blind_spot_notes": request.form.get("blind_spot_notes", ""),
                 "lsu_review_notes": request.form.get("lsu_review_notes", ""),
             }
@@ -869,12 +887,13 @@ def delete_report(report_id):
 def api_update_report(report_id):
     """
     Correct a report's own metadata after the fact - week_number,
-    week_label, or the two notes fields - without touching its picks.
-    Identity fields (source/league/report_date) aren't editable here;
-    if one of those is wrong, delete and recreate the report instead.
-    Only the fields present in the JSON body are changed.
+    week_label, philosophy, or the two notes fields - without touching
+    its picks. Identity fields (source/league/report_date) aren't
+    editable here; if one of those is wrong, delete and recreate the
+    report instead. Only the fields present in the JSON body are
+    changed.
     """
-    editable = {"week_number", "week_label", "blind_spot_notes", "lsu_review_notes"}
+    editable = {"week_number", "week_label", "philosophy", "blind_spot_notes", "lsu_review_notes"}
     body = request.get_json(silent=True) or {}
     updates = {k: v for k, v in body.items() if k in editable}
     if not updates:
@@ -890,7 +909,7 @@ def api_update_report(report_id):
             report["week_number"] = int(updates["week_number"])
         except (TypeError, ValueError):
             return jsonify({"error": "week_number must be an integer"}), 400
-    for key in ("week_label", "blind_spot_notes", "lsu_review_notes"):
+    for key in ("week_label", "philosophy", "blind_spot_notes", "lsu_review_notes"):
         if key in updates:
             report[key] = str(updates[key]).strip()
 
@@ -905,6 +924,13 @@ def create_pick(report_id, fields):
     bot's (or a human's) own win-probability estimate for this exact
     side/line, 0-100; optional, and purely informational - it's not used
     in grading or payout math, only shown alongside the pick.
+    `war_room_line`/`edge`/`price_discipline` are the same kind of thing:
+    shown on the report, never touched by grading. `war_room_line` is the
+    model's own independent number for this market (e.g. "Miami -23
+    (range -20.5 to -26)" or, for a 3-way soccer market, a probability
+    breakdown); `edge` is the gap between that and the posted line (e.g.
+    "Stanford +1.5"); `price_discipline` is free text, one stake tier per
+    line (e.g. "+25.5: $100\n+24: $25-50\n+23.5 or worse: pass").
     """
     if fields.get("category") not in CATEGORIES:
         raise ValueError(f"category must be one of {CATEGORY_ORDER}")
@@ -925,6 +951,9 @@ def create_pick(report_id, fields):
         "profit_loss": 0.0,
         "notes": (fields.get("notes") or "").strip(),
         "confidence": float(confidence) if confidence not in (None, "") else None,
+        "war_room_line": (fields.get("war_room_line") or "").strip() or None,
+        "edge": (fields.get("edge") or "").strip() or None,
+        "price_discipline": (fields.get("price_discipline") or "").strip() or None,
         "espn_event_id": fields.get("espn_event_id") or None,
         "bet_type": fields.get("bet_type") or None,
         "bet_side": fields.get("bet_side") or None,
@@ -957,6 +986,9 @@ def add_pick(report_id):
             "stake": request.form["stake"],
             "notes": request.form.get("notes", ""),
             "confidence": request.form.get("confidence", ""),
+            "war_room_line": request.form.get("war_room_line", ""),
+            "edge": request.form.get("edge", ""),
+            "price_discipline": request.form.get("price_discipline", ""),
             "espn_event_id": request.form.get("espn_event_id"),
             "bet_type": request.form.get("bet_type"),
             "bet_side": request.form.get("bet_side"),
@@ -966,6 +998,48 @@ def add_pick(report_id):
         },
     )
     return redirect(url_for("report_detail", report_id=report_id))
+
+
+@app.route("/api/reports/<int:report_id>/picks/<int:pick_id>", methods=["PATCH"])
+def api_update_pick(pick_id, report_id):
+    """
+    Correct a pick's own analysis fields after the fact - notes,
+    confidence, war_room_line, edge, price_discipline - without touching
+    its bet/grading fields (odds, stake, bet_type/side/line,
+    espn_event_id). If one of those is wrong, delete and re-add the pick
+    instead - they're load-bearing for auto-grade and payout math, so
+    this endpoint deliberately can't touch them.
+    """
+    editable = {"notes", "confidence", "war_room_line", "edge", "price_discipline"}
+    body = request.get_json(silent=True) or {}
+    updates = {k: v for k, v in body.items() if k in editable}
+    if not updates:
+        return jsonify({"error": f"no editable fields given (allowed: {sorted(editable)})"}), 400
+
+    data, token = store.load_for_update()
+    pick = next((p for p in data["picks"] if p["id"] == pick_id and p["report_id"] == report_id), None)
+    if pick is None:
+        return jsonify({"error": f"no pick #{pick_id} on report #{report_id}"}), 404
+
+    if "confidence" in updates:
+        value = updates["confidence"]
+        if value in (None, ""):
+            pick["confidence"] = None
+        else:
+            try:
+                value = float(value)
+            except (TypeError, ValueError):
+                return jsonify({"error": "confidence must be a number"}), 400
+            if not (0 <= value <= 100):
+                return jsonify({"error": "confidence must be between 0 and 100"}), 400
+            pick["confidence"] = value
+    for key in ("notes", "war_room_line", "edge", "price_discipline"):
+        if key in updates:
+            value = str(updates[key]).strip()
+            pick[key] = value or None
+
+    store.save(data, token, message=f"Update pick #{pick_id}")
+    return jsonify({"id": pick_id})
 
 
 @app.route("/reports/<int:report_id>/auto_grade", methods=["POST"])

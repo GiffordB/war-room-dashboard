@@ -22,6 +22,11 @@
     </div>
   {% endif %}
 
+  <p class="war-tagline">
+    {{ sportsbook_for(report.league) }} only &middot; Unit: ${{ unit_size | int }}
+    {% if report.get('philosophy') %} &middot; {{ report.philosophy }}{% endif %}
+  </p>
+
   {% if report.blind_spot_notes or report.lsu_review_notes %}
     <section class="notes-grid">
       {% if report.blind_spot_notes %}
@@ -48,66 +53,102 @@
         </form>
       {% endif %}
     </div>
+
     {% if picks %}
+      <div class="war-section-label">At a Glance</div>
       <div class="table-scroll">
         <table class="data-table">
           <thead>
             <tr>
-              <th>Category</th>
               <th>Matchup</th>
-              <th>Selection</th>
-              <th>Odds</th>
-              <th>Stake</th>
-              <th>Conf.</th>
-              <th>Result</th>
-              <th>P/L</th>
-              <th></th>
+              <th>{{ sportsbook_for(report.league) }}</th>
+              <th>War Room</th>
+              <th>Est. Edge</th>
+              <th>Confidence</th>
+              <th>Call</th>
             </tr>
           </thead>
           <tbody>
             {% for p in picks %}
               <tr>
-                <td style="color: {{ categories[p.category].color }};">{{ categories[p.category].icon }} {{ categories[p.category].label }}</td>
                 <td>{{ p.matchup }}</td>
+                <td>{{ p.selection }} ({{ '%+d'|format(p.odds) }})</td>
+                <td class="muted">{{ p.get('war_room_line') or '—' }}</td>
+                <td class="muted">{{ p.get('edge') or '—' }}</td>
                 <td>
-                  {{ p.selection }}
-                  {% if p.espn_event_id %}<span class="badge-auto" title="Linked to a live {{ sportsbook_for(report.league) }} line — can be auto-graded from the final score">🔗 auto</span>{% endif %}
-                  {% if p.game %}
-                    <div>
-                      <span class="badge-live badge-live-{{ p.game.status }}">
-                        {{ '🏁 FINAL' if p.game.final else '🔴 LIVE' }} {{ p.game.score }} · {{ p.game.label }}
-                      </span>
-                    </div>
-                  {% endif %}
-                  {% if p.notes %}<div class="muted small">{{ p.notes }}</div>{% endif %}
+                  {% if p.get('confidence') is not none %}
+                    <span class="badge-confidence">{{ confidence_label(p.confidence) | upper }} · {{ p.confidence | round | int }}%</span>
+                  {% else %}<span class="muted">—</span>{% endif %}
                 </td>
-                <td>{{ '%+d'|format(p.odds) }}</td>
-                <td>${{ '{:,.0f}'.format(p.stake) }} <span class="muted small">({{ '%.2f'|format(p.stake / unit_size) }}u)</span></td>
-                <td>{% if p.get('confidence') is not none %}<span class="badge-confidence">{{ p.confidence | round | int }}%</span>{% else %}<span class="muted">—</span>{% endif %}</td>
-                <td>
-                  <form class="settle-form" method="post" action="{{ url_for('settle_pick', pick_id=p.id) }}">
-                    <select name="result" onchange="this.form.requestSubmit()">
-                      {% for r in results %}
-                        <option value="{{ r }}" {% if r == p.result %}selected{% endif %}>{{ result_label(r) }}</option>
-                      {% endfor %}
-                    </select>
-                    <noscript><button class="btn btn-sm" type="submit">Update</button></noscript>
-                  </form>
-                </td>
-                <td class="{{ 'pos' if p.profit_loss > 0 else 'neg' if p.profit_loss < 0 else 'muted' }}">
-                  {% if p.result != 'pending' %}{{ '%+.0f'|format(p.profit_loss) }}${% endif %}
-                </td>
-                <td>
-                  <form method="post" action="{{ url_for('delete_pick', pick_id=p.id) }}"
-                        onsubmit="return confirm('Delete this pick?');">
-                    <button class="btn-link" type="submit">Delete</button>
-                  </form>
-                </td>
+                <td class="pos">PLAY ${{ '{:,.0f}'.format(p.stake) }}</td>
               </tr>
             {% endfor %}
           </tbody>
         </table>
       </div>
+
+      <div class="war-picks">
+        {% for p in picks %}
+          <div class="war-pick-card">
+            <div class="war-pick-head">
+              <span class="war-pick-num">{{ loop.index }}</span>
+              <span style="color: {{ categories[p.category].color }};">{{ categories[p.category].icon }} {{ categories[p.category].label }}</span>
+              <strong>{{ p.selection }}</strong>
+              <span class="muted">${{ '{:,.0f}'.format(p.stake) }} ({{ '%.2f'|format(p.stake / unit_size) }}u)</span>
+              {% if p.espn_event_id %}<span class="badge-auto" title="Linked to a live {{ sportsbook_for(report.league) }} line — can be auto-graded from the final score">🔗 auto</span>{% endif %}
+              {% if p.game %}
+                <span class="badge-live badge-live-{{ p.game.status }}">
+                  {{ '🏁 FINAL' if p.game.final else '🔴 LIVE' }} {{ p.game.score }} · {{ p.game.label }}
+                </span>
+              {% endif %}
+              {% if p.result != 'pending' %}
+                <span class="{{ 'pos' if p.profit_loss > 0 else 'neg' if p.profit_loss < 0 else 'muted' }}">{{ '%+.0f'|format(p.profit_loss) }}$</span>
+              {% endif %}
+            </div>
+
+            {% if p.notes %}
+              <div class="war-box">
+                <div class="war-box-label">The Case</div>
+                <ul>
+                  {% for line in p.notes.split('\n') if line.strip() %}<li>{{ line.strip() }}</li>{% endfor %}
+                </ul>
+              </div>
+            {% endif %}
+
+            {% if p.get('price_discipline') %}
+              <div class="war-box war-box-discipline">
+                <div class="war-box-label">Price Discipline</div>
+                <ul>
+                  {% for line in p.price_discipline.split('\n') if line.strip() %}<li>{{ line.strip() }}</li>{% endfor %}
+                </ul>
+              </div>
+            {% endif %}
+
+            <div class="war-pick-controls">
+              <form class="settle-form" method="post" action="{{ url_for('settle_pick', pick_id=p.id) }}">
+                <label class="muted small">Result
+                  <select name="result" onchange="this.form.requestSubmit()">
+                    {% for r in results %}
+                      <option value="{{ r }}" {% if r == p.result %}selected{% endif %}>{{ result_label(r) }}</option>
+                    {% endfor %}
+                  </select>
+                </label>
+                <noscript><button class="btn btn-sm" type="submit">Update</button></noscript>
+              </form>
+              <form method="post" action="{{ url_for('delete_pick', pick_id=p.id) }}"
+                    onsubmit="return confirm('Delete this pick?');">
+                <button class="btn-link" type="submit">Delete</button>
+              </form>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+
+      <p class="war-recap">
+        <strong>CARD:</strong>
+        {% for p in picks %}{{ p.selection }} ${{ '{:,.0f}'.format(p.stake) }}{% if not loop.last %}&nbsp;&nbsp;|&nbsp;&nbsp;{% endif %}{% endfor %}
+      </p>
+      <p class="war-disclaimer">Fun-First Charter: this is entertainment and a game of chance. Every bettor makes the final decision; an empty card is a winning act of discipline.</p>
     {% else %}
       <p class="empty">No picks logged for this report yet.</p>
     {% endif %}
@@ -176,9 +217,25 @@
         </label>
       </div>
 
+      <div class="form-row">
+        <label>
+          War Room Number (optional)
+          <input type="text" name="war_room_line" placeholder="e.g. Miami -23 (range -20.5 to -26)">
+        </label>
+        <label>
+          Est. Edge (optional)
+          <input type="text" name="edge" placeholder="e.g. Stanford +1.5">
+        </label>
+      </div>
+
       <label>
-        Notes (optional)
-        <textarea name="notes" rows="2" placeholder="Why this pick — pace, injuries, matchup, line movement..."></textarea>
+        The Case — notes (optional)
+        <textarea name="notes" rows="3" placeholder="One point per line — pace, injuries, matchup, line movement..."></textarea>
+      </label>
+
+      <label>
+        Price Discipline (optional)
+        <textarea name="price_discipline" rows="3" placeholder="One tier per line, e.g.&#10;+25.5: $100&#10;+24: $25-50&#10;+23.5 or worse: pass"></textarea>
       </label>
 
       <!-- Populated only by clicking a line in "Look Up Odds" above - links this

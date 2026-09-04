@@ -89,6 +89,18 @@ position, home/away trend, head-to-head, squad news, injuries, weather,
 manager, motivation/context). Not a vibe — if asked "why 63 and not 58,"
 you should have an answer.
 
+Also work out your own **independent number** for the market before you
+look at whether it clears the bar — don't just react to the posted line.
+For a spread/total, that's your own line estimate with a range (e.g.
+"Man City -2 (range -1.5 to -3)"); for a 3-way match_result, it's your
+own probability split (e.g. "City 70% / Draw 18% / Coventry 12%"). This
+becomes `war_room_line` on the pick, and the gap between it and the
+posted number becomes `edge` (e.g. "City +1.5" if you think they're a
+bigger favorite than the market does). If your number and the market's
+are basically the same, that's a real finding too — say so in `edge`
+("no edge, pricing looks fair") rather than inventing daylight that
+isn't there.
+
 ## 4. Decide what to recommend
 
 **Only a side with confidence ≥ 60% is eligible to become a pick.**
@@ -124,6 +136,11 @@ descriptive to add beyond the number — the dashboard already renders
 wherever a view can show more than one league at once, and a set
 `week_label` overrides that generated text instead of adding to it.
 
+`philosophy` is a short one-line tagline shown under the report header
+(e.g. "Form over reputation, real edges over vibes, no forced action.")
+- optional, but a nice touch that sets the tone for the slate; leave it
+out rather than forcing one if nothing fits.
+
 ```
 POST /api/reports
 Content-Type: application/json
@@ -132,7 +149,8 @@ Content-Type: application/json
   "league": "UCL",            // or "EPL"
   "report_date": "YYYY-MM-DD", // today, ET
   "week_number": <matchweek>,
-  "week_label": ""             // leave blank - see above
+  "week_label": "",            // leave blank - see above
+  "philosophy": ""              // optional one-line tagline, or omit
 }
 → {"id": <report_id>}
 ```
@@ -149,7 +167,10 @@ Content-Type: application/json
   "odds": -135,                        // the American price you pulled in step 2
   "stake": 100,
   "confidence": 68,                    // your 0-100 estimate from step 3
-  "notes": "Man City unbeaten in 9 at home; Spurs missing both starting CBs per official injury news.",
+  "war_room_line": "City 70% / Draw 18% / Spurs 12%",  // your own independent number - see step 3
+  "edge": "City +5pts vs. market-implied ~65%",         // the gap between your number and the posted line
+  "notes": "Man City unbeaten in 9 at home.\nSpurs missing both starting CBs per official injury news.\nSpurs also winless and scoreless through 2 games.",
+  "price_discipline": "-135 or better: $100\n-150 to -136: $50\n-155 or worse: pass",
   "bet_type": "match_result",          // "match_result" | "total" | "spread"
   "bet_side": "home",                  // match_result: home/draw/away; total: over/under; spread: home/away
   "bet_line": null,                    // the posted number for total/spread; null for match_result
@@ -160,19 +181,31 @@ Content-Type: application/json
 → {"id": <pick_id>}
 ```
 
+`notes` renders as one bullet per line (`\n`-separated) under "The Case"
+on the report - write it that way, short independent points, not one
+long paragraph. `price_discipline` renders the same way under "Price
+Discipline" - one stake tier per line, worst case last (a "pass" tier is
+fine and often correct). Both are optional but this is most of what
+makes the report worth reading, so skipping them should be rare, not the
+default.
+
 Use the exact `bet_type`/`bet_side`/`bet_line`/`espn_event_id` from the
 line you pulled — this is what lets the hourly auto-grade job settle the
 pick automatically once the match finishes. A 400 response means a field
 is wrong (bad category, missing required field) — fix and retry that one
 pick; don't abandon the rest of the slate over one bad request.
 
-If you catch a mistake in the report's own metadata after submitting
-(wrong `week_number`, a typo in the notes), fix it in place rather than
-deleting and resubmitting the whole report:
-`PATCH /api/reports/<report_id>` with a JSON body of just the field(s)
-to change (`week_number`, `week_label`, `blind_spot_notes`,
-`lsu_review_notes`). It leaves the report's picks untouched. A wrong
-`source`, `league`, or `report_date` isn't editable this way — that
+If you catch a mistake after submitting, fix it in place rather than
+deleting and resubmitting:
+- `PATCH /api/reports/<report_id>` for the report's own `week_number`,
+  `week_label`, `philosophy`, `blind_spot_notes`, or `lsu_review_notes`.
+- `PATCH /api/reports/<report_id>/picks/<pick_id>` for a pick's `notes`,
+  `confidence`, `war_room_line`, `edge`, or `price_discipline`.
+
+Both take a JSON body of just the field(s) to change and leave
+everything else untouched. Neither can touch identity/grading fields
+(a report's `source`/`league`/`report_date`, a pick's `odds`/`stake`/
+`bet_type`/`bet_side`/`bet_line`/`espn_event_id`) - a mistake there
 needs a delete + resubmit instead.
 
 ## 6. Done
