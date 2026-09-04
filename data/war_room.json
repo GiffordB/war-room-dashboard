@@ -131,7 +131,7 @@
       "result": "pending",
       "profit_loss": 0.0,
       "notes": "Brentford unbeaten at home this season; Sunderland won just 5 of 19 away league games last season and are missing Diarra (fresh thigh knock) plus a suspension. New signing Danso does not close that gap.",
-      "confidence": 64.0,
+      "confidence": null,
       "espn_event_id": "401879311",
       "bet_type": "match_result",
       "bet_side": "home",
