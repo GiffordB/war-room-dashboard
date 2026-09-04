@@ -7,17 +7,6 @@
       "league": "CFB",
       "report_date": "2026-09-04",
       "week_number": 1,
-      "week_label": "PAT smoke test -- safe to delete",
-      "blind_spot_notes": "",
-      "lsu_review_notes": "",
-      "created_at": "2026-09-04T02:25:26",
-      "id": 1
-    },
-    {
-      "source": "Claude",
-      "league": "CFB",
-      "report_date": "2026-09-04",
-      "week_number": 1,
       "week_label": "PAT smoke test",
       "blind_spot_notes": "",
       "lsu_review_notes": "",
