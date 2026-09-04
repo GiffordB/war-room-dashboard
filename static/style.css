@@ -222,6 +222,20 @@ section { margin-bottom: 44px; }
   font-size: 0.88rem;
 }
 
+.news-list {
+  list-style: none;
+  margin: 10px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.news-list li { font-size: 0.85rem; line-height: 1.4; }
+.news-list a { color: var(--text); text-decoration: underline; text-decoration-color: var(--border); }
+.news-list a:hover { text-decoration-color: var(--gold-bright); }
+.news-flagged { color: var(--gold-bright); }
+.news-flagged a { color: var(--gold-bright); text-decoration-color: var(--gold); }
+
 /* ---------------- Vs banner ---------------- */
 .vs-banner {
   background: var(--surface);

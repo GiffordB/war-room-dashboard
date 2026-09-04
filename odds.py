@@ -29,9 +29,12 @@ Prediction research, soccer only (see the Team Intel page):
   - home_away_split(league, team_id) -> W/D/L and goals, home vs. away
   - team_roster(league, team_id) -> squad (with each player's ESPN
     injury/status flags where reported) + historical manager list
-  - team_news(league, team_id) -> latest headlines from ESPN's own soccer
-    desk (form, transfers, injuries - whatever's in their feed), each
-    with a link to the full article
+
+team_news(league, team_id) -> latest headlines from ESPN's own sports
+  desk (form, transfers, injuries - whatever's in their feed), each with
+  a link to the full article. Works for every configured league, not
+  just soccer - used by the Team Intel page there, and by MyWallet's
+  news watch for CFB/NFL.
   - local_news(club_name) -> beat-reporter/local-paper coverage of a
     club, via Google News (broader and more club-specific than ESPN's
     global desk - regional papers, the club's own site, etc.)
@@ -529,8 +532,15 @@ def team_roster(league, team_id):
 
 
 def team_news(league, team_id, limit=6):
-    """Latest headlines for a team: [{headline, published, link}], newest first."""
-    if not is_soccer(league) or not team_id:
+    """
+    Latest headlines for a team: [{headline, published, link}], newest
+    first. Not soccer-specific despite living in the "soccer only" block
+    above - ESPN's news endpoint is the same shape for every configured
+    league (see wallet_news_alerts() in app.py, which uses this for
+    CFB/NFL too), it just wasn't called for anything but the Team Intel
+    page (soccer-only) until now.
+    """
+    if not team_id or league not in LEAGUE_CONFIG:
         return []
 
     url = f"{_site_url(league, 'news')}?team={team_id}"

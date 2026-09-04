@@ -43,6 +43,34 @@
   </section>
 
   <section>
+    <h2 class="section-label">News Watch — Pending Bets</h2>
+    <p class="muted small">Recent headlines for both teams in each still-pending bet. ⚠️ flags injury/lineup/suspension language as a nudge to read closer — it's not a verdict that it actually swings this bet.</p>
+    {% if news_alerts %}
+      <div class="locks-grid">
+        {% for watch in news_alerts %}
+          <div class="lock-card">
+            <div class="lock-card-head">
+              <span class="badge-league">{{ watch.league }}</span>
+              <strong>{{ watch.matchup }}</strong>
+            </div>
+            <ul class="news-list">
+              {% for h in watch.headlines %}
+                <li class="{{ 'news-flagged' if h.flagged else '' }}">
+                  {% if h.flagged %}⚠️ {% endif -%}
+                  {% if h.link %}<a href="{{ h.link }}" target="_blank" rel="noopener">{{ h.headline }}</a>{% else %}{{ h.headline }}{% endif %}
+                  <span class="muted small">— {{ h.team }}</span>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        {% endfor %}
+      </div>
+    {% else %}
+      <p class="empty">No news found for your pending bets right now.</p>
+    {% endif %}
+  </section>
+
+  <section>
     <h2 class="section-label">Profit Over Time</h2>
     {% if profit_chart %}
       <div class="chart-card">{{ profit_chart }}</div>

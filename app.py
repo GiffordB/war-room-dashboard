@@ -21,6 +21,7 @@ Shape of this file:
   5. `if __name__ == ...`   - the line that actually starts the server
 """
 
+import re
 from datetime import datetime
 
 from flask import Flask, jsonify, redirect, render_template, request, url_for
@@ -1472,6 +1473,81 @@ def wallet_cumulative_chart(data):
     return all_dates, series
 
 
+# A keyword nudge, not a verdict: a headline mentioning one of these
+# terms gets flagged for a closer read, since it's the kind of language
+# (injury, suspension, a lineup change) that can move a bet's outcome -
+# it's not judged for whether it actually applies to this specific game.
+# Whole-word matches only (word boundaries) - a bare "out" or "starter"
+# flags far too much unrelated coverage ("breakout", "starting the
+# season 2-0"), so every entry here is a multi-word phrase specific
+# enough to rarely appear outside real injury/lineup news.
+_NEWS_IMPACT_PATTERNS = tuple(
+    re.compile(r"\b" + re.escape(phrase) + r"\b")
+    for phrase in (
+        "ruled out", "will not play", "won't play", "out for the season",
+        "out indefinitely", "injury", "injured", "questionable", "doubtful",
+        "suspended", "benched", "surgery", "torn acl", "torn achilles",
+        "fired", "resigns", "arrested", "ejected", "placed on ir",
+        "injured reserve",
+    )
+)
+
+
+def _headline_flagged(headline):
+    text = (headline or "").lower()
+    return any(p.search(text) for p in _NEWS_IMPACT_PATTERNS)
+
+
+def wallet_news_alerts(data, limit_per_team=4):
+    """
+    Recent headlines for both teams in every still-pending wallet bet,
+    one lookup per unique linked game (two bets on the same game share
+    it). `flagged` marks a headline containing common injury/lineup/
+    suspension language - a nudge to read it, not a verdict that it
+    actually swings this bet, so the headline itself is always shown
+    either way.
+    """
+    picks_by_id = {p["id"]: p for p in data["picks"]}
+    seen_events = set()
+    watches = []
+    for e in data["wallet_entries"]:
+        if e["result"] != "pending":
+            continue
+        pick = picks_by_id.get(e["pick_id"])
+        if not pick or not pick.get("espn_event_id"):
+            continue
+        event_key = (e["league"], pick["espn_event_id"])
+        if event_key in seen_events:
+            continue
+        seen_events.add(event_key)
+
+        info = odds.match_info(e["league"], pick["espn_event_id"])
+        if not info:
+            continue
+
+        headlines = []
+        for team_id, team_name in ((info["home_id"], info["home_name"]), (info["away_id"], info["away_name"])):
+            for article in odds.team_news(e["league"], team_id, limit=limit_per_team):
+                if not article.get("headline"):
+                    continue
+                headlines.append(
+                    {
+                        "team": team_name,
+                        "headline": article["headline"],
+                        "link": article.get("link"),
+                        "published": article.get("published"),
+                        "flagged": _headline_flagged(article["headline"]),
+                    }
+                )
+        if not headlines:
+            continue
+        headlines.sort(key=lambda h: h["published"] or "", reverse=True)
+        headlines.sort(key=lambda h: h["flagged"], reverse=True)
+        watches.append({"matchup": e["matchup"], "league": e["league"], "headlines": headlines[:8]})
+
+    return watches
+
+
 @app.route("/MyWallet")
 def my_wallet():
     data = store.load_data()
@@ -1480,6 +1556,7 @@ def my_wallet():
     by_source = wallet_stats_by_source(data)
     wr_buckets = wr_confidence_buckets()
     wr_bucket_stats = wallet_stats_by_wr_bucket(data)
+    news_alerts = wallet_news_alerts(data)
     chart_dates, chart_series = wallet_cumulative_chart(data)
     profit_chart = charts.line_chart(chart_dates, chart_series, unit="$") if chart_dates else None
 
@@ -1525,6 +1602,7 @@ def my_wallet():
         by_source=by_source,
         wr_buckets=wr_buckets,
         wr_bucket_stats=wr_bucket_stats,
+        news_alerts=news_alerts,
         profit_chart=profit_chart,
         pending_picks=pending_picks,
     )
