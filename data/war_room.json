@@ -170,7 +170,10 @@
       "home_team": "Arsenal",
       "away_team": "Chelsea",
       "created_at": "2026-09-04T11:40:39",
-      "id": 7
+      "id": 7,
+      "war_room_line": "Model total: ~2.9 goals",
+      "edge": "Market total 2.5 at -140 (implied ~58%); model ~62% over -- Chelsea's leaky defense (5 conceded in 2) against an in-form Arsenal attack is the driver",
+      "price_discipline": "-140 or better: $50\n-155 to -141: $35\n-165 or worse: pass"
     },
     {
       "report_id": 4,
