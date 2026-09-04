@@ -1,6 +1,6 @@
 {
   "next_report_id": 9,
-  "next_pick_id": 27,
+  "next_pick_id": 28,
   "reports": [
     {
       "source": "ChatGPT",
@@ -591,6 +591,29 @@
       "away_team": "Aston Villa",
       "created_at": "2026-09-04T23:25:13",
       "id": 26
+    },
+    {
+      "report_id": 8,
+      "category": "totals_radar",
+      "matchup": "Tottenham Hotspur @ Nottingham Forest",
+      "selection": "Under 2.5 Total Goals",
+      "odds": -105,
+      "stake": 50.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "Tottenham are scoreless through two league games under new boss De Zerbi (0-2, 0-3).\nForest have scored two goals total and conceded three, drawing 2-2 at Liverpool after blowing two leads.\nForest have won the last 4 PL meetings between these sides, historically low-scoring ones.\nJames Maddison (Spurs) is still 2-4 weeks away, keeping Spurs' final-third options thin.",
+      "wr_confidence": null,
+      "war_room_line": "2.1 total goals (range 1.5-3)",
+      "edge": "Line sits at 2.5 (-105 under, roughly 51% implied); Spurs have scored zero goals in two league matches and Forest have managed just two of their own, so clearing this number needs a real outlier from either attack.",
+      "price_discipline": "-105 or better: $50\n-106 to -120: $35\nWorse than -120: pass",
+      "espn_event_id": "401878780",
+      "bet_type": "total",
+      "bet_side": "under",
+      "bet_line": 2.5,
+      "home_team": "Nottingham Forest",
+      "away_team": "Tottenham Hotspur",
+      "created_at": "2026-09-04T23:26:42",
+      "id": 27
     }
   ],
   "next_wallet_id": 6,
