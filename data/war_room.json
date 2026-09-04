@@ -1,5 +1,5 @@
 {
-  "next_report_id": 7,
+  "next_report_id": 8,
   "next_pick_id": 19,
   "reports": [
     {
@@ -36,6 +36,18 @@
       "lsu_review_notes": "Thursday test run: 3-0. No Thor Hammer, no forced parlay, low underdog lean this week.",
       "created_at": "2026-09-04T13:38:13",
       "id": 6
+    },
+    {
+      "source": "Claude",
+      "league": "CFB",
+      "report_date": "2026-09-04",
+      "week_number": 1,
+      "week_label": "Week 1 -- Weekend Top 15 (Maven Quant)",
+      "philosophy": "Closing-line value over win/loss -- the edge is the printed sheet number vs. Pinnacle's live price, nothing else. Stakes are quarter-Kelly, capped at 2% of bankroll, sized to the edge, not the appetite.",
+      "blind_spot_notes": "Ranks 6-15 all pass after vig. Kansas -41.5 looked like a two-point edge over Pinnacle's -43.5 on a naive count, but those extra points (42, 43) occur under 1% of the time -- points are worth what the margins they cover are worth, not their raw count. Hawaii +3.5 at FanDuel (-122) is a non-sheet alternate worth a look if it survives to kickoff. Total board exposure this weekend: 4.1% of bankroll across 4 real bets; a thin week by design, not a miss.",
+      "lsu_review_notes": "",
+      "created_at": "2026-09-04T22:33:15",
+      "id": 7
     }
   ],
   "picks": [
