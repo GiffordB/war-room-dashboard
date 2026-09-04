@@ -5,12 +5,17 @@
   <div class="page-head">
     <h1>Claude vs. Grok vs. ChatGPT</h1>
     <span class="sportsbook-tag">
-      {% if current_league %}{{ sportsbook_for(current_league) }} only{% else %}DraftKings (CFB/NFL) · ESPN BET (EPL/UCL){% endif %} · $100 = 1 unit
+      {% if current_league in league_order %}{{ sportsbook_for(current_league) }} only
+      {% elif current_league in league_group_order %}ESPN BET only
+      {% else %}DraftKings (CFB/NFL) · ESPN BET (EPL/UCL){% endif %} · $100 = 1 unit
     </span>
   </div>
 
   <div class="league-tabs">
     <a class="league-tab {{ 'active' if not current_league }}" href="{{ url_for('dashboard') }}">All Leagues</a>
+    {% for key in league_group_order %}
+      <a class="league-tab {{ 'active' if current_league == key }}" href="{{ url_for('dashboard', league=key) }}">{{ league_group_label(key) }}</a>
+    {% endfor %}
     {% for code in league_order %}
       <a class="league-tab {{ 'active' if current_league == code }}" href="{{ url_for('dashboard', league=code) }}">{{ leagues[code] }}</a>
     {% endfor %}

@@ -97,7 +97,16 @@ SOURCE_STYLE = {
 # research data behind a pick (the Team Intel page) differ by sport.
 LEAGUES = {"CFB": "College Football", "NFL": "NFL", "EPL": "Premier League", "UCL": "Champions League"}
 LEAGUE_ORDER = list(LEAGUES.keys())
-SOCCER_LEAGUES = {code for code in LEAGUE_ORDER if odds.is_soccer(code)}
+SOCCER_LEAGUES = frozenset(code for code in LEAGUE_ORDER if odds.is_soccer(code))
+
+# Combined filters on top of the individual leagues above - "All
+# Football"/"All Futbol" are two labels for the same thing (EPL+UCL
+# together), so a viewer can pick whichever word they think in without
+# hunting for two different tabs. {key: (tab label, {league codes})}.
+LEAGUE_GROUPS = {
+    "football": ("All Football", SOCCER_LEAGUES),
+    "futbol": ("All Futbol", SOCCER_LEAGUES),
+}
 
 RESULTS = ["pending", "win", "loss", "push", "void"]
 RESULT_LABELS = {
@@ -123,6 +132,8 @@ app.jinja_env.globals.update(
     leagues=LEAGUES,
     league_order=LEAGUE_ORDER,
     soccer_leagues=SOCCER_LEAGUES,
+    league_group_order=list(LEAGUE_GROUPS.keys()),
+    league_group_label=lambda key: LEAGUE_GROUPS.get(key, (key,))[0],
     results=RESULTS,
     result_label=lambda r: RESULT_LABELS.get(r, r),
     result_color=lambda r: RESULT_COLORS.get(r, "#8b94a7"),
@@ -313,7 +324,7 @@ def recent_picks_by_week(data, league=None, limit=4):
     by_week = {}
     for p in data["picks"]:
         r = reports.get(p["report_id"])
-        if not r or (league and r["league"] != league):
+        if not r or not _league_matches(r["league"], league):
             continue
         wn = r["week_number"]
         group = by_week.setdefault(wn, {"week_number": wn, "label": f"Week {wn}", "picks": []})
@@ -372,7 +383,7 @@ def source_stats(data, source, league=None):
         r = reports.get(p["report_id"])
         if not r or r["source"] != source:
             continue
-        if league and r["league"] != league:
+        if not _league_matches(r["league"], league):
             continue
         if p["result"] == "pending":
             stats["pending"] += 1
@@ -387,7 +398,7 @@ def category_breakdown(data, league=None):
     result = {cat: {s: empty_stats(s) for s in SOURCES} for cat in CATEGORY_ORDER}
     for p in data["picks"]:
         r = reports.get(p["report_id"])
-        if not r or (league and r["league"] != league):
+        if not r or not _league_matches(r["league"], league):
             continue
         cat, src = p["category"], r["source"]
         if cat not in result or src not in SOURCES:
@@ -410,7 +421,7 @@ def category_pick_counts(data, league=None):
     counts = {cat: {s: 0 for s in SOURCES} for cat in CATEGORY_ORDER}
     for p in data["picks"]:
         r = reports.get(p["report_id"])
-        if not r or (league and r["league"] != league):
+        if not r or not _league_matches(r["league"], league):
             continue
         if p["category"] in counts and r["source"] in SOURCES:
             counts[p["category"]][r["source"]] += 1
@@ -436,7 +447,7 @@ def cumulative_profit_chart(data, league=None):
         if p["result"] not in ("win", "loss", "push"):
             continue
         r = reports.get(p["report_id"])
-        if not r or (league and r["league"] != league):
+        if not r or not _league_matches(r["league"], league):
             continue
         rows.append((r["report_date"], p["id"], r["source"], p["profit_loss"]))
     rows.sort(key=lambda row: (row[0], row[1]))
@@ -484,7 +495,7 @@ def weekly_stats(data, league=None):
         if p["result"] not in ("win", "loss", "push"):
             continue
         r = reports.get(p["report_id"])
-        if not r or (league and r["league"] != league):
+        if not r or not _league_matches(r["league"], league):
             continue
 
         wn = r["week_number"]
@@ -529,7 +540,7 @@ def war_room_locks(data, league=None):
         if p["result"] != "pending" or not p.get("espn_event_id") or not p.get("bet_type"):
             continue
         r = reports.get(p["report_id"])
-        if not r or (league and r["league"] != league):
+        if not r or not _league_matches(r["league"], league):
             continue
 
         key = (p["espn_event_id"], p["bet_type"], p["bet_side"])
@@ -576,7 +587,7 @@ def rank_movement(data, league=None):
         if p["result"] not in ("win", "loss", "push"):
             continue
         r = reports.get(p["report_id"])
-        if not r or (league and r["league"] != league):
+        if not r or not _league_matches(r["league"], league):
             continue
         rows.append((r["report_date"], p["id"], r["source"], p["profit_loss"]))
     rows.sort(key=lambda row: (row[0], row[1]))
@@ -601,13 +612,40 @@ def resolve_league(value):
     return value if value in LEAGUE_ORDER else None
 
 
+def resolve_league_filter(value):
+    """
+    For views that can show one league, a named group of leagues (see
+    LEAGUE_GROUPS), or everything: returns (display_key, filter_value).
+
+    display_key is the raw value to carry through to templates/URLs for
+    tab-active-state - always a plain string or None, never a set, so
+    `current_league == code` comparisons in templates keep working
+    unchanged. filter_value is what report-matching code tests a
+    report's league against - None (no filter), a single league code, or
+    a frozenset of codes - see _league_matches().
+    """
+    if value in LEAGUE_ORDER:
+        return value, value
+    if value in LEAGUE_GROUPS:
+        return value, LEAGUE_GROUPS[value][1]
+    return None, None
+
+
+def _league_matches(actual, league_filter):
+    if league_filter is None:
+        return True
+    if isinstance(league_filter, (set, frozenset)):
+        return actual in league_filter
+    return actual == league_filter
+
+
 # ---------------------------------------------------------------------
 # Routes
 # ---------------------------------------------------------------------
 @app.route("/")
 def dashboard():
     data = store.load_data()
-    league = resolve_league(request.args.get("league"))
+    current_league, league = resolve_league_filter(request.args.get("league"))
 
     locks = war_room_locks(data, league)
 
@@ -634,7 +672,7 @@ def dashboard():
 
     recent_weeks = recent_picks_by_week(data, league)
 
-    report_count = sum(1 for r in data["reports"] if not league or r["league"] == league)
+    report_count = sum(1 for r in data["reports"] if _league_matches(r["league"], league))
 
     return render_template(
         "index.html",
@@ -651,16 +689,16 @@ def dashboard():
         breakdown=breakdown,
         recent_weeks=recent_weeks,
         report_count=report_count,
-        current_league=league,
+        current_league=current_league,
     )
 
 
 @app.route("/reports")
 def reports_list():
     data = store.load_data()
-    league = resolve_league(request.args.get("league"))
+    current_league, league = resolve_league_filter(request.args.get("league"))
 
-    reports = [r for r in data["reports"] if not league or r["league"] == league]
+    reports = [r for r in data["reports"] if _league_matches(r["league"], league)]
     reports.sort(key=lambda r: (r["report_date"], r["id"]), reverse=True)
 
     report_stats = {}
@@ -686,7 +724,7 @@ def reports_list():
         "reports_list.html",
         reports=reports,
         report_stats=report_stats,
-        current_league=league,
+        current_league=current_league,
         auto_gradable=auto_gradable,
         graded=request.args.get("graded", type=int),
         still_pending=request.args.get("still_pending", type=int),

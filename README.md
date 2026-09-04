@@ -131,7 +131,9 @@ Units follow the report's own convention: **$100 staked = 1 unit.**
 - **League tabs** — every view (dashboard, reports) can be filtered to
   All Leagues, College Football, NFL, Premier League, or Champions
   League, so you can see whether a source is stronger in one league than
-  the others.
+  the others. **All Football** and **All Futbol** are two labels for the
+  same combined view — Premier League + Champions League together — for
+  whichever word you think in.
 - **Reports** — every report ever logged, with its league, record, and
   profit at a glance, and a link into the full detail page (notes + picks
   + grading).
