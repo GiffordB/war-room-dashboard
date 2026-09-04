@@ -408,8 +408,8 @@ def category_pick_counts(data, league=None):
     return cat_labels, series
 
 
-def cumulative_units_chart(data, league=None):
-    """Line-chart series: running units won/lost, per source, over time."""
+def cumulative_profit_chart(data, league=None):
+    """Line-chart series: running real-dollar profit/loss, per source, over time."""
     reports = {r["id"]: r for r in data["reports"]}
     rows = []
     for p in data["picks"]:
@@ -442,7 +442,7 @@ def cumulative_units_chart(data, league=None):
             if d in by_source_date[s]:
                 last = by_source_date[s][d]
                 started = True
-            values.append((last / UNIT_SIZE) if started else None)
+            values.append(last if started else None)
         series.append({"name": s, "slug": s.lower(), "color": SOURCE_STYLE[s]["color"], "values": values})
 
     return all_dates, series
@@ -595,8 +595,8 @@ def dashboard():
     ranked = rank_sources(stats)
     movement = rank_movement(data, league)
 
-    chart_dates, chart_series = cumulative_units_chart(data, league)
-    units_chart = charts.line_chart(chart_dates, chart_series, unit=" u") if chart_dates else None
+    chart_dates, chart_series = cumulative_profit_chart(data, league)
+    profit_chart = charts.line_chart(chart_dates, chart_series, unit="$") if chart_dates else None
 
     week_numbers, week_labels, weekly_data = weekly_stats(data, league)
     if week_numbers:
@@ -622,7 +622,7 @@ def dashboard():
         stats=stats,
         ranked=ranked,
         movement=movement,
-        units_chart=units_chart,
+        profit_chart=profit_chart,
         win_pct_chart=win_pct_chart,
         week_numbers=week_numbers,
         week_labels=week_labels,

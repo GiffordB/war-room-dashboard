@@ -23,18 +23,23 @@ def _esc(s):
     return html.escape(str(s), quote=True)
 
 
-def _nice_ticks(lo, hi, count=4):
+def _nice_ticks(lo, hi, count=4, integer=False):
     if lo == hi:
         lo -= 1
         hi += 1
     span = hi - lo
     step = span / count
-    # round the step to a "clean" increment
-    magnitude = 10 ** (len(str(int(step))) - 1) if step >= 1 else 0.1
-    for candidate in (magnitude, magnitude / 2, magnitude / 5, magnitude / 10):
-        if candidate <= step:
-            step = candidate
-            break
+    if integer:
+        # whole-number data (e.g. pick counts) never gets a fractional
+        # gridline like 0.1 - the smallest useful step is 1.
+        step = max(1, round(step))
+    else:
+        # round the step to a "clean" increment
+        magnitude = 10 ** (len(str(int(step))) - 1) if step >= 1 else 0.1
+        for candidate in (magnitude, magnitude / 2, magnitude / 5, magnitude / 10):
+            if candidate <= step:
+                step = candidate
+                break
     ticks = []
     start = int(lo / step) * step
     v = start
@@ -164,10 +169,14 @@ def line_chart(categories, series, width=680, height=260, unit="", y_min=None, y
     return Markup("".join(parts))
 
 
-def grouped_bar_chart(categories, series, width=680, height=280, unit="", y_max=None, bar_max=22):
+def grouped_bar_chart(categories, series, width=680, height=280, unit="", y_max=None, bar_max=22, integer_y=True):
     """
     categories: x-axis groups (e.g. levels).
     series: list of {"name", "color", "values"} aligned to categories; None = no bar.
+    integer_y: whole-number y-axis gridlines only (the default - bar
+        charts here are almost always counts, e.g. "3 picks", and a 0.1
+        gridline for that is never meaningful). Pass False for a bar
+        chart of continuous values.
     """
     all_vals = [v for s in series for v in s["values"] if v is not None]
     if not all_vals:
@@ -187,7 +196,7 @@ def grouped_bar_chart(categories, series, width=680, height=280, unit="", y_max=
     def y_of(v):
         return PAD_TOP + plot_h - (v - lo) / (hi - lo) * plot_h
 
-    ticks = _nice_ticks(lo, hi)
+    ticks = _nice_ticks(lo, hi, integer=integer_y)
     parts = [
         f'<svg class="chart" viewBox="0 0 {width} {height}" '
         f'preserveAspectRatio="xMidYMid meet" role="img" aria-label="Bar chart">'
