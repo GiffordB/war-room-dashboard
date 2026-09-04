@@ -1,6 +1,6 @@
 {
   "next_report_id": 9,
-  "next_pick_id": 23,
+  "next_pick_id": 24,
   "reports": [
     {
       "source": "ChatGPT",
@@ -499,6 +499,29 @@
       "away_team": "Toledo Rockets",
       "created_at": "2026-09-04T22:33:43",
       "id": 22
+    },
+    {
+      "report_id": 8,
+      "category": "best_bet",
+      "matchup": "Sunderland @ Brentford",
+      "selection": "Brentford to Win",
+      "odds": -150,
+      "stake": 75.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "Brentford are unbeaten through 2 (3-0 over Spurs, 1-1 at Leeds) and lead the h2h series 3-1-1.\nSunderland's Diarra suffered a serious hamstring injury in the Fulham win -- out roughly 6-8 weeks.\nBrentford have their own absences (Jensen, Dasilva, van den Berg, Milambo) but more squad depth to cover it.\nSunderland are in season two since promotion and still finding away-day form.",
+      "wr_confidence": null,
+      "war_room_line": "Brentford 63% / Draw 19% / Sunderland 18%",
+      "edge": "Market's -150 already prices Brentford close to fair; the extra push comes from Habib Diarra's hamstring injury (6-8 weeks), which strips Sunderland of their creative hub right after their best display of the season.",
+      "price_discipline": "-150 or better: $75\n-151 to -175: $50\n-176 or worse: pass",
+      "espn_event_id": "401879311",
+      "bet_type": "match_result",
+      "bet_side": "home",
+      "bet_line": null,
+      "home_team": "Brentford",
+      "away_team": "Sunderland",
+      "created_at": "2026-09-04T23:24:01",
+      "id": 23
     }
   ],
   "next_wallet_id": 6,
