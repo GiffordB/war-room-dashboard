@@ -71,11 +71,10 @@
                 <td>
                   {{ p.selection }}
                   {% if p.espn_event_id %}<span class="badge-auto" title="Linked to a live DraftKings line — can be auto-graded from the final score">🔗 auto</span>{% endif %}
-                  {% if p.live %}
+                  {% if p.game %}
                     <div>
-                      <span class="badge-live badge-live-{{ p.live.status }}">
-                        {{ '⏳ FINAL' if p.live.final else '🔴 LIVE' }} {{ p.live.score }} ·
-                        {{ 'Winning' if p.live.status == 'win' else 'Losing' if p.live.status == 'loss' else 'Push' }}
+                      <span class="badge-live badge-live-{{ p.game.status }}">
+                        {{ '🏁 FINAL' if p.game.final else '🔴 LIVE' }} {{ p.game.score }} · {{ p.game.label }}
                       </span>
                     </div>
                   {% endif %}

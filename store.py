@@ -24,7 +24,11 @@ import requests
 
 _API_BASE = "https://api.github.com"
 DATA_PATH_IN_REPO = "data/war_room.json"
-LOCAL_PATH = Path(__file__).resolve().parent / "data" / "war_room.json"
+# Deliberately NOT data/war_room.json: that path is the tracked production
+# file the live app commits to via the GitHub API. A local dev run (no
+# GITHUB_PAT) must never share it - `git clean`/`rm -rf data` during local
+# testing would otherwise delete or stage a deletion of real data.
+LOCAL_PATH = Path(__file__).resolve().parent / ".local_dev_data" / "war_room.json"
 
 GITHUB_PAT = os.environ.get("GITHUB_PAT", "")
 GITHUB_REPO = os.environ.get("GITHUB_REPO", "GiffordB/war-room-dashboard")

@@ -219,39 +219,93 @@ def auto_grade_pending(data, report_id=None):
     return graded, still_pending
 
 
-def attach_live_status(picks, league=None):
+def attach_game_status(picks, league=None):
     """
-    Live-preview copies of `picks`: for each still-pending, ESPN-linked
-    pick whose game has actually started, adds a `live` dict {status:
-    'win'|'loss'|'push', score: 'AWAY-HOME', final: bool} - "if the game
-    ended right now, is this pick good." A game not yet started shows
-    nothing (a 0-0 score would be a meaningless preview). This never
-    changes `result` - that only happens for real once the game is final
-    and Auto-Grade runs. `league` is used for every pick if given
-    (report_detail, one league for the whole page); otherwise each pick's
-    own 'league' key is used (the dashboard's cross-league recent list).
+    Score-badge copies of `picks`: for each ESPN-linked pick whose game
+    has actually started, adds a `game` dict {status, label, score:
+    'AWAY-HOME', final: bool} - regardless of whether the pick itself is
+    still pending or already settled:
+      - pending + game in progress -> a live preview ("if the game ended
+        right now, is this pick good") computed with grade_pick, never
+        touching the stored result - that only happens for real once
+        Auto-Grade runs.
+      - pending + game already final -> same preview, flagged final (a
+        nudge that Auto-Grade hasn't run on it yet).
+      - already settled (win/loss/push) -> the actual final score shown
+        for context, using the pick's own stored result rather than
+        recomputing anything.
+    A game not yet started, a void pick, or a pick with no espn_event_id
+    gets no badge (a 0-0 preview would be meaningless). `league` is used
+    for every pick if given (report_detail, one league for the whole
+    page); otherwise each pick's own 'league' key is used (the
+    dashboard's cross-league recent list).
     """
+    settled_labels = {"win": "Won", "loss": "Lost", "push": "Push"}
+    live_labels = {"win": "Winning", "loss": "Losing", "push": "Push"}
+
     score_cache = {}
     result = []
     for original in picks:
         pick = dict(original)
-        pick["live"] = None
+        pick["game"] = None
         pick_league = league or pick.get("league")
-        if pick["result"] == "pending" and pick.get("espn_event_id") and pick.get("bet_type") and pick_league:
+        if (
+            pick["result"] != "void"
+            and pick.get("espn_event_id")
+            and pick.get("bet_type")
+            and pick_league
+        ):
             key = (pick_league, pick["espn_event_id"])
             if key not in score_cache:
                 score_cache[key] = odds.final_score(pick_league, pick["espn_event_id"])
             final = score_cache[key]
             if final and final["state"] in ("in", "post"):
-                outcome = grade_pick(pick, final)
-                if outcome:
-                    pick["live"] = {
-                        "status": outcome,
-                        "score": f"{final['away_score']}-{final['home_score']}",
-                        "final": final["state"] == "post",
+                score_str = f"{final['away_score']}-{final['home_score']}"
+                if pick["result"] == "pending":
+                    outcome = grade_pick(pick, final)
+                    if outcome:
+                        pick["game"] = {
+                            "status": outcome,
+                            "label": live_labels[outcome],
+                            "score": score_str,
+                            "final": final["state"] == "post",
+                        }
+                else:
+                    pick["game"] = {
+                        "status": pick["result"],
+                        "label": settled_labels[pick["result"]],
+                        "score": score_str,
+                        "final": True,
                     }
         result.append(pick)
     return result
+
+
+def recent_picks_by_week(data, league=None, limit=4):
+    """
+    Every pick, grouped by its report's week_number, for the most recent
+    `limit` weeks that have any picks in this league scope - newest week
+    first, picks within a week newest-first. Each pick carries a `game`
+    status badge (see attach_game_status) so a settled pick still shows
+    the final score for context, not just the graded result.
+    """
+    reports = {r["id"]: r for r in data["reports"]}
+    by_week = {}
+    for p in data["picks"]:
+        r = reports.get(p["report_id"])
+        if not r or (league and r["league"] != league):
+            continue
+        wn = r["week_number"]
+        group = by_week.setdefault(wn, {"week_number": wn, "label": f"Week {wn}", "picks": []})
+        merged = dict(p)
+        merged.update(source=r["source"], league=r["league"], report_date=r["report_date"])
+        group["picks"].append(merged)
+
+    weeks = sorted(by_week.values(), key=lambda g: g["week_number"], reverse=True)[:limit]
+    for group in weeks:
+        group["picks"].sort(key=lambda p: p["id"], reverse=True)
+        group["picks"] = attach_game_status(group["picks"])
+    return weeks
 
 
 def empty_stats(source=None):
@@ -507,7 +561,7 @@ def rank_movement(data, league=None):
         rows.append((r["report_date"], p["id"], r["source"], p["profit_loss"]))
     rows.sort(key=lambda row: (row[0], row[1]))
 
-    if len(rows) < 2:
+    if not rows:
         return {s: 0 for s in SOURCES}
 
     def ranks_at(upto):
@@ -540,7 +594,6 @@ def dashboard():
     stats = {s: source_stats(data, s, league) for s in SOURCES}
     ranked = rank_sources(stats)
     movement = rank_movement(data, league)
-    any_settled = any(stats[s]["settled"] for s in SOURCES)
 
     chart_dates, chart_series = cumulative_units_chart(data, league)
     units_chart = charts.line_chart(chart_dates, chart_series, unit=" u") if chart_dates else None
@@ -559,21 +612,7 @@ def dashboard():
 
     breakdown = category_breakdown(data, league)
 
-    reports_by_id = {r["id"]: r for r in data["reports"]}
-    scoped_picks = [
-        p
-        for p in data["picks"]
-        if p["report_id"] in reports_by_id
-        and (not league or reports_by_id[p["report_id"]]["league"] == league)
-    ]
-    scoped_picks.sort(key=lambda p: p["id"], reverse=True)
-    recent = []
-    for p in scoped_picks[:12]:
-        r = reports_by_id[p["report_id"]]
-        merged = dict(p)
-        merged.update(source=r["source"], league=r["league"], report_date=r["report_date"], week_label=r["week_label"])
-        recent.append(merged)
-    recent = attach_live_status(recent)
+    recent_weeks = recent_picks_by_week(data, league)
 
     report_count = sum(1 for r in data["reports"] if not league or r["league"] == league)
 
@@ -583,7 +622,6 @@ def dashboard():
         stats=stats,
         ranked=ranked,
         movement=movement,
-        any_settled=any_settled,
         units_chart=units_chart,
         win_pct_chart=win_pct_chart,
         week_numbers=week_numbers,
@@ -591,7 +629,7 @@ def dashboard():
         weekly_data=weekly_data,
         counts_chart=counts_chart,
         breakdown=breakdown,
-        recent=recent,
+        recent_weeks=recent_weeks,
         report_count=report_count,
         current_league=league,
     )
@@ -673,7 +711,7 @@ def report_detail(report_id):
 
     picks = sorted((p for p in data["picks"] if p["report_id"] == report_id), key=lambda p: p["id"])
     auto_gradable = sum(1 for p in picks if p["result"] == "pending" and p.get("espn_event_id"))
-    picks = attach_live_status(picks, league=report["league"])
+    picks = attach_game_status(picks, league=report["league"])
 
     return render_template(
         "report_detail.html",

@@ -368,7 +368,17 @@ section { margin-bottom: 44px; }
 .note-card p { margin: 0; color: var(--text); line-height: 1.5; white-space: pre-wrap; }
 
 /* ---------------- Recent picks list ---------------- */
-.pick-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.week-group-label {
+  color: var(--muted);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 700;
+  margin: 20px 0 8px;
+}
+.week-group-label:first-of-type { margin-top: 0; }
+
+.pick-list { list-style: none; margin: 0 0 4px; padding: 0; display: flex; flex-direction: column; gap: 8px; }
 .pick-row {
   background: var(--surface);
   border: 1px solid var(--border);

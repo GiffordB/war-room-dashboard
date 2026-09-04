@@ -43,19 +43,7 @@
   {% endif %}
 
   {% if report_count == 0 %}
-    <p class="empty">No reports logged yet for this view. <a href="{{ url_for('add_report') }}">Add your first report</a> to start tracking picks.</p>
-  {% endif %}
-
-  {% if any_settled %}
-    <div class="vs-banner">
-      {% for s in ranked %}
-        <strong style="color: {{ source_color(s) }}">{{ s }}</strong>
-        <span class="{{ 'pos' if stats[s].profit > 0 else 'neg' if stats[s].profit < 0 else 'muted' }}">{{ '%+.2f'|format(stats[s].units) }} u</span>
-        {%- if not loop.last %} <span class="muted">·</span> {% endif %}
-      {% endfor %}
-    </div>
-  {% elif report_count > 0 %}
-    <div class="vs-banner">No settled picks yet in this view.</div>
+    <p class="empty">No picks logged yet for this view.</p>
   {% endif %}
 
   <section>
@@ -216,29 +204,31 @@
 
   <section>
     <h2 class="section-label">Recent Picks</h2>
-    {% if recent %}
-      <ul class="pick-list">
-        {% for p in recent %}
-          <li class="pick-row">
-            <span class="badge-source" style="background: {{ source_color(p.source) }};">{{ p.source }}</span>
-            <span class="badge-league">{{ p.league }}</span>
-            <span class="pick-cat" style="color: {{ categories[p.category].color }};">{{ categories[p.category].icon }} {{ categories[p.category].label }}</span>
-            <span class="pick-matchup"><a href="{{ url_for('report_detail', report_id=p.report_id) }}">{{ p.matchup }} — {{ p.selection }}</a></span>
-            <span class="muted">{{ '%+d'|format(p.odds) }}</span>
-            <span class="muted">${{ '{:,.0f}'.format(p.stake) }}</span>
-            <span class="badge-result" style="background: {{ result_color(p.result) }};">{{ result_label(p.result) }}</span>
-            {% if p.live %}
-              <span class="badge-live badge-live-{{ p.live.status }}">
-                {{ '⏳ FINAL' if p.live.final else '🔴 LIVE' }} {{ p.live.score }} ·
-                {{ 'Winning' if p.live.status == 'win' else 'Losing' if p.live.status == 'loss' else 'Push' }}
+    {% if recent_weeks %}
+      {% for group in recent_weeks %}
+        <h3 class="week-group-label">{{ group.label }}</h3>
+        <ul class="pick-list">
+          {% for p in group.picks %}
+            <li class="pick-row">
+              <span class="badge-source" style="background: {{ source_color(p.source) }};">{{ p.source }}</span>
+              <span class="badge-league">{{ p.league }}</span>
+              <span class="pick-cat" style="color: {{ categories[p.category].color }};">{{ categories[p.category].icon }} {{ categories[p.category].label }}</span>
+              <span class="pick-matchup"><a href="{{ url_for('report_detail', report_id=p.report_id) }}">{{ p.matchup }} — {{ p.selection }}</a></span>
+              <span class="muted">{{ '%+d'|format(p.odds) }}</span>
+              <span class="muted">${{ '{:,.0f}'.format(p.stake) }}</span>
+              <span class="badge-result" style="background: {{ result_color(p.result) }};">{{ result_label(p.result) }}</span>
+              {% if p.game %}
+                <span class="badge-live badge-live-{{ p.game.status }}">
+                  {{ '🏁 FINAL' if p.game.final else '🔴 LIVE' }} {{ p.game.score }} · {{ p.game.label }}
+                </span>
+              {% endif %}
+              <span class="{{ 'pos' if p.profit_loss > 0 else 'neg' if p.profit_loss < 0 else 'muted' }}">
+                {% if p.result != 'pending' %}{{ '%+.0f'|format(p.profit_loss) }}${% endif %}
               </span>
-            {% endif %}
-            <span class="{{ 'pos' if p.profit_loss > 0 else 'neg' if p.profit_loss < 0 else 'muted' }}">
-              {% if p.result != 'pending' %}{{ '%+.0f'|format(p.profit_loss) }}${% endif %}
-            </span>
-          </li>
-        {% endfor %}
-      </ul>
+            </li>
+          {% endfor %}
+        </ul>
+      {% endfor %}
     {% else %}
       <p class="empty">No picks yet.</p>
     {% endif %}
