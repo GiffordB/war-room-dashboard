@@ -1,6 +1,6 @@
 {
   "next_report_id": 6,
-  "next_pick_id": 11,
+  "next_pick_id": 12,
   "reports": [
     {
       "source": "ChatGPT",
@@ -255,6 +255,29 @@
       "id": 10,
       "war_room_line": "Combined model probability ~34% (product of the three legs' independent model probabilities)",
       "edge": "Market-implied combined ~12.5% at +702 vs. model ~34% -- the same edge as each leg individually, compounded"
+    },
+    {
+      "report_id": 5,
+      "category": "thor_hammer",
+      "matchup": "Test @ Verify",
+      "selection": "Test ML",
+      "odds": -800,
+      "stake": 500.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "confidence": 95.0,
+      "war_room_line": null,
+      "edge": null,
+      "price_discipline": null,
+      "espn_event_id": null,
+      "bet_type": null,
+      "bet_side": null,
+      "bet_line": null,
+      "home_team": null,
+      "away_team": null,
+      "created_at": "2026-09-04T12:54:41",
+      "id": 11
     }
   ]
 }
