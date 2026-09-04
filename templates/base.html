@@ -33,6 +33,14 @@
   <main class="content">
     {% block content %}{% endblock %}
   </main>
+
+  <footer class="site-footer">
+    For entertainment purposes only. Not gambling advice — no guarantee of
+    accuracy or results. 21+ (or the legal age in your jurisdiction) where
+    sports wagering is legal. <a href="{{ url_for('disclaimer') }}">Full disclaimer</a>.
+    Problem gambling help: <a href="tel:18005224700">1-800-522-4700</a>.
+  </footer>
+
   {% block scripts %}{% endblock %}
 
   <script>
