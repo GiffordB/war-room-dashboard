@@ -385,7 +385,7 @@
       "wr_confidence": 58.0
     }
   ],
-  "next_wallet_id": 5,
+  "next_wallet_id": 6,
   "wallet_entries": [
     {
       "pick_id": 12,
@@ -420,6 +420,23 @@
       "wr_confidence_at_bet": 73.0,
       "created_at": "2026-09-04T17:30:14",
       "id": 4
+    },
+    {
+      "pick_id": 13,
+      "report_id": 6,
+      "source": "ChatGPT",
+      "league": "CFB",
+      "category": "best_bet",
+      "matchup": "UCLA Bruins @ California Golden Bears",
+      "selection": "California +2.5",
+      "odds": -115,
+      "stake": 25.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": null,
+      "wr_confidence_at_bet": 68.0,
+      "created_at": "2026-09-04T17:30:47",
+      "id": 5
     }
   ]
 }
