@@ -9,7 +9,6 @@
           <button class="btn btn-outline" type="submit">🔄 Auto-Grade Finished Games ({{ auto_gradable }})</button>
         </form>
       {% endif %}
-      <a class="btn" href="{{ url_for('add_report') }}">+ New Report</a>
     </div>
   </div>
 
@@ -70,6 +69,6 @@
       </table>
     </div>
   {% else %}
-    <p class="empty">No reports yet for this view. <a href="{{ url_for('add_report') }}">Add your first one</a>.</p>
+    <p class="empty">No reports yet for this view.</p>
   {% endif %}
 {% endblock %}

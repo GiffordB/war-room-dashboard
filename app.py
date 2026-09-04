@@ -21,7 +21,7 @@ Shape of this file:
   5. `if __name__ == ...`   - the line that actually starts the server
 """
 
-from datetime import date, datetime
+from datetime import datetime
 
 from flask import Flask, jsonify, redirect, render_template, request, url_for
 
@@ -211,12 +211,13 @@ def profit_for_result(stake, odds_value, result):
 def grade_pick(pick, final):
     """
     Win/loss/push for one pick against a final score, per its structured
-    bet_type/bet_side/bet_line (set only for picks pulled via the
-    odds-lookup widget). Spread/total lines use the standard "push on an
-    exact tie" rule; two-way moneyline pushes only on an actual tied
-    score - that's the right rule for CFB/NFL, where a tie is a fluke.
-    Soccer uses "match_result" instead: a real 3-way market (home/draw/
-    away) where a draw is its own outcome, never a push.
+    bet_type/bet_side/bet_line (set only for picks whose odds were pulled
+    from /api/games + /api/odds, e.g. via create_pick). Spread/total
+    lines use the standard "push on an exact tie" rule; two-way moneyline
+    pushes only on an actual tied score - that's the right rule for
+    CFB/NFL, where a tie is a fluke. Soccer uses "match_result" instead:
+    a real 3-way market (home/draw/away) where a draw is its own
+    outcome, never a push.
     """
     home, away = final["home_score"], final["away_score"]
     side, line = pick.get("bet_side"), pick.get("bet_line") or 0.0
@@ -922,26 +923,6 @@ def create_report(fields):
     )
 
 
-@app.route("/reports/add", methods=["GET", "POST"])
-def add_report():
-    if request.method == "POST":
-        report_id = create_report(
-            {
-                "source": request.form.get("source", SOURCES[0]),
-                "league": request.form.get("league", LEAGUE_ORDER[0]),
-                "report_date": request.form["report_date"],
-                "week_number": request.form.get("week_number"),
-                "week_label": request.form.get("week_label", ""),
-                "philosophy": request.form.get("philosophy", ""),
-                "blind_spot_notes": request.form.get("blind_spot_notes", ""),
-                "lsu_review_notes": request.form.get("lsu_review_notes", ""),
-            }
-        )
-        return redirect(url_for("report_detail", report_id=report_id))
-
-    return render_template("add_report.html", today=date.today().isoformat())
-
-
 @app.route("/reports/<int:report_id>")
 def report_detail(report_id):
     data = store.load_data()
@@ -1082,33 +1063,6 @@ def create_pick(report_id, fields):
         return new_pick["id"]
 
     return store.mutate(_mutate, message=f"Add pick: {new_pick['matchup']} -- {new_pick['selection']}")
-
-
-@app.route("/reports/<int:report_id>/picks/add", methods=["POST"])
-def add_pick(report_id):
-    create_pick(
-        report_id,
-        {
-            "category": request.form.get("category", CATEGORY_ORDER[0]),
-            "matchup": request.form.get("matchup", ""),
-            "selection": request.form.get("selection", ""),
-            "odds": request.form["odds"],
-            "stake": request.form["stake"],
-            "notes": request.form.get("notes", ""),
-            "confidence": request.form.get("confidence", ""),
-            "wr_confidence": request.form.get("wr_confidence", ""),
-            "war_room_line": request.form.get("war_room_line", ""),
-            "edge": request.form.get("edge", ""),
-            "price_discipline": request.form.get("price_discipline", ""),
-            "espn_event_id": request.form.get("espn_event_id"),
-            "bet_type": request.form.get("bet_type"),
-            "bet_side": request.form.get("bet_side"),
-            "bet_line": request.form.get("bet_line", ""),
-            "home_team": request.form.get("home_team"),
-            "away_team": request.form.get("away_team"),
-        },
-    )
-    return redirect(url_for("report_detail", report_id=report_id))
 
 
 @app.route("/api/reports/<int:report_id>/picks/<int:pick_id>", methods=["PATCH"])
