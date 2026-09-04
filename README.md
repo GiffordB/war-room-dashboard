@@ -175,6 +175,24 @@ Units follow the report's own convention: **$100 staked = 1 unit.**
   harmless to run when there's nothing to grade — it's a no-op. Trigger
   it by hand anytime from the repo's Actions tab (`workflow_dispatch`).
 
+## Prediction bot (EPL / UCL)
+
+Two scheduled Claude runs evaluate a full slate and log their own picks
+automatically — Tuesday 8pm ET for Wednesday's Champions League games,
+Friday 7pm ET for the weekend's Premier League games. The full process
+(data gathered, markets evaluated, the 60%-confidence threshold, how
+picks get assigned to the five categories, and how the report gets
+submitted) is in
+[`docs/prediction_bot_playbook.md`](docs/prediction_bot_playbook.md).
+The bot writes through the same JSON API a human could script against:
+
+- `GET /api/standings`, `/api/team_intel`, `/api/match_intel` — the Team
+  Intel research, machine-readable.
+- `POST /api/reports`, `POST /api/reports/<id>/picks` — create a report
+  and its picks in one call each, no HTML form needed. Picks accept an
+  optional `confidence` (0-100) alongside the usual fields; it's shown
+  next to the pick but isn't used in grading or payout math.
+
 ## What's next
 
 - Add authentication if more than one person needs to log picks.

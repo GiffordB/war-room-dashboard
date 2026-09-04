@@ -693,29 +693,57 @@ def reports_list():
     )
 
 
+def create_report(fields):
+    """
+    Shared by the HTML "Add Report" form and POST /api/reports: fields is
+    a plain dict of already-typed values (see the two routes for how each
+    builds it from its own request format). Raises ValueError on bad
+    input - callers translate that into whatever error response fits
+    their protocol (redirect vs. 400 JSON).
+    """
+    if fields.get("source") not in SOURCES:
+        raise ValueError(f"source must be one of {SOURCES}")
+    if fields.get("league") not in LEAGUE_ORDER:
+        raise ValueError(f"league must be one of {LEAGUE_ORDER}")
+    if not fields.get("report_date"):
+        raise ValueError("report_date is required")
+
+    new_report = {
+        "source": fields["source"],
+        "league": fields["league"],
+        "report_date": fields["report_date"],
+        "week_number": int(fields.get("week_number") or 1),
+        "week_label": (fields.get("week_label") or "").strip(),
+        "blind_spot_notes": (fields.get("blind_spot_notes") or "").strip(),
+        "lsu_review_notes": (fields.get("lsu_review_notes") or "").strip(),
+        "created_at": datetime.utcnow().isoformat(timespec="seconds"),
+    }
+
+    def _mutate(data):
+        new_report["id"] = data["next_report_id"]
+        data["next_report_id"] += 1
+        data["reports"].append(new_report)
+        return new_report["id"]
+
+    return store.mutate(
+        _mutate,
+        message=f"Add {new_report['source']} {new_report['league']} report ({new_report['report_date']})",
+    )
+
+
 @app.route("/reports/add", methods=["GET", "POST"])
 def add_report():
     if request.method == "POST":
-        new_report = {
-            "source": request.form.get("source", SOURCES[0]),
-            "league": request.form.get("league", LEAGUE_ORDER[0]),
-            "report_date": request.form["report_date"],
-            "week_number": int(request.form.get("week_number") or 1),
-            "week_label": request.form.get("week_label", "").strip(),
-            "blind_spot_notes": request.form.get("blind_spot_notes", "").strip(),
-            "lsu_review_notes": request.form.get("lsu_review_notes", "").strip(),
-            "created_at": datetime.utcnow().isoformat(timespec="seconds"),
-        }
-
-        def _mutate(data):
-            new_report["id"] = data["next_report_id"]
-            data["next_report_id"] += 1
-            data["reports"].append(new_report)
-            return new_report["id"]
-
-        report_id = store.mutate(
-            _mutate,
-            message=f"Add {new_report['source']} {new_report['league']} report ({new_report['report_date']})",
+        report_id = create_report(
+            {
+                "source": request.form.get("source", SOURCES[0]),
+                "league": request.form.get("league", LEAGUE_ORDER[0]),
+                "report_date": request.form["report_date"],
+                "week_number": request.form.get("week_number"),
+                "week_label": request.form.get("week_label", ""),
+                "blind_spot_notes": request.form.get("blind_spot_notes", ""),
+                "lsu_review_notes": request.form.get("lsu_review_notes", ""),
+            }
         )
         return redirect(url_for("report_detail", report_id=report_id))
 
@@ -753,37 +781,73 @@ def delete_report(report_id):
     return redirect(url_for("reports_list"))
 
 
-@app.route("/reports/<int:report_id>/picks/add", methods=["POST"])
-def add_pick(report_id):
-    american_odds = int(request.form["odds"])
-    stake = float(request.form["stake"])
-    bet_line = request.form.get("bet_line", "").strip()
+def create_pick(report_id, fields):
+    """
+    Shared by the HTML "Add a Pick" form and POST /api/reports/<id>/picks
+    - see create_report() above for the same split. `confidence` is the
+    bot's (or a human's) own win-probability estimate for this exact
+    side/line, 0-100; optional, and purely informational - it's not used
+    in grading or payout math, only shown alongside the pick.
+    """
+    if fields.get("category") not in CATEGORIES:
+        raise ValueError(f"category must be one of {CATEGORY_ORDER}")
+    if not fields.get("matchup") or not fields.get("selection"):
+        raise ValueError("matchup and selection are required")
+
+    bet_line = fields.get("bet_line")
+    confidence = fields.get("confidence")
 
     new_pick = {
         "report_id": report_id,
-        "category": request.form.get("category", CATEGORY_ORDER[0]),
-        "matchup": request.form["matchup"].strip(),
-        "selection": request.form["selection"].strip(),
-        "odds": american_odds,
-        "stake": stake,
+        "category": fields["category"],
+        "matchup": str(fields["matchup"]).strip(),
+        "selection": str(fields["selection"]).strip(),
+        "odds": int(fields["odds"]),
+        "stake": float(fields["stake"]),
         "result": "pending",
         "profit_loss": 0.0,
-        "notes": request.form.get("notes", "").strip(),
-        "espn_event_id": request.form.get("espn_event_id") or None,
-        "bet_type": request.form.get("bet_type") or None,
-        "bet_side": request.form.get("bet_side") or None,
-        "bet_line": float(bet_line) if bet_line else None,
-        "home_team": request.form.get("home_team") or None,
-        "away_team": request.form.get("away_team") or None,
+        "notes": (fields.get("notes") or "").strip(),
+        "confidence": float(confidence) if confidence not in (None, "") else None,
+        "espn_event_id": fields.get("espn_event_id") or None,
+        "bet_type": fields.get("bet_type") or None,
+        "bet_side": fields.get("bet_side") or None,
+        "bet_line": float(bet_line) if bet_line not in (None, "") else None,
+        "home_team": fields.get("home_team") or None,
+        "away_team": fields.get("away_team") or None,
         "created_at": datetime.utcnow().isoformat(timespec="seconds"),
     }
+    if new_pick["confidence"] is not None and not (0 <= new_pick["confidence"] <= 100):
+        raise ValueError("confidence must be between 0 and 100")
 
     def _mutate(data):
         new_pick["id"] = data["next_pick_id"]
         data["next_pick_id"] += 1
         data["picks"].append(new_pick)
+        return new_pick["id"]
 
-    store.mutate(_mutate, message=f"Add pick: {new_pick['matchup']} -- {new_pick['selection']}")
+    return store.mutate(_mutate, message=f"Add pick: {new_pick['matchup']} -- {new_pick['selection']}")
+
+
+@app.route("/reports/<int:report_id>/picks/add", methods=["POST"])
+def add_pick(report_id):
+    create_pick(
+        report_id,
+        {
+            "category": request.form.get("category", CATEGORY_ORDER[0]),
+            "matchup": request.form.get("matchup", ""),
+            "selection": request.form.get("selection", ""),
+            "odds": request.form["odds"],
+            "stake": request.form["stake"],
+            "notes": request.form.get("notes", ""),
+            "confidence": request.form.get("confidence", ""),
+            "espn_event_id": request.form.get("espn_event_id"),
+            "bet_type": request.form.get("bet_type"),
+            "bet_side": request.form.get("bet_side"),
+            "bet_line": request.form.get("bet_line", ""),
+            "home_team": request.form.get("home_team"),
+            "away_team": request.form.get("away_team"),
+        },
+    )
     return redirect(url_for("report_detail", report_id=report_id))
 
 
@@ -900,29 +964,98 @@ def intel_team(league, team_id):
     return render_template("intel_team.html", league=league, **_team_intel(league, team_id))
 
 
+def _match_intel(league, event_id):
+    """None if ESPN has no such event; otherwise everything the Matchup Intel page/API needs."""
+    info = odds.match_info(league, event_id)
+    if info is None:
+        return None
+    return {
+        "league": league,
+        "event_id": event_id,
+        "info": info,
+        "weather": odds.match_weather(info["city"], info["country"], info["kickoff"]),
+        "h2h": odds.head_to_head(league, event_id),
+        "home": _team_intel(league, info["home_id"]),
+        "away": _team_intel(league, info["away_id"]),
+    }
+
+
 @app.route("/intel/<league>/match/<event_id>")
 def intel_match(league, event_id):
     league = resolve_league(league)
     if league not in SOCCER_LEAGUES:
         return redirect(url_for("intel_picker"))
 
-    info = odds.match_info(league, event_id)
-    if info is None:
+    intel = _match_intel(league, event_id)
+    if intel is None:
         return redirect(url_for("intel_picker", league=league))
 
-    weather = odds.match_weather(info["city"], info["country"], info["kickoff"])
-    h2h = odds.head_to_head(league, event_id)
+    return render_template("intel_match.html", **intel)
 
-    return render_template(
-        "intel_match.html",
-        league=league,
-        event_id=event_id,
-        info=info,
-        weather=weather,
-        h2h=h2h,
-        home=_team_intel(league, info["home_id"]),
-        away=_team_intel(league, info["away_id"]),
-    )
+
+# ---------------------------------------------------------------------
+# JSON API — everything above, machine-readable. Meant for the scheduled
+# prediction-bot runs (see docs/prediction_bot_playbook.md): a fresh
+# session with no local checkout can pull a full slate's research with
+# plain HTTP calls against the live app instead of re-deriving it from
+# ESPN/Open-Meteo/Google News itself.
+# ---------------------------------------------------------------------
+@app.route("/api/standings")
+def api_standings():
+    league = resolve_league(request.args.get("league"))
+    if league not in SOCCER_LEAGUES:
+        return jsonify({"error": f"league must be one of {sorted(SOCCER_LEAGUES)}"}), 400
+    return jsonify(odds.standings(league))
+
+
+@app.route("/api/team_intel")
+def api_team_intel():
+    league = resolve_league(request.args.get("league"))
+    team_id = request.args.get("team_id", "")
+    if league not in SOCCER_LEAGUES or not team_id:
+        return jsonify({"error": f"league (one of {sorted(SOCCER_LEAGUES)}) and team_id are required"}), 400
+    return jsonify(_team_intel(league, team_id))
+
+
+@app.route("/api/match_intel")
+def api_match_intel():
+    league = resolve_league(request.args.get("league"))
+    event_id = request.args.get("event_id", "")
+    if league not in SOCCER_LEAGUES or not event_id:
+        return jsonify({"error": f"league (one of {sorted(SOCCER_LEAGUES)}) and event_id are required"}), 400
+    intel = _match_intel(league, event_id)
+    if intel is None:
+        return jsonify({"error": "no such event"}), 404
+    return jsonify(intel)
+
+
+# ---------------------------------------------------------------------
+# JSON API — writes. Same create_report()/create_pick() the HTML forms
+# use, so a bot-submitted report/pick shows up identically everywhere
+# (dashboard, reports list, auto-grade) to one entered by hand.
+# ---------------------------------------------------------------------
+@app.route("/api/reports", methods=["POST"])
+def api_create_report():
+    body = request.get_json(silent=True) or {}
+    try:
+        report_id = create_report(body)
+    except (ValueError, KeyError) as e:
+        return jsonify({"error": str(e)}), 400
+    return jsonify({"id": report_id}), 201
+
+
+@app.route("/api/reports/<int:report_id>/picks", methods=["POST"])
+def api_create_pick(report_id):
+    data = store.load_data()
+    if not any(r["id"] == report_id for r in data["reports"]):
+        return jsonify({"error": f"no report #{report_id}"}), 404
+
+    body = request.get_json(silent=True) or {}
+    try:
+        pick_id = create_pick(report_id, body)
+    except (ValueError, KeyError, TypeError) as e:
+        return jsonify({"error": str(e)}), 400
+    return jsonify({"id": pick_id}), 201
 
 
 if __name__ == "__main__":

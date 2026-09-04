@@ -58,6 +58,7 @@
               <th>Selection</th>
               <th>Odds</th>
               <th>Stake</th>
+              <th>Conf.</th>
               <th>Result</th>
               <th>P/L</th>
               <th></th>
@@ -70,7 +71,7 @@
                 <td>{{ p.matchup }}</td>
                 <td>
                   {{ p.selection }}
-                  {% if p.espn_event_id %}<span class="badge-auto" title="Linked to a live DraftKings line — can be auto-graded from the final score">🔗 auto</span>{% endif %}
+                  {% if p.espn_event_id %}<span class="badge-auto" title="Linked to a live {{ sportsbook_for(report.league) }} line — can be auto-graded from the final score">🔗 auto</span>{% endif %}
                   {% if p.game %}
                     <div>
                       <span class="badge-live badge-live-{{ p.game.status }}">
@@ -82,6 +83,7 @@
                 </td>
                 <td>{{ '%+d'|format(p.odds) }}</td>
                 <td>${{ '{:,.0f}'.format(p.stake) }} <span class="muted small">({{ '%.2f'|format(p.stake / unit_size) }}u)</span></td>
+                <td>{% if p.get('confidence') is not none %}<span class="badge-confidence">{{ p.confidence | round | int }}%</span>{% else %}<span class="muted">—</span>{% endif %}</td>
                 <td>
                   <form class="settle-form" method="post" action="{{ url_for('settle_pick', pick_id=p.id) }}">
                     <select name="result" onchange="this.form.requestSubmit()">
@@ -167,6 +169,10 @@
         <label>
           Stake ($, {{ sportsbook_for(report.league) }})
           <input type="number" step="0.01" min="0" name="stake" placeholder="e.g. 100" required>
+        </label>
+        <label>
+          Confidence % (optional)
+          <input type="number" step="1" min="0" max="100" name="confidence" placeholder="e.g. 65">
         </label>
       </div>
 
