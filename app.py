@@ -1304,13 +1304,36 @@ def api_create_pick(report_id):
 
 
 # ---------------------------------------------------------------------
-# MyWallet - the user's own real-money bets. Always tied to a specific
-# dashboard pick (fields["pick_id"]), but snapshotted into its own
-# record rather than a live pointer: the odds/stake actually placed can
-# differ from the report's own card number, and the bet's history has to
-# survive even if the underlying pick is later deleted.
-# ---------------------------------------------------------------------
-def create_wallet_entry(fields):
+# Wallets - each person's own real-money bets, in their own separate,
+# named collection. Always tied to a specific dashboard pick
+# (fields["pick_id"]), but snapshotted into its own record rather than a
+# live pointer: the odds/stake actually placed can differ from the
+# report's own card number, and a bet's history has to survive even if
+# the underlying pick is later deleted. Every wallet page shares the
+# same logic and layout below - just scoped to its own entries, and
+# reachable only by its own direct URL (never linked from the dashboard
+# or from any other wallet).
+WALLETS = {
+    "mine": {
+        "entries_key": "wallet_entries",
+        "next_id_key": "next_wallet_id",
+        "label": "My Wallet",
+        "view_endpoint": "my_wallet",
+        "add_endpoint": "add_wallet_entry",
+        "delete_endpoint": "delete_wallet_entry",
+    },
+    "jesse": {
+        "entries_key": "jesse_wallet_entries",
+        "next_id_key": "next_jesse_wallet_id",
+        "label": "Jesse's Wallet",
+        "view_endpoint": "jesse_wallet",
+        "add_endpoint": "add_wallet_entry_jesse",
+        "delete_endpoint": "delete_wallet_entry_jesse",
+    },
+}
+
+
+def create_wallet_entry(fields, wallet):
     pick_id = int(fields["pick_id"])
     data = store.load_data()
     pick = next((p for p in data["picks"] if p["id"] == pick_id), None)
@@ -1343,42 +1366,47 @@ def create_wallet_entry(fields):
         "created_at": datetime.utcnow().isoformat(timespec="seconds"),
     }
 
+    entries_key, next_id_key = wallet["entries_key"], wallet["next_id_key"]
+
     def _mutate(data):
-        new_entry["id"] = data["next_wallet_id"]
-        data["next_wallet_id"] += 1
-        data["wallet_entries"].append(new_entry)
+        new_entry["id"] = data[next_id_key]
+        data[next_id_key] += 1
+        data[entries_key].append(new_entry)
         return new_entry["id"]
 
     return store.mutate(
-        _mutate, message=f"Log wallet bet: {new_entry['matchup']} -- {new_entry['selection']} (${stake:.0f})"
+        _mutate,
+        message=f"Log {wallet['label']} bet: {new_entry['matchup']} -- {new_entry['selection']} (${stake:.0f})",
     )
 
 
 def sync_wallet_entries(data):
     """
     Copy a pending wallet entry's result from its linked pick once that
-    pick is itself no longer pending - using the entry's OWN odds/stake
-    for the payout math, not the pick's, since what was actually wagered
-    can differ from the report's card number. Called alongside
-    auto_grade_pending() so both settle together. Returns how many synced.
+    pick is itself no longer pending, across every configured wallet -
+    using the entry's OWN odds/stake for the payout math, not the
+    pick's, since what was actually wagered can differ from the report's
+    card number. Called alongside auto_grade_pending() so everything
+    settles together. Returns how many entries synced in total.
     """
     picks_by_id = {p["id"]: p for p in data["picks"]}
     synced = 0
-    for entry in data["wallet_entries"]:
-        if entry["result"] != "pending":
-            continue
-        pick = picks_by_id.get(entry["pick_id"])
-        if not pick or pick["result"] == "pending":
-            continue
-        entry["result"] = pick["result"]
-        entry["profit_loss"] = profit_for_result(entry["stake"], entry["odds"], pick["result"])
-        synced += 1
+    for wallet in WALLETS.values():
+        for entry in data[wallet["entries_key"]]:
+            if entry["result"] != "pending":
+                continue
+            pick = picks_by_id.get(entry["pick_id"])
+            if not pick or pick["result"] == "pending":
+                continue
+            entry["result"] = pick["result"]
+            entry["profit_loss"] = profit_for_result(entry["stake"], entry["odds"], pick["result"])
+            synced += 1
     return synced
 
 
-def wallet_overall_stats(data):
+def wallet_overall_stats(entries):
     stats = empty_stats()
-    for e in data["wallet_entries"]:
+    for e in entries:
         if e["result"] == "pending":
             stats["pending"] += 1
         elif e["result"] in ("win", "loss", "push"):
@@ -1386,10 +1414,10 @@ def wallet_overall_stats(data):
     return _finalize(stats)
 
 
-def wallet_stats_by_source(data):
-    """{source: stats} - every AI source the user has ever placed a real bet on."""
+def wallet_stats_by_source(entries):
+    """{source: stats} - every AI source this wallet has ever placed a real bet on."""
     result = {s: empty_stats(s) for s in SOURCES}
-    for e in data["wallet_entries"]:
+    for e in entries:
         stats = result.setdefault(e["source"], empty_stats(e["source"]))
         if e["result"] == "pending":
             stats["pending"] += 1
@@ -1409,19 +1437,19 @@ def wr_confidence_buckets():
     return buckets
 
 
-def wallet_stats_by_wr_bucket(data):
+def wallet_stats_by_wr_bucket(entries):
     """
     {bucket_key: stats} for every 10-point WR Confidence Score bucket
-    that has at least one wallet bet - keyed off wr_confidence_at_bet
-    (the frozen score at the moment the bet was logged), not a pick's
-    possibly-since-revised live score. Answers "does trusting a higher
-    WR score actually pay off for bets I've placed" - only meaningful
+    that has at least one bet in this wallet - keyed off
+    wr_confidence_at_bet (the frozen score at the moment the bet was
+    logged), not a pick's possibly-since-revised live score. Answers
+    "does trusting a higher WR score actually pay off" - only meaningful
     once there's enough real betting history to fill more than one or
     two buckets.
     """
     keys = [k for k, _ in wr_confidence_buckets()]
     result = {}
-    for e in data["wallet_entries"]:
+    for e in entries:
         score = e.get("wr_confidence_at_bet")
         if score is None:
             continue
@@ -1436,10 +1464,10 @@ def wallet_stats_by_wr_bucket(data):
     return result
 
 
-def wallet_cumulative_chart(data):
-    """Line-chart series: running real-dollar profit/loss, per source, over the dates the user's own bets were placed."""
+def wallet_cumulative_chart(entries):
+    """Line-chart series: running real-dollar profit/loss, per source, over the dates this wallet's bets were placed."""
     rows = []
-    for e in data["wallet_entries"]:
+    for e in entries:
         if e["result"] not in ("win", "loss", "push"):
             continue
         rows.append((e["created_at"][:10], e["id"], e["source"], e["profit_loss"]))
@@ -1498,19 +1526,18 @@ def _headline_flagged(headline):
     return any(p.search(text) for p in _NEWS_IMPACT_PATTERNS)
 
 
-def wallet_news_alerts(data, limit_per_team=4):
+def wallet_news_alerts(entries, picks_by_id, limit_per_team=4):
     """
-    Recent headlines for both teams in every still-pending wallet bet,
-    one lookup per unique linked game (two bets on the same game share
-    it). `flagged` marks a headline containing common injury/lineup/
-    suspension language - a nudge to read it, not a verdict that it
-    actually swings this bet, so the headline itself is always shown
+    Recent headlines for both teams in every still-pending bet in this
+    wallet, one lookup per unique linked game (two bets on the same game
+    share it). `flagged` marks a headline containing common injury/
+    lineup/suspension language - a nudge to read it, not a verdict that
+    it actually swings this bet, so the headline itself is always shown
     either way.
     """
-    picks_by_id = {p["id"]: p for p in data["picks"]}
     seen_events = set()
     watches = []
-    for e in data["wallet_entries"]:
+    for e in entries:
         if e["result"] != "pending":
             continue
         pick = picks_by_id.get(e["pick_id"])
@@ -1548,31 +1575,13 @@ def wallet_news_alerts(data, limit_per_team=4):
     return watches
 
 
-@app.route("/MyWallet")
-def my_wallet():
-    data = store.load_data()
-    entries = sorted(data["wallet_entries"], key=lambda e: e["id"], reverse=True)
-    overall = wallet_overall_stats(data)
-    by_source = wallet_stats_by_source(data)
-    wr_buckets = wr_confidence_buckets()
-    wr_bucket_stats = wallet_stats_by_wr_bucket(data)
-    news_alerts = wallet_news_alerts(data)
-    chart_dates, chart_series = wallet_cumulative_chart(data)
-    profit_chart = charts.line_chart(chart_dates, chart_series, unit="$") if chart_dates else None
-
-    # Live/final score badges, same as the dashboard's own pick rows -
-    # each entry borrows its linked pick's espn_event_id/bet_type/etc.,
-    # tagged with the entry's own snapshotted league since a pick dict
-    # alone doesn't carry one.
-    picks_by_id = {p["id"]: p for p in data["picks"]}
-    status_inputs = []
-    for e in entries:
-        pick = picks_by_id.get(e["pick_id"])
-        if pick:
-            status_inputs.append({**pick, "wallet_entry_id": e["id"], "league": e["league"]})
-    game_by_entry_id = {p["wallet_entry_id"]: p["game"] for p in attach_game_status(status_inputs)}
-    entries = [{**e, "game": game_by_entry_id.get(e["id"])} for e in entries]
-
+def _pending_picks_for_picker(data):
+    """
+    Every currently-pending dashboard pick, newest first - the options
+    list for any wallet's "Log a Bet" picker. Not wallet-specific: which
+    picks exist is shared across wallets, only which ones a given person
+    bet on (and at what price/stake) is per-wallet.
+    """
     reports_by_id = {r["id"]: r for r in data["reports"]}
     pending_picks = []
     for p in data["picks"]:
@@ -1594,9 +1603,40 @@ def my_wallet():
             }
         )
     pending_picks.sort(key=lambda p: p["id"], reverse=True)
+    return pending_picks
+
+
+def _render_wallet(wallet_key):
+    wallet = WALLETS[wallet_key]
+    data = store.load_data()
+    entries = sorted(data[wallet["entries_key"]], key=lambda e: e["id"], reverse=True)
+    picks_by_id = {p["id"]: p for p in data["picks"]}
+
+    overall = wallet_overall_stats(entries)
+    by_source = wallet_stats_by_source(entries)
+    wr_buckets = wr_confidence_buckets()
+    wr_bucket_stats = wallet_stats_by_wr_bucket(entries)
+    news_alerts = wallet_news_alerts(entries, picks_by_id)
+    chart_dates, chart_series = wallet_cumulative_chart(entries)
+    profit_chart = charts.line_chart(chart_dates, chart_series, unit="$") if chart_dates else None
+
+    # Live/final score badges, same as the dashboard's own pick rows -
+    # each entry borrows its linked pick's espn_event_id/bet_type/etc.,
+    # tagged with the entry's own snapshotted league since a pick dict
+    # alone doesn't carry one.
+    status_inputs = []
+    for e in entries:
+        pick = picks_by_id.get(e["pick_id"])
+        if pick:
+            status_inputs.append({**pick, "wallet_entry_id": e["id"], "league": e["league"]})
+    game_by_entry_id = {p["wallet_entry_id"]: p["game"] for p in attach_game_status(status_inputs)}
+    entries = [{**e, "game": game_by_entry_id.get(e["id"])} for e in entries]
 
     return render_template(
         "wallet.html",
+        wallet_label=wallet["label"],
+        add_endpoint=wallet["add_endpoint"],
+        delete_endpoint=wallet["delete_endpoint"],
         entries=entries,
         overall=overall,
         by_source=by_source,
@@ -1604,43 +1644,43 @@ def my_wallet():
         wr_bucket_stats=wr_bucket_stats,
         news_alerts=news_alerts,
         profit_chart=profit_chart,
-        pending_picks=pending_picks,
+        pending_picks=_pending_picks_for_picker(data),
     )
 
 
-@app.route("/wallet/add", methods=["POST"])
-def add_wallet_entry():
+def _add_wallet_entry_form(wallet_key):
+    wallet = WALLETS[wallet_key]
     create_wallet_entry(
         {
             "pick_id": request.form.get("pick_id"),
             "odds": request.form.get("odds"),
             "stake": request.form.get("stake"),
             "notes": request.form.get("notes", ""),
-        }
+        },
+        wallet,
     )
-    return redirect(url_for("my_wallet"))
+    return redirect(url_for(wallet["view_endpoint"]))
 
 
-@app.route("/wallet/<int:entry_id>/delete", methods=["POST"])
-def delete_wallet_entry(entry_id):
+def _delete_wallet_entry(entry_id, wallet_key):
+    wallet = WALLETS[wallet_key]
+    entries_key = wallet["entries_key"]
     data, token = store.load_for_update()
-    data["wallet_entries"] = [e for e in data["wallet_entries"] if e["id"] != entry_id]
-    store.save(data, token, message=f"Delete wallet entry #{entry_id}")
-    return redirect(url_for("my_wallet"))
+    data[entries_key] = [e for e in data[entries_key] if e["id"] != entry_id]
+    store.save(data, token, message=f"Delete {wallet['label']} entry #{entry_id}")
+    return redirect(url_for(wallet["view_endpoint"]))
 
 
-@app.route("/api/wallet", methods=["POST"])
-def api_create_wallet_entry():
+def _api_create_wallet_entry(wallet_key):
     body = request.get_json(silent=True) or {}
     try:
-        entry_id = create_wallet_entry(body)
+        entry_id = create_wallet_entry(body, WALLETS[wallet_key])
     except (ValueError, KeyError, TypeError) as e:
         return jsonify({"error": str(e)}), 400
     return jsonify({"id": entry_id}), 201
 
 
-@app.route("/api/wallet/<int:entry_id>", methods=["PATCH"])
-def api_update_wallet_entry(entry_id):
+def _api_update_wallet_entry(entry_id, wallet_key):
     """
     Correct a wallet entry's own odds/stake/notes after the fact. Result
     and profit_loss stay derived from the linked pick via
@@ -1648,6 +1688,7 @@ def api_update_wallet_entry(entry_id):
     entry is already settled, changing odds/stake recomputes profit_loss
     against that same stored result immediately.
     """
+    wallet = WALLETS[wallet_key]
     editable = {"odds", "stake", "notes"}
     body = request.get_json(silent=True) or {}
     updates = {k: v for k, v in body.items() if k in editable}
@@ -1655,9 +1696,9 @@ def api_update_wallet_entry(entry_id):
         return jsonify({"error": f"no editable fields given (allowed: {sorted(editable)})"}), 400
 
     data, token = store.load_for_update()
-    entry = next((e for e in data["wallet_entries"] if e["id"] == entry_id), None)
+    entry = next((e for e in data[wallet["entries_key"]] if e["id"] == entry_id), None)
     if entry is None:
-        return jsonify({"error": f"no wallet entry #{entry_id}"}), 404
+        return jsonify({"error": f"no {wallet['label']} entry #{entry_id}"}), 404
 
     if "odds" in updates:
         try:
@@ -1674,8 +1715,58 @@ def api_update_wallet_entry(entry_id):
     if entry["result"] != "pending":
         entry["profit_loss"] = profit_for_result(entry["stake"], entry["odds"], entry["result"])
 
-    store.save(data, token, message=f"Update wallet entry #{entry_id}")
+    store.save(data, token, message=f"Update {wallet['label']} entry #{entry_id}")
     return jsonify({"id": entry_id})
+
+
+@app.route("/MyWallet")
+def my_wallet():
+    return _render_wallet("mine")
+
+
+@app.route("/JesseWallet")
+def jesse_wallet():
+    return _render_wallet("jesse")
+
+
+@app.route("/wallet/add", methods=["POST"])
+def add_wallet_entry():
+    return _add_wallet_entry_form("mine")
+
+
+@app.route("/wallet/<int:entry_id>/delete", methods=["POST"])
+def delete_wallet_entry(entry_id):
+    return _delete_wallet_entry(entry_id, "mine")
+
+
+@app.route("/api/wallet", methods=["POST"])
+def api_create_wallet_entry():
+    return _api_create_wallet_entry("mine")
+
+
+@app.route("/api/wallet/<int:entry_id>", methods=["PATCH"])
+def api_update_wallet_entry(entry_id):
+    return _api_update_wallet_entry(entry_id, "mine")
+
+
+@app.route("/jesse-wallet/add", methods=["POST"])
+def add_wallet_entry_jesse():
+    return _add_wallet_entry_form("jesse")
+
+
+@app.route("/jesse-wallet/<int:entry_id>/delete", methods=["POST"])
+def delete_wallet_entry_jesse(entry_id):
+    return _delete_wallet_entry(entry_id, "jesse")
+
+
+@app.route("/api/jesse-wallet", methods=["POST"])
+def api_create_wallet_entry_jesse():
+    return _api_create_wallet_entry("jesse")
+
+
+@app.route("/api/jesse-wallet/<int:entry_id>", methods=["PATCH"])
+def api_update_wallet_entry_jesse(entry_id):
+    return _api_update_wallet_entry(entry_id, "jesse")
 
 
 if __name__ == "__main__":

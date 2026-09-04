@@ -37,9 +37,11 @@ EMPTY_STATE = {
     "next_report_id": 1,
     "next_pick_id": 1,
     "next_wallet_id": 1,
+    "next_jesse_wallet_id": 1,
     "reports": [],
     "picks": [],
     "wallet_entries": [],
+    "jesse_wallet_entries": [],
 }
 
 

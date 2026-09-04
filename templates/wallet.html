@@ -1,9 +1,9 @@
 {% extends "base.html" %}
-{% block title %}My Wallet · War Room{% endblock %}
+{% block title %}{{ wallet_label }} · War Room{% endblock %}
 {% block content %}
 
   <div class="page-head">
-    <h1>My Wallet</h1>
+    <h1>{{ wallet_label }}</h1>
     <a class="btn btn-outline" href="{{ url_for('dashboard') }}">← Back to Dashboard</a>
   </div>
   <p class="sportsbook-tag" style="display: inline-block; margin-bottom: 24px;">
@@ -194,7 +194,7 @@
                   {% if e.result != 'pending' %}{{ '%+.0f'|format(e.profit_loss) }}${% endif %}
                 </td>
                 <td>
-                  <form method="post" action="{{ url_for('delete_wallet_entry', entry_id=e.id) }}"
+                  <form method="post" action="{{ url_for(delete_endpoint, entry_id=e.id) }}"
                         onsubmit="return confirm('Delete this bet from your wallet?');">
                     <button class="btn-link" type="submit">Delete</button>
                   </form>
@@ -211,7 +211,7 @@
 
   <section>
     <h2 class="section-label">Log a Bet</h2>
-    <form class="form" method="post" action="{{ url_for('add_wallet_entry') }}">
+    <form class="form" method="post" action="{{ url_for(add_endpoint) }}">
       <div class="form-row">
         <label>
           League
