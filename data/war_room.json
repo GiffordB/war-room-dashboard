@@ -1,6 +1,6 @@
 {
   "next_report_id": 10,
-  "next_pick_id": 32,
+  "next_pick_id": 33,
   "reports": [
     {
       "source": "ChatGPT",
@@ -568,6 +568,29 @@
       "away_team": "Wyoming Cowboys",
       "created_at": "2026-09-05T13:56:45",
       "id": 31
+    },
+    {
+      "report_id": 9,
+      "category": "totals_radar",
+      "matchup": "Clemson Tigers @ LSU Tigers",
+      "selection": "Under 50.5",
+      "odds": -110,
+      "stake": 120.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "LSU installing Lane Kiffin in Week 1; Sam Leavitt has not taken a competitive snap since a season-ending 2025 surgery, and Clemsons Christopher Vizzina is in his first real run as starter. Death Valley at night plus two new passing games reads as a first-half stall, not a track meet. Last years meeting was 17-10 and both clubs finished 7-6; both programs have been Under machines vs FBS. Projection cluster lands 27-17 / 27-20. Public will hammer LSU -10.5 and the over because Kiffin -- thats why 50.5 is still up. Smaller-size live-game cousin: 1H Under 24.5.",
+      "wr_confidence": 82.0,
+      "war_room_line": "BetMGM ~50.5 (-108/-110)",
+      "edge": "Two new starting QBs (one off surgery) plus a Death Valley night atmosphere argues for a slow start; both teams historically play Under vs FBS competition",
+      "price_discipline": "Best number on the slate -- full 1.2 units.",
+      "espn_event_id": "401856660",
+      "bet_type": "total",
+      "bet_side": "under",
+      "bet_line": 50.5,
+      "home_team": "LSU Tigers",
+      "away_team": "Clemson Tigers",
+      "created_at": "2026-09-05T13:58:48",
+      "id": 32
     }
   ],
   "next_wallet_id": 9,
