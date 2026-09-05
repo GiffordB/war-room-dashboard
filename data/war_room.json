@@ -1,6 +1,6 @@
 {
   "next_report_id": 10,
-  "next_pick_id": 35,
+  "next_pick_id": 36,
   "reports": [
     {
       "source": "ChatGPT",
@@ -637,6 +637,29 @@
       "away_team": "Liberty Flames",
       "created_at": "2026-09-05T13:59:12",
       "id": 34
+    },
+    {
+      "report_id": 9,
+      "category": "totals_radar",
+      "matchup": "Wyoming Cowboys @ Colorado State Rams",
+      "selection": "Under 46.5",
+      "odds": -110,
+      "stake": 100.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "Two low-event offenses in a rivalry opener, and a total that never should have sniffed 50. Wyoming under Jay Sawvel still lives on defense and field position; CSU is not a Week 1 shootout team. Projected in the 22-25 range. Covers/G6 desks were already on the under -- the closest thing on the Saturday slate to an Iowa-style grind the public will ignore because it is not on ABC.",
+      "wr_confidence": 65.0,
+      "war_room_line": "BetMGM ~46.5",
+      "edge": "Two defense-first, low-event offenses in a Border War opener projected well under the posted total",
+      "price_discipline": "If 46.5 is gone, Under 47.5 is still fine. Do not chase Over 45.",
+      "espn_event_id": "401860878",
+      "bet_type": "total",
+      "bet_side": "under",
+      "bet_line": 46.5,
+      "home_team": "Colorado State Rams",
+      "away_team": "Wyoming Cowboys",
+      "created_at": "2026-09-05T13:59:23",
+      "id": 35
     }
   ],
   "next_wallet_id": 9,
