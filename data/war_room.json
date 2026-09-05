@@ -489,7 +489,7 @@
       "id": 22
     }
   ],
-  "next_wallet_id": 8,
+  "next_wallet_id": 9,
   "wallet_entries": [
     {
       "pick_id": 12,
@@ -558,6 +558,23 @@
       "wr_confidence_at_bet": 74.0,
       "created_at": "2026-09-05T02:07:12",
       "id": 7
+    },
+    {
+      "pick_id": 6,
+      "report_id": 4,
+      "source": "Claude",
+      "league": "EPL",
+      "category": "sexy_moneyline",
+      "matchup": "Aston Villa @ Hull City",
+      "selection": "Hull City to Win",
+      "odds": 300,
+      "stake": 10.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": null,
+      "wr_confidence_at_bet": 73.0,
+      "created_at": "2026-09-05T02:08:19",
+      "id": 8
     }
   ],
   "next_jesse_wallet_id": 1,
