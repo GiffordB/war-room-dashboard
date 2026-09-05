@@ -1,6 +1,6 @@
 {
   "next_report_id": 9,
-  "next_pick_id": 31,
+  "next_pick_id": 32,
   "reports": [
     {
       "source": "ChatGPT",
@@ -533,6 +533,29 @@
       "away_team": "Alcorn State Braves",
       "created_at": "2026-09-05T13:56:42",
       "id": 30
+    },
+    {
+      "report_id": 7,
+      "category": "best_bet",
+      "matchup": "Wyoming Cowboys @ Colorado State Rams",
+      "selection": "Wyoming +3.5",
+      "odds": -110,
+      "stake": 37.5,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "Colorado States price has softened overnight and the fair probability now sits closer to even. The sheets 3.5 converts a push on the most common margin in football (3) into a win. Moved up from a Friday lean to a small bet -- certainty 55%, EV about +2.7%.",
+      "wr_confidence": 62.0,
+      "war_room_line": "Pinnacle: Colorado State -3 (price has softened overnight toward a near pick-em)",
+      "edge": "Sheets 3.5 captures the push on the single most common CFB margin (3) -- EV about +2.7%, just clear of the 2% minimum",
+      "price_discipline": "Bet 0.75% if Pinnacle is still on Colorado State -3; pass if it has moved to -2.5.",
+      "espn_event_id": "401860878",
+      "bet_type": "spread",
+      "bet_side": "away",
+      "bet_line": 3.5,
+      "home_team": "Colorado State Rams",
+      "away_team": "Wyoming Cowboys",
+      "created_at": "2026-09-05T13:56:45",
+      "id": 31
     }
   ],
   "next_wallet_id": 9,
