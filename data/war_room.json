@@ -1,6 +1,6 @@
 {
   "next_report_id": 9,
-  "next_pick_id": 29,
+  "next_pick_id": 30,
   "reports": [
     {
       "source": "ChatGPT",
@@ -487,6 +487,29 @@
       "away_team": "Toledo Rockets",
       "created_at": "2026-09-04T22:33:43",
       "id": 22
+    },
+    {
+      "report_id": 7,
+      "category": "best_bet",
+      "matchup": "Western Kentucky Hilltoppers @ Nevada Wolf Pack",
+      "selection": "Nevada +1.5",
+      "odds": -110,
+      "stake": 100.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "Western Kentucky opened -3, was -1.5 by Friday afternoon, and flipped to Nevada -1 by Saturday morning -- a 2.5-point overnight move with no injury report or public story behind it. At +1.5 this covers every Nevada win plus a one-point WKU loss, roughly 57% of outcomes at the markets own price. Certainty 75% (the higher of the weekends two best numbers, since the move is in a liquid FBS market), EV near +8.6%. The unexplained nature of the move is the caution -- recheck Pinnacle at 6 PM; bet 2% if Nevada is still favored, cut to 1% or pass if its reversed back toward WKU.",
+      "wr_confidence": 85.0,
+      "war_room_line": "Pinnacle: Nevada -1 (moved from an opening WKU -3 to WKU -1.5 Friday to Nevada -1 Saturday morning)",
+      "edge": "Sheet still prints WKU -1.5, ~2.5 points of overnight stale line -- covers ~57% of outcomes, EV near +8.6%, the best number on the weekends board",
+      "price_discipline": "Recheck Pinnacle at 6 PM; bet 2% if Nevada is still favored or pick, cut to 1% or pass if WKU is back to -1 or worse.",
+      "espn_event_id": "401864432",
+      "bet_type": "spread",
+      "bet_side": "home",
+      "bet_line": 1.5,
+      "home_team": "Nevada Wolf Pack",
+      "away_team": "Western Kentucky Hilltoppers",
+      "created_at": "2026-09-05T13:56:25",
+      "id": 29
     }
   ],
   "next_wallet_id": 9,
