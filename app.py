@@ -142,11 +142,28 @@ CONSENSUS_MIN_SOURCES = 2
 # --- WR Confidence Score adjustments -----------------------------------
 # The score entered on a pick (see create_pick()) is a starting point, not
 # the final word - it's adjusted live (never stored back onto the pick)
-# by two things the source itself doesn't know about at write time:
+# by three things the source itself doesn't know about at write time:
 #   - that source's own track record so far this season (WR_RECORD_*)
 #   - whether other sources agree or conflict on the same game/market
 #     (WR_AGREEMENT_BONUS / WR_CONFLICT_PENALTY)
+#   - fresh news on either team, for a pending bet (WR_NEWS_*)
 # See wr_confidence_effective() below for how these combine.
+
+# A pick that was never much of a conviction play to begin with
+# shouldn't swing much either way on a track record or a conflicting
+# source - and a pick at or below this floor gets no adjustment at all,
+# positive or negative. WR_IMPACT_SCALE() ramps linearly from 0 at the
+# floor to 1 at 100, and every modifier below is multiplied through it.
+WR_IMPACT_FLOOR = 50
+
+
+def wr_impact_scale(base):
+    """0 at WR_IMPACT_FLOOR or below, ramping linearly to 1 at a base score of 100."""
+    if base is None or base <= WR_IMPACT_FLOOR:
+        return 0.0
+    return min((base - WR_IMPACT_FLOOR) / (100 - WR_IMPACT_FLOOR), 1.0)
+
+
 WR_RECORD_MIN_SETTLED = 8  # below this many decided picks, a source's win% is too small a sample to trust
 WR_RECORD_SCALE = 0.4  # points of adjustment per percentage-point of win% above/below 50
 WR_RECORD_CAP = 10  # max swing from track record alone, either direction
@@ -908,19 +925,26 @@ def wr_confidence_effective(pick, source, track_record, agreement_map):
     A pick's WR Confidence Score adjusted for what its own entered number
     can't know at write time: how well this source has actually done
     (source_track_record) and whether other sources agree or conflict on
-    the same game/market (pick_agreement_map). Returns (score, breakdown)
-    - breakdown is a plain dict of the pieces that summed to it, for a
-    tooltip; score is None (breakdown {}) if the pick has no base score
-    to begin with, since there's nothing to adjust.
+    the same game/market (pick_agreement_map). Both are scaled by
+    wr_impact_scale(base) first - a pick that wasn't much of a conviction
+    play to begin with (WR_IMPACT_FLOOR or below) gets no adjustment at
+    all, and the swing ramps up toward full size as the base score
+    approaches 100, so a thin pick can't get yanked around as hard as an
+    elite one. Returns (score, breakdown) - breakdown is a plain dict of
+    the pieces that summed to it, for a tooltip; score is None
+    (breakdown {}) if the pick has no base score to begin with, since
+    there's nothing to adjust.
     """
     base = pick.get("wr_confidence")
     if base is None:
         return None, {}
 
+    impact = wr_impact_scale(base)
+
     record = (track_record or {}).get(source) or {}
     record_mod = 0.0
     if record.get("settled", 0) >= WR_RECORD_MIN_SETTLED and record.get("win_pct") is not None:
-        record_mod = _clamp((record["win_pct"] - 50.0) * WR_RECORD_SCALE, -WR_RECORD_CAP, WR_RECORD_CAP)
+        record_mod = _clamp((record["win_pct"] - 50.0) * WR_RECORD_SCALE, -WR_RECORD_CAP, WR_RECORD_CAP) * impact
 
     agreeing, opposing = [], []
     key = (pick.get("espn_event_id"), pick.get("bet_type"))
@@ -933,12 +957,13 @@ def wr_confidence_effective(pick, source, track_record, agreement_map):
                 opposing.extend(sources_on_side)
         opposing = sorted(set(opposing))
 
-    agree_mod = min(WR_AGREEMENT_BONUS * len(agreeing), WR_AGREEMENT_CAP) if agreeing else 0.0
-    conflict_mod = -min(WR_CONFLICT_PENALTY * len(opposing), WR_CONFLICT_CAP) if opposing else 0.0
+    agree_mod = min(WR_AGREEMENT_BONUS * len(agreeing), WR_AGREEMENT_CAP) * impact if agreeing else 0.0
+    conflict_mod = -min(WR_CONFLICT_PENALTY * len(opposing), WR_CONFLICT_CAP) * impact if opposing else 0.0
 
     score = _clamp(base + record_mod + agree_mod + conflict_mod, 0, 100)
     breakdown = {
         "base": base,
+        "impact_scale": impact,
         "record_mod": record_mod,
         "record_win_pct": record.get("win_pct"),
         "agree_mod": agree_mod,
@@ -954,6 +979,9 @@ def wr_confidence_breakdown_text(source, breakdown):
     if not breakdown:
         return ""
     parts = [f"Base {breakdown['base']:.0f}"]
+    if breakdown["base"] <= WR_IMPACT_FLOOR:
+        parts.append(f"no adjustment (at or below {WR_IMPACT_FLOOR})")
+        return " · ".join(parts)
     if breakdown["record_mod"]:
         parts.append(f"{source} track record ({breakdown['record_win_pct']:.0f}% win rate) {breakdown['record_mod']:+.0f}")
     if breakdown["agree_mod"]:
@@ -2009,12 +2037,18 @@ def _news_modifier_for_pick(pick, info, headlines):
     Net WR Confidence nudge from this event's headlines, signed correctly
     for the team this pick actually backs: good news for our team or bad
     news for the opponent both help; bad news for our team or good news
-    for the opponent both hurt. Returns (modifier, contributions) -
+    for the opponent both hurt. Scaled by wr_impact_scale(pick's base
+    score) same as wr_confidence_effective() - a thin pick doesn't swing
+    as hard on a headline as an elite one, and one at WR_IMPACT_FLOOR or
+    below doesn't move at all. Returns (modifier, contributions) -
     contributions is [(headline, delta), ...] for a tooltip, limited to
     the headlines that actually moved the number.
     """
     backed_team_id = _backed_team_id(pick, info)
     if backed_team_id is None:
+        return 0.0, []
+    impact = wr_impact_scale(pick.get("wr_confidence"))
+    if impact == 0:
         return 0.0, []
     total = 0.0
     contributions = []
@@ -2023,9 +2057,9 @@ def _news_modifier_for_pick(pick, info, headlines):
             continue
         for_us = h.get("team_id") == backed_team_id
         if h["sentiment"] == "negative":
-            delta = -WR_NEWS_NEGATIVE_PENALTY if for_us else WR_NEWS_POSITIVE_BONUS
+            delta = (-WR_NEWS_NEGATIVE_PENALTY if for_us else WR_NEWS_POSITIVE_BONUS) * impact
         else:
-            delta = WR_NEWS_POSITIVE_BONUS if for_us else -WR_NEWS_NEGATIVE_PENALTY
+            delta = (WR_NEWS_POSITIVE_BONUS if for_us else -WR_NEWS_NEGATIVE_PENALTY) * impact
         total += delta
         contributions.append((h["headline"], delta))
     return _clamp(total, -WR_NEWS_CAP, WR_NEWS_CAP), contributions
