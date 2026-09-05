@@ -1,6 +1,6 @@
 {
   "next_report_id": 10,
-  "next_pick_id": 36,
+  "next_pick_id": 37,
   "reports": [
     {
       "source": "ChatGPT",
@@ -660,6 +660,29 @@
       "away_team": "Wyoming Cowboys",
       "created_at": "2026-09-05T13:59:23",
       "id": 35
+    },
+    {
+      "report_id": 9,
+      "category": "best_bet",
+      "matchup": "Boise State Broncos @ Oregon Ducks",
+      "selection": "Boise State +24.5",
+      "odds": -110,
+      "stake": 80.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "The price play, not the Oregon-is-overrated play. Oregon is better and Autzen in Week 1 is a problem, but the number is still too fat. Boise returns an experienced QB (Maddux Madsen) and enough starters that a 25-point opener against a team that does not need to empty the clip is a poor lay. Week 1 blowout favorites cover less often than the public thinks once the game is decided. You are betting that Oregon is a 17-to-21-point team today, not a 28-point team.",
+      "wr_confidence": 55.0,
+      "war_room_line": "Oregon -24.5, total 51.5",
+      "edge": "Boise returns enough experienced pieces (starting at QB) that laying 24.5 in a Week-1 environment where the favorite has no reason to empty the clip is priced too rich",
+      "price_discipline": "If the number is +23.5 or worse juice, pass.",
+      "espn_event_id": "401858433",
+      "bet_type": "spread",
+      "bet_side": "away",
+      "bet_line": 24.5,
+      "home_team": "Oregon Ducks",
+      "away_team": "Boise State Broncos",
+      "created_at": "2026-09-05T13:59:35",
+      "id": 36
     }
   ],
   "next_wallet_id": 9,
