@@ -132,6 +132,47 @@ RESULT_COLORS = {
 # agree on what counts as a lock.
 LOCK_CONFIDENCE = 90
 
+# How many sources need to land on the same side of the same game/market
+# for war_room_locks() to call it a consensus pick. Used to be "all
+# three" - lowered to two since two-of-three agreeing is itself a real
+# signal worth surfacing, not just a unanimous sweep.
+CONSENSUS_MIN_SOURCES = 2
+
+# --- WR Confidence Score adjustments -----------------------------------
+# The score entered on a pick (see create_pick()) is a starting point, not
+# the final word - it's adjusted live (never stored back onto the pick)
+# by two things the source itself doesn't know about at write time:
+#   - that source's own track record so far this season (WR_RECORD_*)
+#   - whether other sources agree or conflict on the same game/market
+#     (WR_AGREEMENT_BONUS / WR_CONFLICT_PENALTY)
+# See wr_confidence_effective() below for how these combine.
+WR_RECORD_MIN_SETTLED = 8  # below this many decided picks, a source's win% is too small a sample to trust
+WR_RECORD_SCALE = 0.4  # points of adjustment per percentage-point of win% above/below 50
+WR_RECORD_CAP = 10  # max swing from track record alone, either direction
+
+WR_AGREEMENT_BONUS = 6  # per other source on the same side of the same game/market
+WR_AGREEMENT_CAP = 12
+WR_CONFLICT_PENALTY = 8  # per other source on the opposite side of the same game/market
+WR_CONFLICT_CAP = 16
+
+# Live-only (see wallet_news_alerts()): nudges the score shown next to a
+# News Watch matchup, on top of the two adjustments above. Never touches
+# the frozen wr_confidence_at_bet on an already-logged bet - that number
+# is a snapshot of the moment the bet was placed and stays put by design.
+WR_NEWS_POSITIVE_BONUS = 4
+WR_NEWS_NEGATIVE_PENALTY = 6
+WR_NEWS_CAP = 12
+
+# How often capture_pregame_lines() will re-snapshot the same still-
+# upcoming pick's line. There's no scheduled job sampling odds right at
+# kickoff (this app is just a web service - see the module docstring),
+# so this piggybacks on Auto-Grade instead: every time it runs, any
+# pending pick whose game hasn't started yet gets its current line
+# recaptured, throttled to this often, and whatever was captured last
+# before the game actually starts becomes the de facto "closing" line -
+# only as good as how recently before kickoff Auto-Grade happened to run.
+PREGAME_ODDS_RECAPTURE_MINUTES = 15
+
 
 def wr_confidence_label(score):
     """
@@ -303,6 +344,115 @@ def _parallel_map(fn, items, max_workers=8):
             except Exception:
                 results[item] = None
     return results
+
+
+def _pregame_odds_stale(pick):
+    captured_at = pick.get("pregame_odds_captured_at")
+    if not captured_at:
+        return True
+    try:
+        captured = datetime.fromisoformat(captured_at)
+    except ValueError:
+        return True
+    return (datetime.utcnow() - captured).total_seconds() > PREGAME_ODDS_RECAPTURE_MINUTES * 60
+
+
+def capture_pregame_lines(data):
+    """
+    Best-effort line-movement tracking (see PREGAME_ODDS_RECAPTURE_MINUTES):
+    for every pending, ESPN-linked pick whose game ESPN still shows as
+    not-yet-started, snapshots its current line via odds.game_odds() onto
+    the pick as `pregame_odds`/`pregame_odds_captured_at` - throttled so a
+    pick that's still days out doesn't get re-fetched on every call. Once
+    a game starts, game_odds() stops returning anything for it anyway, so
+    the pick's last snapshot naturally stays put - see line_move() for
+    how a pick's original bet_line is compared against it. Modifies
+    `data` in place; returns how many picks got a fresh snapshot.
+    """
+    reports = {r["id"]: r for r in data["reports"]}
+    eligible = {
+        p["id"]: p
+        for p in data["picks"]
+        if p["result"] == "pending" and p.get("espn_event_id") and p.get("bet_type") and p["report_id"] in reports
+    }
+    if not eligible:
+        return 0
+
+    states = _parallel_map(
+        lambda pid: odds.final_score(reports[eligible[pid]["report_id"]]["league"], eligible[pid]["espn_event_id"]),
+        list(eligible.keys()),
+    )
+    due_ids = [
+        pid
+        for pid, state in states.items()
+        if state and state.get("state") == "pre" and _pregame_odds_stale(eligible[pid])
+    ]
+    if not due_ids:
+        return 0
+
+    lines = _parallel_map(
+        lambda pid: odds.game_odds(reports[eligible[pid]["report_id"]]["league"], eligible[pid]["espn_event_id"]),
+        due_ids,
+    )
+    captured = 0
+    for pid, line in lines.items():
+        if not line:
+            continue
+        pick = eligible[pid]
+        pick["pregame_odds"] = line
+        pick["pregame_odds_captured_at"] = datetime.utcnow().isoformat(timespec="seconds")
+        captured += 1
+    return captured
+
+
+def line_move(pick):
+    """
+    Closing-line value (CLV) for this pick: how much better or worse
+    pick["bet_line"] was than whatever line was last captured before
+    kickoff (see capture_pregame_lines) - the closest thing to true CLV
+    this app can track without a scheduled job (it's "as of the last time
+    someone checked the site before kickoff", not a guaranteed minute-of-
+    kickoff read - see PREGAME_ODDS_RECAPTURE_MINUTES). Returns None if
+    there's nothing to compare (no snapshot yet, or this pick's market
+    isn't spread/total - moneyline/match_result CLV would need American-
+    odds-to-probability math this app doesn't do yet). Positive means the
+    number at bet time required less than the closing number would have
+    (a better price than showing up right before kickoff); negative means
+    the closing number was easier to clear than the one actually bet.
+    """
+    snapshot = pick.get("pregame_odds")
+    if not snapshot or pick.get("bet_line") is None:
+        return None
+
+    bet_type, side = pick.get("bet_type"), pick.get("bet_side")
+    if bet_type == "spread":
+        current = snapshot.get("home_spread")
+        if current is None:
+            return None
+        # home_spread is from the home team's perspective; an away-side
+        # bet's line runs the opposite direction from the home number.
+        # Both bet_line and current_for_side are "points added to this
+        # side's margin" (see grade_pick) - the bigger that number, the
+        # easier the cover, so a smaller closing number than what was bet
+        # means the bet got the easier (better) side of the move.
+        current_for_side = current if side == "home" else -current
+        return pick["bet_line"] - current_for_side
+
+    if bet_type == "total":
+        current = snapshot.get("total")
+        if current is None:
+            return None
+        # A lower total favors the over (less to clear); a higher total
+        # favors the under (more room before it clears). So a closing
+        # number that moved toward the other side of bet_line is the
+        # good direction for whichever side was actually bet.
+        delta = current - pick["bet_line"]
+        return delta if side == "over" else -delta
+
+    return None
+
+
+app.jinja_env.globals["line_move"] = line_move
 
 
 def attach_game_status(picks, league=None):
@@ -629,7 +779,9 @@ def weekly_win_pct_chart(week_numbers, week_labels, data):
 def war_room_locks(data, league=None):
     """
     Consensus picks: still pending (upcoming, not graded yet) and picked
-    by all three sources on the same game, market, and side. Grouped by
+    by at least CONSENSUS_MIN_SOURCES sources on the same game, market,
+    and side - doesn't require a unanimous sweep, since two of three
+    landing on the same side is itself a real signal. Grouped by
     espn_event_id rather than the free-text matchup, since that's the
     only reliable way to tell "same game" across sources that word their
     matchup text differently - so only picks pulled from the DraftKings-
@@ -655,7 +807,7 @@ def war_room_locks(data, league=None):
 
     locks = []
     for by_source in groups.values():
-        if not all(s in by_source for s in SOURCES):
+        if len(by_source) < CONSENSUS_MIN_SOURCES:
             continue
         sample = next(iter(by_source.values()))
         locks.append(
@@ -664,10 +816,12 @@ def war_room_locks(data, league=None):
                 "league": sample["report"]["league"],
                 "category": sample["pick"]["category"],
                 "by_source": by_source,
+                "sources": [s for s in SOURCES if s in by_source],
+                "unanimous": len(by_source) == len(SOURCES),
             }
         )
 
-    locks.sort(key=lambda lock: lock["matchup"])
+    locks.sort(key=lambda lock: (-len(lock["by_source"]), lock["matchup"]))
     return locks
 
 
@@ -675,17 +829,19 @@ def confidence_locks(data, league=None):
     """
     Every still-pending pick at Lock-tier WR Confidence Score
     (>= LOCK_CONFIDENCE) - not the same thing as war_room_locks() above
-    (which requires all three sources to independently agree on the same
+    (which requires several sources to independently agree on the same
     game); this is any one pick's own highest-conviction score, standing
-    alone. Applies across every league (WR Confidence Score isn't
-    soccer-specific). Sorted by score, highest first.
+    alone. Uses each pick's *effective* score (see wr_confidence_effective
+    / annotate_wr_confidence) - callers must annotate `data["picks"]`
+    before calling this. Applies across every league (WR Confidence Score
+    isn't soccer-specific). Sorted by score, highest first.
     """
     reports = {r["id"]: r for r in data["reports"]}
     locks = []
     for p in data["picks"]:
         if p["result"] != "pending":
             continue
-        score = p.get("wr_confidence")
+        score = p.get("wr_confidence_effective")
         if score is None or score < LOCK_CONFIDENCE:
             continue
         r = reports.get(p["report_id"])
@@ -701,15 +857,157 @@ def confidence_locks(data, league=None):
                 "selection": p["selection"],
                 "odds": p["odds"],
                 "wr_confidence": score,
+                "wr_confidence_breakdown": p.get("wr_confidence_breakdown"),
             }
         )
     locks.sort(key=lambda lock: lock["wr_confidence"], reverse=True)
     return locks
 
 
+def _clamp(value, low, high):
+    return max(low, min(high, value))
+
+
+def source_track_record(data):
+    """
+    {source: source_stats(data, source)} across every league - an AI
+    source's skill is a property of the model, not the sport, so its
+    track record modifier (see wr_confidence_effective) is computed
+    holistically rather than split out per league.
+    """
+    return {s: source_stats(data, s, None) for s in SOURCES}
+
+
+def pick_agreement_map(data):
+    """
+    (espn_event_id, bet_type) -> {bet_side: {source, ...}} across every
+    still-pending, ESPN-linked pick - the same grouping war_room_locks()
+    builds, exposed separately so wr_confidence_effective() can tell, for
+    any one pick, which other sources are on its side (agreement) and
+    which are on the other side of the same market (conflict).
+    """
+    reports = {r["id"]: r for r in data["reports"]}
+    agreement = {}
+    for p in data["picks"]:
+        if p["result"] != "pending" or not p.get("espn_event_id") or not p.get("bet_type"):
+            continue
+        r = reports.get(p["report_id"])
+        if not r:
+            continue
+        key = (p["espn_event_id"], p["bet_type"])
+        agreement.setdefault(key, {}).setdefault(p.get("bet_side"), set()).add(r["source"])
+    return agreement
+
+
+def wr_confidence_effective(pick, source, track_record, agreement_map):
+    """
+    A pick's WR Confidence Score adjusted for what its own entered number
+    can't know at write time: how well this source has actually done
+    (source_track_record) and whether other sources agree or conflict on
+    the same game/market (pick_agreement_map). Returns (score, breakdown)
+    - breakdown is a plain dict of the pieces that summed to it, for a
+    tooltip; score is None (breakdown {}) if the pick has no base score
+    to begin with, since there's nothing to adjust.
+    """
+    base = pick.get("wr_confidence")
+    if base is None:
+        return None, {}
+
+    record = (track_record or {}).get(source) or {}
+    record_mod = 0.0
+    if record.get("settled", 0) >= WR_RECORD_MIN_SETTLED and record.get("win_pct") is not None:
+        record_mod = _clamp((record["win_pct"] - 50.0) * WR_RECORD_SCALE, -WR_RECORD_CAP, WR_RECORD_CAP)
+
+    agreeing, opposing = [], []
+    key = (pick.get("espn_event_id"), pick.get("bet_type"))
+    if key[0] and key[1]:
+        sides = (agreement_map or {}).get(key, {})
+        own_side = pick.get("bet_side")
+        agreeing = sorted((sides.get(own_side) or set()) - {source})
+        for side, sources_on_side in sides.items():
+            if side != own_side:
+                opposing.extend(sources_on_side)
+        opposing = sorted(set(opposing))
+
+    agree_mod = min(WR_AGREEMENT_BONUS * len(agreeing), WR_AGREEMENT_CAP) if agreeing else 0.0
+    conflict_mod = -min(WR_CONFLICT_PENALTY * len(opposing), WR_CONFLICT_CAP) if opposing else 0.0
+
+    score = _clamp(base + record_mod + agree_mod + conflict_mod, 0, 100)
+    breakdown = {
+        "base": base,
+        "record_mod": record_mod,
+        "record_win_pct": record.get("win_pct"),
+        "agree_mod": agree_mod,
+        "agreeing_sources": agreeing,
+        "conflict_mod": conflict_mod,
+        "opposing_sources": opposing,
+    }
+    return score, breakdown
+
+
+def wr_confidence_breakdown_text(source, breakdown):
+    """Plain-English tooltip for a wr_confidence_effective() breakdown."""
+    if not breakdown:
+        return ""
+    parts = [f"Base {breakdown['base']:.0f}"]
+    if breakdown["record_mod"]:
+        parts.append(f"{source} track record ({breakdown['record_win_pct']:.0f}% win rate) {breakdown['record_mod']:+.0f}")
+    if breakdown["agree_mod"]:
+        parts.append(f"agrees with {', '.join(breakdown['agreeing_sources'])} {breakdown['agree_mod']:+.0f}")
+    if breakdown["conflict_mod"]:
+        parts.append(f"conflicts with {', '.join(breakdown['opposing_sources'])} {breakdown['conflict_mod']:.0f}")
+    return " · ".join(parts)
+
+
+def annotate_wr_confidence(data):
+    """
+    Attaches wr_confidence_effective (float or None) and
+    wr_confidence_breakdown_text (str) to every pick in data["picks"], in
+    place. Cheap and network-free (everything it needs is already in
+    `data`), so safe to call on every page that shows a WR Confidence
+    badge. Returns `data` for convenient chaining.
+    """
+    reports = {r["id"]: r for r in data["reports"]}
+    track_record = source_track_record(data)
+    agreement_map = pick_agreement_map(data)
+    for p in data["picks"]:
+        r = reports.get(p["report_id"])
+        source = r["source"] if r else None
+        score, breakdown = wr_confidence_effective(p, source, track_record, agreement_map)
+        p["wr_confidence_effective"] = score
+        p["wr_confidence_breakdown"] = wr_confidence_breakdown_text(source, breakdown)
+    return data
+
+
 def rank_sources(stats):
     """Sources ordered by profit, best first."""
     return sorted(SOURCES, key=lambda s: stats[s]["profit"], reverse=True)
+
+
+def clv_by_source(data, league=None):
+    """
+    {source: {avg, count}} average closing-line value (see line_move())
+    across every spread/total pick that has a captured pregame snapshot -
+    win/loss doesn't matter here, CLV is about the price, not the
+    outcome. A source with no snapshotted picks yet gets avg=None,
+    count=0 rather than being left out, so a template can always index
+    every source.
+    """
+    reports = {r["id"]: r for r in data["reports"]}
+    totals = {s: {"sum": 0.0, "count": 0} for s in SOURCES}
+    for p in data["picks"]:
+        r = reports.get(p["report_id"])
+        if not r or r["source"] not in SOURCES or not _league_matches(r["league"], league):
+            continue
+        move = line_move(p)
+        if move is None:
+            continue
+        totals[r["source"]]["sum"] += move
+        totals[r["source"]]["count"] += 1
+    return {
+        s: {"avg": (t["sum"] / t["count"]) if t["count"] else None, "count": t["count"]}
+        for s, t in totals.items()
+    }
 
 
 def rank_movement(data, league=None):
@@ -785,6 +1083,7 @@ def _league_matches(actual, league_filter):
 @app.route("/")
 def dashboard():
     data = store.load_data()
+    annotate_wr_confidence(data)
     current_league, league = resolve_league_filter(request.args.get("league"))
 
     locks = war_room_locks(data, league)
@@ -793,6 +1092,7 @@ def dashboard():
     stats = {s: source_stats(data, s, league) for s in SOURCES}
     ranked = rank_sources(stats)
     movement = rank_movement(data, league)
+    clv = clv_by_source(data, league)
 
     chart_dates, chart_series = cumulative_profit_chart(data, league)
     profit_chart = charts.line_chart(chart_dates, chart_series, unit="$") if chart_dates else None
@@ -822,6 +1122,7 @@ def dashboard():
         stats=stats,
         ranked=ranked,
         movement=movement,
+        clv=clv,
         profit_chart=profit_chart,
         win_pct_chart=win_pct_chart,
         week_numbers=week_numbers,
@@ -887,6 +1188,7 @@ def _latest_report(data, league):
 @app.route("/latest")
 def latest_reports():
     data = store.load_data()
+    annotate_wr_confidence(data)
     epl_report, epl_picks = _latest_report(data, "EPL")
     ucl_report, ucl_picks = _latest_report(data, "UCL")
     return render_template(
@@ -945,6 +1247,7 @@ def create_report(fields):
 @app.route("/reports/<int:report_id>")
 def report_detail(report_id):
     data = store.load_data()
+    annotate_wr_confidence(data)
     report = next((r for r in data["reports"] if r["id"] == report_id), None)
     if report is None:
         return redirect(url_for("reports_list"))
@@ -1111,17 +1414,25 @@ def api_update_pick(pick_id, report_id):
     return jsonify({"id": pick_id})
 
 
+def _safe_capture_pregame_lines(data):
+    """capture_pregame_lines(), never allowed to break a grading request."""
+    try:
+        return capture_pregame_lines(data)
+    except Exception:
+        return 0
+
+
 @app.route("/reports/<int:report_id>/auto_grade", methods=["POST"])
 def auto_grade_report(report_id):
     data, token = store.load_for_update()
     graded, still_pending = auto_grade_pending(data, report_id=report_id)
     synced = sync_wallet_entries(data)
-    if graded or synced:
-        store.save(
-            data,
-            token,
-            message=f"Auto-grade report #{report_id}: {graded} pick(s) settled, {synced} wallet entr{'y' if synced == 1 else 'ies'} synced",
-        )
+    captured = _safe_capture_pregame_lines(data)
+    if graded or synced or captured:
+        message = f"Auto-grade report #{report_id}: {graded} pick(s) settled, {synced} wallet entr{'y' if synced == 1 else 'ies'} synced"
+        if captured:
+            message += f", {captured} line{'s' if captured != 1 else ''} captured"
+        store.save(data, token, message=message)
     return redirect(
         url_for("report_detail", report_id=report_id, graded=graded, still_pending=still_pending)
     )
@@ -1132,12 +1443,12 @@ def auto_grade_all():
     data, token = store.load_for_update()
     graded, still_pending = auto_grade_pending(data)
     synced = sync_wallet_entries(data)
-    if graded or synced:
-        store.save(
-            data,
-            token,
-            message=f"Auto-grade all reports: {graded} pick(s) settled, {synced} wallet entr{'y' if synced == 1 else 'ies'} synced",
-        )
+    captured = _safe_capture_pregame_lines(data)
+    if graded or synced or captured:
+        message = f"Auto-grade all reports: {graded} pick(s) settled, {synced} wallet entr{'y' if synced == 1 else 'ies'} synced"
+        if captured:
+            message += f", {captured} line{'s' if captured != 1 else ''} captured"
+        store.save(data, token, message=message)
     return redirect(url_for("reports_list", graded=graded, still_pending=still_pending))
 
 
@@ -1394,6 +1705,7 @@ def create_wallet_entry(fields, wallet):
     if pick_id not in (None, ""):
         pick_id = int(pick_id)
         data = store.load_data()
+        annotate_wr_confidence(data)
         pick = next((p for p in data["picks"] if p["id"] == pick_id), None)
         if pick is None:
             raise ValueError(f"no pick #{pick_id}")
@@ -1416,12 +1728,14 @@ def create_wallet_entry(fields, wallet):
             "result": pick["result"],
             "profit_loss": profit_for_result(stake, odds, pick["result"]) if pick["result"] != "pending" else 0.0,
             "notes": (fields.get("notes") or "").strip() or None,
-            # A frozen snapshot of the pick's WR Confidence Score at the
-            # moment this bet was logged - deliberately never touched
-            # again, even if the pick's own wr_confidence is later
-            # revised (e.g. on fresh injury news). What mattered was the
-            # read at bet time.
-            "wr_confidence_at_bet": pick.get("wr_confidence"),
+            # A frozen snapshot of the pick's *effective* WR Confidence
+            # Score (base score adjusted for source track record and
+            # cross-source agreement/conflict - see wr_confidence_effective)
+            # at the moment this bet was logged - deliberately never
+            # touched again, even as the source's record or other sources'
+            # picks keep moving after the fact. What mattered was the read
+            # at bet time.
+            "wr_confidence_at_bet": pick.get("wr_confidence_effective"),
             "created_at": datetime.utcnow().isoformat(timespec="seconds"),
         }
     else:
@@ -1585,15 +1899,18 @@ def wallet_cumulative_chart(entries):
     return all_dates, series
 
 
-# A keyword nudge, not a verdict: a headline mentioning one of these
-# terms gets flagged for a closer read, since it's the kind of language
-# (injury, suspension, a lineup change) that can move a bet's outcome -
-# it's not judged for whether it actually applies to this specific game.
-# Whole-word matches only (word boundaries) - a bare "out" or "starter"
-# flags far too much unrelated coverage ("breakout", "starting the
-# season 2-0"), so every entry here is a multi-word phrase specific
-# enough to rarely appear outside real injury/lineup news.
-_NEWS_IMPACT_PATTERNS = tuple(
+# Keyword nudges, not verdicts: a headline mentioning one of these terms
+# gets flagged for a closer read, since it's the kind of language that
+# can move a bet's outcome - it's not judged for whether it actually
+# applies to this specific game. Whole-word matches only (word
+# boundaries) - a bare "out" or "starter" flags far too much unrelated
+# coverage ("breakout", "starting the season 2-0"), so every entry here
+# is a multi-word phrase specific enough to rarely appear outside real
+# injury/lineup news. Two lists, not one: which way a headline should
+# nudge the live read (see _news_modifier_for_pick) depends on whether
+# it's bad news (negative) or good news (positive) for whichever team
+# it's about.
+_NEWS_NEGATIVE_PATTERNS = tuple(
     re.compile(r"\b" + re.escape(phrase) + r"\b")
     for phrase in (
         "ruled out", "will not play", "won't play", "out for the season",
@@ -1603,39 +1920,112 @@ _NEWS_IMPACT_PATTERNS = tuple(
         "injured reserve",
     )
 )
+_NEWS_POSITIVE_PATTERNS = tuple(
+    re.compile(r"\b" + re.escape(phrase) + r"\b")
+    for phrase in (
+        "cleared to play", "removed from the injury report", "will play",
+        "expected to play", "activated from ir", "back from suspension",
+        "returns from injury", "upgraded to probable", "practiced fully",
+        "no longer questionable", "reinstated",
+    )
+)
 
 
-def _headline_flagged(headline):
+def _headline_sentiment(headline):
+    """'negative', 'positive', or None - checked positive-first, since a
+    genuinely good-news headline about a player's return very often
+    contains a generic negative word too (e.g. "returns from injury",
+    "cleared to play after injury scare" both contain "injury"), while
+    the positive phrases here are specific multi-word ones unlikely to
+    show up by accident inside real bad news."""
     text = (headline or "").lower()
-    return any(p.search(text) for p in _NEWS_IMPACT_PATTERNS)
+    if any(p.search(text) for p in _NEWS_POSITIVE_PATTERNS):
+        return "positive"
+    if any(p.search(text) for p in _NEWS_NEGATIVE_PATTERNS):
+        return "negative"
+    return None
+
+
+def _backed_team_id(pick, info):
+    """
+    The ESPN team id this pick actually backs, or None for a bet with no
+    single team to back (a total, a soccer draw, or one this app can't
+    place a side on) - those get no news modifier, just the headlines.
+    """
+    if pick.get("bet_type") not in ("spread", "moneyline", "match_result"):
+        return None
+    side = pick.get("bet_side")
+    if side == "home":
+        return info["home_id"]
+    if side == "away":
+        return info["away_id"]
+    return None
+
+
+def _news_modifier_for_pick(pick, info, headlines):
+    """
+    Net WR Confidence nudge from this event's headlines, signed correctly
+    for the team this pick actually backs: good news for our team or bad
+    news for the opponent both help; bad news for our team or good news
+    for the opponent both hurt. Returns (modifier, contributions) -
+    contributions is [(headline, delta), ...] for a tooltip, limited to
+    the headlines that actually moved the number.
+    """
+    backed_team_id = _backed_team_id(pick, info)
+    if backed_team_id is None:
+        return 0.0, []
+    total = 0.0
+    contributions = []
+    for h in headlines:
+        if not h.get("sentiment"):
+            continue
+        for_us = h.get("team_id") == backed_team_id
+        if h["sentiment"] == "negative":
+            delta = -WR_NEWS_NEGATIVE_PENALTY if for_us else WR_NEWS_POSITIVE_BONUS
+        else:
+            delta = WR_NEWS_POSITIVE_BONUS if for_us else -WR_NEWS_NEGATIVE_PENALTY
+        total += delta
+        contributions.append((h["headline"], delta))
+    return _clamp(total, -WR_NEWS_CAP, WR_NEWS_CAP), contributions
 
 
 def wallet_news_alerts(entries, picks_by_id, limit_per_team=4):
     """
     Recent headlines for both teams in every still-pending bet in this
     wallet, one lookup per unique linked game (two bets on the same game
-    share it). `flagged` marks a headline containing common injury/
-    lineup/suspension language - a nudge to read it, not a verdict that
-    it actually swings this bet, so the headline itself is always shown
-    either way.
+    share it), plus - for any entry whose bet backs one specific team - a
+    live-adjusted WR Confidence read layered on top of wr_confidence_at_bet:
+    good news for the backed team or bad news for the opponent nudges it
+    up, the reverse nudges it down (see _news_modifier_for_pick). This is
+    a separate, always-moving number shown alongside the frozen at-bet
+    score, never a replacement for it - wr_confidence_at_bet itself is
+    never touched, by design (see create_wallet_entry).
 
-    Two batches, each fetched in parallel rather than one round-trip at
-    a time: first match_info() for every unique game (to get team ids),
-    then team_news() for every unique (league, team) pair across all of
-    them - the second batch has to wait on the first (it needs the team
-    ids), but within each batch every call fires at once.
+    Returns (watches, live_reads): watches is the headline list for
+    display, one per matchup; live_reads is {entry_id: {"score",
+    "modifier", "text"}} for every still-pending linked entry that has
+    one.
+
+    Two API batches, each fetched in parallel rather than one round-trip
+    at a time: first match_info() for every unique game (to get team
+    ids), then team_news() for every unique (league, team) pair across
+    all of them - the second batch has to wait on the first (it needs the
+    team ids), but within each batch every call fires at once.
     """
     event_matchups = {}
+    entries_by_event = {}
     for e in entries:
         if e["result"] != "pending":
             continue
         pick = picks_by_id.get(e["pick_id"])
         if not pick or not pick.get("espn_event_id"):
             continue
-        event_matchups.setdefault((e["league"], pick["espn_event_id"]), e["matchup"])
+        key = (e["league"], pick["espn_event_id"])
+        event_matchups.setdefault(key, e["matchup"])
+        entries_by_event.setdefault(key, []).append((e, pick))
 
     if not event_matchups:
-        return []
+        return [], {}
 
     match_infos = _parallel_map(lambda key: odds.match_info(key[0], key[1]), list(event_matchups.keys()))
 
@@ -1651,6 +2041,7 @@ def wallet_news_alerts(entries, picks_by_id, limit_per_team=4):
     )
 
     watches = []
+    live_reads = {}
     for event_key, matchup in event_matchups.items():
         event_league, _event_id = event_key
         info = match_infos.get(event_key)
@@ -1662,13 +2053,16 @@ def wallet_news_alerts(entries, picks_by_id, limit_per_team=4):
             for article in news_by_team.get((event_league, team_id)) or []:
                 if not article.get("headline"):
                     continue
+                sentiment = _headline_sentiment(article["headline"])
                 headlines.append(
                     {
                         "team": team_name,
+                        "team_id": team_id,
                         "headline": article["headline"],
                         "link": article.get("link"),
                         "published": article.get("published"),
-                        "flagged": _headline_flagged(article["headline"]),
+                        "sentiment": sentiment,
+                        "flagged": sentiment is not None,
                     }
                 )
         if not headlines:
@@ -1677,7 +2071,21 @@ def wallet_news_alerts(entries, picks_by_id, limit_per_team=4):
         headlines.sort(key=lambda h: h["flagged"], reverse=True)
         watches.append({"matchup": matchup, "league": event_league, "headlines": headlines[:8]})
 
-    return watches
+        for e, pick in entries_by_event.get(event_key, []):
+            if e.get("wr_confidence_at_bet") is None:
+                continue
+            modifier, contributions = _news_modifier_for_pick(pick, info, headlines)
+            if not contributions:
+                continue
+            score = _clamp(e["wr_confidence_at_bet"] + modifier, 0, 100)
+            detail = "; ".join(f"{h[:60]}{'…' if len(h) > 60 else ''} ({d:+.0f})" for h, d in contributions)
+            live_reads[e["id"]] = {
+                "score": score,
+                "modifier": modifier,
+                "text": f"At bet {e['wr_confidence_at_bet']:.0f} · News {modifier:+.0f} — {detail}",
+            }
+
+    return watches, live_reads
 
 
 def _pending_picks_for_picker(data):
@@ -1704,7 +2112,7 @@ def _pending_picks_for_picker(data):
                 "matchup": p["matchup"],
                 "selection": p["selection"],
                 "odds": p["odds"],
-                "wr_confidence": p.get("wr_confidence"),
+                "wr_confidence": p.get("wr_confidence_effective"),
             }
         )
     pending_picks.sort(key=lambda p: p["id"], reverse=True)
@@ -1714,6 +2122,7 @@ def _pending_picks_for_picker(data):
 def _render_wallet(wallet_key):
     wallet = WALLETS[wallet_key]
     data = store.load_data()
+    annotate_wr_confidence(data)
     entries = sorted(data[wallet["entries_key"]], key=lambda e: e["id"], reverse=True)
     picks_by_id = {p["id"]: p for p in data["picks"]}
 
@@ -1721,7 +2130,7 @@ def _render_wallet(wallet_key):
     by_source = wallet_stats_by_source(entries)
     wr_buckets = wr_confidence_buckets()
     wr_bucket_stats = wallet_stats_by_wr_bucket(entries)
-    news_alerts = wallet_news_alerts(entries, picks_by_id)
+    news_alerts, news_live_reads = wallet_news_alerts(entries, picks_by_id)
     chart_dates, chart_series = wallet_cumulative_chart(entries)
     profit_chart = charts.line_chart(chart_dates, chart_series, unit="$") if chart_dates else None
 
@@ -1735,7 +2144,9 @@ def _render_wallet(wallet_key):
         if pick:
             status_inputs.append({**pick, "wallet_entry_id": e["id"], "league": e["league"]})
     game_by_entry_id = {p["wallet_entry_id"]: p["game"] for p in attach_game_status(status_inputs)}
-    entries = [{**e, "game": game_by_entry_id.get(e["id"])} for e in entries]
+    entries = [
+        {**e, "game": game_by_entry_id.get(e["id"]), "live_read": news_live_reads.get(e["id"])} for e in entries
+    ]
 
     return render_template(
         "wallet.html",

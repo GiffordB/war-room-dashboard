@@ -73,9 +73,13 @@
             {% for p in picks %}
               <tr>
                 <td>
-                  {% if p.get('wr_confidence') is not none %}
-                    <span class="badge-wr-confidence">{{ wr_confidence_label(p.wr_confidence) | upper }} · {{ p.wr_confidence | round | int }}%</span>
+                  {% if p.get('wr_confidence_effective') is not none %}
+                    <span class="badge-wr-confidence" title="{{ p.wr_confidence_breakdown }}">{{ wr_confidence_label(p.wr_confidence_effective) | upper }} · {{ p.wr_confidence_effective | round | int }}%</span>
                   {% else %}<span class="muted">—</span>{% endif %}
+                  {% set move = line_move(p) %}
+                  {% if move is not none %}
+                    <div><span class="badge-clv {{ 'pos' if move > 0 else 'neg' if move < 0 else '' }}" title="Closing-line value: this pick's line vs. the last captured line before kickoff">CLV {{ '%+.1f'|format(move) }}</span></div>
+                  {% endif %}
                 </td>
                 <td class="pos">PLAY ${{ '{:,.0f}'.format(p.stake) }}</td>
                 <td>

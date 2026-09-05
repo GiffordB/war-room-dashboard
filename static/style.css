@@ -235,6 +235,8 @@ section { margin-bottom: 44px; }
 .news-list a:hover { text-decoration-color: var(--gold-bright); }
 .news-flagged { color: var(--gold-bright); }
 .news-flagged a { color: var(--gold-bright); text-decoration-color: var(--gold); }
+.news-positive { color: var(--green); }
+.news-positive a { color: var(--green); text-decoration-color: var(--green); }
 
 /* ---------------- Vs banner ---------------- */
 .vs-banner {
@@ -372,6 +374,38 @@ section { margin-bottom: 44px; }
   font-size: 0.75rem;
   padding: 2px 9px;
   border-radius: 999px;
+}
+.badge-live-read {
+  color: var(--neon-purple-bright);
+  border-color: var(--neon-purple);
+  font-size: 0.68rem;
+  font-weight: 700;
+  margin-top: 4px;
+}
+
+.badge-clv {
+  display: inline-block;
+  color: var(--muted);
+  border: 1px solid var(--border);
+  font-weight: 700;
+  font-size: 0.72rem;
+  padding: 2px 9px;
+  border-radius: 999px;
+}
+.badge-clv.pos { color: var(--green); border-color: var(--green); }
+.badge-clv.neg { color: var(--red); border-color: var(--red); }
+
+.badge-unanimous {
+  display: inline-block;
+  color: var(--gold-bright);
+  background: rgba(253, 208, 35, 0.12);
+  font-weight: 700;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  padding: 2px 8px;
+  border-radius: 999px;
+  margin-left: 6px;
 }
 
 .badge-auto {

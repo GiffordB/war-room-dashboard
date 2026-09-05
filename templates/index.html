@@ -27,17 +27,18 @@
 
       {% if locks %}
         <h3 class="lock-subhead">Consensus</h3>
-        <p class="muted small">Claude, Grok, and ChatGPT all landed on the same side of the same game — still pending.</p>
+        <p class="muted small">At least two of Claude, Grok, and ChatGPT landed on the same side of the same game — still pending.</p>
         <div class="locks-grid">
           {% for lock in locks %}
             <div class="lock-card">
               <div class="lock-card-head">
                 <span class="badge-league">{{ lock.league }}</span>
                 <span style="color: {{ categories[lock.category].color }};">{{ categories[lock.category].icon }} {{ categories[lock.category].label }}</span>
+                {% if lock.unanimous %}<span class="badge-unanimous" title="All three sources agree">Unanimous</span>{% endif %}
               </div>
               <div class="lock-matchup">{{ lock.matchup }}</div>
               <div class="lock-sources">
-                {% for s in sources %}
+                {% for s in lock.sources %}
                   {% set entry = lock.by_source[s] %}
                   <div class="lock-source-row">
                     <span class="badge-source" style="background: {{ source_color(s) }};">{{ s }}</span>
@@ -67,7 +68,7 @@
                   <span class="badge-source" style="background: {{ source_color(lock.source) }};">{{ lock.source }}</span>
                   <span>{{ lock.selection }}</span>
                   <span class="muted">{{ '%+d'|format(lock.odds) }}</span>
-                  <span class="badge-wr-confidence">WR {{ lock.wr_confidence | round | int }}%</span>
+                  <span class="badge-wr-confidence" title="{{ lock.wr_confidence_breakdown }}">WR {{ lock.wr_confidence | round | int }}%</span>
                 </div>
               </div>
             </a>
@@ -126,6 +127,13 @@
           <div class="leaderboard-stat">
             <div class="source-stat-num">${{ '{:,.0f}'.format(st.staked) }}</div>
             <div class="source-stat-label">Staked</div>
+          </div>
+          <div class="leaderboard-stat">
+            {% set c = clv[s] %}
+            <div class="source-stat-num {{ 'pos' if c.avg and c.avg > 0 else 'neg' if c.avg and c.avg < 0 else '' }}" title="Average closing-line value across {{ c.count }} spread/total pick(s) with a captured pregame line">
+              {% if c.avg is not none %}{{ '%+.1f'|format(c.avg) }}{% else %}—{% endif %}
+            </div>
+            <div class="source-stat-label">Avg CLV</div>
           </div>
         </div>
       {% endfor %}
@@ -254,7 +262,11 @@
               <span class="pick-matchup"><a href="{{ url_for('report_detail', report_id=p.report_id) }}">{{ p.matchup }} — {{ p.selection }}</a></span>
               <span class="muted">{{ '%+d'|format(p.odds) }}</span>
               <span class="muted">${{ '{:,.0f}'.format(p.stake) }}</span>
-              {% if p.get('wr_confidence') is not none %}<span class="badge-wr-confidence">WR {{ p.wr_confidence | round | int }}%</span>{% endif %}
+              {% if p.get('wr_confidence_effective') is not none %}<span class="badge-wr-confidence" title="{{ p.wr_confidence_breakdown }}">WR {{ p.wr_confidence_effective | round | int }}%</span>{% endif %}
+              {% set move = line_move(p) %}
+              {% if move is not none %}
+                <span class="badge-clv {{ 'pos' if move > 0 else 'neg' if move < 0 else '' }}" title="Closing-line value: this pick's line vs. the last captured line before kickoff">CLV {{ '%+.1f'|format(move) }}</span>
+              {% endif %}
               <span class="badge-result" style="background: {{ result_color(p.result) }};">{{ result_label(p.result) }}</span>
               {% if p.game %}
                 <span class="badge-live badge-live-{{ p.game.status }}">

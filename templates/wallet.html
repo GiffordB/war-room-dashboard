@@ -44,7 +44,7 @@
 
   <section>
     <h2 class="section-label">News Watch — Pending Bets</h2>
-    <p class="muted small">Recent headlines for both teams in each still-pending bet. ⚠️ flags injury/lineup/suspension language as a nudge to read closer — it's not a verdict that it actually swings this bet.</p>
+    <p class="muted small">Recent headlines for both teams in each still-pending bet. ⚠️ flags injury/lineup/suspension language, ✅ flags a player/situation clearing up — both are nudges to read closer, not a verdict that it actually swings this bet. Where a bet backs one specific team, this also feeds a live-adjusted read shown on that bet below (My Bets) — the frozen "at bet" score never changes, this is a separate, always-moving number.</p>
     {% if news_alerts %}
       <div class="locks-grid">
         {% for watch in news_alerts %}
@@ -55,8 +55,8 @@
             </div>
             <ul class="news-list">
               {% for h in watch.headlines %}
-                <li class="{{ 'news-flagged' if h.flagged else '' }}">
-                  {% if h.flagged %}⚠️ {% endif -%}
+                <li class="{{ 'news-flagged' if h.sentiment == 'negative' else 'news-positive' if h.sentiment == 'positive' else '' }}">
+                  {% if h.sentiment == 'negative' %}⚠️ {% elif h.sentiment == 'positive' %}✅ {% endif -%}
                   {% if h.link %}<a href="{{ h.link }}" target="_blank" rel="noopener">{{ h.headline }}</a>{% else %}{{ h.headline }}{% endif %}
                   <span class="muted small">— {{ h.team }}</span>
                 </li>
@@ -191,6 +191,9 @@
                   {% if e.get('wr_confidence_at_bet') is not none %}
                     <span class="badge-wr-confidence" title="Frozen at the moment this bet was logged — doesn't move if the pick's live WR score is later revised">{{ e.wr_confidence_at_bet | round | int }}%</span>
                   {% else %}<span class="muted">—</span>{% endif %}
+                  {% if e.live_read %}
+                    <div><span class="badge-wr-confidence badge-live-read" title="{{ e.live_read.text }}">Live {{ e.live_read.score | round | int }}%</span></div>
+                  {% endif %}
                 </td>
                 <td class="muted">{{ '%+d'|format(e.odds) }}</td>
                 <td>${{ '{:,.0f}'.format(e.stake) }}</td>
