@@ -85,9 +85,15 @@ CATEGORY_ORDER = list(CATEGORIES.keys())
 
 # The three AI sources being compared. Order here controls display order
 # everywhere (cards, chart legends, table columns).
-SOURCES = ["Claude", "Grok", "ChatGPT"]
+SOURCES = ["Claude", "Claude - GB", "Grok", "ChatGPT"]
 SOURCE_STYLE = {
     "Claude": {"color": "#cc785c"},
+    # A genuinely different system from the CFB/NFL "Claude" above - the
+    # EPL/UCL soccer picks come from a separate prediction model, not the
+    # value-against-the-market approach the football side uses, so it
+    # gets tracked as its own competitor rather than blended into
+    # "Claude"'s own record.
+    "Claude - GB": {"color": "#a78bfa"},
     "Grok": {"color": "#38bdf8"},
     "ChatGPT": {"color": "#10a37f"},
 }
@@ -900,6 +906,7 @@ def war_room_locks(data, league=None):
     """
     reports = {r["id"]: r for r in data["reports"]}
     groups = {}
+    sources_per_league = {}
     for p in data["picks"]:
         if p["result"] != "pending" or not p.get("espn_event_id") or not p.get("bet_type"):
             continue
@@ -913,19 +920,27 @@ def war_room_locks(data, league=None):
         if current is None or p["id"] > current["pick"]["id"]:
             by_source[r["source"]] = {"pick": p, "report": r}
 
+    # "Unanimous" means every source that actually covers this specific
+    # league agreed - not every source in SOURCES globally, since a
+    # source like "Claude - GB" only ever writes EPL/UCL reports and
+    # would make a CFB lock mathematically un-unanimous forever otherwise.
+    for r in data["reports"]:
+        sources_per_league.setdefault(r["league"], set()).add(r["source"])
+
     locks = []
     for by_source in groups.values():
         if len(by_source) < CONSENSUS_MIN_SOURCES:
             continue
         sample = next(iter(by_source.values()))
+        game_league = sample["report"]["league"]
         locks.append(
             {
                 "matchup": sample["pick"]["matchup"],
-                "league": sample["report"]["league"],
+                "league": game_league,
                 "category": sample["pick"]["category"],
                 "by_source": by_source,
                 "sources": [s for s in SOURCES if s in by_source],
-                "unanimous": len(by_source) == len(SOURCES),
+                "unanimous": set(by_source) >= sources_per_league.get(game_league, set()),
             }
         )
 
