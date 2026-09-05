@@ -569,12 +569,14 @@ def recent_picks_by_week(data, league=None, limit=4):
     otherwise collide on the same mistyped number. Groups are ordered by
     the latest report's created_at, so a same-week second card (e.g. a
     Friday slate added after a Thursday one) always sorts as most recent.
-    The label spells out the league too whenever this view can span more
-    than one (All Leagues, All Football/Futbol) so a date range is never
-    ambiguous on screen; a single-league view keeps the plain label, and
-    always reflects the most-recently-created report's own week_label
-    (e.g. "Friday Card") rather than whichever report was seen first, or
-    the week's date range if no report in it has one.
+    The label is always the calendar date range (e.g. "Week of Sep 1-7"),
+    never a report's own week_label (e.g. "Friday Card") - several
+    differently-named reports landing in the same actual week would
+    otherwise look like several different weeks. A report's own week_label
+    still shows on its own card (see report_week_label()); it's just not
+    used to represent a whole week here. The league is spelled out too
+    whenever this view can span more than one (All Leagues, All
+    Football/Futbol) so a date range is never ambiguous on screen.
 
     Each pick carries a `game` status badge (see attach_game_status) so a
     settled pick still shows the final score for context, not just the
@@ -589,10 +591,10 @@ def recent_picks_by_week(data, league=None, limit=4):
             continue
         wk = (r["league"], week_bucket_start(r["report_date"]))
         group = by_week.setdefault(wk, {"week_key": wk, "label": "", "latest_created_at": "", "picks": []})
+        base_label = f"Week of {week_bucket_label(wk[1])}"
+        group["label"] = f"{base_label} — {LEAGUES[r['league']]}" if multi_league else base_label
         if r["created_at"] > group["latest_created_at"]:
             group["latest_created_at"] = r["created_at"]
-            base_label = r["week_label"] or f"Week of {week_bucket_label(wk[1])}"
-            group["label"] = f"{base_label} — {LEAGUES[r['league']]}" if multi_league else base_label
         merged = dict(p)
         merged.update(source=r["source"], league=r["league"], report_date=r["report_date"])
         group["picks"].append(merged)
@@ -753,9 +755,12 @@ def weekly_stats(data, league=None):
     week itself comes from report_date (see week_bucket_start), not each
     report's own hand-typed week_number, since two genuinely different
     weeks could otherwise collide on the same mistyped number. The label
-    spells out the league too whenever this view can span more than one
-    (All Leagues, All Football/Futbol) so a date range is never ambiguous
-    on screen; a single-league view keeps the plain label.
+    is always the calendar date range (e.g. "Week of Sep 1-7"), never a
+    report's own week_label (e.g. "Friday Card") - several differently-
+    named reports landing in the same actual week would otherwise look
+    like several different weeks. The league is spelled out too whenever
+    this view can span more than one (All Leagues, All Football/Futbol)
+    so a date range is never ambiguous on screen.
 
     Returns (week_keys sorted, {week_key: label}, {(week_key, source): stats})
     where week_key is (league, week bucket start date).
@@ -763,7 +768,6 @@ def weekly_stats(data, league=None):
     reports = {r["id"]: r for r in data["reports"]}
     multi_league = league is None or isinstance(league, (set, frozenset))
     week_labels = {}
-    week_label_created_at = {}
     result = {}
     for p in data["picks"]:
         if p["result"] not in ("win", "loss", "push"):
@@ -773,13 +777,8 @@ def weekly_stats(data, league=None):
             continue
 
         wk = (r["league"], week_bucket_start(r["report_date"]))
-        # Use the most-recently-created report's label for this week, not
-        # the first one seen - otherwise a week stays branded with its
-        # earliest card's name (e.g. "Thursday Card") even after a later
-        # card (e.g. "Friday Card") for the same week is added.
-        if wk not in week_label_created_at or r["created_at"] > week_label_created_at[wk]:
-            week_label_created_at[wk] = r["created_at"]
-            base_label = r["week_label"] or f"Week of {week_bucket_label(wk[1])}"
+        if wk not in week_labels:
+            base_label = f"Week of {week_bucket_label(wk[1])}"
             week_labels[wk] = f"{base_label} — {LEAGUES[r['league']]}" if multi_league else base_label
         key = (wk, r["source"])
         if key not in result:
@@ -848,7 +847,6 @@ def weekly_wr_bucket_stats(data, league=None):
     reports = {r["id"]: r for r in data["reports"]}
     multi_league = league is None or isinstance(league, (set, frozenset))
     week_labels = {}
-    week_label_created_at = {}
     result = {}
     for p in data["picks"]:
         if p["result"] not in ("win", "loss", "push"):
@@ -858,9 +856,8 @@ def weekly_wr_bucket_stats(data, league=None):
             continue
 
         wk = (r["league"], week_bucket_start(r["report_date"]))
-        if wk not in week_label_created_at or r["created_at"] > week_label_created_at[wk]:
-            week_label_created_at[wk] = r["created_at"]
-            base_label = r["week_label"] or f"Week of {week_bucket_label(wk[1])}"
+        if wk not in week_labels:
+            base_label = f"Week of {week_bucket_label(wk[1])}"
             week_labels[wk] = f"{base_label} — {LEAGUES[r['league']]}" if multi_league else base_label
 
         bucket = _wr_trend_bucket_key(p.get("wr_confidence_effective"))
