@@ -1882,6 +1882,15 @@ def create_wallet_entry(fields, wallet):
 
         odds = int(fields["odds"])
         stake = float(fields["stake"])
+        # The number actually gotten can differ from the pick's own
+        # bet_line by the time a real bet gets placed, same as odds
+        # already can - defaults to the pick's line/selection text when
+        # not given. This is recorded for reference only: grading still
+        # follows the pick's own line either way (see
+        # sync_wallet_entries) - the wallet tracks whether the pick's
+        # call was right, not a second independent grade off whatever
+        # half-point moved between the report and the actual bet.
+        bet_line = fields.get("bet_line")
         new_entry = {
             "pick_id": pick["id"],
             "report_id": report["id"],
@@ -1889,9 +1898,10 @@ def create_wallet_entry(fields, wallet):
             "league": report["league"],
             "category": pick["category"],
             "matchup": pick["matchup"],
-            "selection": pick["selection"],
+            "selection": (fields.get("selection") or "").strip() or pick["selection"],
             "odds": odds,
             "stake": stake,
+            "bet_line": float(bet_line) if bet_line not in (None, "") else pick.get("bet_line"),
             "result": pick["result"],
             "profit_loss": profit_for_result(stake, odds, pick["result"]) if pick["result"] != "pending" else 0.0,
             "notes": (fields.get("notes") or "").strip() or None,
@@ -1951,8 +1961,13 @@ def sync_wallet_entries(data):
     pick is itself no longer pending, across every configured wallet -
     using the entry's OWN odds/stake for the payout math, not the
     pick's, since what was actually wagered can differ from the report's
-    card number. Called alongside auto_grade_pending() so everything
-    settles together. Returns how many entries synced in total.
+    card number. Grading itself always follows the pick's own line, even
+    when the entry recorded a different bet_line (see create_wallet_entry) -
+    the wallet is tracking whether the pick's own call was right, not
+    running a second independent grade off a half-point that moved
+    between the report and the actual bet. Called alongside
+    auto_grade_pending() so everything settles together. Returns how
+    many entries synced in total.
     """
     picks_by_id = {p["id"]: p for p in data["picks"]}
     synced = 0
@@ -2346,9 +2361,10 @@ def _add_wallet_entry_form(wallet_key):
             "source": request.form.get("source", ""),
             "league": request.form.get("league_custom", ""),
             "matchup": request.form.get("matchup", ""),
-            "selection": request.form.get("selection", ""),
+            "selection": request.form.get("selection") or request.form.get("pick_selection", ""),
             "odds": request.form.get("odds"),
             "stake": request.form.get("stake"),
+            "bet_line": request.form.get("pick_bet_line", ""),
             "notes": request.form.get("notes", ""),
         },
         wallet,
@@ -2402,15 +2418,17 @@ def _api_create_wallet_entry(wallet_key):
 
 def _api_update_wallet_entry(entry_id, wallet_key):
     """
-    Correct a wallet entry's own odds/stake/notes after the fact. `result`
-    is also editable, but only for a custom entry (no pick_id) - a linked
-    entry's result stays derived from the pick via sync_wallet_entries()
-    and shouldn't be hand-set here. If the entry is already settled,
-    changing odds/stake recomputes profit_loss against that same stored
-    result immediately.
+    Correct a wallet entry's own odds/stake/notes/bet_line/selection
+    after the fact. `result` is also editable, but only for a custom
+    entry (no pick_id) - a linked entry's result stays derived from the
+    pick via sync_wallet_entries() and shouldn't be hand-set here.
+    bet_line/selection are record-keeping only (see create_wallet_entry) -
+    correcting them never changes how the entry grades, even after the
+    fact. If the entry is already settled, changing odds/stake
+    recomputes profit_loss against that same stored result immediately.
     """
     wallet = WALLETS[wallet_key]
-    editable = {"odds", "stake", "notes", "result"}
+    editable = {"odds", "stake", "notes", "result", "bet_line", "selection"}
     body = request.get_json(silent=True) or {}
     updates = {k: v for k, v in body.items() if k in editable}
     if not updates:
@@ -2439,6 +2457,17 @@ def _api_update_wallet_entry(entry_id, wallet_key):
             return jsonify({"error": "stake must be a number"}), 400
     if "notes" in updates:
         entry["notes"] = str(updates["notes"]).strip() or None
+    if "bet_line" in updates:
+        value = updates["bet_line"]
+        if value in (None, ""):
+            entry["bet_line"] = None
+        else:
+            try:
+                entry["bet_line"] = float(value)
+            except (TypeError, ValueError):
+                return jsonify({"error": "bet_line must be a number"}), 400
+    if "selection" in updates:
+        entry["selection"] = str(updates["selection"]).strip() or entry["selection"]
     entry["profit_loss"] = (
         profit_for_result(entry["stake"], entry["odds"], entry["result"]) if entry["result"] != "pending" else 0.0
     )
