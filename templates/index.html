@@ -150,6 +150,16 @@
     {% endif %}
   </section>
 
+  <section>
+    <h2 class="section-label">Win Rate by Confidence, Over Time</h2>
+    <p class="muted small">Same weeks, broken out by each pick's WR Confidence Score band instead of source — does trusting a higher score actually pay off, and is that holding up week to week?</p>
+    {% if wr_bucket_chart %}
+      <div class="chart-card">{{ wr_bucket_chart }}</div>
+    {% else %}
+      <p class="empty">No scored, settled picks yet — this fills in as WR-scored picks get graded.</p>
+    {% endif %}
+  </section>
+
   {% if week_numbers %}
     <section>
       <h2 class="section-label">Weekly Results</h2>

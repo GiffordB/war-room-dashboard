@@ -797,6 +797,93 @@ def weekly_win_pct_chart(week_numbers, week_labels, data):
     return categories, series
 
 
+# Coarser than wr_confidence_buckets() (the wallet's 10-point bands) -
+# one bucket for everything under 50 (see WR_IMPACT_FLOOR: those picks
+# get no live adjustment either, so they're the "no real conviction"
+# tier), then 10-point bands up to 100. {key: (label, line color)}.
+WR_TREND_BUCKETS = [
+    ("under_50", "<50%", "#8b94a7"),
+    ("50-59", "50–59%", "#ef4444"),
+    ("60-69", "60–69%", "#f97316"),
+    ("70-79", "70–79%", "#eab308"),
+    ("80-89", "80–89%", "#84cc16"),
+    ("90-100", "90–100%", "#22c55e"),
+]
+
+
+def _wr_trend_bucket_key(score):
+    if score is None:
+        return None
+    if score < 50:
+        return "under_50"
+    if score < 60:
+        return "50-59"
+    if score < 70:
+        return "60-69"
+    if score < 80:
+        return "70-79"
+    if score < 90:
+        return "80-89"
+    return "90-100"
+
+
+def weekly_wr_bucket_stats(data, league=None):
+    """
+    Per-week win rate broken out by WR Confidence Score band (see
+    WR_TREND_BUCKETS) - does trusting a higher score actually pay off,
+    and is that holding up week to week? Uses each settled pick's
+    *effective* score (wr_confidence_effective) - callers must
+    annotate_wr_confidence(data) first. Weeks are keyed exactly like
+    weekly_stats() (calendar week of report_date, not week_number), so
+    the two charts always line up on the same x-axis.
+
+    Returns (week_keys sorted, {week_key: label}, {(week_key, bucket_key): stats}).
+    """
+    reports = {r["id"]: r for r in data["reports"]}
+    multi_league = league is None or isinstance(league, (set, frozenset))
+    week_labels = {}
+    week_label_created_at = {}
+    result = {}
+    for p in data["picks"]:
+        if p["result"] not in ("win", "loss", "push"):
+            continue
+        r = reports.get(p["report_id"])
+        if not r or not _league_matches(r["league"], league):
+            continue
+
+        wk = (r["league"], week_bucket_start(r["report_date"]))
+        if wk not in week_label_created_at or r["created_at"] > week_label_created_at[wk]:
+            week_label_created_at[wk] = r["created_at"]
+            base_label = r["week_label"] or f"Week of {week_bucket_label(wk[1])}"
+            week_labels[wk] = f"{base_label} — {LEAGUES[r['league']]}" if multi_league else base_label
+
+        bucket = _wr_trend_bucket_key(p.get("wr_confidence_effective"))
+        if bucket is None:
+            continue
+        key = (wk, bucket)
+        if key not in result:
+            result[key] = empty_stats(bucket)
+        _apply_result(result[key], p)
+
+    for bucket_stats in result.values():
+        _finalize(bucket_stats)
+
+    week_keys = sorted(week_labels.keys(), key=lambda wk: (wk[1], wk[0]))
+    return week_keys, week_labels, result
+
+
+def weekly_wr_bucket_chart(week_keys, week_labels, bucket_data):
+    """Line-chart series: win% per WR Confidence band, one point per week - bands with no data anywhere get no line."""
+    categories = [week_labels[wk] for wk in week_keys]
+    series = []
+    for key, label, color in WR_TREND_BUCKETS:
+        values = [bucket_data.get((wk, key), {}).get("win_pct") for wk in week_keys]
+        if all(v is None for v in values):
+            continue
+        series.append({"name": label, "color": color, "values": values})
+    return categories, series
+
+
 def war_room_locks(data, league=None):
     """
     Consensus picks: still pending (upcoming, not graded yet) and picked
@@ -1174,6 +1261,15 @@ def dashboard():
     else:
         win_pct_chart = None
 
+    wr_bucket_weeks, wr_bucket_week_labels, wr_bucket_weekly_data = weekly_wr_bucket_stats(data, league)
+    if wr_bucket_weeks:
+        wr_bucket_labels, wr_bucket_series = weekly_wr_bucket_chart(
+            wr_bucket_weeks, wr_bucket_week_labels, wr_bucket_weekly_data
+        )
+        wr_bucket_chart = charts.line_chart(wr_bucket_labels, wr_bucket_series, unit="%", y_min=0, y_max=100) if wr_bucket_series else None
+    else:
+        wr_bucket_chart = None
+
     count_labels, count_series = category_pick_counts(data, league)
     counts_chart = charts.grouped_bar_chart(count_labels, count_series) if any(
         v for s in count_series for v in s["values"]
@@ -1195,6 +1291,7 @@ def dashboard():
         clv=clv,
         profit_chart=profit_chart,
         win_pct_chart=win_pct_chart,
+        wr_bucket_chart=wr_bucket_chart,
         week_numbers=week_numbers,
         week_labels=week_labels,
         weekly_data=weekly_data,
