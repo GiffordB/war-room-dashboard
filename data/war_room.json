@@ -489,7 +489,7 @@
       "id": 22
     }
   ],
-  "next_wallet_id": 7,
+  "next_wallet_id": 8,
   "wallet_entries": [
     {
       "pick_id": 12,
@@ -558,6 +558,23 @@
       "wr_confidence_at_bet": 74.0,
       "created_at": "2026-09-05T02:07:05",
       "id": 6
+    },
+    {
+      "pick_id": 9,
+      "report_id": 4,
+      "source": "Claude",
+      "league": "EPL",
+      "category": "totals_radar",
+      "matchup": "Coventry City @ Manchester City",
+      "selection": "Over 3.5",
+      "odds": -125,
+      "stake": 25.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": null,
+      "wr_confidence_at_bet": 74.0,
+      "created_at": "2026-09-05T02:07:12",
+      "id": 7
     }
   ],
   "next_jesse_wallet_id": 1,
