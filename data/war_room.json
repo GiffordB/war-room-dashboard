@@ -1,6 +1,6 @@
 {
   "next_report_id": 10,
-  "next_pick_id": 33,
+  "next_pick_id": 34,
   "reports": [
     {
       "source": "ChatGPT",
@@ -591,6 +591,29 @@
       "away_team": "Clemson Tigers",
       "created_at": "2026-09-05T13:58:48",
       "id": 32
+    },
+    {
+      "report_id": 9,
+      "category": "best_bet",
+      "matchup": "Boston College Eagles @ Cincinnati Bearcats",
+      "selection": "Boston College +7.5",
+      "odds": -110,
+      "stake": 110.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "Opened Cincinnati -9.5, now -7.5 -- that move is the tell. Cincinnatis new starter is Georgia Southern transfer JC French (turnover-prone, first start in a new system). BC rebuilt the defense with Power-4 transfers, and a hot-seat Bill OBrien staff usually plays tight and physical in Week 1. Simulation work lands around BC 23, Cincinnati 28 -- a cover. The total also slid from the mid-50s to ~50.5; when the over gets bet off the board this early it usually means both offenses are being marked down, a dog-friendly script.",
+      "wr_confidence": 74.0,
+      "war_room_line": "BetMGM BC +7.5 (-110), opened Cincinnati -9.5",
+      "edge": "Line move from -9.5 to -7.5 plus a turnover-prone new Cincinnati starter argues against laying a touchdown with this roster in Week 1",
+      "price_discipline": "1.1 units.",
+      "espn_event_id": "401856777",
+      "bet_type": "spread",
+      "bet_side": "away",
+      "bet_line": 7.5,
+      "home_team": "Cincinnati Bearcats",
+      "away_team": "Boston College Eagles",
+      "created_at": "2026-09-05T13:58:59",
+      "id": 33
     }
   ],
   "next_wallet_id": 9,
