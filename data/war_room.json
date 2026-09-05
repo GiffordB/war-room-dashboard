@@ -1,5 +1,5 @@
 {
-  "next_report_id": 9,
+  "next_report_id": 10,
   "next_pick_id": 32,
   "reports": [
     {
@@ -48,6 +48,18 @@
       "lsu_review_notes": "",
       "created_at": "2026-09-04T22:33:15",
       "id": 7
+    },
+    {
+      "source": "Grok",
+      "league": "CFB",
+      "report_date": "2026-09-05",
+      "week_number": 1,
+      "week_label": "Week 1 -- Saturday Card",
+      "philosophy": "",
+      "blind_spot_notes": "",
+      "lsu_review_notes": "",
+      "created_at": "2026-09-05T13:58:33",
+      "id": 9
     }
   ],
   "picks": [
