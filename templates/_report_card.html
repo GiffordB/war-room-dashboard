@@ -5,7 +5,7 @@
         <span class="badge-source" style="background: {{ source_color(report.source) }};">{{ report.source }}</span>
         <span class="badge-league">{{ report.league }}</span>
         {{ report.report_date }}
-        <span class="muted">— {{ report.week_label or ('Week ' ~ report.week_number) }}</span>
+        <span class="muted">— {{ report_week_label(report) }}</span>
       </h1>
       <a class="btn btn-outline btn-sm" href="{{ url_for('report_detail', report_id=report.id) }}">Open Full Report →</a>
     </div>

@@ -6,7 +6,8 @@
     <h1>Claude vs. Grok vs. ChatGPT</h1>
     <span class="sportsbook-tag">
       {% if current_league in league_order %}{{ sportsbook_for(current_league) }} only
-      {% elif current_league in league_group_order %}ESPN BET only
+      {% elif current_league == 'football' %}DraftKings only
+      {% elif current_league == 'futbol' %}ESPN BET only
       {% else %}DraftKings (CFB/NFL) · ESPN BET (EPL/UCL){% endif %} · $100 = 1 unit
     </span>
   </div>

@@ -52,7 +52,7 @@
               <td>{{ r.report_date }}</td>
               <td><span class="badge-source" style="background: {{ source_color(r.source) }};">{{ r.source }}</span></td>
               <td><span class="badge-league">{{ r.league }}</span></td>
-              <td class="muted">{{ r.week_label or ('Week ' ~ r.week_number) }}</td>
+              <td class="muted">{{ report_week_label(r) }}</td>
               <td>{{ s.pick_count }}</td>
               <td>{{ s.wins }}-{{ s.losses }}{% if s.pushes %}-{{ s.pushes }}{% endif %}{% if s.pending %}<span class="muted"> (+{{ s.pending }}p)</span>{% endif %}</td>
               <td class="{{ 'pos' if s.profit > 0 else 'neg' if s.profit < 0 else 'muted' }}">{{ '%+.0f'|format(s.profit) }}$</td>

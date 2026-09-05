@@ -6,7 +6,7 @@
       <span class="badge-source" style="background: {{ source_color(report.source) }};">{{ report.source }}</span>
       <span class="badge-league">{{ report.league }}</span>
       {{ report.report_date }}
-      <span class="muted">— {{ report.week_label or ('Week ' ~ report.week_number) }}</span>
+      <span class="muted">— {{ report_week_label(report) }}</span>
     </h1>
     <form method="post" action="{{ url_for('delete_report', report_id=report.id) }}"
           onsubmit="return confirm('Delete this report and all its picks?');">
