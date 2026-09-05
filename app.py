@@ -1462,13 +1462,20 @@ def delete_report(report_id):
 def api_update_report(report_id):
     """
     Correct a report's own metadata after the fact - week_number,
-    week_label, philosophy, or the two notes fields - without touching
-    its picks. Identity fields (source/league/report_date) aren't
-    editable here; if one of those is wrong, delete and recreate the
-    report instead. Only the fields present in the JSON body are
+    week_label, philosophy, the two notes fields, or source - without
+    touching its picks. League/report_date still aren't editable here;
+    if one of those is wrong, delete and recreate the report instead.
+    source IS editable (e.g. relabeling a report onto a differently-
+    named source after the fact, like splitting "Claude - GB" out from
+    "Claude") since, unlike league/date, a wrong source doesn't call
+    picks' grading into question - but delete-and-recreate would orphan
+    any wallet entry linked to this report's picks (a fresh pick gets a
+    new id), so this instead corrects the report AND cascades the rename
+    onto every wallet entry that snapshotted the old source from one of
+    this report's picks. Only the fields present in the JSON body are
     changed.
     """
-    editable = {"week_number", "week_label", "philosophy", "blind_spot_notes", "lsu_review_notes"}
+    editable = {"week_number", "week_label", "philosophy", "blind_spot_notes", "lsu_review_notes", "source"}
     body = request.get_json(silent=True) or {}
     updates = {k: v for k, v in body.items() if k in editable}
     if not updates:
@@ -1487,6 +1494,16 @@ def api_update_report(report_id):
     for key in ("week_label", "philosophy", "blind_spot_notes", "lsu_review_notes"):
         if key in updates:
             report[key] = str(updates[key]).strip()
+    if "source" in updates:
+        new_source = str(updates["source"]).strip()
+        if new_source not in SOURCES:
+            return jsonify({"error": f"source must be one of {SOURCES}"}), 400
+        pick_ids = {p["id"] for p in data["picks"] if p["report_id"] == report_id}
+        report["source"] = new_source
+        for wallet in WALLETS.values():
+            for entry in data[wallet["entries_key"]]:
+                if entry.get("pick_id") in pick_ids:
+                    entry["source"] = new_source
 
     store.save(data, token, message=f"Update report #{report_id}")
     return jsonify({"id": report_id})
