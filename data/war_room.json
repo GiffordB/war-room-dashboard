@@ -14,7 +14,7 @@
       "id": 3
     },
     {
-      "source": "Claude",
+      "source": "Claude - GB",
       "league": "EPL",
       "report_date": "2026-09-04",
       "week_number": 3,
@@ -741,7 +741,7 @@
     {
       "pick_id": 9,
       "report_id": 4,
-      "source": "Claude",
+      "source": "Claude - GB",
       "league": "EPL",
       "category": "totals_radar",
       "matchup": "Coventry City @ Manchester City",
@@ -758,7 +758,7 @@
     {
       "pick_id": 6,
       "report_id": 4,
-      "source": "Claude",
+      "source": "Claude - GB",
       "league": "EPL",
       "category": "sexy_moneyline",
       "matchup": "Aston Villa @ Hull City",
