@@ -779,7 +779,7 @@
       "league": "CFB",
       "category": "best_bet",
       "matchup": "Liberty Flames @ James Madison Dukes",
-      "selection": "Liberty +6.5",
+      "selection": "Liberty +5.5",
       "odds": -110,
       "stake": 25.0,
       "result": "pending",
@@ -787,7 +787,8 @@
       "notes": "None",
       "wr_confidence_at_bet": 70.16,
       "created_at": "2026-09-05T14:08:00",
-      "id": 9
+      "id": 9,
+      "bet_line": 5.5
     }
   ],
   "next_jesse_wallet_id": 1,
