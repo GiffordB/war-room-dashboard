@@ -145,6 +145,12 @@ LOCK_CONFIDENCE = 90
 # signal worth surfacing, not just a unanimous sweep.
 CONSENSUS_MIN_SOURCES = 2
 
+# Agreement alone isn't enough for a consensus lock - each agreeing
+# source's OWN pick has to clear this WR Confidence Score (effective,
+# same as everywhere else) too, so two sources both hedging at 55%
+# doesn't count the same as two sources both convicted at 85%.
+CONSENSUS_MIN_WR_CONFIDENCE = 70
+
 # --- WR Confidence Score adjustments -----------------------------------
 # The score entered on a pick (see create_pick()) is a starting point, not
 # the final word - it's adjusted live (never stored back onto the pick)
@@ -234,6 +240,7 @@ app.jinja_env.globals.update(
     sportsbook=SPORTSBOOK,
     sportsbook_for=lambda league: odds.sportsbook_for(league) or SPORTSBOOK,
     lock_confidence=LOCK_CONFIDENCE,
+    consensus_min_wr_confidence=CONSENSUS_MIN_WR_CONFIDENCE,
     wr_confidence_label=wr_confidence_label,
     unit_size=UNIT_SIZE,
 )
@@ -885,15 +892,21 @@ def war_room_locks(data, league=None):
     """
     Consensus picks: still pending (upcoming, not graded yet) and picked
     by at least CONSENSUS_MIN_SOURCES sources on the same game, market,
-    and side - doesn't require a unanimous sweep, since two of three
-    landing on the same side is itself a real signal. Grouped by
-    espn_event_id rather than the free-text matchup, since that's the
-    only reliable way to tell "same game" across sources that word their
-    matchup text differently - so only picks pulled from the DraftKings-
-    odds widget (the ones carrying that id) are eligible at all. The bet
-    line itself isn't part of the match, since it can move slightly
-    between when each source wrote its report; agreeing on the same team
-    on the same side of the same market is what "consensus" means here.
+    and side, each clearing CONSENSUS_MIN_WR_CONFIDENCE on their own
+    pick's *effective* WR Confidence Score - two sources agreeing while
+    both hedging doesn't count the same as two genuinely convicted picks,
+    so a source whose own number doesn't clear the bar doesn't count
+    toward the lock even if it's technically on the same side. Doesn't
+    require a unanimous sweep - two of three landing on the same side,
+    both convicted, is itself a real signal. Grouped by espn_event_id
+    rather than the free-text matchup, since that's the only reliable
+    way to tell "same game" across sources that word their matchup text
+    differently - so only picks pulled from the DraftKings-odds widget
+    (the ones carrying that id) are eligible at all. The bet line itself
+    isn't part of the match, since it can move slightly between when
+    each source wrote its report; agreeing on the same team on the same
+    side of the same market is what "consensus" means here. Callers must
+    annotate_wr_confidence(data) first.
     """
     reports = {r["id"]: r for r in data["reports"]}
     groups = {}
@@ -920,18 +933,23 @@ def war_room_locks(data, league=None):
 
     locks = []
     for by_source in groups.values():
-        if len(by_source) < CONSENSUS_MIN_SOURCES:
+        qualifying = {
+            s: entry
+            for s, entry in by_source.items()
+            if (entry["pick"].get("wr_confidence_effective") or 0) >= CONSENSUS_MIN_WR_CONFIDENCE
+        }
+        if len(qualifying) < CONSENSUS_MIN_SOURCES:
             continue
-        sample = next(iter(by_source.values()))
+        sample = next(iter(qualifying.values()))
         game_league = sample["report"]["league"]
         locks.append(
             {
                 "matchup": sample["pick"]["matchup"],
                 "league": game_league,
                 "category": sample["pick"]["category"],
-                "by_source": by_source,
-                "sources": [s for s in SOURCES if s in by_source],
-                "unanimous": set(by_source) >= sources_per_league.get(game_league, set()),
+                "by_source": qualifying,
+                "sources": [s for s in SOURCES if s in qualifying],
+                "unanimous": set(qualifying) >= sources_per_league.get(game_league, set()),
             }
         )
 

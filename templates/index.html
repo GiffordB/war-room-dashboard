@@ -28,7 +28,7 @@
 
       {% if locks %}
         <h3 class="lock-subhead">Consensus</h3>
-        <p class="muted small">At least two of Claude, Grok, and ChatGPT landed on the same side of the same game — still pending.</p>
+        <p class="muted small">At least two of Claude, Grok, and ChatGPT landed on the same side of the same game, each at {{ consensus_min_wr_confidence }}%+ WR Confidence — still pending.</p>
         <div class="locks-grid">
           {% for lock in locks %}
             <div class="lock-card">
@@ -45,6 +45,9 @@
                     <span class="badge-source" style="background: {{ source_color(s) }};">{{ s }}</span>
                     <span>{{ entry.pick.selection }}</span>
                     <span class="muted">{{ '%+d'|format(entry.pick.odds) }}</span>
+                    {% if entry.pick.get('wr_confidence_effective') is not none %}
+                      <span class="badge-wr-confidence" title="{{ entry.pick.wr_confidence_breakdown }}">WR {{ entry.pick.wr_confidence_effective | round | int }}%</span>
+                    {% endif %}
                   </div>
                 {% endfor %}
               </div>
