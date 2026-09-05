@@ -558,41 +558,38 @@ def attach_game_status(picks, league=None):
 
 def recent_picks_by_week(data, league=None, limit=4):
     """
-    Every pick, grouped by (report.league, calendar week of report_date),
-    for the most recent `limit` groups that have any picks in this league
-    scope - truly-newest-first, picks within a group newest-first.
-    Grouping is keyed by league as well as the week bucket - not the
-    bucket alone - since two leagues' reports from the same calendar week
-    must never land in the same group. The week itself is derived from
-    report_date (see week_bucket_start) rather than each report's own
-    hand-typed week_number, since two genuinely different weeks could
-    otherwise collide on the same mistyped number. Groups are ordered by
-    the latest report's created_at, so a same-week second card (e.g. a
-    Friday slate added after a Thursday one) always sorts as most recent.
-    The label is always the calendar date range (e.g. "Week of Sep 1-7"),
-    never a report's own week_label (e.g. "Friday Card") - several
-    differently-named reports landing in the same actual week would
-    otherwise look like several different weeks. A report's own week_label
-    still shows on its own card (see report_week_label()); it's just not
-    used to represent a whole week here. The league is spelled out too
-    whenever this view can span more than one (All Leagues, All
-    Football/Futbol) so a date range is never ambiguous on screen.
+    Every pick, grouped by the calendar week of report_date (see
+    week_bucket_start) - not each report's own hand-typed week_number,
+    since two genuinely different weeks could otherwise collide on the
+    same mistyped number - for the most recent `limit` groups that have
+    any picks in this league scope. Truly-newest-first, picks within a
+    group newest-first. A calendar week is one group regardless of which
+    league(s) it covers - CFB's and EPL's own week 1 land in the same
+    group if their report_dates fall in the same real week, matching how
+    an "All Leagues" view already blends everything else on the
+    dashboard; each pick still carries its own league badge, so nothing
+    is lost by not splitting the group itself. Groups are ordered by the
+    latest report's created_at, so a same-week second card (e.g. a
+    Friday slate added after a Thursday one) always sorts as most
+    recent. The label is always the calendar date range (e.g. "Week of
+    Sep 1-7"), never a report's own week_label (e.g. "Friday Card") -
+    several differently-named reports landing in the same actual week
+    would otherwise look like several different weeks. A report's own
+    week_label still shows on its own card (see report_week_label());
+    it's just not used to represent a whole week here.
 
     Each pick carries a `game` status badge (see attach_game_status) so a
     settled pick still shows the final score for context, not just the
     graded result.
     """
     reports = {r["id"]: r for r in data["reports"]}
-    multi_league = league is None or isinstance(league, (set, frozenset))
     by_week = {}
     for p in data["picks"]:
         r = reports.get(p["report_id"])
         if not r or not _league_matches(r["league"], league):
             continue
-        wk = (r["league"], week_bucket_start(r["report_date"]))
-        group = by_week.setdefault(wk, {"week_key": wk, "label": "", "latest_created_at": "", "picks": []})
-        base_label = f"Week of {week_bucket_label(wk[1])}"
-        group["label"] = f"{base_label} — {LEAGUES[r['league']]}" if multi_league else base_label
+        wk = week_bucket_start(r["report_date"])
+        group = by_week.setdefault(wk, {"week_key": wk, "label": f"Week of {week_bucket_label(wk)}", "latest_created_at": "", "picks": []})
         if r["created_at"] > group["latest_created_at"]:
             group["latest_created_at"] = r["created_at"]
         merged = dict(p)
@@ -749,24 +746,23 @@ def cumulative_profit_chart(data, league=None):
 def weekly_stats(data, league=None):
     """
     Per-week, per-source stats - the core "is one system trending better"
-    view. Weeks are keyed by (report.league, calendar week of
-    report_date) - not the week bucket alone - since two leagues'
-    reports from the same calendar week must never merge into one. The
-    week itself comes from report_date (see week_bucket_start), not each
-    report's own hand-typed week_number, since two genuinely different
-    weeks could otherwise collide on the same mistyped number. The label
-    is always the calendar date range (e.g. "Week of Sep 1-7"), never a
-    report's own week_label (e.g. "Friday Card") - several differently-
-    named reports landing in the same actual week would otherwise look
-    like several different weeks. The league is spelled out too whenever
-    this view can span more than one (All Leagues, All Football/Futbol)
-    so a date range is never ambiguous on screen.
+    view. Weeks are keyed by the calendar week of report_date (see
+    week_bucket_start), not each report's own hand-typed week_number,
+    since two genuinely different weeks could otherwise collide on the
+    same mistyped number. A calendar week is one column regardless of
+    which league(s) it covers - CFB's and EPL's own week 1 land in the
+    same column if their report_dates fall in the same real week,
+    matching how an "All Leagues" view already blends everything else on
+    the dashboard (this used to split by league too, which made an "All
+    Leagues" chart show two points - one per league - for what was
+    really a single week). The label is always the calendar date range
+    (e.g. "Week of Sep 1-7"), never a report's own week_label (e.g.
+    "Friday Card").
 
     Returns (week_keys sorted, {week_key: label}, {(week_key, source): stats})
-    where week_key is (league, week bucket start date).
+    where week_key is the week's bucket start date.
     """
     reports = {r["id"]: r for r in data["reports"]}
-    multi_league = league is None or isinstance(league, (set, frozenset))
     week_labels = {}
     result = {}
     for p in data["picks"]:
@@ -776,10 +772,9 @@ def weekly_stats(data, league=None):
         if not r or not _league_matches(r["league"], league):
             continue
 
-        wk = (r["league"], week_bucket_start(r["report_date"]))
+        wk = week_bucket_start(r["report_date"])
         if wk not in week_labels:
-            base_label = f"Week of {week_bucket_label(wk[1])}"
-            week_labels[wk] = f"{base_label} — {LEAGUES[r['league']]}" if multi_league else base_label
+            week_labels[wk] = f"Week of {week_bucket_label(wk)}"
         key = (wk, r["source"])
         if key not in result:
             result[key] = empty_stats(r["source"])
@@ -788,7 +783,7 @@ def weekly_stats(data, league=None):
     for bucket in result.values():
         _finalize(bucket)
 
-    week_keys = sorted(week_labels.keys(), key=lambda wk: (wk[1], wk[0]))
+    week_keys = sorted(week_labels.keys())
     return week_keys, week_labels, result
 
 
@@ -839,13 +834,13 @@ def weekly_wr_bucket_stats(data, league=None):
     and is that holding up week to week? Uses each settled pick's
     *effective* score (wr_confidence_effective) - callers must
     annotate_wr_confidence(data) first. Weeks are keyed exactly like
-    weekly_stats() (calendar week of report_date, not week_number), so
-    the two charts always line up on the same x-axis.
+    weekly_stats() (calendar week of report_date, not league or
+    week_number - see there for why), so the two charts always line up
+    on the same x-axis.
 
     Returns (week_keys sorted, {week_key: label}, {(week_key, bucket_key): stats}).
     """
     reports = {r["id"]: r for r in data["reports"]}
-    multi_league = league is None or isinstance(league, (set, frozenset))
     week_labels = {}
     result = {}
     for p in data["picks"]:
@@ -855,10 +850,9 @@ def weekly_wr_bucket_stats(data, league=None):
         if not r or not _league_matches(r["league"], league):
             continue
 
-        wk = (r["league"], week_bucket_start(r["report_date"]))
+        wk = week_bucket_start(r["report_date"])
         if wk not in week_labels:
-            base_label = f"Week of {week_bucket_label(wk[1])}"
-            week_labels[wk] = f"{base_label} — {LEAGUES[r['league']]}" if multi_league else base_label
+            week_labels[wk] = f"Week of {week_bucket_label(wk)}"
 
         bucket = _wr_trend_bucket_key(p.get("wr_confidence_effective"))
         if bucket is None:
@@ -871,7 +865,7 @@ def weekly_wr_bucket_stats(data, league=None):
     for bucket_stats in result.values():
         _finalize(bucket_stats)
 
-    week_keys = sorted(week_labels.keys(), key=lambda wk: (wk[1], wk[0]))
+    week_keys = sorted(week_labels.keys())
     return week_keys, week_labels, result
 
 
