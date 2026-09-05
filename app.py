@@ -2456,7 +2456,9 @@ def _api_update_wallet_entry(entry_id, wallet_key):
         except (TypeError, ValueError):
             return jsonify({"error": "stake must be a number"}), 400
     if "notes" in updates:
-        entry["notes"] = str(updates["notes"]).strip() or None
+        value = updates["notes"]
+        entry["notes"] = str(value).strip() if value is not None else ""
+        entry["notes"] = entry["notes"] or None
     if "bet_line" in updates:
         value = updates["bet_line"]
         if value in (None, ""):
@@ -2466,7 +2468,7 @@ def _api_update_wallet_entry(entry_id, wallet_key):
                 entry["bet_line"] = float(value)
             except (TypeError, ValueError):
                 return jsonify({"error": "bet_line must be a number"}), 400
-    if "selection" in updates:
+    if "selection" in updates and updates["selection"] is not None:
         entry["selection"] = str(updates["selection"]).strip() or entry["selection"]
     entry["profit_loss"] = (
         profit_for_result(entry["stake"], entry["odds"], entry["result"]) if entry["result"] != "pending" else 0.0
