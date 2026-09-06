@@ -2257,18 +2257,17 @@ def _news_modifier_for_pick(pick, info, headlines):
     Net WR Confidence nudge from this event's headlines, signed correctly
     for the team this pick actually backs: good news for our team or bad
     news for the opponent both help; bad news for our team or good news
-    for the opponent both hurt. Scaled by wr_impact_scale(pick's base
-    score) same as wr_confidence_effective() - a thin pick doesn't swing
-    as hard on a headline as an elite one, and one at WR_IMPACT_FLOOR or
-    below doesn't move at all. Returns (modifier, contributions) -
+    for the opponent both hurt. Unlike the track-record and agreement
+    modifiers, this is NOT scaled by wr_impact_scale() - a star player
+    actually being ruled out is a hard factual update, not a soft signal
+    like "this source usually wins" or "another source agrees", so it
+    moves a thin pick just as much as an elite one, all the way down to
+    WR_IMPACT_FLOOR and below. Returns (modifier, contributions) -
     contributions is [(headline, delta), ...] for a tooltip, limited to
     the headlines that actually moved the number.
     """
     backed_team_id = _backed_team_id(pick, info)
     if backed_team_id is None:
-        return 0.0, []
-    impact = wr_impact_scale(pick.get("wr_confidence"))
-    if impact == 0:
         return 0.0, []
     total = 0.0
     contributions = []
@@ -2277,9 +2276,9 @@ def _news_modifier_for_pick(pick, info, headlines):
             continue
         for_us = h.get("team_id") == backed_team_id
         if h["sentiment"] == "negative":
-            delta = (-WR_NEWS_NEGATIVE_PENALTY if for_us else WR_NEWS_POSITIVE_BONUS) * impact
+            delta = -WR_NEWS_NEGATIVE_PENALTY if for_us else WR_NEWS_POSITIVE_BONUS
         else:
-            delta = (WR_NEWS_POSITIVE_BONUS if for_us else -WR_NEWS_NEGATIVE_PENALTY) * impact
+            delta = WR_NEWS_POSITIVE_BONUS if for_us else -WR_NEWS_NEGATIVE_PENALTY
         total += delta
         contributions.append((h["headline"], delta))
     return _clamp(total, -WR_NEWS_CAP, WR_NEWS_CAP), contributions
