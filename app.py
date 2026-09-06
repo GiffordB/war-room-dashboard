@@ -231,6 +231,22 @@ WR_FORM_CAP = 8
 WR_INJURY_SCALE = 3
 WR_INJURY_CAP = 10
 
+# Home/away split: the gap between the backed team's and the opponent's
+# win rate this season specifically in the home/away context they're
+# each playing in this game (the home team's home record vs. the away
+# team's road record) - a separate signal from overall recent form,
+# since a team that's great at home and poor on the road (or vice versa)
+# doesn't show up in a blended last-5 number.
+WR_HOME_AWAY_SCALE = 0.1
+WR_HOME_AWAY_CAP = 6
+
+# Quality of wins: the gap between the backed team's and the opponent's
+# count of wins against a ranked opponent (see odds.team_schedule's
+# opponent_rank) within their last 5 games - a hot streak built on
+# unranked teams reads differently than one built on ranked wins.
+WR_QUALITY_WIN_SCALE = 3
+WR_QUALITY_WIN_CAP = 8
+
 
 def wr_confidence_label(score):
     """
@@ -439,12 +455,32 @@ def _pregame_odds_stale(pick):
 
 
 def _form_summary(games):
-    """{'played', 'wins', 'win_pct'} from team_form()'s last-N completed games, or None if there's nothing to summarize."""
+    """
+    {'played', 'wins', 'win_pct', 'quality_wins'} from team_form()'s
+    last-N completed games, or None if there's nothing to summarize.
+    quality_wins counts wins against a ranked opponent (see
+    odds.team_schedule's opponent_rank) - see _quality_win_modifier().
+    """
     if not games:
         return None
     wins = sum(1 for g in games if g["result"] == "W")
+    quality_wins = sum(1 for g in games if g["result"] == "W" and g.get("opponent_rank"))
     played = len(games)
-    return {"played": played, "wins": wins, "win_pct": (wins / played * 100) if played else None}
+    return {
+        "played": played,
+        "wins": wins,
+        "win_pct": (wins / played * 100) if played else None,
+        "quality_wins": quality_wins,
+    }
+
+
+def _split_win_pct(split, side):
+    """Win% from an odds.home_away_split() result, for one side ('home' or 'away') - None if that team hasn't decided a game on that side yet this season."""
+    if not split:
+        return None
+    bucket = split.get(side) or {}
+    decided = bucket.get("w", 0) + bucket.get("l", 0)
+    return (bucket["w"] / decided * 100) if decided else None
 
 
 def _injury_count(roster):
@@ -470,11 +506,14 @@ def capture_pregame_lines(data):
     a fresh snapshot.
 
     Fields written: pregame_odds (+ _captured_at - see line_move()),
-    pregame_weather, pregame_home_form/pregame_away_form (see
-    _form_summary), pregame_home_injuries/pregame_away_injuries (see
-    _injury_count, both from home/away_team's own perspective regardless
-    of which side the pick backs - see wr_confidence_effective for how
-    that's resolved per pick).
+    pregame_weather, pregame_home_form/pregame_away_form (last-5 record
+    plus quality_wins - see _form_summary), pregame_home_injuries/
+    pregame_away_injuries (see _injury_count), pregame_home_split/
+    pregame_away_split (full-season home/away record - see
+    odds.home_away_split, sliced per side in _home_away_modifier) - all
+    from home/away_team's own perspective regardless of which side the
+    pick backs; see wr_confidence_effective for how that's resolved per
+    pick.
     """
     reports = {r["id"]: r for r in data["reports"]}
     eligible = {
@@ -508,6 +547,7 @@ def capture_pregame_lines(data):
             team_keys.add((key[0], info["away_id"]))
     form_by_team = _parallel_map(lambda key: odds.team_form(key[0], key[1], last=5), list(team_keys))
     roster_by_team = _parallel_map(lambda key: odds.team_roster(key[0], key[1]), list(team_keys))
+    split_by_team = _parallel_map(lambda key: odds.home_away_split(key[0], key[1]), list(team_keys))
     weather_by_event = _parallel_map(
         lambda key: odds.match_weather(info_by_event[key]["city"], info_by_event[key]["country"], info_by_event[key]["kickoff"])
         if info_by_event.get(key)
@@ -535,6 +575,8 @@ def capture_pregame_lines(data):
             pick["pregame_away_form"] = _form_summary(form_by_team.get((league, info["away_id"])))
             pick["pregame_home_injuries"] = _injury_count(roster_by_team.get((league, info["home_id"])))
             pick["pregame_away_injuries"] = _injury_count(roster_by_team.get((league, info["away_id"])))
+            pick["pregame_home_split"] = split_by_team.get((league, info["home_id"]))
+            pick["pregame_away_split"] = split_by_team.get((league, info["away_id"]))
             pick["pregame_intel_captured_at"] = now
         captured += 1
     return captured
@@ -1184,6 +1226,49 @@ def _injury_modifier(pick):
     return _clamp(gap * WR_INJURY_SCALE, -WR_INJURY_CAP, WR_INJURY_CAP), gap
 
 
+def _home_away_modifier(pick):
+    """
+    WR nudge from the gap between the backed team's and the opponent's
+    win rate this season in the specific home/away context each is
+    actually playing in this game - the home team's own home record
+    against the away team's own road record (see capture_pregame_lines's
+    pregame_home_split/pregame_away_split). A separate signal from
+    _form_modifier's blended last-5 record, since a team that's strong
+    at home but poor on the road (or the reverse) doesn't show up there.
+    """
+    side = pick.get("bet_side")
+    if side not in ("home", "away"):
+        return 0.0, None
+    other = "away" if side == "home" else "home"
+    backed_pct = _split_win_pct(pick.get(f"pregame_{side}_split"), side)
+    opponent_pct = _split_win_pct(pick.get(f"pregame_{other}_split"), other)
+    if backed_pct is None or opponent_pct is None:
+        return 0.0, None
+    gap = backed_pct - opponent_pct
+    return _clamp(gap * WR_HOME_AWAY_SCALE, -WR_HOME_AWAY_CAP, WR_HOME_AWAY_CAP), gap
+
+
+def _quality_win_modifier(pick):
+    """
+    WR nudge from the gap between the backed team's and the opponent's
+    count of quality wins (against a ranked opponent) in their last 5
+    games (see _form_summary's quality_wins) - a hot streak built on
+    unranked teams reads differently than one built on ranked wins.
+    """
+    side = pick.get("bet_side")
+    if side not in ("home", "away"):
+        return 0.0, None
+    other = "away" if side == "home" else "home"
+    backed = pick.get(f"pregame_{side}_form")
+    opponent = pick.get(f"pregame_{other}_form")
+    if not backed or not opponent:
+        return 0.0, None
+    gap = backed.get("quality_wins", 0) - opponent.get("quality_wins", 0)
+    if not gap:
+        return 0.0, None
+    return _clamp(gap * WR_QUALITY_WIN_SCALE, -WR_QUALITY_WIN_CAP, WR_QUALITY_WIN_CAP), gap
+
+
 def wr_confidence_effective(pick, source, track_record, agreement_map):
     """
     A pick's WR Confidence Score adjusted for what its own entered number
@@ -1237,9 +1322,22 @@ def wr_confidence_effective(pick, source, track_record, agreement_map):
     weather_mod, weather_info = _weather_modifier(pick)
     form_mod, form_gap = _form_modifier(pick)
     injury_mod, injury_gap = _injury_modifier(pick)
+    home_away_mod, home_away_gap = _home_away_modifier(pick)
+    quality_win_mod, quality_win_gap = _quality_win_modifier(pick)
 
     score = _clamp(
-        base + record_mod + agree_mod + conflict_mod + clv_mod + weather_mod + form_mod + injury_mod, 0, 100
+        base
+        + record_mod
+        + agree_mod
+        + conflict_mod
+        + clv_mod
+        + weather_mod
+        + form_mod
+        + injury_mod
+        + home_away_mod
+        + quality_win_mod,
+        0,
+        100,
     )
     breakdown = {
         "base": base,
@@ -1258,6 +1356,10 @@ def wr_confidence_effective(pick, source, track_record, agreement_map):
         "form_gap": form_gap,
         "injury_mod": injury_mod,
         "injury_gap": injury_gap,
+        "home_away_mod": home_away_mod,
+        "home_away_gap": home_away_gap,
+        "quality_win_mod": quality_win_mod,
+        "quality_win_gap": quality_win_gap,
     }
     return score, breakdown
 
@@ -1284,6 +1386,10 @@ def wr_confidence_breakdown_text(source, breakdown):
         parts.append(f"form gap {breakdown['form_gap']:+.0f}pts {breakdown['form_mod']:+.0f}")
     if breakdown["injury_mod"]:
         parts.append(f"injury gap {breakdown['injury_gap']:+d} {breakdown['injury_mod']:+.0f}")
+    if breakdown["home_away_mod"]:
+        parts.append(f"home/away record gap {breakdown['home_away_gap']:+.0f}pts {breakdown['home_away_mod']:+.0f}")
+    if breakdown["quality_win_mod"]:
+        parts.append(f"quality-win gap {breakdown['quality_win_gap']:+d} {breakdown['quality_win_mod']:+.0f}")
     return " · ".join(parts)
 
 

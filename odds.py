@@ -412,12 +412,17 @@ def standings(league):
 def team_schedule(league, team_id):
     """
     This (current) season's fixtures/results for one team, oldest first:
-    [{event_id, date, opponent, opponent_id, home_away, completed,
-    team_score, opp_score, result}] - result is 'W'/'D'/'L' once
-    completed, else None ('D' never happens for CFB/NFL in practice, but
-    the field stays generic). Works for every configured league - the
-    endpoint shape (competitions[0].competitors, each carrying a
-    {'value': ...} score) is the same for CFB/NFL as for soccer.
+    [{event_id, date, opponent, opponent_id, opponent_rank, home_away,
+    completed, team_score, opp_score, result}] - result is 'W'/'D'/'L'
+    once completed, else None ('D' never happens for CFB/NFL in
+    practice, but the field stays generic). opponent_rank is the AP/CFP
+    curated rank ESPN had that opponent at for this game (1-25), or None
+    if they were unranked - ESPN uses 99 as its own sentinel for
+    "unranked" in this field, translated to None here so callers don't
+    have to know that convention. Works for every configured league -
+    the endpoint shape (competitions[0].competitors, each carrying a
+    {'value': ...} score and a curatedRank) is the same for CFB/NFL as
+    for soccer (soccer just never has a rank to report).
     """
     if not team_id or league not in LEAGUE_CONFIG:
         return []
@@ -438,6 +443,10 @@ def team_schedule(league, team_id):
             return None
         return int(float(raw))
 
+    def _rank(competitor):
+        rank = (competitor.get("curatedRank") or {}).get("current")
+        return rank if isinstance(rank, int) and 0 < rank < 99 else None
+
     games = []
     for ev in data.get("events", []):
         try:
@@ -457,6 +466,7 @@ def team_schedule(league, team_id):
                     "date": ev.get("date"),
                     "opponent": opp["team"]["displayName"],
                     "opponent_id": opp["team"]["id"],
+                    "opponent_rank": _rank(opp),
                     "home_away": me.get("homeAway"),
                     "completed": completed,
                     "team_score": team_score,
