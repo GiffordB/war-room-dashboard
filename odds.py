@@ -414,9 +414,12 @@ def team_schedule(league, team_id):
     This (current) season's fixtures/results for one team, oldest first:
     [{event_id, date, opponent, opponent_id, home_away, completed,
     team_score, opp_score, result}] - result is 'W'/'D'/'L' once
-    completed, else None. Soccer leagues only.
+    completed, else None ('D' never happens for CFB/NFL in practice, but
+    the field stays generic). Works for every configured league - the
+    endpoint shape (competitions[0].competitors, each carrying a
+    {'value': ...} score) is the same for CFB/NFL as for soccer.
     """
-    if not is_soccer(league) or not team_id:
+    if not team_id or league not in LEAGUE_CONFIG:
         return []
 
     url = f"{_site_url(league, f'teams/{team_id}/schedule')}"
@@ -498,13 +501,20 @@ def team_roster(league, team_id):
     {'players': [{name, position, age, jersey, nationality, status,
     injury}], 'coaches': [names]}. `status`/`injury` reflect whatever
     ESPN's feed has flagged for that player right now (often nothing,
-    even for a genuinely knocked-up squad - ESPN's soccer injury
-    reporting is thin; team_news() and the club's own site are the more
-    reliable check). `coaches` is ESPN's historical list for the club,
-    not flagged with who's currently in the post - cross-check against
-    news/standings before treating the top name as the incumbent.
+    even for a genuinely knocked-up squad - ESPN's own injury reporting
+    is thin for both soccer and CFB; team_news() and the club/program's
+    own site are the more reliable check). `coaches` is ESPN's historical
+    list for the team, not flagged with who's currently in the post -
+    cross-check against news/standings before treating the top name as
+    the incumbent.
+
+    Works for every configured league, but the raw shape differs: a
+    soccer roster is one flat list under "athletes"; a CFB/NFL roster
+    groups athletes into position units (offense/defense/special teams),
+    each with its own "items" list - both are flattened into the same
+    `players` shape here.
     """
-    if not is_soccer(league) or not team_id:
+    if not team_id or league not in LEAGUE_CONFIG:
         return {"players": [], "coaches": []}
 
     url = _site_url(league, f"teams/{team_id}/roster")
@@ -512,16 +522,26 @@ def team_roster(league, team_id):
     if not data:
         return {"players": [], "coaches": []}
 
+    raw_athletes = data.get("athletes", [])
+    if raw_athletes and "items" in raw_athletes[0]:
+        # CFB/NFL shape: [{position: "offense", items: [athlete, ...]}, ...]
+        flat_athletes = [a for group in raw_athletes for a in group.get("items", [])]
+    else:
+        flat_athletes = raw_athletes
+
     players = []
-    for a in data.get("athletes", []):
+    for a in flat_athletes:
         injuries = a.get("injuries") or []
+        nationality = a.get("citizenship") or a.get("birthCountry")
+        if isinstance(nationality, dict):
+            nationality = nationality.get("abbreviation") or nationality.get("alternateId")
         players.append(
             {
                 "name": a.get("fullName"),
                 "position": (a.get("position") or {}).get("abbreviation"),
                 "age": a.get("age"),
                 "jersey": a.get("jersey"),
-                "nationality": a.get("citizenship"),
+                "nationality": nationality,
                 "status": (a.get("status") or {}).get("name"),
                 "injury": (injuries[0].get("status") if injuries else None),
             }

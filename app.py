@@ -203,6 +203,34 @@ WR_NEWS_CAP = 12
 # only as good as how recently before kickoff Auto-Grade happened to run.
 PREGAME_ODDS_RECAPTURE_MINUTES = 15
 
+# --- More WR Confidence inputs, captured alongside the line above -----
+# These four are all objective facts about the game rather than a soft
+# read on a source's own behavior, so - like news (see WR_NEWS_* above) -
+# they apply at full strength regardless of wr_impact_scale(), all the
+# way down to WR_IMPACT_FLOOR and below. A market that's moved, a player
+# who's actually out, or a team on a bad run is true whether the
+# original pick was rated 55% or 95%.
+
+WR_CLV_SCALE = 2  # WR points per point of closing-line value (see line_move())
+WR_CLV_CAP = 10
+
+# "Bad weather for scoring" = at least one of these crossed, checked
+# against the venue's forecast at kickoff (see odds.match_weather()).
+# Nudges a total pick toward whichever side conditions actually favor.
+WR_WEATHER_WIND_KMH = 25
+WR_WEATHER_PRECIP_PCT = 60
+WR_WEATHER_BONUS = 5
+
+# Recent form: the gap between the backed team's and the opponent's win
+# rate over their last 5 completed games, scaled into WR points.
+WR_FORM_SCALE = 0.15
+WR_FORM_CAP = 8
+
+# Injuries: the gap between the opponent's and the backed team's own
+# count of roster-flagged unavailable/questionable players, per player.
+WR_INJURY_SCALE = 3
+WR_INJURY_CAP = 10
+
 
 def wr_confidence_label(score):
     """
@@ -410,17 +438,43 @@ def _pregame_odds_stale(pick):
     return (datetime.utcnow() - captured).total_seconds() > PREGAME_ODDS_RECAPTURE_MINUTES * 60
 
 
+def _form_summary(games):
+    """{'played', 'wins', 'win_pct'} from team_form()'s last-N completed games, or None if there's nothing to summarize."""
+    if not games:
+        return None
+    wins = sum(1 for g in games if g["result"] == "W")
+    played = len(games)
+    return {"played": played, "wins": wins, "win_pct": (wins / played * 100) if played else None}
+
+
+def _injury_count(roster):
+    """How many of a team_roster()'s players carry any non-empty status flag - a rough, ESPN-reporting-dependent headcount, not a severity read."""
+    if not roster:
+        return None
+    return sum(1 for p in roster.get("players", []) if p.get("injury"))
+
+
 def capture_pregame_lines(data):
     """
-    Best-effort line-movement tracking (see PREGAME_ODDS_RECAPTURE_MINUTES):
+    Best-effort pregame intel capture (see PREGAME_ODDS_RECAPTURE_MINUTES):
     for every pending, ESPN-linked pick whose game ESPN still shows as
-    not-yet-started, snapshots its current line via odds.game_odds() onto
-    the pick as `pregame_odds`/`pregame_odds_captured_at` - throttled so a
-    pick that's still days out doesn't get re-fetched on every call. Once
-    a game starts, game_odds() stops returning anything for it anyway, so
-    the pick's last snapshot naturally stays put - see line_move() for
-    how a pick's original bet_line is compared against it. Modifies
-    `data` in place; returns how many picks got a fresh snapshot.
+    not-yet-started, snapshots the current line, weather forecast, both
+    teams' recent form, and both teams' roster-flagged injury counts onto
+    the pick - throttled so a pick that's still days out doesn't get
+    re-fetched on every call. Once a game starts, these lookups stop
+    returning anything useful anyway, so each pick's last snapshot
+    naturally stays put. Event-level lookups (odds, weather, team ids)
+    are deduped by (league, event_id) and team-level lookups (form,
+    roster) by (league, team_id), since more than one pick can share a
+    game or a team. Modifies `data` in place; returns how many picks got
+    a fresh snapshot.
+
+    Fields written: pregame_odds (+ _captured_at - see line_move()),
+    pregame_weather, pregame_home_form/pregame_away_form (see
+    _form_summary), pregame_home_injuries/pregame_away_injuries (see
+    _injury_count, both from home/away_team's own perspective regardless
+    of which side the pick backs - see wr_confidence_effective for how
+    that's resolved per pick).
     """
     reports = {r["id"]: r for r in data["reports"]}
     eligible = {
@@ -443,17 +497,45 @@ def capture_pregame_lines(data):
     if not due_ids:
         return 0
 
-    lines = _parallel_map(
-        lambda pid: odds.game_odds(reports[eligible[pid]["report_id"]]["league"], eligible[pid]["espn_event_id"]),
-        due_ids,
+    event_keys = {(reports[eligible[pid]["report_id"]]["league"], eligible[pid]["espn_event_id"]) for pid in due_ids}
+    lines_by_event = _parallel_map(lambda key: odds.game_odds(key[0], key[1]), list(event_keys))
+    info_by_event = _parallel_map(lambda key: odds.match_info(key[0], key[1]), list(event_keys))
+
+    team_keys = set()
+    for key, info in info_by_event.items():
+        if info:
+            team_keys.add((key[0], info["home_id"]))
+            team_keys.add((key[0], info["away_id"]))
+    form_by_team = _parallel_map(lambda key: odds.team_form(key[0], key[1], last=5), list(team_keys))
+    roster_by_team = _parallel_map(lambda key: odds.team_roster(key[0], key[1]), list(team_keys))
+    weather_by_event = _parallel_map(
+        lambda key: odds.match_weather(info_by_event[key]["city"], info_by_event[key]["country"], info_by_event[key]["kickoff"])
+        if info_by_event.get(key)
+        else None,
+        list(event_keys),
     )
+
     captured = 0
-    for pid, line in lines.items():
-        if not line:
-            continue
+    now = datetime.utcnow().isoformat(timespec="seconds")
+    for pid in due_ids:
         pick = eligible[pid]
-        pick["pregame_odds"] = line
-        pick["pregame_odds_captured_at"] = datetime.utcnow().isoformat(timespec="seconds")
+        league = reports[pick["report_id"]]["league"]
+        event_key = (league, pick["espn_event_id"])
+        line = lines_by_event.get(event_key)
+        info = info_by_event.get(event_key)
+        if not line and not info:
+            continue
+
+        if line:
+            pick["pregame_odds"] = line
+            pick["pregame_odds_captured_at"] = now
+        if info:
+            pick["pregame_weather"] = weather_by_event.get(event_key)
+            pick["pregame_home_form"] = _form_summary(form_by_team.get((league, info["home_id"])))
+            pick["pregame_away_form"] = _form_summary(form_by_team.get((league, info["away_id"])))
+            pick["pregame_home_injuries"] = _injury_count(roster_by_team.get((league, info["home_id"])))
+            pick["pregame_away_injuries"] = _injury_count(roster_by_team.get((league, info["away_id"])))
+            pick["pregame_intel_captured_at"] = now
         captured += 1
     return captured
 
@@ -1053,20 +1135,78 @@ def pick_agreement_map(data):
     return agreement
 
 
+def _clv_modifier(pick):
+    """WR nudge from line_move() - a market that's moved is a fact, not a vibe, so this isn't scaled by wr_impact_scale()."""
+    move = line_move(pick)
+    if move is None:
+        return 0.0, None
+    return _clamp(move * WR_CLV_SCALE, -WR_CLV_CAP, WR_CLV_CAP), move
+
+
+def _weather_modifier(pick):
+    """WR nudge for a total pick when captured conditions (see capture_pregame_lines) are bad enough to favor one side."""
+    if pick.get("bet_type") != "total" or pick.get("bet_side") not in ("over", "under"):
+        return 0.0, None
+    weather = pick.get("pregame_weather")
+    if not weather:
+        return 0.0, None
+    bad = (weather.get("wind_kmh") or 0) >= WR_WEATHER_WIND_KMH or (weather.get("precip_probability_pct") or 0) >= WR_WEATHER_PRECIP_PCT
+    if not bad:
+        return 0.0, None
+    return (WR_WEATHER_BONUS if pick["bet_side"] == "under" else -WR_WEATHER_BONUS), weather
+
+
+def _form_modifier(pick):
+    """WR nudge from the gap between the backed team's and the opponent's recent win rate (see capture_pregame_lines)."""
+    side = pick.get("bet_side")
+    if side not in ("home", "away"):
+        return 0.0, None
+    other = "away" if side == "home" else "home"
+    backed = pick.get(f"pregame_{side}_form")
+    opponent = pick.get(f"pregame_{other}_form")
+    if not backed or not opponent or backed.get("win_pct") is None or opponent.get("win_pct") is None:
+        return 0.0, None
+    gap = backed["win_pct"] - opponent["win_pct"]
+    return _clamp(gap * WR_FORM_SCALE, -WR_FORM_CAP, WR_FORM_CAP), gap
+
+
+def _injury_modifier(pick):
+    """WR nudge from the gap between the opponent's and the backed team's roster-flagged injury count (see capture_pregame_lines)."""
+    side = pick.get("bet_side")
+    if side not in ("home", "away"):
+        return 0.0, None
+    other = "away" if side == "home" else "home"
+    backed = pick.get(f"pregame_{side}_injuries")
+    opponent = pick.get(f"pregame_{other}_injuries")
+    if backed is None or opponent is None:
+        return 0.0, None
+    gap = opponent - backed
+    return _clamp(gap * WR_INJURY_SCALE, -WR_INJURY_CAP, WR_INJURY_CAP), gap
+
+
 def wr_confidence_effective(pick, source, track_record, agreement_map):
     """
     A pick's WR Confidence Score adjusted for what its own entered number
-    can't know at write time: how well this source has actually done
+    can't know at write time. Two kinds of adjustment:
+
+    Soft signals about behavior - how well this source has actually done
     (source_track_record) and whether other sources agree or conflict on
-    the same game/market (pick_agreement_map). Both are scaled by
-    wr_impact_scale(base) first - a pick that wasn't much of a conviction
-    play to begin with (WR_IMPACT_FLOOR or below) gets no adjustment at
-    all, and the swing ramps up toward full size as the base score
-    approaches 100, so a thin pick can't get yanked around as hard as an
-    elite one. Returns (score, breakdown) - breakdown is a plain dict of
-    the pieces that summed to it, for a tooltip; score is None
-    (breakdown {}) if the pick has no base score to begin with, since
-    there's nothing to adjust.
+    the same game/market (pick_agreement_map) - scaled by
+    wr_impact_scale(base) first: a pick that wasn't much of a conviction
+    play to begin with (WR_IMPACT_FLOOR or below) gets none of this
+    adjustment at all, ramping to full size as the base score approaches
+    100, so a thin pick can't get yanked around as hard as an elite one.
+
+    Hard facts about the game - closing-line value (_clv_modifier),
+    weather (_weather_modifier), recent form (_form_modifier), and
+    roster-flagged injuries (_injury_modifier) - applied at full strength
+    regardless of the base score, same as news (see wallet_news_alerts):
+    a player actually being out is true whether the pick was rated 55%
+    or 95%.
+
+    Returns (score, breakdown) - breakdown is a plain dict of the pieces
+    that summed to it, for a tooltip; score is None (breakdown {}) if the
+    pick has no base score to begin with, since there's nothing to adjust.
     """
     base = pick.get("wr_confidence")
     if base is None:
@@ -1093,7 +1233,14 @@ def wr_confidence_effective(pick, source, track_record, agreement_map):
     agree_mod = min(WR_AGREEMENT_BONUS * len(agreeing), WR_AGREEMENT_CAP) * impact if agreeing else 0.0
     conflict_mod = -min(WR_CONFLICT_PENALTY * len(opposing), WR_CONFLICT_CAP) * impact if opposing else 0.0
 
-    score = _clamp(base + record_mod + agree_mod + conflict_mod, 0, 100)
+    clv_mod, clv_move = _clv_modifier(pick)
+    weather_mod, weather_info = _weather_modifier(pick)
+    form_mod, form_gap = _form_modifier(pick)
+    injury_mod, injury_gap = _injury_modifier(pick)
+
+    score = _clamp(
+        base + record_mod + agree_mod + conflict_mod + clv_mod + weather_mod + form_mod + injury_mod, 0, 100
+    )
     breakdown = {
         "base": base,
         "impact_scale": impact,
@@ -1103,6 +1250,14 @@ def wr_confidence_effective(pick, source, track_record, agreement_map):
         "agreeing_sources": agreeing,
         "conflict_mod": conflict_mod,
         "opposing_sources": opposing,
+        "clv_mod": clv_mod,
+        "clv_move": clv_move,
+        "weather_mod": weather_mod,
+        "weather_info": weather_info,
+        "form_mod": form_mod,
+        "form_gap": form_gap,
+        "injury_mod": injury_mod,
+        "injury_gap": injury_gap,
     }
     return score, breakdown
 
@@ -1113,14 +1268,22 @@ def wr_confidence_breakdown_text(source, breakdown):
         return ""
     parts = [f"Base {breakdown['base']:.0f}"]
     if breakdown["base"] <= WR_IMPACT_FLOOR:
-        parts.append(f"no adjustment (at or below {WR_IMPACT_FLOOR})")
-        return " · ".join(parts)
-    if breakdown["record_mod"]:
-        parts.append(f"{source} track record ({breakdown['record_win_pct']:.0f}% win rate) {breakdown['record_mod']:+.0f}")
-    if breakdown["agree_mod"]:
-        parts.append(f"agrees with {', '.join(breakdown['agreeing_sources'])} {breakdown['agree_mod']:+.0f}")
-    if breakdown["conflict_mod"]:
-        parts.append(f"conflicts with {', '.join(breakdown['opposing_sources'])} {breakdown['conflict_mod']:.0f}")
+        parts.append(f"no track record/agreement adjustment (at or below {WR_IMPACT_FLOOR})")
+    else:
+        if breakdown["record_mod"]:
+            parts.append(f"{source} track record ({breakdown['record_win_pct']:.0f}% win rate) {breakdown['record_mod']:+.0f}")
+        if breakdown["agree_mod"]:
+            parts.append(f"agrees with {', '.join(breakdown['agreeing_sources'])} {breakdown['agree_mod']:+.0f}")
+        if breakdown["conflict_mod"]:
+            parts.append(f"conflicts with {', '.join(breakdown['opposing_sources'])} {breakdown['conflict_mod']:.0f}")
+    if breakdown["clv_mod"]:
+        parts.append(f"line moved {breakdown['clv_move']:+.1f} pts {breakdown['clv_mod']:+.0f}")
+    if breakdown["weather_mod"]:
+        parts.append(f"bad weather {breakdown['weather_mod']:+.0f}")
+    if breakdown["form_mod"]:
+        parts.append(f"form gap {breakdown['form_gap']:+.0f}pts {breakdown['form_mod']:+.0f}")
+    if breakdown["injury_mod"]:
+        parts.append(f"injury gap {breakdown['injury_gap']:+d} {breakdown['injury_mod']:+.0f}")
     return " · ".join(parts)
 
 
