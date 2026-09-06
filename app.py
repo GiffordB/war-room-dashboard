@@ -310,10 +310,11 @@ def grade_pick(pick, final):
 
 def auto_grade_pending(data, report_id=None):
     """
-    Grade every pending pick (in `data`, modified in place) that carries
-    structured ESPN bet data and whose game has finished. Returns
-    (graded, still_pending) - the latter covers games not yet final and
-    any it couldn't look up at all.
+    Grade every pending pick (in `data`, modified in place) that either
+    carries structured ESPN bet data for a finished game, or is a parlay
+    whose own legs (see grade_parlay) already decide it. Returns
+    (graded, still_pending) - the latter covers games not yet final, any
+    it couldn't look up at all, and parlays still waiting on a leg.
     """
     reports = {r["id"]: r for r in data["reports"]}
     candidates = [
@@ -347,6 +348,27 @@ def auto_grade_pending(data, report_id=None):
             still_pending += 1
             continue
 
+        pick["result"] = result
+        pick["profit_loss"] = profit_for_result(pick["stake"], pick["odds"], result)
+        graded += 1
+
+    # Parlays grade off their own legs rather than a single ESPN score -
+    # run after the loop above so a leg settled in this same pass (e.g.
+    # a leg that's also independently a Best Bet on the same report)
+    # already reflects its result before its parlay is checked.
+    picks_by_id = {p["id"]: p for p in data["picks"]}
+    parlay_candidates = [
+        p
+        for p in data["picks"]
+        if p["result"] == "pending"
+        and p.get("parlay_leg_pick_ids")
+        and (report_id is None or p["report_id"] == report_id)
+    ]
+    for pick in parlay_candidates:
+        result = grade_parlay(pick, picks_by_id)
+        if result is None:
+            still_pending += 1
+            continue
         pick["result"] = result
         pick["profit_loss"] = profit_for_result(pick["stake"], pick["odds"], result)
         graded += 1
@@ -1518,6 +1540,50 @@ def api_update_report(report_id):
     return jsonify({"id": report_id})
 
 
+def _parse_parlay_legs(value):
+    """
+    A parlay pick's own legs, as a list of other picks' ids (see
+    grade_parlay) - accepts a real list (JSON API), a comma/space-
+    separated string (HTML form, e.g. "4, 5, 6"), or None/empty (not a
+    parlay, or a parlay logged without structured legs - stays manually
+    settled like before).
+    """
+    if not value:
+        return None
+    if isinstance(value, str):
+        value = [part for part in re.split(r"[,\s]+", value.strip()) if part]
+    try:
+        ids = [int(v) for v in value]
+    except (TypeError, ValueError):
+        raise ValueError("parlay_leg_pick_ids must be a list of pick ids")
+    return ids or None
+
+
+def grade_parlay(pick, picks_by_id):
+    """
+    A parlay pick's result derived from its own legs (see
+    _parse_parlay_legs) rather than a single ESPN score: any leg that's
+    already lost fails the whole parlay immediately, without waiting on
+    the other legs to finish; once every leg has a result and none is a
+    loss, the parlay wins (a push leg doesn't sink it, same as a
+    sportsbook would grade it). Returns None while still undecided (a
+    leg id that doesn't resolve to a real pick, or any leg still pending
+    with nothing lost yet) - the caller leaves the parlay pending either
+    way.
+    """
+    leg_ids = pick.get("parlay_leg_pick_ids")
+    if not leg_ids:
+        return None
+    legs = [picks_by_id.get(lid) for lid in leg_ids]
+    if any(leg is None for leg in legs):
+        return None
+    if any(leg["result"] == "loss" for leg in legs):
+        return "loss"
+    if all(leg["result"] in ("win", "push") for leg in legs):
+        return "win"
+    return None
+
+
 def create_pick(report_id, fields):
     """
     Shared by the HTML "Add a Pick" form and POST /api/reports/<id>/picks
@@ -1549,6 +1615,7 @@ def create_pick(report_id, fields):
         raise ValueError("wr_confidence must be between 0 and 100")
 
     new_pick = {
+        "parlay_leg_pick_ids": _parse_parlay_legs(fields.get("parlay_leg_pick_ids")),
         "report_id": report_id,
         "category": fields["category"],
         "matchup": str(fields["matchup"]).strip(),
