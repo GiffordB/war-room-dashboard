@@ -1,6 +1,6 @@
 {
   "next_report_id": 16,
-  "next_pick_id": 55,
+  "next_pick_id": 56,
   "reports": [
     {
       "source": "ChatGPT",
@@ -887,6 +887,31 @@
       "created_at": "2026-09-07T23:53:31",
       "id": 54,
       "wr_confidence_initial": 57.753846153846155
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 15,
+      "category": "sexy_moneyline",
+      "matchup": "Internazionale @ Real Madrid",
+      "selection": "Internazionale +0.5 (Draw or Win)",
+      "odds": 130,
+      "stake": 40.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "Real Madrid missing or suspended roughly 9 first-teamers for this specific game: Mendy, Asencio, Rodrygo (ACL), Militao, Pitarch and Endrick injured, plus Camavinga, Guler and Bernardo Silva all suspended.\nReal Madrid also arrive off a shock 1-0 home loss to Real Betis - their form and squad depth are both compromised at the same time.\nInter are a perfect 3-0-0 in Serie A, defending champions, and missing only one player (Dimarco, precautionary rest) - about as healthy and in-form as a visiting side gets.\nConfidence stays well under 60% here on purpose - this is a real edge on the underdog/draw side, not a claim that Inter are favored outright.",
+      "wr_confidence": 44.0,
+      "war_room_line": "Real Madrid 56% / Draw 23% / Inter 21% (blended) -> Inter-or-draw ~44%",
+      "edge": "Real Madrid's price implies Inter-or-draw ~40%; blended ~44% given Real Madrid's absence list -> +4pp edge",
+      "price_discipline": "+130 or better: $40\n+115 to +129: $25\n+114 or worse: pass",
+      "espn_event_id": "401915451",
+      "bet_type": "spread",
+      "bet_side": "away",
+      "bet_line": 0.5,
+      "home_team": "Real Madrid",
+      "away_team": "Internazionale",
+      "created_at": "2026-09-07T23:53:37",
+      "id": 55,
+      "wr_confidence_initial": 44.0
     }
   ],
   "next_wallet_id": 13,
