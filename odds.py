@@ -111,8 +111,11 @@ def sportsbook_for(league):
 def scoreboard(league, date_str):
     """
     date_str: 'YYYYMMDD'. Returns a list of
-    {id, matchup, home, away, kickoff, status}, home/away games first-listed
-    away @ home to match how picks are usually written.
+    {id, matchup, home, away, home_abbrev, away_abbrev, kickoff, status},
+    home/away games first-listed away @ home to match how picks are
+    usually written. The abbreviation fields (e.g. "FSU") exist because a
+    hand-typed matchup rarely spells a team's full displayName out - see
+    app.find_espn_event_for_matchup().
     """
     cfg = LEAGUE_CONFIG.get(league)
     if not cfg or not date_str:
@@ -137,6 +140,8 @@ def scoreboard(league, date_str):
                     "id": ev["id"],
                     "home": home["team"]["displayName"],
                     "away": away["team"]["displayName"],
+                    "home_abbrev": home["team"].get("abbreviation"),
+                    "away_abbrev": away["team"].get("abbreviation"),
                     "home_id": home["team"]["id"],
                     "away_id": away["team"]["id"],
                     "matchup": f"{away['team']['displayName']} @ {home['team']['displayName']}",

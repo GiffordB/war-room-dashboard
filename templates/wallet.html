@@ -177,6 +177,11 @@
                   {% else %}
                     {{ e.matchup }} — {{ e.selection }}
                     <span class="muted small">(custom)</span>
+                    {% if not e.espn_event_id %}
+                      <form method="post" action="{{ url_for(identify_endpoint, entry_id=e.id) }}" style="display: inline;">
+                        <button class="btn-link" type="submit" title="Look up this matchup on ESPN and link it, like a dashboard pick — enables the live/final score badge and auto-grading">🔍 Identify Game</button>
+                      </form>
+                    {% endif %}
                   {% endif %}
                   {% if e.notes %}<div class="muted small">{{ e.notes }}</div>{% endif %}
                   {% if e.game %}

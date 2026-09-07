@@ -758,6 +758,125 @@ def attach_game_status(picks, league=None):
     return result
 
 
+def _text_mentions_team(text, *names):
+    """True if any of `names` (a display name, abbreviation, etc. - some may be None) appears in `text` as a whole word, case-insensitively."""
+    text_lower = text.lower()
+    for name in names:
+        if name and re.search(r"\b" + re.escape(name.lower()) + r"\b", text_lower):
+            return True
+    return False
+
+
+def _game_matches_text(game, text):
+    """True if `text` (a hand-typed matchup or selection) names both teams in `game` (an odds.scoreboard() entry)."""
+    home_hit = _text_mentions_team(text, game["home"], game.get("home_abbrev"))
+    away_hit = _text_mentions_team(text, game["away"], game.get("away_abbrev"))
+    return home_hit and away_hit
+
+
+def find_espn_event_for_matchup(league, matchup, anchor_date, days_before=1, days_after=14):
+    """
+    Best-effort ESPN event lookup for a hand-typed matchup string (e.g. a
+    custom MyWallet bet with no linked pick) - searches odds.scoreboard()
+    day by day from `anchor_date` (a date, usually the bet's own
+    created_at date) out to `days_after` days later, looking for a game
+    that names both teams in `matchup` (see _game_matches_text - this is
+    why scoreboard() carries each team's abbreviation, since a hand-typed
+    matchup almost never spells out a full ESPN displayName). Returns the
+    matching game dict, or None if nothing matched or more than one game
+    did (an ambiguous match is refused rather than guessed at - the
+    caller should ask for a manual link instead).
+    """
+    dates = [anchor_date + timedelta(days=offset) for offset in range(-days_before, days_after + 1)]
+    date_strs = [d.strftime("%Y%m%d") for d in dates]
+    games_by_date = _parallel_map(lambda ds: odds.scoreboard(league, ds), date_strs)
+
+    matches = {}
+    for games in games_by_date.values():
+        for game in games or []:
+            if _game_matches_text(game, matchup):
+                matches[game["id"]] = game
+    if len(matches) != 1:
+        return None
+    return next(iter(matches.values()))
+
+
+def _parse_selection_bet(selection, game, is_soccer):
+    """
+    Best-effort (bet_type, bet_side, bet_line) from a hand-typed
+    selection string like "SMU -2.5", "Under 46.5", or "Hull City to
+    Win", now that `game` (an odds.scoreboard() entry) says which team is
+    home/away. Returns None if the text doesn't match a pattern this
+    recognizes - callers should leave bet_type/bet_side unset rather than
+    guess, since a wrong side silently breaks auto-grading.
+    """
+    text = selection.strip()
+    lower = text.lower()
+
+    total_match = re.match(r"^(over|under)\s+([\d.]+)\s*$", lower)
+    if total_match:
+        return "total", total_match.group(1), float(total_match.group(2))
+
+    if is_soccer and re.search(r"\bdraw\b", lower):
+        return "match_result", "draw", None
+
+    home_hit = _text_mentions_team(text, game["home"], game.get("home_abbrev"))
+    away_hit = _text_mentions_team(text, game["away"], game.get("away_abbrev"))
+    if home_hit and not away_hit:
+        side = "home"
+    elif away_hit and not home_hit:
+        side = "away"
+    else:
+        return None  # can't tell which team this backs (both/neither name found)
+
+    spread_match = re.search(r"([+-]\s?\d+(?:\.\d+)?)\s*$", text)
+    if spread_match:
+        return "spread", side, float(spread_match.group(1).replace(" ", ""))
+
+    if re.search(r"\bto win\b|\bwin\b|\bml\b|\bmoneyline\b", lower):
+        return ("match_result" if is_soccer else "moneyline"), side, None
+
+    return None
+
+
+def identify_wallet_entry_game(entry):
+    """
+    Resolves a custom (no pick_id) wallet entry's ESPN event and, where
+    the selection text parses cleanly, its bet_type/bet_side/bet_line -
+    everything a linked pick already carries for free, so a custom bet
+    can show the same live/final score badge (see attach_game_status) and
+    get picked up by the same auto-grading pass (see
+    sync_wallet_entries) instead of needing to be settled by hand.
+
+    Returns a dict of the fields to set on the entry, or None if no
+    single confident game match was found. A match with an unparsed
+    selection still returns the game fields (espn_event_id/home_team/
+    away_team) - a live score badge is still better than nothing even
+    when the caller has to set bet_type/bet_side by hand afterward.
+    """
+    league = resolve_league(entry.get("league"))
+    if not league:
+        return None
+    anchor_date = date.fromisoformat(entry["created_at"][:10])
+    game = find_espn_event_for_matchup(league, entry["matchup"], anchor_date)
+    if game is None:
+        return None
+
+    result = {
+        "espn_event_id": game["id"],
+        "home_team": game["home"],
+        "away_team": game["away"],
+    }
+    parsed = _parse_selection_bet(entry["selection"], game, odds.is_soccer(league))
+    if parsed:
+        bet_type, bet_side, bet_line = parsed
+        result["bet_type"] = bet_type
+        result["bet_side"] = bet_side
+        if bet_line is not None:
+            result["bet_line"] = bet_line
+    return result
+
+
 def recent_picks_by_week(data, league=None, limit=4):
     """
     Every pick, grouped by the calendar week of report_date (see
@@ -2302,6 +2421,7 @@ WALLETS = {
         "add_endpoint": "add_wallet_entry",
         "delete_endpoint": "delete_wallet_entry",
         "settle_endpoint": "settle_wallet_entry",
+        "identify_endpoint": "identify_wallet_game",
     },
     "jesse": {
         "entries_key": "jesse_wallet_entries",
@@ -2311,6 +2431,7 @@ WALLETS = {
         "add_endpoint": "add_wallet_entry_jesse",
         "delete_endpoint": "delete_wallet_entry_jesse",
         "settle_endpoint": "settle_wallet_entry_jesse",
+        "identify_endpoint": "identify_wallet_game_jesse",
     },
 }
 
@@ -2420,30 +2541,66 @@ def create_wallet_entry(fields, wallet):
 
 def sync_wallet_entries(data):
     """
-    Copy a pending wallet entry's result from its linked pick once that
-    pick is itself no longer pending, across every configured wallet -
-    using the entry's OWN odds/stake for the payout math, not the
-    pick's, since what was actually wagered can differ from the report's
-    card number. Grading itself always follows the pick's own line, even
-    when the entry recorded a different bet_line (see create_wallet_entry) -
-    the wallet is tracking whether the pick's own call was right, not
-    running a second independent grade off a half-point that moved
-    between the report and the actual bet. Called alongside
-    auto_grade_pending() so everything settles together. Returns how
-    many entries synced in total.
+    Settles pending wallet entries two ways, across every configured
+    wallet, using each entry's OWN odds/stake for the payout math (not
+    the pick's, since what was actually wagered can differ from the
+    report's card number):
+
+    Linked entries copy their result straight from the pick once it's no
+    longer pending. Grading follows the pick's own line even when the
+    entry recorded a different bet_line (see create_wallet_entry) - the
+    wallet tracks whether the pick's own call was right, not a second
+    independent grade off a half-point that moved between the report and
+    the actual bet.
+
+    Custom entries with no pick_id but a resolved espn_event_id/bet_type/
+    bet_side (see identify_wallet_entry_game) are graded the same way a
+    pick is - straight off odds.final_score() via grade_pick() - since
+    there's no pick behind them to grade for them.
+
+    Called alongside auto_grade_pending() so everything settles together.
+    Returns how many entries synced in total.
     """
     picks_by_id = {p["id"]: p for p in data["picks"]}
+
+    standalone_keys = set()
+    for wallet in WALLETS.values():
+        for entry in data[wallet["entries_key"]]:
+            league = resolve_league(entry.get("league"))
+            if (
+                entry["result"] == "pending"
+                and entry.get("pick_id") is None
+                and entry.get("espn_event_id")
+                and entry.get("bet_type")
+                and league
+            ):
+                standalone_keys.add((league, entry["espn_event_id"]))
+    score_cache = _parallel_map(lambda key: odds.final_score(key[0], key[1]), list(standalone_keys))
+
     synced = 0
     for wallet in WALLETS.values():
         for entry in data[wallet["entries_key"]]:
             if entry["result"] != "pending":
                 continue
             pick = picks_by_id.get(entry["pick_id"])
-            if not pick or pick["result"] == "pending":
+            if pick:
+                if pick["result"] == "pending":
+                    continue
+                entry["result"] = pick["result"]
+                entry["profit_loss"] = profit_for_result(entry["stake"], entry["odds"], pick["result"])
+                synced += 1
                 continue
-            entry["result"] = pick["result"]
-            entry["profit_loss"] = profit_for_result(entry["stake"], entry["odds"], pick["result"])
-            synced += 1
+            league = resolve_league(entry.get("league"))
+            if not (entry.get("espn_event_id") and entry.get("bet_type") and league):
+                continue
+            final = score_cache.get((league, entry["espn_event_id"]))
+            if not final or final["state"] != "post":
+                continue
+            outcome = grade_pick(entry, final)
+            if outcome:
+                entry["result"] = outcome
+                entry["profit_loss"] = profit_for_result(entry["stake"], entry["odds"], outcome)
+                synced += 1
     return synced
 
 
@@ -2784,15 +2941,29 @@ def _render_wallet(wallet_key):
     chart_dates, chart_series = wallet_cumulative_chart(entries)
     profit_chart = charts.line_chart(chart_dates, chart_series, unit="$") if chart_dates else None
 
-    # Live/final score badges, same as the dashboard's own pick rows -
-    # each entry borrows its linked pick's espn_event_id/bet_type/etc.,
-    # tagged with the entry's own snapshotted league since a pick dict
-    # alone doesn't carry one.
+    # Live/final score badges, same as the dashboard's own pick rows - a
+    # linked entry borrows its pick's espn_event_id/bet_type/etc. (tagged
+    # with the entry's own snapshotted league, since a pick dict alone
+    # doesn't carry one); a custom entry uses its own, once
+    # identify_wallet_entry_game() has resolved them (see
+    # _identify_wallet_game).
     status_inputs = []
     for e in entries:
         pick = picks_by_id.get(e["pick_id"])
         if pick:
             status_inputs.append({**pick, "wallet_entry_id": e["id"], "league": e["league"]})
+        elif e.get("espn_event_id"):
+            status_inputs.append(
+                {
+                    "espn_event_id": e["espn_event_id"],
+                    "bet_type": e.get("bet_type"),
+                    "bet_side": e.get("bet_side"),
+                    "bet_line": e.get("bet_line"),
+                    "result": e["result"],
+                    "league": e["league"],
+                    "wallet_entry_id": e["id"],
+                }
+            )
     game_by_entry_id = {p["wallet_entry_id"]: p["game"] for p in attach_game_status(status_inputs)}
     entries = [
         {**e, "game": game_by_entry_id.get(e["id"]), "live_read": news_live_reads.get(e["id"])} for e in entries
@@ -2804,6 +2975,7 @@ def _render_wallet(wallet_key):
         add_endpoint=wallet["add_endpoint"],
         delete_endpoint=wallet["delete_endpoint"],
         settle_endpoint=wallet["settle_endpoint"],
+        identify_endpoint=wallet["identify_endpoint"],
         entries=entries,
         overall=overall,
         by_source=by_source,
@@ -2869,6 +3041,26 @@ def _settle_wallet_entry(entry_id, wallet_key):
     return redirect(url_for(wallet["view_endpoint"]))
 
 
+def _identify_wallet_game(entry_id, wallet_key):
+    """
+    Try to link a custom wallet entry to its real ESPN game - see
+    identify_wallet_entry_game(). A no-op redirect if the entry is
+    already linked (to a pick or a game) or doesn't exist; otherwise
+    saves whatever fields were confidently resolved.
+    """
+    wallet = WALLETS[wallet_key]
+    data, token = store.load_for_update()
+    entry = next((e for e in data[wallet["entries_key"]] if e["id"] == entry_id), None)
+    if entry is None or entry.get("pick_id") is not None or entry.get("espn_event_id"):
+        return redirect(url_for(wallet["view_endpoint"]))
+
+    found = identify_wallet_entry_game(entry)
+    if found:
+        entry.update(found)
+        store.save(data, token, message=f"Identify game for {wallet['label']} entry #{entry_id}: {entry['matchup']}")
+    return redirect(url_for(wallet["view_endpoint"]))
+
+
 def _api_create_wallet_entry(wallet_key):
     body = request.get_json(silent=True) or {}
     try:
@@ -2884,13 +3076,31 @@ def _api_update_wallet_entry(entry_id, wallet_key):
     after the fact. `result` is also editable, but only for a custom
     entry (no pick_id) - a linked entry's result stays derived from the
     pick via sync_wallet_entries() and shouldn't be hand-set here.
-    bet_line/selection are record-keeping only (see create_wallet_entry) -
-    correcting them never changes how the entry grades, even after the
-    fact. If the entry is already settled, changing odds/stake
-    recomputes profit_loss against that same stored result immediately.
+    bet_line/selection are record-keeping only for a *linked* entry (see
+    create_wallet_entry) - correcting them never changes how that one
+    grades. For a custom entry they're the opposite: load-bearing, same
+    as espn_event_id/bet_type/bet_side/home_team/away_team (also only
+    editable here for a custom entry - see identify_wallet_entry_game for
+    how these usually get set instead of by hand) - sync_wallet_entries()
+    grades a custom entry directly off these fields since there's no pick
+    behind it to grade for it. If the entry is already settled, changing
+    odds/stake recomputes profit_loss against that same stored result
+    immediately.
     """
     wallet = WALLETS[wallet_key]
-    editable = {"odds", "stake", "notes", "result", "bet_line", "selection"}
+    editable = {
+        "odds",
+        "stake",
+        "notes",
+        "result",
+        "bet_line",
+        "selection",
+        "espn_event_id",
+        "bet_type",
+        "bet_side",
+        "home_team",
+        "away_team",
+    }
     body = request.get_json(silent=True) or {}
     updates = {k: v for k, v in body.items() if k in editable}
     if not updates:
@@ -2900,6 +3110,10 @@ def _api_update_wallet_entry(entry_id, wallet_key):
     entry = next((e for e in data[wallet["entries_key"]] if e["id"] == entry_id), None)
     if entry is None:
         return jsonify({"error": f"no {wallet['label']} entry #{entry_id}"}), 404
+
+    game_link_fields = {"espn_event_id", "bet_type", "bet_side", "home_team", "away_team"}
+    if (updates.keys() & game_link_fields) and entry.get("pick_id") is not None:
+        return jsonify({"error": "game linkage is derived automatically for bets linked to a dashboard pick"}), 400
 
     if "result" in updates:
         if entry.get("pick_id") is not None:
@@ -2932,6 +3146,21 @@ def _api_update_wallet_entry(entry_id, wallet_key):
                 return jsonify({"error": "bet_line must be a number"}), 400
     if "selection" in updates and updates["selection"] is not None:
         entry["selection"] = str(updates["selection"]).strip() or entry["selection"]
+    if "espn_event_id" in updates:
+        value = updates["espn_event_id"]
+        entry["espn_event_id"] = str(value).strip() if value else None
+    if "bet_type" in updates:
+        value = updates["bet_type"]
+        if value not in (None, "", "spread", "total", "moneyline", "match_result"):
+            return jsonify({"error": "bet_type must be one of spread, total, moneyline, match_result"}), 400
+        entry["bet_type"] = value or None
+    if "bet_side" in updates:
+        value = updates["bet_side"]
+        entry["bet_side"] = str(value).strip() or None if value else None
+    for key in ("home_team", "away_team"):
+        if key in updates:
+            value = updates[key]
+            entry[key] = str(value).strip() or None if value else None
     entry["profit_loss"] = (
         profit_for_result(entry["stake"], entry["odds"], entry["result"]) if entry["result"] != "pending" else 0.0
     )
@@ -2965,6 +3194,11 @@ def settle_wallet_entry(entry_id):
     return _settle_wallet_entry(entry_id, "mine")
 
 
+@app.route("/wallet/<int:entry_id>/identify_game", methods=["POST"])
+def identify_wallet_game(entry_id):
+    return _identify_wallet_game(entry_id, "mine")
+
+
 @app.route("/api/wallet", methods=["POST"])
 def api_create_wallet_entry():
     return _api_create_wallet_entry("mine")
@@ -2988,6 +3222,11 @@ def delete_wallet_entry_jesse(entry_id):
 @app.route("/jesse-wallet/<int:entry_id>/settle", methods=["POST"])
 def settle_wallet_entry_jesse(entry_id):
     return _settle_wallet_entry(entry_id, "jesse")
+
+
+@app.route("/jesse-wallet/<int:entry_id>/identify_game", methods=["POST"])
+def identify_wallet_game_jesse(entry_id):
+    return _identify_wallet_game(entry_id, "jesse")
 
 
 @app.route("/api/jesse-wallet", methods=["POST"])
