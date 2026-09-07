@@ -193,12 +193,16 @@
                   {% endif %}
                 </td>
                 <td>
-                  {% if e.get('wr_confidence_at_bet') is not none %}
-                    <span class="badge-wr-confidence" title="Frozen at the moment this bet was logged — doesn't move if the pick's live WR score is later revised">{{ e.wr_confidence_at_bet | round | int }}%</span>
+                  {% if e.pick_id is not none %}
+                    {% if e.get('wr_confidence_at_bet') is not none %}
+                      <span class="badge-wr-confidence" title="Frozen at the moment this bet was logged — doesn't move if the pick's live WR score is later revised">{{ e.wr_confidence_at_bet | round | int }}%</span>
+                    {% else %}<span class="muted">—</span>{% endif %}
+                    {% if e.live_read %}
+                      <div><span class="badge-wr-confidence badge-live-read" title="{{ e.live_read.text }}">Live {{ e.live_read.score | round | int }}%</span></div>
+                    {% endif %}
+                  {% elif e.get('wr_confidence') is not none %}
+                    <span class="badge-wr-confidence" title="{{ e.wr_confidence_breakdown }}">{{ wr_confidence_label(e.wr_confidence_effective) | upper }} · {{ wr_confidence_badge_text(e.wr_confidence_effective, e.get('wr_confidence_initial')) }}</span>
                   {% else %}<span class="muted">—</span>{% endif %}
-                  {% if e.live_read %}
-                    <div><span class="badge-wr-confidence badge-live-read" title="{{ e.live_read.text }}">Live {{ e.live_read.score | round | int }}%</span></div>
-                  {% endif %}
                 </td>
                 <td class="muted">{{ '%+d'|format(e.odds) }}</td>
                 <td>${{ '{:,.0f}'.format(e.stake) }}</td>

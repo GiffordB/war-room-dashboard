@@ -524,17 +524,17 @@ def _injury_count(roster):
 def capture_pregame_lines(data):
     """
     Best-effort pregame intel capture (see PREGAME_ODDS_RECAPTURE_MINUTES):
-    for every pending, ESPN-linked pick whose game ESPN still shows as
+    for every pending, ESPN-linked pick OR custom wallet entry (see
+    identify_wallet_entry_game) whose game ESPN still shows as
     not-yet-started, snapshots the current line, weather forecast, both
     teams' recent form, and both teams' roster-flagged injury counts onto
-    the pick - throttled so a pick that's still days out doesn't get
-    re-fetched on every call. Once a game starts, these lookups stop
-    returning anything useful anyway, so each pick's last snapshot
-    naturally stays put. Event-level lookups (odds, weather, team ids)
-    are deduped by (league, event_id) and team-level lookups (form,
-    roster) by (league, team_id), since more than one pick can share a
-    game or a team. Modifies `data` in place; returns how many picks got
-    a fresh snapshot.
+    it - throttled so one that's still days out doesn't get re-fetched on
+    every call. Once a game starts, these lookups stop returning anything
+    useful anyway, so the last snapshot naturally stays put. Event-level
+    lookups (odds, weather, team ids) are deduped by (league, event_id)
+    and team-level lookups (form, roster) by (league, team_id), since
+    more than one pick/entry can share a game or a team. Modifies `data`
+    in place; returns how many items got a fresh snapshot.
 
     Fields written: pregame_odds (+ _captured_at - see line_move()),
     pregame_weather, pregame_home_form/pregame_away_form (last-5 record
@@ -542,32 +542,36 @@ def capture_pregame_lines(data):
     pregame_away_injuries (see _injury_count), pregame_home_split/
     pregame_away_split (full-season home/away record - see
     odds.home_away_split, sliced per side in _home_away_modifier) - all
-    from home/away_team's own perspective regardless of which side the
-    pick backs; see wr_confidence_effective for how that's resolved per
-    pick.
+    from home/away_team's own perspective regardless of which side is
+    backed; see wr_confidence_effective for how that's resolved per item.
     """
     reports = {r["id"]: r for r in data["reports"]}
-    eligible = {
-        p["id"]: p
-        for p in data["picks"]
-        if p["result"] == "pending" and p.get("espn_event_id") and p.get("bet_type") and p["report_id"] in reports
-    }
+    eligible = {}  # (kind, id) -> (item dict, league)
+    for p in data["picks"]:
+        if p["result"] == "pending" and p.get("espn_event_id") and p.get("bet_type") and p["report_id"] in reports:
+            eligible[("pick", p["id"])] = (p, reports[p["report_id"]]["league"])
+    for wallet in WALLETS.values():
+        for e in data[wallet["entries_key"]]:
+            if e["result"] == "pending" and e.get("pick_id") is None and e.get("espn_event_id") and e.get("bet_type"):
+                league = resolve_league(e.get("league"))
+                if league:
+                    eligible[("wallet", wallet["entries_key"], e["id"])] = (e, league)
     if not eligible:
         return 0
 
     states = _parallel_map(
-        lambda pid: odds.final_score(reports[eligible[pid]["report_id"]]["league"], eligible[pid]["espn_event_id"]),
+        lambda key: odds.final_score(eligible[key][1], eligible[key][0]["espn_event_id"]),
         list(eligible.keys()),
     )
-    due_ids = [
-        pid
-        for pid, state in states.items()
-        if state and state.get("state") == "pre" and _pregame_odds_stale(eligible[pid])
+    due_keys = [
+        key
+        for key, state in states.items()
+        if state and state.get("state") == "pre" and _pregame_odds_stale(eligible[key][0])
     ]
-    if not due_ids:
+    if not due_keys:
         return 0
 
-    event_keys = {(reports[eligible[pid]["report_id"]]["league"], eligible[pid]["espn_event_id"]) for pid in due_ids}
+    event_keys = {(eligible[key][1], eligible[key][0]["espn_event_id"]) for key in due_keys}
     lines_by_event = _parallel_map(lambda key: odds.game_odds(key[0], key[1]), list(event_keys))
     info_by_event = _parallel_map(lambda key: odds.match_info(key[0], key[1]), list(event_keys))
 
@@ -588,27 +592,26 @@ def capture_pregame_lines(data):
 
     captured = 0
     now = datetime.utcnow().isoformat(timespec="seconds")
-    for pid in due_ids:
-        pick = eligible[pid]
-        league = reports[pick["report_id"]]["league"]
-        event_key = (league, pick["espn_event_id"])
+    for key in due_keys:
+        item, league = eligible[key]
+        event_key = (league, item["espn_event_id"])
         line = lines_by_event.get(event_key)
         info = info_by_event.get(event_key)
         if not line and not info:
             continue
 
         if line:
-            pick["pregame_odds"] = line
-            pick["pregame_odds_captured_at"] = now
+            item["pregame_odds"] = line
+            item["pregame_odds_captured_at"] = now
         if info:
-            pick["pregame_weather"] = weather_by_event.get(event_key)
-            pick["pregame_home_form"] = _form_summary(form_by_team.get((league, info["home_id"])))
-            pick["pregame_away_form"] = _form_summary(form_by_team.get((league, info["away_id"])))
-            pick["pregame_home_injuries"] = _injury_count(roster_by_team.get((league, info["home_id"])))
-            pick["pregame_away_injuries"] = _injury_count(roster_by_team.get((league, info["away_id"])))
-            pick["pregame_home_split"] = split_by_team.get((league, info["home_id"]))
-            pick["pregame_away_split"] = split_by_team.get((league, info["away_id"]))
-            pick["pregame_intel_captured_at"] = now
+            item["pregame_weather"] = weather_by_event.get(event_key)
+            item["pregame_home_form"] = _form_summary(form_by_team.get((league, info["home_id"])))
+            item["pregame_away_form"] = _form_summary(form_by_team.get((league, info["away_id"])))
+            item["pregame_home_injuries"] = _injury_count(roster_by_team.get((league, info["home_id"])))
+            item["pregame_away_injuries"] = _injury_count(roster_by_team.get((league, info["away_id"])))
+            item["pregame_home_split"] = split_by_team.get((league, info["home_id"]))
+            item["pregame_away_split"] = split_by_team.get((league, info["away_id"]))
+            item["pregame_intel_captured_at"] = now
         captured += 1
     return captured
 
@@ -1579,6 +1582,24 @@ def wr_confidence_breakdown_text(source, breakdown):
     return " · ".join(parts)
 
 
+def _annotate_one_wr_confidence(item, source, track_record, agreement_map, frozen_at_label):
+    """
+    Shared by annotate_wr_confidence() and annotate_wallet_wr_confidence():
+    sets wr_confidence_effective/wr_confidence_breakdown on `item` in
+    place, prepending a drift note to the breakdown text when `item`
+    carries a wr_confidence_initial that's since diverged from the live
+    score. `frozen_at_label` names the moment the initial score was
+    locked in ("submission" for a pick, "identified" for a wallet entry).
+    """
+    score, breakdown = wr_confidence_effective(item, source, track_record, agreement_map)
+    item["wr_confidence_effective"] = score
+    text = wr_confidence_breakdown_text(source, breakdown)
+    initial = item.get("wr_confidence_initial")
+    if score is not None and initial is not None and round(initial) != round(score):
+        text = f"Locked in at {initial:.0f}% on {frozen_at_label}, now {score:.0f}% live — {text}"
+    item["wr_confidence_breakdown"] = text
+
+
 def annotate_wr_confidence(data):
     """
     Attaches wr_confidence_effective (float or None) and
@@ -1593,14 +1614,57 @@ def annotate_wr_confidence(data):
     for p in data["picks"]:
         r = reports.get(p["report_id"])
         source = r["source"] if r else None
-        score, breakdown = wr_confidence_effective(p, source, track_record, agreement_map)
-        p["wr_confidence_effective"] = score
-        text = wr_confidence_breakdown_text(source, breakdown)
-        initial = p.get("wr_confidence_initial")
-        if score is not None and initial is not None and round(initial) != round(score):
-            text = f"Locked in at {initial:.0f}% on submission, now {score:.0f}% live — {text}"
-        p["wr_confidence_breakdown"] = text
+        _annotate_one_wr_confidence(p, source, track_record, agreement_map, "submission")
     return data
+
+
+def annotate_wallet_wr_confidence(data):
+    """
+    The same live wr_confidence_effective()/breakdown treatment as
+    annotate_wr_confidence(), but for a custom (no pick_id) wallet entry
+    that has its own base wr_confidence - set once the entry's game gets
+    identified (see identify_wallet_entry_game) or entered by hand via
+    PATCH. A custom entry with an identified game is otherwise
+    indistinguishable from a pick for scoring purposes (same
+    espn_event_id/bet_type/bet_side/pregame_* fields - see
+    capture_pregame_lines), so this reuses the exact same function
+    rather than a parallel implementation.
+
+    A linked entry (has a pick_id) is untouched here - its WR read stays
+    the frozen wr_confidence_at_bet snapshot from the moment it was
+    logged (see create_wallet_entry), on purpose; that number representing
+    "what we knew at bet time" is a different concept from a custom
+    entry's own live score, which has no pick elsewhere to be a snapshot
+    of. Call alongside annotate_wr_confidence() wherever wallet entries
+    are shown.
+    """
+    track_record = source_track_record(data)
+    agreement_map = pick_agreement_map(data)
+    for wallet in WALLETS.values():
+        for entry in data[wallet["entries_key"]]:
+            if entry.get("pick_id") is not None or entry.get("wr_confidence") is None:
+                continue
+            _annotate_one_wr_confidence(entry, entry.get("source"), track_record, agreement_map, "identified")
+    return data
+
+
+def _freeze_wallet_entry_wr_confidence_initial(entry, data):
+    """
+    Mirrors create_pick()'s wr_confidence_initial freeze for a custom
+    wallet entry the first time it gets a base wr_confidence (whether
+    from identify_wallet_entry_game's neutral default or a hand-entered
+    PATCH) - snapshots wr_confidence_effective() right now and locks it
+    in forever, same as a pick's initial score never moves again once
+    set, even if wr_confidence itself is corrected later. A no-op if
+    this entry already has an initial score, or still has no base score
+    to freeze.
+    """
+    if entry.get("wr_confidence_initial") is not None or entry.get("wr_confidence") is None:
+        return
+    track_record = source_track_record(data)
+    agreement_map = pick_agreement_map(data)
+    score, _ = wr_confidence_effective(entry, entry.get("source"), track_record, agreement_map)
+    entry["wr_confidence_initial"] = score
 
 
 def rank_sources(stats):
@@ -2953,6 +3017,7 @@ def _render_wallet(wallet_key):
     wallet = WALLETS[wallet_key]
     data = store.load_data()
     annotate_wr_confidence(data)
+    annotate_wallet_wr_confidence(data)
     entries = sorted(data[wallet["entries_key"]], key=lambda e: e["id"], reverse=True)
     picks_by_id = {p["id"]: p for p in data["picks"]}
 
@@ -3069,7 +3134,13 @@ def _identify_wallet_game(entry_id, wallet_key):
     Try to link a custom wallet entry to its real ESPN game - see
     identify_wallet_entry_game(). A no-op redirect if the entry is
     already linked (to a pick or a game) or doesn't exist; otherwise
-    saves whatever fields were confidently resolved.
+    saves whatever fields were confidently resolved. A newly-linked
+    entry with no wr_confidence of its own yet defaults to
+    WR_IMPACT_FLOOR - "no stated conviction" rather than a guess - which
+    is enough on its own to start getting the same live CLV/weather/form/
+    injury/etc. treatment as a pick (see wr_confidence_effective; those
+    hard-fact modifiers apply at every base score, floor included), and
+    is immediately frozen as this entry's wr_confidence_initial.
     """
     wallet = WALLETS[wallet_key]
     data, token = store.load_for_update()
@@ -3080,6 +3151,9 @@ def _identify_wallet_game(entry_id, wallet_key):
     found = identify_wallet_entry_game(entry)
     if found:
         entry.update(found)
+        if entry.get("wr_confidence") is None:
+            entry["wr_confidence"] = float(WR_IMPACT_FLOOR)
+        _freeze_wallet_entry_wr_confidence_initial(entry, data)
         store.save(data, token, message=f"Identify game for {wallet['label']} entry #{entry_id}: {entry['matchup']}")
     return redirect(url_for(wallet["view_endpoint"]))
 
@@ -3106,9 +3180,13 @@ def _api_update_wallet_entry(entry_id, wallet_key):
     editable here for a custom entry - see identify_wallet_entry_game for
     how these usually get set instead of by hand) - sync_wallet_entries()
     grades a custom entry directly off these fields since there's no pick
-    behind it to grade for it. If the entry is already settled, changing
-    odds/stake recomputes profit_loss against that same stored result
-    immediately.
+    behind it to grade for it. wr_confidence is likewise custom-only (a
+    linked entry's WR read is the pick's own, frozen at bet time as
+    wr_confidence_at_bet); the first time it's set, wr_confidence_initial
+    freezes to match, same as create_pick() does for a pick (see
+    _freeze_wallet_entry_wr_confidence_initial). If the entry is already
+    settled, changing odds/stake recomputes profit_loss against that same
+    stored result immediately.
     """
     wallet = WALLETS[wallet_key]
     editable = {
@@ -3123,6 +3201,7 @@ def _api_update_wallet_entry(entry_id, wallet_key):
         "bet_side",
         "home_team",
         "away_team",
+        "wr_confidence",
     }
     body = request.get_json(silent=True) or {}
     updates = {k: v for k, v in body.items() if k in editable}
@@ -3134,9 +3213,9 @@ def _api_update_wallet_entry(entry_id, wallet_key):
     if entry is None:
         return jsonify({"error": f"no {wallet['label']} entry #{entry_id}"}), 404
 
-    game_link_fields = {"espn_event_id", "bet_type", "bet_side", "home_team", "away_team"}
+    game_link_fields = {"espn_event_id", "bet_type", "bet_side", "home_team", "away_team", "wr_confidence"}
     if (updates.keys() & game_link_fields) and entry.get("pick_id") is not None:
-        return jsonify({"error": "game linkage is derived automatically for bets linked to a dashboard pick"}), 400
+        return jsonify({"error": "game linkage and WR Confidence are derived automatically for bets linked to a dashboard pick"}), 400
 
     if "result" in updates:
         if entry.get("pick_id") is not None:
@@ -3184,6 +3263,19 @@ def _api_update_wallet_entry(entry_id, wallet_key):
         if key in updates:
             value = updates[key]
             entry[key] = str(value).strip() or None if value else None
+    if "wr_confidence" in updates:
+        value = updates["wr_confidence"]
+        if value in (None, ""):
+            entry["wr_confidence"] = None
+        else:
+            try:
+                value = float(value)
+            except (TypeError, ValueError):
+                return jsonify({"error": "wr_confidence must be a number"}), 400
+            if not (0 <= value <= 100):
+                return jsonify({"error": "wr_confidence must be between 0 and 100"}), 400
+            entry["wr_confidence"] = value
+    _freeze_wallet_entry_wr_confidence_initial(entry, data)
     entry["profit_loss"] = (
         profit_for_result(entry["stake"], entry["odds"], entry["result"]) if entry["result"] != "pending" else 0.0
     )
