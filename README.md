@@ -200,10 +200,17 @@ Units follow the report's own convention: **$100 staked = 1 unit.**
 
 Two scheduled Claude runs evaluate a full slate and log their own picks
 automatically — Tuesday 8pm ET for Wednesday's Champions League games,
-Friday 7pm ET for the weekend's Premier League games. The full process
-(data gathered, markets evaluated, the 60%-confidence threshold, how
-picks get assigned to the five categories, and how the report gets
-submitted) is in
+Friday 7pm ET for the weekend's Premier League games. Each side of each
+market goes through a five-check pipeline: an independent "fair number"
+blended with the market (weighted by how much of the season has been
+played), the resulting edge computed as a real number, a hard threshold
+requiring both ≥60% confidence *and* ≥3 percentage points of edge, a
+sourced/dated context check, and a final live-price check right before
+submitting. The confidence number it submits is `wr_confidence` — the
+same War Room Confidence Score field every other source's picks use, so
+it's adjusted live afterward by CLV, form, injuries, and the rest just
+like any other pick, not a separate bot-only score. The full process is
+in
 [`docs/prediction_bot_playbook.md`](docs/prediction_bot_playbook.md).
 The bot writes through the same JSON API a human could script against:
 

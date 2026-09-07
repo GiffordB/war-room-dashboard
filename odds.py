@@ -244,13 +244,17 @@ def game_odds(league, event_id):
 
 def final_score(league, event_id):
     """
-    {'completed': bool, 'state': 'pre'|'in'|'post', 'home_score': int,
-    'away_score': int} for one event, or None if the game/event can't be
-    found at all. `completed` is False for a game that's scheduled or in
-    progress - callers grading a pick off this should only do so once
-    it's True. `state` lets a caller show a *live* preview (score so far,
-    winning/losing right now) for a game that's 'in' progress without
-    treating that partial score as a final grade.
+    {'completed': bool, 'state': 'pre'|'in'|'post', 'home_score': int|None,
+    'away_score': int|None} for one event, or None if the game/event
+    can't be found at all. `completed` is False for a game that's
+    scheduled or in progress - callers grading a pick off this should
+    only do so once it's True. `state` lets a caller show a *live*
+    preview (score so far, winning/losing right now) for a game that's
+    'in' progress without treating that partial score as a final grade -
+    and lets a caller distinguish 'pre' (not started - no score exists
+    yet, so home_score/away_score are None) from a lookup failure, which
+    matters for anything that needs to know a game hasn't kicked off yet
+    (e.g. capture_pregame_lines() in app.py), not just its final result.
     """
     cfg = LEAGUE_CONFIG.get(league)
     if not cfg or not event_id:
@@ -267,11 +271,12 @@ def final_score(league, event_id):
         competitors = comp["competitors"]
         home = next(c for c in competitors if c["homeAway"] == "home")
         away = next(c for c in competitors if c["homeAway"] == "away")
+        home_score, away_score = home.get("score"), away.get("score")
         return {
             "completed": bool(status_type["completed"]),
             "state": status_type.get("state", "pre"),
-            "home_score": int(home["score"]),
-            "away_score": int(away["score"]),
+            "home_score": int(home_score) if home_score is not None else None,
+            "away_score": int(away_score) if away_score is not None else None,
         }
     except (KeyError, StopIteration, IndexError, TypeError, ValueError):
         return None
