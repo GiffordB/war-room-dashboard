@@ -866,7 +866,72 @@
       "bet_side": "away",
       "bet_line": -2.5,
       "wr_confidence": 50.0,
-      "wr_confidence_initial": 50.0
+      "wr_confidence_initial": 50.0,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "SMU -3",
+        "home_spread": 3.0,
+        "home_spread_odds": -120.0,
+        "away_spread_odds": 100.0,
+        "total": 54.5,
+        "over_odds": -112.0,
+        "under_odds": -108.0,
+        "home_moneyline": 124,
+        "away_moneyline": -148,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-09-07T22:39:30",
+      "pregame_weather": {
+        "city": "Tallahassee",
+        "temp_c": 31.3,
+        "precip_probability_pct": 8,
+        "precip_mm": 0.0,
+        "wind_kmh": 14.8,
+        "cloud_cover_pct": 96,
+        "forecast_hour": "2026-09-07T23:00"
+      },
+      "pregame_home_form": {
+        "played": 1,
+        "wins": 1,
+        "win_pct": 100.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": null,
+      "pregame_home_injuries": 0,
+      "pregame_away_injuries": 0,
+      "pregame_home_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 0,
+          "gf": 34,
+          "ga": 17
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 0,
+          "gf": 0,
+          "ga": 0
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 0,
+          "d": 0,
+          "l": 0,
+          "gf": 0,
+          "ga": 0
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 0,
+          "gf": 0,
+          "ga": 0
+        }
+      },
+      "pregame_intel_captured_at": "2026-09-07T22:39:30"
     }
   ],
   "next_jesse_wallet_id": 1,
