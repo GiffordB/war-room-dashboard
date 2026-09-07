@@ -1,6 +1,6 @@
 {
   "next_report_id": 16,
-  "next_pick_id": 54,
+  "next_pick_id": 55,
   "reports": [
     {
       "source": "ChatGPT",
@@ -862,6 +862,31 @@
       "created_at": "2026-09-07T23:53:18",
       "id": 53,
       "wr_confidence_initial": 58.723076923076924
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 15,
+      "category": "best_bet",
+      "matchup": "Arsenal @ Napoli",
+      "selection": "Arsenal to Win",
+      "odds": -130,
+      "stake": 100.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "Napoli missing both starting center-backs - Alessandro Buongiorno (meniscus surgery) and Luca Marianucci (high-grade MCL) - plus Scott McTominay (out for weeks after heart surgery).\nNapoli under new manager Allegri (replacing Conte, who built last season's title-winning defense) and off a poor start: 1W-2L in Serie A, conceding as many as they've scored.\nArsenal enter in the form of their life domestically - a perfect 3-0-0 EPL start - and even their own defensive doubts (Saliba still out, Timber/Mosquera questionable) don't offset Napoli's compounding issues.",
+      "wr_confidence": 58.0,
+      "war_room_line": "Arsenal 58% / Draw 22% / Napoli 20% (blended)",
+      "edge": "Napoli's price implies Arsenal ~53.5%; blended estimate ~58% -> +4pp edge",
+      "price_discipline": "-130 or better: $100\n-145 to -131: $50\n-146 or worse: pass",
+      "espn_event_id": "401915423",
+      "bet_type": "match_result",
+      "bet_side": "away",
+      "bet_line": null,
+      "home_team": "Napoli",
+      "away_team": "Arsenal",
+      "created_at": "2026-09-07T23:53:31",
+      "id": 54,
+      "wr_confidence_initial": 57.753846153846155
     }
   ],
   "next_wallet_id": 13,
