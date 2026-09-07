@@ -74,7 +74,7 @@
               <tr>
                 <td>
                   {% if p.get('wr_confidence_effective') is not none %}
-                    <span class="badge-wr-confidence" title="{{ p.wr_confidence_breakdown }}">{{ wr_confidence_label(p.wr_confidence_effective) | upper }} · {{ p.wr_confidence_effective | round | int }}%</span>
+                    <span class="badge-wr-confidence" title="{{ p.wr_confidence_breakdown }}">{{ wr_confidence_label(p.wr_confidence_effective) | upper }} · {{ wr_confidence_badge_text(p.wr_confidence_effective, p.get('wr_confidence_initial')) }}</span>
                   {% else %}<span class="muted">—</span>{% endif %}
                   {% set move = line_move(p) %}
                   {% if move is not none %}

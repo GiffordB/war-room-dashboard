@@ -268,6 +268,22 @@ def wr_confidence_label(score):
     return "Thin"
 
 
+def wr_confidence_badge_text(live, initial=None):
+    """
+    Compact badge text for a WR Confidence Score: just the live number
+    ("74%"), or "68→74%" when the pick's frozen wr_confidence_initial
+    (the score at submission - see create_pick) has since drifted from
+    the live wr_confidence_effective by a full point or more, so a
+    viewer can see at a glance whether the War Room's read on this pick
+    has moved since it went out.
+    """
+    if live is None:
+        return None
+    if initial is None or round(initial) == round(live):
+        return f"{live:.0f}%"
+    return f"{initial:.0f}→{live:.0f}%"
+
+
 app.jinja_env.globals.update(
     categories=CATEGORIES,
     category_order=CATEGORY_ORDER,
@@ -286,6 +302,7 @@ app.jinja_env.globals.update(
     lock_confidence=LOCK_CONFIDENCE,
     consensus_min_wr_confidence=CONSENSUS_MIN_WR_CONFIDENCE,
     wr_confidence_label=wr_confidence_label,
+    wr_confidence_badge_text=wr_confidence_badge_text,
     unit_size=UNIT_SIZE,
 )
 
@@ -1135,6 +1152,7 @@ def confidence_locks(data, league=None):
                 "selection": p["selection"],
                 "odds": p["odds"],
                 "wr_confidence": score,
+                "wr_confidence_initial": p.get("wr_confidence_initial"),
                 "wr_confidence_breakdown": p.get("wr_confidence_breakdown"),
             }
         )
@@ -1409,7 +1427,11 @@ def annotate_wr_confidence(data):
         source = r["source"] if r else None
         score, breakdown = wr_confidence_effective(p, source, track_record, agreement_map)
         p["wr_confidence_effective"] = score
-        p["wr_confidence_breakdown"] = wr_confidence_breakdown_text(source, breakdown)
+        text = wr_confidence_breakdown_text(source, breakdown)
+        initial = p.get("wr_confidence_initial")
+        if score is not None and initial is not None and round(initial) != round(score):
+            text = f"Locked in at {initial:.0f}% on submission, now {score:.0f}% live — {text}"
+        p["wr_confidence_breakdown"] = text
     return data
 
 
@@ -1872,6 +1894,15 @@ def create_pick(report_id, fields):
     everything on the card), not a formula; more structured inputs will
     fold into it later. For EPL/UCL it's the same number the prediction
     model itself reports - one score per pick, not two.
+
+    `wr_confidence_initial` is a one-time snapshot of
+    wr_confidence_effective() taken right here, at submission, then
+    frozen forever - never touched again by anything, including a later
+    PATCH to `wr_confidence` itself (same treatment as the wallet's
+    wr_confidence_at_bet). wr_confidence_effective keeps recomputing
+    live on every page load as track record, agreement, and pregame
+    intel accumulate; wr_confidence_initial is what the War Room actually
+    said the day the pick went out, so the two can be shown side by side.
     """
     if fields.get("category") not in CATEGORIES:
         raise ValueError(f"category must be one of {CATEGORY_ORDER}")
@@ -1911,6 +1942,12 @@ def create_pick(report_id, fields):
         new_pick["id"] = data["next_pick_id"]
         data["next_pick_id"] += 1
         data["picks"].append(new_pick)
+        r = next((rep for rep in data["reports"] if rep["id"] == report_id), None)
+        source = r["source"] if r else None
+        track_record = source_track_record(data)
+        agreement_map = pick_agreement_map(data)
+        initial_score, _ = wr_confidence_effective(new_pick, source, track_record, agreement_map)
+        new_pick["wr_confidence_initial"] = initial_score
         return new_pick["id"]
 
     return store.mutate(_mutate, message=f"Add pick: {new_pick['matchup']} -- {new_pick['selection']}")
