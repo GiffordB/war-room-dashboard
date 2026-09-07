@@ -690,7 +690,7 @@
       "id": 37
     }
   ],
-  "next_wallet_id": 12,
+  "next_wallet_id": 13,
   "wallet_entries": [
     {
       "pick_id": 12,
@@ -830,6 +830,23 @@
       "wr_confidence_at_bet": 74.0,
       "created_at": "2026-09-05T18:45:48",
       "id": 11
+    },
+    {
+      "pick_id": null,
+      "report_id": null,
+      "source": "None",
+      "league": "CFB",
+      "category": "custom",
+      "matchup": "SMU @ FSU",
+      "selection": "SMU -2.5",
+      "odds": 115,
+      "stake": 50.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": null,
+      "wr_confidence_at_bet": null,
+      "created_at": "2026-09-07T19:18:48",
+      "id": 12
     }
   ],
   "next_jesse_wallet_id": 1,
