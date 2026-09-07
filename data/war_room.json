@@ -1,5 +1,5 @@
 {
-  "next_report_id": 14,
+  "next_report_id": 15,
   "next_pick_id": 43,
   "reports": [
     {
@@ -72,6 +72,18 @@
       "lsu_review_notes": "",
       "created_at": "2026-09-07T22:17:31",
       "id": 10
+    },
+    {
+      "source": "Grok - GB",
+      "league": "UCL",
+      "report_date": "2026-09-08",
+      "week_number": 1,
+      "week_label": "The Midweek Sheet \u00b7 MD1",
+      "philosophy": "Independent number. Price over picks. Pass without regret. Four sides above 50% priced like a normal -130 is the cash sleeve; Inter at +410 at the Bernab\u00e9u is the one number too long to leave alone.",
+      "blind_spot_notes": "Five-question framework: Peabody (fair line, independent Poisson with Dixon-Coles correction, blended with a de-vigged ESPN line, model weight n/(n+10) capped at 0.5), Walters (+2% net vs fair or pass, quarter-Kelly on a 100u bank), Spanky (who moved the line first; rec-only moves get faded), Voulgaris (behavioral/style read the rating misses), Captain Jack (a specific book and price, not a team name). Eighteen MD1 openers scored across the whole slate; only 5 clear the card -- four favorites priced like a normal -130 (the cash sleeve) plus Inter at +410 as the one number too long to pass on.",
+      "lsu_review_notes": "",
+      "created_at": "2026-09-07T22:55:06",
+      "id": 14
     }
   ],
   "picks": [
