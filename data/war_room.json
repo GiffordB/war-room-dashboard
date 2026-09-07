@@ -1,6 +1,6 @@
 {
   "next_report_id": 16,
-  "next_pick_id": 56,
+  "next_pick_id": 57,
   "reports": [
     {
       "source": "ChatGPT",
@@ -912,6 +912,31 @@
       "created_at": "2026-09-07T23:53:37",
       "id": 55,
       "wr_confidence_initial": 44.0
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 15,
+      "category": "best_bet",
+      "matchup": "Aston Villa @ Club Brugge",
+      "selection": "Club Brugge +0.5 (Draw or Win)",
+      "odds": -195,
+      "stake": 50.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "Aston Villa are 17th in the EPL with 1 point from 3 games - among the worst form of any team in this matchday, in either competition.\nVilla are missing four first-team pieces: Amadou Onana (ACL, long-term), Johan Manzambi (knee), Brian Madjo (ankle) and Leon Goretzka (knee, out till October).\nClub Brugge sit 3rd in the Belgian Pro League, 4W-1L in their last 5, and are missing only one player (Ordonez).\nPrice is short at -195, so sizing stays modest here even though the number clears both bars - see price discipline.",
+      "wr_confidence": 64.0,
+      "war_room_line": "Brugge 44% / Draw 25% / Villa 31% (blended) -> Brugge draw-or-win ~64%",
+      "edge": "Villa's price implies Brugge draw-or-win ~61%; blended ~64% -> +3pp edge",
+      "price_discipline": "-195 or better: $50\n-210 to -196: $25\n-211 or worse: pass",
+      "espn_event_id": "401915426",
+      "bet_type": "spread",
+      "bet_side": "home",
+      "bet_line": 0.5,
+      "home_team": "Club Brugge",
+      "away_team": "Aston Villa",
+      "created_at": "2026-09-07T23:53:43",
+      "id": 56,
+      "wr_confidence_initial": 63.56923076923077
     }
   ],
   "next_wallet_id": 13,
