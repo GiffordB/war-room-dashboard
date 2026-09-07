@@ -176,9 +176,15 @@ def wr_impact_scale(base):
     return min((base - WR_IMPACT_FLOOR) / (100 - WR_IMPACT_FLOOR), 1.0)
 
 
-WR_RECORD_MIN_SETTLED = 8  # below this many decided picks, a source's win% is too small a sample to trust
 WR_RECORD_SCALE = 0.4  # points of adjustment per percentage-point of win% above/below 50
 WR_RECORD_CAP = 10  # max swing from track record alone, either direction
+
+# A source's settled-pick count is a sample size, not a switch - rather
+# than snapping from "no track record adjustment at all" to "full
+# strength" at some fixed count, the adjustment ramps in smoothly as
+# settled/(settled + K), asymptoting toward full strength as the sample
+# grows. At K=6, 8 settled picks carry a weight of ~0.57; 20 carry ~0.77.
+WR_RECORD_SAMPLE_K = 6
 
 WR_AGREEMENT_BONUS = 6  # per other source on the same side of the same game/market
 WR_AGREEMENT_CAP = 12
@@ -213,6 +219,14 @@ PREGAME_ODDS_RECAPTURE_MINUTES = 15
 
 WR_CLV_SCALE = 2  # WR points per point of closing-line value (see line_move())
 WR_CLV_CAP = 10
+
+# Football spreads only: a line move that actually crosses one of these
+# key numbers is worth more than the same number of points moved
+# elsewhere on the number line, since so many games land on exactly
+# these margins - the empirical distribution runs roughly 14.7% of
+# games decided by exactly 3, 8.7% by exactly 7, and nothing else close.
+# A same-size move that doesn't cross either is weighted at 1x (below).
+WR_CLV_KEY_NUMBER_WEIGHTS = {3: 2.0, 7: 1.5}
 
 # "Bad weather for scoring" = at least one of these crossed, checked
 # against the venue's forecast at kickoff (see odds.match_weather()).
@@ -599,6 +613,31 @@ def capture_pregame_lines(data):
     return captured
 
 
+def _spread_side_values(pick):
+    """
+    (bet_line, closing_line) for a spread pick, both re-expressed in
+    "points added to the backed side's margin" terms (see grade_pick) -
+    home_spread is from the home team's perspective, so an away-side
+    bet's number runs the opposite direction from the raw snapshot.
+    Either element is None if there's nothing to compare (no snapshot
+    captured yet, or no bet_line on the pick).
+    """
+    snapshot = pick.get("pregame_odds")
+    if not snapshot or pick.get("bet_line") is None:
+        return None, None
+    current = snapshot.get("home_spread")
+    if current is None:
+        return pick["bet_line"], None
+    current_for_side = current if pick.get("bet_side") == "home" else -current
+    return pick["bet_line"], current_for_side
+
+
+def _crosses_key_number(a, b, key):
+    """True if the closed number line between a and b passes through +key or -key (either sign, since a favorite's and an underdog's lines cross the same real-world margin from opposite directions)."""
+    lo, hi = (a, b) if a <= b else (b, a)
+    return (lo < key <= hi) or (lo < -key <= hi)
+
+
 def line_move(pick):
     """
     Closing-line value (CLV) for this pick: how much better or worse
@@ -620,16 +659,9 @@ def line_move(pick):
 
     bet_type, side = pick.get("bet_type"), pick.get("bet_side")
     if bet_type == "spread":
-        current = snapshot.get("home_spread")
-        if current is None:
+        _, current_for_side = _spread_side_values(pick)
+        if current_for_side is None:
             return None
-        # home_spread is from the home team's perspective; an away-side
-        # bet's line runs the opposite direction from the home number.
-        # Both bet_line and current_for_side are "points added to this
-        # side's margin" (see grade_pick) - the bigger that number, the
-        # easier the cover, so a smaller closing number than what was bet
-        # means the bet got the easier (better) side of the move.
-        current_for_side = current if side == "home" else -current
         return pick["bet_line"] - current_for_side
 
     if bet_type == "total":
@@ -1196,11 +1228,23 @@ def pick_agreement_map(data):
 
 
 def _clv_modifier(pick):
-    """WR nudge from line_move() - a market that's moved is a fact, not a vibe, so this isn't scaled by wr_impact_scale()."""
+    """
+    WR nudge from line_move() - a market that's moved is a fact, not a
+    vibe, so this isn't scaled by wr_impact_scale(). For a spread pick,
+    a move that crosses a key number (see WR_CLV_KEY_NUMBER_WEIGHTS)
+    counts for more than the same move elsewhere on the number line.
+    """
     move = line_move(pick)
     if move is None:
         return 0.0, None
-    return _clamp(move * WR_CLV_SCALE, -WR_CLV_CAP, WR_CLV_CAP), move
+    weight = 1.0
+    if pick.get("bet_type") == "spread":
+        bet_for_side, current_for_side = _spread_side_values(pick)
+        if current_for_side is not None:
+            crossed = [w for key, w in WR_CLV_KEY_NUMBER_WEIGHTS.items() if _crosses_key_number(bet_for_side, current_for_side, key)]
+            if crossed:
+                weight = max(crossed)
+    return _clamp(move * WR_CLV_SCALE * weight, -WR_CLV_CAP, WR_CLV_CAP), move
 
 
 def _weather_modifier(pick):
@@ -1319,8 +1363,10 @@ def wr_confidence_effective(pick, source, track_record, agreement_map):
 
     record = (track_record or {}).get(source) or {}
     record_mod = 0.0
-    if record.get("settled", 0) >= WR_RECORD_MIN_SETTLED and record.get("win_pct") is not None:
-        record_mod = _clamp((record["win_pct"] - 50.0) * WR_RECORD_SCALE, -WR_RECORD_CAP, WR_RECORD_CAP) * impact
+    record_settled = record.get("settled", 0)
+    record_sample_weight = record_settled / (record_settled + WR_RECORD_SAMPLE_K) if record_settled else 0.0
+    if record_settled and record.get("win_pct") is not None:
+        record_mod = _clamp((record["win_pct"] - 50.0) * WR_RECORD_SCALE, -WR_RECORD_CAP, WR_RECORD_CAP) * impact * record_sample_weight
 
     agreeing, opposing = [], []
     key = (pick.get("espn_event_id"), pick.get("bet_type"))
@@ -1362,6 +1408,7 @@ def wr_confidence_effective(pick, source, track_record, agreement_map):
         "impact_scale": impact,
         "record_mod": record_mod,
         "record_win_pct": record.get("win_pct"),
+        "record_settled": record_settled,
         "agree_mod": agree_mod,
         "agreeing_sources": agreeing,
         "conflict_mod": conflict_mod,
@@ -1391,7 +1438,9 @@ def wr_confidence_breakdown_text(source, breakdown):
         parts.append(f"no track record/agreement adjustment (at or below {WR_IMPACT_FLOOR})")
     else:
         if breakdown["record_mod"]:
-            parts.append(f"{source} track record ({breakdown['record_win_pct']:.0f}% win rate) {breakdown['record_mod']:+.0f}")
+            parts.append(
+                f"{source} track record ({breakdown['record_win_pct']:.0f}% over {breakdown['record_settled']} settled) {breakdown['record_mod']:+.0f}"
+            )
         if breakdown["agree_mod"]:
             parts.append(f"agrees with {', '.join(breakdown['agreeing_sources'])} {breakdown['agree_mod']:+.0f}")
         if breakdown["conflict_mod"]:
