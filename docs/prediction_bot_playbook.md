@@ -74,41 +74,89 @@ rather than picking one silently.
 
 ## 3. Evaluate every market on every remaining game
 
-For each game, form an independent view on each market that has a
-posted line:
+Confidence and edge are two different claims, tracked as two separate
+fields on a pick — treat them that way, not as one vague sense of "I
+like this." Work through every game in this order; a side that fails
+the first three checks is a pass, full stop, regardless of how the last
+two would have gone:
 
-- **Match result** (`match_result`): home / draw / away.
-- **Total goals** (`total`): over / under, at the posted number.
-- **Spread / handicap** (`spread`): the posted home-team line, either
-  side.
+1. **The fair number — your own, before you react to the market.** For
+   a spread/total, your own line estimate with a range (e.g. "Man City
+   -2, range -1.5 to -3"); for a 3-way `match_result`, your own
+   probability split (e.g. "City 70% / Draw 18% / Coventry 12%"). This
+   becomes `war_room_line`. Ground it in what you gathered in step 2 —
+   form, table position, home/away trend, head-to-head, squad news,
+   weather, manager, motivation/context.
 
-For each side of each market, assign a **confidence** — your own
-calibrated estimate (0-100) that this specific side, at this specific
-line, is correct, grounded in what you gathered in step 2 (form, table
-position, home/away trend, head-to-head, squad news, injuries, weather,
-manager, motivation/context). Not a vibe — if asked "why 63 and not 58,"
-you should have an answer.
+   **Weight your own number against the market, not instead of it —
+   especially early in a season.** The posted line already prices in
+   information you don't have (public money, sharper models, insider
+   line moves). How much to trust your own number over the market
+   should scale with how much data you actually have: use
+   `games_played / (games_played + 6)` (the standings' `played` field,
+   capped at 0.5) as your own number's weight, and blend it with the
+   market's own implied number at that weight. Two games into a season
+   that's a weight around 0.25 — your blended number should sit closer
+   to the market's than to your raw read. By mid-season (~18+ games) it
+   approaches the 0.5 cap — an even blend, never fully overriding the
+   market on this app's own data alone.
 
-Also work out your own **independent number** for the market before you
-look at whether it clears the bar — don't just react to the posted line.
-For a spread/total, that's your own line estimate with a range (e.g.
-"Man City -2 (range -1.5 to -3)"); for a 3-way match_result, it's your
-own probability split (e.g. "City 70% / Draw 18% / Coventry 12%"). This
-becomes `war_room_line` on the pick, and the gap between it and the
-posted number becomes `edge` (e.g. "City +1.5" if you think they're a
-bigger favorite than the market does). If your number and the market's
-are basically the same, that's a real finding too — say so in `edge`
-("no edge, pricing looks fair") rather than inventing daylight that
-isn't there.
+2. **The edge — as a number, not a feeling.** Convert the posted
+   American odds to an implied probability (`100/(odds+100)` for a dog,
+   `-odds/(-odds+100)` for a favorite), and compare it to your blended
+   probability from step 1. The gap is your edge — this becomes `edge`
+   (e.g. "City's price implies ~62%; blended estimate ~68% → +6pp
+   edge"). If they're basically the same, say so plainly ("no edge,
+   pricing looks fair") rather than inventing daylight that isn't
+   there — and that side is done here, no matter how confident you are
+   that the team itself is good.
+
+3. **A hard threshold, checked before anything else matters.** A side
+   needs BOTH of these to survive to step 4 — neither alone is enough:
+   - **Confidence ≥ 60%** — your calibrated probability (0-100) that
+     this side is correct. This is the number you'll submit as the
+     pick's `wr_confidence` — the app's one War Room Confidence Score,
+     the same field every other source's picks carry (see step 5). Not
+     a vibe — if asked "why 63 and not 58," you should have an answer.
+   - **Edge ≥ 3 percentage points** — from step 2, after the
+     market/model blend.
+   A 90%-confidence pick priced accordingly (say, -900) usually has no
+   edge and is a pass here even though it'll usually win — being sure a
+   team is good is not the same claim as being sure this specific price
+   is worth taking. Fail either check and the side is a pass; don't
+   round a 58% up, and don't talk yourself into a 2pp edge being "close
+   enough."
+
+4. **A context check — is there a structural reason the numbers are
+   wrong for this specific matchup?** A new manager's tactical shift, a
+   fixture pile-up, a squad story, a team that's been unlucky (or
+   lucky) relative to its underlying performance. If you invoke this to
+   override what steps 1–3 said, say exactly what the adjustment is and
+   why in the pick's notes, with a source and how recent it is (a knock
+   reported an hour ago from the official club site outweighs a stat
+   from August) — an overlay must be explainable and dated, not just
+   asserted. Skip this step when nothing structural applies; most games
+   don't need it.
+
+5. **The execution check — what you're actually about to submit.**
+   Re-pull the odds one more time (section 2, step 1) immediately
+   before you submit, in case the number moved while you were
+   researching. Submit against the live number, not the one you started
+   analyzing with.
+
+A few markets have effectively lumpy outcomes rather than a smooth
+curve of probabilities — a 1-0 or 2-1 scoreline is far more common than
+the spacing between scorelines suggests, so a spread/handicap pick that
+wins by exactly the margin it needed (rather than comfortably) is a
+normal, expected outcome, not a fluke to second-guess. Don't let a
+narrow previous result talk you into being more conservative than your
+actual numbers support on the next pick.
 
 ## 4. Decide what to recommend
 
-**Only a side with confidence ≥ 60% is eligible to become a pick.**
-Anything under that line gets left alone — do not round up, do not force
-a pick into a thin slate just to fill a category. A report with two
-picks (or zero) is a correct outcome if that's all the slate supports.
-
-Sort every eligible (≥60%) side across the whole slate by confidence,
+Every side that passed all of step 3's checks is eligible — nothing
+that failed any of the first three checks gets a second look here, no
+matter how good the story is. Sort the eligible sides by confidence,
 then assign to the five categories using the same guidance the rest of
 this app already uses for CFB/NFL — same rules, same stake conventions:
 
@@ -166,9 +214,11 @@ Content-Type: application/json
   "selection": "Manchester City to Win",
   "odds": -135,                        // the American price you pulled in step 2
   "stake": 100,
-  "confidence": 68,                    // your 0-100 estimate from step 3
-  "war_room_line": "City 70% / Draw 18% / Spurs 12%",  // your own independent number - see step 3
-  "edge": "City +5pts vs. market-implied ~65%",         // the gap between your number and the posted line
+  "wr_confidence": 68,                 // your 0-100 estimate from step 3.3 - the app's one confidence
+                                        // score, same field every other source's picks use; the app
+                                        // layers CLV/track-record/agreement on top of this automatically
+  "war_room_line": "City 70% / Draw 18% / Spurs 12% (blended)",  // your own number - step 3.1
+  "edge": "City's price implies ~62%; blended estimate 70% -> +8pp edge",  // step 3.2
   "notes": "Man City unbeaten in 9 at home.\nSpurs missing both starting CBs per official injury news.\nSpurs also winless and scoreless through 2 games.",
   "price_discipline": "-135 or better: $100\n-150 to -136: $50\n-155 or worse: pass",
   "bet_type": "match_result",          // "match_result" | "total" | "spread"
@@ -200,7 +250,7 @@ deleting and resubmitting:
 - `PATCH /api/reports/<report_id>` for the report's own `week_number`,
   `week_label`, `philosophy`, `blind_spot_notes`, or `lsu_review_notes`.
 - `PATCH /api/reports/<report_id>/picks/<pick_id>` for a pick's `notes`,
-  `confidence`, `war_room_line`, `edge`, or `price_discipline`.
+  `wr_confidence`, `war_room_line`, `edge`, or `price_discipline`.
 
 Both take a JSON body of just the field(s) to change and leave
 everything else untouched. Neither can touch identity/grading fields
@@ -210,8 +260,21 @@ needs a delete + resubmit instead.
 
 ## 6. Done
 
-Nothing else to do — grading happens on its own via the hourly
-`auto_grade_all` GitHub Action. If the slate had nothing clearing 60%
+Nothing else to submit — grading happens on its own via the hourly
+`auto_grade_all` GitHub Action, and so does everything downstream of a
+pick's `wr_confidence`: the same hourly pass snapshots pregame lines for
+closing-line value, and that CLV feeds into the pick's *live* War Room
+Confidence Score (`wr_confidence_effective`) alongside weather, recent
+form, injuries, home/away splits, quality of wins, cross-source
+agreement, and each source's own track record. What you submit as
+`wr_confidence` is the one-time, frozen starting number (what the
+research actually said the day the pick went out); the dashboard shows
+that live-adjusted number everywhere afterward, and it's what
+`confidence_locks()` and the Lock tier are judged against — not a
+separate bot-only confidence system.
+
+If the slate had nothing clearing both of step 3.3's thresholds
 anywhere, it's still worth posting the report (zero picks) so the run is
 visible in the Reports list, with a one-line note in `blind_spot_notes`
-saying why (e.g. "Lines mostly chalk this week, nothing cleared 60%").
+saying why (e.g. "Lines mostly chalk this week, nothing cleared both
+confidence and edge").
