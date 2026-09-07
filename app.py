@@ -85,7 +85,7 @@ CATEGORY_ORDER = list(CATEGORIES.keys())
 
 # The three AI sources being compared. Order here controls display order
 # everywhere (cards, chart legends, table columns).
-SOURCES = ["Claude", "Claude - GB", "Grok", "ChatGPT"]
+SOURCES = ["Claude", "Claude - GB", "Grok", "Grok - GB", "ChatGPT"]
 SOURCE_STYLE = {
     "Claude": {"color": "#cc785c"},
     # A genuinely different system from the CFB/NFL "Claude" above - the
@@ -95,6 +95,11 @@ SOURCE_STYLE = {
     # "Claude"'s own record.
     "Claude - GB": {"color": "#a78bfa"},
     "Grok": {"color": "#38bdf8"},
+    # Same split as "Claude - GB" above, for the same reason: Grok's
+    # EPL/UCL picks come from a separate soccer-specific brain trust
+    # (Snyps), not the football side's model, so it's tracked as its own
+    # competitor.
+    "Grok - GB": {"color": "#fbbf24"},
     "ChatGPT": {"color": "#10a37f"},
 }
 
