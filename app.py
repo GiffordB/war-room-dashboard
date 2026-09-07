@@ -1834,6 +1834,7 @@ def reports_list():
         report_stats[r["id"]] = s
 
     auto_gradable = sum(1 for p in data["picks"] if p["result"] == "pending" and p.get("espn_event_id"))
+    auto_gradable += _auto_gradable_standalone_wallet_entries(data)
 
     return render_template(
         "reports_list.html",
@@ -2536,6 +2537,28 @@ def create_wallet_entry(fields, wallet):
     return store.mutate(
         _mutate,
         message=f"Log {wallet['label']} bet: {new_entry['matchup']} -- {new_entry['selection']} (${stake:.0f})",
+    )
+
+
+def _auto_gradable_standalone_wallet_entries(data):
+    """
+    How many custom (no pick_id) wallet entries are pending with a
+    resolved espn_event_id/bet_type - i.e. how many sync_wallet_entries()
+    could settle right now, whether or not their game has actually gone
+    final yet. Folded into the Reports page's "Auto-Grade Finished Games"
+    count (see reports_list()) so linking a custom bet's game (see
+    identify_wallet_entry_game) actually makes that button reflect there
+    being new work to do, the same as a picks-only reading would miss.
+    """
+    return sum(
+        1
+        for wallet in WALLETS.values()
+        for entry in data[wallet["entries_key"]]
+        if entry["result"] == "pending"
+        and entry.get("pick_id") is None
+        and entry.get("espn_event_id")
+        and entry.get("bet_type")
+        and resolve_league(entry.get("league"))
     )
 
 
