@@ -88,18 +88,36 @@ two would have gone:
    form, table position, home/away trend, head-to-head, squad news,
    weather, manager, motivation/context.
 
-   **Weight your own number against the market, not instead of it —
+      **Weight your own number against the market, not instead of it —
    especially early in a season.** The posted line already prices in
    information you don't have (public money, sharper models, insider
    line moves). How much to trust your own number over the market
    should scale with how much data you actually have: use
-   `games_played / (games_played + 6)` (the standings' `played` field,
-   capped at 0.5) as your own number's weight, and blend it with the
-   market's own implied number at that weight. Two games into a season
-   that's a weight around 0.25 — your blended number should sit closer
-   to the market's than to your raw read. By mid-season (~18+ games) it
-   approaches the 0.5 cap — an even blend, never fully overriding the
-   market on this app's own data alone.
+   `games_played / (games_played + 6)` (capped at 0.5) as your own
+   number's weight, and blend it with the market's own implied number
+   at that weight. Two games into a season that's a weight around
+   0.25 — your blended number should sit closer to the market's than
+   to your raw read. By mid-season (~18+ games) it approaches the 0.5
+   cap — an even blend, never fully overriding the market on this
+   app's own data alone.
+
+   **For UCL specifically, `games_played` means each team's current
+   domestic-league games played this season — not the UCL standings'
+   own `played` field.** The UCL league-phase table resets to 0 at
+   the start of every season regardless of how far into their
+   domestic campaigns the teams actually are, so reading it literally
+   zeroes out your own-number weight for every side on Matchday 1 (and
+   keeps it artificially low for the rest of the early league phase)
+   even though the teams have real, current-season form to draw on.
+   Pull each team's domestic `played` count instead — from
+   `/api/standings?league=EPL` for EPL sides, and via web research
+   (official league site or a quick search of the current table) for
+   every other domestic league, since this app only tracks EPL/UCL
+   standings natively. A team with a long-running non-European-calendar
+   season (e.g. Norway's Eliteserien, which runs March–December) will
+   already have far more domestic games played than a team in a
+   fresh European autumn-start league — use the real count either way,
+   it's still capped at 0.5.
 
 2. **The edge — as a number, not a feeling.** Convert the posted
    American odds to an implied probability (`100/(odds+100)` for a dog,
