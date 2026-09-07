@@ -846,7 +846,13 @@
       "notes": null,
       "wr_confidence_at_bet": null,
       "created_at": "2026-09-07T19:18:48",
-      "id": 12
+      "id": 12,
+      "espn_event_id": "401858212",
+      "home_team": "Florida State Seminoles",
+      "away_team": "SMU Mustangs",
+      "bet_type": "spread",
+      "bet_side": "away",
+      "bet_line": -2.5
     }
   ],
   "next_jesse_wallet_id": 1,
