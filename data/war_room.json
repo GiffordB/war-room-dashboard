@@ -1,6 +1,6 @@
 {
   "next_report_id": 14,
-  "next_pick_id": 40,
+  "next_pick_id": 41,
   "reports": [
     {
       "source": "ChatGPT",
@@ -761,6 +761,31 @@
       "away_team": null,
       "created_at": "2026-09-07T22:49:31",
       "id": 39,
+      "wr_confidence_initial": 57.0
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 13,
+      "category": "best_bet",
+      "matchup": "Villarreal @ Borussia Dortmund",
+      "selection": "Borussia Dortmund to Win",
+      "odds": -125,
+      "stake": 100.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 57.0,
+      "war_room_line": "Fair 1X2 -115/+343/+320 (Dortmund/Draw/Villarreal), \u03bb 1.77-1.14, model wt 38%",
+      "edge": "-3.5% vs fair at ESPN -125 -- card price, not a Walters-cleared edge",
+      "price_discipline": "1.00u ($100) at -125",
+      "espn_event_id": "401915449",
+      "bet_type": "match_result",
+      "bet_side": "home",
+      "bet_line": null,
+      "home_team": null,
+      "away_team": null,
+      "created_at": "2026-09-07T22:49:34",
+      "id": 40,
       "wr_confidence_initial": 57.0
     }
   ],
