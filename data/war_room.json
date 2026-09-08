@@ -806,8 +806,8 @@
       "selection": "AEK Athens to Win",
       "odds": -125,
       "stake": 100.0,
-      "result": "pending",
-      "profit_loss": 0.0,
+      "result": "win",
+      "profit_loss": 80.0,
       "notes": "",
       "wr_confidence": 55.0,
       "war_room_line": "Fair 1X2 -116/+324/+341 (AEK/Draw/LASK), lambda 1.49-1.04, model wt 14%",
@@ -999,20 +999,20 @@
         "home_spread_odds": -135.0,
         "away_spread_odds": -105.0,
         "total": 2.5,
-        "over_odds": -160.0,
-        "under_odds": 130.0,
+        "over_odds": -165.0,
+        "under_odds": 135.0,
         "home_moneyline": -120,
         "away_moneyline": 310,
         "draw_moneyline": 290.0
       },
-      "pregame_odds_captured_at": "2026-09-08T17:09:34",
+      "pregame_odds_captured_at": "2026-09-08T20:55:48",
       "pregame_weather": {
         "city": "Lisbon",
-        "temp_c": 19.8,
+        "temp_c": 19.9,
         "precip_probability_pct": 0,
         "precip_mm": 0.0,
-        "wind_kmh": 17.8,
-        "cloud_cover_pct": 39,
+        "wind_kmh": 16.7,
+        "cloud_cover_pct": 20,
         "forecast_hour": "2026-09-09T19:00"
       },
       "pregame_home_form": null,
@@ -1051,7 +1051,7 @@
           "ga": 0
         }
       },
-      "pregame_intel_captured_at": "2026-09-08T17:09:34"
+      "pregame_intel_captured_at": "2026-09-08T20:55:48"
     },
     {
       "parlay_leg_pick_ids": null,
@@ -1164,24 +1164,24 @@
       "wr_confidence_initial": 58.723076923076924,
       "pregame_odds": {
         "provider": "DraftKings",
-        "spread_details": "BAR -1100",
+        "spread_details": "BAR -1200",
         "home_spread": -2.5,
         "home_spread_odds": -160.0,
         "away_spread_odds": 115.0,
         "total": 4.5,
-        "over_odds": 100.0,
+        "over_odds": -105.0,
         "under_odds": -120.0,
-        "home_moneyline": -1100,
-        "away_moneyline": 1900,
+        "home_moneyline": -1200,
+        "away_moneyline": 2000,
         "draw_moneyline": 1200.0
       },
-      "pregame_odds_captured_at": "2026-09-08T17:09:34",
+      "pregame_odds_captured_at": "2026-09-08T20:55:48",
       "pregame_weather": {
         "city": "Barcelona",
-        "temp_c": 20.9,
+        "temp_c": 20.6,
         "precip_probability_pct": 85,
-        "precip_mm": 0.4,
-        "wind_kmh": 10.5,
+        "precip_mm": 1.5,
+        "wind_kmh": 10.7,
         "cloud_cover_pct": 100,
         "forecast_hour": "2026-09-09T16:00"
       },
@@ -1221,7 +1221,7 @@
           "ga": 0
         }
       },
-      "pregame_intel_captured_at": "2026-09-08T17:09:34"
+      "pregame_intel_captured_at": "2026-09-08T20:55:48"
     },
     {
       "parlay_leg_pick_ids": null,
@@ -1249,25 +1249,25 @@
       "wr_confidence_initial": 57.753846153846155,
       "pregame_odds": {
         "provider": "DraftKings",
-        "spread_details": "ARS -135",
+        "spread_details": "ARS -145",
         "home_spread": 0.5,
-        "home_spread_odds": 105.0,
-        "away_spread_odds": -150.0,
+        "home_spread_odds": 115.0,
+        "away_spread_odds": -155.0,
         "total": 2.5,
-        "over_odds": -105.0,
-        "under_odds": -115.0,
-        "home_moneyline": 380,
-        "away_moneyline": -135,
-        "draw_moneyline": 275.0
+        "over_odds": -110.0,
+        "under_odds": -110.0,
+        "home_moneyline": 400,
+        "away_moneyline": -145,
+        "draw_moneyline": 285.0
       },
-      "pregame_odds_captured_at": "2026-09-08T17:09:34",
+      "pregame_odds_captured_at": "2026-09-08T20:55:48",
       "pregame_weather": {
         "city": "Napoli",
-        "temp_c": 25.6,
+        "temp_c": 24.8,
         "precip_probability_pct": 92,
-        "precip_mm": 0.3,
-        "wind_kmh": 1.7,
-        "cloud_cover_pct": 98,
+        "precip_mm": 2.2,
+        "wind_kmh": 4.8,
+        "cloud_cover_pct": 85,
         "forecast_hour": "2026-09-09T19:00"
       },
       "pregame_home_form": null,
@@ -1306,7 +1306,7 @@
           "ga": 0
         }
       },
-      "pregame_intel_captured_at": "2026-09-08T17:09:34"
+      "pregame_intel_captured_at": "2026-09-08T20:55:48"
     },
     {
       "parlay_leg_pick_ids": null,
@@ -1401,8 +1401,8 @@
       "selection": "Club Brugge +0.5 (Draw or Win)",
       "odds": -195,
       "stake": 50.0,
-      "result": "pending",
-      "profit_loss": 0.0,
+      "result": "loss",
+      "profit_loss": -50.0,
       "notes": "Aston Villa are 17th in the EPL with 1 point from 3 games - among the worst form of any team in this matchday, in either competition.\nVilla are missing four first-team pieces: Amadou Onana (ACL, long-term), Johan Manzambi (knee), Brian Madjo (ankle) and Leon Goretzka (knee, out till October).\nClub Brugge sit 3rd in the Belgian Pro League, 4W-1L in their last 5, and are missing only one player (Ordonez).\nPrice is short at -195, so sizing stays modest here even though the number clears both bars - see price discipline.",
       "wr_confidence": 64.0,
       "war_room_line": "Brugge 44% / Draw 25% / Villa 31% (blended) -> Brugge draw-or-win ~64%",
