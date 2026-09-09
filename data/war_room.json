@@ -1564,7 +1564,7 @@
       "pregame_intel_captured_at": "2026-09-08T17:09:34"
     }
   ],
-  "next_wallet_id": 14,
+  "next_wallet_id": 15,
   "wallet_entries": [
     {
       "pick_id": 12,
@@ -1812,6 +1812,24 @@
       "wr_confidence_at_bet": 63.723076923076924,
       "created_at": "2026-09-08T17:09:05",
       "id": 13
+    },
+    {
+      "pick_id": 51,
+      "report_id": 14,
+      "source": "Grok - GB",
+      "league": "UCL",
+      "category": "best_bet",
+      "matchup": "Galatasaray @ Sporting CP",
+      "selection": "Sporting CP to Win",
+      "odds": -120,
+      "stake": 25.0,
+      "bet_line": null,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": null,
+      "wr_confidence_at_bet": 54.32,
+      "created_at": "2026-09-09T00:16:34",
+      "id": 14
     }
   ],
   "next_jesse_wallet_id": 1,
