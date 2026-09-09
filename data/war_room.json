@@ -1006,25 +1006,25 @@
       "wr_confidence_initial": 54.0,
       "pregame_odds": {
         "provider": "DraftKings",
-        "spread_details": "SCP -140",
+        "spread_details": "SCP -150",
         "home_spread": -0.5,
-        "home_spread_odds": -160.0,
-        "away_spread_odds": 115.0,
+        "home_spread_odds": -165.0,
+        "away_spread_odds": 120.0,
         "total": 3.5,
-        "over_odds": 130.0,
-        "under_odds": -160.0,
-        "home_moneyline": -140,
-        "away_moneyline": 360,
-        "draw_moneyline": 310.0
+        "over_odds": 125.0,
+        "under_odds": -155.0,
+        "home_moneyline": -150,
+        "away_moneyline": 390,
+        "draw_moneyline": 320.0
       },
-      "pregame_odds_captured_at": "2026-09-09T13:36:00",
+      "pregame_odds_captured_at": "2026-09-09T17:43:03",
       "pregame_weather": {
         "city": "Lisbon",
-        "temp_c": 20.2,
+        "temp_c": 19.9,
         "precip_probability_pct": 0,
         "precip_mm": 0.0,
-        "wind_kmh": 18.5,
-        "cloud_cover_pct": 48,
+        "wind_kmh": 18.6,
+        "cloud_cover_pct": 92,
         "forecast_hour": "2026-09-09T19:00"
       },
       "pregame_home_form": null,
@@ -1063,7 +1063,7 @@
           "ga": 0
         }
       },
-      "pregame_intel_captured_at": "2026-09-09T13:36:00"
+      "pregame_intel_captured_at": "2026-09-09T17:43:03"
     },
     {
       "parlay_leg_pick_ids": null,
@@ -1261,22 +1261,22 @@
       "wr_confidence_initial": 57.753846153846155,
       "pregame_odds": {
         "provider": "DraftKings",
-        "spread_details": "ARS -170",
+        "spread_details": "ARS -165",
         "home_spread": 0.5,
-        "home_spread_odds": 130.0,
-        "away_spread_odds": -185.0,
+        "home_spread_odds": 125.0,
+        "away_spread_odds": -175.0,
         "total": 2.5,
         "over_odds": -105.0,
-        "under_odds": -120.0,
-        "home_moneyline": 500,
-        "away_moneyline": -170,
-        "draw_moneyline": 300.0
+        "under_odds": -115.0,
+        "home_moneyline": 475,
+        "away_moneyline": -165,
+        "draw_moneyline": 290.0
       },
-      "pregame_odds_captured_at": "2026-09-09T13:36:00",
+      "pregame_odds_captured_at": "2026-09-09T17:43:03",
       "pregame_weather": {
         "city": "Napoli",
         "temp_c": 25.1,
-        "precip_probability_pct": 81,
+        "precip_probability_pct": 82,
         "precip_mm": 1.7,
         "wind_kmh": 3.6,
         "cloud_cover_pct": 100,
@@ -1318,7 +1318,7 @@
           "ga": 0
         }
       },
-      "pregame_intel_captured_at": "2026-09-09T13:36:00"
+      "pregame_intel_captured_at": "2026-09-09T17:43:03"
     },
     {
       "parlay_leg_pick_ids": null,
