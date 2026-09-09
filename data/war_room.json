@@ -1,5 +1,5 @@
 {
-  "next_report_id": 16,
+  "next_report_id": 17,
   "next_pick_id": 58,
   "reports": [
     {
@@ -84,6 +84,18 @@
       "lsu_review_notes": "",
       "created_at": "2026-09-07T23:03:40",
       "id": 15
+    },
+    {
+      "source": "Claude",
+      "league": "UCL",
+      "report_date": "2026-09-08",
+      "week_number": 1,
+      "week_label": "",
+      "philosophy": "Efficient markets on MD1 - no forced action when the price already knows the story.",
+      "blind_spot_notes": "Full 6-game UCL Matchday 1 slate researched (odds, match_intel, uefa.com previews, domestic tables/injury news via premierleague.com-equivalent official sites) - nothing cleared both the 60% confidence and +3pp edge bars. Barcelona ML (-1200), PSG ML (-2500) and Stuttgart ML (-425) all graded 75-89% confidence, but each price already exceeds the blended model number by 6-8pp - short favorites with no edge, not a live bet even at high confidence. Arsenal @ Napoli was the closest thing to a real number both ways (Saliba out for Arsenal vs McTominay/Buongiorno out for a new-Allegri-era Napoli team that is 1W-2L domestically): blended ~60-62% on Arsenal ML/-0.5 spread but edge came in near 0pp against an already-efficient price. Slovan Bratislava +3.5 at PSG (PSG toothless domestically at 0W-2D-1L despite fielding a full-strength CL XI) graded ~59.8% confidence with a +2.3pp edge - genuine lean, but short of both bars. Same story on Slovan/PSG Under 4.5 (~58.5% conf, +1.1pp edge). Sporting CP -0.5 vs Galatasaray graded out to ~57-59% depending on how the remainder is split between draw/away - Osimhen (half of Galatasaray's league goals) ruled out days before kickoff plus Galatasaray's 1-from-15 European road record and 0-5 skid vs Portuguese sides make this the most interesting context play on the slate, but it doesn't honestly clear 60 without rounding up, which the process rules out. No picks submitted this week.",
+      "lsu_review_notes": "",
+      "created_at": "2026-09-09T00:19:41",
+      "id": 16
     }
   ],
   "picks": [
