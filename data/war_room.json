@@ -1,6 +1,6 @@
 {
   "next_report_id": 19,
-  "next_pick_id": 61,
+  "next_pick_id": 62,
   "reports": [
     {
       "source": "ChatGPT",
@@ -1673,6 +1673,31 @@
       "created_at": "2026-09-10T20:41:57",
       "id": 60,
       "wr_confidence_initial": 60.30769230769231
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 18,
+      "category": "best_bet",
+      "matchup": "Miami Dolphins @ Las Vegas Raiders",
+      "selection": "Miami +3.5",
+      "odds": -117,
+      "stake": 150.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 76.0,
+      "war_room_line": "Pinnacle LV -3 (+100); Model B MIA -0.4, agrees Miami is the better team on 2025 tape. Sharp move toward Miami (opened LV 3.5, now 3); Bally Bet and BetRivers have not followed",
+      "edge": "+5.3% vs Pinnacle no-vig with key-number shift (Bally Bet or BetRivers -117)",
+      "price_discipline": "1.5% of bankroll (150 dollars per 10k), quarter-Kelly; void if line is +3 or price worse than -120",
+      "espn_event_id": "401872928",
+      "bet_type": "spread",
+      "bet_side": "away",
+      "bet_line": 3.5,
+      "home_team": null,
+      "away_team": null,
+      "created_at": "2026-09-10T20:43:07",
+      "id": 61,
+      "wr_confidence_initial": 76.8
     }
   ],
   "next_wallet_id": 15,
