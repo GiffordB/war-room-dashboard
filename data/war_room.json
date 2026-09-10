@@ -1,6 +1,6 @@
 {
   "next_report_id": 18,
-  "next_pick_id": 58,
+  "next_pick_id": 59,
   "reports": [
     {
       "source": "ChatGPT",
@@ -1586,6 +1586,31 @@
         }
       },
       "pregame_intel_captured_at": "2026-09-08T17:09:34"
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 17,
+      "category": "best_bet",
+      "matchup": "North Dakota State Bison @ Air Force Falcons",
+      "selection": "North Dakota State -1.5",
+      "odds": -110,
+      "stake": 60.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 61.0,
+      "war_room_line": "Pinnacle NDSU -2.5; held two days, largest reversal on the board (NDSU opened 6.5, moved to 2.5)",
+      "edge": "+2.1% vs Pinnacle no-vig with key-number shift (Everygame/ESPN Bet alt)",
+      "price_discipline": "0.6% of bankroll (60 dollars per 10k), quarter-Kelly; void if line is -2 or -2.5",
+      "espn_event_id": "401864502",
+      "bet_type": "spread",
+      "bet_side": "away",
+      "bet_line": -1.5,
+      "home_team": null,
+      "away_team": null,
+      "created_at": "2026-09-10T20:41:51",
+      "id": 58,
+      "wr_confidence_initial": 61.33846153846154
     }
   ],
   "next_wallet_id": 15,
