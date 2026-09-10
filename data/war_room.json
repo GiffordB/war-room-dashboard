@@ -1,6 +1,6 @@
 {
   "next_report_id": 18,
-  "next_pick_id": 60,
+  "next_pick_id": 61,
   "reports": [
     {
       "source": "ChatGPT",
@@ -1635,6 +1635,31 @@
       "away_team": null,
       "created_at": "2026-09-10T20:41:54",
       "id": 59,
+      "wr_confidence_initial": 60.30769230769231
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 17,
+      "category": "best_bet",
+      "matchup": "Rutgers Scarlet Knights @ Boston College Eagles",
+      "selection": "Boston College -3",
+      "odds": -110,
+      "stake": 50.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 60.0,
+      "war_room_line": "Pinnacle BC -3.5; number reappeared at BetAnySports after disappearing Wednesday -- a book that flips daily is not one to trust",
+      "edge": "+2.2% vs Pinnacle no-vig with key-number shift (BetAnySports only)",
+      "price_discipline": "0.5% of bankroll (50 dollars per 10k), half-size lean; verify at placement, void if line is -3.5",
+      "espn_event_id": "401858214",
+      "bet_type": "spread",
+      "bet_side": "home",
+      "bet_line": -3.0,
+      "home_team": null,
+      "away_team": null,
+      "created_at": "2026-09-10T20:41:57",
+      "id": 60,
       "wr_confidence_initial": 60.30769230769231
     }
   ],
