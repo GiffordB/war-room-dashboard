@@ -1,5 +1,5 @@
 {
-  "next_report_id": 17,
+  "next_report_id": 18,
   "next_pick_id": 58,
   "reports": [
     {
@@ -96,6 +96,18 @@
       "lsu_review_notes": "",
       "created_at": "2026-09-09T00:19:41",
       "id": 16
+    },
+    {
+      "source": "Claude",
+      "league": "CFB",
+      "report_date": "2026-09-12",
+      "week_number": 1,
+      "week_label": "Week 3 -- Weekend Top 15 (Maven Quant, Model A)",
+      "philosophy": "Every game on the live board ranked by Bet Quality Score, priced offer by offer against Pinnacle no-vig with the empirical key-number tables. Model A was rebuilt on Week 1 plays only with a degraded preseason prior (no returning-production or talent inputs) and fits Pinnacle at R-squared 0.35 with a 13-point residual, against 0.81 correlation and 9 points in the prior full build. A model in that state carries no fundamental weight, so this card is a price board: rec book has not followed Pinnacle, on the right side of a key number.",
+      "blind_spot_notes": "Walters standard applied: two positions plus one lean-adjacent all told, 1.6% of bankroll at risk, NO BET on the other 48 priced games and 34 unpriced ones. Void since Wednesday: Jacksonville State +3 (BetUS moved to -120, eating the edge) -- not logged as a pick. Information moves logged but not bet (chasing a move already made is negative CLV by construction): Oklahoma 2.5->5.5 at Michigan, Oregon 19.5->22.5, Tennessee 8.5->12.5, Virginia Tech 14->19.5, West Virginia 34.5->39.5, Georgia 35.5->40.5, Miami 49.5->55.5, North Dakota State 6.5->2.5 at Air Force (largest reversal), Clemson 26.5->20.5, Marshall 17.5->13.5, UNLV 6.5->3.5, Illinois 8.5->5.5. Restoring the full Model A build (returning production + talent inputs) is the priority before Week 4.",
+      "lsu_review_notes": "",
+      "created_at": "2026-09-10T20:41:35",
+      "id": 17
     }
   ],
   "picks": [
