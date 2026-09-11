@@ -1,6 +1,6 @@
 {
   "next_report_id": 20,
-  "next_pick_id": 66,
+  "next_pick_id": 67,
   "reports": [
     {
       "source": "ChatGPT",
@@ -2200,6 +2200,31 @@
       "created_at": "2026-09-11T17:03:56",
       "id": 65,
       "wr_confidence_initial": 55.45454545454545
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 19,
+      "category": "best_bet",
+      "matchup": "Manchester City @ Manchester United",
+      "selection": "Manchester City to Win",
+      "odds": 115,
+      "stake": 100.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 53.0,
+      "war_room_line": "Fair: United 32 / draw 17 / City 51. City 3-0-0, +5 goal difference; OReilly available, Doku not ready",
+      "edge": "+9.7% vs fair at DraftKings +115 -- highest EV on the sleeve, but the lowest win probability of the three cash sides",
+      "price_discipline": "1.00u (100 dollars) at +115",
+      "espn_event_id": "401879278",
+      "bet_type": "match_result",
+      "bet_side": "away",
+      "bet_line": null,
+      "home_team": null,
+      "away_team": null,
+      "created_at": "2026-09-11T17:03:59",
+      "id": 66,
+      "wr_confidence_initial": 53.27272727272727
     }
   ],
   "next_wallet_id": 15,
