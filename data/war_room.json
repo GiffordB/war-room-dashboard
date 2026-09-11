@@ -1,5 +1,5 @@
 {
-  "next_report_id": 19,
+  "next_report_id": 20,
   "next_pick_id": 64,
   "reports": [
     {
@@ -120,6 +120,18 @@
       "lsu_review_notes": "",
       "created_at": "2026-09-10T20:42:28",
       "id": 18
+    },
+    {
+      "source": "Grok - GB",
+      "league": "EPL",
+      "report_date": "2026-09-12",
+      "week_number": 1,
+      "week_label": "Snyps PL Desk -- Week Card 12-14 Sep",
+      "philosophy": "Match results only (1X2), public number ESPN, slip DraftKings. The cash sleeve is three sides that clear Win % >= 50, decimal 1.50-2.30, and EV no worse than -5, plus one priced longshot that clears +2% EV in the 1.80-6.00 band. One club once. Totals stay off the card entirely. Three cash sides cleared the band; the fourth seat is left empty rather than filled with a dog.",
+      "blind_spot_notes": "Off the card despite being able to win: Chelsea -425 (1.24) and Liverpool -220 (1.45) both sit under the 1.50 cash floor; Arsenal -205 (1.49) at Sunderland is a penny under the same floor and gets the same treatment -- a side that can win and still not pay the cash band. No card at all: Bournemouth v Brentford (coin-flip, neither side reaches 50 Win %), Tottenham v Everton (Spurs model 46, under the cash cut; Everton EV does not clear), Leeds v Newcastle (Leeds misses the decimal cap, Newcastle misses both the Win % and price cuts). Weather: rain and a south-westerly at Anfield and Villa Park Saturday, London warmer and dry, Sunday improves -- used only as color, not a market mover this week.",
+      "lsu_review_notes": "",
+      "created_at": "2026-09-11T17:03:34",
+      "id": 19
     }
   ],
   "picks": [
