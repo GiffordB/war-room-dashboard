@@ -1,6 +1,6 @@
 {
   "next_report_id": 21,
-  "next_pick_id": 68,
+  "next_pick_id": 69,
   "reports": [
     {
       "source": "ChatGPT",
@@ -2542,6 +2542,31 @@
         }
       },
       "pregame_intel_captured_at": "2026-09-11T23:06:00"
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 20,
+      "category": "best_bet",
+      "matchup": "Everton @ Tottenham Hotspur",
+      "selection": "Everton +0.5",
+      "odds": -130,
+      "stake": 100.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "Tottenham have not scored a single goal through their first 3 Premier League matches this season (GF 0, GD -5) -- an extreme outlier even accounting for schedule.\nNewly installed Spurs head coach Roberto De Zerbi has left Richarlison out of the matchday squad entirely amid the forward's contract dispute and reported desire to leave (per this week's press conference reporting).\nSpurs are also missing Kulusevski, Odobert and Simons (all knee, long-term) plus Mudryk (ankle, into Oct/Nov) -- effectively their top four creative/attacking options beyond Richarlison.\nEverton are unbeaten through 3 games (W1-D2-L0, GD +2) under David Moyes and have scored in every match so far this season.\nJames Garner is a fitness doubt for Everton (muscle) but that is a squad-depth concern, not close to the scale of Tottenham's attacking absentee list.",
+      "wr_confidence": 63.0,
+      "war_room_line": "Own estimate: Everton win 45% / Draw 30% / Spurs win 25% (Spurs draw-or-win-against implied ~75% for Everton cover). Blended toward market at ~0.33 weight (3 games played this season) with the raw implied ~56.5% for Everton +0.5 -> blended ~62.6%.",
+      "edge": "Everton +0.5 priced at -130 (~56.5% implied); blended estimate ~62.6% Everton draw-or-win probability -> about +6pp edge.",
+      "price_discipline": "-130 or better: $100\n-140 to -131: $50\n-145 or worse: pass",
+      "espn_event_id": "401879277",
+      "bet_type": "spread",
+      "bet_side": "away",
+      "bet_line": 0.5,
+      "home_team": "Tottenham Hotspur",
+      "away_team": "Everton",
+      "created_at": "2026-09-11T23:17:09",
+      "id": 68,
+      "wr_confidence_initial": 63.4
     }
   ],
   "next_wallet_id": 15,
