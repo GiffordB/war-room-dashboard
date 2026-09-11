@@ -140,7 +140,7 @@
       "week_number": 4,
       "week_label": "",
       "philosophy": "No forced action -- a real edge or a pass, especially three games into the season.",
-      "blind_spot_notes": "",
+      "blind_spot_notes": "Chalk week outside the Spurs spot. Arsenal @ Sunderland and Hull @ Chelsea: high confidence (~64-81%) but essentially zero edge -- market already prices the mismatch correctly, so both are passes. Brighton @ Coventry: Coventry have scored 0 goals in 3 games and are now missing their top striker (Wright, quad) -- a real lean toward Brighton, but the blended number (own 70% weighted at ~0.33 against a 53% market) lands at ~59%, just short of the 60% confidence bar -- passed rather than round it up. Man City @ Man Utd, Newcastle @ Leeds, Ipswich @ Crystal Palace, Nottingham Forest @ Aston Villa, Fulham @ Liverpool, Brentford @ Bournemouth: no side cleared both confidence and edge once blended against the market at this early-season weight (games_played=3 -> weight ~0.33 per side).",
       "lsu_review_notes": "",
       "created_at": "2026-09-11T23:16:55",
       "id": 20
