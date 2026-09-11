@@ -1,6 +1,6 @@
 {
   "next_report_id": 20,
-  "next_pick_id": 67,
+  "next_pick_id": 68,
   "reports": [
     {
       "source": "ChatGPT",
@@ -2225,6 +2225,31 @@
       "created_at": "2026-09-11T17:03:59",
       "id": 66,
       "wr_confidence_initial": 53.27272727272727
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 19,
+      "category": "sexy_moneyline",
+      "matchup": "Nottingham Forest @ Aston Villa",
+      "selection": "Nottingham Forest to Win",
+      "odds": 210,
+      "stake": 85.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 45.0,
+      "war_room_line": "Fair: Villa 42 / draw 23 / Forest 35. Villa have not scored in three league matches; Goretzka and Onana out, Cash a doubt",
+      "edge": "+8.5% vs fair at DraftKings +210 -- clears the price-sleeve floor, but still just a 35% win probability",
+      "price_discipline": "0.85u (85 dollars), quarter-Kelly capped at 2.50u",
+      "espn_event_id": "401879284",
+      "bet_type": "match_result",
+      "bet_side": "away",
+      "bet_line": null,
+      "home_team": null,
+      "away_team": null,
+      "created_at": "2026-09-11T17:04:09",
+      "id": 67,
+      "wr_confidence_initial": 45.0
     }
   ],
   "next_wallet_id": 15,
