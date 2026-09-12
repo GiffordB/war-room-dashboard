@@ -1,5 +1,5 @@
 {
-  "next_report_id": 21,
+  "next_report_id": 22,
   "next_pick_id": 71,
   "reports": [
     {
@@ -144,6 +144,18 @@
       "lsu_review_notes": "",
       "created_at": "2026-09-11T23:16:55",
       "id": 20
+    },
+    {
+      "source": "ChatGPT",
+      "league": "CFB",
+      "report_date": "2026-09-12",
+      "week_number": 1,
+      "week_label": "Saturday College Card",
+      "philosophy": "Competition card with normal stake discipline. Fair numbers are documented football judgments with reasonable ranges, not calibrated model outputs.",
+      "blind_spot_notes": "Sources: DraftKings Network Week 2 Best Bets (updated Sept 11), Purdue/Minnesota/UCLA athletics previews, NWS Twin Cities and Pasadena forecasts. Best game to watch: Ohio State at Texas. LSU: watch only vs Louisiana Tech. No Thor Hammer qualifier this week. Prices verified against the DK article as of Sept 11; verify in-app before entry.",
+      "lsu_review_notes": "",
+      "created_at": "2026-09-12T13:20:52",
+      "id": 21
     }
   ],
   "picks": [
