@@ -1672,7 +1672,7 @@
         "away_moneyline": -125,
         "draw_moneyline": null
       },
-      "pregame_odds_captured_at": "2026-09-12T19:04:50",
+      "pregame_odds_captured_at": "2026-09-12T22:04:06",
       "pregame_weather": null,
       "pregame_home_form": {
         "played": 1,
@@ -1720,7 +1720,7 @@
           "ga": 0
         }
       },
-      "pregame_intel_captured_at": "2026-09-12T19:04:50"
+      "pregame_intel_captured_at": "2026-09-12T22:04:06"
     },
     {
       "parlay_leg_pick_ids": null,
@@ -1941,7 +1941,7 @@
         "away_moneyline": 142,
         "draw_moneyline": null
       },
-      "pregame_odds_captured_at": "2026-09-12T19:04:50",
+      "pregame_odds_captured_at": "2026-09-12T22:04:06",
       "pregame_weather": null,
       "pregame_home_form": null,
       "pregame_away_form": null,
@@ -1979,7 +1979,7 @@
           "ga": 0
         }
       },
-      "pregame_intel_captured_at": "2026-09-12T19:04:50"
+      "pregame_intel_captured_at": "2026-09-12T22:04:06"
     },
     {
       "parlay_leg_pick_ids": null,
@@ -2018,7 +2018,7 @@
         "away_moneyline": -162,
         "draw_moneyline": null
       },
-      "pregame_odds_captured_at": "2026-09-12T19:04:50",
+      "pregame_odds_captured_at": "2026-09-12T22:04:06",
       "pregame_weather": null,
       "pregame_home_form": null,
       "pregame_away_form": null,
@@ -2056,7 +2056,7 @@
           "ga": 0
         }
       },
-      "pregame_intel_captured_at": "2026-09-12T19:04:50"
+      "pregame_intel_captured_at": "2026-09-12T22:04:06"
     },
     {
       "parlay_leg_pick_ids": null,
@@ -2095,11 +2095,11 @@
         "away_moneyline": 120,
         "draw_moneyline": null
       },
-      "pregame_odds_captured_at": "2026-09-12T19:04:50",
+      "pregame_odds_captured_at": "2026-09-12T22:04:06",
       "pregame_weather": null,
       "pregame_home_form": null,
       "pregame_away_form": null,
-      "pregame_home_injuries": 9,
+      "pregame_home_injuries": 8,
       "pregame_away_injuries": 7,
       "pregame_home_split": {
         "home": {
@@ -2133,7 +2133,7 @@
           "ga": 0
         }
       },
-      "pregame_intel_captured_at": "2026-09-12T19:04:50"
+      "pregame_intel_captured_at": "2026-09-12T22:04:06"
     },
     {
       "parlay_leg_pick_ids": null,
@@ -2256,18 +2256,18 @@
       "wr_confidence_initial": 55.45454545454545,
       "pregame_odds": {
         "provider": "DraftKings",
-        "spread_details": "BHA -115",
+        "spread_details": "BHA -110",
         "home_spread": 0.5,
         "home_spread_odds": -115.0,
-        "away_spread_odds": -125.0,
+        "away_spread_odds": -120.0,
         "total": 2.5,
         "over_odds": -130.0,
         "under_odds": 105.0,
-        "home_moneyline": 300,
-        "away_moneyline": -115,
-        "draw_moneyline": 275.0
+        "home_moneyline": 285,
+        "away_moneyline": -110,
+        "draw_moneyline": 270.0
       },
-      "pregame_odds_captured_at": "2026-09-12T19:04:50",
+      "pregame_odds_captured_at": "2026-09-12T22:04:06",
       "pregame_weather": null,
       "pregame_home_form": {
         "played": 3,
@@ -2315,7 +2315,7 @@
           "ga": 4
         }
       },
-      "pregame_intel_captured_at": "2026-09-12T19:04:50"
+      "pregame_intel_captured_at": "2026-09-12T22:04:06"
     },
     {
       "parlay_leg_pick_ids": null,
@@ -2349,12 +2349,12 @@
         "away_spread_odds": 105.0,
         "total": 3.5,
         "over_odds": 130.0,
-        "under_odds": -160.0,
+        "under_odds": -165.0,
         "home_moneyline": 215,
         "away_moneyline": 115,
         "draw_moneyline": 280.0
       },
-      "pregame_odds_captured_at": "2026-09-12T19:04:50",
+      "pregame_odds_captured_at": "2026-09-12T22:04:06",
       "pregame_weather": null,
       "pregame_home_form": {
         "played": 3,
@@ -2402,7 +2402,7 @@
           "ga": 1
         }
       },
-      "pregame_intel_captured_at": "2026-09-12T19:04:50"
+      "pregame_intel_captured_at": "2026-09-12T22:04:06"
     },
     {
       "parlay_leg_pick_ids": null,
@@ -2612,18 +2612,18 @@
       "wr_confidence_initial": 55.37777777777778,
       "pregame_odds": {
         "provider": "DraftKings",
-        "spread_details": "BHA -115",
+        "spread_details": "BHA -110",
         "home_spread": 0.5,
         "home_spread_odds": -115.0,
-        "away_spread_odds": -125.0,
+        "away_spread_odds": -120.0,
         "total": 2.5,
         "over_odds": -130.0,
         "under_odds": 105.0,
-        "home_moneyline": 300,
-        "away_moneyline": -115,
-        "draw_moneyline": 275.0
+        "home_moneyline": 285,
+        "away_moneyline": -110,
+        "draw_moneyline": 270.0
       },
-      "pregame_odds_captured_at": "2026-09-12T19:04:50",
+      "pregame_odds_captured_at": "2026-09-12T22:04:06",
       "pregame_weather": null,
       "pregame_home_form": {
         "played": 3,
@@ -2671,7 +2671,7 @@
           "ga": 4
         }
       },
-      "pregame_intel_captured_at": "2026-09-12T19:04:50"
+      "pregame_intel_captured_at": "2026-09-12T22:04:06"
     },
     {
       "parlay_leg_pick_ids": null,
@@ -2705,12 +2705,12 @@
         "away_spread_odds": 105.0,
         "total": 3.5,
         "over_odds": 130.0,
-        "under_odds": -160.0,
+        "under_odds": -165.0,
         "home_moneyline": 215,
         "away_moneyline": 115,
         "draw_moneyline": 280.0
       },
-      "pregame_odds_captured_at": "2026-09-12T19:04:50",
+      "pregame_odds_captured_at": "2026-09-12T22:04:06",
       "pregame_weather": null,
       "pregame_home_form": {
         "played": 3,
@@ -2758,7 +2758,7 @@
           "ga": 1
         }
       },
-      "pregame_intel_captured_at": "2026-09-12T19:04:50"
+      "pregame_intel_captured_at": "2026-09-12T22:04:06"
     },
     {
       "parlay_leg_pick_ids": null,
@@ -2768,8 +2768,8 @@
       "selection": "Purdue +3",
       "odds": -110,
       "stake": 50.0,
-      "result": "pending",
-      "profit_loss": 0.0,
+      "result": "win",
+      "profit_loss": 45.45454545454545,
       "notes": "",
       "wr_confidence": 76.0,
       "war_room_line": "War Room fair: Wake -1 (vs market Purdue +3) -- edge 2 pts",
@@ -2967,18 +2967,18 @@
       "id": 73,
       "pregame_odds": {
         "provider": "Draft Kings",
-        "spread_details": "UCLA -12.5",
-        "home_spread": -12.5,
-        "home_spread_odds": -110.0,
-        "away_spread_odds": -110.0,
-        "total": 54.5,
-        "over_odds": -108.0,
-        "under_odds": -112.0,
-        "home_moneyline": -500,
-        "away_moneyline": 380,
+        "spread_details": "UCLA -13.5",
+        "home_spread": -13.5,
+        "home_spread_odds": -108.0,
+        "away_spread_odds": -112.0,
+        "total": 53.5,
+        "over_odds": -115.0,
+        "under_odds": -105.0,
+        "home_moneyline": -535,
+        "away_moneyline": 400,
         "draw_moneyline": null
       },
-      "pregame_odds_captured_at": "2026-09-12T19:04:50",
+      "pregame_odds_captured_at": "2026-09-12T22:04:06",
       "pregame_weather": null,
       "pregame_home_form": {
         "played": 1,
@@ -3026,7 +3026,7 @@
           "ga": 0
         }
       },
-      "pregame_intel_captured_at": "2026-09-12T19:04:50",
+      "pregame_intel_captured_at": "2026-09-12T22:04:06",
       "wr_confidence_initial": 72.62857142857143
     },
     {
