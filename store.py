@@ -13,16 +13,46 @@ commit you can read in the repo's history.
 
 Locally (no GITHUB_PAT set), the same JSON shape is just read from and
 written to a file on disk instead - no token needed for local dev.
+
+load_data() (every read-only GET route) is served from a short in-memory
+cache rather than hitting the GitHub API on every single page view - see
+_CACHE_TTL_SECONDS below. A burst of writes (several picks logged back to
+back) was enough to trip GitHub's own rate limiting on this file and make
+every page load crawl for minutes; the cache means most page views in a
+normal browsing session never touch GitHub's API at all.
+load_for_update() (every route that might write) always bypasses the
+cache - a write has to see the true current content and sha, never a
+cached one, or a save() could silently clobber a change made since the
+cache was last filled. save() refreshes the cache immediately with
+whatever it just wrote, so a redirect right after a POST/PATCH/DELETE
+still shows the fresh state instead of waiting out the TTL.
 """
 
 import base64
 import json
 import os
+import time
 from pathlib import Path
 
 import requests
 
 _API_BASE = "https://api.github.com"
+
+# Kept short deliberately: long enough to absorb a burst of page views or
+# writes within the same few seconds, short enough that nobody looking at
+# two browser tabs a few seconds apart notices it's cached at all.
+_CACHE_TTL_SECONDS = 5
+_cache = {"text": None, "fetched_at": 0.0}
+
+
+def _cache_is_fresh():
+    return _cache["text"] is not None and (time.time() - _cache["fetched_at"]) < _CACHE_TTL_SECONDS
+
+
+def _remember(data):
+    """Refresh the cache with `data`, already-normalized, as of right now."""
+    _cache["text"] = json.dumps(data)
+    _cache["fetched_at"] = time.time()
 DATA_PATH_IN_REPO = "data/war_room.json"
 # Deliberately NOT data/war_room.json: that path is the tracked production
 # file the live app commits to via the GitHub API. A local dev run (no
@@ -73,7 +103,12 @@ def _contents_url():
 
 
 def _load_github():
-    """Returns (data, sha). sha is None if the file doesn't exist yet."""
+    """
+    Returns (data, sha), always freshly fetched from GitHub - sha is None
+    if the file doesn't exist yet. Used directly by load_for_update()
+    (a write can never trust a cached sha) and by _load_github_cached()
+    below (which is what load_data() actually calls).
+    """
     resp = requests.get(_contents_url(), headers=_headers(), timeout=10)
     if resp.status_code == 404:
         return dict(EMPTY_STATE), None
@@ -82,6 +117,20 @@ def _load_github():
     content = base64.b64decode(payload["content"]).decode("utf-8")
     data = json.loads(content) if content.strip() else dict(EMPTY_STATE)
     return _normalize(data), payload["sha"]
+
+
+def _load_github_cached():
+    """load_data()'s path: served from the in-memory cache when fresh (see
+    _CACHE_TTL_SECONDS), a real fetch otherwise. json.loads() on the cached
+    text hands back an independent dict tree every call, same as a fresh
+    fetch would, since callers throughout app.py mutate `data` in place
+    (annotate_wr_confidence and friends) and must never share that mutable
+    state across requests."""
+    if _cache_is_fresh():
+        return json.loads(_cache["text"])
+    data, _sha = _load_github()
+    _remember(data)
+    return data
 
 
 def _save_github(data, sha, message):
@@ -93,6 +142,7 @@ def _save_github(data, sha, message):
         body["sha"] = sha
     resp = requests.put(_contents_url(), headers=_headers(), json=body, timeout=10)
     resp.raise_for_status()
+    _remember(data)
 
 
 def _load_local():
@@ -110,10 +160,10 @@ def _save_local(data):
 
 def load_data():
     """Read-only fetch of the full data blob, for GET routes that render
-    a page and never write anything back."""
+    a page and never write anything back - served from the short-lived
+    in-memory cache when possible (see _load_github_cached)."""
     if _use_github():
-        data, _sha = _load_github()
-        return data
+        return _load_github_cached()
     return _load_local()
 
 
