@@ -1660,13 +1660,13 @@
         "away_moneyline": -125,
         "draw_moneyline": null
       },
-      "pregame_odds_captured_at": "2026-09-12T08:34:36",
+      "pregame_odds_captured_at": "2026-09-12T12:45:41",
       "pregame_weather": {
         "city": "USAF Academy Bullseye Auxiliary Airfield",
-        "temp_c": 20.7,
+        "temp_c": 21.5,
         "precip_probability_pct": 5,
         "precip_mm": 0.0,
-        "wind_kmh": 15.6,
+        "wind_kmh": 23.2,
         "cloud_cover_pct": 100,
         "forecast_hour": "2026-09-13T02:00"
       },
@@ -1716,7 +1716,7 @@
           "ga": 0
         }
       },
-      "pregame_intel_captured_at": "2026-09-12T08:34:36"
+      "pregame_intel_captured_at": "2026-09-12T12:45:41"
     },
     {
       "parlay_leg_pick_ids": null,
@@ -1755,14 +1755,14 @@
         "away_moneyline": -162,
         "draw_moneyline": null
       },
-      "pregame_odds_captured_at": "2026-09-12T08:34:36",
+      "pregame_odds_captured_at": "2026-09-12T12:45:41",
       "pregame_weather": {
         "city": "Denton",
-        "temp_c": 38.1,
+        "temp_c": 37.9,
         "precip_probability_pct": 0,
         "precip_mm": 0.0,
-        "wind_kmh": 11.4,
-        "cloud_cover_pct": 11,
+        "wind_kmh": 9.9,
+        "cloud_cover_pct": 0,
         "forecast_hour": "2026-09-12T19:00"
       },
       "pregame_home_form": {
@@ -1811,7 +1811,7 @@
           "ga": 6
         }
       },
-      "pregame_intel_captured_at": "2026-09-12T08:34:36"
+      "pregame_intel_captured_at": "2026-09-12T12:45:41"
     },
     {
       "parlay_leg_pick_ids": null,
@@ -1945,7 +1945,7 @@
         "away_moneyline": 142,
         "draw_moneyline": null
       },
-      "pregame_odds_captured_at": "2026-09-12T08:34:36",
+      "pregame_odds_captured_at": "2026-09-12T12:45:41",
       "pregame_weather": {
         "city": "Las Vegas",
         "temp_c": 38.2,
@@ -1991,7 +1991,7 @@
           "ga": 0
         }
       },
-      "pregame_intel_captured_at": "2026-09-12T08:34:36"
+      "pregame_intel_captured_at": "2026-09-12T12:45:41"
     },
     {
       "parlay_leg_pick_ids": null,
@@ -2030,7 +2030,7 @@
         "away_moneyline": -162,
         "draw_moneyline": null
       },
-      "pregame_odds_captured_at": "2026-09-12T08:34:36",
+      "pregame_odds_captured_at": "2026-09-12T12:45:41",
       "pregame_weather": {
         "city": "East Rutherford",
         "temp_c": 22.0,
@@ -2076,7 +2076,7 @@
           "ga": 0
         }
       },
-      "pregame_intel_captured_at": "2026-09-12T08:34:36"
+      "pregame_intel_captured_at": "2026-09-12T12:45:41"
     },
     {
       "parlay_leg_pick_ids": null,
@@ -2106,23 +2106,23 @@
         "provider": "Draft Kings",
         "spread_details": "KC -2.5",
         "home_spread": -2.5,
-        "home_spread_odds": -118.0,
-        "away_spread_odds": -102.0,
+        "home_spread_odds": -115.0,
+        "away_spread_odds": -105.0,
         "total": 43.5,
         "over_odds": -115.0,
         "under_odds": -105.0,
-        "home_moneyline": -148,
-        "away_moneyline": 124,
+        "home_moneyline": -142,
+        "away_moneyline": 120,
         "draw_moneyline": null
       },
-      "pregame_odds_captured_at": "2026-09-12T08:34:36",
+      "pregame_odds_captured_at": "2026-09-12T12:45:41",
       "pregame_weather": {
         "city": "Kansas City",
-        "temp_c": 31.4,
+        "temp_c": 30.6,
         "precip_probability_pct": 1,
         "precip_mm": 0.0,
-        "wind_kmh": 22.1,
-        "cloud_cover_pct": 0,
+        "wind_kmh": 22.7,
+        "cloud_cover_pct": 5,
         "forecast_hour": "2026-09-15T00:00"
       },
       "pregame_home_form": null,
@@ -2161,7 +2161,7 @@
           "ga": 0
         }
       },
-      "pregame_intel_captured_at": "2026-09-12T08:34:36"
+      "pregame_intel_captured_at": "2026-09-12T12:45:41"
     },
     {
       "parlay_leg_pick_ids": null,
@@ -2192,22 +2192,22 @@
         "spread_details": "CRY -110",
         "home_spread": -0.5,
         "home_spread_odds": -120.0,
-        "away_spread_odds": -115.0,
+        "away_spread_odds": -120.0,
         "total": 2.5,
-        "over_odds": -125.0,
-        "under_odds": 105.0,
+        "over_odds": -140.0,
+        "under_odds": 110.0,
         "home_moneyline": -110,
-        "away_moneyline": 300,
+        "away_moneyline": 285,
         "draw_moneyline": 270.0
       },
-      "pregame_odds_captured_at": "2026-09-12T08:34:36",
+      "pregame_odds_captured_at": "2026-09-12T12:45:41",
       "pregame_weather": {
         "city": "London",
-        "temp_c": 22.6,
+        "temp_c": 22.5,
         "precip_probability_pct": 0,
         "precip_mm": 0.0,
-        "wind_kmh": 17.6,
-        "cloud_cover_pct": 99,
+        "wind_kmh": 18.0,
+        "cloud_cover_pct": 98,
         "forecast_hour": "2026-09-12T14:00"
       },
       "pregame_home_form": {
@@ -2256,7 +2256,7 @@
           "ga": 5
         }
       },
-      "pregame_intel_captured_at": "2026-09-12T08:34:36"
+      "pregame_intel_captured_at": "2026-09-12T12:45:41"
     },
     {
       "parlay_leg_pick_ids": null,
@@ -2295,13 +2295,13 @@
         "away_moneyline": -115,
         "draw_moneyline": 275.0
       },
-      "pregame_odds_captured_at": "2026-09-12T08:34:36",
+      "pregame_odds_captured_at": "2026-09-12T12:45:41",
       "pregame_weather": {
         "city": "Coventry",
-        "temp_c": 18.8,
-        "precip_probability_pct": 26,
+        "temp_c": 18.9,
+        "precip_probability_pct": 28,
         "precip_mm": 0.0,
-        "wind_kmh": 0.7,
+        "wind_kmh": 2.2,
         "cloud_cover_pct": 97,
         "forecast_hour": "2026-09-13T13:00"
       },
@@ -2351,7 +2351,7 @@
           "ga": 4
         }
       },
-      "pregame_intel_captured_at": "2026-09-12T08:34:36"
+      "pregame_intel_captured_at": "2026-09-12T12:45:41"
     },
     {
       "parlay_leg_pick_ids": null,
@@ -2390,14 +2390,14 @@
         "away_moneyline": 115,
         "draw_moneyline": 280.0
       },
-      "pregame_odds_captured_at": "2026-09-12T08:34:36",
+      "pregame_odds_captured_at": "2026-09-12T12:45:41",
       "pregame_weather": {
         "city": "Manchester",
-        "temp_c": 21.2,
-        "precip_probability_pct": 10,
+        "temp_c": 21.4,
+        "precip_probability_pct": 22,
         "precip_mm": 0.0,
-        "wind_kmh": 7.6,
-        "cloud_cover_pct": 73,
+        "wind_kmh": 7.9,
+        "cloud_cover_pct": 74,
         "forecast_hour": "2026-09-13T15:00"
       },
       "pregame_home_form": {
@@ -2446,7 +2446,7 @@
           "ga": 1
         }
       },
-      "pregame_intel_captured_at": "2026-09-12T08:34:36"
+      "pregame_intel_captured_at": "2026-09-12T12:45:41"
     },
     {
       "parlay_leg_pick_ids": null,
@@ -2479,19 +2479,19 @@
         "home_spread_odds": 115.0,
         "away_spread_odds": -155.0,
         "total": 2.5,
-        "over_odds": -110.0,
+        "over_odds": -105.0,
         "under_odds": -115.0,
         "home_moneyline": 125,
         "away_moneyline": 225,
         "draw_moneyline": 240.0
       },
-      "pregame_odds_captured_at": "2026-09-12T08:34:36",
+      "pregame_odds_captured_at": "2026-09-12T12:45:41",
       "pregame_weather": {
         "city": "Birmingham",
-        "temp_c": 19.7,
-        "precip_probability_pct": 28,
+        "temp_c": 19.1,
+        "precip_probability_pct": 42,
         "precip_mm": 0.0,
-        "wind_kmh": 20.2,
+        "wind_kmh": 16.9,
         "cloud_cover_pct": 100,
         "forecast_hour": "2026-09-12T14:00"
       },
@@ -2541,7 +2541,7 @@
           "ga": 2
         }
       },
-      "pregame_intel_captured_at": "2026-09-12T08:34:36"
+      "pregame_intel_captured_at": "2026-09-12T12:45:41"
     },
     {
       "parlay_leg_pick_ids": null,
@@ -2577,17 +2577,17 @@
         "over_odds": -135.0,
         "under_odds": 110.0,
         "home_moneyline": 100,
-        "away_moneyline": 265,
+        "away_moneyline": 260,
         "draw_moneyline": 270.0
       },
-      "pregame_odds_captured_at": "2026-09-12T08:34:36",
+      "pregame_odds_captured_at": "2026-09-12T12:45:41",
       "pregame_weather": {
         "city": "London",
-        "temp_c": 21.6,
-        "precip_probability_pct": 2,
+        "temp_c": 21.9,
+        "precip_probability_pct": 0,
         "precip_mm": 0.0,
-        "wind_kmh": 19.1,
-        "cloud_cover_pct": 79,
+        "wind_kmh": 20.2,
+        "cloud_cover_pct": 58,
         "forecast_hour": "2026-09-12T16:00"
       },
       "pregame_home_form": {
@@ -2636,7 +2636,7 @@
           "ga": 1
         }
       },
-      "pregame_intel_captured_at": "2026-09-12T08:34:36"
+      "pregame_intel_captured_at": "2026-09-12T12:45:41"
     },
     {
       "parlay_leg_pick_ids": null,
@@ -2675,13 +2675,13 @@
         "away_moneyline": -115,
         "draw_moneyline": 275.0
       },
-      "pregame_odds_captured_at": "2026-09-12T08:34:36",
+      "pregame_odds_captured_at": "2026-09-12T12:45:41",
       "pregame_weather": {
         "city": "Coventry",
-        "temp_c": 18.8,
-        "precip_probability_pct": 26,
+        "temp_c": 18.9,
+        "precip_probability_pct": 28,
         "precip_mm": 0.0,
-        "wind_kmh": 0.7,
+        "wind_kmh": 2.2,
         "cloud_cover_pct": 97,
         "forecast_hour": "2026-09-13T13:00"
       },
@@ -2731,7 +2731,7 @@
           "ga": 4
         }
       },
-      "pregame_intel_captured_at": "2026-09-12T08:34:36"
+      "pregame_intel_captured_at": "2026-09-12T12:45:41"
     },
     {
       "parlay_leg_pick_ids": null,
@@ -2770,14 +2770,14 @@
         "away_moneyline": 115,
         "draw_moneyline": 280.0
       },
-      "pregame_odds_captured_at": "2026-09-12T08:34:36",
+      "pregame_odds_captured_at": "2026-09-12T12:45:41",
       "pregame_weather": {
         "city": "Manchester",
-        "temp_c": 21.2,
-        "precip_probability_pct": 10,
+        "temp_c": 21.4,
+        "precip_probability_pct": 22,
         "precip_mm": 0.0,
-        "wind_kmh": 7.6,
-        "cloud_cover_pct": 73,
+        "wind_kmh": 7.9,
+        "cloud_cover_pct": 74,
         "forecast_hour": "2026-09-13T15:00"
       },
       "pregame_home_form": {
@@ -2826,7 +2826,7 @@
           "ga": 1
         }
       },
-      "pregame_intel_captured_at": "2026-09-12T08:34:36"
+      "pregame_intel_captured_at": "2026-09-12T12:45:41"
     }
   ],
   "next_wallet_id": 17,
