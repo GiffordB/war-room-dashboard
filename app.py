@@ -207,11 +207,13 @@ WR_NEWS_CAP = 12
 # How often capture_pregame_lines() will re-snapshot the same still-
 # upcoming pick's line. There's no scheduled job sampling odds right at
 # kickoff (this app is just a web service - see the module docstring),
-# so this piggybacks on Auto-Grade instead: every time it runs, any
-# pending pick whose game hasn't started yet gets its current line
-# recaptured, throttled to this often, and whatever was captured last
-# before the game actually starts becomes the de facto "closing" line -
-# only as good as how recently before kickoff Auto-Grade happened to run.
+# so this piggybacks on Auto-Grade and on the moment a pick/entry first
+# gets a game attached (create_pick, _identify_wallet_game) instead:
+# every time one of those runs, any pending pick or wallet entry whose
+# game hasn't started yet gets its current line recaptured, throttled to
+# this often, and whatever was captured last before the game actually
+# starts becomes the de facto "closing" line - only as good as how
+# recently before kickoff one of those happened to run.
 PREGAME_ODDS_RECAPTURE_MINUTES = 15
 
 # --- More WR Confidence inputs, captured alongside the line above -----
@@ -2141,6 +2143,15 @@ def create_pick(report_id, fields):
     live on every page load as track record, agreement, and pregame
     intel accumulate; wr_confidence_initial is what the War Room actually
     said the day the pick went out, so the two can be shown side by side.
+
+    Runs the same Auto-Grade bundle (auto_grade_pending, sync_wallet_entries,
+    capture_pregame_lines) other picks get from the Auto-Grade button before
+    freezing that snapshot - otherwise a pick logged between two Auto-Grade
+    clicks would sit with no pregame intel while an otherwise-identical pick
+    on the same game logged (or last graded) a few minutes earlier already
+    has it, making their live WR scores diverge for no real analytical
+    reason. See _identify_wallet_game for the equivalent treatment on a
+    custom wallet entry once its game is linked.
     """
     if fields.get("category") not in CATEGORIES:
         raise ValueError(f"category must be one of {CATEGORY_ORDER}")
@@ -2180,6 +2191,9 @@ def create_pick(report_id, fields):
         new_pick["id"] = data["next_pick_id"]
         data["next_pick_id"] += 1
         data["picks"].append(new_pick)
+        auto_grade_pending(data, report_id=report_id)
+        sync_wallet_entries(data)
+        _safe_capture_pregame_lines(data)
         r = next((rep for rep in data["reports"] if rep["id"] == report_id), None)
         source = r["source"] if r else None
         track_record = source_track_record(data)
@@ -3158,6 +3172,7 @@ def _identify_wallet_game(entry_id, wallet_key):
         entry.update(found)
         if entry.get("wr_confidence") is None:
             entry["wr_confidence"] = float(WR_IMPACT_FLOOR)
+        _safe_capture_pregame_lines(data)
         _freeze_wallet_entry_wr_confidence_initial(entry, data)
         store.save(data, token, message=f"Identify game for {wallet['label']} entry #{entry_id}: {entry['matchup']}")
     return redirect(url_for(wallet["view_endpoint"]))
