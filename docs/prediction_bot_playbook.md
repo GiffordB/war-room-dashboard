@@ -76,9 +76,7 @@ rather than picking one silently.
 
 Confidence and edge are two different claims, tracked as two separate
 fields on a pick — treat them that way, not as one vague sense of "I
-like this." Work through every game in this order; a side that fails
-the first three checks is a pass, full stop, regardless of how the last
-two would have gone:
+like this." Work through every game in this order:
 
 1. **The fair number — your own, before you react to the market.** For
    a spread/total, your own line estimate with a range (e.g. "Man City
@@ -126,24 +124,35 @@ two would have gone:
    (e.g. "City's price implies ~62%; blended estimate ~68% → +6pp
    edge"). If they're basically the same, say so plainly ("no edge,
    pricing looks fair") rather than inventing daylight that isn't
-   there — and that side is done here, no matter how confident you are
-   that the team itself is good.
+   there. Also record your own **confidence** (0-100, your calibrated
+   probability that this side is correct) — this becomes the pick's
+   `wr_confidence`, the same field every other source's picks carry
+   (see step 5). Confidence and edge are different claims; a 90%
+   confidence pick priced accordingly (say, -900) usually has close to
+   zero edge, and a genuine underdog/draw lean can carry real edge at
+   45% confidence. Track both honestly rather than letting one drag the
+   other around.
 
-3. **A hard threshold, checked before anything else matters.** A side
-   needs BOTH of these to survive to step 4 — neither alone is enough:
-   - **Confidence ≥ 60%** — your calibrated probability (0-100) that
-     this side is correct. This is the number you'll submit as the
-     pick's `wr_confidence` — the app's one War Room Confidence Score,
-     the same field every other source's picks carry (see step 5). Not
-     a vibe — if asked "why 63 and not 58," you should have an answer.
-   - **Edge ≥ 3 percentage points** — from step 2, after the
-     market/model blend.
-   A 90%-confidence pick priced accordingly (say, -900) usually has no
-   edge and is a pass here even though it'll usually win — being sure a
-   team is good is not the same claim as being sure this specific price
-   is worth taking. Fail either check and the side is a pass; don't
-   round a 58% up, and don't talk yourself into a 2pp edge being "close
-   enough."
+3. **Rank by edge — the primary decider, not a hard gate.** A no-pick
+   week is not an acceptable default outcome; the goal is roughly
+   **3 picks a week**, sized to how strong each one actually is, not a
+   pass/fail bar that a whole slate can fail at once. Across every game
+   on the slate:
+   - Sort every side with genuine positive edge (real, sourced,
+     computed the way step 2 describes — never invented just to hit a
+     count) from strongest to weakest.
+   - Take the strongest ~3. Confidence doesn't gate a pick out here —
+     it sizes the stake instead (see step 4): a strong-edge play at
+     55% confidence is a smaller, clearly-labeled "edge play," not a
+     pass. Say so plainly in the notes when you're taking a real edge
+     below 60% confidence — that's expected now, not a mistake to hide.
+   - If the whole slate genuinely has nothing with real, sourced edge
+     anywhere (every price already looks fair once blended against your
+     own number), that's a legitimate last-resort outcome — but it
+     should be rare. Don't manufacture edge to avoid it, and don't
+     confuse "I like this team" with "this price is wrong" — the edge
+     still has to be real, just not gated by a hard confidence floor
+     anymore.
 
 4. **A context check — is there a structural reason the numbers are
    wrong for this specific matchup?** A new manager's tactical shift, a
@@ -172,11 +181,9 @@ actual numbers support on the next pick.
 
 ## 4. Decide what to recommend
 
-Every side that passed all of step 3's checks is eligible — nothing
-that failed any of the first three checks gets a second look here, no
-matter how good the story is. Sort the eligible sides by confidence,
-then assign to the five categories using the same guidance the rest of
-this app already uses for CFB/NFL — same rules, same stake conventions:
+Take the sides step 3 ranked out (the ~3 strongest real-edge plays on
+the slate) and assign each to a category, using the same five
+categories the rest of this app already uses for CFB/NFL:
 
 | Category | Guidance |
 |---|---|
@@ -186,8 +193,24 @@ this app already uses for CFB/NFL — same rules, same stake conventions:
 | **Sexy Moneyline** (`sexy_moneyline`) | $25 normally, $50 max — a live underdog or draw pick at a big price, not a favorite. |
 | **Good-If-It-Goes Parlay** (`parlay`) | $10 max, 3+ legs, one per report — combine legs you'd each independently back, not filler. |
 
+**Size the stake to confidence, within a category's own range** — this
+is what lets a real sub-60% edge play still go out without pretending
+it's as sure a thing as an 80% one:
+- **70%+ confidence:** the top of the category's normal range.
+- **60-69% confidence:** the middle-to-lower end of the range.
+- **Below 60% ("edge play"):** the category's floor, or below it if the
+  category has no explicit floor (e.g. $25-30 on a `best_bet` play
+  instead of its usual $50 minimum) — and say "edge play" plainly in
+  the notes so it reads as a smaller, real-edge-but-lower-conviction
+  bet, not a mis-sized mistake.
+
+`thor_hammer` is the one exception — it stays reserved for genuine
+80%+ standouts regardless of edge; don't put a sub-60%-confidence edge
+play there no matter how strong its edge looks.
+
 Don't duplicate the same game+market+side across two categories. It's
-fine for a category to end up empty.
+fine for a category to end up with fewer than 3 if the slate is
+genuinely thin.
 
 ## 5. Submit the report and picks
 
@@ -211,7 +234,8 @@ out rather than forcing one if nothing fits.
 POST /api/reports
 Content-Type: application/json
 {
-  "source": "Claude",
+  "source": "Claude - GB",    // NOT "Claude" - that's the separate CFB/NFL source;
+                               // "Claude - GB" is this bot's own source, tracked separately
   "league": "UCL",            // or "EPL"
   "report_date": "YYYY-MM-DD", // today, ET
   "week_number": <matchweek>,
@@ -232,7 +256,7 @@ Content-Type: application/json
   "selection": "Manchester City to Win",
   "odds": -135,                        // the American price you pulled in step 2
   "stake": 100,
-  "wr_confidence": 68,                 // your 0-100 estimate from step 3.3 - the app's one confidence
+  "wr_confidence": 68,                 // your 0-100 estimate from step 3.2 - the app's one confidence
                                         // score, same field every other source's picks use; the app
                                         // layers CLV/track-record/agreement on top of this automatically
   "war_room_line": "City 70% / Draw 18% / Spurs 12% (blended)",  // your own number - step 3.1
@@ -265,16 +289,19 @@ pick; don't abandon the rest of the slate over one bad request.
 
 If you catch a mistake after submitting, fix it in place rather than
 deleting and resubmitting:
-- `PATCH /api/reports/<report_id>` for the report's own `week_number`,
-  `week_label`, `philosophy`, `blind_spot_notes`, or `lsu_review_notes`.
+- `PATCH /api/reports/<report_id>` for the report's own `source`,
+  `week_number`, `week_label`, `philosophy`, `blind_spot_notes`, or
+  `lsu_review_notes`. Double-check `source` is `"Claude - GB"` if you
+  ever catch it posted as plain `"Claude"` (that's the CFB/NFL source,
+  a different bucket entirely).
 - `PATCH /api/reports/<report_id>/picks/<pick_id>` for a pick's `notes`,
   `wr_confidence`, `war_room_line`, `edge`, or `price_discipline`.
 
 Both take a JSON body of just the field(s) to change and leave
-everything else untouched. Neither can touch identity/grading fields
-(a report's `source`/`league`/`report_date`, a pick's `odds`/`stake`/
-`bet_type`/`bet_side`/`bet_line`/`espn_event_id`) - a mistake there
-needs a delete + resubmit instead.
+everything else untouched. Neither can touch a report's `league`/
+`report_date`, or a pick's `odds`/`stake`/`bet_type`/`bet_side`/
+`bet_line`/`espn_event_id` - a mistake there needs a delete + resubmit
+instead.
 
 ## 6. Done
 
@@ -291,8 +318,13 @@ that live-adjusted number everywhere afterward, and it's what
 `confidence_locks()` and the Lock tier are judged against — not a
 separate bot-only confidence system.
 
-If the slate had nothing clearing both of step 3.3's thresholds
-anywhere, it's still worth posting the report (zero picks) so the run is
-visible in the Reports list, with a one-line note in `blind_spot_notes`
-saying why (e.g. "Lines mostly chalk this week, nothing cleared both
-confidence and edge").
+A zero-pick report is a rare last resort now (see step 3.3), not the
+default disciplined outcome — evaluate the whole slate once, honestly,
+and post the ~3 strongest real-edge plays you find, sized to their own
+confidence. Only post zero picks if the whole slate genuinely has no
+real, sourced edge anywhere once blended against the market; if that
+happens, still post the report so the run is visible in the Reports
+list, with a one-line note in `blind_spot_notes` saying why. Don't
+re-run the evaluation a second time with a different scope or looser
+math just to manufacture a pick count — one honest pass per slate,
+submitted as one report.
