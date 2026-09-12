@@ -1,6 +1,6 @@
 {
   "next_report_id": 21,
-  "next_pick_id": 69,
+  "next_pick_id": 70,
   "reports": [
     {
       "source": "ChatGPT",
@@ -2567,6 +2567,31 @@
       "created_at": "2026-09-11T23:17:09",
       "id": 68,
       "wr_confidence_initial": 63.4
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 20,
+      "category": "best_bet",
+      "matchup": "Brighton and Hove Albion @ Coventry City",
+      "selection": "Brighton to Win",
+      "odds": -115,
+      "stake": 30.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 55.0,
+      "war_room_line": null,
+      "edge": "+4pp edge vs market-implied probability at -115",
+      "price_discipline": null,
+      "espn_event_id": "401879282",
+      "bet_type": "match_result",
+      "bet_side": "away",
+      "bet_line": null,
+      "home_team": null,
+      "away_team": null,
+      "created_at": "2026-09-12T01:48:32",
+      "id": 69,
+      "wr_confidence_initial": 55.37777777777778
     }
   ],
   "next_wallet_id": 15,
