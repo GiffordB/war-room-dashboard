@@ -2619,7 +2619,7 @@
       "wr_confidence_initial": 48.0
     }
   ],
-  "next_wallet_id": 15,
+  "next_wallet_id": 16,
   "wallet_entries": [
     {
       "pick_id": 12,
@@ -2885,6 +2885,24 @@
       "wr_confidence_at_bet": 54.32,
       "created_at": "2026-09-09T00:16:34",
       "id": 14
+    },
+    {
+      "pick_id": 66,
+      "report_id": 19,
+      "source": "Grok - GB",
+      "league": "EPL",
+      "category": "best_bet",
+      "matchup": "Manchester City @ Manchester United",
+      "selection": "Manchester City to Win",
+      "odds": 115,
+      "stake": 25.0,
+      "bet_line": null,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": null,
+      "wr_confidence_at_bet": 61.63272727272727,
+      "created_at": "2026-09-12T02:23:28",
+      "id": 15
     }
   ],
   "next_jesse_wallet_id": 1,
