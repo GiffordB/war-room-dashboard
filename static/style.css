@@ -726,45 +726,6 @@ section { margin-bottom: 44px; }
 .intel-news-list a { text-decoration: none; }
 .intel-news-list a:hover { text-decoration: underline; }
 
-/* ---------------- Intro splash ---------------- */
-body.intro-active { overflow: hidden; }
-
-.intro-splash {
-  position: fixed;
-  inset: 0;
-  z-index: 1000;
-  background: #05010a;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 1;
-  transition: opacity 0.4s ease;
-}
-.intro-splash[hidden] { display: none; }
-.intro-splash-fade { opacity: 0; pointer-events: none; }
-
-.intro-video {
-  max-height: 92vh;
-  max-width: 92vw;
-  border-radius: 14px;
-  box-shadow: 0 0 60px 10px rgba(163, 51, 193, 0.45);
-}
-
-.intro-skip {
-  position: absolute;
-  bottom: 28px;
-  right: 28px;
-  background: rgba(10, 4, 20, 0.7);
-  border: 1px solid var(--neon-purple);
-  color: var(--text);
-  font-weight: 700;
-  font-size: 0.85rem;
-  padding: 8px 16px;
-  border-radius: 999px;
-  cursor: pointer;
-}
-.intro-skip:hover { background: rgba(163, 51, 193, 0.3); }
-
 /* ---------------- Site footer / disclaimer ---------------- */
 .site-footer {
   max-width: 1120px;

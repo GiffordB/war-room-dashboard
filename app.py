@@ -22,6 +22,7 @@ Shape of this file:
 """
 
 import re
+import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import date, datetime, timedelta
 
@@ -481,6 +482,30 @@ def _parallel_map(fn, items, max_workers=8):
     return results
 
 
+# Score badges (see attach_game_status) re-fetch every ESPN-linked pick's
+# game on every page view - settled picks included, since their final
+# score is shown too - which grew to dozens of round-trips per dashboard
+# load. A final score never changes, and a live one is fine a minute
+# stale on a display badge, so those lookups are memoized here. Grading
+# (auto_grade_pending, sync_wallet_entries) deliberately does not use
+# this: a pick should settle off a fresh read, not a cached one.
+_FINAL_SCORE_TTL_LIVE = 60
+_FINAL_SCORE_TTL_FINAL = 6 * 3600
+_final_score_cache = {}
+
+
+def _cached_final_score(league, event_id):
+    key = (league, event_id)
+    now = time.time()
+    hit = _final_score_cache.get(key)
+    if hit and hit[1] > now:
+        return hit[0]
+    result = odds.final_score(league, event_id)
+    ttl = _FINAL_SCORE_TTL_FINAL if result and result.get("completed") else _FINAL_SCORE_TTL_LIVE
+    _final_score_cache[key] = (result, now + ttl)
+    return result
+
+
 def _pregame_odds_stale(pick):
     captured_at = pick.get("pregame_odds_captured_at")
     if not captured_at:
@@ -731,7 +756,7 @@ def attach_game_status(picks, league=None):
         ):
             needed_keys.add((pick_league, original["espn_event_id"]))
 
-    score_cache = _parallel_map(lambda key: odds.final_score(key[0], key[1]), list(needed_keys))
+    score_cache = _parallel_map(lambda key: _cached_final_score(key[0], key[1]), list(needed_keys))
 
     result = []
     for original in picks:

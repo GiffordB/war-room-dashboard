@@ -4,7 +4,14 @@ services:
     runtime: python
     plan: free
     buildCommand: pip install -r requirements.txt
-    startCommand: gunicorn app:app
+    # Threaded workers, not gunicorn's default single synchronous one. The
+    # default serves exactly one request at a time, so every page, static
+    # file and reload queued behind whatever was in flight - one slow
+    # dashboard render (dozens of ESPN lookups) made the whole site look
+    # down. With threads, cheap requests are answered while a slow one is
+    # still waiting on the network. --timeout is worker liveness, generous
+    # enough that a long ESPN batch doesn't get the worker killed mid-page.
+    startCommand: gunicorn --worker-class gthread --threads 8 --timeout 90 app:app
     envVars:
       - key: PYTHON_VERSION
         value: 3.11.9

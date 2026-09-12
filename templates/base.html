@@ -11,12 +11,6 @@
   {% block head %}{% endblock %}
 </head>
 <body>
-  <div id="intro-splash" class="intro-splash" hidden>
-    <video id="intro-video" class="intro-video" src="{{ url_for('static', filename='war-room-intro.mp4') }}"
-           autoplay muted playsinline></video>
-    <button id="intro-skip" class="intro-skip" type="button">Skip ▸</button>
-  </div>
-
   <header class="topbar">
     <a class="brand" href="{{ url_for('dashboard') }}">
       <img class="brand-crest" src="{{ url_for('static', filename='favicon-32.png') }}" alt="">
@@ -42,43 +36,5 @@
   </footer>
 
   {% block scripts %}{% endblock %}
-
-  <script>
-    (function () {
-      // Play the War Room intro once per browser tab (not on every internal
-      // page navigation) - gated behind sessionStorage so it survives across
-      // pages in the same visit but replays on a fresh tab/session.
-      if (sessionStorage.getItem('warRoomIntroPlayed')) return;
-
-      var splash = document.getElementById('intro-splash');
-      var video = document.getElementById('intro-video');
-      var skipBtn = document.getElementById('intro-skip');
-      splash.hidden = false;
-      document.body.classList.add('intro-active');
-
-      function dismiss() {
-        sessionStorage.setItem('warRoomIntroPlayed', '1');
-        splash.classList.add('intro-splash-fade');
-        document.body.classList.remove('intro-active');
-        setTimeout(function () {
-          splash.hidden = true;
-          splash.style.display = 'none';
-        }, 400);
-      }
-
-      video.addEventListener('ended', dismiss);
-      skipBtn.addEventListener('click', function (e) {
-        e.stopPropagation();
-        dismiss();
-      });
-      // Tapping anywhere on the splash (not just the small skip button)
-      // dismisses it - a full-screen overlay is an easy miss-tap otherwise.
-      splash.addEventListener('click', dismiss);
-      // Autoplay can still be blocked in rare cases even when muted - don't
-      // leave a frozen video covering the page if play() never resolves.
-      var playPromise = video.play();
-      if (playPromise && playPromise.catch) playPromise.catch(dismiss);
-    })();
-  </script>
 </body>
 </html>
