@@ -1,6 +1,6 @@
 {
   "next_report_id": 22,
-  "next_pick_id": 74,
+  "next_pick_id": 75,
   "reports": [
     {
       "source": "ChatGPT",
@@ -3124,6 +3124,35 @@
       },
       "pregame_intel_captured_at": "2026-09-12T13:22:49",
       "wr_confidence_initial": 72.62857142857143
+    },
+    {
+      "parlay_leg_pick_ids": [
+        71,
+        72,
+        73
+      ],
+      "report_id": 21,
+      "category": "parlay",
+      "matchup": "Purdue +3 / Minnesota +1.5 / UCLA -12.5",
+      "selection": "Good-If-It-Goes Parlay",
+      "odds": 612,
+      "stake": 10.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": null,
+      "war_room_line": "Combined 3-leg parlay off the same three fair-line edges (Purdue +3, Minnesota +1.5, UCLA -12.5)",
+      "edge": null,
+      "price_discipline": "$10 max, one per report. Potential return $71.16 at +612.",
+      "espn_event_id": null,
+      "bet_type": null,
+      "bet_side": null,
+      "bet_line": null,
+      "home_team": null,
+      "away_team": null,
+      "created_at": "2026-09-12T13:23:26",
+      "id": 74,
+      "wr_confidence_initial": null
     }
   ],
   "next_wallet_id": 17,
