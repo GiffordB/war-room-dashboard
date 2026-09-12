@@ -1666,22 +1666,14 @@
         "home_spread_odds": -105.0,
         "away_spread_odds": -115.0,
         "total": 47.5,
-        "over_odds": -108.0,
-        "under_odds": -112.0,
+        "over_odds": -112.0,
+        "under_odds": -108.0,
         "home_moneyline": 105,
         "away_moneyline": -125,
         "draw_moneyline": null
       },
-      "pregame_odds_captured_at": "2026-09-12T13:21:32",
-      "pregame_weather": {
-        "city": "USAF Academy Bullseye Auxiliary Airfield",
-        "temp_c": 19.7,
-        "precip_probability_pct": 4,
-        "precip_mm": 0.0,
-        "wind_kmh": 11.8,
-        "cloud_cover_pct": 100,
-        "forecast_hour": "2026-09-13T02:00"
-      },
+      "pregame_odds_captured_at": "2026-09-12T16:07:53",
+      "pregame_weather": null,
       "pregame_home_form": {
         "played": 1,
         "wins": 1,
@@ -1728,7 +1720,7 @@
           "ga": 0
         }
       },
-      "pregame_intel_captured_at": "2026-09-12T13:21:32"
+      "pregame_intel_captured_at": "2026-09-12T16:07:53"
     },
     {
       "parlay_leg_pick_ids": null,
@@ -1758,8 +1750,8 @@
         "provider": "Draft Kings",
         "spread_details": "UNLV -3",
         "home_spread": 3.0,
-        "home_spread_odds": -105.0,
-        "away_spread_odds": -115.0,
+        "home_spread_odds": -108.0,
+        "away_spread_odds": -112.0,
         "total": 57.5,
         "over_odds": -120.0,
         "under_odds": 100.0,
@@ -1767,16 +1759,8 @@
         "away_moneyline": -162,
         "draw_moneyline": null
       },
-      "pregame_odds_captured_at": "2026-09-12T13:21:32",
-      "pregame_weather": {
-        "city": "Denton",
-        "temp_c": 38.1,
-        "precip_probability_pct": 0,
-        "precip_mm": 0.0,
-        "wind_kmh": 11.4,
-        "cloud_cover_pct": 0,
-        "forecast_hour": "2026-09-12T19:00"
-      },
+      "pregame_odds_captured_at": "2026-09-12T16:07:53",
+      "pregame_weather": null,
       "pregame_home_form": {
         "played": 1,
         "wins": 0,
@@ -1823,7 +1807,7 @@
           "ga": 6
         }
       },
-      "pregame_intel_captured_at": "2026-09-12T13:21:32"
+      "pregame_intel_captured_at": "2026-09-12T16:07:53"
     },
     {
       "parlay_leg_pick_ids": null,
@@ -1957,16 +1941,8 @@
         "away_moneyline": 142,
         "draw_moneyline": null
       },
-      "pregame_odds_captured_at": "2026-09-12T13:21:32",
-      "pregame_weather": {
-        "city": "Las Vegas",
-        "temp_c": 38.2,
-        "precip_probability_pct": 0,
-        "precip_mm": 0.0,
-        "wind_kmh": 30.5,
-        "cloud_cover_pct": 0,
-        "forecast_hour": "2026-09-13T20:00"
-      },
+      "pregame_odds_captured_at": "2026-09-12T16:07:53",
+      "pregame_weather": null,
       "pregame_home_form": null,
       "pregame_away_form": null,
       "pregame_home_injuries": 10,
@@ -2003,7 +1979,7 @@
           "ga": 0
         }
       },
-      "pregame_intel_captured_at": "2026-09-12T13:21:32"
+      "pregame_intel_captured_at": "2026-09-12T16:07:53"
     },
     {
       "parlay_leg_pick_ids": null,
@@ -2042,16 +2018,8 @@
         "away_moneyline": -162,
         "draw_moneyline": null
       },
-      "pregame_odds_captured_at": "2026-09-12T13:21:32",
-      "pregame_weather": {
-        "city": "East Rutherford",
-        "temp_c": 22.0,
-        "precip_probability_pct": 0,
-        "precip_mm": 0.0,
-        "wind_kmh": 5.2,
-        "cloud_cover_pct": 100,
-        "forecast_hour": "2026-09-14T00:00"
-      },
+      "pregame_odds_captured_at": "2026-09-12T16:07:53",
+      "pregame_weather": null,
       "pregame_home_form": null,
       "pregame_away_form": null,
       "pregame_home_injuries": 9,
@@ -2088,7 +2056,7 @@
           "ga": 0
         }
       },
-      "pregame_intel_captured_at": "2026-09-12T13:21:32"
+      "pregame_intel_captured_at": "2026-09-12T16:07:53"
     },
     {
       "parlay_leg_pick_ids": null,
@@ -2127,16 +2095,8 @@
         "away_moneyline": 120,
         "draw_moneyline": null
       },
-      "pregame_odds_captured_at": "2026-09-12T13:21:32",
-      "pregame_weather": {
-        "city": "Kansas City",
-        "temp_c": 30.6,
-        "precip_probability_pct": 1,
-        "precip_mm": 0.0,
-        "wind_kmh": 22.7,
-        "cloud_cover_pct": 5,
-        "forecast_hour": "2026-09-15T00:00"
-      },
+      "pregame_odds_captured_at": "2026-09-12T16:07:53",
+      "pregame_weather": null,
       "pregame_home_form": null,
       "pregame_away_form": null,
       "pregame_home_injuries": 9,
@@ -2173,7 +2133,7 @@
           "ga": 0
         }
       },
-      "pregame_intel_captured_at": "2026-09-12T13:21:32"
+      "pregame_intel_captured_at": "2026-09-12T16:07:53"
     },
     {
       "parlay_leg_pick_ids": null,
@@ -2183,8 +2143,8 @@
       "selection": "Crystal Palace to Win",
       "odds": -115,
       "stake": 100.0,
-      "result": "pending",
-      "profit_loss": 0.0,
+      "result": "loss",
+      "profit_loss": -100.0,
       "notes": "",
       "wr_confidence": 56.0,
       "war_room_line": "Fair blend after shrink (n=3, n/(n+6)) and Dixon-Coles correction: Palace 54 / draw 24 / Ipswich 22",
@@ -2307,16 +2267,8 @@
         "away_moneyline": -115,
         "draw_moneyline": 275.0
       },
-      "pregame_odds_captured_at": "2026-09-12T13:21:32",
-      "pregame_weather": {
-        "city": "Coventry",
-        "temp_c": 18.9,
-        "precip_probability_pct": 28,
-        "precip_mm": 0.0,
-        "wind_kmh": 2.2,
-        "cloud_cover_pct": 97,
-        "forecast_hour": "2026-09-13T13:00"
-      },
+      "pregame_odds_captured_at": "2026-09-12T16:07:53",
+      "pregame_weather": null,
       "pregame_home_form": {
         "played": 3,
         "wins": 0,
@@ -2363,7 +2315,7 @@
           "ga": 4
         }
       },
-      "pregame_intel_captured_at": "2026-09-12T13:21:32"
+      "pregame_intel_captured_at": "2026-09-12T16:07:53"
     },
     {
       "parlay_leg_pick_ids": null,
@@ -2402,16 +2354,8 @@
         "away_moneyline": 115,
         "draw_moneyline": 280.0
       },
-      "pregame_odds_captured_at": "2026-09-12T13:21:32",
-      "pregame_weather": {
-        "city": "Manchester",
-        "temp_c": 21.4,
-        "precip_probability_pct": 22,
-        "precip_mm": 0.0,
-        "wind_kmh": 7.9,
-        "cloud_cover_pct": 74,
-        "forecast_hour": "2026-09-13T15:00"
-      },
+      "pregame_odds_captured_at": "2026-09-12T16:07:53",
+      "pregame_weather": null,
       "pregame_home_form": {
         "played": 3,
         "wins": 1,
@@ -2458,7 +2402,7 @@
           "ga": 1
         }
       },
-      "pregame_intel_captured_at": "2026-09-12T13:21:32"
+      "pregame_intel_captured_at": "2026-09-12T16:07:53"
     },
     {
       "parlay_leg_pick_ids": null,
@@ -2468,8 +2412,8 @@
       "selection": "Nottingham Forest to Win",
       "odds": 210,
       "stake": 85.0,
-      "result": "pending",
-      "profit_loss": 0.0,
+      "result": "win",
+      "profit_loss": 178.5,
       "notes": "",
       "wr_confidence": 45.0,
       "war_room_line": "Fair: Villa 42 / draw 23 / Forest 35. Villa have not scored in three league matches; Goretzka and Onana out, Cash a doubt",
@@ -2584,24 +2528,16 @@
         "spread_details": "TOT +100",
         "home_spread": -0.5,
         "home_spread_odds": -110.0,
-        "away_spread_odds": -125.0,
+        "away_spread_odds": -130.0,
         "total": 2.5,
         "over_odds": -135.0,
         "under_odds": 110.0,
         "home_moneyline": 100,
         "away_moneyline": 260,
-        "draw_moneyline": 270.0
+        "draw_moneyline": 265.0
       },
-      "pregame_odds_captured_at": "2026-09-12T13:21:32",
-      "pregame_weather": {
-        "city": "London",
-        "temp_c": 21.9,
-        "precip_probability_pct": 0,
-        "precip_mm": 0.0,
-        "wind_kmh": 20.2,
-        "cloud_cover_pct": 58,
-        "forecast_hour": "2026-09-12T16:00"
-      },
+      "pregame_odds_captured_at": "2026-09-12T16:07:53",
+      "pregame_weather": null,
       "pregame_home_form": {
         "played": 3,
         "wins": 0,
@@ -2648,7 +2584,7 @@
           "ga": 1
         }
       },
-      "pregame_intel_captured_at": "2026-09-12T13:21:32"
+      "pregame_intel_captured_at": "2026-09-12T16:07:53"
     },
     {
       "parlay_leg_pick_ids": null,
@@ -2687,16 +2623,8 @@
         "away_moneyline": -115,
         "draw_moneyline": 275.0
       },
-      "pregame_odds_captured_at": "2026-09-12T13:21:32",
-      "pregame_weather": {
-        "city": "Coventry",
-        "temp_c": 18.9,
-        "precip_probability_pct": 28,
-        "precip_mm": 0.0,
-        "wind_kmh": 2.2,
-        "cloud_cover_pct": 97,
-        "forecast_hour": "2026-09-13T13:00"
-      },
+      "pregame_odds_captured_at": "2026-09-12T16:07:53",
+      "pregame_weather": null,
       "pregame_home_form": {
         "played": 3,
         "wins": 0,
@@ -2743,7 +2671,7 @@
           "ga": 4
         }
       },
-      "pregame_intel_captured_at": "2026-09-12T13:21:32"
+      "pregame_intel_captured_at": "2026-09-12T16:07:53"
     },
     {
       "parlay_leg_pick_ids": null,
@@ -2782,16 +2710,8 @@
         "away_moneyline": 115,
         "draw_moneyline": 280.0
       },
-      "pregame_odds_captured_at": "2026-09-12T13:21:32",
-      "pregame_weather": {
-        "city": "Manchester",
-        "temp_c": 21.4,
-        "precip_probability_pct": 22,
-        "precip_mm": 0.0,
-        "wind_kmh": 7.9,
-        "cloud_cover_pct": 74,
-        "forecast_hour": "2026-09-13T15:00"
-      },
+      "pregame_odds_captured_at": "2026-09-12T16:07:53",
+      "pregame_weather": null,
       "pregame_home_form": {
         "played": 3,
         "wins": 1,
@@ -2838,7 +2758,7 @@
           "ga": 1
         }
       },
-      "pregame_intel_captured_at": "2026-09-12T13:21:32"
+      "pregame_intel_captured_at": "2026-09-12T16:07:53"
     },
     {
       "parlay_leg_pick_ids": null,
@@ -2971,16 +2891,8 @@
         "away_moneyline": -115,
         "draw_moneyline": null
       },
-      "pregame_odds_captured_at": "2026-09-12T13:21:57",
-      "pregame_weather": {
-        "city": "Minneapolis",
-        "temp_c": 22.8,
-        "precip_probability_pct": 0,
-        "precip_mm": 0.0,
-        "wind_kmh": 21.3,
-        "cloud_cover_pct": 0,
-        "forecast_hour": "2026-09-12T19:00"
-      },
+      "pregame_odds_captured_at": "2026-09-12T16:07:53",
+      "pregame_weather": null,
       "pregame_home_form": {
         "played": 1,
         "wins": 1,
@@ -3027,7 +2939,7 @@
           "ga": 0
         }
       },
-      "pregame_intel_captured_at": "2026-09-12T13:21:57",
+      "pregame_intel_captured_at": "2026-09-12T16:07:53",
       "wr_confidence_initial": 75.45714285714286
     },
     {
@@ -3055,27 +2967,19 @@
       "id": 73,
       "pregame_odds": {
         "provider": "Draft Kings",
-        "spread_details": "UCLA -12.5",
-        "home_spread": -12.5,
-        "home_spread_odds": -110.0,
-        "away_spread_odds": -110.0,
+        "spread_details": "UCLA -13.5",
+        "home_spread": -13.5,
+        "home_spread_odds": -108.0,
+        "away_spread_odds": -112.0,
         "total": 54.5,
-        "over_odds": -112.0,
-        "under_odds": -108.0,
-        "home_moneyline": -485,
-        "away_moneyline": 370,
+        "over_odds": -108.0,
+        "under_odds": -112.0,
+        "home_moneyline": -500,
+        "away_moneyline": 380,
         "draw_moneyline": null
       },
-      "pregame_odds_captured_at": "2026-09-12T13:22:49",
-      "pregame_weather": {
-        "city": "Pasadena",
-        "temp_c": 32.5,
-        "precip_probability_pct": 13,
-        "precip_mm": 0.0,
-        "wind_kmh": 20.0,
-        "cloud_cover_pct": 5,
-        "forecast_hour": "2026-09-12T23:00"
-      },
+      "pregame_odds_captured_at": "2026-09-12T16:07:53",
+      "pregame_weather": null,
       "pregame_home_form": {
         "played": 1,
         "wins": 1,
@@ -3122,7 +3026,7 @@
           "ga": 0
         }
       },
-      "pregame_intel_captured_at": "2026-09-12T13:22:49",
+      "pregame_intel_captured_at": "2026-09-12T16:07:53",
       "wr_confidence_initial": 72.62857142857143
     },
     {
@@ -3451,8 +3355,8 @@
       "odds": -115,
       "stake": 25.0,
       "bet_line": null,
-      "result": "pending",
-      "profit_loss": 0.0,
+      "result": "loss",
+      "profit_loss": -25.0,
       "notes": null,
       "wr_confidence_at_bet": 56.54545454545455,
       "created_at": "2026-09-12T02:23:47",
