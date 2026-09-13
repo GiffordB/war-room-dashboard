@@ -1952,8 +1952,8 @@
         "provider": "Draft Kings",
         "spread_details": "LV -3",
         "home_spread": -3.0,
-        "home_spread_odds": -112.0,
-        "away_spread_odds": -108.0,
+        "home_spread_odds": -110.0,
+        "away_spread_odds": -110.0,
         "total": 40.5,
         "over_odds": -110.0,
         "under_odds": -110.0,
@@ -1961,7 +1961,7 @@
         "away_moneyline": 142,
         "draw_moneyline": null
       },
-      "pregame_odds_captured_at": "2026-09-13T14:12:11",
+      "pregame_odds_captured_at": "2026-09-13T15:55:45",
       "pregame_weather": null,
       "pregame_home_form": null,
       "pregame_away_form": null,
@@ -1999,7 +1999,7 @@
           "ga": 0
         }
       },
-      "pregame_intel_captured_at": "2026-09-13T14:12:11"
+      "pregame_intel_captured_at": "2026-09-13T15:55:45"
     },
     {
       "parlay_leg_pick_ids": null,
@@ -2029,8 +2029,8 @@
         "provider": "Draft Kings",
         "spread_details": "DAL -3",
         "home_spread": 3.0,
-        "home_spread_odds": -110.0,
-        "away_spread_odds": -105.0,
+        "home_spread_odds": -108.0,
+        "away_spread_odds": -112.0,
         "total": 47.5,
         "over_odds": -118.0,
         "under_odds": -102.0,
@@ -2038,7 +2038,7 @@
         "away_moneyline": -166,
         "draw_moneyline": null
       },
-      "pregame_odds_captured_at": "2026-09-13T14:12:11",
+      "pregame_odds_captured_at": "2026-09-13T15:55:45",
       "pregame_weather": null,
       "pregame_home_form": null,
       "pregame_away_form": null,
@@ -2076,7 +2076,7 @@
           "ga": 0
         }
       },
-      "pregame_intel_captured_at": "2026-09-13T14:12:11"
+      "pregame_intel_captured_at": "2026-09-13T15:55:45"
     },
     {
       "parlay_leg_pick_ids": null,
@@ -2115,7 +2115,7 @@
         "away_moneyline": 114,
         "draw_moneyline": null
       },
-      "pregame_odds_captured_at": "2026-09-13T14:12:11",
+      "pregame_odds_captured_at": "2026-09-13T15:55:45",
       "pregame_weather": null,
       "pregame_home_form": null,
       "pregame_away_form": null,
@@ -2153,7 +2153,7 @@
           "ga": 0
         }
       },
-      "pregame_intel_captured_at": "2026-09-13T14:12:11"
+      "pregame_intel_captured_at": "2026-09-13T15:55:45"
     },
     {
       "parlay_leg_pick_ids": null,
@@ -2258,8 +2258,8 @@
       "selection": "Brighton to Win",
       "odds": -115,
       "stake": 100.0,
-      "result": "pending",
-      "profit_loss": 0.0,
+      "result": "win",
+      "profit_loss": 86.95652173913044,
       "notes": "",
       "wr_confidence": 55.0,
       "war_room_line": "Fair: Coventry 22 / draw 25 / Brighton 53. Coventry 0-0-3, 0 league goals; Brighton missing Mitoma, Minteh, Wieffer, Ferguson",
@@ -2622,8 +2622,8 @@
       "selection": "Brighton to Win",
       "odds": -115,
       "stake": 30.0,
-      "result": "pending",
-      "profit_loss": 0.0,
+      "result": "win",
+      "profit_loss": 26.08695652173913,
       "notes": "",
       "wr_confidence": 55.0,
       "war_room_line": null,
@@ -3130,12 +3130,12 @@
         "away_moneyline": 170,
         "draw_moneyline": null
       },
-      "pregame_odds_captured_at": "2026-09-13T14:12:11",
+      "pregame_odds_captured_at": "2026-09-13T15:55:45",
       "pregame_weather": null,
       "pregame_home_form": null,
       "pregame_away_form": null,
-      "pregame_home_injuries": 3,
-      "pregame_away_injuries": 8,
+      "pregame_home_injuries": 9,
+      "pregame_away_injuries": 11,
       "pregame_home_split": {
         "home": {
           "w": 0,
@@ -3168,7 +3168,7 @@
           "ga": 0
         }
       },
-      "pregame_intel_captured_at": "2026-09-13T14:12:11",
+      "pregame_intel_captured_at": "2026-09-13T15:55:45",
       "wr_confidence_initial": 66.75555555555556
     },
     {
@@ -3207,12 +3207,12 @@
         "away_moneyline": 240,
         "draw_moneyline": null
       },
-      "pregame_odds_captured_at": "2026-09-13T14:12:46",
+      "pregame_odds_captured_at": "2026-09-13T15:55:45",
       "pregame_weather": null,
       "pregame_home_form": null,
       "pregame_away_form": null,
-      "pregame_home_injuries": 7,
-      "pregame_away_injuries": 13,
+      "pregame_home_injuries": 12,
+      "pregame_away_injuries": 15,
       "pregame_home_split": {
         "home": {
           "w": 0,
@@ -3245,7 +3245,7 @@
           "ga": 0
         }
       },
-      "pregame_intel_captured_at": "2026-09-13T14:12:46",
+      "pregame_intel_captured_at": "2026-09-13T15:55:45",
       "wr_confidence_initial": 82.57777777777778
     },
     {
@@ -3275,8 +3275,8 @@
         "provider": "Draft Kings",
         "spread_details": "BUF -1.5",
         "home_spread": 1.5,
-        "home_spread_odds": -112.0,
-        "away_spread_odds": -108.0,
+        "home_spread_odds": -115.0,
+        "away_spread_odds": -105.0,
         "total": 44.5,
         "over_odds": -110.0,
         "under_odds": -110.0,
@@ -3284,12 +3284,12 @@
         "away_moneyline": -112,
         "draw_moneyline": null
       },
-      "pregame_odds_captured_at": "2026-09-13T14:18:17",
+      "pregame_odds_captured_at": "2026-09-13T15:55:45",
       "pregame_weather": null,
       "pregame_home_form": null,
       "pregame_away_form": null,
-      "pregame_home_injuries": 13,
-      "pregame_away_injuries": 8,
+      "pregame_home_injuries": 19,
+      "pregame_away_injuries": 12,
       "pregame_home_split": {
         "home": {
           "w": 0,
@@ -3322,7 +3322,7 @@
           "ga": 0
         }
       },
-      "pregame_intel_captured_at": "2026-09-13T14:18:17",
+      "pregame_intel_captured_at": "2026-09-13T15:55:45",
       "wr_confidence_initial": 72.4888888888889
     },
     {
@@ -3352,16 +3352,16 @@
         "provider": "Draft Kings",
         "spread_details": "LAC -9.5",
         "home_spread": -9.5,
-        "home_spread_odds": -115.0,
-        "away_spread_odds": -105.0,
+        "home_spread_odds": -110.0,
+        "away_spread_odds": -110.0,
         "total": 47.5,
         "over_odds": -105.0,
         "under_odds": -115.0,
-        "home_moneyline": -520,
-        "away_moneyline": 390,
+        "home_moneyline": -500,
+        "away_moneyline": 380,
         "draw_moneyline": null
       },
-      "pregame_odds_captured_at": "2026-09-13T14:18:25",
+      "pregame_odds_captured_at": "2026-09-13T15:55:45",
       "pregame_weather": null,
       "pregame_home_form": null,
       "pregame_away_form": null,
@@ -3399,7 +3399,7 @@
           "ga": 0
         }
       },
-      "pregame_intel_captured_at": "2026-09-13T14:18:25",
+      "pregame_intel_captured_at": "2026-09-13T15:55:45",
       "wr_confidence_initial": 67.71111111111111
     },
     {
@@ -3429,8 +3429,8 @@
         "provider": "Draft Kings",
         "spread_details": "DAL -3",
         "home_spread": 3.0,
-        "home_spread_odds": -110.0,
-        "away_spread_odds": -105.0,
+        "home_spread_odds": -108.0,
+        "away_spread_odds": -112.0,
         "total": 47.5,
         "over_odds": -118.0,
         "under_odds": -102.0,
@@ -3438,7 +3438,7 @@
         "away_moneyline": -166,
         "draw_moneyline": null
       },
-      "pregame_odds_captured_at": "2026-09-13T14:18:35",
+      "pregame_odds_captured_at": "2026-09-13T15:55:45",
       "pregame_weather": null,
       "pregame_home_form": null,
       "pregame_away_form": null,
@@ -3476,7 +3476,7 @@
           "ga": 0
         }
       },
-      "pregame_intel_captured_at": "2026-09-13T14:18:35",
+      "pregame_intel_captured_at": "2026-09-13T15:55:45",
       "wr_confidence_initial": 72.81333333333333
     },
     {
@@ -3506,16 +3506,16 @@
         "provider": "Draft Kings",
         "spread_details": "LAC -9.5",
         "home_spread": -9.5,
-        "home_spread_odds": -115.0,
-        "away_spread_odds": -105.0,
+        "home_spread_odds": -110.0,
+        "away_spread_odds": -110.0,
         "total": 47.5,
         "over_odds": -105.0,
         "under_odds": -115.0,
-        "home_moneyline": -520,
-        "away_moneyline": 390,
+        "home_moneyline": -500,
+        "away_moneyline": 380,
         "draw_moneyline": null
       },
-      "pregame_odds_captured_at": "2026-09-13T14:18:43",
+      "pregame_odds_captured_at": "2026-09-13T15:55:45",
       "pregame_weather": null,
       "pregame_home_form": null,
       "pregame_away_form": null,
@@ -3553,7 +3553,7 @@
           "ga": 0
         }
       },
-      "pregame_intel_captured_at": "2026-09-13T14:18:43",
+      "pregame_intel_captured_at": "2026-09-13T15:55:45",
       "wr_confidence_initial": 32.0
     },
     {
