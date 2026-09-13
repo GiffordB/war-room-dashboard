@@ -1643,8 +1643,8 @@
       "selection": "North Dakota State -1.5",
       "odds": -110,
       "stake": 60.0,
-      "result": "pending",
-      "profit_loss": 0.0,
+      "result": "win",
+      "profit_loss": 54.54545454545455,
       "notes": "",
       "wr_confidence": 61.0,
       "war_room_line": "Pinnacle NDSU -2.5; held two days, largest reversal on the board (NDSU opened 6.5, moved to 2.5)",
@@ -1949,13 +1949,13 @@
         "away_moneyline": 142,
         "draw_moneyline": null
       },
-      "pregame_odds_captured_at": "2026-09-13T00:43:21",
+      "pregame_odds_captured_at": "2026-09-13T05:48:33",
       "pregame_weather": {
         "city": "Las Vegas",
-        "temp_c": 38.1,
+        "temp_c": 38.2,
         "precip_probability_pct": 0,
         "precip_mm": 0.0,
-        "wind_kmh": 31.3,
+        "wind_kmh": 30.4,
         "cloud_cover_pct": 0,
         "forecast_hour": "2026-09-13T20:00"
       },
@@ -1995,7 +1995,7 @@
           "ga": 0
         }
       },
-      "pregame_intel_captured_at": "2026-09-13T00:43:21"
+      "pregame_intel_captured_at": "2026-09-13T05:48:33"
     },
     {
       "parlay_leg_pick_ids": null,
@@ -2034,14 +2034,14 @@
         "away_moneyline": -162,
         "draw_moneyline": null
       },
-      "pregame_odds_captured_at": "2026-09-13T00:43:21",
+      "pregame_odds_captured_at": "2026-09-13T05:48:33",
       "pregame_weather": {
         "city": "East Rutherford",
-        "temp_c": 23.9,
+        "temp_c": 23.3,
         "precip_probability_pct": 0,
         "precip_mm": 0.0,
-        "wind_kmh": 6.6,
-        "cloud_cover_pct": 0,
+        "wind_kmh": 8.0,
+        "cloud_cover_pct": 43,
         "forecast_hour": "2026-09-14T00:00"
       },
       "pregame_home_form": null,
@@ -2080,7 +2080,7 @@
           "ga": 0
         }
       },
-      "pregame_intel_captured_at": "2026-09-13T00:43:21"
+      "pregame_intel_captured_at": "2026-09-13T05:48:33"
     },
     {
       "parlay_leg_pick_ids": null,
@@ -2119,14 +2119,14 @@
         "away_moneyline": 114,
         "draw_moneyline": null
       },
-      "pregame_odds_captured_at": "2026-09-13T00:43:21",
+      "pregame_odds_captured_at": "2026-09-13T05:48:33",
       "pregame_weather": {
         "city": "Kansas City",
-        "temp_c": 31.8,
+        "temp_c": 32.2,
         "precip_probability_pct": 0,
         "precip_mm": 0.0,
-        "wind_kmh": 22.4,
-        "cloud_cover_pct": 0,
+        "wind_kmh": 19.5,
+        "cloud_cover_pct": 5,
         "forecast_hour": "2026-09-15T00:00"
       },
       "pregame_home_form": null,
@@ -2165,7 +2165,7 @@
           "ga": 0
         }
       },
-      "pregame_intel_captured_at": "2026-09-13T00:43:21"
+      "pregame_intel_captured_at": "2026-09-13T05:48:33"
     },
     {
       "parlay_leg_pick_ids": null,
@@ -2293,20 +2293,20 @@
         "home_spread_odds": -115.0,
         "away_spread_odds": -120.0,
         "total": 2.5,
-        "over_odds": -130.0,
-        "under_odds": 105.0,
+        "over_odds": -145.0,
+        "under_odds": 115.0,
         "home_moneyline": 285,
         "away_moneyline": -110,
         "draw_moneyline": 270.0
       },
-      "pregame_odds_captured_at": "2026-09-13T00:43:21",
+      "pregame_odds_captured_at": "2026-09-13T05:48:33",
       "pregame_weather": {
         "city": "Coventry",
-        "temp_c": 20.1,
-        "precip_probability_pct": 42,
+        "temp_c": 19.5,
+        "precip_probability_pct": 13,
         "precip_mm": 0.0,
-        "wind_kmh": 4.0,
-        "cloud_cover_pct": 90,
+        "wind_kmh": 4.7,
+        "cloud_cover_pct": 84,
         "forecast_hour": "2026-09-13T13:00"
       },
       "pregame_home_form": {
@@ -2355,7 +2355,7 @@
           "ga": 4
         }
       },
-      "pregame_intel_captured_at": "2026-09-13T00:43:21"
+      "pregame_intel_captured_at": "2026-09-13T05:48:33"
     },
     {
       "parlay_leg_pick_ids": null,
@@ -2383,25 +2383,25 @@
       "wr_confidence_initial": 53.27272727272727,
       "pregame_odds": {
         "provider": "DraftKings",
-        "spread_details": "MNC +115",
+        "spread_details": "MNC +120",
         "home_spread": 0.5,
-        "home_spread_odds": -145.0,
-        "away_spread_odds": 105.0,
+        "home_spread_odds": -155.0,
+        "away_spread_odds": 110.0,
         "total": 3.5,
-        "over_odds": 130.0,
+        "over_odds": 135.0,
         "under_odds": -165.0,
-        "home_moneyline": 215,
-        "away_moneyline": 115,
+        "home_moneyline": 200,
+        "away_moneyline": 120,
         "draw_moneyline": 280.0
       },
-      "pregame_odds_captured_at": "2026-09-13T00:43:21",
+      "pregame_odds_captured_at": "2026-09-13T05:48:33",
       "pregame_weather": {
         "city": "Manchester",
-        "temp_c": 21.0,
-        "precip_probability_pct": 29,
+        "temp_c": 21.4,
+        "precip_probability_pct": 25,
         "precip_mm": 0.0,
-        "wind_kmh": 6.5,
-        "cloud_cover_pct": 68,
+        "wind_kmh": 8.3,
+        "cloud_cover_pct": 65,
         "forecast_hour": "2026-09-13T15:00"
       },
       "pregame_home_form": {
@@ -2450,7 +2450,7 @@
           "ga": 1
         }
       },
-      "pregame_intel_captured_at": "2026-09-13T00:43:21"
+      "pregame_intel_captured_at": "2026-09-13T05:48:33"
     },
     {
       "parlay_leg_pick_ids": null,
@@ -2665,20 +2665,20 @@
         "home_spread_odds": -115.0,
         "away_spread_odds": -120.0,
         "total": 2.5,
-        "over_odds": -130.0,
-        "under_odds": 105.0,
+        "over_odds": -145.0,
+        "under_odds": 115.0,
         "home_moneyline": 285,
         "away_moneyline": -110,
         "draw_moneyline": 270.0
       },
-      "pregame_odds_captured_at": "2026-09-13T00:43:21",
+      "pregame_odds_captured_at": "2026-09-13T05:48:33",
       "pregame_weather": {
         "city": "Coventry",
-        "temp_c": 20.1,
-        "precip_probability_pct": 42,
+        "temp_c": 19.5,
+        "precip_probability_pct": 13,
         "precip_mm": 0.0,
-        "wind_kmh": 4.0,
-        "cloud_cover_pct": 90,
+        "wind_kmh": 4.7,
+        "cloud_cover_pct": 84,
         "forecast_hour": "2026-09-13T13:00"
       },
       "pregame_home_form": {
@@ -2727,7 +2727,7 @@
           "ga": 4
         }
       },
-      "pregame_intel_captured_at": "2026-09-13T00:43:21"
+      "pregame_intel_captured_at": "2026-09-13T05:48:33"
     },
     {
       "parlay_leg_pick_ids": null,
@@ -2755,25 +2755,25 @@
       "wr_confidence_initial": 48.0,
       "pregame_odds": {
         "provider": "DraftKings",
-        "spread_details": "MNC +115",
+        "spread_details": "MNC +120",
         "home_spread": 0.5,
-        "home_spread_odds": -145.0,
-        "away_spread_odds": 105.0,
+        "home_spread_odds": -155.0,
+        "away_spread_odds": 110.0,
         "total": 3.5,
-        "over_odds": 130.0,
+        "over_odds": 135.0,
         "under_odds": -165.0,
-        "home_moneyline": 215,
-        "away_moneyline": 115,
+        "home_moneyline": 200,
+        "away_moneyline": 120,
         "draw_moneyline": 280.0
       },
-      "pregame_odds_captured_at": "2026-09-13T00:43:21",
+      "pregame_odds_captured_at": "2026-09-13T05:48:33",
       "pregame_weather": {
         "city": "Manchester",
-        "temp_c": 21.0,
-        "precip_probability_pct": 29,
+        "temp_c": 21.4,
+        "precip_probability_pct": 25,
         "precip_mm": 0.0,
-        "wind_kmh": 6.5,
-        "cloud_cover_pct": 68,
+        "wind_kmh": 8.3,
+        "cloud_cover_pct": 65,
         "forecast_hour": "2026-09-13T15:00"
       },
       "pregame_home_form": {
@@ -2822,7 +2822,7 @@
           "ga": 1
         }
       },
-      "pregame_intel_captured_at": "2026-09-13T00:43:21"
+      "pregame_intel_captured_at": "2026-09-13T05:48:33"
     },
     {
       "parlay_leg_pick_ids": null,
@@ -3014,8 +3014,8 @@
       "selection": "UCLA -12.5",
       "odds": -105,
       "stake": 25.0,
-      "result": "pending",
-      "profit_loss": 0.0,
+      "result": "win",
+      "profit_loss": 23.80952380952381,
       "notes": "",
       "wr_confidence": 74.0,
       "war_room_line": "War Room fair: UCLA -14.5 (vs market UCLA -12.5) -- edge 2 pts",
