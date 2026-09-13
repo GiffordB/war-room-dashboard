@@ -1932,8 +1932,8 @@
       "selection": "Miami +3.5",
       "odds": -117,
       "stake": 150.0,
-      "result": "pending",
-      "profit_loss": 0.0,
+      "result": "loss",
+      "profit_loss": -150.0,
       "notes": "",
       "wr_confidence": 76.0,
       "war_room_line": "Pinnacle LV -3 (+100); Model B MIA -0.4, agrees Miami is the better team on 2025 tape. Sharp move toward Miami (opened LV 3.5, now 3); Bally Bet and BetRivers have not followed",
@@ -2032,18 +2032,18 @@
         "home_spread_odds": -108.0,
         "away_spread_odds": -112.0,
         "total": 47.5,
-        "over_odds": -118.0,
-        "under_odds": -102.0,
+        "over_odds": -115.0,
+        "under_odds": -105.0,
         "home_moneyline": 140,
         "away_moneyline": -166,
         "draw_moneyline": null
       },
-      "pregame_odds_captured_at": "2026-09-13T21:18:27",
+      "pregame_odds_captured_at": "2026-09-13T23:59:08",
       "pregame_weather": null,
       "pregame_home_form": null,
       "pregame_away_form": null,
-      "pregame_home_injuries": 9,
-      "pregame_away_injuries": 8,
+      "pregame_home_injuries": 15,
+      "pregame_away_injuries": 13,
       "pregame_home_split": {
         "home": {
           "w": 0,
@@ -2076,7 +2076,7 @@
           "ga": 0
         }
       },
-      "pregame_intel_captured_at": "2026-09-13T21:18:27"
+      "pregame_intel_captured_at": "2026-09-13T23:59:08"
     },
     {
       "parlay_leg_pick_ids": null,
@@ -2115,7 +2115,7 @@
         "away_moneyline": 114,
         "draw_moneyline": null
       },
-      "pregame_odds_captured_at": "2026-09-13T21:18:27",
+      "pregame_odds_captured_at": "2026-09-13T23:59:08",
       "pregame_weather": null,
       "pregame_home_form": null,
       "pregame_away_form": null,
@@ -2153,7 +2153,7 @@
           "ga": 0
         }
       },
-      "pregame_intel_captured_at": "2026-09-13T21:18:27"
+      "pregame_intel_captured_at": "2026-09-13T23:59:08"
     },
     {
       "parlay_leg_pick_ids": null,
@@ -3333,8 +3333,8 @@
       "selection": "Arizona +9.5",
       "odds": -105,
       "stake": 50.0,
-      "result": "pending",
-      "profit_loss": 0.0,
+      "result": "win",
+      "profit_loss": 47.61904761904762,
       "notes": "",
       "wr_confidence": 79.0,
       "war_room_line": "War Room fair LAC -6.5 (range -4.5 to -8.5)",
@@ -3432,18 +3432,18 @@
         "home_spread_odds": -108.0,
         "away_spread_odds": -112.0,
         "total": 47.5,
-        "over_odds": -118.0,
-        "under_odds": -102.0,
+        "over_odds": -115.0,
+        "under_odds": -105.0,
         "home_moneyline": 140,
         "away_moneyline": -166,
         "draw_moneyline": null
       },
-      "pregame_odds_captured_at": "2026-09-13T21:18:27",
+      "pregame_odds_captured_at": "2026-09-13T23:59:08",
       "pregame_weather": null,
       "pregame_home_form": null,
       "pregame_away_form": null,
-      "pregame_home_injuries": 9,
-      "pregame_away_injuries": 8,
+      "pregame_home_injuries": 15,
+      "pregame_away_injuries": 13,
       "pregame_home_split": {
         "home": {
           "w": 0,
@@ -3476,7 +3476,7 @@
           "ga": 0
         }
       },
-      "pregame_intel_captured_at": "2026-09-13T21:18:27",
+      "pregame_intel_captured_at": "2026-09-13T23:59:08",
       "wr_confidence_initial": 72.81333333333333
     },
     {
@@ -3487,8 +3487,8 @@
       "selection": "Arizona ML",
       "odds": 390,
       "stake": 25.0,
-      "result": "pending",
-      "profit_loss": 0.0,
+      "result": "win",
+      "profit_loss": 97.5,
       "notes": "",
       "wr_confidence": 42.0,
       "war_room_line": "DK implied 20.4% | War Room 24% | fair +317",
