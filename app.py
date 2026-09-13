@@ -553,7 +553,7 @@ def _injury_count(roster):
     return sum(1 for p in roster.get("players", []) if p.get("injury"))
 
 
-def capture_pregame_lines(data):
+def capture_pregame_lines(data, only=None):
     """
     Best-effort pregame intel capture (see PREGAME_ODDS_RECAPTURE_MINUTES):
     for every pending, ESPN-linked pick OR custom wallet entry (see
@@ -579,15 +579,25 @@ def capture_pregame_lines(data):
     """
     reports = {r["id"]: r for r in data["reports"]}
     eligible = {}  # (kind, id) -> (item dict, league)
-    for p in data["picks"]:
-        if p["result"] == "pending" and p.get("espn_event_id") and p.get("bet_type") and p["report_id"] in reports:
-            eligible[("pick", p["id"])] = (p, reports[p["report_id"]]["league"])
-    for wallet in WALLETS.values():
-        for e in data[wallet["entries_key"]]:
-            if e["result"] == "pending" and e.get("pick_id") is None and e.get("espn_event_id") and e.get("bet_type"):
-                league = resolve_league(e.get("league"))
-                if league:
-                    eligible[("wallet", wallet["entries_key"], e["id"])] = (e, league)
+    if only is not None:
+        # A single freshly-created pick or newly-linked wallet entry (see
+        # create_pick / _identify_wallet_game) - never the whole slate. A
+        # full sweep is dozens of ESPN round-trips, which from Render's
+        # network is long enough for its proxy to give up on the request
+        # (a 502 to the caller) while the worker keeps going regardless.
+        for i, (item, league) in enumerate(only):
+            if item["result"] == "pending" and item.get("espn_event_id") and item.get("bet_type") and league:
+                eligible[("only", i)] = (item, league)
+    else:
+        for p in data["picks"]:
+            if p["result"] == "pending" and p.get("espn_event_id") and p.get("bet_type") and p["report_id"] in reports:
+                eligible[("pick", p["id"])] = (p, reports[p["report_id"]]["league"])
+        for wallet in WALLETS.values():
+            for e in data[wallet["entries_key"]]:
+                if e["result"] == "pending" and e.get("pick_id") is None and e.get("espn_event_id") and e.get("bet_type"):
+                    league = resolve_league(e.get("league"))
+                    if league:
+                        eligible[("wallet", wallet["entries_key"], e["id"])] = (e, league)
     if not eligible:
         return 0
 
@@ -2216,11 +2226,10 @@ def create_pick(report_id, fields):
         new_pick["id"] = data["next_pick_id"]
         data["next_pick_id"] += 1
         data["picks"].append(new_pick)
-        auto_grade_pending(data, report_id=report_id)
-        sync_wallet_entries(data)
-        _safe_capture_pregame_lines(data)
         r = next((rep for rep in data["reports"] if rep["id"] == report_id), None)
         source = r["source"] if r else None
+        if r:
+            _safe_capture_pregame_lines(data, only=[(new_pick, r["league"])])
         track_record = source_track_record(data)
         agreement_map = pick_agreement_map(data)
         initial_score, _ = wr_confidence_effective(new_pick, source, track_record, agreement_map)
@@ -2272,10 +2281,10 @@ def api_update_pick(pick_id, report_id):
     return jsonify({"id": pick_id})
 
 
-def _safe_capture_pregame_lines(data):
-    """capture_pregame_lines(), never allowed to break a grading request."""
+def _safe_capture_pregame_lines(data, only=None):
+    """capture_pregame_lines(), never allowed to break the request that triggered it."""
     try:
-        return capture_pregame_lines(data)
+        return capture_pregame_lines(data, only=only)
     except Exception:
         return 0
 
@@ -3197,7 +3206,7 @@ def _identify_wallet_game(entry_id, wallet_key):
         entry.update(found)
         if entry.get("wr_confidence") is None:
             entry["wr_confidence"] = float(WR_IMPACT_FLOOR)
-        _safe_capture_pregame_lines(data)
+        _safe_capture_pregame_lines(data, only=[(entry, resolve_league(entry.get("league")))])
         _freeze_wallet_entry_wr_confidence_initial(entry, data)
         store.save(data, token, message=f"Identify game for {wallet['label']} entry #{entry_id}: {entry['matchup']}")
     return redirect(url_for(wallet["view_endpoint"]))
