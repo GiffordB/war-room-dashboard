@@ -1663,17 +1663,25 @@
         "provider": "Draft Kings",
         "spread_details": "NDSU -1.5",
         "home_spread": 1.5,
-        "home_spread_odds": -105.0,
-        "away_spread_odds": -115.0,
+        "home_spread_odds": -110.0,
+        "away_spread_odds": -110.0,
         "total": 47.5,
         "over_odds": -112.0,
         "under_odds": -108.0,
-        "home_moneyline": 105,
-        "away_moneyline": -125,
+        "home_moneyline": -102,
+        "away_moneyline": -118,
         "draw_moneyline": null
       },
-      "pregame_odds_captured_at": "2026-09-12T22:04:06",
-      "pregame_weather": null,
+      "pregame_odds_captured_at": "2026-09-13T00:43:21",
+      "pregame_weather": {
+        "city": "USAF Academy Bullseye Auxiliary Airfield",
+        "temp_c": 18.4,
+        "precip_probability_pct": 1,
+        "precip_mm": 0.0,
+        "wind_kmh": 8.1,
+        "cloud_cover_pct": 0,
+        "forecast_hour": "2026-09-13T02:00"
+      },
       "pregame_home_form": {
         "played": 1,
         "wins": 1,
@@ -1720,7 +1728,7 @@
           "ga": 0
         }
       },
-      "pregame_intel_captured_at": "2026-09-12T22:04:06"
+      "pregame_intel_captured_at": "2026-09-13T00:43:21"
     },
     {
       "parlay_leg_pick_ids": null,
@@ -1730,8 +1738,8 @@
       "selection": "UNLV -3",
       "odds": -108,
       "stake": 50.0,
-      "result": "pending",
-      "profit_loss": 0.0,
+      "result": "loss",
+      "profit_loss": -50.0,
       "notes": "",
       "wr_confidence": 60.0,
       "war_room_line": "Pinnacle UNLV -3.5; UNLV opened -6.5 and the whole week has moved toward North Texas -- buying a better number on the side the market is leaving",
@@ -1941,8 +1949,16 @@
         "away_moneyline": 142,
         "draw_moneyline": null
       },
-      "pregame_odds_captured_at": "2026-09-12T22:04:06",
-      "pregame_weather": null,
+      "pregame_odds_captured_at": "2026-09-13T00:43:21",
+      "pregame_weather": {
+        "city": "Las Vegas",
+        "temp_c": 38.1,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 31.3,
+        "cloud_cover_pct": 0,
+        "forecast_hour": "2026-09-13T20:00"
+      },
       "pregame_home_form": null,
       "pregame_away_form": null,
       "pregame_home_injuries": 10,
@@ -1979,7 +1995,7 @@
           "ga": 0
         }
       },
-      "pregame_intel_captured_at": "2026-09-12T22:04:06"
+      "pregame_intel_captured_at": "2026-09-13T00:43:21"
     },
     {
       "parlay_leg_pick_ids": null,
@@ -2018,8 +2034,16 @@
         "away_moneyline": -162,
         "draw_moneyline": null
       },
-      "pregame_odds_captured_at": "2026-09-12T22:04:06",
-      "pregame_weather": null,
+      "pregame_odds_captured_at": "2026-09-13T00:43:21",
+      "pregame_weather": {
+        "city": "East Rutherford",
+        "temp_c": 23.9,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 6.6,
+        "cloud_cover_pct": 0,
+        "forecast_hour": "2026-09-14T00:00"
+      },
       "pregame_home_form": null,
       "pregame_away_form": null,
       "pregame_home_injuries": 9,
@@ -2056,7 +2080,7 @@
           "ga": 0
         }
       },
-      "pregame_intel_captured_at": "2026-09-12T22:04:06"
+      "pregame_intel_captured_at": "2026-09-13T00:43:21"
     },
     {
       "parlay_leg_pick_ids": null,
@@ -2086,17 +2110,25 @@
         "provider": "Draft Kings",
         "spread_details": "KC -2.5",
         "home_spread": -2.5,
-        "home_spread_odds": -115.0,
-        "away_spread_odds": -105.0,
+        "home_spread_odds": -112.0,
+        "away_spread_odds": -108.0,
         "total": 43.5,
-        "over_odds": -115.0,
-        "under_odds": -105.0,
-        "home_moneyline": -142,
-        "away_moneyline": 120,
+        "over_odds": -110.0,
+        "under_odds": -110.0,
+        "home_moneyline": -135,
+        "away_moneyline": 114,
         "draw_moneyline": null
       },
-      "pregame_odds_captured_at": "2026-09-12T22:04:06",
-      "pregame_weather": null,
+      "pregame_odds_captured_at": "2026-09-13T00:43:21",
+      "pregame_weather": {
+        "city": "Kansas City",
+        "temp_c": 31.8,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 22.4,
+        "cloud_cover_pct": 0,
+        "forecast_hour": "2026-09-15T00:00"
+      },
       "pregame_home_form": null,
       "pregame_away_form": null,
       "pregame_home_injuries": 8,
@@ -2133,7 +2165,7 @@
           "ga": 0
         }
       },
-      "pregame_intel_captured_at": "2026-09-12T22:04:06"
+      "pregame_intel_captured_at": "2026-09-13T00:43:21"
     },
     {
       "parlay_leg_pick_ids": null,
@@ -2267,8 +2299,16 @@
         "away_moneyline": -110,
         "draw_moneyline": 270.0
       },
-      "pregame_odds_captured_at": "2026-09-12T22:04:06",
-      "pregame_weather": null,
+      "pregame_odds_captured_at": "2026-09-13T00:43:21",
+      "pregame_weather": {
+        "city": "Coventry",
+        "temp_c": 20.1,
+        "precip_probability_pct": 42,
+        "precip_mm": 0.0,
+        "wind_kmh": 4.0,
+        "cloud_cover_pct": 90,
+        "forecast_hour": "2026-09-13T13:00"
+      },
       "pregame_home_form": {
         "played": 3,
         "wins": 0,
@@ -2315,7 +2355,7 @@
           "ga": 4
         }
       },
-      "pregame_intel_captured_at": "2026-09-12T22:04:06"
+      "pregame_intel_captured_at": "2026-09-13T00:43:21"
     },
     {
       "parlay_leg_pick_ids": null,
@@ -2354,8 +2394,16 @@
         "away_moneyline": 115,
         "draw_moneyline": 280.0
       },
-      "pregame_odds_captured_at": "2026-09-12T22:04:06",
-      "pregame_weather": null,
+      "pregame_odds_captured_at": "2026-09-13T00:43:21",
+      "pregame_weather": {
+        "city": "Manchester",
+        "temp_c": 21.0,
+        "precip_probability_pct": 29,
+        "precip_mm": 0.0,
+        "wind_kmh": 6.5,
+        "cloud_cover_pct": 68,
+        "forecast_hour": "2026-09-13T15:00"
+      },
       "pregame_home_form": {
         "played": 3,
         "wins": 1,
@@ -2402,7 +2450,7 @@
           "ga": 1
         }
       },
-      "pregame_intel_captured_at": "2026-09-12T22:04:06"
+      "pregame_intel_captured_at": "2026-09-13T00:43:21"
     },
     {
       "parlay_leg_pick_ids": null,
@@ -2623,8 +2671,16 @@
         "away_moneyline": -110,
         "draw_moneyline": 270.0
       },
-      "pregame_odds_captured_at": "2026-09-12T22:04:06",
-      "pregame_weather": null,
+      "pregame_odds_captured_at": "2026-09-13T00:43:21",
+      "pregame_weather": {
+        "city": "Coventry",
+        "temp_c": 20.1,
+        "precip_probability_pct": 42,
+        "precip_mm": 0.0,
+        "wind_kmh": 4.0,
+        "cloud_cover_pct": 90,
+        "forecast_hour": "2026-09-13T13:00"
+      },
       "pregame_home_form": {
         "played": 3,
         "wins": 0,
@@ -2671,7 +2727,7 @@
           "ga": 4
         }
       },
-      "pregame_intel_captured_at": "2026-09-12T22:04:06"
+      "pregame_intel_captured_at": "2026-09-13T00:43:21"
     },
     {
       "parlay_leg_pick_ids": null,
@@ -2710,8 +2766,16 @@
         "away_moneyline": 115,
         "draw_moneyline": 280.0
       },
-      "pregame_odds_captured_at": "2026-09-12T22:04:06",
-      "pregame_weather": null,
+      "pregame_odds_captured_at": "2026-09-13T00:43:21",
+      "pregame_weather": {
+        "city": "Manchester",
+        "temp_c": 21.0,
+        "precip_probability_pct": 29,
+        "precip_mm": 0.0,
+        "wind_kmh": 6.5,
+        "cloud_cover_pct": 68,
+        "forecast_hour": "2026-09-13T15:00"
+      },
       "pregame_home_form": {
         "played": 3,
         "wins": 1,
@@ -2758,7 +2822,7 @@
           "ga": 1
         }
       },
-      "pregame_intel_captured_at": "2026-09-12T22:04:06"
+      "pregame_intel_captured_at": "2026-09-13T00:43:21"
     },
     {
       "parlay_leg_pick_ids": null,
@@ -2863,8 +2927,8 @@
       "selection": "Minnesota +1.5",
       "odds": -110,
       "stake": 50.0,
-      "result": "pending",
-      "profit_loss": 0.0,
+      "result": "loss",
+      "profit_loss": -50.0,
       "notes": "",
       "wr_confidence": 77.0,
       "war_room_line": "War Room fair: MIN -1 (vs market Minnesota +1.5) -- edge 2.5 pts",
@@ -3041,8 +3105,8 @@
       "selection": "Good-If-It-Goes Parlay",
       "odds": 612,
       "stake": 10.0,
-      "result": "pending",
-      "profit_loss": 0.0,
+      "result": "loss",
+      "profit_loss": -10.0,
       "notes": "",
       "wr_confidence": null,
       "war_room_line": "Combined 3-leg parlay off the same three fair-line edges (Purdue +3, Minnesota +1.5, UCLA -12.5)",
