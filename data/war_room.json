@@ -1,6 +1,6 @@
 {
   "next_report_id": 23,
-  "next_pick_id": 78,
+  "next_pick_id": 79,
   "reports": [
     {
       "source": "ChatGPT",
@@ -3324,6 +3324,83 @@
       },
       "pregame_intel_captured_at": "2026-09-13T14:18:17",
       "wr_confidence_initial": 72.4888888888889
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 22,
+      "category": "best_bet",
+      "matchup": "Arizona Cardinals @ Los Angeles Chargers",
+      "selection": "Arizona +9.5",
+      "odds": -105,
+      "stake": 50.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 79.0,
+      "war_room_line": "War Room fair LAC -6.5 (range -4.5 to -8.5)",
+      "edge": "Market number sits beyond our fair range. Love expected to play; three ARI starters out on OL/secondary.",
+      "price_discipline": "Playable to +8.5. $50.",
+      "espn_event_id": "401872926",
+      "bet_type": "spread",
+      "bet_side": "away",
+      "bet_line": 9.5,
+      "home_team": null,
+      "away_team": null,
+      "created_at": "2026-09-13T14:18:20",
+      "id": 78,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "LAC -9.5",
+        "home_spread": -9.5,
+        "home_spread_odds": -115.0,
+        "away_spread_odds": -105.0,
+        "total": 47.5,
+        "over_odds": -105.0,
+        "under_odds": -115.0,
+        "home_moneyline": -520,
+        "away_moneyline": 390,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-09-13T14:18:25",
+      "pregame_weather": null,
+      "pregame_home_form": null,
+      "pregame_away_form": null,
+      "pregame_home_injuries": 7,
+      "pregame_away_injuries": 14,
+      "pregame_home_split": {
+        "home": {
+          "w": 0,
+          "d": 0,
+          "l": 0,
+          "gf": 0,
+          "ga": 0
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 0,
+          "gf": 0,
+          "ga": 0
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 0,
+          "d": 0,
+          "l": 0,
+          "gf": 0,
+          "ga": 0
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 0,
+          "gf": 0,
+          "ga": 0
+        }
+      },
+      "pregame_intel_captured_at": "2026-09-13T14:18:25",
+      "wr_confidence_initial": 67.71111111111111
     }
   ],
   "next_wallet_id": 17,
