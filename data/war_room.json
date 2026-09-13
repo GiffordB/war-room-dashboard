@@ -1961,7 +1961,7 @@
         "away_moneyline": 142,
         "draw_moneyline": null
       },
-      "pregame_odds_captured_at": "2026-09-13T15:55:45",
+      "pregame_odds_captured_at": "2026-09-13T18:40:28",
       "pregame_weather": null,
       "pregame_home_form": null,
       "pregame_away_form": null,
@@ -1999,7 +1999,7 @@
           "ga": 0
         }
       },
-      "pregame_intel_captured_at": "2026-09-13T15:55:45"
+      "pregame_intel_captured_at": "2026-09-13T18:40:28"
     },
     {
       "parlay_leg_pick_ids": null,
@@ -2038,7 +2038,7 @@
         "away_moneyline": -166,
         "draw_moneyline": null
       },
-      "pregame_odds_captured_at": "2026-09-13T15:55:45",
+      "pregame_odds_captured_at": "2026-09-13T18:40:28",
       "pregame_weather": null,
       "pregame_home_form": null,
       "pregame_away_form": null,
@@ -2076,7 +2076,7 @@
           "ga": 0
         }
       },
-      "pregame_intel_captured_at": "2026-09-13T15:55:45"
+      "pregame_intel_captured_at": "2026-09-13T18:40:28"
     },
     {
       "parlay_leg_pick_ids": null,
@@ -2115,7 +2115,7 @@
         "away_moneyline": 114,
         "draw_moneyline": null
       },
-      "pregame_odds_captured_at": "2026-09-13T15:55:45",
+      "pregame_odds_captured_at": "2026-09-13T18:40:28",
       "pregame_weather": null,
       "pregame_home_form": null,
       "pregame_away_form": null,
@@ -2153,7 +2153,7 @@
           "ga": 0
         }
       },
-      "pregame_intel_captured_at": "2026-09-13T15:55:45"
+      "pregame_intel_captured_at": "2026-09-13T18:40:28"
     },
     {
       "parlay_leg_pick_ids": null,
@@ -2353,8 +2353,8 @@
       "selection": "Manchester City to Win",
       "odds": 115,
       "stake": 100.0,
-      "result": "pending",
-      "profit_loss": 0.0,
+      "result": "win",
+      "profit_loss": 115.0,
       "notes": "",
       "wr_confidence": 53.0,
       "war_room_line": "Fair: United 32 / draw 17 / City 51. City 3-0-0, +5 goal difference; OReilly available, Doku not ready",
@@ -2717,8 +2717,8 @@
       "selection": "Manchester City to Win",
       "odds": 115,
       "stake": 25.0,
-      "result": "pending",
-      "profit_loss": 0.0,
+      "result": "win",
+      "profit_loss": 28.75,
       "notes": "",
       "wr_confidence": 48.0,
       "war_room_line": null,
@@ -3361,7 +3361,7 @@
         "away_moneyline": 380,
         "draw_moneyline": null
       },
-      "pregame_odds_captured_at": "2026-09-13T15:55:45",
+      "pregame_odds_captured_at": "2026-09-13T18:40:28",
       "pregame_weather": null,
       "pregame_home_form": null,
       "pregame_away_form": null,
@@ -3399,7 +3399,7 @@
           "ga": 0
         }
       },
-      "pregame_intel_captured_at": "2026-09-13T15:55:45",
+      "pregame_intel_captured_at": "2026-09-13T18:40:28",
       "wr_confidence_initial": 67.71111111111111
     },
     {
@@ -3438,7 +3438,7 @@
         "away_moneyline": -166,
         "draw_moneyline": null
       },
-      "pregame_odds_captured_at": "2026-09-13T15:55:45",
+      "pregame_odds_captured_at": "2026-09-13T18:40:28",
       "pregame_weather": null,
       "pregame_home_form": null,
       "pregame_away_form": null,
@@ -3476,7 +3476,7 @@
           "ga": 0
         }
       },
-      "pregame_intel_captured_at": "2026-09-13T15:55:45",
+      "pregame_intel_captured_at": "2026-09-13T18:40:28",
       "wr_confidence_initial": 72.81333333333333
     },
     {
@@ -3515,7 +3515,7 @@
         "away_moneyline": 380,
         "draw_moneyline": null
       },
-      "pregame_odds_captured_at": "2026-09-13T15:55:45",
+      "pregame_odds_captured_at": "2026-09-13T18:40:28",
       "pregame_weather": null,
       "pregame_home_form": null,
       "pregame_away_form": null,
@@ -3553,7 +3553,7 @@
           "ga": 0
         }
       },
-      "pregame_intel_captured_at": "2026-09-13T15:55:45",
+      "pregame_intel_captured_at": "2026-09-13T18:40:28",
       "wr_confidence_initial": 32.0
     },
     {
@@ -3864,8 +3864,8 @@
       "odds": 115,
       "stake": 25.0,
       "bet_line": null,
-      "result": "pending",
-      "profit_loss": 0.0,
+      "result": "win",
+      "profit_loss": 28.75,
       "notes": null,
       "wr_confidence_at_bet": 61.63272727272727,
       "created_at": "2026-09-12T02:23:28",
