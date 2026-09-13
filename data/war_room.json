@@ -1,6 +1,6 @@
 {
   "next_report_id": 23,
-  "next_pick_id": 77,
+  "next_pick_id": 78,
   "reports": [
     {
       "source": "ChatGPT",
@@ -3247,6 +3247,83 @@
       },
       "pregame_intel_captured_at": "2026-09-13T14:12:46",
       "wr_confidence_initial": 82.57777777777778
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 22,
+      "category": "best_bet",
+      "matchup": "Buffalo Bills @ Houston Texans",
+      "selection": "Houston +1.5",
+      "odds": -112,
+      "stake": 100.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 84.0,
+      "war_room_line": "War Room fair HOU -1 (range +0.5 to -2.5)",
+      "edge": "Elite defense and home field vs. a public Bills side. Best game to bet on the slate.",
+      "price_discipline": "Playable down to PK. $100 (full unit).",
+      "espn_event_id": "401872660",
+      "bet_type": "spread",
+      "bet_side": "home",
+      "bet_line": 1.5,
+      "home_team": null,
+      "away_team": null,
+      "created_at": "2026-09-13T14:18:11",
+      "id": 77,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "BUF -1.5",
+        "home_spread": 1.5,
+        "home_spread_odds": -112.0,
+        "away_spread_odds": -108.0,
+        "total": 44.5,
+        "over_odds": -110.0,
+        "under_odds": -110.0,
+        "home_moneyline": -108,
+        "away_moneyline": -112,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-09-13T14:18:17",
+      "pregame_weather": null,
+      "pregame_home_form": null,
+      "pregame_away_form": null,
+      "pregame_home_injuries": 13,
+      "pregame_away_injuries": 8,
+      "pregame_home_split": {
+        "home": {
+          "w": 0,
+          "d": 0,
+          "l": 0,
+          "gf": 0,
+          "ga": 0
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 0,
+          "gf": 0,
+          "ga": 0
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 0,
+          "d": 0,
+          "l": 0,
+          "gf": 0,
+          "ga": 0
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 0,
+          "gf": 0,
+          "ga": 0
+        }
+      },
+      "pregame_intel_captured_at": "2026-09-13T14:18:17",
+      "wr_confidence_initial": 72.4888888888889
     }
   ],
   "next_wallet_id": 17,
