@@ -1,5 +1,5 @@
 {
-  "next_report_id": 22,
+  "next_report_id": 23,
   "next_pick_id": 75,
   "reports": [
     {
@@ -156,6 +156,18 @@
       "lsu_review_notes": "",
       "created_at": "2026-09-12T13:20:52",
       "id": 21
+    },
+    {
+      "source": "ChatGPT",
+      "league": "NFL",
+      "report_date": "2026-09-13",
+      "week_number": 1,
+      "week_label": "Week 1 -- Sunday NFL War Room",
+      "philosophy": "$100 unit, serious card $300. DraftKings full-game markets only -- no live, half, quarter, drive or micro markets. Judgment projections, not a calibrated model: the Diamond Score ranks the strength of the judgment case, it is not a win probability.",
+      "blind_spot_notes": "WHY / MODEL CHECK: HOU -- elite defense and home field vs. a public Bills side. TB and ARI -- both numbers sit beyond our fair ranges. PIT total -- Atlanta QBs 1-2 (Tua, Penix) are out and Rush is managing back spasms. NYG +3 is the only playable DraftKings match to Model B; play only if Nabers is active (MIA +3 and KC -3 void its rules). PASS BOARD: GB-MIN pass at MIN -1.5 (-124); NO-DET O49.5 lean only, Kamara expected out. AVAILABILITY: HOU no designations; ARI Love expected to play, three starters out on OL/secondary; PIT Joey Porter Jr. unlikely; Sunday inactives not yet official at freeze time. PITTSBURGH WEATHER: open-air, ~80F, light wind, 50-60% RH, earlier showers/fog with scattered storms possible later -- only a small under nudge, QB quality and pace drive the play. No Thor Hammer: no 90+ clean edge with confirmed inactives and price. No MVP/OPOY/DPOY future qualifies; no newly actionable win-total change. WEEK 1 TRACKING: confirmed Jesse ticket NE +3.5 (-128) $50 WON, paid $89.06; Vegas blind spot developing (NE cover by 0.5, SF +3.5 won 27-7); DK closing lines unverified, no CLV claimed. Sources: DraftKings Network odds 9/12-9/13, NFL official injury reports, NWS PBZ 9/13.",
+      "lsu_review_notes": "",
+      "created_at": "2026-09-13T14:09:34",
+      "id": 22
     }
   ],
   "picks": [
