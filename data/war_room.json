@@ -1,6 +1,6 @@
 {
   "next_report_id": 23,
-  "next_pick_id": 80,
+  "next_pick_id": 81,
   "reports": [
     {
       "source": "ChatGPT",
@@ -3478,6 +3478,83 @@
       },
       "pregame_intel_captured_at": "2026-09-13T14:18:35",
       "wr_confidence_initial": 72.81333333333333
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 22,
+      "category": "sexy_moneyline",
+      "matchup": "Arizona Cardinals @ Los Angeles Chargers",
+      "selection": "Arizona ML",
+      "odds": 390,
+      "stake": 25.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 42.0,
+      "war_room_line": "DK implied 20.4% | War Room 24% | fair +317",
+      "edge": "Upset script: Brissett stays clean, McBride owns the middle, Arizona wins turnover margin, Josh Sweat stresses rookie C Jake Slaughter. Breaker: depleted AZ secondary cannot get off the field.",
+      "price_discipline": "$25 at +390. Still only a ~24% win probability -- lowest WR score on the card by design.",
+      "espn_event_id": "401872926",
+      "bet_type": "moneyline",
+      "bet_side": "away",
+      "bet_line": null,
+      "home_team": null,
+      "away_team": null,
+      "created_at": "2026-09-13T14:18:38",
+      "id": 80,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "LAC -9.5",
+        "home_spread": -9.5,
+        "home_spread_odds": -115.0,
+        "away_spread_odds": -105.0,
+        "total": 47.5,
+        "over_odds": -105.0,
+        "under_odds": -115.0,
+        "home_moneyline": -520,
+        "away_moneyline": 390,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-09-13T14:18:43",
+      "pregame_weather": null,
+      "pregame_home_form": null,
+      "pregame_away_form": null,
+      "pregame_home_injuries": 7,
+      "pregame_away_injuries": 14,
+      "pregame_home_split": {
+        "home": {
+          "w": 0,
+          "d": 0,
+          "l": 0,
+          "gf": 0,
+          "ga": 0
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 0,
+          "gf": 0,
+          "ga": 0
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 0,
+          "d": 0,
+          "l": 0,
+          "gf": 0,
+          "ga": 0
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 0,
+          "gf": 0,
+          "ga": 0
+        }
+      },
+      "pregame_intel_captured_at": "2026-09-13T14:18:43",
+      "wr_confidence_initial": 32.0
     }
   ],
   "next_wallet_id": 17,
