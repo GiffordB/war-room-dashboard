@@ -1,6 +1,6 @@
 {
   "next_report_id": 23,
-  "next_pick_id": 79,
+  "next_pick_id": 80,
   "reports": [
     {
       "source": "ChatGPT",
@@ -3401,6 +3401,83 @@
       },
       "pregame_intel_captured_at": "2026-09-13T14:18:25",
       "wr_confidence_initial": 67.71111111111111
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 22,
+      "category": "best_bet",
+      "matchup": "Dallas Cowboys @ New York Giants",
+      "selection": "NY Giants +3",
+      "odds": -115,
+      "stake": 50.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 74.0,
+      "war_room_line": "Model B: DAL -0.9 -- the only playable DraftKings match to Model B this week",
+      "edge": "Model B play. MIA +3 and KC -3 void its rules.",
+      "price_discipline": "+3 at -115 or better. Play ONLY if Nabers is active. $50.",
+      "espn_event_id": "401872930",
+      "bet_type": "spread",
+      "bet_side": "home",
+      "bet_line": 3.0,
+      "home_team": null,
+      "away_team": null,
+      "created_at": "2026-09-13T14:18:28",
+      "id": 79,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "DAL -3",
+        "home_spread": 3.0,
+        "home_spread_odds": -110.0,
+        "away_spread_odds": -105.0,
+        "total": 47.5,
+        "over_odds": -118.0,
+        "under_odds": -102.0,
+        "home_moneyline": 140,
+        "away_moneyline": -166,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-09-13T14:18:35",
+      "pregame_weather": null,
+      "pregame_home_form": null,
+      "pregame_away_form": null,
+      "pregame_home_injuries": 9,
+      "pregame_away_injuries": 8,
+      "pregame_home_split": {
+        "home": {
+          "w": 0,
+          "d": 0,
+          "l": 0,
+          "gf": 0,
+          "ga": 0
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 0,
+          "gf": 0,
+          "ga": 0
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 0,
+          "d": 0,
+          "l": 0,
+          "gf": 0,
+          "ga": 0
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 0,
+          "gf": 0,
+          "ga": 0
+        }
+      },
+      "pregame_intel_captured_at": "2026-09-13T14:18:35",
+      "wr_confidence_initial": 72.81333333333333
     }
   ],
   "next_wallet_id": 17,
