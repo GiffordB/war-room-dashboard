@@ -3586,7 +3586,7 @@
       "wr_confidence_initial": null
     }
   ],
-  "next_wallet_id": 17,
+  "next_wallet_id": 18,
   "wallet_entries": [
     {
       "pick_id": 12,
@@ -3888,6 +3888,24 @@
       "wr_confidence_at_bet": 56.54545454545455,
       "created_at": "2026-09-12T02:23:47",
       "id": 16
+    },
+    {
+      "pick_id": 79,
+      "report_id": 22,
+      "source": "ChatGPT",
+      "league": "NFL",
+      "category": "best_bet",
+      "matchup": "Dallas Cowboys @ New York Giants",
+      "selection": "NY Giants +3",
+      "odds": -105,
+      "stake": 25.0,
+      "bet_line": 3.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": null,
+      "wr_confidence_at_bet": 72.81333333333333,
+      "created_at": "2026-09-13T20:40:54",
+      "id": 17
     }
   ],
   "next_jesse_wallet_id": 1,
