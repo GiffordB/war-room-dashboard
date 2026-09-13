@@ -2038,7 +2038,7 @@
         "away_moneyline": -166,
         "draw_moneyline": null
       },
-      "pregame_odds_captured_at": "2026-09-13T18:40:28",
+      "pregame_odds_captured_at": "2026-09-13T21:18:27",
       "pregame_weather": null,
       "pregame_home_form": null,
       "pregame_away_form": null,
@@ -2076,7 +2076,7 @@
           "ga": 0
         }
       },
-      "pregame_intel_captured_at": "2026-09-13T18:40:28"
+      "pregame_intel_captured_at": "2026-09-13T21:18:27"
     },
     {
       "parlay_leg_pick_ids": null,
@@ -2115,7 +2115,7 @@
         "away_moneyline": 114,
         "draw_moneyline": null
       },
-      "pregame_odds_captured_at": "2026-09-13T18:40:28",
+      "pregame_odds_captured_at": "2026-09-13T21:18:27",
       "pregame_weather": null,
       "pregame_home_form": null,
       "pregame_away_form": null,
@@ -2153,7 +2153,7 @@
           "ga": 0
         }
       },
-      "pregame_intel_captured_at": "2026-09-13T18:40:28"
+      "pregame_intel_captured_at": "2026-09-13T21:18:27"
     },
     {
       "parlay_leg_pick_ids": null,
@@ -3102,8 +3102,8 @@
       "selection": "Tampa Bay +3.5",
       "odds": -108,
       "stake": 50.0,
-      "result": "pending",
-      "profit_loss": 0.0,
+      "result": "loss",
+      "profit_loss": -50.0,
       "notes": "",
       "wr_confidence": 78.0,
       "war_room_line": "War Room fair CIN -1.5 (range -0.5 to -3)",
@@ -3179,8 +3179,8 @@
       "selection": "Under 41.5",
       "odds": -123,
       "stake": 50.0,
-      "result": "pending",
-      "profit_loss": 0.0,
+      "result": "win",
+      "profit_loss": 40.65040650406504,
       "notes": "",
       "wr_confidence": 82.0,
       "war_room_line": "War Room fair total 37.5 (range 35 to 40.5)",
@@ -3256,8 +3256,8 @@
       "selection": "Houston +1.5",
       "odds": -112,
       "stake": 100.0,
-      "result": "pending",
-      "profit_loss": 0.0,
+      "result": "loss",
+      "profit_loss": -100.0,
       "notes": "",
       "wr_confidence": 84.0,
       "war_room_line": "War Room fair HOU -1 (range +0.5 to -2.5)",
@@ -3438,7 +3438,7 @@
         "away_moneyline": -166,
         "draw_moneyline": null
       },
-      "pregame_odds_captured_at": "2026-09-13T18:40:28",
+      "pregame_odds_captured_at": "2026-09-13T21:18:27",
       "pregame_weather": null,
       "pregame_home_form": null,
       "pregame_away_form": null,
@@ -3476,7 +3476,7 @@
           "ga": 0
         }
       },
-      "pregame_intel_captured_at": "2026-09-13T18:40:28",
+      "pregame_intel_captured_at": "2026-09-13T21:18:27",
       "wr_confidence_initial": 72.81333333333333
     },
     {
@@ -3568,8 +3568,8 @@
       "selection": "Good-If-It-Goes Parlay",
       "odds": 612,
       "stake": 10.0,
-      "result": "pending",
-      "profit_loss": 0.0,
+      "result": "loss",
+      "profit_loss": -10.0,
       "notes": "",
       "wr_confidence": null,
       "war_room_line": "Independent-leg math approx +612, $71.17 return; exact DK parlay quote unavailable.",
