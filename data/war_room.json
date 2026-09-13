@@ -1,6 +1,6 @@
 {
   "next_report_id": 23,
-  "next_pick_id": 75,
+  "next_pick_id": 76,
   "reports": [
     {
       "source": "ChatGPT",
@@ -1955,22 +1955,14 @@
         "home_spread_odds": -112.0,
         "away_spread_odds": -108.0,
         "total": 40.5,
-        "over_odds": -105.0,
-        "under_odds": -115.0,
+        "over_odds": -110.0,
+        "under_odds": -110.0,
         "home_moneyline": -170,
         "away_moneyline": 142,
         "draw_moneyline": null
       },
-      "pregame_odds_captured_at": "2026-09-13T05:48:33",
-      "pregame_weather": {
-        "city": "Las Vegas",
-        "temp_c": 38.2,
-        "precip_probability_pct": 0,
-        "precip_mm": 0.0,
-        "wind_kmh": 30.4,
-        "cloud_cover_pct": 0,
-        "forecast_hour": "2026-09-13T20:00"
-      },
+      "pregame_odds_captured_at": "2026-09-13T14:12:11",
+      "pregame_weather": null,
       "pregame_home_form": null,
       "pregame_away_form": null,
       "pregame_home_injuries": 10,
@@ -2007,7 +1999,7 @@
           "ga": 0
         }
       },
-      "pregame_intel_captured_at": "2026-09-13T05:48:33"
+      "pregame_intel_captured_at": "2026-09-13T14:12:11"
     },
     {
       "parlay_leg_pick_ids": null,
@@ -2037,25 +2029,17 @@
         "provider": "Draft Kings",
         "spread_details": "DAL -3",
         "home_spread": 3.0,
-        "home_spread_odds": -115.0,
+        "home_spread_odds": -110.0,
         "away_spread_odds": -105.0,
-        "total": 48.5,
-        "over_odds": -105.0,
-        "under_odds": -115.0,
-        "home_moneyline": 136,
-        "away_moneyline": -162,
+        "total": 47.5,
+        "over_odds": -118.0,
+        "under_odds": -102.0,
+        "home_moneyline": 140,
+        "away_moneyline": -166,
         "draw_moneyline": null
       },
-      "pregame_odds_captured_at": "2026-09-13T05:48:33",
-      "pregame_weather": {
-        "city": "East Rutherford",
-        "temp_c": 23.3,
-        "precip_probability_pct": 0,
-        "precip_mm": 0.0,
-        "wind_kmh": 8.0,
-        "cloud_cover_pct": 43,
-        "forecast_hour": "2026-09-14T00:00"
-      },
+      "pregame_odds_captured_at": "2026-09-13T14:12:11",
+      "pregame_weather": null,
       "pregame_home_form": null,
       "pregame_away_form": null,
       "pregame_home_injuries": 9,
@@ -2092,7 +2076,7 @@
           "ga": 0
         }
       },
-      "pregame_intel_captured_at": "2026-09-13T05:48:33"
+      "pregame_intel_captured_at": "2026-09-13T14:12:11"
     },
     {
       "parlay_leg_pick_ids": null,
@@ -2122,25 +2106,17 @@
         "provider": "Draft Kings",
         "spread_details": "KC -2.5",
         "home_spread": -2.5,
-        "home_spread_odds": -112.0,
-        "away_spread_odds": -108.0,
+        "home_spread_odds": -110.0,
+        "away_spread_odds": -110.0,
         "total": 43.5,
-        "over_odds": -110.0,
-        "under_odds": -110.0,
+        "over_odds": -108.0,
+        "under_odds": -112.0,
         "home_moneyline": -135,
         "away_moneyline": 114,
         "draw_moneyline": null
       },
-      "pregame_odds_captured_at": "2026-09-13T05:48:33",
-      "pregame_weather": {
-        "city": "Kansas City",
-        "temp_c": 32.2,
-        "precip_probability_pct": 0,
-        "precip_mm": 0.0,
-        "wind_kmh": 19.5,
-        "cloud_cover_pct": 5,
-        "forecast_hour": "2026-09-15T00:00"
-      },
+      "pregame_odds_captured_at": "2026-09-13T14:12:11",
+      "pregame_weather": null,
       "pregame_home_form": null,
       "pregame_away_form": null,
       "pregame_home_injuries": 8,
@@ -2177,7 +2153,7 @@
           "ga": 0
         }
       },
-      "pregame_intel_captured_at": "2026-09-13T05:48:33"
+      "pregame_intel_captured_at": "2026-09-13T14:12:11"
     },
     {
       "parlay_leg_pick_ids": null,
@@ -2397,25 +2373,17 @@
         "provider": "DraftKings",
         "spread_details": "MNC +120",
         "home_spread": 0.5,
-        "home_spread_odds": -155.0,
-        "away_spread_odds": 110.0,
+        "home_spread_odds": -150.0,
+        "away_spread_odds": 105.0,
         "total": 3.5,
-        "over_odds": 135.0,
-        "under_odds": -165.0,
-        "home_moneyline": 200,
+        "over_odds": 130.0,
+        "under_odds": -160.0,
+        "home_moneyline": 210,
         "away_moneyline": 120,
-        "draw_moneyline": 280.0
+        "draw_moneyline": 275.0
       },
-      "pregame_odds_captured_at": "2026-09-13T05:48:33",
-      "pregame_weather": {
-        "city": "Manchester",
-        "temp_c": 21.4,
-        "precip_probability_pct": 25,
-        "precip_mm": 0.0,
-        "wind_kmh": 8.3,
-        "cloud_cover_pct": 65,
-        "forecast_hour": "2026-09-13T15:00"
-      },
+      "pregame_odds_captured_at": "2026-09-13T14:12:11",
+      "pregame_weather": null,
       "pregame_home_form": {
         "played": 3,
         "wins": 1,
@@ -2462,7 +2430,7 @@
           "ga": 1
         }
       },
-      "pregame_intel_captured_at": "2026-09-13T05:48:33"
+      "pregame_intel_captured_at": "2026-09-13T14:12:11"
     },
     {
       "parlay_leg_pick_ids": null,
@@ -2769,25 +2737,17 @@
         "provider": "DraftKings",
         "spread_details": "MNC +120",
         "home_spread": 0.5,
-        "home_spread_odds": -155.0,
-        "away_spread_odds": 110.0,
+        "home_spread_odds": -150.0,
+        "away_spread_odds": 105.0,
         "total": 3.5,
-        "over_odds": 135.0,
-        "under_odds": -165.0,
-        "home_moneyline": 200,
+        "over_odds": 130.0,
+        "under_odds": -160.0,
+        "home_moneyline": 210,
         "away_moneyline": 120,
-        "draw_moneyline": 280.0
+        "draw_moneyline": 275.0
       },
-      "pregame_odds_captured_at": "2026-09-13T05:48:33",
-      "pregame_weather": {
-        "city": "Manchester",
-        "temp_c": 21.4,
-        "precip_probability_pct": 25,
-        "precip_mm": 0.0,
-        "wind_kmh": 8.3,
-        "cloud_cover_pct": 65,
-        "forecast_hour": "2026-09-13T15:00"
-      },
+      "pregame_odds_captured_at": "2026-09-13T14:12:11",
+      "pregame_weather": null,
       "pregame_home_form": {
         "played": 3,
         "wins": 1,
@@ -2834,7 +2794,7 @@
           "ga": 1
         }
       },
-      "pregame_intel_captured_at": "2026-09-13T05:48:33"
+      "pregame_intel_captured_at": "2026-09-13T14:12:11"
     },
     {
       "parlay_leg_pick_ids": null,
@@ -3133,6 +3093,83 @@
       "created_at": "2026-09-12T13:23:26",
       "id": 74,
       "wr_confidence_initial": null
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 22,
+      "category": "best_bet",
+      "matchup": "Tampa Bay Buccaneers @ Cincinnati Bengals",
+      "selection": "Tampa Bay +3.5",
+      "odds": -108,
+      "stake": 50.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 78.0,
+      "war_room_line": "War Room fair CIN -1.5 (range -0.5 to -3)",
+      "edge": "Market number sits beyond our fair range.",
+      "price_discipline": "Playable to +3. $50.",
+      "espn_event_id": "401872925",
+      "bet_type": "spread",
+      "bet_side": "away",
+      "bet_line": 3.5,
+      "home_team": null,
+      "away_team": null,
+      "created_at": "2026-09-13T14:10:18",
+      "id": 75,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "CIN -3.5",
+        "home_spread": -3.5,
+        "home_spread_odds": -118.0,
+        "away_spread_odds": -102.0,
+        "total": 50.5,
+        "over_odds": -108.0,
+        "under_odds": -112.0,
+        "home_moneyline": -205,
+        "away_moneyline": 170,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-09-13T14:12:11",
+      "pregame_weather": null,
+      "pregame_home_form": null,
+      "pregame_away_form": null,
+      "pregame_home_injuries": 3,
+      "pregame_away_injuries": 8,
+      "pregame_home_split": {
+        "home": {
+          "w": 0,
+          "d": 0,
+          "l": 0,
+          "gf": 0,
+          "ga": 0
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 0,
+          "gf": 0,
+          "ga": 0
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 0,
+          "d": 0,
+          "l": 0,
+          "gf": 0,
+          "ga": 0
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 0,
+          "gf": 0,
+          "ga": 0
+        }
+      },
+      "pregame_intel_captured_at": "2026-09-13T14:12:11",
+      "wr_confidence_initial": 66.75555555555556
     }
   ],
   "next_wallet_id": 17,
