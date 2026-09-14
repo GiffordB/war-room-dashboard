@@ -2115,12 +2115,12 @@
         "away_moneyline": 110,
         "draw_moneyline": null
       },
-      "pregame_odds_captured_at": "2026-09-14T20:49:02",
+      "pregame_odds_captured_at": "2026-09-14T23:46:07",
       "pregame_weather": null,
       "pregame_home_form": null,
       "pregame_away_form": null,
-      "pregame_home_injuries": 8,
-      "pregame_away_injuries": 7,
+      "pregame_home_injuries": 13,
+      "pregame_away_injuries": 13,
       "pregame_home_split": {
         "home": {
           "w": 0,
@@ -2153,7 +2153,7 @@
           "ga": 0
         }
       },
-      "pregame_intel_captured_at": "2026-09-14T20:49:02"
+      "pregame_intel_captured_at": "2026-09-14T23:46:07"
     },
     {
       "parlay_leg_pick_ids": null,
