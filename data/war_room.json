@@ -2115,16 +2115,8 @@
         "away_moneyline": 114,
         "draw_moneyline": null
       },
-      "pregame_odds_captured_at": "2026-09-14T04:44:34",
-      "pregame_weather": {
-        "city": "Kansas City",
-        "temp_c": 32.1,
-        "precip_probability_pct": 1,
-        "precip_mm": 0.0,
-        "wind_kmh": 22.7,
-        "cloud_cover_pct": 0,
-        "forecast_hour": "2026-09-15T00:00"
-      },
+      "pregame_odds_captured_at": "2026-09-14T10:26:42",
+      "pregame_weather": null,
       "pregame_home_form": null,
       "pregame_away_form": null,
       "pregame_home_injuries": 8,
@@ -2161,7 +2153,7 @@
           "ga": 0
         }
       },
-      "pregame_intel_captured_at": "2026-09-14T04:44:34"
+      "pregame_intel_captured_at": "2026-09-14T10:26:42"
     },
     {
       "parlay_leg_pick_ids": null,
