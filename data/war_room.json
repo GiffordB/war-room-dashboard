@@ -2009,8 +2009,8 @@
       "selection": "NY Giants +3",
       "odds": -108,
       "stake": 100.0,
-      "result": "pending",
-      "profit_loss": 0.0,
+      "result": "win",
+      "profit_loss": 92.5925925925926,
       "notes": "",
       "wr_confidence": 72.0,
       "war_room_line": "Pinnacle DAL -2.5 (-117); Model B DAL -0.9 agrees with the Giants side. Recreational-first move, sharps declined to follow for 48 hours; Pinnacle held 2.5 across all three snapshots",
@@ -2115,8 +2115,16 @@
         "away_moneyline": 114,
         "draw_moneyline": null
       },
-      "pregame_odds_captured_at": "2026-09-13T23:59:08",
-      "pregame_weather": null,
+      "pregame_odds_captured_at": "2026-09-14T04:44:34",
+      "pregame_weather": {
+        "city": "Kansas City",
+        "temp_c": 32.1,
+        "precip_probability_pct": 1,
+        "precip_mm": 0.0,
+        "wind_kmh": 22.7,
+        "cloud_cover_pct": 0,
+        "forecast_hour": "2026-09-15T00:00"
+      },
       "pregame_home_form": null,
       "pregame_away_form": null,
       "pregame_home_injuries": 8,
@@ -2153,7 +2161,7 @@
           "ga": 0
         }
       },
-      "pregame_intel_captured_at": "2026-09-13T23:59:08"
+      "pregame_intel_captured_at": "2026-09-14T04:44:34"
     },
     {
       "parlay_leg_pick_ids": null,
@@ -3410,8 +3418,8 @@
       "selection": "NY Giants +3",
       "odds": -115,
       "stake": 50.0,
-      "result": "pending",
-      "profit_loss": 0.0,
+      "result": "win",
+      "profit_loss": 43.47826086956522,
       "notes": "",
       "wr_confidence": 74.0,
       "war_room_line": "Model B: DAL -0.9 -- the only playable DraftKings match to Model B this week",
@@ -3900,8 +3908,8 @@
       "odds": -105,
       "stake": 25.0,
       "bet_line": 3.0,
-      "result": "pending",
-      "profit_loss": 0.0,
+      "result": "win",
+      "profit_loss": 23.80952380952381,
       "notes": null,
       "wr_confidence_at_bet": 72.81333333333333,
       "created_at": "2026-09-13T20:40:54",
