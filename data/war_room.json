@@ -2106,16 +2106,16 @@
         "provider": "Draft Kings",
         "spread_details": "KC -2.5",
         "home_spread": -2.5,
-        "home_spread_odds": -110.0,
-        "away_spread_odds": -110.0,
+        "home_spread_odds": -108.0,
+        "away_spread_odds": -112.0,
         "total": 43.5,
         "over_odds": -108.0,
         "under_odds": -112.0,
-        "home_moneyline": -135,
-        "away_moneyline": 114,
+        "home_moneyline": -130,
+        "away_moneyline": 110,
         "draw_moneyline": null
       },
-      "pregame_odds_captured_at": "2026-09-14T10:26:42",
+      "pregame_odds_captured_at": "2026-09-14T16:52:43",
       "pregame_weather": null,
       "pregame_home_form": null,
       "pregame_away_form": null,
@@ -2153,7 +2153,7 @@
           "ga": 0
         }
       },
-      "pregame_intel_captured_at": "2026-09-14T10:26:42"
+      "pregame_intel_captured_at": "2026-09-14T16:52:43"
     },
     {
       "parlay_leg_pick_ids": null,
