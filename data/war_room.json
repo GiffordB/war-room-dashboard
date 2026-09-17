@@ -1,5 +1,5 @@
 {
-  "next_report_id": 23,
+  "next_report_id": 24,
   "next_pick_id": 82,
   "reports": [
     {
@@ -168,6 +168,18 @@
       "lsu_review_notes": "",
       "created_at": "2026-09-13T14:09:34",
       "id": 22
+    },
+    {
+      "source": "Claude",
+      "league": "NFL",
+      "report_date": "2026-09-20",
+      "week_number": 1,
+      "week_label": "Week 2 -- Weekend Top 15 v2.0 (Maven Quant, Model B)",
+      "philosophy": "Every game on THE LINE priced at the papers Today column against Pinnacle no-vig with the NFL key-number table (3 lands 14.7%, 7 lands 8.7%). Decision score = 70% brain trust (Walters 50, five seats 10 each) + 30% market layer. Floors: +2% EV; 60 tracked, 70 staked. NO NFL STAKE THIS WEEK: two positions clear the 60 tracking floor and stop short of 70 -- logged at $0 for the CLV ledger, graded against Pinnacle Sunday 11:00 CT close.",
+      "blind_spot_notes": "The paper has already absorbed the big information moves (Seattle 10 to 4 with Darnold out, Philadelphia 4.5 to 7, San Francisco 10.5 to 13.5, Chargers 8.5 to 6.5, Rams 9.5 to 7) -- on every one it equals Pinnacle to the half point. The only stale numbers left are half-point stale, and a half point is a bet only when it is the 3. TRACKED (no stake): NY Jets +3.5 -- best number on the board, Pinnacle GB -3 after a sharp move from 6.5, but own number GB -3.0 equals Pinnacle so the edge is price not opinion, scores 63. Houston -2.5 -- gets the 3 with the cleanest reverse-line-movement read of the week (38% tickets / 83% money on HOU), but Collins (hamstring) and Burrow (back) unresolved; +3.4%, scores 60. PASSES: New England -4.5 (+1.9%, a tenth under the floor; Pinnacle price says the true number is 5), Dallas -3.5 (+1.5%), Chicago -4.5 (behind the Murray-concussion move), Miami +13.5 (Model B likes Miami by ten -- it does not know Willis is the QB; model-only bets banned before Week 5), Arizona +4 / Atlanta +2.5 / Tennessee +7 (every large info move reached the paper first), Detroit at Buffalo tonight (5.5 both sides). Totals not priced (credit conservation; totals model unvalidated). Survivor: LA Rams (74.3%, after Model B vetoes SF, TB, BAL, KC for disagreeing with the market by 5+ pts). Monday review: shrink Model B 2025 memory harder toward the market; whether the 70 floor should admit a stale key number with own number equal to Pinnacle (Jets +3.5 is the test case); scale the survivor veto by confidence weight.",
+      "lsu_review_notes": "",
+      "created_at": "2026-09-17T21:50:14",
+      "id": 23
     }
   ],
   "picks": [
