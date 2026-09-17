@@ -1,6 +1,6 @@
 {
   "next_report_id": 25,
-  "next_pick_id": 89,
+  "next_pick_id": 90,
   "reports": [
     {
       "source": "ChatGPT",
@@ -3695,6 +3695,93 @@
       },
       "pregame_intel_captured_at": "2026-09-17T22:13:32",
       "wr_confidence_initial": 53.031578947368416
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 24,
+      "category": "best_bet",
+      "matchup": "Western Michigan @ Rice",
+      "selection": "Rice +12.5",
+      "odds": -110,
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 67.0,
+      "war_room_line": "Own number WMU -8.6 (Walters seat 87, brain trust 77). Pinnacle WMU -10.5. THE LINE +12.5, -110 assumed.",
+      "edge": "Two points stale to Pinnacle with Model A on the Rice side by 4 after the confidence weight. RB Quinton Jackson knee (-0.5) kept in the score. Market layer capped at 45 with no public data, so 77 brain trust lands at 67. +6.1% EV.",
+      "price_discipline": "TRACK, $0 stake (1.2% if staked). Void if the paper drops under +10.5 or Jackson is ruled out. Graded vs Pinnacle 30 minutes pre-kick.",
+      "espn_event_id": "401862773",
+      "bet_type": "spread",
+      "bet_side": "home",
+      "bet_line": 12.5,
+      "home_team": null,
+      "away_team": null,
+      "created_at": "2026-09-17T22:13:34",
+      "id": 89,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "WMU -9.5",
+        "home_spread": 9.5,
+        "home_spread_odds": -112.0,
+        "away_spread_odds": -108.0,
+        "total": 43.5,
+        "over_odds": -118.0,
+        "under_odds": -102.0,
+        "home_moneyline": 270,
+        "away_moneyline": -340,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-09-17T22:13:41",
+      "pregame_weather": null,
+      "pregame_home_form": {
+        "played": 2,
+        "wins": 1,
+        "win_pct": 50.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 2,
+        "wins": 1,
+        "win_pct": 50.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 0,
+          "gf": 31,
+          "ga": 3
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 1,
+          "gf": 0,
+          "ga": 52
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 0,
+          "gf": 49,
+          "ga": 14
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 1,
+          "gf": 12,
+          "ga": 13
+        }
+      },
+      "pregame_intel_captured_at": "2026-09-17T22:13:41",
+      "wr_confidence_initial": 75.27368421052631
     }
   ],
   "next_wallet_id": 18,
