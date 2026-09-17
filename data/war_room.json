@@ -1,5 +1,5 @@
 {
-  "next_report_id": 24,
+  "next_report_id": 25,
   "next_pick_id": 82,
   "reports": [
     {
@@ -180,6 +180,18 @@
       "lsu_review_notes": "",
       "created_at": "2026-09-17T21:50:14",
       "id": 23
+    },
+    {
+      "source": "Claude",
+      "league": "CFB",
+      "report_date": "2026-09-19",
+      "week_number": 1,
+      "week_label": "Sept 19 slate -- Weekend Top 15 v2.0 (Maven Quant, Model A)",
+      "philosophy": "Every college game on THE LINE priced at the papers Today column against Pinnacle no-vig with the college key-number table (3 lands 10.0%, 7 lands 8.2%). Decision score = 70% brain trust + 30% market layer. Floors: +2% EV; 60 tracked, 70 staked. No model-only bets before Week 6. Model A v2 = ESPN preseason FPI as the level plus ridge-adjusted EPA as in-season movement, confidence weight 0.14-0.25 (one to two 2026 games per team). NO COLLEGE STAKE THIS WEEK: four positions clear the 60 tracking floor and stop between 63 and 67 -- logged at $0 for the CLV ledger, graded against Pinnacle 30 minutes pre-kick.",
+      "blind_spot_notes": "The college paper is the stalest it has been all season: 28 of 58 lines are a point or more off Pinnacle. The four tracked sides all have Model A with them by 3-4 pts after the confidence weight (Walters seat 80-87, brain trust 72-77). What stops every one of them is the market layer: no public ticket/money data exists for any of the four, so the contrarian half scores zero by the Week 1 rule, the market layer caps at 45, and a brain trust of 77 lands at 67. That single rule is the difference between four tracked positions and four stakes. Colorado State +19.5 is the one game with public data on our side (26% tickets / 72% money) -- scores 66 but prices at +1.7%, under the EV floor. PASSES with big price edges but no number behind them: South Alabama -4.5 (+13.7%, Model A 3 pts against), NC State +4.5 (+12.0%, Model A 12 pts against), North Texas +3.5, Charlotte +20.5 and San Jose State +7.5 (no Model A number: name mismatches to fix Monday). Wyoming +1.5 at Central Michigan: Pinnacle flipped the favorite but a swing through zero is worth only +2.3%. Oregon -57.5 vs Portland State not posted at Pinnacle. Info layer: Clemson QB Vizzina out, true freshman Reynolds starts (-3.0, explains the 9.5 to 3.5 move; UNC +3.5 now equals the market); Rice RB Quinton Jackson knee (-0.5, against the Rice position, kept in the score); Colorado State wind 18 mph gusting 28 recorded, not priced. Monday review: renormalize the market layer to the movement half when no public data exists (Rice would score 81, Rutgers 77, Purdue 76, Akron 76 -- all stakes) or lower the stake floor to 65 when the brain trust alone clears 75; fix the four name mismatches and the Vanderbilt level (Pavia priced in); rebuild the in-season file with Week 2 plays.",
+      "lsu_review_notes": "",
+      "created_at": "2026-09-17T21:50:18",
+      "id": 24
     }
   ],
   "picks": [
