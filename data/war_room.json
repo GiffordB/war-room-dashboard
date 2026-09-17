@@ -1,6 +1,6 @@
 {
   "next_report_id": 25,
-  "next_pick_id": 90,
+  "next_pick_id": 91,
   "reports": [
     {
       "source": "ChatGPT",
@@ -3782,6 +3782,93 @@
       },
       "pregame_intel_captured_at": "2026-09-17T22:13:41",
       "wr_confidence_initial": 75.27368421052631
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 24,
+      "category": "best_bet",
+      "matchup": "USC @ Rutgers",
+      "selection": "Rutgers +24.5",
+      "odds": -110,
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 65.0,
+      "war_room_line": "Own number USC -20.7 (Walters seat 84, brain trust 75). Pinnacle USC -22.5. THE LINE +24.5, -110 assumed.",
+      "edge": "Two points stale to Pinnacle, Model A with Rutgers by 4 after the confidence weight. No public ticket data, market layer zero on the contrarian half. +5.2% EV. Score 65: tracked, under the 70 stake floor.",
+      "price_discipline": "TRACK, $0 stake (1.1% if staked). Void if the paper drops under +22.5. Graded vs Pinnacle 30 minutes pre-kick.",
+      "espn_event_id": "401858457",
+      "bet_type": "spread",
+      "bet_side": "home",
+      "bet_line": 24.5,
+      "home_team": null,
+      "away_team": null,
+      "created_at": "2026-09-17T22:13:43",
+      "id": 90,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "USC -21.5",
+        "home_spread": 21.5,
+        "home_spread_odds": -105.0,
+        "away_spread_odds": -115.0,
+        "total": 59.5,
+        "over_odds": -108.0,
+        "under_odds": -112.0,
+        "home_moneyline": 1000,
+        "away_moneyline": -1800,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-09-17T22:13:49",
+      "pregame_weather": null,
+      "pregame_home_form": {
+        "played": 2,
+        "wins": 0,
+        "win_pct": 0.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 3,
+        "wins": 3,
+        "win_pct": 100.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 0,
+          "d": 0,
+          "l": 1,
+          "gf": 21,
+          "ga": 37
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 1,
+          "gf": 21,
+          "ga": 28
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 3,
+          "d": 0,
+          "l": 0,
+          "gf": 130,
+          "ga": 56
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 0,
+          "gf": 0,
+          "ga": 0
+        }
+      },
+      "pregame_intel_captured_at": "2026-09-17T22:13:49",
+      "wr_confidence_initial": 68.74736842105263
     }
   ],
   "next_wallet_id": 18,
