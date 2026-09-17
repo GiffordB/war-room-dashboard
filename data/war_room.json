@@ -1,6 +1,6 @@
 {
   "next_report_id": 25,
-  "next_pick_id": 83,
+  "next_pick_id": 84,
   "reports": [
     {
       "source": "ChatGPT",
@@ -3695,6 +3695,93 @@
       },
       "pregame_intel_captured_at": "2026-09-17T21:57:51",
       "wr_confidence_initial": 81.82105263157895
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 23,
+      "category": "best_bet",
+      "matchup": "Cincinnati Bengals @ Houston Texans",
+      "selection": "Houston -2.5",
+      "odds": -110,
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 60.0,
+      "war_room_line": "Own number HOU -3.2. Pinnacle HOU -3 (-108). THE LINE -2.5, -110 assumed.",
+      "edge": "Gets under the 3 with the cleanest reverse-line-movement read of the week (38% tickets / 83% money on HOU). Collins hamstring and Burrow back unresolved. +3.4% EV. Decision score 60 = tracked, on the tracking floor.",
+      "price_discipline": "TRACK, $0 stake (1.0% if staked). Void if the paper moves to -3 or Collins is ruled out. Graded vs Pinnacle Sunday 11:00 CT close.",
+      "espn_event_id": "401872934",
+      "bet_type": "spread",
+      "bet_side": "home",
+      "bet_line": -2.5,
+      "home_team": null,
+      "away_team": null,
+      "created_at": "2026-09-17T21:57:53",
+      "id": 83,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "HOU -2.5",
+        "home_spread": -2.5,
+        "home_spread_odds": -118.0,
+        "away_spread_odds": -102.0,
+        "total": 46.5,
+        "over_odds": -105.0,
+        "under_odds": -115.0,
+        "home_moneyline": -142,
+        "away_moneyline": 120,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-09-17T21:57:58",
+      "pregame_weather": null,
+      "pregame_home_form": {
+        "played": 1,
+        "wins": 0,
+        "win_pct": 0.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 1,
+        "wins": 1,
+        "win_pct": 100.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 17,
+      "pregame_away_injuries": 3,
+      "pregame_home_split": {
+        "home": {
+          "w": 0,
+          "d": 0,
+          "l": 1,
+          "gf": 31,
+          "ga": 36
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 0,
+          "gf": 0,
+          "ga": 0
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 0,
+          "gf": 33,
+          "ga": 27
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 0,
+          "gf": 0,
+          "ga": 0
+        }
+      },
+      "pregame_intel_captured_at": "2026-09-17T21:57:58",
+      "wr_confidence_initial": 42.63157894736842
     }
   ],
   "next_wallet_id": 18,
