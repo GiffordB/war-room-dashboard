@@ -1395,12 +1395,18 @@ def _clamp(value, low, high):
 
 def source_track_record(data):
     """
-    {source: source_stats(data, source)} across every league - an AI
-    source's skill is a property of the model, not the sport, so its
-    track record modifier (see wr_confidence_effective) is computed
-    holistically rather than split out per league.
+    {source: {league: source_stats(data, source, league)}} - a source's
+    track record is kept per league, so its college run and its NFL run
+    (or its EPL and UCL runs) are judged separately by the track record
+    modifier (see wr_confidence_effective). A source that has proven
+    sharp on one sport has proven nothing about another, and the same
+    source often runs a different model per sport anyway. Only
+    (source, league) pairs that have at least one report are present.
     """
-    return {s: source_stats(data, s, None) for s in SOURCES}
+    leagues_by_source = {}
+    for r in data["reports"]:
+        leagues_by_source.setdefault(r["source"], set()).add(r["league"])
+    return {s: {lg: source_stats(data, s, lg) for lg in lgs} for s, lgs in leagues_by_source.items()}
 
 
 def pick_agreement_map(data):
@@ -1530,14 +1536,16 @@ def _quality_win_modifier(pick):
     return _clamp(gap * WR_QUALITY_WIN_SCALE, -WR_QUALITY_WIN_CAP, WR_QUALITY_WIN_CAP), gap
 
 
-def wr_confidence_effective(pick, source, track_record, agreement_map):
+def wr_confidence_effective(pick, source, track_record, agreement_map, league=None):
     """
     A pick's WR Confidence Score adjusted for what its own entered number
     can't know at write time. Two kinds of adjustment:
 
     Soft signals about behavior - how well this source has actually done
-    (source_track_record) and whether other sources agree or conflict on
-    the same game/market (pick_agreement_map) - scaled by
+    in this pick's own league (source_track_record, looked up by
+    `league`; no league means no track record adjustment) and whether
+    other sources agree or conflict on the same game/market
+    (pick_agreement_map) - scaled by
     wr_impact_scale(base) first: a pick that wasn't much of a conviction
     play to begin with (WR_IMPACT_FLOOR or below) gets none of this
     adjustment at all, ramping to full size as the base score approaches
@@ -1560,7 +1568,7 @@ def wr_confidence_effective(pick, source, track_record, agreement_map):
 
     impact = wr_impact_scale(base)
 
-    record = (track_record or {}).get(source) or {}
+    record = ((track_record or {}).get(source) or {}).get(league) or {}
     record_mod = 0.0
     record_settled = record.get("settled", 0)
     record_sample_weight = record_settled / (record_settled + WR_RECORD_SAMPLE_K) if record_settled else 0.0
@@ -1608,6 +1616,7 @@ def wr_confidence_effective(pick, source, track_record, agreement_map):
         "record_mod": record_mod,
         "record_win_pct": record.get("win_pct"),
         "record_settled": record_settled,
+        "record_league": league,
         "agree_mod": agree_mod,
         "agreeing_sources": agreeing,
         "conflict_mod": conflict_mod,
@@ -1637,8 +1646,9 @@ def wr_confidence_breakdown_text(source, breakdown):
         parts.append(f"no track record/agreement adjustment (at or below {WR_IMPACT_FLOOR})")
     else:
         if breakdown["record_mod"]:
+            run = " ".join(str(x) for x in (source, breakdown.get("record_league")) if x)
             parts.append(
-                f"{source} track record ({breakdown['record_win_pct']:.0f}% over {breakdown['record_settled']} settled) {breakdown['record_mod']:+.0f}"
+                f"{run} track record ({breakdown['record_win_pct']:.0f}% over {breakdown['record_settled']} settled) {breakdown['record_mod']:+.0f}"
             )
         if breakdown["agree_mod"]:
             parts.append(f"agrees with {', '.join(breakdown['agreeing_sources'])} {breakdown['agree_mod']:+.0f}")
@@ -1659,7 +1669,7 @@ def wr_confidence_breakdown_text(source, breakdown):
     return " · ".join(parts)
 
 
-def _annotate_one_wr_confidence(item, source, track_record, agreement_map, frozen_at_label):
+def _annotate_one_wr_confidence(item, source, league, track_record, agreement_map, frozen_at_label):
     """
     Shared by annotate_wr_confidence() and annotate_wallet_wr_confidence():
     sets wr_confidence_effective/wr_confidence_breakdown on `item` in
@@ -1668,7 +1678,7 @@ def _annotate_one_wr_confidence(item, source, track_record, agreement_map, froze
     score. `frozen_at_label` names the moment the initial score was
     locked in ("submission" for a pick, "identified" for a wallet entry).
     """
-    score, breakdown = wr_confidence_effective(item, source, track_record, agreement_map)
+    score, breakdown = wr_confidence_effective(item, source, track_record, agreement_map, league=league)
     item["wr_confidence_effective"] = score
     text = wr_confidence_breakdown_text(source, breakdown)
     initial = item.get("wr_confidence_initial")
@@ -1691,7 +1701,7 @@ def annotate_wr_confidence(data):
     for p in data["picks"]:
         r = reports.get(p["report_id"])
         source = r["source"] if r else None
-        _annotate_one_wr_confidence(p, source, track_record, agreement_map, "submission")
+        _annotate_one_wr_confidence(p, source, r["league"] if r else None, track_record, agreement_map, "submission")
     return data
 
 
@@ -1721,7 +1731,7 @@ def annotate_wallet_wr_confidence(data):
         for entry in data[wallet["entries_key"]]:
             if entry.get("pick_id") is not None or entry.get("wr_confidence") is None:
                 continue
-            _annotate_one_wr_confidence(entry, entry.get("source"), track_record, agreement_map, "identified")
+            _annotate_one_wr_confidence(entry, entry.get("source"), resolve_league(entry.get("league")), track_record, agreement_map, "identified")
     return data
 
 
@@ -1740,7 +1750,9 @@ def _freeze_wallet_entry_wr_confidence_initial(entry, data):
         return
     track_record = source_track_record(data)
     agreement_map = pick_agreement_map(data)
-    score, _ = wr_confidence_effective(entry, entry.get("source"), track_record, agreement_map)
+    score, _ = wr_confidence_effective(
+        entry, entry.get("source"), track_record, agreement_map, league=resolve_league(entry.get("league"))
+    )
     entry["wr_confidence_initial"] = score
 
 
@@ -2267,7 +2279,9 @@ def create_pick(report_id, fields):
             _safe_capture_pregame_lines(data, only=[(new_pick, r["league"])])
         track_record = source_track_record(data)
         agreement_map = pick_agreement_map(data)
-        initial_score, _ = wr_confidence_effective(new_pick, source, track_record, agreement_map)
+        initial_score, _ = wr_confidence_effective(
+            new_pick, source, track_record, agreement_map, league=r["league"] if r else None
+        )
         new_pick["wr_confidence_initial"] = initial_score
         return new_pick["id"]
 
