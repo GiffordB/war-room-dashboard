@@ -1,6 +1,6 @@
 {
   "next_report_id": 25,
-  "next_pick_id": 91,
+  "next_pick_id": 92,
   "reports": [
     {
       "source": "ChatGPT",
@@ -3869,6 +3869,93 @@
       },
       "pregame_intel_captured_at": "2026-09-17T22:13:49",
       "wr_confidence_initial": 68.74736842105263
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 24,
+      "category": "best_bet",
+      "matchup": "Purdue @ UCLA",
+      "selection": "Purdue +16.5",
+      "odds": -110,
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 64.0,
+      "war_room_line": "Own number UCLA -13.1 (Walters seat 82, brain trust 74). Pinnacle UCLA -14.5. THE LINE +16.5, -110 assumed.",
+      "edge": "Two points stale, past the 14 and onto the 17 side of the key table. Model A with Purdue by 3 after the confidence weight. No public data, market layer capped. +4.6% EV. Score 64: tracked.",
+      "price_discipline": "TRACK, $0 stake (1.0% if staked). Void if the paper drops under +14.5. Graded vs Pinnacle 30 minutes pre-kick.",
+      "espn_event_id": "401858458",
+      "bet_type": "spread",
+      "bet_side": "away",
+      "bet_line": 16.5,
+      "home_team": null,
+      "away_team": null,
+      "created_at": "2026-09-17T22:13:51",
+      "id": 91,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "UCLA -14",
+        "home_spread": -14.0,
+        "home_spread_odds": -115.0,
+        "away_spread_odds": -105.0,
+        "total": 52.5,
+        "over_odds": -108.0,
+        "under_odds": -112.0,
+        "home_moneyline": -650,
+        "away_moneyline": 470,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-09-17T22:13:59",
+      "pregame_weather": null,
+      "pregame_home_form": {
+        "played": 2,
+        "wins": 2,
+        "win_pct": 100.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 2,
+        "wins": 1,
+        "win_pct": 50.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 0,
+          "gf": 28,
+          "ga": 10
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 0,
+          "gf": 45,
+          "ga": 24
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 1,
+          "gf": 80,
+          "ga": 57
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 0,
+          "gf": 0,
+          "ga": 0
+        }
+      },
+      "pregame_intel_captured_at": "2026-09-17T22:13:59",
+      "wr_confidence_initial": 66.88421052631578
     }
   ],
   "next_wallet_id": 18,
