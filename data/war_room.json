@@ -1,6 +1,6 @@
 {
   "next_report_id": 25,
-  "next_pick_id": 87,
+  "next_pick_id": 88,
   "reports": [
     {
       "source": "ChatGPT",
@@ -4043,6 +4043,93 @@
       },
       "pregame_intel_captured_at": "2026-09-17T21:58:22",
       "wr_confidence_initial": 62.38421052631578
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 24,
+      "category": "best_bet",
+      "matchup": "Akron @ Minnesota",
+      "selection": "Akron +26.5",
+      "odds": -110,
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 63.0,
+      "war_room_line": "Own number MINN -22.9 (Walters seat 80, brain trust 72). Pinnacle MINN -24.5. THE LINE +26.5, -110 assumed.",
+      "edge": "Two points stale to Pinnacle, Model A with Akron by 3 after the confidence weight. No public data, market layer capped at 45. +4.3% EV. Score 63: tracked, under the 70 stake floor.",
+      "price_discipline": "TRACK, $0 stake (1.0% if staked). Void if the paper drops under +24.5. Graded vs Pinnacle 30 minutes pre-kick.",
+      "espn_event_id": "401858451",
+      "bet_type": "spread",
+      "bet_side": "away",
+      "bet_line": 26.5,
+      "home_team": null,
+      "away_team": null,
+      "created_at": "2026-09-17T21:58:24",
+      "id": 87,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "MINN -23.5",
+        "home_spread": -23.5,
+        "home_spread_odds": -110.0,
+        "away_spread_odds": -110.0,
+        "total": 49.5,
+        "over_odds": -108.0,
+        "under_odds": -112.0,
+        "home_moneyline": -2800,
+        "away_moneyline": 1300,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-09-17T21:58:30",
+      "pregame_weather": null,
+      "pregame_home_form": {
+        "played": 2,
+        "wins": 1,
+        "win_pct": 50.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 2,
+        "wins": 1,
+        "win_pct": 50.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0,
+      "pregame_away_injuries": 0,
+      "pregame_home_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 1,
+          "gf": 72,
+          "ga": 45
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 0,
+          "gf": 0,
+          "ga": 0
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 0,
+          "gf": 45,
+          "ga": 10
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 1,
+          "gf": 16,
+          "ga": 38
+        }
+      },
+      "pregame_intel_captured_at": "2026-09-17T21:58:30",
+      "wr_confidence_initial": 64.82105263157895
     }
   ],
   "next_wallet_id": 18,
