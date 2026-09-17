@@ -244,14 +244,24 @@ WR_WEATHER_PRECIP_PCT = 60
 WR_WEATHER_BONUS = 5
 
 # Recent form: the gap between the backed team's and the opponent's win
-# rate over their last 5 completed games, scaled into WR points.
+# rate over their last 5 completed games, scaled into WR points. The
+# modifier is also shrunk by how full that 5-game window actually is
+# (see _sample_weight): in September every team is 0% or 100% off a
+# single game, which used to read as a 100-point form gap and pin the
+# cap. One game now carries 1/5 of the weight, five games the full amount.
 WR_FORM_SCALE = 0.15
 WR_FORM_CAP = 8
+WR_FORM_WINDOW = 5
 
 # Injuries: the gap between the opponent's and the backed team's own
-# count of roster-flagged unavailable/questionable players, per player.
-WR_INJURY_SCALE = 3
+# severity-weighted count of roster-flagged players (see _injury_count),
+# per player-equivalent. A player on injured reserve counts for nothing -
+# a season-long absence is already priced into the line - while Out,
+# Doubtful and Questionable are weighted by how likely that player is to
+# actually miss this game.
+WR_INJURY_SCALE = 2
 WR_INJURY_CAP = 10
+WR_INJURY_WEIGHTS = {"out": 1.0, "doubtful": 0.75, "questionable": 0.25}
 
 # Home/away split: the gap between the backed team's and the opponent's
 # win rate this season specifically in the home/away context they're
@@ -261,6 +271,9 @@ WR_INJURY_CAP = 10
 # doesn't show up in a blended last-5 number.
 WR_HOME_AWAY_SCALE = 0.1
 WR_HOME_AWAY_CAP = 6
+# Shrunk by decided games on each team's own side (see _sample_weight),
+# against the same window as recent form - same one-game problem.
+WR_HOME_AWAY_WINDOW = WR_FORM_WINDOW
 
 # Quality of wins: the gap between the backed team's and the opponent's
 # count of wins against a ranked opponent (see odds.team_schedule's
@@ -538,19 +551,39 @@ def _form_summary(games):
 
 
 def _split_win_pct(split, side):
-    """Win% from an odds.home_away_split() result, for one side ('home' or 'away') - None if that team hasn't decided a game on that side yet this season."""
+    """(win%, decided games) from an odds.home_away_split() result, for one side ('home' or 'away') - (None, 0) if that team hasn't decided a game on that side yet this season."""
     if not split:
-        return None
+        return None, 0
     bucket = split.get(side) or {}
     decided = bucket.get("w", 0) + bucket.get("l", 0)
-    return (bucket["w"] / decided * 100) if decided else None
+    return ((bucket["w"] / decided * 100) if decided else None), decided
+
+
+def _injury_weight(flag):
+    """WR_INJURY_WEIGHTS weight for one ESPN injury status string ("Out", "Doubtful", "Questionable", "Injured Reserve", ...) - 0 for anything unlisted, IR included."""
+    if not flag:
+        return 0.0
+    return WR_INJURY_WEIGHTS.get(str(flag).strip().lower(), 0.0)
 
 
 def _injury_count(roster):
-    """How many of a team_roster()'s players carry any non-empty status flag - a rough, ESPN-reporting-dependent headcount, not a severity read."""
+    """
+    Severity-weighted count of a team_roster()'s flagged players (see
+    WR_INJURY_WEIGHTS): Out counts as a full player, Doubtful and
+    Questionable as fractions, Injured Reserve and any other flag as
+    zero. Still an ESPN-reporting-dependent headcount rather than a read
+    on who matters - a long snapper and a quarterback weigh the same.
+    """
     if not roster:
         return None
-    return sum(1 for p in roster.get("players", []) if p.get("injury"))
+    return round(sum(_injury_weight(p.get("injury")) for p in roster.get("players", [])), 2)
+
+
+def _sample_weight(games, window):
+    """How much of a `window`-game sample `games` actually is, 0..1 - the shrink applied to form-style modifiers so one result can't pin a cap."""
+    if not games or not window:
+        return 0.0
+    return min(games / window, 1.0)
 
 
 def capture_pregame_lines(data, only=None):
@@ -1435,7 +1468,8 @@ def _form_modifier(pick):
     if not backed or not opponent or backed.get("win_pct") is None or opponent.get("win_pct") is None:
         return 0.0, None
     gap = backed["win_pct"] - opponent["win_pct"]
-    return _clamp(gap * WR_FORM_SCALE, -WR_FORM_CAP, WR_FORM_CAP), gap
+    weight = _sample_weight(min(backed.get("played", 0), opponent.get("played", 0)), WR_FORM_WINDOW)
+    return _clamp(gap * WR_FORM_SCALE, -WR_FORM_CAP, WR_FORM_CAP) * weight, gap
 
 
 def _injury_modifier(pick):
@@ -1466,12 +1500,13 @@ def _home_away_modifier(pick):
     if side not in ("home", "away"):
         return 0.0, None
     other = "away" if side == "home" else "home"
-    backed_pct = _split_win_pct(pick.get(f"pregame_{side}_split"), side)
-    opponent_pct = _split_win_pct(pick.get(f"pregame_{other}_split"), other)
+    backed_pct, backed_n = _split_win_pct(pick.get(f"pregame_{side}_split"), side)
+    opponent_pct, opponent_n = _split_win_pct(pick.get(f"pregame_{other}_split"), other)
     if backed_pct is None or opponent_pct is None:
         return 0.0, None
     gap = backed_pct - opponent_pct
-    return _clamp(gap * WR_HOME_AWAY_SCALE, -WR_HOME_AWAY_CAP, WR_HOME_AWAY_CAP), gap
+    weight = _sample_weight(min(backed_n, opponent_n), WR_HOME_AWAY_WINDOW)
+    return _clamp(gap * WR_HOME_AWAY_SCALE, -WR_HOME_AWAY_CAP, WR_HOME_AWAY_CAP) * weight, gap
 
 
 def _quality_win_modifier(pick):
@@ -1616,7 +1651,7 @@ def wr_confidence_breakdown_text(source, breakdown):
     if breakdown["form_mod"]:
         parts.append(f"form gap {breakdown['form_gap']:+.0f}pts {breakdown['form_mod']:+.0f}")
     if breakdown["injury_mod"]:
-        parts.append(f"injury gap {breakdown['injury_gap']:+d} {breakdown['injury_mod']:+.0f}")
+        parts.append(f"injury gap {breakdown['injury_gap']:+.2g} {breakdown['injury_mod']:+.0f}")
     if breakdown["home_away_mod"]:
         parts.append(f"home/away record gap {breakdown['home_away_gap']:+.0f}pts {breakdown['home_away_mod']:+.0f}")
     if breakdown["quality_win_mod"]:
