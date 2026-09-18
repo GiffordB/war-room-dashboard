@@ -1,6 +1,6 @@
 {
   "next_report_id": 26,
-  "next_pick_id": 94,
+  "next_pick_id": 95,
   "reports": [
     {
       "source": "ChatGPT",
@@ -4142,6 +4142,93 @@
       },
       "pregame_intel_captured_at": "2026-09-18T21:31:49",
       "wr_confidence_initial": 71.92105263157895
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 25,
+      "category": "best_bet",
+      "matchup": "Arsenal @ Brighton & Hove Albion",
+      "selection": "Arsenal to Win",
+      "odds": -145,
+      "stake": 130.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "Arsenal unbeaten 9 across competitions, 12/12 pts, has conceded just 1 goal in 4 league games.\nBrighton missing most of its attack for this one: Minteh, Mitoma, Ferguson, Tzimas, Hinshelwood, Wieffer, Yohanna all out per this week's club reporting, with Rutter/Azeez doubtful too - their 13-goal attack is gutted.\nArsenal missing Saliba/Mosquera (White a doubt) but Timber is back from a 5-month layoff, even if Arteta is managing his minutes carefully.\nMarket already has Arsenal favored but the depth of Brighton's absentee list this week looks underpriced relative to how it hits BHA's specific scoring threat.",
+      "wr_confidence": 64.0,
+      "war_room_line": "Arsenal 64% / Draw 20% / Brighton 16% (blended)",
+      "edge": "Arsenal price implies ~56.4%; blended estimate ~59.8% -> +3.4pp edge",
+      "price_discipline": "-145 or better: $130\n-150 to -160: $75\n-165 or worse: pass",
+      "espn_event_id": "401879274",
+      "bet_type": "match_result",
+      "bet_side": "away",
+      "bet_line": null,
+      "home_team": "Brighton & Hove Albion",
+      "away_team": "Arsenal",
+      "created_at": "2026-09-18T23:13:52",
+      "id": 94,
+      "pregame_odds": {
+        "provider": "DraftKings",
+        "spread_details": "ARS -145",
+        "home_spread": 0.5,
+        "home_spread_odds": 115.0,
+        "away_spread_odds": -155.0,
+        "total": 2.5,
+        "over_odds": -140.0,
+        "under_odds": 115.0,
+        "home_moneyline": 380,
+        "away_moneyline": -145,
+        "draw_moneyline": 300.0
+      },
+      "pregame_odds_captured_at": "2026-09-18T23:13:58",
+      "pregame_weather": null,
+      "pregame_home_form": {
+        "played": 4,
+        "wins": 2,
+        "win_pct": 50.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 4,
+        "wins": 4,
+        "win_pct": 100.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 1,
+          "d": 1,
+          "l": 0,
+          "gf": 5,
+          "ga": 1
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 1,
+          "gf": 8,
+          "ga": 4
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 2,
+          "d": 0,
+          "l": 0,
+          "gf": 5,
+          "ga": 1
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 0,
+          "gf": 3,
+          "ga": 0
+        }
+      },
+      "pregame_intel_captured_at": "2026-09-18T23:13:58",
+      "wr_confidence_initial": 70.7
     }
   ],
   "next_wallet_id": 18,
