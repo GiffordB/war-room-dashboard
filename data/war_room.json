@@ -1,5 +1,5 @@
 {
-  "next_report_id": 25,
+  "next_report_id": 26,
   "next_pick_id": 94,
   "reports": [
     {
@@ -192,6 +192,18 @@
       "lsu_review_notes": "",
       "created_at": "2026-09-17T21:50:18",
       "id": 24
+    },
+    {
+      "source": "Claude - GB",
+      "league": "EPL",
+      "report_date": "2026-09-18",
+      "week_number": 5,
+      "week_label": "",
+      "philosophy": "Squad news over reputation this week - the crippled teams tell the real story, not the table.",
+      "blind_spot_notes": "",
+      "lsu_review_notes": "",
+      "created_at": "2026-09-18T23:13:40",
+      "id": 25
     }
   ],
   "picks": [
