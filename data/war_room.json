@@ -1,6 +1,6 @@
 {
   "next_report_id": 26,
-  "next_pick_id": 96,
+  "next_pick_id": 97,
   "reports": [
     {
       "source": "ChatGPT",
@@ -4316,6 +4316,93 @@
       },
       "pregame_intel_captured_at": "2026-09-18T23:14:19",
       "wr_confidence_initial": 63.65
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 25,
+      "category": "totals_radar",
+      "matchup": "Aston Villa @ Tottenham Hotspur",
+      "selection": "Under 2.5 Goals",
+      "odds": 105,
+      "stake": 45.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "Tottenham have not scored a single league goal in four games this season - a genuinely historic drought for a top-half squad.\nAston Villa have managed just one goal in four games themselves, and are missing Onana, Torres, Maatsen, Cisse, Bizot, Goretzka and Madjo.\nSpurs do get Tonali, Porro, Maddison and Udogie back available, which helps control of the game but hasnt translated to goals recently even with a fuller squad.\nEdge play given the two worst attacks in the division meeting each other; sizing below the categorys usual top end.",
+      "wr_confidence": 58.0,
+      "war_room_line": "Under 2.5 ~52% (blended) vs Over ~48%",
+      "edge": "Under price implies ~46.3%; blended estimate ~51.8% -> +5.5pp edge",
+      "price_discipline": "+105 or better: $45\n-105 to -110: $25\n-115 or worse: pass",
+      "espn_event_id": "401879269",
+      "bet_type": "total",
+      "bet_side": "under",
+      "bet_line": 2.5,
+      "home_team": "Tottenham Hotspur",
+      "away_team": "Aston Villa",
+      "created_at": "2026-09-18T23:17:55",
+      "id": 96,
+      "pregame_odds": {
+        "provider": "DraftKings",
+        "spread_details": "TOT +105",
+        "home_spread": -0.5,
+        "home_spread_odds": -105.0,
+        "away_spread_odds": -130.0,
+        "total": 2.5,
+        "over_odds": -130.0,
+        "under_odds": 105.0,
+        "home_moneyline": 105,
+        "away_moneyline": 255,
+        "draw_moneyline": 260.0
+      },
+      "pregame_odds_captured_at": "2026-09-18T23:18:01",
+      "pregame_weather": null,
+      "pregame_home_form": {
+        "played": 4,
+        "wins": 0,
+        "win_pct": 0.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 4,
+        "wins": 0,
+        "win_pct": 0.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 0,
+          "d": 1,
+          "l": 1,
+          "gf": 0,
+          "ga": 2
+        },
+        "away": {
+          "w": 0,
+          "d": 1,
+          "l": 1,
+          "gf": 0,
+          "ga": 3
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 0,
+          "d": 0,
+          "l": 2,
+          "gf": 1,
+          "ga": 3
+        },
+        "away": {
+          "w": 0,
+          "d": 1,
+          "l": 1,
+          "gf": 0,
+          "ga": 4
+        }
+      },
+      "pregame_intel_captured_at": "2026-09-18T23:18:01",
+      "wr_confidence_initial": 58.4
     }
   ],
   "next_wallet_id": 18,
