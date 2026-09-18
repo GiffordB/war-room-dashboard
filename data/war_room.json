@@ -1,6 +1,6 @@
 {
   "next_report_id": 26,
-  "next_pick_id": 98,
+  "next_pick_id": 99,
   "reports": [
     {
       "source": "ChatGPT",
@@ -4490,6 +4490,93 @@
       },
       "pregame_intel_captured_at": "2026-09-18T23:18:14",
       "wr_confidence_initial": 25.0
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 25,
+      "category": "parlay",
+      "matchup": "Leeds United ML + Nottingham Forest ML + Manchester City ML",
+      "selection": "3-Leg Favorites Parlay: Leeds (-135), Nottingham Forest (-155), Man City (-330)",
+      "odds": 273,
+      "stake": 10.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "Leeds unbeaten at home against a Crystal Palace side missing its striker (Mateta, hamstring), a starting CB (Disasi, suspended) and Riad (out for the season).\nForest at home against a Coventry side that has not scored a single goal all season, home or away.\nMan City at home off the back of a 4-0-0 start, even with Foden suspended and Doku touch-and-go - the squad depth advantage is enormous.\nEach leg stands on its own as a play we'd take independently; combining them for a small stake rather than three separate plays.",
+      "wr_confidence": 34.0,
+      "war_room_line": "Leeds ~58% / Forest ~62% / Man City ~75% (blended, each leg)",
+      "edge": "Each leg individually priced fair-to-slightly-generous (+1 to +4pp); combined parlay value stacks three independently-backed home favorites",
+      "price_discipline": "All three legs confirmed at listed number or better: $10\nAny leg drifts past -145/-165/-350 respectively: pass that leg, keep the rest as straight bets instead",
+      "espn_event_id": "401879273",
+      "bet_type": "match_result",
+      "bet_side": "home",
+      "bet_line": null,
+      "home_team": "Leeds United",
+      "away_team": "Crystal Palace",
+      "created_at": "2026-09-18T23:18:25",
+      "id": 98,
+      "pregame_odds": {
+        "provider": "DraftKings",
+        "spread_details": "LEE -135",
+        "home_spread": -0.5,
+        "home_spread_odds": -150.0,
+        "away_spread_odds": 110.0,
+        "total": 2.5,
+        "over_odds": -140.0,
+        "under_odds": 110.0,
+        "home_moneyline": -135,
+        "away_moneyline": 370,
+        "draw_moneyline": 295.0
+      },
+      "pregame_odds_captured_at": "2026-09-18T23:18:31",
+      "pregame_weather": null,
+      "pregame_home_form": {
+        "played": 4,
+        "wins": 2,
+        "win_pct": 50.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 4,
+        "wins": 1,
+        "win_pct": 25.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 1,
+          "d": 1,
+          "l": 0,
+          "gf": 5,
+          "ga": 2
+        },
+        "away": {
+          "w": 1,
+          "d": 1,
+          "l": 0,
+          "gf": 2,
+          "ga": 1
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 0,
+          "d": 0,
+          "l": 2,
+          "gf": 3,
+          "ga": 7
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 1,
+          "gf": 3,
+          "ga": 4
+        }
+      },
+      "pregame_intel_captured_at": "2026-09-18T23:18:31",
+      "wr_confidence_initial": 38.0
     }
   ],
   "next_wallet_id": 18,
