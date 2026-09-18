@@ -1,6 +1,6 @@
 {
   "next_report_id": 26,
-  "next_pick_id": 97,
+  "next_pick_id": 98,
   "reports": [
     {
       "source": "ChatGPT",
@@ -4403,6 +4403,93 @@
       },
       "pregame_intel_captured_at": "2026-09-18T23:18:01",
       "wr_confidence_initial": 58.4
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 25,
+      "category": "sexy_moneyline",
+      "matchup": "Hull City @ Newcastle United",
+      "selection": "Hull City to Win",
+      "odds": 400,
+      "stake": 25.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "Newcastle have a genuine squad crisis this week: Joelinton, Dan Burn, Osula, Dedic, Ramsey and Nico Gonzalez are all out, plus Elanga is a hamstring doubt with an MRI pending - that is seven first-team players unavailable.\nHull are unbeaten through four games with the division's best defensive record (2 conceded), and their away form is solid (W1 D1 L0).\nMarket still has Newcastle as a big home favorite at -165, which looks like it hasn't fully priced this week's absentee list.\nGenuine live-dog value at a big number, not a pick we expect to hit more often than not - sized accordingly.",
+      "wr_confidence": 22.0,
+      "war_room_line": "Newcastle 53% / Draw 24% / Hull 22% (blended)",
+      "edge": "Hull price implies ~18.9%; blended estimate ~22% -> +3.1pp edge",
+      "price_discipline": "+400 or better: $25\n+350 to +399: $15\n+349 or worse: pass",
+      "espn_event_id": "401879271",
+      "bet_type": "match_result",
+      "bet_side": "away",
+      "bet_line": null,
+      "home_team": "Newcastle United",
+      "away_team": "Hull City",
+      "created_at": "2026-09-18T23:18:10",
+      "id": 97,
+      "pregame_odds": {
+        "provider": "DraftKings",
+        "spread_details": "NEW -165",
+        "home_spread": -0.5,
+        "home_spread_odds": -175.0,
+        "away_spread_odds": 125.0,
+        "total": 2.5,
+        "over_odds": -160.0,
+        "under_odds": 130.0,
+        "home_moneyline": -165,
+        "away_moneyline": 400,
+        "draw_moneyline": 330.0
+      },
+      "pregame_odds_captured_at": "2026-09-18T23:18:14",
+      "pregame_weather": null,
+      "pregame_home_form": {
+        "played": 4,
+        "wins": 1,
+        "win_pct": 25.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 4,
+        "wins": 2,
+        "win_pct": 50.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 0,
+          "d": 2,
+          "l": 0,
+          "gf": 4,
+          "ga": 4
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 1,
+          "gf": 3,
+          "ga": 4
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 1,
+          "d": 1,
+          "l": 0,
+          "gf": 2,
+          "ga": 0
+        },
+        "away": {
+          "w": 1,
+          "d": 1,
+          "l": 0,
+          "gf": 3,
+          "ga": 2
+        }
+      },
+      "pregame_intel_captured_at": "2026-09-18T23:18:14",
+      "wr_confidence_initial": 25.0
     }
   ],
   "next_wallet_id": 18,
