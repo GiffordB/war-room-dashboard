@@ -1,6 +1,6 @@
 {
   "next_report_id": 28,
-  "next_pick_id": 104,
+  "next_pick_id": 105,
   "reports": [
     {
       "source": "ChatGPT",
@@ -5390,6 +5390,93 @@
       },
       "pregame_intel_captured_at": "2026-09-19T14:14:35",
       "wr_confidence_initial": 30.0
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 27,
+      "category": "best_bet",
+      "matchup": "Georgia Bulldogs @ Arkansas Razorbacks",
+      "selection": "Georgia -24.5",
+      "odds": -112,
+      "stake": 25.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 59.0,
+      "war_room_line": "Rank #4 of 6. DK -24.5 (-112), 11:00 AM CT.",
+      "edge": "Georgia passing depth versus Arkansas protection and secondary concerns.",
+      "price_discipline": "Risk: large road spread; early scoring against weak opponents can exaggerate strength. Listed line or better only.",
+      "espn_event_id": "401856686",
+      "bet_type": "spread",
+      "bet_side": "away",
+      "bet_line": -24.5,
+      "home_team": null,
+      "away_team": null,
+      "created_at": "2026-09-19T15:22:50",
+      "id": 104,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "UGA -24.5",
+        "home_spread": 24.5,
+        "home_spread_odds": -108.0,
+        "away_spread_odds": -112.0,
+        "total": 54.5,
+        "over_odds": -118.0,
+        "under_odds": -102.0,
+        "home_moneyline": 1300,
+        "away_moneyline": -2800,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-09-19T15:22:55",
+      "pregame_weather": null,
+      "pregame_home_form": {
+        "played": 2,
+        "wins": 1,
+        "win_pct": 50.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 2,
+        "wins": 2,
+        "win_pct": 100.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 0,
+          "gf": 31,
+          "ga": 14
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 1,
+          "gf": 10,
+          "ga": 43
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 2,
+          "d": 0,
+          "l": 0,
+          "gf": 133,
+          "ga": 23
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 0,
+          "gf": 0,
+          "ga": 0
+        }
+      },
+      "pregame_intel_captured_at": "2026-09-19T15:22:55",
+      "wr_confidence_initial": 61.6
     }
   ],
   "next_wallet_id": 24,
