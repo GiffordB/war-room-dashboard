@@ -141,6 +141,22 @@
             {% endif %}
 
             <div class="war-pick-controls">
+              {% if not p.espn_event_id and not p.parlay_leg_pick_ids %}
+                {# Only a pick the site cannot grade on its own - a player prop, a
+                   Pick6, anything with no ESPN game and no legs behind it. Linked
+                   picks and leg-parlays settle themselves and get no control. #}
+                <form class="settle-form" method="post" action="{{ url_for('settle_pick', pick_id=p.id) }}">
+                  <label>
+                    <span class="muted small">Result</span>
+                    <select name="result" onchange="this.form.requestSubmit()" title="Settle this pick by hand">
+                      {% for r in results %}
+                        <option value="{{ r }}" {% if r == p.result %}selected{% endif %}>{{ result_label(r) }}</option>
+                      {% endfor %}
+                    </select>
+                  </label>
+                  <noscript><button class="btn btn-sm" type="submit">Update</button></noscript>
+                </form>
+              {% endif %}
               <form method="post" action="{{ url_for('delete_pick', pick_id=p.id) }}"
                     onsubmit="return confirm('Delete this pick?');">
                 <button class="btn-link" type="submit">Delete</button>
