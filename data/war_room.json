@@ -1,6 +1,6 @@
 {
   "next_report_id": 29,
-  "next_pick_id": 117,
+  "next_pick_id": 118,
   "reports": [
     {
       "source": "ChatGPT",
@@ -6159,6 +6159,31 @@
       },
       "pregame_intel_captured_at": "2026-09-19T15:58:33",
       "wr_confidence_initial": 51.2
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 28,
+      "category": "parlay",
+      "matchup": "Alabama (Russell) / Texas (Manning)",
+      "selection": "Pick6: Russell MORE 259.5 pass yds + Manning MORE 279.5 pass yds",
+      "odds": 200,
+      "stake": 10.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 40.0,
+      "war_room_line": "DraftKings Pick6, two legs, $10 total. Payout logged at +200 (DK two-pick multiplier) -- correct to the ticket if different. Player props: settle by hand.",
+      "edge": "Russell (Alabama) vs FSU: the stronger opponent of the two, but Alabama should still create enough passing opportunities. Manning (Texas) vs UTSA: the weaker opponent; main risk is Texas leading early and cutting second-half volume.",
+      "price_discipline": "Kept to two legs on purpose; extra marginal legs have turned good reads into losing tickets. Satisfies the two-team requirement.",
+      "espn_event_id": null,
+      "bet_type": null,
+      "bet_side": null,
+      "bet_line": null,
+      "home_team": null,
+      "away_team": null,
+      "created_at": "2026-09-19T15:58:35",
+      "id": 117,
+      "wr_confidence_initial": 40.0
     }
   ],
   "next_wallet_id": 24,
