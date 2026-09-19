@@ -1,6 +1,6 @@
 {
   "next_report_id": 27,
-  "next_pick_id": 102,
+  "next_pick_id": 103,
   "reports": [
     {
       "source": "ChatGPT",
@@ -4946,6 +4946,101 @@
       },
       "pregame_intel_captured_at": "2026-09-19T00:14:39",
       "wr_confidence_initial": 52.32
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 26,
+      "category": "best_bet",
+      "matchup": "Crystal Palace @ Leeds United",
+      "selection": "Leeds to Win",
+      "odds": -135,
+      "stake": 100.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 52.0,
+      "war_room_line": "Model 52% win, EV -4%. DK/ESPN -135 (1.74).",
+      "edge": "Leeds coming off a 4-1 over Newcastle on Monday 14 Sep; Palace mid-table. Clears cash on win-percentage rank, thinnest EV on the card.",
+      "price_discipline": "1.00u. Sun 14:00 UK -- Sunday opener is the live window.",
+      "espn_event_id": "401879273",
+      "bet_type": "match_result",
+      "bet_side": "home",
+      "bet_line": null,
+      "home_team": null,
+      "away_team": null,
+      "created_at": "2026-09-19T00:14:41",
+      "id": 102,
+      "pregame_odds": {
+        "provider": "DraftKings",
+        "spread_details": "LEE -135",
+        "home_spread": -0.5,
+        "home_spread_odds": -150.0,
+        "away_spread_odds": 110.0,
+        "total": 2.5,
+        "over_odds": -140.0,
+        "under_odds": 110.0,
+        "home_moneyline": -135,
+        "away_moneyline": 370,
+        "draw_moneyline": 295.0
+      },
+      "pregame_odds_captured_at": "2026-09-19T00:14:47",
+      "pregame_weather": {
+        "city": "Leeds",
+        "temp_c": 17.1,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 19.4,
+        "cloud_cover_pct": 45,
+        "forecast_hour": "2026-09-20T13:00"
+      },
+      "pregame_home_form": {
+        "played": 4,
+        "wins": 2,
+        "win_pct": 50.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 4,
+        "wins": 1,
+        "win_pct": 25.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 1,
+          "d": 1,
+          "l": 0,
+          "gf": 5,
+          "ga": 2
+        },
+        "away": {
+          "w": 1,
+          "d": 1,
+          "l": 0,
+          "gf": 2,
+          "ga": 1
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 0,
+          "d": 0,
+          "l": 2,
+          "gf": 3,
+          "ga": 7
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 1,
+          "gf": 3,
+          "ga": 4
+        }
+      },
+      "pregame_intel_captured_at": "2026-09-19T00:14:47",
+      "wr_confidence_initial": 56.4
     }
   ],
   "next_wallet_id": 18,
