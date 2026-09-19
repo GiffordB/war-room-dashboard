@@ -1,6 +1,6 @@
 {
   "next_report_id": 27,
-  "next_pick_id": 99,
+  "next_pick_id": 100,
   "reports": [
     {
       "source": "ChatGPT",
@@ -4669,6 +4669,93 @@
       },
       "pregame_intel_captured_at": "2026-09-19T00:02:21",
       "wr_confidence_initial": 38.0
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 26,
+      "category": "best_bet",
+      "matchup": "Hull City @ Newcastle United",
+      "selection": "Newcastle to Win",
+      "odds": -165,
+      "stake": 100.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 56.0,
+      "war_room_line": "Model 56% win, EV -3%. DK/ESPN -165 (1.61).",
+      "edge": "Ranks first on win percentage despite a long absentee list (Joelinton, Burn, Osula, Elanga, Dedic, Ramsey, Gonzalez out; Jaouen a doubt). Promoted Hull away at St James Park, missing Mendy (concussion), Targett a doubt.",
+      "price_discipline": "1.00u. EV -3% is inside the -5% floor. Sat 15:00 UK.",
+      "espn_event_id": "401879271",
+      "bet_type": "match_result",
+      "bet_side": "home",
+      "bet_line": null,
+      "home_team": null,
+      "away_team": null,
+      "created_at": "2026-09-19T00:14:17",
+      "id": 99,
+      "pregame_odds": {
+        "provider": "DraftKings",
+        "spread_details": "NEW -165",
+        "home_spread": -0.5,
+        "home_spread_odds": -175.0,
+        "away_spread_odds": 125.0,
+        "total": 2.5,
+        "over_odds": -160.0,
+        "under_odds": 130.0,
+        "home_moneyline": -165,
+        "away_moneyline": 400,
+        "draw_moneyline": 330.0
+      },
+      "pregame_odds_captured_at": "2026-09-19T00:14:22",
+      "pregame_weather": null,
+      "pregame_home_form": {
+        "played": 4,
+        "wins": 1,
+        "win_pct": 25.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 4,
+        "wins": 2,
+        "win_pct": 50.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 0,
+          "d": 2,
+          "l": 0,
+          "gf": 4,
+          "ga": 4
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 1,
+          "gf": 3,
+          "ga": 4
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 1,
+          "d": 1,
+          "l": 0,
+          "gf": 2,
+          "ga": 0
+        },
+        "away": {
+          "w": 1,
+          "d": 1,
+          "l": 0,
+          "gf": 3,
+          "ga": 2
+        }
+      },
+      "pregame_intel_captured_at": "2026-09-19T00:14:22",
+      "wr_confidence_initial": 52.519999999999996
     }
   ],
   "next_wallet_id": 18,
