@@ -1,6 +1,6 @@
 {
   "next_report_id": 28,
-  "next_pick_id": 113,
+  "next_pick_id": 114,
   "reports": [
     {
       "source": "ChatGPT",
@@ -5854,6 +5854,101 @@
       },
       "pregame_intel_captured_at": "2026-09-19T15:50:55",
       "wr_confidence_initial": 69.05
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 24,
+      "category": "best_bet",
+      "matchup": "USC Trojans @ Rutgers Scarlet Knights",
+      "selection": "Rutgers +22.5",
+      "odds": -110,
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 66.0,
+      "war_room_line": "Score 66 B (W71/P70/S60/V50/CJ36/Wg48). Model A USC -15.7 (conf 0.25); market -21.5; THE LINE +22.5 at -110 (was +24.5 on the v2 sheet).",
+      "edge": "Own number 6.8 pts with us. Reverse line movement (MGM 24.5 to 21.5 against 70% money on USC) and Model A agree; the vig does not: -1.7% at -110. Holds 22. 71F, 7 mph, clear.",
+      "price_discipline": "TRACK, $0 stake -- no stake at -1.7%. Bet only at +23.5 or -102.",
+      "espn_event_id": "401858457",
+      "bet_type": "spread",
+      "bet_side": "home",
+      "bet_line": 22.5,
+      "home_team": null,
+      "away_team": null,
+      "created_at": "2026-09-19T15:50:57",
+      "id": 113,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "USC -21.5",
+        "home_spread": 21.5,
+        "home_spread_odds": -115.0,
+        "away_spread_odds": -105.0,
+        "total": 57.5,
+        "over_odds": -108.0,
+        "under_odds": -112.0,
+        "home_moneyline": 1100,
+        "away_moneyline": -2100,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-09-19T15:51:00",
+      "pregame_weather": {
+        "city": "Piscataway",
+        "temp_c": 21.1,
+        "precip_probability_pct": 1,
+        "precip_mm": 0.0,
+        "wind_kmh": 11.5,
+        "cloud_cover_pct": 95,
+        "forecast_hour": "2026-09-19T19:00"
+      },
+      "pregame_home_form": {
+        "played": 2,
+        "wins": 0,
+        "win_pct": 0.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 3,
+        "wins": 3,
+        "win_pct": 100.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 0,
+          "d": 0,
+          "l": 1,
+          "gf": 21,
+          "ga": 37
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 1,
+          "gf": 21,
+          "ga": 28
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 3,
+          "d": 0,
+          "l": 0,
+          "gf": 130,
+          "ga": 56
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 0,
+          "gf": 0,
+          "ga": 0
+        }
+      },
+      "pregame_intel_captured_at": "2026-09-19T15:51:00",
+      "wr_confidence_initial": 65.6
     }
   ],
   "next_wallet_id": 24,
