@@ -1,6 +1,6 @@
 {
   "next_report_id": 28,
-  "next_pick_id": 109,
+  "next_pick_id": 110,
   "reports": [
     {
       "source": "ChatGPT",
@@ -5825,6 +5825,93 @@
       },
       "pregame_intel_captured_at": "2026-09-19T15:23:45",
       "wr_confidence_initial": 56.68888888888889
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 27,
+      "category": "best_bet",
+      "matchup": "LSU Tigers @ Ole Miss Rebels",
+      "selection": "Ole Miss +2.5",
+      "odds": -108,
+      "stake": 50.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 62.0,
+      "war_room_line": "Rank #1 of 6. DK +2.5 (-108), 6:49 PM CT actual kickoff (Sportsbook Review DK quote).",
+      "edge": "Chambliss and home field make taking points attractive in a near-even matchup. LSU: Leavitt off the report, Dottery questionable -- a points-taking choice, not a backup-QB bet.",
+      "price_discipline": "Risk: LSU pressure wins the trenches and Leavitt operates at full strength. Listed line or better only.",
+      "espn_event_id": "401856688",
+      "bet_type": "spread",
+      "bet_side": "home",
+      "bet_line": 2.5,
+      "home_team": null,
+      "away_team": null,
+      "created_at": "2026-09-19T15:23:47",
+      "id": 109,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "LSU -3",
+        "home_spread": 3.0,
+        "home_spread_odds": -112.0,
+        "away_spread_odds": -108.0,
+        "total": 58.5,
+        "over_odds": -108.0,
+        "under_odds": -112.0,
+        "home_moneyline": 130,
+        "away_moneyline": -155,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-09-19T15:23:53",
+      "pregame_weather": null,
+      "pregame_home_form": {
+        "played": 2,
+        "wins": 2,
+        "win_pct": 100.0,
+        "quality_wins": 1
+      },
+      "pregame_away_form": {
+        "played": 2,
+        "wins": 2,
+        "win_pct": 100.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 2,
+          "d": 0,
+          "l": 0,
+          "gf": 82,
+          "ga": 47
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 0,
+          "gf": 0,
+          "ga": 0
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 2,
+          "d": 0,
+          "l": 0,
+          "gf": 96,
+          "ga": 24
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 0,
+          "gf": 0,
+          "ga": 0
+        }
+      },
+      "pregame_intel_captured_at": "2026-09-19T15:23:53",
+      "wr_confidence_initial": 62.46666666666667
     }
   ],
   "next_wallet_id": 24,
