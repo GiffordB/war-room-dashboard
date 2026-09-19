@@ -4017,7 +4017,7 @@
         "away_moneyline": 114,
         "draw_moneyline": null
       },
-      "pregame_odds_captured_at": "2026-09-19T12:15:29",
+      "pregame_odds_captured_at": "2026-09-19T14:14:35",
       "pregame_weather": null,
       "pregame_home_form": {
         "played": 1,
@@ -4065,7 +4065,7 @@
           "ga": 0
         }
       },
-      "pregame_intel_captured_at": "2026-09-19T12:15:29",
+      "pregame_intel_captured_at": "2026-09-19T14:14:35",
       "wr_confidence_initial": 53.031578947368416
     },
     {
@@ -4104,7 +4104,7 @@
         "away_moneyline": -360,
         "draw_moneyline": null
       },
-      "pregame_odds_captured_at": "2026-09-19T12:15:29",
+      "pregame_odds_captured_at": "2026-09-19T14:14:35",
       "pregame_weather": null,
       "pregame_home_form": {
         "played": 2,
@@ -4152,7 +4152,7 @@
           "ga": 13
         }
       },
-      "pregame_intel_captured_at": "2026-09-19T12:15:29",
+      "pregame_intel_captured_at": "2026-09-19T14:14:35",
       "wr_confidence_initial": 75.27368421052631
     },
     {
@@ -4191,7 +4191,7 @@
         "away_moneyline": -2100,
         "draw_moneyline": null
       },
-      "pregame_odds_captured_at": "2026-09-19T12:15:29",
+      "pregame_odds_captured_at": "2026-09-19T14:14:35",
       "pregame_weather": null,
       "pregame_home_form": {
         "played": 2,
@@ -4239,7 +4239,7 @@
           "ga": 0
         }
       },
-      "pregame_intel_captured_at": "2026-09-19T12:15:29",
+      "pregame_intel_captured_at": "2026-09-19T14:14:35",
       "wr_confidence_initial": 68.74736842105263
     },
     {
@@ -4278,7 +4278,7 @@
         "away_moneyline": 470,
         "draw_moneyline": null
       },
-      "pregame_odds_captured_at": "2026-09-19T12:15:29",
+      "pregame_odds_captured_at": "2026-09-19T14:14:35",
       "pregame_weather": null,
       "pregame_home_form": {
         "played": 2,
@@ -4326,7 +4326,7 @@
           "ga": 0
         }
       },
-      "pregame_intel_captured_at": "2026-09-19T12:15:29",
+      "pregame_intel_captured_at": "2026-09-19T14:14:35",
       "wr_confidence_initial": 66.88421052631578
     },
     {
@@ -4365,7 +4365,7 @@
         "away_moneyline": 1400,
         "draw_moneyline": null
       },
-      "pregame_odds_captured_at": "2026-09-19T12:15:29",
+      "pregame_odds_captured_at": "2026-09-19T14:14:35",
       "pregame_weather": null,
       "pregame_home_form": {
         "played": 2,
@@ -4413,7 +4413,7 @@
           "ga": 38
         }
       },
-      "pregame_intel_captured_at": "2026-09-19T12:15:29",
+      "pregame_intel_captured_at": "2026-09-19T14:14:35",
       "wr_confidence_initial": 68.82105263157895
     },
     {
@@ -4452,7 +4452,7 @@
         "away_moneyline": -205,
         "draw_moneyline": null
       },
-      "pregame_odds_captured_at": "2026-09-19T12:15:29",
+      "pregame_odds_captured_at": "2026-09-19T14:14:35",
       "pregame_weather": null,
       "pregame_home_form": {
         "played": 1,
@@ -4500,7 +4500,7 @@
           "ga": 39
         }
       },
-      "pregame_intel_captured_at": "2026-09-19T12:15:29",
+      "pregame_intel_captured_at": "2026-09-19T14:14:35",
       "wr_confidence_initial": 71.92105263157895
     },
     {
@@ -4626,7 +4626,7 @@
         "away_moneyline": 450,
         "draw_moneyline": 295.0
       },
-      "pregame_odds_captured_at": "2026-09-19T12:15:29",
+      "pregame_odds_captured_at": "2026-09-19T14:14:35",
       "pregame_weather": null,
       "pregame_home_form": {
         "played": 4,
@@ -4674,7 +4674,7 @@
           "ga": 4
         }
       },
-      "pregame_intel_captured_at": "2026-09-19T12:15:29",
+      "pregame_intel_captured_at": "2026-09-19T14:14:35",
       "wr_confidence_initial": 63.65
     },
     {
@@ -4685,8 +4685,8 @@
       "selection": "Under 2.5 Goals",
       "odds": 105,
       "stake": 45.0,
-      "result": "pending",
-      "profit_loss": 0.0,
+      "result": "loss",
+      "profit_loss": -45.0,
       "notes": "Tottenham have not scored a single league goal in four games this season - a genuinely historic drought for a top-half squad.\nAston Villa have managed just one goal in four games themselves, and are missing Onana, Torres, Maatsen, Cisse, Bizot, Goretzka and Madjo.\nSpurs do get Tonali, Porro, Maddison and Udogie back available, which helps control of the game but hasnt translated to goals recently even with a fuller squad.\nEdge play given the two worst attacks in the division meeting each other; sizing below the categorys usual top end.",
       "wr_confidence": 58.0,
       "war_room_line": "Under 2.5 ~52% (blended) vs Over ~48%",
@@ -4762,7 +4762,13 @@
         }
       },
       "pregame_intel_captured_at": "2026-09-19T10:37:48",
-      "wr_confidence_initial": 58.4
+      "wr_confidence_initial": 58.4,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 2,
+        "away_score": 3
+      }
     },
     {
       "parlay_leg_pick_ids": null,
@@ -4887,7 +4893,7 @@
         "away_moneyline": 370,
         "draw_moneyline": 295.0
       },
-      "pregame_odds_captured_at": "2026-09-19T12:15:29",
+      "pregame_odds_captured_at": "2026-09-19T14:14:35",
       "pregame_weather": null,
       "pregame_home_form": {
         "played": 4,
@@ -4935,7 +4941,7 @@
           "ga": 4
         }
       },
-      "pregame_intel_captured_at": "2026-09-19T12:15:29",
+      "pregame_intel_captured_at": "2026-09-19T14:14:35",
       "wr_confidence_initial": 38.0
     },
     {
@@ -5061,7 +5067,7 @@
         "away_moneyline": 450,
         "draw_moneyline": 295.0
       },
-      "pregame_odds_captured_at": "2026-09-19T12:15:29",
+      "pregame_odds_captured_at": "2026-09-19T14:14:35",
       "pregame_weather": null,
       "pregame_home_form": {
         "played": 4,
@@ -5109,7 +5115,7 @@
           "ga": 4
         }
       },
-      "pregame_intel_captured_at": "2026-09-19T12:15:29",
+      "pregame_intel_captured_at": "2026-09-19T14:14:35",
       "wr_confidence_initial": 58.4
     },
     {
@@ -5235,7 +5241,7 @@
         "away_moneyline": 370,
         "draw_moneyline": 295.0
       },
-      "pregame_odds_captured_at": "2026-09-19T12:15:29",
+      "pregame_odds_captured_at": "2026-09-19T14:14:35",
       "pregame_weather": null,
       "pregame_home_form": {
         "played": 4,
@@ -5283,7 +5289,7 @@
           "ga": 4
         }
       },
-      "pregame_intel_captured_at": "2026-09-19T12:15:29",
+      "pregame_intel_captured_at": "2026-09-19T14:14:35",
       "wr_confidence_initial": 56.4
     },
     {
@@ -5322,7 +5328,7 @@
         "away_moneyline": 100,
         "draw_moneyline": 280.0
       },
-      "pregame_odds_captured_at": "2026-09-19T12:15:29",
+      "pregame_odds_captured_at": "2026-09-19T14:14:35",
       "pregame_weather": null,
       "pregame_home_form": {
         "played": 4,
@@ -5370,7 +5376,7 @@
           "ga": 4
         }
       },
-      "pregame_intel_captured_at": "2026-09-19T12:15:29",
+      "pregame_intel_captured_at": "2026-09-19T14:14:35",
       "wr_confidence_initial": 30.0
     }
   ],
