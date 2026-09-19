@@ -2,7 +2,12 @@ services:
   - type: web
     name: war-room-dashboard
     runtime: python
-    plan: free
+    # Starter, not free: the free plan spins the service down after 15
+    # idle minutes and the next visitor pays a 30-60 second cold start,
+    # and its shared CPU made every page render slowly even when awake.
+    # Starter stays up around the clock. Changing this line needs a
+    # payment method on the Render account or the Blueprint sync fails.
+    plan: starter
     buildCommand: pip install -r requirements.txt
     # Threaded workers, not gunicorn's default single synchronous one. The
     # default serves exactly one request at a time, so every page, static
