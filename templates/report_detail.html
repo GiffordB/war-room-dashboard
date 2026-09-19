@@ -141,21 +141,6 @@
             {% endif %}
 
             <div class="war-pick-controls">
-              <form class="settle-form" method="post" action="{{ url_for('settle_pick', pick_id=p.id) }}">
-                <label>
-                  <span class="muted small">Result</span>
-                  <select name="result" onchange="this.form.requestSubmit()"
-                          title="{{ 'Overrides the auto-grade for this pick' if p.espn_event_id else 'Settle this pick by hand' }}">
-                    {% for r in results %}
-                      <option value="{{ r }}" {% if r == p.result %}selected{% endif %}>{{ result_label(r) }}</option>
-                    {% endfor %}
-                  </select>
-                </label>
-                <noscript><button class="btn btn-sm" type="submit">Update</button></noscript>
-              </form>
-              {% if not p.espn_event_id and p.result == 'pending' %}
-                <span class="muted small">Not linked to a game &mdash; grade it here once it settles.</span>
-              {% endif %}
               <form method="post" action="{{ url_for('delete_pick', pick_id=p.id) }}"
                     onsubmit="return confirm('Delete this pick?');">
                 <button class="btn-link" type="submit">Delete</button>
