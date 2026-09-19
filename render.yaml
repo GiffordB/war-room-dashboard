@@ -2,12 +2,13 @@ services:
   - type: web
     name: war-room-dashboard
     runtime: python
-    # Starter, not free: the free plan spins the service down after 15
-    # idle minutes and the next visitor pays a 30-60 second cold start,
-    # and its shared CPU made every page render slowly even when awake.
-    # Starter stays up around the clock. Changing this line needs a
-    # payment method on the Render account or the Blueprint sync fails.
-    plan: starter
+    # Pro, not free: the free plan spins the service down after 15 idle
+    # minutes and the next visitor pays a 30-60 second cold start, and
+    # its shared CPU made every page render slowly even when awake. Pro
+    # stays up around the clock on dedicated CPU. This must match what
+    # the Render dashboard shows - the service is Blueprint managed, so
+    # a sync would otherwise move it back to whatever is written here.
+    plan: pro
     buildCommand: pip install -r requirements.txt
     # Threaded workers, not gunicorn's default single synchronous one. The
     # default serves exactly one request at a time, so every page, static
@@ -16,7 +17,11 @@ services:
     # down. With threads, cheap requests are answered while a slow one is
     # still waiting on the network. --timeout is worker liveness, generous
     # enough that a long ESPN batch doesn't get the worker killed mid-page.
-    startCommand: gunicorn --worker-class gthread --threads 8 --timeout 90 app:app
+    # Two worker processes now that the plan has more than one CPU, so a
+    # long Auto-Grade pass in one can't hold up page renders in the other
+    # (each keeps its own in-memory caches; the data file's own version
+    # check already handles two processes saving).
+    startCommand: gunicorn --workers 2 --worker-class gthread --threads 8 --timeout 90 app:app
     envVars:
       - key: PYTHON_VERSION
         value: 3.11.9
