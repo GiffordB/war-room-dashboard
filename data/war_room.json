@@ -237,7 +237,13 @@
       "away_team": "Miami Hurricanes",
       "created_at": "2026-09-04T02:29:21",
       "id": 1,
-      "wr_confidence": 55.0
+      "wr_confidence": 55.0,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 6,
+        "away_score": 45
+      }
     },
     {
       "report_id": 3,
@@ -256,7 +262,13 @@
       "home_team": "Georgia Tech Yellow Jackets",
       "away_team": "Colorado Buffaloes",
       "created_at": "2026-09-04T02:29:23",
-      "id": 2
+      "id": 2,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 13,
+        "away_score": 14
+      }
     },
     {
       "report_id": 3,
@@ -275,7 +287,13 @@
       "home_team": "Rutgers Scarlet Knights",
       "away_team": "Massachusetts Minutemen",
       "created_at": "2026-09-04T02:29:25",
-      "id": 3
+      "id": 3,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 21,
+        "away_score": 37
+      }
     },
     {
       "report_id": 4,
@@ -299,7 +317,13 @@
       "war_room_line": "Model: City ~90% to win outright",
       "edge": "Market implies ~85% at -575; model ~90% -- thin but real, and the gap is exactly why this stays a match-result play and not the -2.5 spread",
       "price_discipline": "-575 or better: $500\n-650 to -576: $250\n-700 or worse: pass",
-      "wr_confidence": 82.0
+      "wr_confidence": 82.0,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 1,
+        "away_score": 0
+      }
     },
     {
       "report_id": 4,
@@ -323,7 +347,13 @@
       "war_room_line": "Model: Brentford ~64% to win",
       "edge": "Market implies ~60% at -150; model ~64% -- Sunderland's away record and the fresh Diarra knock look undersold",
       "price_discipline": "-150 or better: $100\n-165 to -151: $50\n-175 or worse: pass",
-      "wr_confidence": 66.0
+      "wr_confidence": 66.0,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 1,
+        "away_score": 1
+      }
     },
     {
       "report_id": 4,
@@ -347,7 +377,13 @@
       "war_room_line": "Model: Hull ~40% to win outright",
       "edge": "Market implies ~24% at +310; model's 40% is the real gap here -- Villa are the only PL side with zero shots on target this season",
       "price_discipline": "+310 or better: $25\n+275 to +309: $25\n+250 or worse: pass",
-      "wr_confidence": 73.0
+      "wr_confidence": 73.0,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 0,
+        "away_score": 0
+      }
     },
     {
       "report_id": 4,
@@ -371,7 +407,13 @@
       "war_room_line": "Model total: ~2.9 goals",
       "edge": "Market total 2.5 at -140 (implied ~58%); model ~62% over -- Chelsea's leaky defense (5 conceded in 2) against an in-form Arsenal attack is the driver",
       "price_discipline": "-140 or better: $50\n-155 to -141: $35\n-165 or worse: pass",
-      "wr_confidence": 60.0
+      "wr_confidence": 60.0,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 2,
+        "away_score": 1
+      }
     },
     {
       "report_id": 4,
@@ -395,7 +437,13 @@
       "war_room_line": "Model total: ~2.2 goals",
       "edge": "Market total 2.5 at -110 (implied ~52%); model ~61% under -- Spurs are scoreless through 2 games and missing Xavi Simons long-term",
       "price_discipline": "-110 or better: $50\n-125 to -111: $35\n-135 or worse: pass",
-      "wr_confidence": 71.0
+      "wr_confidence": 71.0,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 0,
+        "away_score": 0
+      }
     },
     {
       "report_id": 4,
@@ -419,7 +467,13 @@
       "war_room_line": "Model total: ~4.1 goals",
       "edge": "Market total 3.5 at -110 (implied ~52%); model ~63% over -- City averaging 3 goals/game, Coventry already conceding 2/game",
       "price_discipline": "-110 or better: $50\n-125 to -111: $35\n-135 or worse: pass",
-      "wr_confidence": 74.0
+      "wr_confidence": 74.0,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 1,
+        "away_score": 0
+      }
     },
     {
       "report_id": 6,
@@ -443,7 +497,13 @@
       "away_team": "Western Michigan Broncos",
       "created_at": "2026-09-04T13:38:31",
       "id": 12,
-      "wr_confidence": 76.0
+      "wr_confidence": 76.0,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 13,
+        "away_score": 12
+      }
     },
     {
       "report_id": 6,
@@ -467,7 +527,13 @@
       "away_team": "UCLA Bruins",
       "created_at": "2026-09-04T13:38:33",
       "id": 13,
-      "wr_confidence": 68.0
+      "wr_confidence": 68.0,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 24,
+        "away_score": 45
+      }
     },
     {
       "report_id": 6,
@@ -491,7 +557,13 @@
       "away_team": "Wisconsin Badgers",
       "created_at": "2026-09-04T13:38:36",
       "id": 14,
-      "wr_confidence": 73.0
+      "wr_confidence": 73.0,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 41,
+        "away_score": 13
+      }
     },
     {
       "report_id": 6,
@@ -515,7 +587,13 @@
       "away_team": "Western Michigan Broncos",
       "created_at": "2026-09-04T13:38:38",
       "id": 15,
-      "wr_confidence": 35.0
+      "wr_confidence": 35.0,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 13,
+        "away_score": 12
+      }
     },
     {
       "report_id": 6,
@@ -539,7 +617,13 @@
       "away_team": "Fresno State Bulldogs",
       "created_at": "2026-09-04T15:01:22",
       "id": 18,
-      "wr_confidence": 58.0
+      "wr_confidence": 58.0,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 39,
+        "away_score": 0
+      }
     },
     {
       "report_id": 7,
@@ -562,7 +646,13 @@
       "home_team": "Eastern Michigan Eagles",
       "away_team": "San Jos\u00e9 State Spartans",
       "created_at": "2026-09-04T22:33:37",
-      "id": 19
+      "id": 19,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 21,
+        "away_score": 27
+      }
     },
     {
       "report_id": 7,
@@ -585,7 +675,13 @@
       "home_team": "California Golden Bears",
       "away_team": "UCLA Bruins",
       "created_at": "2026-09-04T22:33:40",
-      "id": 20
+      "id": 20,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 24,
+        "away_score": 45
+      }
     },
     {
       "report_id": 7,
@@ -608,7 +704,13 @@
       "home_team": "James Madison Dukes",
       "away_team": "Liberty Flames",
       "created_at": "2026-09-04T22:33:42",
-      "id": 21
+      "id": 21,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 20,
+        "away_score": 13
+      }
     },
     {
       "report_id": 7,
@@ -631,7 +733,13 @@
       "home_team": "Michigan State Spartans",
       "away_team": "Toledo Rockets",
       "created_at": "2026-09-04T22:33:43",
-      "id": 22
+      "id": 22,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 30,
+        "away_score": 20
+      }
     },
     {
       "report_id": 7,
@@ -654,7 +762,13 @@
       "home_team": "Nevada Wolf Pack",
       "away_team": "Western Kentucky Hilltoppers",
       "created_at": "2026-09-05T13:56:25",
-      "id": 29
+      "id": 29,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 49,
+        "away_score": 14
+      }
     },
     {
       "report_id": 7,
@@ -677,7 +791,13 @@
       "home_team": "Southern Miss Golden Eagles",
       "away_team": "Alcorn State Braves",
       "created_at": "2026-09-05T13:56:42",
-      "id": 30
+      "id": 30,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 49,
+        "away_score": 3
+      }
     },
     {
       "report_id": 7,
@@ -700,7 +820,13 @@
       "home_team": "Colorado State Rams",
       "away_team": "Wyoming Cowboys",
       "created_at": "2026-09-05T13:56:45",
-      "id": 31
+      "id": 31,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 35,
+        "away_score": 13
+      }
     },
     {
       "report_id": 9,
@@ -723,7 +849,13 @@
       "home_team": "LSU Tigers",
       "away_team": "Clemson Tigers",
       "created_at": "2026-09-05T13:58:48",
-      "id": 32
+      "id": 32,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 51,
+        "away_score": 10
+      }
     },
     {
       "report_id": 9,
@@ -746,7 +878,13 @@
       "home_team": "Cincinnati Bearcats",
       "away_team": "Boston College Eagles",
       "created_at": "2026-09-05T13:58:59",
-      "id": 33
+      "id": 33,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 34,
+        "away_score": 15
+      }
     },
     {
       "report_id": 9,
@@ -769,7 +907,13 @@
       "home_team": "James Madison Dukes",
       "away_team": "Liberty Flames",
       "created_at": "2026-09-05T13:59:12",
-      "id": 34
+      "id": 34,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 20,
+        "away_score": 13
+      }
     },
     {
       "report_id": 9,
@@ -792,7 +936,13 @@
       "home_team": "Colorado State Rams",
       "away_team": "Wyoming Cowboys",
       "created_at": "2026-09-05T13:59:23",
-      "id": 35
+      "id": 35,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 35,
+        "away_score": 13
+      }
     },
     {
       "report_id": 9,
@@ -815,7 +965,13 @@
       "home_team": "Oregon Ducks",
       "away_team": "Boise State Broncos",
       "created_at": "2026-09-05T13:59:35",
-      "id": 36
+      "id": 36,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 34,
+        "away_score": 27
+      }
     },
     {
       "parlay_leg_pick_ids": [
@@ -928,7 +1084,13 @@
           "ga": 0
         }
       },
-      "pregame_intel_captured_at": "2026-09-08T17:09:34"
+      "pregame_intel_captured_at": "2026-09-08T17:09:34",
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 0,
+        "away_score": 2
+      }
     },
     {
       "parlay_leg_pick_ids": null,
@@ -1013,7 +1175,13 @@
           "ga": 0
         }
       },
-      "pregame_intel_captured_at": "2026-09-08T12:44:31"
+      "pregame_intel_captured_at": "2026-09-08T12:44:31",
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 1,
+        "away_score": 0
+      }
     },
     {
       "parlay_leg_pick_ids": null,
@@ -1098,7 +1266,13 @@
           "ga": 0
         }
       },
-      "pregame_intel_captured_at": "2026-09-08T17:09:34"
+      "pregame_intel_captured_at": "2026-09-08T17:09:34",
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 3,
+        "away_score": 2
+      }
     },
     {
       "parlay_leg_pick_ids": null,
@@ -1183,7 +1357,13 @@
           "ga": 0
         }
       },
-      "pregame_intel_captured_at": "2026-09-09T17:43:03"
+      "pregame_intel_captured_at": "2026-09-09T17:43:03",
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 3,
+        "away_score": 1
+      }
     },
     {
       "parlay_leg_pick_ids": null,
@@ -1268,7 +1448,13 @@
           "ga": 0
         }
       },
-      "pregame_intel_captured_at": "2026-09-08T17:09:34"
+      "pregame_intel_captured_at": "2026-09-08T17:09:34",
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 2,
+        "away_score": 1
+      }
     },
     {
       "parlay_leg_pick_ids": null,
@@ -1353,7 +1539,13 @@
           "ga": 0
         }
       },
-      "pregame_intel_captured_at": "2026-09-09T13:36:00"
+      "pregame_intel_captured_at": "2026-09-09T13:36:00",
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 5,
+        "away_score": 1
+      }
     },
     {
       "parlay_leg_pick_ids": null,
@@ -1438,7 +1630,13 @@
           "ga": 0
         }
       },
-      "pregame_intel_captured_at": "2026-09-09T17:43:03"
+      "pregame_intel_captured_at": "2026-09-09T17:43:03",
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 0,
+        "away_score": 1
+      }
     },
     {
       "parlay_leg_pick_ids": null,
@@ -1523,7 +1721,13 @@
           "ga": 0
         }
       },
-      "pregame_intel_captured_at": "2026-09-08T17:09:34"
+      "pregame_intel_captured_at": "2026-09-08T17:09:34",
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 2,
+        "away_score": 1
+      }
     },
     {
       "parlay_leg_pick_ids": null,
@@ -1608,7 +1812,13 @@
           "ga": 0
         }
       },
-      "pregame_intel_captured_at": "2026-09-08T12:44:31"
+      "pregame_intel_captured_at": "2026-09-08T12:44:31",
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 2,
+        "away_score": 3
+      }
     },
     {
       "parlay_leg_pick_ids": null,
@@ -1693,7 +1903,13 @@
           "ga": 0
         }
       },
-      "pregame_intel_captured_at": "2026-09-08T17:09:34"
+      "pregame_intel_captured_at": "2026-09-08T17:09:34",
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 0,
+        "away_score": 2
+      }
     },
     {
       "parlay_leg_pick_ids": null,
@@ -1788,7 +2004,13 @@
           "ga": 0
         }
       },
-      "pregame_intel_captured_at": "2026-09-13T00:43:21"
+      "pregame_intel_captured_at": "2026-09-13T00:43:21",
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 32,
+        "away_score": 38
+      }
     },
     {
       "parlay_leg_pick_ids": null,
@@ -1875,7 +2097,13 @@
           "ga": 6
         }
       },
-      "pregame_intel_captured_at": "2026-09-12T19:04:50"
+      "pregame_intel_captured_at": "2026-09-12T19:04:50",
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 44,
+        "away_score": 6
+      }
     },
     {
       "parlay_leg_pick_ids": null,
@@ -1970,7 +2198,13 @@
           "ga": 0
         }
       },
-      "pregame_intel_captured_at": "2026-09-11T23:06:00"
+      "pregame_intel_captured_at": "2026-09-11T23:06:00",
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 28,
+        "away_score": 21
+      }
     },
     {
       "parlay_leg_pick_ids": null,
@@ -2047,7 +2281,13 @@
           "ga": 0
         }
       },
-      "pregame_intel_captured_at": "2026-09-13T18:40:28"
+      "pregame_intel_captured_at": "2026-09-13T18:40:28",
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 27,
+        "away_score": 13
+      }
     },
     {
       "parlay_leg_pick_ids": null,
@@ -2124,7 +2364,13 @@
           "ga": 0
         }
       },
-      "pregame_intel_captured_at": "2026-09-13T23:59:08"
+      "pregame_intel_captured_at": "2026-09-13T23:59:08",
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 28,
+        "away_score": 20
+      }
     },
     {
       "parlay_leg_pick_ids": null,
@@ -2201,7 +2447,13 @@
           "ga": 0
         }
       },
-      "pregame_intel_captured_at": "2026-09-14T23:46:07"
+      "pregame_intel_captured_at": "2026-09-14T23:46:07",
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 31,
+        "away_score": 10
+      }
     },
     {
       "parlay_leg_pick_ids": null,
@@ -2296,7 +2548,13 @@
           "ga": 5
         }
       },
-      "pregame_intel_captured_at": "2026-09-12T13:21:32"
+      "pregame_intel_captured_at": "2026-09-12T13:21:32",
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 2,
+        "away_score": 3
+      }
     },
     {
       "parlay_leg_pick_ids": null,
@@ -2391,7 +2649,13 @@
           "ga": 4
         }
       },
-      "pregame_intel_captured_at": "2026-09-13T05:48:33"
+      "pregame_intel_captured_at": "2026-09-13T05:48:33",
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 0,
+        "away_score": 5
+      }
     },
     {
       "parlay_leg_pick_ids": null,
@@ -2478,7 +2742,13 @@
           "ga": 1
         }
       },
-      "pregame_intel_captured_at": "2026-09-13T14:12:11"
+      "pregame_intel_captured_at": "2026-09-13T14:12:11",
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 0,
+        "away_score": 1
+      }
     },
     {
       "parlay_leg_pick_ids": null,
@@ -2573,7 +2843,13 @@
           "ga": 2
         }
       },
-      "pregame_intel_captured_at": "2026-09-12T13:21:32"
+      "pregame_intel_captured_at": "2026-09-12T13:21:32",
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 1,
+        "away_score": 2
+      }
     },
     {
       "parlay_leg_pick_ids": null,
@@ -2660,7 +2936,13 @@
           "ga": 1
         }
       },
-      "pregame_intel_captured_at": "2026-09-12T16:07:53"
+      "pregame_intel_captured_at": "2026-09-12T16:07:53",
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 0,
+        "away_score": 0
+      }
     },
     {
       "parlay_leg_pick_ids": null,
@@ -2755,7 +3037,13 @@
           "ga": 4
         }
       },
-      "pregame_intel_captured_at": "2026-09-13T05:48:33"
+      "pregame_intel_captured_at": "2026-09-13T05:48:33",
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 0,
+        "away_score": 5
+      }
     },
     {
       "parlay_leg_pick_ids": null,
@@ -2842,7 +3130,13 @@
           "ga": 1
         }
       },
-      "pregame_intel_captured_at": "2026-09-13T14:12:11"
+      "pregame_intel_captured_at": "2026-09-13T14:12:11",
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 0,
+        "away_score": 1
+      }
     },
     {
       "parlay_leg_pick_ids": null,
@@ -2937,7 +3231,13 @@
         }
       },
       "pregame_intel_captured_at": "2026-09-12T13:21:32",
-      "wr_confidence_initial": 74.51428571428572
+      "wr_confidence_initial": 74.51428571428572,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 36,
+        "away_score": 38
+      }
     },
     {
       "parlay_leg_pick_ids": null,
@@ -3024,7 +3324,13 @@
         }
       },
       "pregame_intel_captured_at": "2026-09-12T19:04:50",
-      "wr_confidence_initial": 75.45714285714286
+      "wr_confidence_initial": 75.45714285714286,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 13,
+        "away_score": 38
+      }
     },
     {
       "parlay_leg_pick_ids": null,
@@ -3111,7 +3417,13 @@
         }
       },
       "pregame_intel_captured_at": "2026-09-12T22:04:06",
-      "wr_confidence_initial": 72.62857142857143
+      "wr_confidence_initial": 72.62857142857143,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 28,
+        "away_score": 10
+      }
     },
     {
       "parlay_leg_pick_ids": [
@@ -3217,7 +3529,13 @@
         }
       },
       "pregame_intel_captured_at": "2026-09-13T15:55:45",
-      "wr_confidence_initial": 66.75555555555556
+      "wr_confidence_initial": 66.75555555555556,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 33,
+        "away_score": 27
+      }
     },
     {
       "parlay_leg_pick_ids": null,
@@ -3294,7 +3612,13 @@
         }
       },
       "pregame_intel_captured_at": "2026-09-13T15:55:45",
-      "wr_confidence_initial": 82.57777777777778
+      "wr_confidence_initial": 82.57777777777778,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 20,
+        "away_score": 13
+      }
     },
     {
       "parlay_leg_pick_ids": null,
@@ -3371,7 +3695,13 @@
         }
       },
       "pregame_intel_captured_at": "2026-09-13T15:55:45",
-      "wr_confidence_initial": 72.4888888888889
+      "wr_confidence_initial": 72.4888888888889,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 31,
+        "away_score": 36
+      }
     },
     {
       "parlay_leg_pick_ids": null,
@@ -3448,7 +3778,13 @@
         }
       },
       "pregame_intel_captured_at": "2026-09-13T18:40:28",
-      "wr_confidence_initial": 67.71111111111111
+      "wr_confidence_initial": 67.71111111111111,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 14,
+        "away_score": 26
+      }
     },
     {
       "parlay_leg_pick_ids": null,
@@ -3525,7 +3861,13 @@
         }
       },
       "pregame_intel_captured_at": "2026-09-13T23:59:08",
-      "wr_confidence_initial": 72.81333333333333
+      "wr_confidence_initial": 72.81333333333333,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 28,
+        "away_score": 20
+      }
     },
     {
       "parlay_leg_pick_ids": null,
@@ -3602,7 +3944,13 @@
         }
       },
       "pregame_intel_captured_at": "2026-09-13T18:40:28",
-      "wr_confidence_initial": 32.0
+      "wr_confidence_initial": 32.0,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 14,
+        "away_score": 26
+      }
     },
     {
       "parlay_leg_pick_ids": [
@@ -3669,7 +4017,7 @@
         "away_moneyline": 114,
         "draw_moneyline": null
       },
-      "pregame_odds_captured_at": "2026-09-19T10:37:48",
+      "pregame_odds_captured_at": "2026-09-19T12:15:29",
       "pregame_weather": null,
       "pregame_home_form": {
         "played": 1,
@@ -3717,7 +4065,7 @@
           "ga": 0
         }
       },
-      "pregame_intel_captured_at": "2026-09-19T10:37:48",
+      "pregame_intel_captured_at": "2026-09-19T12:15:29",
       "wr_confidence_initial": 53.031578947368416
     },
     {
@@ -3756,7 +4104,7 @@
         "away_moneyline": -360,
         "draw_moneyline": null
       },
-      "pregame_odds_captured_at": "2026-09-19T10:37:48",
+      "pregame_odds_captured_at": "2026-09-19T12:15:29",
       "pregame_weather": null,
       "pregame_home_form": {
         "played": 2,
@@ -3804,7 +4152,7 @@
           "ga": 13
         }
       },
-      "pregame_intel_captured_at": "2026-09-19T10:37:48",
+      "pregame_intel_captured_at": "2026-09-19T12:15:29",
       "wr_confidence_initial": 75.27368421052631
     },
     {
@@ -3836,14 +4184,14 @@
         "home_spread": 21.5,
         "home_spread_odds": -108.0,
         "away_spread_odds": -112.0,
-        "total": 57.5,
-        "over_odds": -118.0,
-        "under_odds": -102.0,
+        "total": 58.5,
+        "over_odds": -102.0,
+        "under_odds": -118.0,
         "home_moneyline": 1100,
         "away_moneyline": -2100,
         "draw_moneyline": null
       },
-      "pregame_odds_captured_at": "2026-09-19T10:37:48",
+      "pregame_odds_captured_at": "2026-09-19T12:15:29",
       "pregame_weather": null,
       "pregame_home_form": {
         "played": 2,
@@ -3891,7 +4239,7 @@
           "ga": 0
         }
       },
-      "pregame_intel_captured_at": "2026-09-19T10:37:48",
+      "pregame_intel_captured_at": "2026-09-19T12:15:29",
       "wr_confidence_initial": 68.74736842105263
     },
     {
@@ -3930,7 +4278,7 @@
         "away_moneyline": 470,
         "draw_moneyline": null
       },
-      "pregame_odds_captured_at": "2026-09-19T10:37:48",
+      "pregame_odds_captured_at": "2026-09-19T12:15:29",
       "pregame_weather": null,
       "pregame_home_form": {
         "played": 2,
@@ -3978,7 +4326,7 @@
           "ga": 0
         }
       },
-      "pregame_intel_captured_at": "2026-09-19T10:37:48",
+      "pregame_intel_captured_at": "2026-09-19T12:15:29",
       "wr_confidence_initial": 66.88421052631578
     },
     {
@@ -4017,7 +4365,7 @@
         "away_moneyline": 1400,
         "draw_moneyline": null
       },
-      "pregame_odds_captured_at": "2026-09-19T10:37:48",
+      "pregame_odds_captured_at": "2026-09-19T12:15:29",
       "pregame_weather": null,
       "pregame_home_form": {
         "played": 2,
@@ -4065,7 +4413,7 @@
           "ga": 38
         }
       },
-      "pregame_intel_captured_at": "2026-09-19T10:37:48",
+      "pregame_intel_captured_at": "2026-09-19T12:15:29",
       "wr_confidence_initial": 68.82105263157895
     },
     {
@@ -4104,7 +4452,7 @@
         "away_moneyline": -205,
         "draw_moneyline": null
       },
-      "pregame_odds_captured_at": "2026-09-19T10:37:48",
+      "pregame_odds_captured_at": "2026-09-19T12:15:29",
       "pregame_weather": null,
       "pregame_home_form": {
         "played": 1,
@@ -4152,7 +4500,7 @@
           "ga": 39
         }
       },
-      "pregame_intel_captured_at": "2026-09-19T10:37:48",
+      "pregame_intel_captured_at": "2026-09-19T12:15:29",
       "wr_confidence_initial": 71.92105263157895
     },
     {
@@ -4185,13 +4533,13 @@
         "home_spread_odds": 110.0,
         "away_spread_odds": -155.0,
         "total": 2.5,
-        "over_odds": -135.0,
-        "under_odds": 110.0,
+        "over_odds": -125.0,
+        "under_odds": 100.0,
         "home_moneyline": 380,
         "away_moneyline": -140,
         "draw_moneyline": 295.0
       },
-      "pregame_odds_captured_at": "2026-09-19T10:37:48",
+      "pregame_odds_captured_at": "2026-09-19T12:15:29",
       "pregame_weather": null,
       "pregame_home_form": {
         "played": 4,
@@ -4239,7 +4587,7 @@
           "ga": 0
         }
       },
-      "pregame_intel_captured_at": "2026-09-19T10:37:48",
+      "pregame_intel_captured_at": "2026-09-19T12:15:29",
       "wr_confidence_initial": 70.7
     },
     {
@@ -4278,7 +4626,7 @@
         "away_moneyline": 450,
         "draw_moneyline": 295.0
       },
-      "pregame_odds_captured_at": "2026-09-19T10:37:48",
+      "pregame_odds_captured_at": "2026-09-19T12:15:29",
       "pregame_weather": null,
       "pregame_home_form": {
         "played": 4,
@@ -4326,7 +4674,7 @@
           "ga": 4
         }
       },
-      "pregame_intel_captured_at": "2026-09-19T10:37:48",
+      "pregame_intel_captured_at": "2026-09-19T12:15:29",
       "wr_confidence_initial": 63.65
     },
     {
@@ -4452,7 +4800,7 @@
         "away_moneyline": 425,
         "draw_moneyline": 330.0
       },
-      "pregame_odds_captured_at": "2026-09-19T10:37:48",
+      "pregame_odds_captured_at": "2026-09-19T12:15:29",
       "pregame_weather": null,
       "pregame_home_form": {
         "played": 4,
@@ -4500,7 +4848,7 @@
           "ga": 2
         }
       },
-      "pregame_intel_captured_at": "2026-09-19T10:37:48",
+      "pregame_intel_captured_at": "2026-09-19T12:15:29",
       "wr_confidence_initial": 25.0
     },
     {
@@ -4539,7 +4887,7 @@
         "away_moneyline": 370,
         "draw_moneyline": 295.0
       },
-      "pregame_odds_captured_at": "2026-09-19T10:37:48",
+      "pregame_odds_captured_at": "2026-09-19T12:15:29",
       "pregame_weather": null,
       "pregame_home_form": {
         "played": 4,
@@ -4587,7 +4935,7 @@
           "ga": 4
         }
       },
-      "pregame_intel_captured_at": "2026-09-19T10:37:48",
+      "pregame_intel_captured_at": "2026-09-19T12:15:29",
       "wr_confidence_initial": 38.0
     },
     {
@@ -4626,7 +4974,7 @@
         "away_moneyline": 425,
         "draw_moneyline": 330.0
       },
-      "pregame_odds_captured_at": "2026-09-19T10:37:48",
+      "pregame_odds_captured_at": "2026-09-19T12:15:29",
       "pregame_weather": null,
       "pregame_home_form": {
         "played": 4,
@@ -4674,7 +5022,7 @@
           "ga": 2
         }
       },
-      "pregame_intel_captured_at": "2026-09-19T10:37:48",
+      "pregame_intel_captured_at": "2026-09-19T12:15:29",
       "wr_confidence_initial": 52.519999999999996
     },
     {
@@ -4713,7 +5061,7 @@
         "away_moneyline": 450,
         "draw_moneyline": 295.0
       },
-      "pregame_odds_captured_at": "2026-09-19T10:37:48",
+      "pregame_odds_captured_at": "2026-09-19T12:15:29",
       "pregame_weather": null,
       "pregame_home_form": {
         "played": 4,
@@ -4761,7 +5109,7 @@
           "ga": 4
         }
       },
-      "pregame_intel_captured_at": "2026-09-19T10:37:48",
+      "pregame_intel_captured_at": "2026-09-19T12:15:29",
       "wr_confidence_initial": 58.4
     },
     {
@@ -4800,7 +5148,7 @@
         "away_moneyline": 330,
         "draw_moneyline": 285.0
       },
-      "pregame_odds_captured_at": "2026-09-19T10:37:48",
+      "pregame_odds_captured_at": "2026-09-19T12:15:29",
       "pregame_weather": null,
       "pregame_home_form": {
         "played": 4,
@@ -4848,7 +5196,7 @@
           "ga": 7
         }
       },
-      "pregame_intel_captured_at": "2026-09-19T10:37:48",
+      "pregame_intel_captured_at": "2026-09-19T12:15:29",
       "wr_confidence_initial": 52.32
     },
     {
@@ -4887,7 +5235,7 @@
         "away_moneyline": 370,
         "draw_moneyline": 295.0
       },
-      "pregame_odds_captured_at": "2026-09-19T10:37:48",
+      "pregame_odds_captured_at": "2026-09-19T12:15:29",
       "pregame_weather": null,
       "pregame_home_form": {
         "played": 4,
@@ -4935,7 +5283,7 @@
           "ga": 4
         }
       },
-      "pregame_intel_captured_at": "2026-09-19T10:37:48",
+      "pregame_intel_captured_at": "2026-09-19T12:15:29",
       "wr_confidence_initial": 56.4
     },
     {
@@ -4974,7 +5322,7 @@
         "away_moneyline": 100,
         "draw_moneyline": 280.0
       },
-      "pregame_odds_captured_at": "2026-09-19T10:37:48",
+      "pregame_odds_captured_at": "2026-09-19T12:15:29",
       "pregame_weather": null,
       "pregame_home_form": {
         "played": 4,
@@ -5022,7 +5370,7 @@
           "ga": 4
         }
       },
-      "pregame_intel_captured_at": "2026-09-19T10:37:48",
+      "pregame_intel_captured_at": "2026-09-19T12:15:29",
       "wr_confidence_initial": 30.0
     }
   ],
