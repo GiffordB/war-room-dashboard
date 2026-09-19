@@ -1,5 +1,5 @@
 {
-  "next_report_id": 27,
+  "next_report_id": 28,
   "next_pick_id": 104,
   "reports": [
     {
@@ -216,6 +216,18 @@
       "lsu_review_notes": "",
       "created_at": "2026-09-19T00:14:08",
       "id": 26
+    },
+    {
+      "source": "ChatGPT",
+      "league": "CFB",
+      "report_date": "2026-09-19",
+      "week_number": 4,
+      "week_label": "Saturday Competition Card -- Sept 19 (v1, 9:40 AM CT)",
+      "philosophy": "Six definite spread entries, DraftKings full-game pregame only. Competition picks are not cash recommendations: judgment forecasts, not Model A outputs, and rankings are preferences, not calibrated probabilities. New serious-money exposure $0 -- all money calls Pass. Number discipline: retain the listed competition lines or better, no automatic substitution at worse prices. Six profiled games, not every game fully graded. Jesse makes every wager decision.",
+      "blind_spot_notes": "No Thor Hammer Smash qualifies: fair ranges overlap the market and availability is incomplete. No manufactured Diamond Score. No moneyline or totals wager qualifies. Evening availability provisional (Florida receiver, edge and kicker unresolved). LSU check: Leavitt off the report, Dottery questionable -- Ole Miss is a points-taking choice, not an LSU backup-QB bet; actual kickoff 6:49 PM CT. Source audit: Sep 19 DK articles (Georgia, Alabama, South Carolina); explicit DK quotes at Sportsbook Review (Ole Miss, Florida); VegasInsider DK column (Louisville). Article prices are not guaranteed live availability. Good-If-It-Goes parlay (Louisville / South Carolina / Alabama) is competition-only with an optional $10 entertainment cap; nothing recorded placed.",
+      "lsu_review_notes": "",
+      "created_at": "2026-09-19T15:22:42",
+      "id": 27
     }
   ],
   "picks": [
