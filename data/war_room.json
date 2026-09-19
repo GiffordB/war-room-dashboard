@@ -6463,24 +6463,6 @@
       "id": 17
     },
     {
-      "pick_id": 89,
-      "report_id": 24,
-      "source": "Claude",
-      "league": "CFB",
-      "category": "best_bet",
-      "matchup": "Western Michigan @ Rice",
-      "selection": "Rice +12.5",
-      "odds": -105,
-      "stake": 25.0,
-      "bet_line": 9.5,
-      "result": "pending",
-      "profit_loss": 0.0,
-      "notes": null,
-      "wr_confidence_at_bet": 77.05,
-      "created_at": "2026-09-19T00:24:18",
-      "id": 18
-    },
-    {
       "pick_id": 102,
       "report_id": 26,
       "source": "Grok - GB",
