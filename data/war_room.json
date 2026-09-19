@@ -1,6 +1,6 @@
 {
   "next_report_id": 28,
-  "next_pick_id": 115,
+  "next_pick_id": 116,
   "reports": [
     {
       "source": "ChatGPT",
@@ -6044,6 +6044,101 @@
       },
       "pregame_intel_captured_at": "2026-09-19T15:51:05",
       "wr_confidence_initial": 61.45
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 24,
+      "category": "best_bet",
+      "matchup": "Marshall Thundering Herd @ Missouri State Bears",
+      "selection": "Missouri State +4.5",
+      "odds": -110,
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 62.0,
+      "war_room_line": "Score 62 B (W64/P52/S50/V50/CJ90/Wg65). Model A Marshall -0.4 (conf 0.14); market -3.5; THE LINE +4.5 at -110.",
+      "edge": "+5.0% EV. Own number 4.1 pts with us, paper 1 pt better than market. Same shape as East Carolina; FCS host, Peabody low. Holds 4. 95F, 12 mph wind.",
+      "price_discipline": "TRACK, $0 stake -- 62, under the 70 stake floor.",
+      "espn_event_id": "401871047",
+      "bet_type": "spread",
+      "bet_side": "home",
+      "bet_line": 4.5,
+      "home_team": null,
+      "away_team": null,
+      "created_at": "2026-09-19T15:51:08",
+      "id": 115,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "MRSH -4",
+        "home_spread": 4.0,
+        "home_spread_odds": -110.0,
+        "away_spread_odds": -110.0,
+        "total": 53.5,
+        "over_odds": -108.0,
+        "under_odds": -112.0,
+        "home_moneyline": 160,
+        "away_moneyline": -192,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-09-19T15:51:11",
+      "pregame_weather": {
+        "city": "Springfield",
+        "temp_c": 35.1,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 16.3,
+        "cloud_cover_pct": 100,
+        "forecast_hour": "2026-09-19T22:00"
+      },
+      "pregame_home_form": {
+        "played": 2,
+        "wins": 1,
+        "win_pct": 50.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 2,
+        "wins": 1,
+        "win_pct": 50.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 0,
+          "gf": 48,
+          "ga": 14
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 1,
+          "gf": 0,
+          "ga": 50
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 0,
+          "gf": 28,
+          "ga": 26
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 1,
+          "gf": 0,
+          "ga": 45
+        }
+      },
+      "pregame_intel_captured_at": "2026-09-19T15:51:11",
+      "wr_confidence_initial": 64.8
     }
   ],
   "next_wallet_id": 24,
