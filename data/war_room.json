@@ -1,6 +1,6 @@
 {
   "next_report_id": 27,
-  "next_pick_id": 103,
+  "next_pick_id": 104,
   "reports": [
     {
       "source": "ChatGPT",
@@ -5041,6 +5041,101 @@
       },
       "pregame_intel_captured_at": "2026-09-19T00:14:47",
       "wr_confidence_initial": 56.4
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 26,
+      "category": "sexy_moneyline",
+      "matchup": "Manchester United @ Fulham",
+      "selection": "Fulham to Win",
+      "odds": 230,
+      "stake": 60.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 33.0,
+      "war_room_line": "Model 31% win, EV +3%. DK/ESPN +230 (3.30). Man Utd +100 (2.00) not played.",
+      "edge": "Ranked first on EV among sides at or below the 38% win-percentage ceiling, inside the 1.80-6.00 band. The one positive-EV play on the card.",
+      "price_discipline": "Quarter-Kelly 0.60u. One club only. Sun 16:30 UK.",
+      "espn_event_id": "401878777",
+      "bet_type": "match_result",
+      "bet_side": "home",
+      "bet_line": null,
+      "home_team": null,
+      "away_team": null,
+      "created_at": "2026-09-19T00:15:38",
+      "id": 103,
+      "pregame_odds": {
+        "provider": "DraftKings",
+        "spread_details": "MAN +100",
+        "home_spread": 0.5,
+        "home_spread_odds": -130.0,
+        "away_spread_odds": -110.0,
+        "total": 3.5,
+        "over_odds": 140.0,
+        "under_odds": -175.0,
+        "home_moneyline": 245,
+        "away_moneyline": 100,
+        "draw_moneyline": 280.0
+      },
+      "pregame_odds_captured_at": "2026-09-19T00:16:50",
+      "pregame_weather": {
+        "city": "London",
+        "temp_c": 19.9,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 10.4,
+        "cloud_cover_pct": 33,
+        "forecast_hour": "2026-09-20T15:00"
+      },
+      "pregame_home_form": {
+        "played": 4,
+        "wins": 0,
+        "win_pct": 0.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 4,
+        "wins": 1,
+        "win_pct": 25.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 0,
+          "d": 0,
+          "l": 2,
+          "gf": 4,
+          "ga": 6
+        },
+        "away": {
+          "w": 0,
+          "d": 1,
+          "l": 1,
+          "gf": 0,
+          "ga": 1
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 1,
+          "gf": 5,
+          "ga": 3
+        },
+        "away": {
+          "w": 0,
+          "d": 1,
+          "l": 1,
+          "gf": 2,
+          "ga": 4
+        }
+      },
+      "pregame_intel_captured_at": "2026-09-19T00:16:50",
+      "wr_confidence_initial": 30.0
     }
   ],
   "next_wallet_id": 18,
