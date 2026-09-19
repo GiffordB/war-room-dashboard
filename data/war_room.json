@@ -5374,7 +5374,7 @@
       "wr_confidence_initial": 30.0
     }
   ],
-  "next_wallet_id": 23,
+  "next_wallet_id": 24,
   "wallet_entries": [
     {
       "pick_id": 12,
@@ -5783,6 +5783,24 @@
       "wr_confidence_at_bet": null,
       "created_at": "2026-09-19T14:05:51",
       "id": 22
+    },
+    {
+      "pick_id": 99,
+      "report_id": 26,
+      "source": "Grok - GB",
+      "league": "EPL",
+      "category": "best_bet",
+      "matchup": "Hull City @ Newcastle United",
+      "selection": "Newcastle to Win",
+      "odds": -165,
+      "stake": 25.0,
+      "bet_line": null,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": null,
+      "wr_confidence_at_bet": 52.519999999999996,
+      "created_at": "2026-09-19T14:07:14",
+      "id": 23
     }
   ],
   "next_jesse_wallet_id": 1,
