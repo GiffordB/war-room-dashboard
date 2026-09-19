@@ -1,6 +1,6 @@
 {
   "next_report_id": 27,
-  "next_pick_id": 100,
+  "next_pick_id": 101,
   "reports": [
     {
       "source": "ChatGPT",
@@ -4756,6 +4756,101 @@
       },
       "pregame_intel_captured_at": "2026-09-19T00:14:22",
       "wr_confidence_initial": 52.519999999999996
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 26,
+      "category": "best_bet",
+      "matchup": "Coventry City @ Nottingham Forest",
+      "selection": "Nottingham Forest to Win",
+      "odds": -170,
+      "stake": 100.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 55.0,
+      "war_room_line": "Model 55% win, EV -2%. DK/ESPN -170 (1.59).",
+      "edge": "Home edge intact against a promoted side. Same club used once.",
+      "price_discipline": "1.00u. Sat 17:30 UK.",
+      "espn_event_id": "401879270",
+      "bet_type": "match_result",
+      "bet_side": "home",
+      "bet_line": null,
+      "home_team": null,
+      "away_team": null,
+      "created_at": "2026-09-19T00:14:25",
+      "id": 100,
+      "pregame_odds": {
+        "provider": "DraftKings",
+        "spread_details": "NFO -155",
+        "home_spread": -0.5,
+        "home_spread_odds": -170.0,
+        "away_spread_odds": 120.0,
+        "total": 2.5,
+        "over_odds": -125.0,
+        "under_odds": 100.0,
+        "home_moneyline": -155,
+        "away_moneyline": 425,
+        "draw_moneyline": 300.0
+      },
+      "pregame_odds_captured_at": "2026-09-19T00:14:31",
+      "pregame_weather": {
+        "city": "Nottingham",
+        "temp_c": 20.4,
+        "precip_probability_pct": 5,
+        "precip_mm": 0.0,
+        "wind_kmh": 22.0,
+        "cloud_cover_pct": 22,
+        "forecast_hour": "2026-09-19T16:00"
+      },
+      "pregame_home_form": {
+        "played": 4,
+        "wins": 1,
+        "win_pct": 25.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 4,
+        "wins": 0,
+        "win_pct": 0.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 0,
+          "d": 1,
+          "l": 1,
+          "gf": 0,
+          "ga": 1
+        },
+        "away": {
+          "w": 1,
+          "d": 1,
+          "l": 0,
+          "gf": 4,
+          "ga": 3
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 0,
+          "d": 0,
+          "l": 2,
+          "gf": 0,
+          "ga": 6
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 2,
+          "gf": 0,
+          "ga": 4
+        }
+      },
+      "pregame_intel_captured_at": "2026-09-19T00:14:31",
+      "wr_confidence_initial": 58.4
     }
   ],
   "next_wallet_id": 18,
