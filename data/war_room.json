@@ -1,5 +1,5 @@
 {
-  "next_report_id": 26,
+  "next_report_id": 27,
   "next_pick_id": 99,
   "reports": [
     {
@@ -204,6 +204,18 @@
       "lsu_review_notes": "",
       "created_at": "2026-09-18T23:13:40",
       "id": 25
+    },
+    {
+      "source": "Grok - GB",
+      "league": "EPL",
+      "report_date": "2026-09-19",
+      "week_number": 5,
+      "week_label": "Snyps PL Desk -- Week Card 19-20 Sep (Gameweek 5)",
+      "philosophy": "Independent number. Four to cash, one for the number. Match results (1X2) only, Saturday-Sunday. Cash sides clear on model win percentage first, then expected value, priced 1.50-2.30 decimal with edge no worse than minus five percent. One price longshot: win percentage at or below 38 percent, plus-two EV floor, 1.80-6.00 band, quarter-Kelly capped. One club once. Fair 1X2 from a shrunk Dixon-Coles Poisson blended to de-vigged ESPN; slip prices DK/ESPN. Short prices (1.30 and similar) are an automatic pass even if they win. Sunday openers are the live window; Saturday numbers already tight.",
+      "blind_spot_notes": "PASSES: Spurs v Villa (Villa missing seven per Emery -- Bizot, Onana, Cisse, Torres, Maatsen, Goretzka, Madjo; Gomes back from suspension; neither side clears the cash floor after the injury overlay). Brighton v Arsenal (Arsenal -145; Brighton attack stripped -- Mitoma, Minteh, Ferguson, Hinshelwood, Wieffer, Tzimas out; Saliba still out; Arsenal win percentage high but decimal sits at the cash floor and is not the EV rank leader). Bournemouth v Liverpool (Liverpool +115 sits just under 50 percent after rotation and the tight pitch -- outside both sleeves). Man City v Sunderland (City 1.30 automatic pass; Sunderland 10.00 too thin for the +2 percent EV screen). Man Utd +100 at Fulham not played -- Fulham is the price side. Injury context on the card: Newcastle without Joelinton, Burn, Osula, Elanga, Dedic, Ramsey, Gonzalez (Jaouen a doubt) yet still ranks first on win percentage; Hull missing Mendy (concussion), Targett a doubt; Ipswich without Taylor (knee). Totals may be written up but are not the card. All EV on the cash sides is negative (-1 to -4 percent) -- these are win-rate plays inside the -5 percent tolerance, not value plays.",
+      "lsu_review_notes": "",
+      "created_at": "2026-09-19T00:14:08",
+      "id": 26
     }
   ],
   "picks": [
