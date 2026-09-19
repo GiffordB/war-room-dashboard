@@ -1,6 +1,6 @@
 {
   "next_report_id": 28,
-  "next_pick_id": 111,
+  "next_pick_id": 112,
   "reports": [
     {
       "source": "ChatGPT",
@@ -5680,6 +5680,93 @@
       "created_at": "2026-09-19T15:23:55",
       "id": 110,
       "wr_confidence_initial": null
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 24,
+      "category": "best_bet",
+      "matchup": "Purdue Boilermakers @ UCLA Bruins",
+      "selection": "Purdue +16.5",
+      "odds": -110,
+      "stake": 100.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 73.0,
+      "war_room_line": "Score 73 A (W75/P52/S80/V58/CJ100/Wg60). Model A UCLA -3.9 (conf 0.14); market -14.0; THE LINE +16.5 at -110, 2.5 pts better than market. Pinnacle uncaptured.",
+      "edge": "+7.4% EV. Own number 12.6 pts with us. Paper moved three points toward UCLA and we buy against it. UCLA missing WR Mikey Matthews (leg), TE Josh Phifer and a third pass-catcher -- biggest injury-index riser of the week. Holds 15 and 16. 72F, 4 mph, clear.",
+      "price_discipline": "STAKE 1.0% ($100), half of quarter-Kelly while Pinnacle is uncaptured. Void if Pinnacle prints UCLA -15.5 or higher; 2.0% if Pinnacle -14.5 or lower. Kicks 10:00 PM CT.",
+      "espn_event_id": "401858458",
+      "bet_type": "spread",
+      "bet_side": "away",
+      "bet_line": 16.5,
+      "home_team": null,
+      "away_team": null,
+      "created_at": "2026-09-19T15:50:43",
+      "id": 111,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "UCLA -14",
+        "home_spread": -14.0,
+        "home_spread_odds": -112.0,
+        "away_spread_odds": -108.0,
+        "total": 52.5,
+        "over_odds": -112.0,
+        "under_odds": -108.0,
+        "home_moneyline": -650,
+        "away_moneyline": 470,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-09-19T15:50:47",
+      "pregame_weather": null,
+      "pregame_home_form": {
+        "played": 2,
+        "wins": 2,
+        "win_pct": 100.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 2,
+        "wins": 1,
+        "win_pct": 50.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 0,
+          "gf": 28,
+          "ga": 10
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 0,
+          "gf": 45,
+          "ga": 24
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 1,
+          "gf": 80,
+          "ga": 57
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 0,
+          "gf": 0,
+          "ga": 0
+        }
+      },
+      "pregame_intel_captured_at": "2026-09-19T15:50:47",
+      "wr_confidence_initial": 76.15
     }
   ],
   "next_wallet_id": 24,
