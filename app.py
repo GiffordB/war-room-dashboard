@@ -84,9 +84,9 @@ CATEGORIES = {
 }
 CATEGORY_ORDER = list(CATEGORIES.keys())
 
-# The three AI sources being compared. Order here controls display order
+# The AI sources being compared. Order here controls display order
 # everywhere (cards, chart legends, table columns).
-SOURCES = ["Claude", "Claude - GB", "Grok", "Grok - GB", "ChatGPT"]
+SOURCES = ["Claude", "Claude - GB", "Grok", "Grok - GB", "ChatGPT", "ChatGPT - Ash"]
 SOURCE_STYLE = {
     "Claude": {"color": "#cc785c"},
     # A genuinely different system from the CFB/NFL "Claude" above - the
@@ -102,6 +102,10 @@ SOURCE_STYLE = {
     # competitor.
     "Grok - GB": {"color": "#fbbf24"},
     "ChatGPT": {"color": "#10a37f"},
+    # Ash's own ChatGPT desk - a separate conversation with its own card
+    # (DraftKings spreads plus Pick6 player props), tracked as its own
+    # competitor rather than folded into the main "ChatGPT" record.
+    "ChatGPT - Ash": {"color": "#f472b6"},
 }
 
 # Every report belongs to one league - a source writes a separate report
