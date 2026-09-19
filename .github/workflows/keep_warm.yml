@@ -1,0 +1,20 @@
+# Render's free plan spins a web service down after 15 idle minutes and
+# the next visitor eats a 30-60 second cold start - the "site is
+# unusable" report every time someone opens it after a quiet spell. This
+# pings a data-free endpoint often enough to keep the instance awake.
+# GitHub runs scheduled jobs late (minutes, sometimes more) when busy,
+# so the odd cold start can still slip through; the paid Starter plan is
+# the only guaranteed fix.
+name: Keep warm
+
+on:
+  schedule:
+    - cron: "*/10 * * * *"
+  workflow_dispatch:
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping the health endpoint
+        run: curl -sf --max-time 90 "https://war-room-dashboard-fus7.onrender.com/healthz"

@@ -446,6 +446,7 @@ def auto_grade_pending(data, report_id=None):
 
         pick["result"] = result
         pick["profit_loss"] = profit_for_result(pick["stake"], pick["odds"], result)
+        pick["final_score"] = final
         graded += 1
 
     # Parlays grade off their own legs rather than a single ESPN score -
@@ -506,6 +507,25 @@ _FINAL_SCORE_TTL_LIVE = 60
 _FINAL_SCORE_TTL_FINAL = 6 * 3600
 _final_score_cache = {}
 
+# The wallet's news watch re-fetched every pending bet's match_info and
+# both teams' headlines on every view - three to six ESPN round-trips
+# that, on Render's shared CPU, were most of the page. Headlines and
+# team ids don't change minute to minute, so they're memoized too.
+_NEWS_TTL = 10 * 60
+_ttl_caches = {}
+
+
+def _ttl_cached(name, ttl, key, compute):
+    """Process-local memo: `compute()`'s value for `key`, kept `ttl` seconds under cache `name`. A None result is cached as well, so a dead lookup isn't retried on every view."""
+    cache = _ttl_caches.setdefault(name, {})
+    now = time.time()
+    hit = cache.get(key)
+    if hit and hit[1] > now:
+        return hit[0]
+    value = compute()
+    cache[key] = (value, now + ttl)
+    return value
+
 
 def _cached_final_score(league, event_id):
     key = (league, event_id)
@@ -517,6 +537,14 @@ def _cached_final_score(league, event_id):
     ttl = _FINAL_SCORE_TTL_FINAL if result and result.get("completed") else _FINAL_SCORE_TTL_LIVE
     _final_score_cache[key] = (result, now + ttl)
     return result
+
+
+def _cached_match_info(league, event_id):
+    return _ttl_cached("match_info", _NEWS_TTL, (league, event_id), lambda: odds.match_info(league, event_id))
+
+
+def _cached_team_news(league, team_id, limit):
+    return _ttl_cached("team_news", _NEWS_TTL, (league, team_id, limit), lambda: odds.team_news(league, team_id, limit=limit))
 
 
 def _pregame_odds_stale(pick):
@@ -788,7 +816,11 @@ def attach_game_status(picks, league=None):
     settled_labels = {"win": "Won", "loss": "Lost", "push": "Push"}
     live_labels = {"win": "Winning", "loss": "Losing", "push": "Push"}
 
+    # A settled pick that already carries its final score (stored at grade
+    # time - see auto_grade_pending / backfill_final_scores) needs no
+    # lookup at all; only live and not-yet-stored games go to ESPN.
     needed_keys = set()
+    stored = {}
     for original in picks:
         pick_league = league or original.get("league")
         if (
@@ -797,9 +829,15 @@ def attach_game_status(picks, league=None):
             and original.get("bet_type")
             and pick_league
         ):
-            needed_keys.add((pick_league, original["espn_event_id"]))
+            key = (pick_league, original["espn_event_id"])
+            final = original.get("final_score")
+            if original["result"] != "pending" and final and final.get("completed"):
+                stored[key] = final
+            else:
+                needed_keys.add(key)
 
-    score_cache = _parallel_map(lambda key: _cached_final_score(key[0], key[1]), list(needed_keys))
+    score_cache = _parallel_map(lambda key: _cached_final_score(key[0], key[1]), list(needed_keys - set(stored)))
+    score_cache.update(stored)
 
     result = []
     for original in picks:
@@ -2360,12 +2398,21 @@ def auto_grade_all():
     graded, still_pending = auto_grade_pending(data)
     synced = sync_wallet_entries(data)
     captured = _safe_capture_pregame_lines(data)
-    if graded or synced or captured:
+    backfilled = backfill_final_scores(data)
+    if graded or synced or captured or backfilled:
         message = f"Auto-grade all reports: {graded} pick(s) settled, {synced} wallet entr{'y' if synced == 1 else 'ies'} synced"
         if captured:
             message += f", {captured} line{'s' if captured != 1 else ''} captured"
+        if backfilled:
+            message += f", {backfilled} final score{'s' if backfilled != 1 else ''} stored"
         store.save(data, token, message=message)
     return redirect(url_for("reports_list", graded=graded, still_pending=still_pending))
+
+
+@app.route("/healthz")
+def healthz():
+    """Cheapest possible response - no data load, no ESPN - for uptime pings that keep Render's free instance from spinning down (see .github/workflows/keep_warm.yml)."""
+    return "ok", 200, {"Content-Type": "text/plain", "Cache-Control": "no-store"}
 
 
 @app.route("/picks/<int:pick_id>/settle", methods=["POST"])
@@ -2789,8 +2836,42 @@ def sync_wallet_entries(data):
             if outcome:
                 entry["result"] = outcome
                 entry["profit_loss"] = profit_for_result(entry["stake"], entry["odds"], outcome)
+                entry["final_score"] = final
                 synced += 1
     return synced
+
+
+def backfill_final_scores(data):
+    """
+    One-off catch-up for picks settled before final_score started being
+    stored on them at grade time (see auto_grade_pending): fetches and
+    stores the final for every settled, ESPN-linked pick still missing
+    one, so attach_game_status() never has to ask ESPN about a finished
+    game again. Modifies `data` in place; returns how many were filled.
+    Runs inside the hourly Auto-Grade pass, so after one pass it's a
+    no-op.
+    """
+    reports = {r["id"]: r for r in data["reports"]}
+    missing = [
+        p
+        for p in data["picks"]
+        if p["result"] in ("win", "loss", "push")
+        and p.get("espn_event_id")
+        and p.get("bet_type")
+        and not (p.get("final_score") or {}).get("completed")
+        and p["report_id"] in reports
+    ]
+    if not missing:
+        return 0
+    keys = {(reports[p["report_id"]]["league"], p["espn_event_id"]) for p in missing}
+    finals = _parallel_map(lambda key: odds.final_score(key[0], key[1]), list(keys))
+    filled = 0
+    for p in missing:
+        final = finals.get((reports[p["report_id"]]["league"], p["espn_event_id"]))
+        if final and final.get("completed"):
+            p["final_score"] = final
+            filled += 1
+    return filled
 
 
 def wallet_overall_stats(entries):
@@ -3023,7 +3104,7 @@ def wallet_news_alerts(entries, picks_by_id, limit_per_team=4):
     if not event_matchups:
         return [], {}
 
-    match_infos = _parallel_map(lambda key: odds.match_info(key[0], key[1]), list(event_matchups.keys()))
+    match_infos = _parallel_map(lambda key: _cached_match_info(key[0], key[1]), list(event_matchups.keys()))
 
     team_lookup = {}
     for (event_league, _event_id), info in match_infos.items():
@@ -3033,7 +3114,7 @@ def wallet_news_alerts(entries, picks_by_id, limit_per_team=4):
         team_lookup[(event_league, info["away_id"])] = info["away_name"]
 
     news_by_team = _parallel_map(
-        lambda key: odds.team_news(key[0], key[1], limit=limit_per_team), list(team_lookup.keys())
+        lambda key: _cached_team_news(key[0], key[1], limit_per_team), list(team_lookup.keys())
     )
 
     watches = []
