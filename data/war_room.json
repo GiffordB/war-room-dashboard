@@ -1,6 +1,6 @@
 {
   "next_report_id": 28,
-  "next_pick_id": 114,
+  "next_pick_id": 115,
   "reports": [
     {
       "source": "ChatGPT",
@@ -5949,6 +5949,101 @@
       },
       "pregame_intel_captured_at": "2026-09-19T15:51:00",
       "wr_confidence_initial": 65.6
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 24,
+      "category": "best_bet",
+      "matchup": "East Carolina Pirates @ Old Dominion Monarchs",
+      "selection": "East Carolina +3",
+      "odds": -110,
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 63.0,
+      "war_room_line": "Score 63 B (W65/P52/S55/V50/CJ94/Wg90). Model A Old Dominion -2.1 (conf 0.14); market -2.5; THE LINE +3.0 at -110.",
+      "edge": "+5.5% EV on price: the paper gives the 3 the market took away. Own number 5.1 pts with us. No information; a Week-4 Group of Five number the model barely trusts. 77F, 13 mph wind, clear.",
+      "price_discipline": "TRACK, $0 stake -- 63. Needs Pinnacle at ODU -2.5 to lift the Walters seat off its 75 cap and cross 70; the tracked side most likely to become a stake.",
+      "espn_event_id": "401862710",
+      "bet_type": "spread",
+      "bet_side": "away",
+      "bet_line": 3.0,
+      "home_team": null,
+      "away_team": null,
+      "created_at": "2026-09-19T15:51:02",
+      "id": 114,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "ODU -2.5",
+        "home_spread": -2.5,
+        "home_spread_odds": -118.0,
+        "away_spread_odds": -102.0,
+        "total": 48.5,
+        "over_odds": -112.0,
+        "under_odds": -108.0,
+        "home_moneyline": -142,
+        "away_moneyline": 120,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-09-19T15:51:05",
+      "pregame_weather": {
+        "city": "Norfolk",
+        "temp_c": 25.7,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 15.7,
+        "cloud_cover_pct": 12,
+        "forecast_hour": "2026-09-19T22:00"
+      },
+      "pregame_home_form": {
+        "played": 2,
+        "wins": 1,
+        "win_pct": 50.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 2,
+        "wins": 0,
+        "win_pct": 0.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 0,
+          "gf": 31,
+          "ga": 10
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 1,
+          "gf": 21,
+          "ga": 44
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 0,
+          "d": 0,
+          "l": 1,
+          "gf": 24,
+          "ga": 27
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 1,
+          "gf": 10,
+          "ga": 48
+        }
+      },
+      "pregame_intel_captured_at": "2026-09-19T15:51:05",
+      "wr_confidence_initial": 61.45
     }
   ],
   "next_wallet_id": 24,
