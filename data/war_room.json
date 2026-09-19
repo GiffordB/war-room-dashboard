@@ -1,5 +1,5 @@
 {
-  "next_report_id": 28,
+  "next_report_id": 29,
   "next_pick_id": 116,
   "reports": [
     {
@@ -228,6 +228,18 @@
       "lsu_review_notes": "",
       "created_at": "2026-09-19T15:22:42",
       "id": 27
+    },
+    {
+      "source": "ChatGPT - Ash",
+      "league": "CFB",
+      "report_date": "2026-09-19",
+      "week_number": 4,
+      "week_label": "DraftKings Saturday Card -- Sept 19",
+      "philosophy": "DraftKings-only card built from the lines shown in chat: one main spread, one two-leg Pick6 (DK requires picks from at least two teams; kept to two legs because adding marginal legs has turned good reads into losing tickets), and one optional higher-risk spread. Selection weighs opponent quality, likely game script, injuries, and whether prior production came against starters or backups. Predictions, not guarantees; lines and player projections can move before kickoff.",
+      "blind_spot_notes": "Main bet Arkansas +24.5: the value is the cushion -- home dog getting more than three touchdowns against a national-title-level opponent; the bet only needs Arkansas within 24. Pick6: Keelon Russell (Alabama) MORE 259.5 passing yards (FSU the stronger of the two opponents, but Alabama should still create passing volume) + Arch Manning (Texas) MORE 279.5 passing yards (UTSA the weaker opponent; main risk is Texas getting ahead early and cutting second-half volume). The Chambliss passing over was removed from the Pick6 because LSU has looked excellent defensively; Ole Miss +3 is the different-shaped alternative, a field-goal cushion in a top-10 home matchup. Tracker before today: approximately -$7.41. No prices given on the sheet for the spreads -- logged at -110 assumed; Pick6 payout logged at +200 (DK two-pick multiplier) -- correct both to the ticket if different. The Pick6 legs are player props ESPN cannot grade, so that pick settles by hand.",
+      "lsu_review_notes": "",
+      "created_at": "2026-09-19T15:58:21",
+      "id": 28
     }
   ],
   "picks": [
