@@ -1,6 +1,6 @@
 {
   "next_report_id": 28,
-  "next_pick_id": 112,
+  "next_pick_id": 113,
   "reports": [
     {
       "source": "ChatGPT",
@@ -5767,6 +5767,93 @@
       },
       "pregame_intel_captured_at": "2026-09-19T15:50:47",
       "wr_confidence_initial": 76.15
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 24,
+      "category": "best_bet",
+      "matchup": "Wyoming Cowboys @ Central Michigan Chippewas",
+      "selection": "Central Michigan +1.5",
+      "odds": -110,
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 67.0,
+      "war_room_line": "Score 67 B (W66/P70/S50/V50/CJ79/Wg55). Model A Wyoming -0.8 (conf 0.25); market -1.0; THE LINE +1.5 at -110.",
+      "edge": "+3.6% EV, crosses zero. Own number 2.3 pts with us, paper 2.5 pts better than market. Nothing sourced on either roster; Wong has little to hold below 3. 57F, 8 mph, 48% rain.",
+      "price_discipline": "TRACK, $0 stake -- 67, under the 70 stake floor (no information, FCS-grade rosters). Kicks 12:00 CT.",
+      "espn_event_id": "401864508",
+      "bet_type": "spread",
+      "bet_side": "home",
+      "bet_line": 1.5,
+      "home_team": null,
+      "away_team": null,
+      "created_at": "2026-09-19T15:50:50",
+      "id": 112,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "WYO -1.5",
+        "home_spread": 1.5,
+        "home_spread_odds": -115.0,
+        "away_spread_odds": -105.0,
+        "total": 39.5,
+        "over_odds": -115.0,
+        "under_odds": -105.0,
+        "home_moneyline": -108,
+        "away_moneyline": -112,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-09-19T15:50:55",
+      "pregame_weather": null,
+      "pregame_home_form": {
+        "played": 2,
+        "wins": 1,
+        "win_pct": 50.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 2,
+        "wins": 1,
+        "win_pct": 50.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 0,
+          "gf": 13,
+          "ga": 10
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 1,
+          "gf": 7,
+          "ga": 38
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 0,
+          "gf": 21,
+          "ga": 13
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 1,
+          "gf": 13,
+          "ga": 35
+        }
+      },
+      "pregame_intel_captured_at": "2026-09-19T15:50:55",
+      "wr_confidence_initial": 69.05
     }
   ],
   "next_wallet_id": 24,
