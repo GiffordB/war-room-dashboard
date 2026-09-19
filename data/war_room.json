@@ -1,6 +1,6 @@
 {
   "next_report_id": 28,
-  "next_pick_id": 108,
+  "next_pick_id": 109,
   "reports": [
     {
       "source": "ChatGPT",
@@ -5738,6 +5738,93 @@
       },
       "pregame_intel_captured_at": "2026-09-19T15:23:21",
       "wr_confidence_initial": 58.55555555555556
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 27,
+      "category": "best_bet",
+      "matchup": "Florida Gators @ Auburn Tigers",
+      "selection": "Florida -2.5",
+      "odds": -105,
+      "stake": 25.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 57.0,
+      "war_room_line": "Rank #6 of 6. DK -2.5 (-105), 6:00 PM CT (Sportsbook Review DK quote). Availability provisional.",
+      "edge": "Small Florida lean toward the protection and offensive-efficiency matchup.",
+      "price_discipline": "Risk: first difficult road test for Philo; receiver, edge and kicker availability unresolved. Listed line or better only.",
+      "espn_event_id": "401856687",
+      "bet_type": "spread",
+      "bet_side": "away",
+      "bet_line": -2.5,
+      "home_team": null,
+      "away_team": null,
+      "created_at": "2026-09-19T15:23:38",
+      "id": 108,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "FLA -2.5",
+        "home_spread": 2.5,
+        "home_spread_odds": -115.0,
+        "away_spread_odds": -105.0,
+        "total": 53.5,
+        "over_odds": -105.0,
+        "under_odds": -115.0,
+        "home_moneyline": 110,
+        "away_moneyline": -130,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-09-19T15:23:45",
+      "pregame_weather": null,
+      "pregame_home_form": {
+        "played": 2,
+        "wins": 2,
+        "win_pct": 100.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 2,
+        "wins": 2,
+        "win_pct": 100.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 2,
+          "d": 0,
+          "l": 0,
+          "gf": 60,
+          "ga": 24
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 0,
+          "gf": 0,
+          "ga": 0
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 2,
+          "d": 0,
+          "l": 0,
+          "gf": 118,
+          "ga": 24
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 0,
+          "gf": 0,
+          "ga": 0
+        }
+      },
+      "pregame_intel_captured_at": "2026-09-19T15:23:45",
+      "wr_confidence_initial": 56.68888888888889
     }
   ],
   "next_wallet_id": 24,
