@@ -4041,14 +4041,14 @@
         "away_moneyline": 120,
         "draw_moneyline": null
       },
-      "pregame_odds_captured_at": "2026-09-20T00:50:45",
+      "pregame_odds_captured_at": "2026-09-20T05:54:15",
       "pregame_weather": {
         "city": "Houston",
-        "temp_c": 31.7,
-        "precip_probability_pct": 0,
+        "temp_c": 31.8,
+        "precip_probability_pct": 1,
         "precip_mm": 0.0,
-        "wind_kmh": 4.1,
-        "cloud_cover_pct": 100,
+        "wind_kmh": 1.6,
+        "cloud_cover_pct": 3,
         "forecast_hour": "2026-09-20T17:00"
       },
       "pregame_home_form": {
@@ -4097,7 +4097,7 @@
           "ga": 0
         }
       },
-      "pregame_intel_captured_at": "2026-09-20T00:50:45",
+      "pregame_intel_captured_at": "2026-09-20T05:54:15",
       "wr_confidence_initial": 53.031578947368416
     },
     {
@@ -4136,13 +4136,13 @@
         "away_moneyline": -185,
         "draw_moneyline": null
       },
-      "pregame_odds_captured_at": "2026-09-20T00:50:45",
+      "pregame_odds_captured_at": "2026-09-20T05:54:15",
       "pregame_weather": {
         "city": "East Rutherford",
-        "temp_c": 19.4,
-        "precip_probability_pct": 38,
-        "precip_mm": 0.4,
-        "wind_kmh": 16.8,
+        "temp_c": 19.5,
+        "precip_probability_pct": 59,
+        "precip_mm": 1.4,
+        "wind_kmh": 13.6,
         "cloud_cover_pct": 100,
         "forecast_hour": "2026-09-20T17:00"
       },
@@ -4192,7 +4192,7 @@
           "ga": 39
         }
       },
-      "pregame_intel_captured_at": "2026-09-20T00:50:45",
+      "pregame_intel_captured_at": "2026-09-20T05:54:15",
       "wr_confidence_initial": 71.92105263157895
     },
     {
@@ -4594,8 +4594,8 @@
         "provider": "DraftKings",
         "spread_details": "LEE -140",
         "home_spread": -0.5,
-        "home_spread_odds": -155.0,
-        "away_spread_odds": 110.0,
+        "home_spread_odds": -160.0,
+        "away_spread_odds": 115.0,
         "total": 2.5,
         "over_odds": -145.0,
         "under_odds": 115.0,
@@ -4603,14 +4603,14 @@
         "away_moneyline": 380,
         "draw_moneyline": 300.0
       },
-      "pregame_odds_captured_at": "2026-09-20T00:50:45",
+      "pregame_odds_captured_at": "2026-09-20T05:54:15",
       "pregame_weather": {
         "city": "Leeds",
-        "temp_c": 16.8,
+        "temp_c": 16.5,
         "precip_probability_pct": 0,
         "precip_mm": 0.0,
-        "wind_kmh": 19.1,
-        "cloud_cover_pct": 45,
+        "wind_kmh": 18.0,
+        "cloud_cover_pct": 63,
         "forecast_hour": "2026-09-20T13:00"
       },
       "pregame_home_form": {
@@ -4659,7 +4659,7 @@
           "ga": 4
         }
       },
-      "pregame_intel_captured_at": "2026-09-20T00:50:45",
+      "pregame_intel_captured_at": "2026-09-20T05:54:15",
       "wr_confidence_initial": 38.0
     },
     {
@@ -4968,8 +4968,8 @@
         "provider": "DraftKings",
         "spread_details": "LEE -140",
         "home_spread": -0.5,
-        "home_spread_odds": -155.0,
-        "away_spread_odds": 110.0,
+        "home_spread_odds": -160.0,
+        "away_spread_odds": 115.0,
         "total": 2.5,
         "over_odds": -145.0,
         "under_odds": 115.0,
@@ -4977,14 +4977,14 @@
         "away_moneyline": 380,
         "draw_moneyline": 300.0
       },
-      "pregame_odds_captured_at": "2026-09-20T00:50:45",
+      "pregame_odds_captured_at": "2026-09-20T05:54:15",
       "pregame_weather": {
         "city": "Leeds",
-        "temp_c": 16.8,
+        "temp_c": 16.5,
         "precip_probability_pct": 0,
         "precip_mm": 0.0,
-        "wind_kmh": 19.1,
-        "cloud_cover_pct": 45,
+        "wind_kmh": 18.0,
+        "cloud_cover_pct": 63,
         "forecast_hour": "2026-09-20T13:00"
       },
       "pregame_home_form": {
@@ -5033,7 +5033,7 @@
           "ga": 4
         }
       },
-      "pregame_intel_captured_at": "2026-09-20T00:50:45",
+      "pregame_intel_captured_at": "2026-09-20T05:54:15",
       "wr_confidence_initial": 56.4
     },
     {
@@ -5063,19 +5063,19 @@
         "provider": "DraftKings",
         "spread_details": "MAN +100",
         "home_spread": 0.5,
-        "home_spread_odds": -130.0,
+        "home_spread_odds": -125.0,
         "away_spread_odds": -110.0,
         "total": 3.5,
-        "over_odds": 140.0,
+        "over_odds": 135.0,
         "under_odds": -170.0,
         "home_moneyline": 245,
         "away_moneyline": 100,
         "draw_moneyline": 280.0
       },
-      "pregame_odds_captured_at": "2026-09-20T00:50:45",
+      "pregame_odds_captured_at": "2026-09-20T05:54:15",
       "pregame_weather": {
         "city": "London",
-        "temp_c": 20.2,
+        "temp_c": 20.6,
         "precip_probability_pct": 0,
         "precip_mm": 0.0,
         "wind_kmh": 11.2,
@@ -5128,7 +5128,7 @@
           "ga": 4
         }
       },
-      "pregame_intel_captured_at": "2026-09-20T00:50:45",
+      "pregame_intel_captured_at": "2026-09-20T05:54:15",
       "wr_confidence_initial": 30.0
     },
     {
@@ -5232,8 +5232,8 @@
       "selection": "Alabama -18.5",
       "odds": -110,
       "stake": 25.0,
-      "result": "pending",
-      "profit_loss": 0.0,
+      "result": "loss",
+      "profit_loss": -25.0,
       "notes": "",
       "wr_confidence": 58.0,
       "war_room_line": "Rank #5 of 6. DK -18.5 (-110), 2:30 PM CT.",
@@ -5309,7 +5309,13 @@
         }
       },
       "pregame_intel_captured_at": "2026-09-19T20:19:23",
-      "wr_confidence_initial": 62.644444444444446
+      "wr_confidence_initial": 62.644444444444446,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 50,
+        "away_score": 36
+      }
     },
     {
       "parlay_leg_pick_ids": null,
@@ -5420,8 +5426,8 @@
       "selection": "South Carolina -4",
       "odds": -108,
       "stake": 50.0,
-      "result": "pending",
-      "profit_loss": 0.0,
+      "result": "loss",
+      "profit_loss": -50.0,
       "notes": "",
       "wr_confidence": 60.0,
       "war_room_line": "Rank #3 of 6. DK -4 (-108), 3:15 PM CT.",
@@ -5505,7 +5511,13 @@
         }
       },
       "pregame_intel_captured_at": "2026-09-19T17:51:35",
-      "wr_confidence_initial": 58.55555555555556
+      "wr_confidence_initial": 58.55555555555556,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 34,
+        "away_score": 41
+      }
     },
     {
       "parlay_leg_pick_ids": null,
@@ -5515,8 +5527,8 @@
       "selection": "Florida -2.5",
       "odds": -105,
       "stake": 25.0,
-      "result": "pending",
-      "profit_loss": 0.0,
+      "result": "win",
+      "profit_loss": 23.80952380952381,
       "notes": "",
       "wr_confidence": 57.0,
       "war_room_line": "Rank #6 of 6. DK -2.5 (-105), 6:00 PM CT (Sportsbook Review DK quote). Availability provisional.",
@@ -5592,7 +5604,13 @@
         }
       },
       "pregame_intel_captured_at": "2026-09-19T22:47:04",
-      "wr_confidence_initial": 56.68888888888889
+      "wr_confidence_initial": 56.68888888888889,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 39,
+        "away_score": 44
+      }
     },
     {
       "parlay_leg_pick_ids": null,
@@ -5602,8 +5620,8 @@
       "selection": "Ole Miss +2.5",
       "odds": -108,
       "stake": 50.0,
-      "result": "pending",
-      "profit_loss": 0.0,
+      "result": "win",
+      "profit_loss": 46.2962962962963,
       "notes": "",
       "wr_confidence": 62.0,
       "war_room_line": "Rank #1 of 6. DK +2.5 (-108), 6:49 PM CT actual kickoff (Sportsbook Review DK quote).",
@@ -5679,7 +5697,13 @@
         }
       },
       "pregame_intel_captured_at": "2026-09-19T22:47:04",
-      "wr_confidence_initial": 62.46666666666667
+      "wr_confidence_initial": 62.46666666666667,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 32,
+        "away_score": 24
+      }
     },
     {
       "parlay_leg_pick_ids": [
@@ -5693,8 +5717,8 @@
       "selection": "Good-If-It-Goes Parlay",
       "odds": 602,
       "stake": 10.0,
-      "result": "pending",
-      "profit_loss": 0.0,
+      "result": "loss",
+      "profit_loss": -10.0,
       "notes": "",
       "wr_confidence": null,
       "war_room_line": "No quoted DK combined price. Calculated approximately +602; implied 14.25%; hypothetical $10 return $70.19 including stake.",
@@ -6007,7 +6031,7 @@
       "selection": "East Carolina +3",
       "odds": -110,
       "stake": 0.0,
-      "result": "pending",
+      "result": "win",
       "profit_loss": 0.0,
       "notes": "",
       "wr_confidence": 63.0,
@@ -6084,7 +6108,13 @@
         }
       },
       "pregame_intel_captured_at": "2026-09-19T20:19:23",
-      "wr_confidence_initial": 61.45
+      "wr_confidence_initial": 61.45,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 17,
+        "away_score": 20
+      }
     },
     {
       "parlay_leg_pick_ids": null,
@@ -6094,8 +6124,8 @@
       "selection": "Missouri State +4.5",
       "odds": -110,
       "stake": 0.0,
-      "result": "pending",
-      "profit_loss": 0.0,
+      "result": "loss",
+      "profit_loss": -0.0,
       "notes": "",
       "wr_confidence": 62.0,
       "war_room_line": "Score 62 B (W64/P52/S50/V50/CJ90/Wg65). Model A Marshall -0.4 (conf 0.14); market -3.5; THE LINE +4.5 at -110.",
@@ -6171,7 +6201,13 @@
         }
       },
       "pregame_intel_captured_at": "2026-09-19T20:19:23",
-      "wr_confidence_initial": 64.8
+      "wr_confidence_initial": 64.8,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 24,
+        "away_score": 30
+      }
     },
     {
       "parlay_leg_pick_ids": null,
@@ -6307,8 +6343,8 @@
       "selection": "Ole Miss +3",
       "odds": -110,
       "stake": 10.0,
-      "result": "pending",
-      "profit_loss": 0.0,
+      "result": "win",
+      "profit_loss": 9.090909090909092,
       "notes": "",
       "wr_confidence": 52.0,
       "war_room_line": "Optional higher-risk play. DK +3, price not shown (-110 assumed). 6:49 PM CT.",
@@ -6384,7 +6420,13 @@
         }
       },
       "pregame_intel_captured_at": "2026-09-19T22:47:04",
-      "wr_confidence_initial": 55.24
+      "wr_confidence_initial": 55.24,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 32,
+        "away_score": 24
+      }
     }
   ],
   "next_wallet_id": 24,
