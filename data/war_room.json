@@ -4030,27 +4030,19 @@
       "id": 88,
       "pregame_odds": {
         "provider": "Draft Kings",
-        "spread_details": "HOU -2.5",
-        "home_spread": -2.5,
-        "home_spread_odds": -118.0,
-        "away_spread_odds": -102.0,
+        "spread_details": "HOU -3",
+        "home_spread": -3.0,
+        "home_spread_odds": -102.0,
+        "away_spread_odds": -118.0,
         "total": 45.5,
         "over_odds": -110.0,
         "under_odds": -110.0,
-        "home_moneyline": -142,
-        "away_moneyline": 120,
+        "home_moneyline": -148,
+        "away_moneyline": 124,
         "draw_moneyline": null
       },
-      "pregame_odds_captured_at": "2026-09-20T10:59:21",
-      "pregame_weather": {
-        "city": "Houston",
-        "temp_c": 31.3,
-        "precip_probability_pct": 1,
-        "precip_mm": 0.0,
-        "wind_kmh": 1.5,
-        "cloud_cover_pct": 72,
-        "forecast_hour": "2026-09-20T17:00"
-      },
+      "pregame_odds_captured_at": "2026-09-20T14:40:08",
+      "pregame_weather": null,
       "pregame_home_form": {
         "played": 1,
         "wins": 0,
@@ -4097,7 +4089,7 @@
           "ga": 0
         }
       },
-      "pregame_intel_captured_at": "2026-09-20T10:59:21",
+      "pregame_intel_captured_at": "2026-09-20T14:40:08",
       "wr_confidence_initial": 53.031578947368416
     },
     {
@@ -4127,25 +4119,17 @@
         "provider": "Draft Kings",
         "spread_details": "GB -3.5",
         "home_spread": 3.5,
-        "home_spread_odds": -110.0,
-        "away_spread_odds": -110.0,
+        "home_spread_odds": -108.0,
+        "away_spread_odds": -112.0,
         "total": 44.5,
         "over_odds": -110.0,
         "under_odds": -110.0,
-        "home_moneyline": 154,
-        "away_moneyline": -185,
+        "home_moneyline": 160,
+        "away_moneyline": -192,
         "draw_moneyline": null
       },
-      "pregame_odds_captured_at": "2026-09-20T10:59:21",
-      "pregame_weather": {
-        "city": "East Rutherford",
-        "temp_c": 19.4,
-        "precip_probability_pct": 67,
-        "precip_mm": 0.4,
-        "wind_kmh": 14.2,
-        "cloud_cover_pct": 100,
-        "forecast_hour": "2026-09-20T17:00"
-      },
+      "pregame_odds_captured_at": "2026-09-20T14:40:08",
+      "pregame_weather": null,
       "pregame_home_form": {
         "played": 1,
         "wins": 1,
@@ -4192,7 +4176,7 @@
           "ga": 39
         }
       },
-      "pregame_intel_captured_at": "2026-09-20T10:59:21",
+      "pregame_intel_captured_at": "2026-09-20T14:40:08",
       "wr_confidence_initial": 71.92105263157895
     },
     {
@@ -5063,25 +5047,17 @@
         "provider": "DraftKings",
         "spread_details": "MAN +100",
         "home_spread": 0.5,
-        "home_spread_odds": -130.0,
-        "away_spread_odds": -105.0,
-        "total": 3.5,
-        "over_odds": 135.0,
-        "under_odds": -170.0,
+        "home_spread_odds": -125.0,
+        "away_spread_odds": -110.0,
+        "total": 2.5,
+        "over_odds": -165.0,
+        "under_odds": 135.0,
         "home_moneyline": 245,
         "away_moneyline": 100,
         "draw_moneyline": 280.0
       },
-      "pregame_odds_captured_at": "2026-09-20T10:59:21",
-      "pregame_weather": {
-        "city": "London",
-        "temp_c": 20.2,
-        "precip_probability_pct": 0,
-        "precip_mm": 0.0,
-        "wind_kmh": 10.1,
-        "cloud_cover_pct": 8,
-        "forecast_hour": "2026-09-20T15:00"
-      },
+      "pregame_odds_captured_at": "2026-09-20T14:40:08",
+      "pregame_weather": null,
       "pregame_home_form": {
         "played": 4,
         "wins": 0,
@@ -5128,7 +5104,7 @@
           "ga": 4
         }
       },
-      "pregame_intel_captured_at": "2026-09-20T10:59:21",
+      "pregame_intel_captured_at": "2026-09-20T14:40:08",
       "wr_confidence_initial": 30.0
     },
     {
