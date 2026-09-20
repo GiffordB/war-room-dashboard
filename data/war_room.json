@@ -1,6 +1,6 @@
 {
   "next_report_id": 30,
-  "next_pick_id": 123,
+  "next_pick_id": 124,
   "reports": [
     {
       "source": "ChatGPT",
@@ -6801,6 +6801,101 @@
       },
       "pregame_intel_captured_at": "2026-09-20T15:54:30",
       "wr_confidence_initial": 57.676923076923075
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 23,
+      "category": "best_bet",
+      "matchup": "New Orleans Saints @ Baltimore Ravens",
+      "selection": "New Orleans +8.5",
+      "odds": -110,
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 62.0,
+      "war_room_line": "Score 62 B, 5 of 5 components agree (W74/P57/S65/V68/CJ36/Wg48). Own number Baltimore -1.9 (Model B +3.3, injuries -1.0, matchup -0.4). THE LINE +8.5 at -110; market BAL -8.0; cover 51.5%, EV -1.7% after vig. Captures the 8.",
+      "edge": "Paper a half point better than the market on the 8; Baltimore without WR Zay Flowers, DT Madubuike, LB Buchanan, CB Tampa (Stanley and Simpson questionable); Prime #5 sharp play Saints +9 against 63% of money on BAL; storms arriving in the second quarter. Every component agrees -- the price does not.",
+      "price_discipline": "TRACK, $0 stake. A half point off 8 buys 1.5% of probability against 4.5% vig. Becomes a position at +9 or on a Pinnacle print of Baltimore -8.5 or higher. Risks: storm timing, Ravens run game in rain, Saints OL.",
+      "espn_event_id": "401872938",
+      "bet_type": "spread",
+      "bet_side": "away",
+      "bet_line": 8.5,
+      "home_team": null,
+      "away_team": null,
+      "created_at": "2026-09-20T16:41:27",
+      "id": 123,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "BAL -8.5",
+        "home_spread": -8.5,
+        "home_spread_odds": -105.0,
+        "away_spread_odds": -115.0,
+        "total": 45.5,
+        "over_odds": -105.0,
+        "under_odds": -115.0,
+        "home_moneyline": -375,
+        "away_moneyline": 295,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-09-20T16:41:32",
+      "pregame_weather": {
+        "city": "Baltimore",
+        "temp_c": 26.2,
+        "precip_probability_pct": 8,
+        "precip_mm": 0.0,
+        "wind_kmh": 13.6,
+        "cloud_cover_pct": 100,
+        "forecast_hour": "2026-09-20T17:00"
+      },
+      "pregame_home_form": {
+        "played": 1,
+        "wins": 1,
+        "win_pct": 100.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 1,
+        "wins": 0,
+        "win_pct": 0.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 6.0,
+      "pregame_away_injuries": 9.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 0,
+          "d": 0,
+          "l": 0,
+          "gf": 0,
+          "ga": 0
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 0,
+          "gf": 41,
+          "ga": 23
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 0,
+          "d": 0,
+          "l": 0,
+          "gf": 0,
+          "ga": 0
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 1,
+          "gf": 30,
+          "ga": 31
+        }
+      },
+      "pregame_intel_captured_at": "2026-09-20T16:41:32",
+      "wr_confidence_initial": 54.93333333333333
     }
   ],
   "next_wallet_id": 24,
