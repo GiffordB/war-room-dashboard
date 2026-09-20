@@ -4397,8 +4397,8 @@
       "selection": "3-Leg Favorites Parlay: Leeds (-135), Nottingham Forest (-155), Man City (-330)",
       "odds": 273,
       "stake": 10.0,
-      "result": "pending",
-      "profit_loss": 0.0,
+      "result": "loss",
+      "profit_loss": -10.0,
       "notes": "Leeds unbeaten at home against a Crystal Palace side missing its striker (Mateta, hamstring), a starting CB (Disasi, suspended) and Riad (out for the season).\nForest at home against a Coventry side that has not scored a single goal all season, home or away.\nMan City at home off the back of a 4-0-0 start, even with Foden suspended and Doku touch-and-go - the squad depth advantage is enormous.\nEach leg stands on its own as a play we'd take independently; combining them for a small stake rather than three separate plays.",
       "wr_confidence": 34.0,
       "war_room_line": "Leeds ~58% / Forest ~62% / Man City ~75% (blended, each leg)",
@@ -4482,7 +4482,13 @@
         }
       },
       "pregame_intel_captured_at": "2026-09-20T10:59:21",
-      "wr_confidence_initial": 38.0
+      "wr_confidence_initial": 38.0,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 0,
+        "away_score": 0
+      }
     },
     {
       "parlay_leg_pick_ids": null,
@@ -4771,8 +4777,8 @@
       "selection": "Leeds to Win",
       "odds": -135,
       "stake": 100.0,
-      "result": "pending",
-      "profit_loss": 0.0,
+      "result": "loss",
+      "profit_loss": -100.0,
       "notes": "",
       "wr_confidence": 52.0,
       "war_room_line": "Model 52% win, EV -4%. DK/ESPN -135 (1.74).",
@@ -4856,7 +4862,13 @@
         }
       },
       "pregame_intel_captured_at": "2026-09-20T10:59:21",
-      "wr_confidence_initial": 56.4
+      "wr_confidence_initial": 56.4,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 0,
+        "away_score": 0
+      }
     },
     {
       "parlay_leg_pick_ids": null,
@@ -4866,8 +4878,8 @@
       "selection": "Fulham to Win",
       "odds": 230,
       "stake": 60.0,
-      "result": "pending",
-      "profit_loss": 0.0,
+      "result": "loss",
+      "profit_loss": -60.0,
       "notes": "",
       "wr_confidence": 33.0,
       "war_room_line": "Model 31% win, EV +3%. DK/ESPN +230 (3.30). Man Utd +100 (2.00) not played.",
@@ -4943,7 +4955,13 @@
         }
       },
       "pregame_intel_captured_at": "2026-09-20T14:40:08",
-      "wr_confidence_initial": 30.0
+      "wr_confidence_initial": 30.0,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 1,
+        "away_score": 1
+      }
     },
     {
       "parlay_leg_pick_ids": null,
@@ -6467,20 +6485,20 @@
         "home_spread": 3.5,
         "home_spread_odds": 100.0,
         "away_spread_odds": -120.0,
-        "total": 40.5,
-        "over_odds": -118.0,
-        "under_odds": -102.0,
-        "home_moneyline": 170,
-        "away_moneyline": -205,
+        "total": 41.5,
+        "over_odds": -105.0,
+        "under_odds": -115.0,
+        "home_moneyline": 180,
+        "away_moneyline": -218,
         "draw_moneyline": null
       },
-      "pregame_odds_captured_at": "2026-09-20T15:54:24",
+      "pregame_odds_captured_at": "2026-09-20T18:08:04",
       "pregame_weather": {
         "city": "Glendale",
         "temp_c": 37.8,
         "precip_probability_pct": 0,
         "precip_mm": 0.0,
-        "wind_kmh": 4.7,
+        "wind_kmh": 6.5,
         "cloud_cover_pct": 100,
         "forecast_hour": "2026-09-20T20:00"
       },
@@ -6530,7 +6548,7 @@
           "ga": 0
         }
       },
-      "pregame_intel_captured_at": "2026-09-20T15:54:24",
+      "pregame_intel_captured_at": "2026-09-20T18:08:04",
       "wr_confidence_initial": 62.80769230769231
     },
     {
@@ -6569,13 +6587,13 @@
         "away_moneyline": 215,
         "draw_moneyline": null
       },
-      "pregame_odds_captured_at": "2026-09-20T15:54:30",
+      "pregame_odds_captured_at": "2026-09-20T18:08:04",
       "pregame_weather": {
         "city": "Kansas City",
-        "temp_c": 21.4,
-        "precip_probability_pct": 3,
+        "temp_c": 20.9,
+        "precip_probability_pct": 1,
         "precip_mm": 0.0,
-        "wind_kmh": 10.8,
+        "wind_kmh": 9.8,
         "cloud_cover_pct": 100,
         "forecast_hour": "2026-09-21T00:00"
       },
@@ -6625,7 +6643,7 @@
           "ga": 0
         }
       },
-      "pregame_intel_captured_at": "2026-09-20T15:54:30",
+      "pregame_intel_captured_at": "2026-09-20T18:08:04",
       "wr_confidence_initial": 57.676923076923075
     },
     {
@@ -6759,13 +6777,13 @@
         "away_moneyline": 215,
         "draw_moneyline": null
       },
-      "pregame_odds_captured_at": "2026-09-20T16:41:56",
+      "pregame_odds_captured_at": "2026-09-20T18:08:04",
       "pregame_weather": {
         "city": "Kansas City",
-        "temp_c": 21.4,
-        "precip_probability_pct": 3,
+        "temp_c": 20.9,
+        "precip_probability_pct": 1,
         "precip_mm": 0.0,
-        "wind_kmh": 10.8,
+        "wind_kmh": 9.8,
         "cloud_cover_pct": 100,
         "forecast_hour": "2026-09-21T00:00"
       },
@@ -6815,7 +6833,7 @@
           "ga": 0
         }
       },
-      "pregame_intel_captured_at": "2026-09-20T16:41:56",
+      "pregame_intel_captured_at": "2026-09-20T18:08:04",
       "wr_confidence_initial": 61.044444444444444
     }
   ],
@@ -7151,8 +7169,8 @@
       "odds": -150,
       "stake": 25.0,
       "bet_line": null,
-      "result": "pending",
-      "profit_loss": 0.0,
+      "result": "loss",
+      "profit_loss": -25.0,
       "notes": null,
       "wr_confidence_at_bet": 56.4,
       "created_at": "2026-09-19T12:02:21",
