@@ -6274,8 +6274,8 @@
       "selection": "NY Jets +3.5",
       "odds": -108,
       "stake": 50.0,
-      "result": "pending",
-      "profit_loss": 0.0,
+      "result": "win",
+      "profit_loss": 46.2962962962963,
       "notes": "",
       "wr_confidence": 62.0,
       "war_room_line": "Rank #1 of 4. DK-labeled +3.5 (-108), noon CT. Fair GB -2, range PK to GB -4.",
@@ -6359,7 +6359,13 @@
         }
       },
       "pregame_intel_captured_at": "2026-09-20T15:54:11",
-      "wr_confidence_initial": 69.40923076923076
+      "wr_confidence_initial": 69.40923076923076,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 17,
+        "away_score": 20
+      }
     },
     {
       "parlay_leg_pick_ids": null,
@@ -6369,8 +6375,8 @@
       "selection": "Cincinnati +3",
       "odds": -118,
       "stake": 50.0,
-      "result": "pending",
-      "profit_loss": 0.0,
+      "result": "win",
+      "profit_loss": 42.3728813559322,
       "notes": "",
       "wr_confidence": 61.0,
       "war_room_line": "Rank #2 of 4. DK-labeled +3 (-118), noon CT. Fair HOU -1, range CIN -2 to HOU -4.",
@@ -6454,7 +6460,13 @@
         }
       },
       "pregame_intel_captured_at": "2026-09-20T15:54:17",
-      "wr_confidence_initial": 65.17846153846153
+      "wr_confidence_initial": 65.17846153846153,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 6,
+        "away_score": 20
+      }
     },
     {
       "parlay_leg_pick_ids": null,
@@ -6587,13 +6599,13 @@
         "away_moneyline": 215,
         "draw_moneyline": null
       },
-      "pregame_odds_captured_at": "2026-09-20T18:08:04",
+      "pregame_odds_captured_at": "2026-09-20T21:19:02",
       "pregame_weather": {
         "city": "Kansas City",
-        "temp_c": 20.9,
+        "temp_c": 20.6,
         "precip_probability_pct": 1,
         "precip_mm": 0.0,
-        "wind_kmh": 9.8,
+        "wind_kmh": 9.3,
         "cloud_cover_pct": 100,
         "forecast_hour": "2026-09-21T00:00"
       },
@@ -6643,7 +6655,7 @@
           "ga": 0
         }
       },
-      "pregame_intel_captured_at": "2026-09-20T18:08:04",
+      "pregame_intel_captured_at": "2026-09-20T21:19:02",
       "wr_confidence_initial": 57.676923076923075
     },
     {
@@ -6654,7 +6666,7 @@
       "selection": "New Orleans +8.5",
       "odds": -110,
       "stake": 0.0,
-      "result": "pending",
+      "result": "win",
       "profit_loss": 0.0,
       "notes": "",
       "wr_confidence": 62.0,
@@ -6739,7 +6751,13 @@
         }
       },
       "pregame_intel_captured_at": "2026-09-20T16:41:32",
-      "wr_confidence_initial": 54.93333333333333
+      "wr_confidence_initial": 54.93333333333333,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 17,
+        "away_score": 24
+      }
     },
     {
       "parlay_leg_pick_ids": null,
@@ -6777,13 +6795,13 @@
         "away_moneyline": 215,
         "draw_moneyline": null
       },
-      "pregame_odds_captured_at": "2026-09-20T18:08:04",
+      "pregame_odds_captured_at": "2026-09-20T21:19:02",
       "pregame_weather": {
         "city": "Kansas City",
-        "temp_c": 20.9,
+        "temp_c": 20.6,
         "precip_probability_pct": 1,
         "precip_mm": 0.0,
-        "wind_kmh": 9.8,
+        "wind_kmh": 9.3,
         "cloud_cover_pct": 100,
         "forecast_hour": "2026-09-21T00:00"
       },
@@ -6833,7 +6851,7 @@
           "ga": 0
         }
       },
-      "pregame_intel_captured_at": "2026-09-20T18:08:04",
+      "pregame_intel_captured_at": "2026-09-20T21:19:02",
       "wr_confidence_initial": 61.044444444444444
     }
   ],
