@@ -1,6 +1,6 @@
 {
   "next_report_id": 30,
-  "next_pick_id": 124,
+  "next_pick_id": 125,
   "reports": [
     {
       "source": "ChatGPT",
@@ -6722,6 +6722,101 @@
       },
       "pregame_intel_captured_at": "2026-09-20T16:41:32",
       "wr_confidence_initial": 54.93333333333333
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 23,
+      "category": "best_bet",
+      "matchup": "Indianapolis Colts @ Kansas City Chiefs",
+      "selection": "Indianapolis +6.5",
+      "odds": -110,
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 60.0,
+      "war_room_line": "Score 60 B, 3 of 5 agree (W62/P57/S65/V60/CJ56/Wg54). Own number Kansas City -1.5 (Model B +0.8, injuries +0.5, matchup +0.2). THE LINE +6.5 at -110; market KC -6.0; cover 52.8%, EV +0.7% after vig. Captures the 6.",
+      "edge": "Right side, wrong number: Prime's single largest sharp position is Colts +7 and the paper gives +6.5. WR Michael Pittman Jr. out (foot). Thunderstorms forecast in the Sunday-night window favor the dog. 70% of tickets and handle on Kansas City.",
+      "price_discipline": "TRACK, $0 stake. Position becomes live at +7 (paper would need to print 7) with Pinnacle confirming 6.5 or lower. Kicks 7:20 CT.",
+      "espn_event_id": "401872945",
+      "bet_type": "spread",
+      "bet_side": "away",
+      "bet_line": 6.5,
+      "home_team": null,
+      "away_team": null,
+      "created_at": "2026-09-20T16:41:52",
+      "id": 124,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "KC -6",
+        "home_spread": -6.0,
+        "home_spread_odds": -108.0,
+        "away_spread_odds": -112.0,
+        "total": 46.5,
+        "over_odds": -102.0,
+        "under_odds": -118.0,
+        "home_moneyline": -265,
+        "away_moneyline": 215,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-09-20T16:41:56",
+      "pregame_weather": {
+        "city": "Kansas City",
+        "temp_c": 21.4,
+        "precip_probability_pct": 3,
+        "precip_mm": 0.0,
+        "wind_kmh": 10.8,
+        "cloud_cover_pct": 100,
+        "forecast_hour": "2026-09-21T00:00"
+      },
+      "pregame_home_form": {
+        "played": 1,
+        "wins": 1,
+        "win_pct": 100.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 1,
+        "wins": 0,
+        "win_pct": 0.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 1.5,
+      "pregame_away_injuries": 1.5,
+      "pregame_home_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 0,
+          "gf": 31,
+          "ga": 10
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 0,
+          "gf": 0,
+          "ga": 0
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 0,
+          "d": 0,
+          "l": 1,
+          "gf": 23,
+          "ga": 41
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 0,
+          "gf": 0,
+          "ga": 0
+        }
+      },
+      "pregame_intel_captured_at": "2026-09-20T16:41:56",
+      "wr_confidence_initial": 61.044444444444444
     }
   ],
   "next_wallet_id": 24,
