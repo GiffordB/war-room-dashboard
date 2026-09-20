@@ -1,5 +1,5 @@
 {
-  "next_report_id": 29,
+  "next_report_id": 30,
   "next_pick_id": 119,
   "reports": [
     {
@@ -240,6 +240,18 @@
       "lsu_review_notes": "",
       "created_at": "2026-09-19T15:58:21",
       "id": 28
+    },
+    {
+      "source": "ChatGPT",
+      "league": "NFL",
+      "report_date": "2026-09-20",
+      "week_number": 2,
+      "week_label": "Week 2 -- Sunday NFL War Room (Morning v1)",
+      "philosophy": "Ranked competition leans, not cash wagers -- new recommended exposure $0, every cash call Pass. Lines are DK-labeled VegasInsider observations, not confirmed betslip prices; exact quote timestamps and DK openers are missing. Judgment estimates, not Model B outputs. Fair totals and moneylines are judgment, not calibrated: GB-NYJ 43 (38-48), NYJ 44% / GB 56%; CIN-HOU 44 (40-49), CIN 47% / HOU 53%; SEA-ARI 40 (35-45), ARI 43% / SEA 57%; IND-KC 45 (40-50), IND 33% / KC 67%. All spread and total markets fall inside these ranges. Fourteen Sunday games inventoried, four assessed in depth; the rest are unscored, not no-edge passes. Jesse decides every wager.",
+      "blind_spot_notes": "No Thor Hammer Smash: no completed 90+ availability/value case. Sexy Moneyline: Arizona +170 needs 37.0%, judgment 43% (range 34-50%) -- WATCH ONLY, $0, not logged as a pick. Good-If-It-Goes parlay omitted: no established joint-value case. Futures / win totals: no new play. Diamond Scores unassigned, not fabricated. No totals wager. Availability: Hargrave OUT; Van Ness cleared; McDonald has conflicting official listings, not cleared here; Burrow questionable after a full Friday practice; Darnold OUT, Lock starts for Seattle; Chris Jones questionable, evening status provisional. Weather: MetLife 66-68F, SE 8-10 mph, frequent rain risk, gust data blank; Houston and Arizona roofs unconfirmed. No new confirmed tickets; no claim of a slate-wide regime or verified closing-line value. Sources: DK-labeled VI columns, official team injury reports Sep 18-19, NWS Sep 20.",
+      "lsu_review_notes": "",
+      "created_at": "2026-09-20T15:53:59",
+      "id": 29
     }
   ],
   "picks": [
