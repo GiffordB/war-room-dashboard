@@ -1,6 +1,6 @@
 {
   "next_report_id": 30,
-  "next_pick_id": 119,
+  "next_pick_id": 120,
   "reports": [
     {
       "source": "ChatGPT",
@@ -6421,6 +6421,101 @@
         "home_score": 32,
         "away_score": 24
       }
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 29,
+      "category": "best_bet",
+      "matchup": "Green Bay Packers @ New York Jets",
+      "selection": "NY Jets +3.5",
+      "odds": -108,
+      "stake": 50.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 62.0,
+      "war_room_line": "Rank #1 of 4. DK-labeled +3.5 (-108), noon CT. Fair GB -2, range PK to GB -4.",
+      "edge": "Home run-game path against a thin Green Bay interior; Hargrave out, Van Ness cleared, McDonald not cleared here.",
+      "price_discipline": "Competition lean, cash Pass. Danger: Jets secondary and edge losses. MetLife rain risk, SE 8-10 mph.",
+      "espn_event_id": "401872936",
+      "bet_type": "spread",
+      "bet_side": "home",
+      "bet_line": 3.5,
+      "home_team": null,
+      "away_team": null,
+      "created_at": "2026-09-20T15:54:08",
+      "id": 119,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "GB -3.5",
+        "home_spread": 3.5,
+        "home_spread_odds": -112.0,
+        "away_spread_odds": -108.0,
+        "total": 44.5,
+        "over_odds": -110.0,
+        "under_odds": -110.0,
+        "home_moneyline": 154,
+        "away_moneyline": -185,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-09-20T15:54:11",
+      "pregame_weather": {
+        "city": "East Rutherford",
+        "temp_c": 19.3,
+        "precip_probability_pct": 63,
+        "precip_mm": 1.4,
+        "wind_kmh": 11.2,
+        "cloud_cover_pct": 100,
+        "forecast_hour": "2026-09-20T17:00"
+      },
+      "pregame_home_form": {
+        "played": 1,
+        "wins": 1,
+        "win_pct": 100.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 1,
+        "wins": 0,
+        "win_pct": 0.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 7.25,
+      "pregame_away_injuries": 9.25,
+      "pregame_home_split": {
+        "home": {
+          "w": 0,
+          "d": 0,
+          "l": 0,
+          "gf": 0,
+          "ga": 0
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 0,
+          "gf": 23,
+          "ga": 10
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 0,
+          "d": 0,
+          "l": 0,
+          "gf": 0,
+          "ga": 0
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 1,
+          "gf": 22,
+          "ga": 39
+        }
+      },
+      "pregame_intel_captured_at": "2026-09-20T15:54:11",
+      "wr_confidence_initial": 69.40923076923076
     }
   ],
   "next_wallet_id": 24,
