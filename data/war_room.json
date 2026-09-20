@@ -6476,8 +6476,8 @@
       "selection": "Arizona +3.5",
       "odds": 100,
       "stake": 25.0,
-      "result": "pending",
-      "profit_loss": 0.0,
+      "result": "loss",
+      "profit_loss": -25.0,
       "notes": "",
       "wr_confidence": 60.0,
       "war_room_line": "Rank #3 of 4. DK-labeled +3.5 (+100), 3:25 CT. Fair SEA -2, range ARI -1 to SEA -5.",
@@ -6561,7 +6561,13 @@
         }
       },
       "pregame_intel_captured_at": "2026-09-20T18:08:04",
-      "wr_confidence_initial": 62.80769230769231
+      "wr_confidence_initial": 62.80769230769231,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 7,
+        "away_score": 31
+      }
     },
     {
       "parlay_leg_pick_ids": null,
@@ -6599,13 +6605,13 @@
         "away_moneyline": 215,
         "draw_moneyline": null
       },
-      "pregame_odds_captured_at": "2026-09-20T21:19:02",
+      "pregame_odds_captured_at": "2026-09-20T23:59:04",
       "pregame_weather": {
         "city": "Kansas City",
-        "temp_c": 20.6,
+        "temp_c": 20.3,
         "precip_probability_pct": 1,
         "precip_mm": 0.0,
-        "wind_kmh": 9.3,
+        "wind_kmh": 10.5,
         "cloud_cover_pct": 100,
         "forecast_hour": "2026-09-21T00:00"
       },
@@ -6621,8 +6627,8 @@
         "win_pct": 0.0,
         "quality_wins": 0
       },
-      "pregame_home_injuries": 1.5,
-      "pregame_away_injuries": 1.5,
+      "pregame_home_injuries": 1.0,
+      "pregame_away_injuries": 6.25,
       "pregame_home_split": {
         "home": {
           "w": 1,
@@ -6655,7 +6661,7 @@
           "ga": 0
         }
       },
-      "pregame_intel_captured_at": "2026-09-20T21:19:02",
+      "pregame_intel_captured_at": "2026-09-20T23:59:04",
       "wr_confidence_initial": 57.676923076923075
     },
     {
@@ -6795,13 +6801,13 @@
         "away_moneyline": 215,
         "draw_moneyline": null
       },
-      "pregame_odds_captured_at": "2026-09-20T21:19:02",
+      "pregame_odds_captured_at": "2026-09-20T23:59:04",
       "pregame_weather": {
         "city": "Kansas City",
-        "temp_c": 20.6,
+        "temp_c": 20.3,
         "precip_probability_pct": 1,
         "precip_mm": 0.0,
-        "wind_kmh": 9.3,
+        "wind_kmh": 10.5,
         "cloud_cover_pct": 100,
         "forecast_hour": "2026-09-21T00:00"
       },
@@ -6817,8 +6823,8 @@
         "win_pct": 0.0,
         "quality_wins": 0
       },
-      "pregame_home_injuries": 1.5,
-      "pregame_away_injuries": 1.5,
+      "pregame_home_injuries": 1.0,
+      "pregame_away_injuries": 6.25,
       "pregame_home_split": {
         "home": {
           "w": 1,
@@ -6851,7 +6857,7 @@
           "ga": 0
         }
       },
-      "pregame_intel_captured_at": "2026-09-20T21:19:02",
+      "pregame_intel_captured_at": "2026-09-20T23:59:04",
       "wr_confidence_initial": 61.044444444444444
     }
   ],
