@@ -1,6 +1,6 @@
 {
   "next_report_id": 30,
-  "next_pick_id": 120,
+  "next_pick_id": 121,
   "reports": [
     {
       "source": "ChatGPT",
@@ -6516,6 +6516,101 @@
       },
       "pregame_intel_captured_at": "2026-09-20T15:54:11",
       "wr_confidence_initial": 69.40923076923076
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 29,
+      "category": "best_bet",
+      "matchup": "Cincinnati Bengals @ Houston Texans",
+      "selection": "Cincinnati +3",
+      "odds": -118,
+      "stake": 50.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 61.0,
+      "war_room_line": "Rank #2 of 4. DK-labeled +3 (-118), noon CT. Fair HOU -1, range CIN -2 to HOU -4.",
+      "edge": "Houston loses Collins and Ingram.",
+      "price_discipline": "Competition lean, cash Pass. Danger: Burrow health (questionable after a full Friday practice) and Houston pressure. Roof status unconfirmed.",
+      "espn_event_id": "401872934",
+      "bet_type": "spread",
+      "bet_side": "away",
+      "bet_line": 3.0,
+      "home_team": null,
+      "away_team": null,
+      "created_at": "2026-09-20T15:54:14",
+      "id": 120,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "HOU -3",
+        "home_spread": -3.0,
+        "home_spread_odds": -102.0,
+        "away_spread_odds": -118.0,
+        "total": 45.5,
+        "over_odds": -110.0,
+        "under_odds": -110.0,
+        "home_moneyline": -148,
+        "away_moneyline": 124,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-09-20T15:54:17",
+      "pregame_weather": {
+        "city": "Houston",
+        "temp_c": 30.8,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 4.9,
+        "cloud_cover_pct": 96,
+        "forecast_hour": "2026-09-20T17:00"
+      },
+      "pregame_home_form": {
+        "played": 1,
+        "wins": 0,
+        "win_pct": 0.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 1,
+        "wins": 1,
+        "win_pct": 100.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 9.0,
+      "pregame_away_injuries": 7.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 0,
+          "d": 0,
+          "l": 1,
+          "gf": 31,
+          "ga": 36
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 0,
+          "gf": 0,
+          "ga": 0
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 0,
+          "gf": 33,
+          "ga": 27
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 0,
+          "gf": 0,
+          "ga": 0
+        }
+      },
+      "pregame_intel_captured_at": "2026-09-20T15:54:17",
+      "wr_confidence_initial": 65.17846153846153
     }
   ],
   "next_wallet_id": 24,
