@@ -4041,14 +4041,14 @@
         "away_moneyline": 120,
         "draw_moneyline": null
       },
-      "pregame_odds_captured_at": "2026-09-20T05:54:15",
+      "pregame_odds_captured_at": "2026-09-20T10:59:21",
       "pregame_weather": {
         "city": "Houston",
-        "temp_c": 31.8,
+        "temp_c": 31.3,
         "precip_probability_pct": 1,
         "precip_mm": 0.0,
-        "wind_kmh": 1.6,
-        "cloud_cover_pct": 3,
+        "wind_kmh": 1.5,
+        "cloud_cover_pct": 72,
         "forecast_hour": "2026-09-20T17:00"
       },
       "pregame_home_form": {
@@ -4097,7 +4097,7 @@
           "ga": 0
         }
       },
-      "pregame_intel_captured_at": "2026-09-20T05:54:15",
+      "pregame_intel_captured_at": "2026-09-20T10:59:21",
       "wr_confidence_initial": 53.031578947368416
     },
     {
@@ -4136,13 +4136,13 @@
         "away_moneyline": -185,
         "draw_moneyline": null
       },
-      "pregame_odds_captured_at": "2026-09-20T05:54:15",
+      "pregame_odds_captured_at": "2026-09-20T10:59:21",
       "pregame_weather": {
         "city": "East Rutherford",
-        "temp_c": 19.5,
-        "precip_probability_pct": 59,
-        "precip_mm": 1.4,
-        "wind_kmh": 13.6,
+        "temp_c": 19.4,
+        "precip_probability_pct": 67,
+        "precip_mm": 0.4,
+        "wind_kmh": 14.2,
         "cloud_cover_pct": 100,
         "forecast_hour": "2026-09-20T17:00"
       },
@@ -4192,7 +4192,7 @@
           "ga": 39
         }
       },
-      "pregame_intel_captured_at": "2026-09-20T05:54:15",
+      "pregame_intel_captured_at": "2026-09-20T10:59:21",
       "wr_confidence_initial": 71.92105263157895
     },
     {
@@ -4594,23 +4594,23 @@
         "provider": "DraftKings",
         "spread_details": "LEE -140",
         "home_spread": -0.5,
-        "home_spread_odds": -160.0,
-        "away_spread_odds": 115.0,
+        "home_spread_odds": -155.0,
+        "away_spread_odds": 110.0,
         "total": 2.5,
-        "over_odds": -145.0,
-        "under_odds": 115.0,
+        "over_odds": -135.0,
+        "under_odds": 110.0,
         "home_moneyline": -140,
         "away_moneyline": 380,
         "draw_moneyline": 300.0
       },
-      "pregame_odds_captured_at": "2026-09-20T05:54:15",
+      "pregame_odds_captured_at": "2026-09-20T10:59:21",
       "pregame_weather": {
         "city": "Leeds",
-        "temp_c": 16.5,
+        "temp_c": 16.1,
         "precip_probability_pct": 0,
         "precip_mm": 0.0,
-        "wind_kmh": 18.0,
-        "cloud_cover_pct": 63,
+        "wind_kmh": 17.6,
+        "cloud_cover_pct": 85,
         "forecast_hour": "2026-09-20T13:00"
       },
       "pregame_home_form": {
@@ -4659,7 +4659,7 @@
           "ga": 4
         }
       },
-      "pregame_intel_captured_at": "2026-09-20T05:54:15",
+      "pregame_intel_captured_at": "2026-09-20T10:59:21",
       "wr_confidence_initial": 38.0
     },
     {
@@ -4968,23 +4968,23 @@
         "provider": "DraftKings",
         "spread_details": "LEE -140",
         "home_spread": -0.5,
-        "home_spread_odds": -160.0,
-        "away_spread_odds": 115.0,
+        "home_spread_odds": -155.0,
+        "away_spread_odds": 110.0,
         "total": 2.5,
-        "over_odds": -145.0,
-        "under_odds": 115.0,
+        "over_odds": -135.0,
+        "under_odds": 110.0,
         "home_moneyline": -140,
         "away_moneyline": 380,
         "draw_moneyline": 300.0
       },
-      "pregame_odds_captured_at": "2026-09-20T05:54:15",
+      "pregame_odds_captured_at": "2026-09-20T10:59:21",
       "pregame_weather": {
         "city": "Leeds",
-        "temp_c": 16.5,
+        "temp_c": 16.1,
         "precip_probability_pct": 0,
         "precip_mm": 0.0,
-        "wind_kmh": 18.0,
-        "cloud_cover_pct": 63,
+        "wind_kmh": 17.6,
+        "cloud_cover_pct": 85,
         "forecast_hour": "2026-09-20T13:00"
       },
       "pregame_home_form": {
@@ -5033,7 +5033,7 @@
           "ga": 4
         }
       },
-      "pregame_intel_captured_at": "2026-09-20T05:54:15",
+      "pregame_intel_captured_at": "2026-09-20T10:59:21",
       "wr_confidence_initial": 56.4
     },
     {
@@ -5063,8 +5063,8 @@
         "provider": "DraftKings",
         "spread_details": "MAN +100",
         "home_spread": 0.5,
-        "home_spread_odds": -125.0,
-        "away_spread_odds": -110.0,
+        "home_spread_odds": -130.0,
+        "away_spread_odds": -105.0,
         "total": 3.5,
         "over_odds": 135.0,
         "under_odds": -170.0,
@@ -5072,14 +5072,14 @@
         "away_moneyline": 100,
         "draw_moneyline": 280.0
       },
-      "pregame_odds_captured_at": "2026-09-20T05:54:15",
+      "pregame_odds_captured_at": "2026-09-20T10:59:21",
       "pregame_weather": {
         "city": "London",
-        "temp_c": 20.6,
+        "temp_c": 20.2,
         "precip_probability_pct": 0,
         "precip_mm": 0.0,
-        "wind_kmh": 11.2,
-        "cloud_cover_pct": 2,
+        "wind_kmh": 10.1,
+        "cloud_cover_pct": 8,
         "forecast_hour": "2026-09-20T15:00"
       },
       "pregame_home_form": {
@@ -5128,7 +5128,7 @@
           "ga": 4
         }
       },
-      "pregame_intel_captured_at": "2026-09-20T05:54:15",
+      "pregame_intel_captured_at": "2026-09-20T10:59:21",
       "wr_confidence_initial": 30.0
     },
     {
@@ -5742,8 +5742,8 @@
       "selection": "Purdue +16.5",
       "odds": -110,
       "stake": 100.0,
-      "result": "pending",
-      "profit_loss": 0.0,
+      "result": "win",
+      "profit_loss": 90.9090909090909,
       "notes": "",
       "wr_confidence": 73.0,
       "war_room_line": "Score 73 A (W75/P52/S80/V58/CJ100/Wg60). Model A UCLA -3.9 (conf 0.14); market -14.0; THE LINE +16.5 at -110, 2.5 pts better than market. Pinnacle uncaptured.",
@@ -5827,7 +5827,13 @@
         }
       },
       "pregame_intel_captured_at": "2026-09-20T00:50:45",
-      "wr_confidence_initial": 76.15
+      "wr_confidence_initial": 76.15,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 52,
+        "away_score": 38
+      }
     },
     {
       "parlay_leg_pick_ids": null,
