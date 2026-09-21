@@ -6577,8 +6577,8 @@
       "selection": "Indianapolis +6",
       "odds": -112,
       "stake": 25.0,
-      "result": "pending",
-      "profit_loss": 0.0,
+      "result": "win",
+      "profit_loss": 22.321428571428573,
       "notes": "",
       "wr_confidence": 59.0,
       "war_room_line": "Rank #4 of 4. DK-labeled +6 (-112), 7:20 CT. Fair KC -5, range KC -2 to -8.",
@@ -6662,7 +6662,13 @@
         }
       },
       "pregame_intel_captured_at": "2026-09-20T23:59:04",
-      "wr_confidence_initial": 57.676923076923075
+      "wr_confidence_initial": 57.676923076923075,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 33,
+        "away_score": 30
+      }
     },
     {
       "parlay_leg_pick_ids": null,
@@ -6773,7 +6779,7 @@
       "selection": "Indianapolis +6.5",
       "odds": -110,
       "stake": 0.0,
-      "result": "pending",
+      "result": "win",
       "profit_loss": 0.0,
       "notes": "",
       "wr_confidence": 60.0,
@@ -6858,7 +6864,13 @@
         }
       },
       "pregame_intel_captured_at": "2026-09-20T23:59:04",
-      "wr_confidence_initial": 61.044444444444444
+      "wr_confidence_initial": 61.044444444444444,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 33,
+        "away_score": 30
+      }
     }
   ],
   "next_wallet_id": 24,
