@@ -1,6 +1,6 @@
 {
   "next_report_id": 32,
-  "next_pick_id": 130,
+  "next_pick_id": 131,
   "reports": [
     {
       "source": "ChatGPT",
@@ -7370,6 +7370,101 @@
       },
       "pregame_intel_captured_at": "2026-09-24T17:24:14",
       "wr_confidence_initial": 78.2
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 31,
+      "category": "best_bet",
+      "matchup": "New Mexico Lobos @ New Mexico State Aggies",
+      "selection": "New Mexico State +13.5",
+      "odds": -110,
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 70.0,
+      "war_room_line": "Decision 69.5 (W71/P75/S50/V58/CJ90/Wg65). Own number New Mexico -6.3. THE LINE UNM -13.5; consensus -11.5; paper 2 pts stale. Cover 55.0%, EV +5.0%.",
+      "edge": "Same shape as the three stakes, a half point of decision score short. No sourced injury of weight; no public split.",
+      "price_discipline": "TRACK, $0 stake -- decision 69.5, under the 70 floor. Graded for CLV only.",
+      "espn_event_id": "401864579",
+      "bet_type": "spread",
+      "bet_side": "home",
+      "bet_line": 13.5,
+      "home_team": null,
+      "away_team": null,
+      "created_at": "2026-09-24T17:24:16",
+      "id": 130,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "UNM -11.5",
+        "home_spread": 11.5,
+        "home_spread_odds": -110.0,
+        "away_spread_odds": -110.0,
+        "total": 48.5,
+        "over_odds": -108.0,
+        "under_odds": -112.0,
+        "home_moneyline": 350,
+        "away_moneyline": -455,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-09-24T17:24:20",
+      "pregame_weather": {
+        "city": "Las Cruces",
+        "temp_c": 28.2,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 6.1,
+        "cloud_cover_pct": 0,
+        "forecast_hour": "2026-09-26T19:00"
+      },
+      "pregame_home_form": {
+        "played": 3,
+        "wins": 1,
+        "win_pct": 33.33333333333333,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 3,
+        "wins": 2,
+        "win_pct": 66.66666666666666,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 0,
+          "gf": 51,
+          "ga": 14
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 2,
+          "gf": 36,
+          "ga": 63
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 2,
+          "d": 0,
+          "l": 0,
+          "gf": 108,
+          "ga": 14
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 1,
+          "gf": 6,
+          "ga": 14
+        }
+      },
+      "pregame_intel_captured_at": "2026-09-24T17:24:20",
+      "wr_confidence_initial": 74.1047619047619
     }
   ],
   "next_wallet_id": 24,
