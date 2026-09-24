@@ -1,6 +1,6 @@
 {
   "next_report_id": 31,
-  "next_pick_id": 125,
+  "next_pick_id": 126,
   "reports": [
     {
       "source": "ChatGPT",
@@ -6883,6 +6883,101 @@
         "home_score": 33,
         "away_score": 30
       }
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 30,
+      "category": "best_bet",
+      "matchup": "Atlanta Falcons @ Green Bay Packers",
+      "selection": "Atlanta +6.5",
+      "odds": -110,
+      "stake": 100.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 72.0,
+      "war_room_line": "Decision 72.0 (W75/P66/S55/V58/CJ100/Wg100, market layer 64). Own number GB -0.4 (level +1.1, site +1.6, injuries -2.0, matchup -0.3). THE LINE GB -6.5; consensus -4.5; FanDuel ATL +5.5 (-118). Cover 62.1%, EV +18.6%, 12.1% landing mass captured across the 5 and 6.",
+      "edge": "Paper two points stale after Michael Penix Jr. named starter (line 7.5 to 4.5 on the news, not RLM). Green Bay missing two OL starters (Bako-Bewele, Banks), WR Jayden Reed, DT Brinson; Hargrave questionable. 62% tickets GB / 61% money ATL at Hard Rock.",
+      "price_discipline": "STAKE 1.00% ($100), quarter-Kelly halved while Pinnacle is uncaptured. Full stake at +6.5 only; still clears +2% down to +5.5 (re-size). VOID at +5 or worse, or if consensus reaches +6.5. -110 assumed; recheck before placement. Kicks Thu 7:15 CT.",
+      "espn_event_id": "401872948",
+      "bet_type": "spread",
+      "bet_side": "away",
+      "bet_line": 6.5,
+      "home_team": null,
+      "away_team": null,
+      "created_at": "2026-09-24T17:23:41",
+      "id": 125,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "GB -4.5",
+        "home_spread": -4.5,
+        "home_spread_odds": -115.0,
+        "away_spread_odds": -105.0,
+        "total": 42.5,
+        "over_odds": -118.0,
+        "under_odds": -102.0,
+        "home_moneyline": -245,
+        "away_moneyline": 200,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-09-24T17:23:44",
+      "pregame_weather": {
+        "city": "Green Bay",
+        "temp_c": 16.8,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 7.0,
+        "cloud_cover_pct": 100,
+        "forecast_hour": "2026-09-25T00:00"
+      },
+      "pregame_home_form": {
+        "played": 2,
+        "wins": 1,
+        "win_pct": 50.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 2,
+        "wins": 0,
+        "win_pct": 0.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 8.75,
+      "pregame_away_injuries": 4.5,
+      "pregame_home_split": {
+        "home": {
+          "w": 0,
+          "d": 0,
+          "l": 0,
+          "gf": 0,
+          "ga": 0
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 1,
+          "gf": 42,
+          "ga": 56
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 0,
+          "d": 0,
+          "l": 1,
+          "gf": 3,
+          "ga": 34
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 1,
+          "gf": 13,
+          "ga": 20
+        }
+      },
+      "pregame_intel_captured_at": "2026-09-24T17:23:44",
+      "wr_confidence_initial": 83.5
     }
   ],
   "next_wallet_id": 24,
