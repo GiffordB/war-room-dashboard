@@ -1,5 +1,5 @@
 {
-  "next_report_id": 30,
+  "next_report_id": 31,
   "next_pick_id": 125,
   "reports": [
     {
@@ -252,6 +252,18 @@
       "lsu_review_notes": "",
       "created_at": "2026-09-20T15:53:59",
       "id": 29
+    },
+    {
+      "source": "Claude",
+      "league": "NFL",
+      "report_date": "2026-09-24",
+      "week_number": 3,
+      "week_label": "Week 3 -- Weekend Top 15 v5.0 IC edition (Maven Quant, Model B)",
+      "philosophy": "Priced at THE LINE Today column (printed Thu Sep 24) against the VegasInsider consensus because Pinnacle is uncaptured for the second straight week (Odds API 0 of 500 credits). Under Standing Rules v3 that is allowed only with every stake halved and flagged and the Walters seat capped at 75. Decision score = 70% brain trust (Walters 50; Peabody, Spanky, Voulgaris, Captain Jack, Wong 10 each) + 30% market layer; a position carries a stake only if it clears every gate: decision 70+, +2% EV, Walters above 55, three of five components agreeing. Quarter-Kelly capped at 2% per game, then halved. Price assumed -110 because THE LINE prints numbers only; if the book charges worse than -115, EV falls about 1.5 points per 5 cents and the stake is recomputed. Structural thesis: THE LINE Today column updates slower than the screen, and the stale print is the edge (Week 2 backtest: stale side 62%, 70% at 1+ point). Model B re-fit on current-season plays: shrunk 2025 prior blended with 2026 Weeks 1-2 opponent-adjusted EPA (3,435 plays), confidence weight 0.29 for every team, below the 0.35 gate, so the own number enters Walters at half weight. The rating range is compressed (+2.5 to -3.0), so the model disagrees with every favorite of 7+ by construction. ONE POSITION: Atlanta +6.5 tonight, 1.00% ($100) -- the only NFL line on the sheet that is meaningfully stale.",
+      "blind_spot_notes": "STAKED: Atlanta +6.5 at Green Bay (Thu 7:15 CT), decision 72.0 -- THE LINE still prints GB -6.5 while every major book is -4.5 to -5.5 after Michael Penix Jr. was named the starter; the paper is two points stale across the 5 and 6. Green Bay information -1.5 (OT Bako-Bewele season, G Aaron Banks, WR Jayden Reed, DT Brinson out; DT Hargrave questionable); Atlanta +0.5 (Penix replaces Cooper Rush, +1.0; CB Terrell IR, DE Ebukam out). Full stake at +6.5 only; still clears +2% down to +5.5; VOID at +5 or worse or if the consensus reaches +6.5. Has to be placed today or not at all. TRACKED: Baltimore -3 vs Dallas in Rio (60.9; the paper is on the right side of 3 against a market at 3.5, +10.2% EV, but Walters 53 below the 55 gate -- Flowers, Stanley, Hendrickson DNP Wed; four Dallas defensive starters DNP). PASSES: Miami +11.5 (63.4, EV +1.6% under the floor; own number more than 6 from market, model noise), Tennessee +3 at NY Giants (55.7; Jaxson Dart to IR, Burns DNP; price equals market), Las Vegas +3 at New Orleans (55.1; Bowers expected to debut). Everything else matches the market to the half point, and a sheet that matches the market has no edge on it. Fade-the-sheet's-own-move (log only, no stake): Miami +11.5 (KC 7 to 11.5) and LA Chargers +7 (Buffalo 2.5 to 7). Totals model unvalidated (R-squared 0.005), no bets; wind sweep for open-air Sunday games Saturday 11 CT. Survivor: Buffalo (KC and SF trip the 5-point disagreement veto; Seattle carries the Darnold/Lock question). Before placement: restore Odds API credits and run Pinnacle -- if Pinnacle already sits on the paper's number the bet is void; confirm -110 or better; Friday injury sweep. CLV graded against Pinnacle close in Monday's Report 06.",
+      "lsu_review_notes": "",
+      "created_at": "2026-09-24T17:23:32",
+      "id": 30
     }
   ],
   "picks": [
