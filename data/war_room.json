@@ -1,6 +1,6 @@
 {
   "next_report_id": 32,
-  "next_pick_id": 129,
+  "next_pick_id": 130,
   "reports": [
     {
       "source": "ChatGPT",
@@ -7275,6 +7275,101 @@
       },
       "pregame_intel_captured_at": "2026-09-24T17:24:08",
       "wr_confidence_initial": 74.29523809523809
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 31,
+      "category": "best_bet",
+      "matchup": "Oregon State Beavers @ UTEP Miners",
+      "selection": "UTEP +12.5",
+      "odds": -110,
+      "stake": 69.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 71.0,
+      "war_room_line": "Decision 71.2 (W72/P75/S70/V58/CJ90/Wg65). Own number Oregon State -4.6. THE LINE ORST -12.5; consensus -10.5; paper 2 pts stale. Cover 55.0%, EV +5.0%, 5.0% landing mass captured.",
+      "edge": "Third leg of the same stale-favorite trade. DATA CHECK: the sheet row prints OPEN 10.5 > Today 12.5 while the market went 12.5 > 10.5 -- columns may be swapped; confirm the book posts UTEP +12.5 before placing.",
+      "price_discipline": "STAKE 0.69% ($69), halved while Pinnacle is uncaptured. Full stake at +12.5 only; clears +2% down to +12. VOID at +11.5 or worse, or if consensus reaches +12.5. -110 assumed. Sat 8:00 CT.",
+      "espn_event_id": "401860895",
+      "bet_type": "spread",
+      "bet_side": "home",
+      "bet_line": 12.5,
+      "home_team": null,
+      "away_team": null,
+      "created_at": "2026-09-24T17:24:11",
+      "id": 129,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "ORST -10.5",
+        "home_spread": 10.5,
+        "home_spread_odds": -112.0,
+        "away_spread_odds": -108.0,
+        "total": 55.5,
+        "over_odds": -108.0,
+        "under_odds": -112.0,
+        "home_moneyline": 340,
+        "away_moneyline": -440,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-09-24T17:24:14",
+      "pregame_weather": {
+        "city": "El Paso",
+        "temp_c": 30.3,
+        "precip_probability_pct": 3,
+        "precip_mm": 0.0,
+        "wind_kmh": 5.6,
+        "cloud_cover_pct": 0,
+        "forecast_hour": "2026-09-27T01:00"
+      },
+      "pregame_home_form": {
+        "played": 3,
+        "wins": 1,
+        "win_pct": 33.33333333333333,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 3,
+        "wins": 1,
+        "win_pct": 33.33333333333333,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 0,
+          "gf": 51,
+          "ga": 10
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 2,
+          "gf": 17,
+          "ga": 103
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 1,
+          "gf": 76,
+          "ga": 52
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 1,
+          "gf": 20,
+          "ga": 33
+        }
+      },
+      "pregame_intel_captured_at": "2026-09-24T17:24:14",
+      "wr_confidence_initial": 78.2
     }
   ],
   "next_wallet_id": 24,
