@@ -1,6 +1,6 @@
 {
   "next_report_id": 31,
-  "next_pick_id": 126,
+  "next_pick_id": 127,
   "reports": [
     {
       "source": "ChatGPT",
@@ -6978,6 +6978,101 @@
       },
       "pregame_intel_captured_at": "2026-09-24T17:23:44",
       "wr_confidence_initial": 83.5
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 30,
+      "category": "best_bet",
+      "matchup": "Baltimore Ravens @ Dallas Cowboys (Rio de Janeiro)",
+      "selection": "Baltimore -3",
+      "odds": -110,
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 61.0,
+      "war_room_line": "Decision 60.9 (W53/P84/S45/V66/CJ100/Wg77). Own number BAL -0.6. THE LINE BAL -3; consensus -3.5; the paper is on the right side of 3. Cover 50.0%, EV +10.2%, 7.3% landing mass on the 3.",
+      "edge": "Price is there; the model and injuries are not. Baltimore -1.0 (Flowers hamstring, LT Stanley, EDGE Hendrickson DNP Wed; Simpson limited); Dallas -1.5 (CB Durant, S Hooker, S Locke, LB Overshown DNP). Neutral site. No public split, small move 2.5 to 3.",
+      "price_discipline": "TRACK, $0 stake -- decision under 70 and Walters 53 not above 55. Graded for CLV only. Sun 3:25 CT.",
+      "espn_event_id": "401872960",
+      "bet_type": "spread",
+      "bet_side": "away",
+      "bet_line": -3.0,
+      "home_team": null,
+      "away_team": null,
+      "created_at": "2026-09-24T17:23:46",
+      "id": 126,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "BAL -3.5",
+        "home_spread": 3.5,
+        "home_spread_odds": -115.0,
+        "away_spread_odds": -105.0,
+        "total": 52.5,
+        "over_odds": -112.0,
+        "under_odds": -108.0,
+        "home_moneyline": 145,
+        "away_moneyline": -175,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-09-24T17:23:49",
+      "pregame_weather": {
+        "city": "Rio de Janeiro",
+        "temp_c": 22.2,
+        "precip_probability_pct": 1,
+        "precip_mm": 0.0,
+        "wind_kmh": 8.7,
+        "cloud_cover_pct": 100,
+        "forecast_hour": "2026-09-27T20:00"
+      },
+      "pregame_home_form": {
+        "played": 2,
+        "wins": 1,
+        "win_pct": 50.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 2,
+        "wins": 1,
+        "win_pct": 50.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 3.0,
+      "pregame_away_injuries": 1.75,
+      "pregame_home_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 0,
+          "gf": 37,
+          "ga": 20
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 1,
+          "gf": 20,
+          "ga": 28
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 0,
+          "d": 0,
+          "l": 1,
+          "gf": 17,
+          "ga": 24
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 0,
+          "gf": 41,
+          "ga": 23
+        }
+      },
+      "pregame_intel_captured_at": "2026-09-24T17:23:49",
+      "wr_confidence_initial": 66.5
     }
   ],
   "next_wallet_id": 24,
