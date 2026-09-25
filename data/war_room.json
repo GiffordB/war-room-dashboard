@@ -7027,14 +7027,14 @@
         "away_moneyline": -175,
         "draw_moneyline": null
       },
-      "pregame_odds_captured_at": "2026-09-24T22:09:07",
+      "pregame_odds_captured_at": "2026-09-25T01:16:57",
       "pregame_weather": {
         "city": "Rio de Janeiro",
-        "temp_c": 22.0,
+        "temp_c": 21.9,
         "precip_probability_pct": 1,
         "precip_mm": 0.0,
-        "wind_kmh": 10.1,
-        "cloud_cover_pct": 98,
+        "wind_kmh": 9.3,
+        "cloud_cover_pct": 100,
         "forecast_hour": "2026-09-27T20:00"
       },
       "pregame_home_form": {
@@ -7083,7 +7083,7 @@
           "ga": 23
         }
       },
-      "pregame_intel_captured_at": "2026-09-24T22:09:07",
+      "pregame_intel_captured_at": "2026-09-25T01:16:57",
       "wr_confidence_initial": 66.5
     },
     {
@@ -7122,14 +7122,14 @@
         "away_moneyline": -410,
         "draw_moneyline": null
       },
-      "pregame_odds_captured_at": "2026-09-24T22:09:07",
+      "pregame_odds_captured_at": "2026-09-25T01:16:57",
       "pregame_weather": {
         "city": "Pullman",
-        "temp_c": 14.7,
+        "temp_c": 15.4,
         "precip_probability_pct": 0,
         "precip_mm": 0.0,
-        "wind_kmh": 10.7,
-        "cloud_cover_pct": 6,
+        "wind_kmh": 9.5,
+        "cloud_cover_pct": 0,
         "forecast_hour": "2026-09-26T23:00"
       },
       "pregame_home_form": {
@@ -7178,7 +7178,7 @@
           "ga": 28
         }
       },
-      "pregame_intel_captured_at": "2026-09-24T22:09:07",
+      "pregame_intel_captured_at": "2026-09-25T01:16:57",
       "wr_confidence_initial": 78.39047619047619
     },
     {
@@ -7217,14 +7217,14 @@
         "away_moneyline": -410,
         "draw_moneyline": null
       },
-      "pregame_odds_captured_at": "2026-09-24T22:09:07",
+      "pregame_odds_captured_at": "2026-09-25T01:16:57",
       "pregame_weather": {
         "city": "Charlotte",
-        "temp_c": 25.2,
+        "temp_c": 25.3,
         "precip_probability_pct": 0,
         "precip_mm": 0.0,
-        "wind_kmh": 6.2,
-        "cloud_cover_pct": 0,
+        "wind_kmh": 6.1,
+        "cloud_cover_pct": 5,
         "forecast_hour": "2026-09-26T22:00"
       },
       "pregame_home_form": {
@@ -7273,7 +7273,7 @@
           "ga": 49
         }
       },
-      "pregame_intel_captured_at": "2026-09-24T22:09:07",
+      "pregame_intel_captured_at": "2026-09-25T01:16:57",
       "wr_confidence_initial": 74.29523809523809
     },
     {
@@ -7312,13 +7312,13 @@
         "away_moneyline": -440,
         "draw_moneyline": null
       },
-      "pregame_odds_captured_at": "2026-09-24T22:09:07",
+      "pregame_odds_captured_at": "2026-09-25T01:16:57",
       "pregame_weather": {
         "city": "El Paso",
-        "temp_c": 30.7,
+        "temp_c": 30.5,
         "precip_probability_pct": 1,
         "precip_mm": 0.0,
-        "wind_kmh": 6.1,
+        "wind_kmh": 9.4,
         "cloud_cover_pct": 0,
         "forecast_hour": "2026-09-27T01:00"
       },
@@ -7368,7 +7368,7 @@
           "ga": 33
         }
       },
-      "pregame_intel_captured_at": "2026-09-24T22:09:07",
+      "pregame_intel_captured_at": "2026-09-25T01:16:57",
       "wr_confidence_initial": 78.2
     },
     {
@@ -7407,13 +7407,13 @@
         "away_moneyline": -455,
         "draw_moneyline": null
       },
-      "pregame_odds_captured_at": "2026-09-24T22:09:07",
+      "pregame_odds_captured_at": "2026-09-25T01:16:57",
       "pregame_weather": {
         "city": "Las Cruces",
-        "temp_c": 28.8,
+        "temp_c": 29.0,
         "precip_probability_pct": 0,
         "precip_mm": 0.0,
-        "wind_kmh": 7.2,
+        "wind_kmh": 9.4,
         "cloud_cover_pct": 0,
         "forecast_hour": "2026-09-26T19:00"
       },
@@ -7463,7 +7463,7 @@
           "ga": 14
         }
       },
-      "pregame_intel_captured_at": "2026-09-24T22:09:07",
+      "pregame_intel_captured_at": "2026-09-25T01:16:57",
       "wr_confidence_initial": 74.1047619047619
     },
     {
@@ -7502,13 +7502,13 @@
         "away_moneyline": -340,
         "draw_moneyline": null
       },
-      "pregame_odds_captured_at": "2026-09-24T22:09:07",
+      "pregame_odds_captured_at": "2026-09-25T01:16:57",
       "pregame_weather": {
         "city": "Ames",
-        "temp_c": 13.0,
+        "temp_c": 13.2,
         "precip_probability_pct": 71,
         "precip_mm": 0.0,
-        "wind_kmh": 17.6,
+        "wind_kmh": 19.7,
         "cloud_cover_pct": 100,
         "forecast_hour": "2026-09-26T19:00"
       },
@@ -7558,7 +7558,7 @@
           "ga": 0
         }
       },
-      "pregame_intel_captured_at": "2026-09-24T22:09:07",
+      "pregame_intel_captured_at": "2026-09-25T01:16:57",
       "wr_confidence_initial": 71.80952380952381
     }
   ],
