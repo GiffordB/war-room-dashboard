@@ -1,6 +1,6 @@
 {
   "next_report_id": 32,
-  "next_pick_id": 133,
+  "next_pick_id": 134,
   "reports": [
     {
       "source": "ChatGPT",
@@ -7463,6 +7463,101 @@
       },
       "pregame_intel_captured_at": "2026-09-26T13:56:17",
       "wr_confidence_initial": 83.66666666666667
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 31,
+      "category": "best_bet",
+      "matchup": "Arizona Wildcats @ Washington State Cougars",
+      "selection": "Washington State +12.5",
+      "odds": -110,
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 69.0,
+      "war_room_line": "Decision 68.8 on the Saturday update (72.9 Thursday). THE LINE ARIZ -12.5; consensus +10 Thursday. Demoted from a 1.00% stake to tracked.",
+      "edge": "Same stale double-digit-favorite trade as Charlotte and UTEP, now a point under the floor after the Friday re-run. No sourced injury of weight.",
+      "price_discipline": "TRACK, $0 stake -- demoted Saturday 8:45 AM CT. Graded for CLV only. Sat 6:30 CT.",
+      "espn_event_id": "401856804",
+      "bet_type": "spread",
+      "bet_side": "home",
+      "bet_line": 12.5,
+      "home_team": null,
+      "away_team": null,
+      "created_at": "2026-09-26T13:56:28",
+      "id": 133,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "ARIZ -10.5",
+        "home_spread": 10.5,
+        "home_spread_odds": -110.0,
+        "away_spread_odds": -110.0,
+        "total": 48.5,
+        "over_odds": -105.0,
+        "under_odds": -115.0,
+        "home_moneyline": 320,
+        "away_moneyline": -410,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-09-26T13:56:32",
+      "pregame_weather": {
+        "city": "Pullman",
+        "temp_c": 15.1,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 7.9,
+        "cloud_cover_pct": 0,
+        "forecast_hour": "2026-09-26T23:00"
+      },
+      "pregame_home_form": {
+        "played": 3,
+        "wins": 1,
+        "win_pct": 33.33333333333333,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 3,
+        "wins": 2,
+        "win_pct": 66.66666666666666,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 0,
+          "gf": 48,
+          "ga": 7
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 2,
+          "gf": 17,
+          "ga": 58
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 2,
+          "d": 0,
+          "l": 0,
+          "gf": 77,
+          "ga": 24
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 1,
+          "gf": 17,
+          "ga": 28
+        }
+      },
+      "pregame_intel_captured_at": "2026-09-26T13:56:32",
+      "wr_confidence_initial": 73.00952380952381
     }
   ],
   "next_wallet_id": 24,
