@@ -1,6 +1,6 @@
 {
   "next_report_id": 33,
-  "next_pick_id": 155,
+  "next_pick_id": 156,
   "reports": [
     {
       "source": "ChatGPT",
@@ -9499,6 +9499,101 @@
       "created_at": "2026-09-26T15:47:39",
       "id": 154,
       "wr_confidence_initial": null
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 32,
+      "category": "best_bet",
+      "matchup": "App State Mountaineers @ NC State Wolfpack",
+      "selection": "App State +14",
+      "odds": -110,
+      "stake": 25.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 58.0,
+      "war_room_line": "Rank #6 of 19. DK-labelled +14 (-110), 6:30 CT.",
+      "edge": "Singleton passing.",
+      "price_discipline": "Competition only at this price; cash Pass. Main risk: talent jump.",
+      "espn_event_id": "401864572",
+      "bet_type": "spread",
+      "bet_side": "away",
+      "bet_line": 14.0,
+      "home_team": null,
+      "away_team": null,
+      "created_at": "2026-09-26T15:47:58",
+      "id": 155,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "NCSU -13.5",
+        "home_spread": -13.5,
+        "home_spread_odds": -112.0,
+        "away_spread_odds": -108.0,
+        "total": 55.5,
+        "over_odds": -110.0,
+        "under_odds": -110.0,
+        "home_moneyline": -550,
+        "away_moneyline": 410,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-09-26T15:48:03",
+      "pregame_weather": {
+        "city": "Raleigh",
+        "temp_c": 22.1,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 7.6,
+        "cloud_cover_pct": 0,
+        "forecast_hour": "2026-09-26T23:00"
+      },
+      "pregame_home_form": {
+        "played": 3,
+        "wins": 1,
+        "win_pct": 33.33333333333333,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 3,
+        "wins": 3,
+        "win_pct": 100.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 0,
+          "gf": 73,
+          "ga": 0
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 2,
+          "gf": 39,
+          "ga": 69
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 2,
+          "d": 0,
+          "l": 0,
+          "gf": 81,
+          "ga": 24
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 0,
+          "gf": 27,
+          "ga": 24
+        }
+      },
+      "pregame_intel_captured_at": "2026-09-26T15:48:03",
+      "wr_confidence_initial": 63.672
     }
   ],
   "next_wallet_id": 24,
