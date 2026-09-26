@@ -1,6 +1,6 @@
 {
   "next_report_id": 33,
-  "next_pick_id": 151,
+  "next_pick_id": 152,
   "reports": [
     {
       "source": "ChatGPT",
@@ -9185,6 +9185,101 @@
       },
       "pregame_intel_captured_at": "2026-09-26T15:47:19",
       "wr_confidence_initial": 50.984
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 32,
+      "category": "best_bet",
+      "matchup": "Missouri State Bears @ SMU Mustangs",
+      "selection": "Missouri State +33.5",
+      "odds": -110,
+      "stake": 10.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 48.0,
+      "war_room_line": "Rank #19 of 19. DK-labelled +33.5 (-110), 8:00 CT.",
+      "edge": "Veteran passing.",
+      "price_discipline": "Competition only at this price; cash Pass. Main risk: SMU talent.",
+      "espn_event_id": "401858241",
+      "bet_type": "spread",
+      "bet_side": "away",
+      "bet_line": 33.5,
+      "home_team": null,
+      "away_team": null,
+      "created_at": "2026-09-26T15:47:22",
+      "id": 151,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "SMU -32.5",
+        "home_spread": -32.5,
+        "home_spread_odds": -108.0,
+        "away_spread_odds": -112.0,
+        "total": 60.5,
+        "over_odds": -108.0,
+        "under_odds": -112.0,
+        "home_moneyline": -9000,
+        "away_moneyline": 2500,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-09-26T15:47:25",
+      "pregame_weather": {
+        "city": "Dallas",
+        "temp_c": 29.9,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 10.0,
+        "cloud_cover_pct": 0,
+        "forecast_hour": "2026-09-27T01:00"
+      },
+      "pregame_home_form": {
+        "played": 3,
+        "wins": 2,
+        "win_pct": 66.66666666666666,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 3,
+        "wins": 1,
+        "win_pct": 33.33333333333333,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 0,
+          "gf": 56,
+          "ga": 10
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 1,
+          "gf": 58,
+          "ga": 65
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 1,
+          "gf": 72,
+          "ga": 44
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 1,
+          "gf": 0,
+          "ga": 50
+        }
+      },
+      "pregame_intel_captured_at": "2026-09-26T15:47:25",
+      "wr_confidence_initial": 45.8
     }
   ],
   "next_wallet_id": 24,
