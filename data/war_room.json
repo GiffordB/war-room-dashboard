@@ -1,6 +1,6 @@
 {
   "next_report_id": 33,
-  "next_pick_id": 143,
+  "next_pick_id": 144,
   "reports": [
     {
       "source": "ChatGPT",
@@ -8425,6 +8425,101 @@
       },
       "pregame_intel_captured_at": "2026-09-26T15:46:28",
       "wr_confidence_initial": 59.296
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 32,
+      "category": "best_bet",
+      "matchup": "Oklahoma Sooners @ Georgia Bulldogs",
+      "selection": "Georgia -13.5",
+      "odds": -110,
+      "stake": 10.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 53.0,
+      "war_room_line": "Rank #12 of 19. DK-labelled -13.5 (-110), 2:30 CT.",
+      "edge": "Veteran offense.",
+      "price_discipline": "Competition only at this price; cash Pass. Main risk: OU pressure.",
+      "espn_event_id": "401856700",
+      "bet_type": "spread",
+      "bet_side": "home",
+      "bet_line": -13.5,
+      "home_team": null,
+      "away_team": null,
+      "created_at": "2026-09-26T15:46:31",
+      "id": 143,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "UGA -13.5",
+        "home_spread": -13.5,
+        "home_spread_odds": -110.0,
+        "away_spread_odds": -110.0,
+        "total": 43.5,
+        "over_odds": -118.0,
+        "under_odds": -102.0,
+        "home_moneyline": -550,
+        "away_moneyline": 410,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-09-26T15:46:36",
+      "pregame_weather": {
+        "city": "Athens",
+        "temp_c": 18.0,
+        "precip_probability_pct": 3,
+        "precip_mm": 0.2,
+        "wind_kmh": 2.3,
+        "cloud_cover_pct": 99,
+        "forecast_hour": "2026-09-26T19:00"
+      },
+      "pregame_home_form": {
+        "played": 3,
+        "wins": 3,
+        "win_pct": 100.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 3,
+        "wins": 2,
+        "win_pct": 66.66666666666666,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 2,
+          "d": 0,
+          "l": 0,
+          "gf": 133,
+          "ga": 23
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 0,
+          "gf": 45,
+          "ga": 17
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 2,
+          "d": 0,
+          "l": 0,
+          "gf": 65,
+          "ga": 6
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 1,
+          "gf": 10,
+          "ga": 17
+        }
+      },
+      "pregame_intel_captured_at": "2026-09-26T15:46:36",
+      "wr_confidence_initial": 57.152
     }
   ],
   "next_wallet_id": 24,
