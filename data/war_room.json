@@ -1,6 +1,6 @@
 {
   "next_report_id": 33,
-  "next_pick_id": 147,
+  "next_pick_id": 148,
   "reports": [
     {
       "source": "ChatGPT",
@@ -8805,6 +8805,101 @@
       },
       "pregame_intel_captured_at": "2026-09-26T15:46:55",
       "wr_confidence_initial": 47.767999999999994
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 32,
+      "category": "best_bet",
+      "matchup": "South Carolina Gamecocks @ Alabama Crimson Tide",
+      "selection": "South Carolina +12.5",
+      "odds": -110,
+      "stake": 25.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 55.0,
+      "war_room_line": "Rank #10 of 19. DK-labelled +12.5 (-110), 6:00 CT.",
+      "edge": "Sellers mobility.",
+      "price_discipline": "Competition only at this price; cash Pass. Main risk: missing SC tackle.",
+      "espn_event_id": "401856696",
+      "bet_type": "spread",
+      "bet_side": "away",
+      "bet_line": 12.5,
+      "home_team": null,
+      "away_team": null,
+      "created_at": "2026-09-26T15:46:57",
+      "id": 147,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "ALA -12.5",
+        "home_spread": -12.5,
+        "home_spread_odds": -110.0,
+        "away_spread_odds": -110.0,
+        "total": 54.5,
+        "over_odds": -108.0,
+        "under_odds": -112.0,
+        "home_moneyline": -520,
+        "away_moneyline": 390,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-09-26T15:47:00",
+      "pregame_weather": {
+        "city": "Tuscaloosa",
+        "temp_c": 29.8,
+        "precip_probability_pct": 1,
+        "precip_mm": 0.0,
+        "wind_kmh": 9.4,
+        "cloud_cover_pct": 94,
+        "forecast_hour": "2026-09-26T23:00"
+      },
+      "pregame_home_form": {
+        "played": 3,
+        "wins": 3,
+        "win_pct": 100.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 3,
+        "wins": 2,
+        "win_pct": 66.66666666666666,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 2,
+          "d": 0,
+          "l": 0,
+          "gf": 98,
+          "ga": 46
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 0,
+          "gf": 45,
+          "ga": 17
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 2,
+          "d": 0,
+          "l": 1,
+          "gf": 136,
+          "ga": 50
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 0,
+          "gf": 0,
+          "ga": 0
+        }
+      },
+      "pregame_intel_captured_at": "2026-09-26T15:47:00",
+      "wr_confidence_initial": 51.92
     }
   ],
   "next_wallet_id": 24,
