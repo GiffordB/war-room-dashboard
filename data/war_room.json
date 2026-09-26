@@ -1,6 +1,6 @@
 {
   "next_report_id": 33,
-  "next_pick_id": 146,
+  "next_pick_id": 147,
   "reports": [
     {
       "source": "ChatGPT",
@@ -8710,6 +8710,101 @@
       },
       "pregame_intel_captured_at": "2026-09-26T15:46:48",
       "wr_confidence_initial": 48.2
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 32,
+      "category": "best_bet",
+      "matchup": "Wisconsin Badgers @ Penn State Nittany Lions",
+      "selection": "Wisconsin +10",
+      "odds": -108,
+      "stake": 10.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 52.0,
+      "war_room_line": "Rank #14 of 19. DK-labelled +10 (-108), 4:00 CT.",
+      "edge": "Joseph-Henry.",
+      "price_discipline": "Competition only at this price; cash Pass. Main risk: Becht + road noise.",
+      "espn_event_id": "401858466",
+      "bet_type": "spread",
+      "bet_side": "away",
+      "bet_line": 10.0,
+      "home_team": null,
+      "away_team": null,
+      "created_at": "2026-09-26T15:46:51",
+      "id": 146,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "PSU -10",
+        "home_spread": -10.0,
+        "home_spread_odds": -112.0,
+        "away_spread_odds": -108.0,
+        "total": 43.5,
+        "over_odds": -115.0,
+        "under_odds": -105.0,
+        "home_moneyline": -380,
+        "away_moneyline": 300,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-09-26T15:46:55",
+      "pregame_weather": {
+        "city": "Palo Alto",
+        "temp_c": 22.8,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 9.9,
+        "cloud_cover_pct": 2,
+        "forecast_hour": "2026-09-26T21:00"
+      },
+      "pregame_home_form": {
+        "played": 3,
+        "wins": 3,
+        "win_pct": 100.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 3,
+        "wins": 2,
+        "win_pct": 66.66666666666666,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 2,
+          "d": 0,
+          "l": 0,
+          "gf": 100,
+          "ga": 13
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 0,
+          "gf": 27,
+          "ga": 9
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 2,
+          "d": 0,
+          "l": 0,
+          "gf": 90,
+          "ga": 19
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 1,
+          "gf": 13,
+          "ga": 41
+        }
+      },
+      "pregame_intel_captured_at": "2026-09-26T15:46:55",
+      "wr_confidence_initial": 47.767999999999994
     }
   ],
   "next_wallet_id": 24,
