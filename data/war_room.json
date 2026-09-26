@@ -1,6 +1,6 @@
 {
   "next_report_id": 32,
-  "next_pick_id": 134,
+  "next_pick_id": 135,
   "reports": [
     {
       "source": "ChatGPT",
@@ -7558,6 +7558,101 @@
       },
       "pregame_intel_captured_at": "2026-09-26T13:56:32",
       "wr_confidence_initial": 73.00952380952381
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 31,
+      "category": "best_bet",
+      "matchup": "Florida Atlantic Owls @ UL Monroe Warhawks",
+      "selection": "UL Monroe +13.5",
+      "odds": -110,
+      "stake": 69.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 71.0,
+      "war_room_line": "Decision 71.2 (Walters 72). Own-number edge +7.7. THE LINE FAU -13.5; consensus -11.5; paper 2 pts stale. EV +5.0%, 5.0% landing mass captured.",
+      "edge": "Added on the Saturday update: the same stale-favorite trade as Charlotte and UTEP. No sourced injury of weight; no public split.",
+      "price_discipline": "STAKE 0.69% ($69), halved while Pinnacle is uncaptured. Full stake at +13.5 only; clears +2% down to +13. VOID at +12.5 or worse, or if consensus reaches +13.5. -110 assumed. Sat 7:00 CT.",
+      "espn_event_id": "401862782",
+      "bet_type": "spread",
+      "bet_side": "home",
+      "bet_line": 13.5,
+      "home_team": null,
+      "away_team": null,
+      "created_at": "2026-09-26T13:56:34",
+      "id": 134,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "FAU -11.5",
+        "home_spread": 11.5,
+        "home_spread_odds": -108.0,
+        "away_spread_odds": -112.0,
+        "total": 58.5,
+        "over_odds": -105.0,
+        "under_odds": -115.0,
+        "home_moneyline": 370,
+        "away_moneyline": -485,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-09-26T13:56:38",
+      "pregame_weather": {
+        "city": "Monroe",
+        "temp_c": 30.3,
+        "precip_probability_pct": 3,
+        "precip_mm": 0.0,
+        "wind_kmh": 7.9,
+        "cloud_cover_pct": 100,
+        "forecast_hour": "2026-09-27T00:00"
+      },
+      "pregame_home_form": {
+        "played": 3,
+        "wins": 0,
+        "win_pct": 0.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 3,
+        "wins": 2,
+        "win_pct": 66.66666666666666,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 0,
+          "d": 0,
+          "l": 1,
+          "gf": 35,
+          "ga": 38
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 2,
+          "gf": 33,
+          "ga": 88
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 2,
+          "d": 0,
+          "l": 0,
+          "gf": 54,
+          "ga": 40
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 1,
+          "gf": 21,
+          "ga": 66
+        }
+      },
+      "pregame_intel_captured_at": "2026-09-26T13:56:38",
+      "wr_confidence_initial": 72.2
     }
   ],
   "next_wallet_id": 24,
