@@ -1,6 +1,6 @@
 {
   "next_report_id": 33,
-  "next_pick_id": 140,
+  "next_pick_id": 141,
   "reports": [
     {
       "source": "ChatGPT",
@@ -8140,6 +8140,101 @@
       },
       "pregame_intel_captured_at": "2026-09-26T15:46:08",
       "wr_confidence_initial": 53.0
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 32,
+      "category": "best_bet",
+      "matchup": "Notre Dame Fighting Irish @ Purdue Boilermakers",
+      "selection": "Purdue +27.5",
+      "odds": -108,
+      "stake": 25.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 57.0,
+      "war_room_line": "Rank #8 of 19. DK-labelled +27.5 (-108), 1:00 CT.",
+      "edge": "Browne passing.",
+      "price_discipline": "Competition only at this price; cash Pass. Main risk: ND trenches.",
+      "espn_event_id": "401858467",
+      "bet_type": "spread",
+      "bet_side": "home",
+      "bet_line": 27.5,
+      "home_team": null,
+      "away_team": null,
+      "created_at": "2026-09-26T15:46:12",
+      "id": 140,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "ND -27.5",
+        "home_spread": 27.5,
+        "home_spread_odds": -115.0,
+        "away_spread_odds": -105.0,
+        "total": 57.5,
+        "over_odds": -105.0,
+        "under_odds": -115.0,
+        "home_moneyline": 1700,
+        "away_moneyline": -4500,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-09-26T15:46:16",
+      "pregame_weather": {
+        "city": "West Lafayette",
+        "temp_c": 21.5,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 9.8,
+        "cloud_cover_pct": 1,
+        "forecast_hour": "2026-09-26T18:00"
+      },
+      "pregame_home_form": {
+        "played": 3,
+        "wins": 1,
+        "win_pct": 33.33333333333333,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 3,
+        "wins": 3,
+        "win_pct": 100.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 1,
+          "gf": 80,
+          "ga": 57
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 1,
+          "gf": 38,
+          "ga": 52
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 3,
+          "d": 0,
+          "l": 0,
+          "gf": 120,
+          "ga": 23
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 0,
+          "gf": 0,
+          "ga": 0
+        }
+      },
+      "pregame_intel_captured_at": "2026-09-26T15:46:16",
+      "wr_confidence_initial": 52.088
     }
   ],
   "next_wallet_id": 24,
