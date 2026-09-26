@@ -1,6 +1,6 @@
 {
   "next_report_id": 33,
-  "next_pick_id": 137,
+  "next_pick_id": 138,
   "reports": [
     {
       "source": "ChatGPT",
@@ -7855,6 +7855,101 @@
       },
       "pregame_intel_captured_at": "2026-09-26T15:45:49",
       "wr_confidence_initial": 61.839999999999996
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 32,
+      "category": "best_bet",
+      "matchup": "Virginia Tech Hokies @ Boston College Eagles",
+      "selection": "Boston College +14.5",
+      "odds": -112,
+      "stake": 50.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 59.0,
+      "war_room_line": "Rank #5 of 19. DK-labelled +14.5 (-112), 11:00 CT.",
+      "edge": "Wind compresses.",
+      "price_discipline": "Competition only at this price; cash Pass. Main risk: turnover risk.",
+      "espn_event_id": "401858242",
+      "bet_type": "spread",
+      "bet_side": "home",
+      "bet_line": 14.5,
+      "home_team": null,
+      "away_team": null,
+      "created_at": "2026-09-26T15:45:51",
+      "id": 137,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "VT -14.5",
+        "home_spread": 14.5,
+        "home_spread_odds": -112.0,
+        "away_spread_odds": -108.0,
+        "total": 46.5,
+        "over_odds": -115.0,
+        "under_odds": -105.0,
+        "home_moneyline": 490,
+        "away_moneyline": -675,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-09-26T15:45:56",
+      "pregame_weather": {
+        "city": "Chestnut Hill",
+        "temp_c": 13.2,
+        "precip_probability_pct": 50,
+        "precip_mm": 0.0,
+        "wind_kmh": 28.5,
+        "cloud_cover_pct": 100,
+        "forecast_hour": "2026-09-26T16:00"
+      },
+      "pregame_home_form": {
+        "played": 3,
+        "wins": 2,
+        "win_pct": 66.66666666666666,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 3,
+        "wins": 3,
+        "win_pct": 100.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 2,
+          "d": 0,
+          "l": 0,
+          "gf": 50,
+          "ga": 37
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 1,
+          "gf": 15,
+          "ga": 34
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 2,
+          "d": 0,
+          "l": 0,
+          "gf": 117,
+          "ga": 24
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 0,
+          "gf": 35,
+          "ga": 26
+        }
+      },
+      "pregame_intel_captured_at": "2026-09-26T15:45:56",
+      "wr_confidence_initial": 55.856
     }
   ],
   "next_wallet_id": 24,
