@@ -1,5 +1,5 @@
 {
-  "next_report_id": 32,
+  "next_report_id": 33,
   "next_pick_id": 136,
   "reports": [
     {
@@ -276,6 +276,18 @@
       "lsu_review_notes": "",
       "created_at": "2026-09-24T17:23:51",
       "id": 31
+    },
+    {
+      "source": "ChatGPT",
+      "league": "CFB",
+      "report_date": "2026-09-26",
+      "week_number": 5,
+      "week_label": "Saturday Competition Card -- Sept 26 (v1)",
+      "philosophy": "Nineteen ranked competition picks, DraftKings full-game spreads, competition only at these prices. New cash $0; all cash plays currently Pass. DK-labelled VegasInsider quotes retrieved 9:33-9:45 AM CT, not confirmed betslip prices. Preference ranks are not win probabilities. Supporting report holds fair ranges, injuries, weather, sources and coverage gaps. Jesse decides every wager; an empty cash card is valid.",
+      "blind_spot_notes": "CASH CHECK: Texas A&M +9.5 (-105), $50, stays in Friday's recommendation record -- logged here as the A&M pick at the Friday number. The current +8.5 (-112) is priced out; do not chase +9 or less. No actual college ticket is confirmed. No Thor Hammer Smash: no verified 90+ Diamond case with a valuable price and resolved availability. No forced moneyline or future. Evening availability provisional. Good-If-It-Goes parlay (A&M / Iowa / USC) is competition-only, cash $0, optional entertainment max $10, never implied placed. Competition stakes on the dashboard are the standing convention for these cards ($50 ranks 1-5, $25 ranks 6-10, $10 ranks 11-19), not the sheet's cash calls.",
+      "lsu_review_notes": "",
+      "created_at": "2026-09-26T15:45:38",
+      "id": 32
     }
   ],
   "picks": [
