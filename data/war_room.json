@@ -1,6 +1,6 @@
 {
   "next_report_id": 33,
-  "next_pick_id": 141,
+  "next_pick_id": 142,
   "reports": [
     {
       "source": "ChatGPT",
@@ -8235,6 +8235,101 @@
       },
       "pregame_intel_captured_at": "2026-09-26T15:46:16",
       "wr_confidence_initial": 52.088
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 32,
+      "category": "best_bet",
+      "matchup": "Iowa Hawkeyes @ Michigan Wolverines",
+      "selection": "Iowa +5.5",
+      "odds": -115,
+      "stake": 50.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 60.0,
+      "war_room_line": "Rank #3 of 19. DK-labelled +5.5 (-115), 2:30 CT.",
+      "edge": "Defense and punts.",
+      "price_discipline": "Competition only at this price; cash Pass. Main risk: new OL.",
+      "espn_event_id": "401858463",
+      "bet_type": "spread",
+      "bet_side": "away",
+      "bet_line": 5.5,
+      "home_team": null,
+      "away_team": null,
+      "created_at": "2026-09-26T15:46:18",
+      "id": 141,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "MICH -5.5",
+        "home_spread": -5.5,
+        "home_spread_odds": -105.0,
+        "away_spread_odds": -115.0,
+        "total": 38.5,
+        "over_odds": -112.0,
+        "under_odds": -108.0,
+        "home_moneyline": -218,
+        "away_moneyline": 180,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-09-26T15:46:22",
+      "pregame_weather": {
+        "city": "Ann Arbor",
+        "temp_c": 21.0,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 8.0,
+        "cloud_cover_pct": 0,
+        "forecast_hour": "2026-09-26T19:00"
+      },
+      "pregame_home_form": {
+        "played": 3,
+        "wins": 3,
+        "win_pct": 100.0,
+        "quality_wins": 1
+      },
+      "pregame_away_form": {
+        "played": 3,
+        "wins": 3,
+        "win_pct": 100.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 3,
+          "d": 0,
+          "l": 0,
+          "gf": 82,
+          "ga": 39
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 0,
+          "gf": 0,
+          "ga": 0
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 3,
+          "d": 0,
+          "l": 0,
+          "gf": 111,
+          "ga": 13
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 0,
+          "gf": 0,
+          "ga": 0
+        }
+      },
+      "pregame_intel_captured_at": "2026-09-26T15:46:22",
+      "wr_confidence_initial": 56.839999999999996
     }
   ],
   "next_wallet_id": 24,
