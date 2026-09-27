@@ -1,6 +1,6 @@
 {
   "next_report_id": 34,
-  "next_pick_id": 166,
+  "next_pick_id": 167,
   "reports": [
     {
       "source": "ChatGPT",
@@ -10537,6 +10537,101 @@
       },
       "pregame_intel_captured_at": "2026-09-27T15:45:16",
       "wr_confidence_initial": 43.0
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 33,
+      "category": "best_bet",
+      "matchup": "Arizona Cardinals @ San Francisco 49ers",
+      "selection": "Arizona +8.5",
+      "odds": -110,
+      "stake": 120.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 68.0,
+      "war_room_line": "#3 -- $12,000 (logged $120). Cover 54.6%, EV +4.2%, score 68, expected profit +$504. SF opened -11.5, bet to -7.5 at DK and the exchange with 57% of handle still on the 49ers. Sheet +8.5 holds the 8 (4.6% of margins).",
+      "edge": "Reverse line movement again. Nick Bosa pulled Friday (calf), out for weeks; market moved a point, sheet moved zero. Model B has the 49ers by less than 2 neutral, the second-largest disagreement on the slate, and the only game where every one of five components points the same way.",
+      "price_discipline": "Risk: Arizona's offense has not shown it can keep a road game inside one score; the model lean is early-season noise until Week 5. Void below +7.5. 3:05 CT.",
+      "espn_event_id": "401872958",
+      "bet_type": "spread",
+      "bet_side": "away",
+      "bet_line": 8.5,
+      "home_team": null,
+      "away_team": null,
+      "created_at": "2026-09-27T15:45:20",
+      "id": 166,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "SF -7.5",
+        "home_spread": -7.5,
+        "home_spread_odds": -108.0,
+        "away_spread_odds": -112.0,
+        "total": 48.5,
+        "over_odds": -105.0,
+        "under_odds": -115.0,
+        "home_moneyline": -410,
+        "away_moneyline": 320,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-09-27T15:45:24",
+      "pregame_weather": {
+        "city": "Santa Clara",
+        "temp_c": 29.7,
+        "precip_probability_pct": 26,
+        "precip_mm": 0.2,
+        "wind_kmh": 12.3,
+        "cloud_cover_pct": 36,
+        "forecast_hour": "2026-09-27T20:00"
+      },
+      "pregame_home_form": {
+        "played": 2,
+        "wins": 2,
+        "win_pct": 100.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 2,
+        "wins": 1,
+        "win_pct": 50.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 6.5,
+      "pregame_away_injuries": 3.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 0,
+          "gf": 35,
+          "ga": 13
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 0,
+          "gf": 27,
+          "ga": 7
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 0,
+          "d": 0,
+          "l": 1,
+          "gf": 7,
+          "ga": 31
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 0,
+          "gf": 26,
+          "ga": 14
+        }
+      },
+      "pregame_intel_captured_at": "2026-09-27T15:45:24",
+      "wr_confidence_initial": 75.8
     }
   ],
   "next_wallet_id": 24,
