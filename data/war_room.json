@@ -1,6 +1,6 @@
 {
   "next_report_id": 33,
-  "next_pick_id": 156,
+  "next_pick_id": 157,
   "reports": [
     {
       "source": "ChatGPT",
@@ -9710,6 +9710,101 @@
         "home_score": 41,
         "away_score": 31
       }
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 30,
+      "category": "best_bet",
+      "matchup": "Kansas City Chiefs @ Miami Dolphins",
+      "selection": "Miami +11.5",
+      "odds": -110,
+      "stake": 96.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 72.0,
+      "war_room_line": "Decision 72.3 under Rules v3.1 (memo 71.6; W69/P62/S85/V58/CJ100/Wg70). Own number Miami +1.0 -- more than 6 from the market, treat the model as noise. THE LINE KC -11.5 (open 7); consensus -10; paper 1.5 pts stale through the 10 and 11. Cover 56.0%, EV +7.0%, 6.0% landing mass captured.",
+      "edge": "A price-and-market bet, not a football-case bet: Kansas City bet from 11.5 to 10 while 78-84% of the money sits on KC -- reverse line movement for Miami. Four of five components agree. Would NOT qualify under the stricter stale-by-2 tier discussed Saturday; Miami is 0-2 and the market says Chiefs by 10.",
+      "price_discipline": "STAKE 0.96% ($96), halved while Pinnacle is uncaptured. Full stake at +11.5 only; clears +2% down to +11. VOID at +10.5 or worse, or if consensus reaches +11.5. -110 assumed. Sitting it out after the college results is a defensible override -- log it as a pass. Sun 12:00 CT.",
+      "espn_event_id": "401872952",
+      "bet_type": "spread",
+      "bet_side": "home",
+      "bet_line": 11.5,
+      "home_team": null,
+      "away_team": null,
+      "created_at": "2026-09-27T14:11:08",
+      "id": 156,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "KC -9.5",
+        "home_spread": 9.5,
+        "home_spread_odds": -108.0,
+        "away_spread_odds": -112.0,
+        "total": 45.5,
+        "over_odds": -105.0,
+        "under_odds": -115.0,
+        "home_moneyline": 400,
+        "away_moneyline": -535,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-09-27T14:11:11",
+      "pregame_weather": {
+        "city": "Miami Gardens",
+        "temp_c": 28.3,
+        "precip_probability_pct": 1,
+        "precip_mm": 0.0,
+        "wind_kmh": 7.3,
+        "cloud_cover_pct": 26,
+        "forecast_hour": "2026-09-27T17:00"
+      },
+      "pregame_home_form": {
+        "played": 2,
+        "wins": 0,
+        "win_pct": 0.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 2,
+        "wins": 2,
+        "win_pct": 100.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 5.5,
+      "pregame_away_injuries": 1.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 0,
+          "d": 0,
+          "l": 0,
+          "gf": 0,
+          "ga": 0
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 2,
+          "gf": 26,
+          "ga": 62
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 2,
+          "d": 0,
+          "l": 0,
+          "gf": 64,
+          "ga": 40
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 0,
+          "gf": 0,
+          "ga": 0
+        }
+      },
+      "pregame_intel_captured_at": "2026-09-27T14:11:11",
+      "wr_confidence_initial": 66.0
     }
   ],
   "next_wallet_id": 24,
