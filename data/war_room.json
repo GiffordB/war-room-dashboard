@@ -1,6 +1,6 @@
 {
   "next_report_id": 34,
-  "next_pick_id": 169,
+  "next_pick_id": 170,
   "reports": [
     {
       "source": "ChatGPT",
@@ -10822,6 +10822,101 @@
       },
       "pregame_intel_captured_at": "2026-09-27T15:45:39",
       "wr_confidence_initial": 67.4
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 33,
+      "category": "best_bet",
+      "matchup": "Los Angeles Rams @ Denver Broncos",
+      "selection": "Denver +2.5",
+      "odds": -110,
+      "stake": 70.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 58.0,
+      "war_room_line": "#7 -- $7,000 (logged $70). Cover 51.9%, EV -0.9%, score 58, expected profit -$63. Market Rams -1.5 (DK) to -2.5 (exchange); sheet +2.5 sits at the top of the range and owns the 2 against DK.",
+      "edge": "Largest model disagreement on the Sunday slate: Model B makes Denver a 1.5-point favorite at altitude. Puka Nacua doubtful, only partly absorbed. Sunday night, market layer 40%, money split (55% Rams by tickets) so no contrarian penalty either way.",
+      "price_discipline": "Risk: no price edge against the exchange number; the case rests on a model still below its confidence gate. Void below +1.5. 7:20 CT.",
+      "espn_event_id": "401872962",
+      "bet_type": "spread",
+      "bet_side": "home",
+      "bet_line": 2.5,
+      "home_team": null,
+      "away_team": null,
+      "created_at": "2026-09-27T15:45:42",
+      "id": 169,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "LAR -1.5",
+        "home_spread": 1.5,
+        "home_spread_odds": -108.0,
+        "away_spread_odds": -112.0,
+        "total": 43.5,
+        "over_odds": -118.0,
+        "under_odds": -102.0,
+        "home_moneyline": 110,
+        "away_moneyline": -130,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-09-27T15:45:45",
+      "pregame_weather": {
+        "city": "Denver",
+        "temp_c": 27.2,
+        "precip_probability_pct": 10,
+        "precip_mm": 0.0,
+        "wind_kmh": 15.5,
+        "cloud_cover_pct": 100,
+        "forecast_hour": "2026-09-28T00:00"
+      },
+      "pregame_home_form": {
+        "played": 2,
+        "wins": 1,
+        "win_pct": 50.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 2,
+        "wins": 1,
+        "win_pct": 50.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 2.25,
+      "pregame_away_injuries": 2.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 0,
+          "gf": 20,
+          "ga": 13
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 1,
+          "gf": 10,
+          "ga": 31
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 1,
+          "gf": 35,
+          "ga": 33
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 0,
+          "gf": 0,
+          "ga": 0
+        }
+      },
+      "pregame_intel_captured_at": "2026-09-27T15:45:45",
+      "wr_confidence_initial": 60.3
     }
   ],
   "next_wallet_id": 24,
