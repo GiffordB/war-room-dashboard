@@ -7045,13 +7045,13 @@
         "away_moneyline": -170,
         "draw_moneyline": null
       },
-      "pregame_odds_captured_at": "2026-09-27T07:51:16",
+      "pregame_odds_captured_at": "2026-09-27T13:42:38",
       "pregame_weather": {
         "city": "Rio de Janeiro",
-        "temp_c": 22.4,
-        "precip_probability_pct": 4,
+        "temp_c": 22.6,
+        "precip_probability_pct": 0,
         "precip_mm": 0.2,
-        "wind_kmh": 11.3,
+        "wind_kmh": 11.0,
         "cloud_cover_pct": 100,
         "forecast_hour": "2026-09-27T20:00"
       },
@@ -7101,7 +7101,7 @@
           "ga": 23
         }
       },
-      "pregame_intel_captured_at": "2026-09-27T07:51:16",
+      "pregame_intel_captured_at": "2026-09-27T13:42:38",
       "wr_confidence_initial": 66.5
     },
     {
