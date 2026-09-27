@@ -1,5 +1,5 @@
 {
-  "next_report_id": 34,
+  "next_report_id": 35,
   "next_pick_id": 171,
   "reports": [
     {
@@ -300,6 +300,18 @@
       "lsu_review_notes": "",
       "created_at": "2026-09-27T15:44:38",
       "id": 33
+    },
+    {
+      "source": "ChatGPT",
+      "league": "NFL",
+      "report_date": "2026-09-27",
+      "week_number": 3,
+      "week_label": "Week 3 -- Sunday NFL War Room (Final Check v4)",
+      "philosophy": "Jesse's NFL final check, v4, 11:00 AM CT research pass, DraftKings only, pregame full-game markets. Competition and research selections; at observed prices new serious exposure is $0. Original calls preserved: the earlier conditional $50 Colts call remains in the historical record (logged here at its original price), not a new executable order. No original projection or result rewritten. Judgment estimates, not validated model output. None of Jesse's tickets assumed placed; Jesse makes every decision.",
+      "blind_spot_notes": "CHANGES SINCE MORNING: Miami gains the key 10 (+10 -112, was +9.5 -108; a ten-point loss now pushes); Colts spread priced out for a new ticket (+1.5 -108, was -102; ML +102, was +105; original cash limit -105); Pittsburgh hook more expensive (-115); Cleveland moved to +2.5 from +1.5. Washington wind forecast eased (NW 13-14 gusting 21-22, previously 30-32): SEA-WAS under weather conviction DOWNGRADED, judgment total 38 to 39, prior 43.5 watch suspended. Inactives: Ward absent from the Colts official list, Dulin/Slayton inactive; KC Simmons/Conner out, Miami Wright/Douglas/Beal out; PIT Porter Jr. and Dowdle inactive; CLE Campbell and Jenkins inactive (earlier clearance condition fails). PUBLIC CHECK (DK favorite tickets/money): KC 86/87, CIN 78/75, HOU 59/75, CAR 85/93, BUF 81/77. BetMGM snapshot PIT 34/68 and IND 42/67 vs DK PIT 22/25 and IND 41/25 -- different customer pools, not a universal sharp-money signal. DK under tickets/money: TEN-NYG 67/84, SEA-WAS 45/85, LAC-BUF 29/16. WEATHER (NWS): MetLife 65-67F, NE 15-18 gusting 30-36, rain 53-79%; Washington 61-62F, rain 90% from 1 PM CT; Buffalo 64-66F, NE 13 gusting 23 late, rain 6-19% -- not the coastal storm exposure. Rain intensity and on-field conditions unverified; no verified DK opener or weather-caused movement attribution. Colts ML +102: top prior candidate, now shorter than the +105 research entry (49.5% implied vs 53% judgment, fair -113); do not chase. No Thor Hammer Smash. Sources: DK noon and later boards, NWS issues 6:18 / 8:58 / 9:52 AM CT, official inactives.",
+      "lsu_review_notes": "",
+      "created_at": "2026-09-27T16:14:47",
+      "id": 34
     }
   ],
   "picks": [
