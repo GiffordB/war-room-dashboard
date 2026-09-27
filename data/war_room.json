@@ -1,6 +1,6 @@
 {
   "next_report_id": 34,
-  "next_pick_id": 164,
+  "next_pick_id": 165,
   "reports": [
     {
       "source": "ChatGPT",
@@ -10363,6 +10363,93 @@
       },
       "pregame_intel_captured_at": "2026-09-27T15:45:02",
       "wr_confidence_initial": 68.7
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 33,
+      "category": "best_bet",
+      "matchup": "Carolina Panthers @ Cleveland Browns",
+      "selection": "Cleveland +2.5",
+      "odds": -110,
+      "stake": 80.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 61.0,
+      "war_room_line": "#6 -- $8,000 (logged $80). Cover 51.9%, EV -0.9%, score 61, expected profit -$72. Carolina opened -3, bet to -1.5 at DK (-2.5 exchange) while 63% of money is on the Panthers. Sheet +2.5 owns the 2 against DK.",
+      "edge": "Reverse line movement toward Cleveland. Model B near pick-em (Cleveland by 0.7 at home); Carolina missing four defensive contributors; five of five components on the Cleveland side, everything but the price.",
+      "price_discipline": "Risk: EV at +2.5 against a blended market of 2 is roughly zero -- a market-read bet, not a price bet. Small by design. 12:00 CT.",
+      "espn_event_id": "401872949",
+      "bet_type": "spread",
+      "bet_side": "home",
+      "bet_line": 2.5,
+      "home_team": null,
+      "away_team": null,
+      "created_at": "2026-09-27T15:45:05",
+      "id": 164,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "CAR -2.5",
+        "home_spread": 2.5,
+        "home_spread_odds": -112.0,
+        "away_spread_odds": -108.0,
+        "total": 41.5,
+        "over_odds": -115.0,
+        "under_odds": -105.0,
+        "home_moneyline": 110,
+        "away_moneyline": -130,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-09-27T15:45:10",
+      "pregame_weather": null,
+      "pregame_home_form": {
+        "played": 2,
+        "wins": 1,
+        "win_pct": 50.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 2,
+        "wins": 1,
+        "win_pct": 50.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 4.5,
+      "pregame_away_injuries": 5.25,
+      "pregame_home_split": {
+        "home": {
+          "w": 0,
+          "d": 0,
+          "l": 0,
+          "gf": 0,
+          "ga": 0
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 1,
+          "gf": 33,
+          "ga": 53
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 0,
+          "d": 0,
+          "l": 1,
+          "gf": 37,
+          "ga": 59
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 0,
+          "gf": 34,
+          "ga": 3
+        }
+      },
+      "pregame_intel_captured_at": "2026-09-27T15:45:10",
+      "wr_confidence_initial": 63.6
     }
   ],
   "next_wallet_id": 24,
