@@ -1,5 +1,5 @@
 {
-  "next_report_id": 33,
+  "next_report_id": 34,
   "next_pick_id": 161,
   "reports": [
     {
@@ -288,6 +288,18 @@
       "lsu_review_notes": "",
       "created_at": "2026-09-26T15:45:38",
       "id": 32
+    },
+    {
+      "source": "Claude",
+      "league": "NFL",
+      "report_date": "2026-09-27",
+      "week_number": 3,
+      "week_label": "Best 10 of the Day -- Sun Sept 27 (Maven Quant, one-off allocation)",
+      "philosophy": "One-off allocation exercise at Mason's request, NOT the Maven Quant system sizing: $100,000 deployed across ten Sunday-Monday positions in proportion to how much of the day's edge each carries (dollars proportional to a blend of decision score above 40 and EV at the sheet number, rounded to thousands, $4,000 floor). Two positions hold 37% of the capital and about 75% of the expected profit; that concentration is the point. Priced at THE LINE Sunday print against DraftKings and the exchange at 10:25 CT, with Model B's own number; Pinnacle uncaptured (Odds API 0 credits), so every price edge is measured against recreational books and may overstate the true edge by up to a point. DASHBOARD SCALING: logged at 1/100 of the sheet ($1,000 deployed) so the card is comparable to the other sources' cards; proportions are the sheet's. Under Standing Rules v3.1 the system itself stakes three of these ten (Miami +11.5, Titans-Giants under 40.5, Chargers-Bills under 50.5) at 1.96% combined and tracks the rest -- those three also sit on the system report for this week.",
+      "blind_spot_notes": "Sheet numbers: $100,000 deployed, $7,215 expected profit, 59% of simulated Sundays profitable, median day +$8,818, +$90,909 if all ten hit. Forty thousand simulated Sundays at -110: one Sunday in twenty loses more than $48,455; a 0-for-10 day (about 1 in 1,500) loses everything. Nothing hedged; independent games. The system would stake these ten at about $3,000 on a $100,000 bankroll; this card deploys 33 times that, and the variance scales the same way. The two stale prints (Miami, Giants under) produce about $5,500 of the $7,200 expected profit; the next three (Cardinals, Bills under, Bears) add roughly $2,000; the bottom four are near zero or slightly negative in expectation at the sheet number, on the card for the football and market case and sized so they cannot hurt the day. Edge tiers: green +6% EV or better (Miami, Giants under, Bills under, Bears), cyan +2 to +6% (Cardinals, Ravens over), pink negative at the number (Browns, Broncos, Steelers, Buccaneers). Shape: Miami and Arizona are round (every seat likes them); Pittsburgh and Tampa Bay are spikes carried by one argument. Totals: Giants under is a stale-price bet (wind already in the market); Bills under is a weather bet (wind not yet in the total); Ravens over is a stale-price bet the other way. Sources: THE LINE Sunday print; DraftKings and exchange screens 10:24-10:26 CT; BetMGM, Caesars and DraftKings handle via Everson and Ewing; official injury reports via CBS, NFL Network, ESPN; wind from NFLWeather, CLEATZ and PFN. All ten graded Monday against the close and the result in Report 06 alongside the system's three stakes.",
+      "lsu_review_notes": "",
+      "created_at": "2026-09-27T15:44:38",
+      "id": 33
     }
   ],
   "picks": [
