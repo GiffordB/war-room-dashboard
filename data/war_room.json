@@ -1,6 +1,6 @@
 {
   "next_report_id": 35,
-  "next_pick_id": 175,
+  "next_pick_id": 176,
   "reports": [
     {
       "source": "ChatGPT",
@@ -11404,6 +11404,101 @@
       },
       "pregame_intel_captured_at": "2026-09-27T16:15:16",
       "wr_confidence_initial": 42.190588235294115
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 34,
+      "category": "totals_radar",
+      "matchup": "Tennessee Titans @ New York Giants",
+      "selection": "Under 37.5",
+      "odds": -110,
+      "stake": 10.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 55.0,
+      "war_room_line": "Research lean, $0. DK 37.5 (-110); fair 35 (31-40), unchanged. Current total inside the fair range.",
+      "edge": "Open air, NE 15-18 mph gusting 30-36, rain 53-79%, humidity 87-93% (NWS 6:18 AM CT).",
+      "price_discipline": "Under lean unchanged. Watch 40.5/-110 for reassessment, not automatic purchase. DK under split 67/84. Noon CT.",
+      "espn_event_id": "401872956",
+      "bet_type": "total",
+      "bet_side": "under",
+      "bet_line": 37.5,
+      "home_team": null,
+      "away_team": null,
+      "created_at": "2026-09-27T16:15:19",
+      "id": 175,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "NYG -2.5",
+        "home_spread": -2.5,
+        "home_spread_odds": -110.0,
+        "away_spread_odds": -110.0,
+        "total": 37.5,
+        "over_odds": -112.0,
+        "under_odds": -108.0,
+        "home_moneyline": -130,
+        "away_moneyline": 110,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-09-27T16:15:22",
+      "pregame_weather": {
+        "city": "East Rutherford",
+        "temp_c": 16.1,
+        "precip_probability_pct": 46,
+        "precip_mm": 2.9,
+        "wind_kmh": 24.0,
+        "cloud_cover_pct": 100,
+        "forecast_hour": "2026-09-27T17:00"
+      },
+      "pregame_home_form": {
+        "played": 2,
+        "wins": 1,
+        "win_pct": 50.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 2,
+        "wins": 0,
+        "win_pct": 0.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 7.25,
+      "pregame_away_injuries": 5.25,
+      "pregame_home_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 0,
+          "gf": 28,
+          "ga": 20
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 1,
+          "gf": 6,
+          "ga": 28
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 0,
+          "d": 0,
+          "l": 2,
+          "gf": 30,
+          "ga": 47
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 0,
+          "gf": 0,
+          "ga": 0
+        }
+      },
+      "pregame_intel_captured_at": "2026-09-27T16:15:22",
+      "wr_confidence_initial": 55.95294117647059
     }
   ],
   "next_wallet_id": 24,
