@@ -1,6 +1,6 @@
 {
   "next_report_id": 35,
-  "next_pick_id": 172,
+  "next_pick_id": 173,
   "reports": [
     {
       "source": "ChatGPT",
@@ -11119,6 +11119,101 @@
       },
       "pregame_intel_captured_at": "2026-09-27T16:14:59",
       "wr_confidence_initial": 62.06470588235294
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 34,
+      "category": "best_bet",
+      "matchup": "Kansas City Chiefs @ Miami Dolphins",
+      "selection": "Miami +10",
+      "odds": -112,
+      "stake": 25.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 56.0,
+      "war_room_line": "Cover lean, $0 cash. DK +10 (-112), was +9.5 (-108): gains the key 10, a ten-point loss now pushes. Fair KC -9 (range -6 to -12), unchanged.",
+      "edge": "Sustained Miami drives can keep it close. KC Simmons/Conner out; Miami Wright/Douglas/Beal out.",
+      "price_discipline": "Competition lean. Risks: Mahomes, and Miami failing to finish drives. DK favorite split KC 86/87. Noon CT.",
+      "espn_event_id": "401872952",
+      "bet_type": "spread",
+      "bet_side": "home",
+      "bet_line": 10.0,
+      "home_team": null,
+      "away_team": null,
+      "created_at": "2026-09-27T16:15:02",
+      "id": 172,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "KC -10",
+        "home_spread": 10.0,
+        "home_spread_odds": -112.0,
+        "away_spread_odds": -108.0,
+        "total": 45.5,
+        "over_odds": -105.0,
+        "under_odds": -115.0,
+        "home_moneyline": 440,
+        "away_moneyline": -600,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-09-27T16:15:05",
+      "pregame_weather": {
+        "city": "Miami Gardens",
+        "temp_c": 29.6,
+        "precip_probability_pct": 1,
+        "precip_mm": 0.0,
+        "wind_kmh": 7.0,
+        "cloud_cover_pct": 14,
+        "forecast_hour": "2026-09-27T17:00"
+      },
+      "pregame_home_form": {
+        "played": 2,
+        "wins": 0,
+        "win_pct": 0.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 2,
+        "wins": 2,
+        "win_pct": 100.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 9.25,
+      "pregame_away_injuries": 2.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 0,
+          "d": 0,
+          "l": 0,
+          "gf": 0,
+          "ga": 0
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 2,
+          "gf": 26,
+          "ga": 62
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 2,
+          "d": 0,
+          "l": 0,
+          "gf": 64,
+          "ga": 40
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 0,
+          "gf": 0,
+          "ga": 0
+        }
+      },
+      "pregame_intel_captured_at": "2026-09-27T16:15:05",
+      "wr_confidence_initial": 43.9435294117647
     }
   ],
   "next_wallet_id": 24,
