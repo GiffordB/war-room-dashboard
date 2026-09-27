@@ -1,6 +1,6 @@
 {
   "next_report_id": 33,
-  "next_pick_id": 159,
+  "next_pick_id": 160,
   "reports": [
     {
       "source": "ChatGPT",
@@ -9995,6 +9995,101 @@
       },
       "pregame_intel_captured_at": "2026-09-27T14:11:22",
       "wr_confidence_initial": 63.2
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 30,
+      "category": "best_bet",
+      "matchup": "Seattle Seahawks @ Washington Commanders",
+      "selection": "Seattle -7",
+      "odds": -110,
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 60.0,
+      "war_room_line": "Decision 60.3. THE LINE SEA -7; BetMGM moved to -8.5 (8:17 AM CT) -- the sheet lets you lay 7 with the push on 7 and the 8 captured, 8.9% landing mass. EV +12.9%.",
+      "edge": "Washington -3.5 on information: QB Jayden Daniels OUT (dislocated left elbow), backup starting -- but the market has already priced it, and 78% of tickets are on Seattle.",
+      "price_discipline": "TRACK, $0 stake -- decision 60.3, under 70. Graded for CLV only. Sun 12:00 CT.",
+      "espn_event_id": "401872955",
+      "bet_type": "spread",
+      "bet_side": "away",
+      "bet_line": -7.0,
+      "home_team": null,
+      "away_team": null,
+      "created_at": "2026-09-27T14:11:24",
+      "id": 159,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "SEA -8.5",
+        "home_spread": 8.5,
+        "home_spread_odds": -115.0,
+        "away_spread_odds": -105.0,
+        "total": 40.5,
+        "over_odds": -102.0,
+        "under_odds": -118.0,
+        "home_moneyline": 320,
+        "away_moneyline": -410,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-09-27T14:11:27",
+      "pregame_weather": {
+        "city": "Landover",
+        "temp_c": 15.5,
+        "precip_probability_pct": 36,
+        "precip_mm": 0.0,
+        "wind_kmh": 18.1,
+        "cloud_cover_pct": 100,
+        "forecast_hour": "2026-09-27T17:00"
+      },
+      "pregame_home_form": {
+        "played": 2,
+        "wins": 0,
+        "win_pct": 0.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 2,
+        "wins": 2,
+        "win_pct": 100.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 6.0,
+      "pregame_away_injuries": 4.25,
+      "pregame_home_split": {
+        "home": {
+          "w": 0,
+          "d": 0,
+          "l": 0,
+          "gf": 0,
+          "ga": 0
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 2,
+          "gf": 42,
+          "ga": 61
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 0,
+          "gf": 13,
+          "ga": 10
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 0,
+          "gf": 31,
+          "ga": 7
+        }
+      },
+      "pregame_intel_captured_at": "2026-09-27T14:11:27",
+      "wr_confidence_initial": 72.2
     }
   ],
   "next_wallet_id": 24,
