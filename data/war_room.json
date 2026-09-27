@@ -1,6 +1,6 @@
 {
   "next_report_id": 34,
-  "next_pick_id": 162,
+  "next_pick_id": 163,
   "reports": [
     {
       "source": "ChatGPT",
@@ -10189,6 +10189,93 @@
       },
       "pregame_intel_captured_at": "2026-09-27T15:44:50",
       "wr_confidence_initial": 69.5
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 33,
+      "category": "totals_radar",
+      "matchup": "Tennessee Titans @ New York Giants",
+      "selection": "Under 40.5",
+      "odds": -110,
+      "stake": 170.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 75.0,
+      "war_room_line": "#2 -- $17,000 (logged $170). Cover 60.2%, EV +15.0%, expected profit +$2,550. Market total opened 45.5 and collapsed to 36.5 at DK / 37.5 on the exchange, the biggest total move of the week; the sheet still prints 40.5.",
+      "edge": "22 mph wind at MetLife gusting to 39, Jaxson Dart on IR with Jameis Winston starting, Tennessee without Pollard and Spears. A 3.5-point gap on a 13.5-point spread of NFL totals is worth about 10 points of cover probability. Same trade as Miami in a different market: the paper is late.",
+      "price_discipline": "Risk: wind is already fully priced, so a calm afternoon does not hurt; two defensive touchdowns would. Void at 37.5 or lower. 12:00 CT.",
+      "espn_event_id": "401872956",
+      "bet_type": "total",
+      "bet_side": "under",
+      "bet_line": 40.5,
+      "home_team": null,
+      "away_team": null,
+      "created_at": "2026-09-27T15:44:53",
+      "id": 162,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "NYG -2.5",
+        "home_spread": -2.5,
+        "home_spread_odds": -110.0,
+        "away_spread_odds": -110.0,
+        "total": 37.5,
+        "over_odds": -112.0,
+        "under_odds": -108.0,
+        "home_moneyline": -130,
+        "away_moneyline": 110,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-09-27T15:44:56",
+      "pregame_weather": null,
+      "pregame_home_form": {
+        "played": 2,
+        "wins": 1,
+        "win_pct": 50.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 2,
+        "wins": 0,
+        "win_pct": 0.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 1.0,
+      "pregame_away_injuries": 0.5,
+      "pregame_home_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 0,
+          "gf": 28,
+          "ga": 20
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 1,
+          "gf": 6,
+          "ga": 28
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 0,
+          "d": 0,
+          "l": 2,
+          "gf": 30,
+          "ga": 47
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 0,
+          "gf": 0,
+          "ga": 0
+        }
+      },
+      "pregame_intel_captured_at": "2026-09-27T15:44:56",
+      "wr_confidence_initial": 83.5
     }
   ],
   "next_wallet_id": 24,
