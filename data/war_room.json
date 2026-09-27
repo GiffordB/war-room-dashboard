@@ -1,6 +1,6 @@
 {
   "next_report_id": 35,
-  "next_pick_id": 171,
+  "next_pick_id": 172,
   "reports": [
     {
       "source": "ChatGPT",
@@ -11024,6 +11024,101 @@
       },
       "pregame_intel_captured_at": "2026-09-27T15:45:52",
       "wr_confidence_initial": 62.3
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 34,
+      "category": "best_bet",
+      "matchup": "Houston Texans @ Indianapolis Colts",
+      "selection": "Indianapolis +1.5",
+      "odds": -102,
+      "stake": 50.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 58.0,
+      "war_room_line": "Original conditional cash call: +1.5 (-102), $50, price limit -105 -- retained in the historical record. Current DK +1.5 (-108), ML +102: PRICED OUT for a new ticket.",
+      "edge": "Houston receiving and OL losses. Ward absent from the official inactive list.",
+      "price_discipline": "No retroactive cancellation of the original call; no new ticket at -108. Dulin/Slayton inactive -- receiver situation limits confidence. Noon CT.",
+      "espn_event_id": "401872951",
+      "bet_type": "spread",
+      "bet_side": "home",
+      "bet_line": 1.5,
+      "home_team": null,
+      "away_team": null,
+      "created_at": "2026-09-27T16:14:55",
+      "id": 171,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "HOU -1.5",
+        "home_spread": 1.5,
+        "home_spread_odds": -108.0,
+        "away_spread_odds": -112.0,
+        "total": 41.5,
+        "over_odds": -115.0,
+        "under_odds": -105.0,
+        "home_moneyline": 105,
+        "away_moneyline": -125,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-09-27T16:14:59",
+      "pregame_weather": {
+        "city": "Indianapolis",
+        "temp_c": 20.9,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 10.3,
+        "cloud_cover_pct": 0,
+        "forecast_hour": "2026-09-27T17:00"
+      },
+      "pregame_home_form": {
+        "played": 2,
+        "wins": 0,
+        "win_pct": 0.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 2,
+        "wins": 0,
+        "win_pct": 0.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 6.25,
+      "pregame_away_injuries": 8.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 0,
+          "d": 0,
+          "l": 1,
+          "gf": 23,
+          "ga": 41
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 1,
+          "gf": 30,
+          "ga": 33
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 0,
+          "d": 0,
+          "l": 2,
+          "gf": 37,
+          "ga": 56
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 0,
+          "gf": 0,
+          "ga": 0
+        }
+      },
+      "pregame_intel_captured_at": "2026-09-27T16:14:59",
+      "wr_confidence_initial": 62.06470588235294
     }
   ],
   "next_wallet_id": 24,
