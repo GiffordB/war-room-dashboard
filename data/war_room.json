@@ -1,6 +1,6 @@
 {
   "next_report_id": 34,
-  "next_pick_id": 170,
+  "next_pick_id": 171,
   "reports": [
     {
       "source": "ChatGPT",
@@ -10917,6 +10917,101 @@
       },
       "pregame_intel_captured_at": "2026-09-27T15:45:45",
       "wr_confidence_initial": 60.3
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 33,
+      "category": "best_bet",
+      "matchup": "Philadelphia Eagles @ Chicago Bears",
+      "selection": "Chicago +4.5",
+      "odds": -110,
+      "stake": 100.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 65.0,
+      "war_room_line": "#5 -- $10,000 (logged $100). Cover 56.3%, EV +7.5%, score 65, expected profit +$750. Philadelphia opened -4, bet down to -3.5 everywhere while 72-76% of money is on the Eagles. Sheet +4.5, a full point above the market and across the 4.",
+      "edge": "Monday night weights the market layer at 40% under v3.1 and it scores 68.5 on the reverse move; Spanky 85 -- buying against the week's move and the public at once. Model has Philadelphia by about 1.6 with Chicago's QB situation applied.",
+      "price_discipline": "Risk: Caleb Williams out and Bagent was in protocol; if Case Keenum starts the -3.5 information layer could deserve more. Void below +3.5. Mon 7:15 CT.",
+      "espn_event_id": "401872963",
+      "bet_type": "spread",
+      "bet_side": "home",
+      "bet_line": 4.5,
+      "home_team": null,
+      "away_team": null,
+      "created_at": "2026-09-27T15:45:48",
+      "id": 170,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "PHI -3.5",
+        "home_spread": 3.5,
+        "home_spread_odds": -110.0,
+        "away_spread_odds": -110.0,
+        "total": 42.5,
+        "over_odds": -105.0,
+        "under_odds": -115.0,
+        "home_moneyline": 164,
+        "away_moneyline": -198,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-09-27T15:45:52",
+      "pregame_weather": {
+        "city": "Chicago",
+        "temp_c": 16.2,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 7.2,
+        "cloud_cover_pct": 83,
+        "forecast_hour": "2026-09-29T00:00"
+      },
+      "pregame_home_form": {
+        "played": 2,
+        "wins": 1,
+        "win_pct": 50.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 2,
+        "wins": 2,
+        "win_pct": 100.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 5.5,
+      "pregame_away_injuries": 4.5,
+      "pregame_home_split": {
+        "home": {
+          "w": 0,
+          "d": 0,
+          "l": 1,
+          "gf": 3,
+          "ga": 9
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 0,
+          "gf": 59,
+          "ga": 37
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 0,
+          "gf": 24,
+          "ga": 22
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 0,
+          "gf": 24,
+          "ga": 20
+        }
+      },
+      "pregame_intel_captured_at": "2026-09-27T15:45:52",
+      "wr_confidence_initial": 62.3
     }
   ],
   "next_wallet_id": 24,
