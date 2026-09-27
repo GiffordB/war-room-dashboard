@@ -1,6 +1,6 @@
 {
   "next_report_id": 33,
-  "next_pick_id": 158,
+  "next_pick_id": 159,
   "reports": [
     {
       "source": "ChatGPT",
@@ -9900,6 +9900,101 @@
       },
       "pregame_intel_captured_at": "2026-09-27T14:11:17",
       "wr_confidence_initial": 72.5
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 30,
+      "category": "totals_radar",
+      "matchup": "Los Angeles Chargers @ Buffalo Bills",
+      "selection": "Under 50.5",
+      "odds": -110,
+      "stake": 46.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 62.0,
+      "war_room_line": "THE LINE 50.5; market 49.5; 1 pt stale plus the wind. EV +6.7%. The weather-total test's first live qualifier.",
+      "edge": "Open-air Buffalo with a 12+ mph wind forecast at kickoff; the sheet's total has not followed the market down.",
+      "price_discipline": "STAKE 0.46% ($46), halved while Pinnacle is uncaptured. Full stake at 50.5 only. Void if the book's total reaches 49.5 (market number) or the wind forecast drops below 12 mph at kickoff. -110 assumed. Sun 12:00 CT.",
+      "espn_event_id": "401872953",
+      "bet_type": "total",
+      "bet_side": "under",
+      "bet_line": 50.5,
+      "home_team": null,
+      "away_team": null,
+      "created_at": "2026-09-27T14:11:19",
+      "id": 158,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "BUF -7",
+        "home_spread": -7.0,
+        "home_spread_odds": -112.0,
+        "away_spread_odds": -108.0,
+        "total": 50.5,
+        "over_odds": -105.0,
+        "under_odds": -115.0,
+        "home_moneyline": -325,
+        "away_moneyline": 260,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-09-27T14:11:22",
+      "pregame_weather": {
+        "city": "Orchard Park",
+        "temp_c": 20.3,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 21.9,
+        "cloud_cover_pct": 37,
+        "forecast_hour": "2026-09-27T17:00"
+      },
+      "pregame_home_form": {
+        "played": 2,
+        "wins": 2,
+        "win_pct": 100.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 2,
+        "wins": 0,
+        "win_pct": 0.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 4.0,
+      "pregame_away_injuries": 6.5,
+      "pregame_home_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 0,
+          "gf": 41,
+          "ga": 31
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 0,
+          "gf": 36,
+          "ga": 31
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 0,
+          "d": 0,
+          "l": 2,
+          "gf": 28,
+          "ga": 52
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 0,
+          "gf": 0,
+          "ga": 0
+        }
+      },
+      "pregame_intel_captured_at": "2026-09-27T14:11:22",
+      "wr_confidence_initial": 63.2
     }
   ],
   "next_wallet_id": 24,
