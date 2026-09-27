@@ -1,6 +1,6 @@
 {
   "next_report_id": 35,
-  "next_pick_id": 177,
+  "next_pick_id": 178,
   "reports": [
     {
       "source": "ChatGPT",
@@ -11594,6 +11594,93 @@
       },
       "pregame_intel_captured_at": "2026-09-27T16:15:29",
       "wr_confidence_initial": 50.0
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 34,
+      "category": "totals_radar",
+      "matchup": "Los Angeles Chargers @ Buffalo Bills",
+      "selection": "Under 50.5",
+      "odds": -115,
+      "stake": 10.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 52.0,
+      "war_room_line": "Low-conviction research under, $0. DK 50.5 (-115); fair 48 (43-53), unchanged.",
+      "edge": "Open air, NE 13 mph gusting to 23 late, rain 6-19% -- not the coastal storm exposure.",
+      "price_discipline": "Low conviction only. DK under split 29/16. Noon CT.",
+      "espn_event_id": "401872953",
+      "bet_type": "total",
+      "bet_side": "under",
+      "bet_line": 50.5,
+      "home_team": null,
+      "away_team": null,
+      "created_at": "2026-09-27T16:15:32",
+      "id": 177,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "BUF -7",
+        "home_spread": -7.0,
+        "home_spread_odds": -112.0,
+        "away_spread_odds": -108.0,
+        "total": 50.5,
+        "over_odds": -105.0,
+        "under_odds": -115.0,
+        "home_moneyline": -325,
+        "away_moneyline": 260,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-09-27T16:15:37",
+      "pregame_weather": null,
+      "pregame_home_form": {
+        "played": 2,
+        "wins": 2,
+        "win_pct": 100.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 2,
+        "wins": 0,
+        "win_pct": 0.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 8.0,
+      "pregame_away_injuries": 8.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 0,
+          "gf": 41,
+          "ga": 31
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 0,
+          "gf": 36,
+          "ga": 31
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 0,
+          "d": 0,
+          "l": 2,
+          "gf": 28,
+          "ga": 52
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 0,
+          "gf": 0,
+          "ga": 0
+        }
+      },
+      "pregame_intel_captured_at": "2026-09-27T16:15:37",
+      "wr_confidence_initial": 52.38117647058824
     }
   ],
   "next_wallet_id": 24,
