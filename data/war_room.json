@@ -1,6 +1,6 @@
 {
   "next_report_id": 34,
-  "next_pick_id": 167,
+  "next_pick_id": 168,
   "reports": [
     {
       "source": "ChatGPT",
@@ -10632,6 +10632,101 @@
       },
       "pregame_intel_captured_at": "2026-09-27T15:45:24",
       "wr_confidence_initial": 75.8
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 33,
+      "category": "best_bet",
+      "matchup": "Minnesota Vikings @ Tampa Bay Buccaneers",
+      "selection": "Tampa Bay +1.5",
+      "odds": -110,
+      "stake": 40.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 50.0,
+      "war_room_line": "#10 -- $4,000 (logged $40). Cover 50.8%, EV -3.0%, score 50, expected profit -$120. Minnesota opened -2.5, now -1.5 at DK, exchange flipped Tampa to a 1.5-point favorite: a market in disagreement. Sheet +1.5 is the best Tampa number on any screen.",
+      "edge": "Model B has Minnesota by 1 with Kyler Murray back -- close to a coin flip -- but 62% of money is on Tampa Bay and the line has moved with it. Tampa's three linebackers out already priced.",
+      "price_discipline": "Risk: no edge in the model or the price; the flattest of the ten, sized that way. 3:05 CT.",
+      "espn_event_id": "401872959",
+      "bet_type": "spread",
+      "bet_side": "home",
+      "bet_line": 1.5,
+      "home_team": null,
+      "away_team": null,
+      "created_at": "2026-09-27T15:45:27",
+      "id": 167,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "MIN -1.5",
+        "home_spread": 1.5,
+        "home_spread_odds": -115.0,
+        "away_spread_odds": -105.0,
+        "total": 42.5,
+        "over_odds": -105.0,
+        "under_odds": -115.0,
+        "home_moneyline": 100,
+        "away_moneyline": -120,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-09-27T15:45:31",
+      "pregame_weather": {
+        "city": "Tampa",
+        "temp_c": 28.5,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 8.2,
+        "cloud_cover_pct": 32,
+        "forecast_hour": "2026-09-27T20:00"
+      },
+      "pregame_home_form": {
+        "played": 2,
+        "wins": 0,
+        "win_pct": 0.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 2,
+        "wins": 2,
+        "win_pct": 100.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 2.0,
+      "pregame_away_injuries": 1.25,
+      "pregame_home_split": {
+        "home": {
+          "w": 0,
+          "d": 0,
+          "l": 1,
+          "gf": 19,
+          "ga": 23
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 1,
+          "gf": 27,
+          "ga": 33
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 0,
+          "gf": 39,
+          "ga": 22
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 0,
+          "gf": 9,
+          "ga": 3
+        }
+      },
+      "pregame_intel_captured_at": "2026-09-27T15:45:31",
+      "wr_confidence_initial": 44.099999999999994
     }
   ],
   "next_wallet_id": 24,
