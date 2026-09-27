@@ -1,6 +1,6 @@
 {
   "next_report_id": 35,
-  "next_pick_id": 174,
+  "next_pick_id": 175,
   "reports": [
     {
       "source": "ChatGPT",
@@ -11309,6 +11309,101 @@
       },
       "pregame_intel_captured_at": "2026-09-27T16:15:10",
       "wr_confidence_initial": 57.57176470588235
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 34,
+      "category": "best_bet",
+      "matchup": "Cincinnati Bengals @ Pittsburgh Steelers",
+      "selection": "Pittsburgh +3.5",
+      "odds": -115,
+      "stake": 10.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 51.0,
+      "war_room_line": "Research only, $0. DK +3.5 (-115), was -112: more expensive hook. No completed fair-number case; the BetMGM money split cannot supply one.",
+      "edge": "Home divisional close-game path.",
+      "price_discipline": "Porter Jr. and Dowdle inactive weaken it. DK split PIT 22/25 vs BetMGM 34/68 -- different pools. Noon CT.",
+      "espn_event_id": "401872950",
+      "bet_type": "spread",
+      "bet_side": "home",
+      "bet_line": 3.5,
+      "home_team": null,
+      "away_team": null,
+      "created_at": "2026-09-27T16:15:13",
+      "id": 174,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "CIN -3.5",
+        "home_spread": 3.5,
+        "home_spread_odds": -118.0,
+        "away_spread_odds": -102.0,
+        "total": 42.5,
+        "over_odds": -112.0,
+        "under_odds": -108.0,
+        "home_moneyline": 150,
+        "away_moneyline": -180,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-09-27T16:15:16",
+      "pregame_weather": {
+        "city": "Pittsburgh",
+        "temp_c": 20.8,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 21.8,
+        "cloud_cover_pct": 58,
+        "forecast_hour": "2026-09-27T17:00"
+      },
+      "pregame_home_form": {
+        "played": 2,
+        "wins": 1,
+        "win_pct": 50.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 2,
+        "wins": 2,
+        "win_pct": 100.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 9.0,
+      "pregame_away_injuries": 6.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 0,
+          "gf": 20,
+          "ga": 13
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 1,
+          "gf": 3,
+          "ga": 20
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 0,
+          "gf": 33,
+          "ga": 27
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 0,
+          "gf": 20,
+          "ga": 6
+        }
+      },
+      "pregame_intel_captured_at": "2026-09-27T16:15:16",
+      "wr_confidence_initial": 42.190588235294115
     }
   ],
   "next_wallet_id": 24,
