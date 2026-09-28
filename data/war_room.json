@@ -10071,25 +10071,17 @@
         "provider": "Draft Kings",
         "spread_details": "PHI -3.5",
         "home_spread": 3.5,
-        "home_spread_odds": -108.0,
-        "away_spread_odds": -112.0,
-        "total": 41.5,
-        "over_odds": -110.0,
-        "under_odds": -110.0,
+        "home_spread_odds": -110.0,
+        "away_spread_odds": -110.0,
+        "total": 42.5,
+        "over_odds": -108.0,
+        "under_odds": -112.0,
         "home_moneyline": 164,
         "away_moneyline": -198,
         "draw_moneyline": null
       },
-      "pregame_odds_captured_at": "2026-09-28T15:09:08",
-      "pregame_weather": {
-        "city": "Chicago",
-        "temp_c": 16.7,
-        "precip_probability_pct": 1,
-        "precip_mm": 0.0,
-        "wind_kmh": 7.6,
-        "cloud_cover_pct": 2,
-        "forecast_hour": "2026-09-29T00:00"
-      },
+      "pregame_odds_captured_at": "2026-09-28T21:43:24",
+      "pregame_weather": null,
       "pregame_home_form": {
         "played": 2,
         "wins": 1,
@@ -10102,7 +10094,7 @@
         "win_pct": 100.0,
         "quality_wins": 0
       },
-      "pregame_home_injuries": 5.25,
+      "pregame_home_injuries": 4.25,
       "pregame_away_injuries": 4.5,
       "pregame_home_split": {
         "home": {
@@ -10136,7 +10128,7 @@
           "ga": 20
         }
       },
-      "pregame_intel_captured_at": "2026-09-28T15:09:08",
+      "pregame_intel_captured_at": "2026-09-28T21:43:24",
       "wr_confidence_initial": 64.3
     },
     {
@@ -11035,25 +11027,17 @@
         "provider": "Draft Kings",
         "spread_details": "PHI -3.5",
         "home_spread": 3.5,
-        "home_spread_odds": -108.0,
-        "away_spread_odds": -112.0,
-        "total": 41.5,
-        "over_odds": -110.0,
-        "under_odds": -110.0,
+        "home_spread_odds": -110.0,
+        "away_spread_odds": -110.0,
+        "total": 42.5,
+        "over_odds": -108.0,
+        "under_odds": -112.0,
         "home_moneyline": 164,
         "away_moneyline": -198,
         "draw_moneyline": null
       },
-      "pregame_odds_captured_at": "2026-09-28T15:09:08",
-      "pregame_weather": {
-        "city": "Chicago",
-        "temp_c": 16.7,
-        "precip_probability_pct": 1,
-        "precip_mm": 0.0,
-        "wind_kmh": 7.6,
-        "cloud_cover_pct": 2,
-        "forecast_hour": "2026-09-29T00:00"
-      },
+      "pregame_odds_captured_at": "2026-09-28T21:43:24",
+      "pregame_weather": null,
       "pregame_home_form": {
         "played": 2,
         "wins": 1,
@@ -11066,7 +11050,7 @@
         "win_pct": 100.0,
         "quality_wins": 0
       },
-      "pregame_home_injuries": 5.25,
+      "pregame_home_injuries": 4.25,
       "pregame_away_injuries": 4.5,
       "pregame_home_split": {
         "home": {
@@ -11100,7 +11084,7 @@
           "ga": 20
         }
       },
-      "pregame_intel_captured_at": "2026-09-28T15:09:08",
+      "pregame_intel_captured_at": "2026-09-28T21:43:24",
       "wr_confidence_initial": 62.3
     },
     {
