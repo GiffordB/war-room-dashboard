@@ -10069,25 +10069,25 @@
       "id": 160,
       "pregame_odds": {
         "provider": "Draft Kings",
-        "spread_details": "PHI -4.5",
-        "home_spread": 4.5,
-        "home_spread_odds": -120.0,
-        "away_spread_odds": 100.0,
+        "spread_details": "PHI -3.5",
+        "home_spread": 3.5,
+        "home_spread_odds": -108.0,
+        "away_spread_odds": -112.0,
         "total": 41.5,
         "over_odds": -105.0,
         "under_odds": -115.0,
-        "home_moneyline": 170,
-        "away_moneyline": -205,
+        "home_moneyline": 164,
+        "away_moneyline": -198,
         "draw_moneyline": null
       },
-      "pregame_odds_captured_at": "2026-09-28T00:27:24",
+      "pregame_odds_captured_at": "2026-09-28T06:30:28",
       "pregame_weather": {
         "city": "Chicago",
-        "temp_c": 16.6,
-        "precip_probability_pct": 1,
+        "temp_c": 16.3,
+        "precip_probability_pct": 2,
         "precip_mm": 0.0,
-        "wind_kmh": 7.2,
-        "cloud_cover_pct": 5,
+        "wind_kmh": 7.0,
+        "cloud_cover_pct": 3,
         "forecast_hour": "2026-09-29T00:00"
       },
       "pregame_home_form": {
@@ -10136,7 +10136,7 @@
           "ga": 20
         }
       },
-      "pregame_intel_captured_at": "2026-09-28T00:27:24",
+      "pregame_intel_captured_at": "2026-09-28T06:30:28",
       "wr_confidence_initial": 64.3
     },
     {
@@ -10915,8 +10915,8 @@
       "selection": "Denver +2.5",
       "odds": -110,
       "stake": 70.0,
-      "result": "pending",
-      "profit_loss": 0.0,
+      "result": "win",
+      "profit_loss": 63.63636363636363,
       "notes": "",
       "wr_confidence": 58.0,
       "war_room_line": "#7 -- $7,000 (logged $70). Cover 51.9%, EV -0.9%, score 58, expected profit -$63. Market Rams -1.5 (DK) to -2.5 (exchange); sheet +2.5 sits at the top of the range and owns the 2 against DK.",
@@ -11000,7 +11000,13 @@
         }
       },
       "pregame_intel_captured_at": "2026-09-27T21:55:41",
-      "wr_confidence_initial": 60.3
+      "wr_confidence_initial": 60.3,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 30,
+        "away_score": 26
+      }
     },
     {
       "parlay_leg_pick_ids": null,
@@ -11027,25 +11033,25 @@
       "id": 170,
       "pregame_odds": {
         "provider": "Draft Kings",
-        "spread_details": "PHI -4.5",
-        "home_spread": 4.5,
-        "home_spread_odds": -120.0,
-        "away_spread_odds": 100.0,
+        "spread_details": "PHI -3.5",
+        "home_spread": 3.5,
+        "home_spread_odds": -108.0,
+        "away_spread_odds": -112.0,
         "total": 41.5,
         "over_odds": -105.0,
         "under_odds": -115.0,
-        "home_moneyline": 170,
-        "away_moneyline": -205,
+        "home_moneyline": 164,
+        "away_moneyline": -198,
         "draw_moneyline": null
       },
-      "pregame_odds_captured_at": "2026-09-28T00:27:24",
+      "pregame_odds_captured_at": "2026-09-28T06:30:28",
       "pregame_weather": {
         "city": "Chicago",
-        "temp_c": 16.6,
-        "precip_probability_pct": 1,
+        "temp_c": 16.3,
+        "precip_probability_pct": 2,
         "precip_mm": 0.0,
-        "wind_kmh": 7.2,
-        "cloud_cover_pct": 5,
+        "wind_kmh": 7.0,
+        "cloud_cover_pct": 3,
         "forecast_hour": "2026-09-29T00:00"
       },
       "pregame_home_form": {
@@ -11094,7 +11100,7 @@
           "ga": 20
         }
       },
-      "pregame_intel_captured_at": "2026-09-28T00:27:24",
+      "pregame_intel_captured_at": "2026-09-28T06:30:28",
       "wr_confidence_initial": 62.3
     },
     {
