@@ -10071,8 +10071,8 @@
         "provider": "Draft Kings",
         "spread_details": "PHI -4.5",
         "home_spread": 4.5,
-        "home_spread_odds": -115.0,
-        "away_spread_odds": -105.0,
+        "home_spread_odds": -120.0,
+        "away_spread_odds": 100.0,
         "total": 41.5,
         "over_odds": -105.0,
         "under_odds": -115.0,
@@ -10080,11 +10080,11 @@
         "away_moneyline": -205,
         "draw_moneyline": null
       },
-      "pregame_odds_captured_at": "2026-09-27T21:55:41",
+      "pregame_odds_captured_at": "2026-09-28T00:27:24",
       "pregame_weather": {
         "city": "Chicago",
         "temp_c": 16.6,
-        "precip_probability_pct": 2,
+        "precip_probability_pct": 1,
         "precip_mm": 0.0,
         "wind_kmh": 7.2,
         "cloud_cover_pct": 5,
@@ -10102,7 +10102,7 @@
         "win_pct": 100.0,
         "quality_wins": 0
       },
-      "pregame_home_injuries": 4.25,
+      "pregame_home_injuries": 5.25,
       "pregame_away_injuries": 4.5,
       "pregame_home_split": {
         "home": {
@@ -10136,7 +10136,7 @@
           "ga": 20
         }
       },
-      "pregame_intel_captured_at": "2026-09-27T21:55:41",
+      "pregame_intel_captured_at": "2026-09-28T00:27:24",
       "wr_confidence_initial": 64.3
     },
     {
@@ -10612,8 +10612,8 @@
       "selection": "Arizona +8.5",
       "odds": -110,
       "stake": 120.0,
-      "result": "pending",
-      "profit_loss": 0.0,
+      "result": "win",
+      "profit_loss": 109.0909090909091,
       "notes": "",
       "wr_confidence": 68.0,
       "war_room_line": "#3 -- $12,000 (logged $120). Cover 54.6%, EV +4.2%, score 68, expected profit +$504. SF opened -11.5, bet to -7.5 at DK and the exchange with 57% of handle still on the 49ers. Sheet +8.5 holds the 8 (4.6% of margins).",
@@ -10697,7 +10697,13 @@
         }
       },
       "pregame_intel_captured_at": "2026-09-27T18:10:41",
-      "wr_confidence_initial": 75.8
+      "wr_confidence_initial": 75.8,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 36,
+        "away_score": 30
+      }
     },
     {
       "parlay_leg_pick_ids": null,
@@ -10707,8 +10713,8 @@
       "selection": "Tampa Bay +1.5",
       "odds": -110,
       "stake": 40.0,
-      "result": "pending",
-      "profit_loss": 0.0,
+      "result": "loss",
+      "profit_loss": -40.0,
       "notes": "",
       "wr_confidence": 50.0,
       "war_room_line": "#10 -- $4,000 (logged $40). Cover 50.8%, EV -3.0%, score 50, expected profit -$120. Minnesota opened -2.5, now -1.5 at DK, exchange flipped Tampa to a 1.5-point favorite: a market in disagreement. Sheet +1.5 is the best Tampa number on any screen.",
@@ -10792,7 +10798,13 @@
         }
       },
       "pregame_intel_captured_at": "2026-09-27T18:10:41",
-      "wr_confidence_initial": 44.099999999999994
+      "wr_confidence_initial": 44.099999999999994,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 16,
+        "away_score": 23
+      }
     },
     {
       "parlay_leg_pick_ids": null,
@@ -10802,8 +10814,8 @@
       "selection": "Over 52.5",
       "odds": -110,
       "stake": 60.0,
-      "result": "pending",
-      "profit_loss": 0.0,
+      "result": "win",
+      "profit_loss": 54.54545454545455,
       "notes": "",
       "wr_confidence": 64.0,
       "war_room_line": "#8 -- $6,000 (logged $60). Cover 54.4%, EV +3.9%, expected profit +$234. Highest total on the board keeps rising: opened 50.5, 53.5 exchange, 54.5 DK; sheet prints 52.5, 1.5 to 2 points low.",
@@ -10887,7 +10899,13 @@
         }
       },
       "pregame_intel_captured_at": "2026-09-27T18:10:41",
-      "wr_confidence_initial": 67.4
+      "wr_confidence_initial": 67.4,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 31,
+        "away_score": 34
+      }
     },
     {
       "parlay_leg_pick_ids": null,
@@ -11011,8 +11029,8 @@
         "provider": "Draft Kings",
         "spread_details": "PHI -4.5",
         "home_spread": 4.5,
-        "home_spread_odds": -115.0,
-        "away_spread_odds": -105.0,
+        "home_spread_odds": -120.0,
+        "away_spread_odds": 100.0,
         "total": 41.5,
         "over_odds": -105.0,
         "under_odds": -115.0,
@@ -11020,11 +11038,11 @@
         "away_moneyline": -205,
         "draw_moneyline": null
       },
-      "pregame_odds_captured_at": "2026-09-27T21:55:41",
+      "pregame_odds_captured_at": "2026-09-28T00:27:24",
       "pregame_weather": {
         "city": "Chicago",
         "temp_c": 16.6,
-        "precip_probability_pct": 2,
+        "precip_probability_pct": 1,
         "precip_mm": 0.0,
         "wind_kmh": 7.2,
         "cloud_cover_pct": 5,
@@ -11042,7 +11060,7 @@
         "win_pct": 100.0,
         "quality_wins": 0
       },
-      "pregame_home_injuries": 4.25,
+      "pregame_home_injuries": 5.25,
       "pregame_away_injuries": 4.5,
       "pregame_home_split": {
         "home": {
@@ -11076,7 +11094,7 @@
           "ga": 20
         }
       },
-      "pregame_intel_captured_at": "2026-09-27T21:55:41",
+      "pregame_intel_captured_at": "2026-09-28T00:27:24",
       "wr_confidence_initial": 62.3
     },
     {
