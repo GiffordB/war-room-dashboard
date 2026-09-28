@@ -10074,20 +10074,20 @@
         "home_spread_odds": -108.0,
         "away_spread_odds": -112.0,
         "total": 41.5,
-        "over_odds": -105.0,
-        "under_odds": -115.0,
+        "over_odds": -110.0,
+        "under_odds": -110.0,
         "home_moneyline": 164,
         "away_moneyline": -198,
         "draw_moneyline": null
       },
-      "pregame_odds_captured_at": "2026-09-28T06:30:28",
+      "pregame_odds_captured_at": "2026-09-28T15:09:08",
       "pregame_weather": {
         "city": "Chicago",
-        "temp_c": 16.3,
-        "precip_probability_pct": 2,
+        "temp_c": 16.7,
+        "precip_probability_pct": 1,
         "precip_mm": 0.0,
-        "wind_kmh": 7.0,
-        "cloud_cover_pct": 3,
+        "wind_kmh": 7.6,
+        "cloud_cover_pct": 2,
         "forecast_hour": "2026-09-29T00:00"
       },
       "pregame_home_form": {
@@ -10136,7 +10136,7 @@
           "ga": 20
         }
       },
-      "pregame_intel_captured_at": "2026-09-28T06:30:28",
+      "pregame_intel_captured_at": "2026-09-28T15:09:08",
       "wr_confidence_initial": 64.3
     },
     {
@@ -11038,20 +11038,20 @@
         "home_spread_odds": -108.0,
         "away_spread_odds": -112.0,
         "total": 41.5,
-        "over_odds": -105.0,
-        "under_odds": -115.0,
+        "over_odds": -110.0,
+        "under_odds": -110.0,
         "home_moneyline": 164,
         "away_moneyline": -198,
         "draw_moneyline": null
       },
-      "pregame_odds_captured_at": "2026-09-28T06:30:28",
+      "pregame_odds_captured_at": "2026-09-28T15:09:08",
       "pregame_weather": {
         "city": "Chicago",
-        "temp_c": 16.3,
-        "precip_probability_pct": 2,
+        "temp_c": 16.7,
+        "precip_probability_pct": 1,
         "precip_mm": 0.0,
-        "wind_kmh": 7.0,
-        "cloud_cover_pct": 3,
+        "wind_kmh": 7.6,
+        "cloud_cover_pct": 2,
         "forecast_hour": "2026-09-29T00:00"
       },
       "pregame_home_form": {
@@ -11100,7 +11100,7 @@
           "ga": 20
         }
       },
-      "pregame_intel_captured_at": "2026-09-28T06:30:28",
+      "pregame_intel_captured_at": "2026-09-28T15:09:08",
       "wr_confidence_initial": 62.3
     },
     {
