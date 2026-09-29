@@ -10052,7 +10052,7 @@
       "selection": "Chicago +4.5",
       "odds": -110,
       "stake": 0.0,
-      "result": "pending",
+      "result": "win",
       "profit_loss": 0.0,
       "notes": "",
       "wr_confidence": 65.0,
@@ -10129,7 +10129,13 @@
         }
       },
       "pregame_intel_captured_at": "2026-09-28T21:43:24",
-      "wr_confidence_initial": 64.3
+      "wr_confidence_initial": 64.3,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 27,
+        "away_score": 7
+      }
     },
     {
       "parlay_leg_pick_ids": null,
@@ -11008,8 +11014,8 @@
       "selection": "Chicago +4.5",
       "odds": -110,
       "stake": 100.0,
-      "result": "pending",
-      "profit_loss": 0.0,
+      "result": "win",
+      "profit_loss": 90.9090909090909,
       "notes": "",
       "wr_confidence": 65.0,
       "war_room_line": "#5 -- $10,000 (logged $100). Cover 56.3%, EV +7.5%, score 65, expected profit +$750. Philadelphia opened -4, bet down to -3.5 everywhere while 72-76% of money is on the Eagles. Sheet +4.5, a full point above the market and across the 4.",
@@ -11085,7 +11091,13 @@
         }
       },
       "pregame_intel_captured_at": "2026-09-28T21:43:24",
-      "wr_confidence_initial": 62.3
+      "wr_confidence_initial": 62.3,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 27,
+        "away_score": 7
+      }
     },
     {
       "parlay_leg_pick_ids": null,
