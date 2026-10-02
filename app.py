@@ -1322,25 +1322,13 @@ def weekly_wr_bucket_chart(week_keys, week_labels, bucket_data):
     return categories, series
 
 
-def war_room_locks(data, league=None):
+def _pending_side_groups(data, league=None):
     """
-    Consensus picks: still pending (upcoming, not graded yet) and picked
-    by at least CONSENSUS_MIN_SOURCES sources on the same game, market,
-    and side, each clearing CONSENSUS_MIN_WR_CONFIDENCE on their own
-    pick's *effective* WR Confidence Score - two sources agreeing while
-    both hedging doesn't count the same as two genuinely convicted picks,
-    so a source whose own number doesn't clear the bar doesn't count
-    toward the lock even if it's technically on the same side. Doesn't
-    require a unanimous sweep - two of three landing on the same side,
-    both convicted, is itself a real signal. Grouped by espn_event_id
-    rather than the free-text matchup, since that's the only reliable
-    way to tell "same game" across sources that word their matchup text
-    differently - so only picks pulled from the DraftKings-odds widget
-    (the ones carrying that id) are eligible at all. The bet line itself
-    isn't part of the match, since it can move slightly between when
-    each source wrote its report; agreeing on the same team on the same
-    side of the same market is what "consensus" means here. Callers must
-    annotate_wr_confidence(data) first.
+    ({(espn_event_id, bet_type, bet_side): {source: {"pick", "report"}}},
+    {league: {sources that have written a report in it}}) across every
+    still-pending, ESPN-linked pick - the shared grouping behind
+    war_room_locks() and aligned_picks(). One entry per source per side
+    (its newest pick, if a source somehow has two on the same side).
     """
     reports = {r["id"]: r for r in data["reports"]}
     groups = {}
@@ -1364,6 +1352,79 @@ def war_room_locks(data, league=None):
     # would make a CFB lock mathematically un-unanimous forever otherwise.
     for r in data["reports"]:
         sources_per_league.setdefault(r["league"], set()).add(r["source"])
+    return groups, sources_per_league
+
+
+def aligned_picks(data, league=None):
+    """
+    Every still-pending game/market/side that two or more sources landed
+    on together, with NO confidence bar - the broader cousin of
+    war_room_locks(), which only promotes an agreement to a Lock when
+    every agreeing pick clears CONSENSUS_MIN_WR_CONFIDENCE. Two sources
+    on the same side is worth seeing even when neither is especially
+    convicted. Each entry carries `is_lock` (it also qualifies as a
+    consensus Lock) and `opposing` (sources on the other side of the same
+    market, so a split room is visible at a glance). Callers must
+    annotate_wr_confidence(data) first. Sorted most-agreed first.
+    """
+    groups, sources_per_league = _pending_side_groups(data, league)
+    lock_keys = set()
+    for key, by_source in groups.items():
+        convicted = [
+            s for s, entry in by_source.items()
+            if (entry["pick"].get("wr_confidence_effective") or 0) >= CONSENSUS_MIN_WR_CONFIDENCE
+        ]
+        if len(convicted) >= CONSENSUS_MIN_SOURCES:
+            lock_keys.add(key)
+
+    aligned = []
+    for key, by_source in groups.items():
+        if len(by_source) < CONSENSUS_MIN_SOURCES:
+            continue
+        event_id, bet_type, bet_side = key
+        opposing = set()
+        for (other_event, other_type, other_side), others in groups.items():
+            if other_event == event_id and other_type == bet_type and other_side != bet_side:
+                opposing.update(others)
+        sample = next(iter(by_source.values()))
+        game_league = sample["report"]["league"]
+        aligned.append(
+            {
+                "matchup": sample["pick"]["matchup"],
+                "league": game_league,
+                "category": sample["pick"]["category"],
+                "by_source": by_source,
+                "sources": [s for s in SOURCES if s in by_source],
+                "opposing": [s for s in SOURCES if s in opposing],
+                "unanimous": set(by_source) >= sources_per_league.get(game_league, set()),
+                "is_lock": key in lock_keys,
+            }
+        )
+    aligned.sort(key=lambda a: (-len(a["by_source"]), a["matchup"]))
+    return aligned
+
+
+def war_room_locks(data, league=None):
+    """
+    Consensus picks: still pending (upcoming, not graded yet) and picked
+    by at least CONSENSUS_MIN_SOURCES sources on the same game, market,
+    and side, each clearing CONSENSUS_MIN_WR_CONFIDENCE on their own
+    pick's *effective* WR Confidence Score - two sources agreeing while
+    both hedging doesn't count the same as two genuinely convicted picks,
+    so a source whose own number doesn't clear the bar doesn't count
+    toward the lock even if it's technically on the same side. Doesn't
+    require a unanimous sweep - two of three landing on the same side,
+    both convicted, is itself a real signal. Grouped by espn_event_id
+    rather than the free-text matchup, since that's the only reliable
+    way to tell "same game" across sources that word their matchup text
+    differently - so only picks pulled from the DraftKings-odds widget
+    (the ones carrying that id) are eligible at all. The bet line itself
+    isn't part of the match, since it can move slightly between when
+    each source wrote its report; agreeing on the same team on the same
+    side of the same market is what "consensus" means here. Callers must
+    annotate_wr_confidence(data) first.
+    """
+    groups, sources_per_league = _pending_side_groups(data, league)
 
     locks = []
     for by_source in groups.values():
@@ -1945,6 +2006,7 @@ def dashboard():
 
     locks = war_room_locks(data, league)
     confidence_lock_picks = confidence_locks(data, league)
+    aligned = aligned_picks(data, league)
 
     stats = {s: source_stats(data, s, league) for s in SOURCES}
     ranked = rank_sources(stats)
@@ -1983,6 +2045,7 @@ def dashboard():
 
     return render_template(
         "index.html",
+        aligned=aligned,
         locks=locks,
         confidence_lock_picks=confidence_lock_picks,
         stats=stats,

@@ -144,6 +144,42 @@
     </div>
   </section>
 
+  <section class="aligned-section">
+    <h2 class="section-label aligned-label">🤝 Aligned Picks</h2>
+    <p class="muted small">Every still-pending game where two or more sources landed on the same side of the same market — no WR Confidence bar, unlike the Locks above. A <span class="badge-split">Split</span> tag means another source is on the other side.</p>
+    {% if aligned %}
+      <div class="locks-grid">
+        {% for a in aligned %}
+          <div class="lock-card">
+            <div class="lock-card-head">
+              <span class="badge-league">{{ a.league }}</span>
+              <span style="color: {{ categories[a.category].color }};">{{ categories[a.category].icon }} {{ categories[a.category].label }}</span>
+              {% if a.is_lock %}<span class="badge-unanimous" title="Also a consensus Lock of the Week">🔒 Lock</span>{% endif %}
+              {% if a.unanimous %}<span class="badge-unanimous" title="Every source covering this league is on this side">Unanimous</span>{% endif %}
+              {% if a.opposing %}<span class="badge-split" title="On the other side: {{ a.opposing|join(', ') }}">Split · {{ a.opposing|join(', ') }}</span>{% endif %}
+            </div>
+            <div class="lock-matchup">{{ a.matchup }}</div>
+            <div class="lock-sources">
+              {% for s in a.sources %}
+                {% set entry = a.by_source[s] %}
+                <div class="lock-source-row">
+                  <span class="badge-source" style="background: {{ source_color(s) }};">{{ s }}</span>
+                  <a href="{{ url_for('report_detail', report_id=entry.report.id) }}">{{ entry.pick.selection }}</a>
+                  <span class="muted">{{ '%+d'|format(entry.pick.odds) }}</span>
+                  {% if entry.pick.get('wr_confidence_effective') is not none %}
+                    <span class="badge-wr-confidence" title="{{ entry.pick.wr_confidence_breakdown }}">WR {{ wr_confidence_badge_text(entry.pick.wr_confidence_effective, entry.pick.get('wr_confidence_initial')) }}</span>
+                  {% endif %}
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    {% else %}
+      <p class="empty">No two sources are on the same side of a pending game right now.</p>
+    {% endif %}
+  </section>
+
   <section>
     <h2 class="section-label">Win Rate by Week</h2>
     {% if win_pct_chart %}

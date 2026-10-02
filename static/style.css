@@ -748,3 +748,20 @@ section { margin-bottom: 44px; }
 .disclaimer-page h2:first-child { margin-top: 0; }
 .disclaimer-page p { line-height: 1.6; color: var(--text); }
 .disclaimer-page a { color: var(--gold-bright); }
+
+/* Aligned Picks: the no-threshold cousin of the Locks section. */
+.aligned-section { margin-bottom: 32px; }
+.aligned-label { color: var(--accent, #38bdf8); }
+.badge-split {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  background: rgba(248, 113, 113, 0.18);
+  color: #f87171;
+  border: 1px solid rgba(248, 113, 113, 0.45);
+}
+.lock-source-row a { color: inherit; text-decoration: none; border-bottom: 1px dotted currentColor; }
+.lock-source-row a:hover { color: var(--gold-bright); }
