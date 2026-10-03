@@ -1,6 +1,6 @@
 {
   "next_report_id": 37,
-  "next_pick_id": 194,
+  "next_pick_id": 195,
   "reports": [
     {
       "source": "ChatGPT",
@@ -13205,6 +13205,101 @@
       },
       "pregame_intel_captured_at": "2026-10-03T15:25:18",
       "wr_confidence_initial": 82.5142857142857
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 36,
+      "category": "best_bet",
+      "matchup": "Wyoming Cowboys @ North Dakota State Bison",
+      "selection": "Wyoming +20",
+      "odds": -110,
+      "stake": 200.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 76.0,
+      "war_room_line": "Full model 76.2 / current lines 74.6 (Walters 73, Peabody 83, 4 of 5). Own number NDSU -16.1; Pinnacle -17 (+100); THE LINE 20. EV +10.0%.",
+      "edge": "Three points of paper stale against Pinnacle on a 20-point number; model and price agree.",
+      "price_discipline": "STAKE 2.00% ($200). Void if Pinnacle reaches North Dakota State -20 or your book is off +20. -110 assumed. Sat 2:30 CT.",
+      "espn_event_id": "401864515",
+      "bet_type": "spread",
+      "bet_side": "away",
+      "bet_line": 20.0,
+      "home_team": null,
+      "away_team": null,
+      "created_at": "2026-10-03T15:25:21",
+      "id": 194,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "NDSU -16.5",
+        "home_spread": -16.5,
+        "home_spread_odds": -112.0,
+        "away_spread_odds": -108.0,
+        "total": 44.5,
+        "over_odds": -105.0,
+        "under_odds": -115.0,
+        "home_moneyline": -950,
+        "away_moneyline": 625,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-10-03T15:25:24",
+      "pregame_weather": {
+        "city": "Fargo",
+        "temp_c": 18.7,
+        "precip_probability_pct": 9,
+        "precip_mm": 0.0,
+        "wind_kmh": 11.6,
+        "cloud_cover_pct": 100,
+        "forecast_hour": "2026-10-03T19:00"
+      },
+      "pregame_home_form": {
+        "played": 4,
+        "wins": 4,
+        "win_pct": 100.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 4,
+        "wins": 2,
+        "win_pct": 50.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 2,
+          "d": 0,
+          "l": 0,
+          "gf": 71,
+          "ga": 7
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 0,
+          "gf": 69,
+          "ga": 42
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 2,
+          "d": 0,
+          "l": 0,
+          "gf": 48,
+          "ga": 23
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 2,
+          "gf": 23,
+          "ga": 59
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-03T15:25:24",
+      "wr_confidence_initial": 71.18285714285715
     }
   ],
   "next_wallet_id": 24,
