@@ -12259,8 +12259,8 @@
       "selection": "Iowa +14.5",
       "odds": -115,
       "stake": 50.0,
-      "result": "pending",
-      "profit_loss": 0.0,
+      "result": "loss",
+      "profit_loss": -50.0,
       "notes": "",
       "wr_confidence": 61.0,
       "war_room_line": "Rank #2 of 13. DK +14.5 (-115), 2:30 CT.",
@@ -12344,7 +12344,13 @@
         }
       },
       "pregame_intel_captured_at": "2026-10-03T17:06:55",
-      "wr_confidence_initial": 68.49333333333334
+      "wr_confidence_initial": 68.49333333333334,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 14,
+        "away_score": 31
+      }
     },
     {
       "parlay_leg_pick_ids": null,
@@ -12354,8 +12360,8 @@
       "selection": "Florida -5.5",
       "odds": -110,
       "stake": 25.0,
-      "result": "pending",
-      "profit_loss": 0.0,
+      "result": "loss",
+      "profit_loss": -25.0,
       "notes": "",
       "wr_confidence": 53.0,
       "war_room_line": "Rank #9 of 13. DK -5.5 (-110), 2:30 CT.",
@@ -12439,7 +12445,13 @@
         }
       },
       "pregame_intel_captured_at": "2026-10-03T17:06:55",
-      "wr_confidence_initial": 59.08
+      "wr_confidence_initial": 59.08,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 45,
+        "away_score": 17
+      }
     },
     {
       "parlay_leg_pick_ids": null,
@@ -12449,8 +12461,8 @@
       "selection": "NC State +3",
       "odds": -105,
       "stake": 25.0,
-      "result": "pending",
-      "profit_loss": 0.0,
+      "result": "win",
+      "profit_loss": 23.80952380952381,
       "notes": "",
       "wr_confidence": 55.0,
       "war_room_line": "Rank #7 of 13. DK +3 (-105), 2:30 CT.",
@@ -12534,7 +12546,13 @@
         }
       },
       "pregame_intel_captured_at": "2026-10-03T17:06:55",
-      "wr_confidence_initial": 53.333333333333336
+      "wr_confidence_initial": 53.333333333333336,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 31,
+        "away_score": 28
+      }
     },
     {
       "parlay_leg_pick_ids": null,
@@ -12544,8 +12562,8 @@
       "selection": "North Dakota State -16.5",
       "odds": -118,
       "stake": 10.0,
-      "result": "pending",
-      "profit_loss": 0.0,
+      "result": "win",
+      "profit_loss": 8.474576271186441,
       "notes": "",
       "wr_confidence": 49.0,
       "war_room_line": "Rank #12 of 13. DK -16.5 (-118), 2:30 CT.",
@@ -12629,7 +12647,13 @@
         }
       },
       "pregame_intel_captured_at": "2026-10-03T17:06:55",
-      "wr_confidence_initial": 57.4
+      "wr_confidence_initial": 57.4,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 28,
+        "away_score": 0
+      }
     },
     {
       "parlay_leg_pick_ids": null,
@@ -12751,25 +12775,25 @@
       "id": 188,
       "pregame_odds": {
         "provider": "Draft Kings",
-        "spread_details": "MIA -15.5",
-        "home_spread": 15.5,
-        "home_spread_odds": -110.0,
-        "away_spread_odds": -110.0,
-        "total": 48.5,
-        "over_odds": -108.0,
-        "under_odds": -112.0,
-        "home_moneyline": 525,
-        "away_moneyline": -750,
+        "spread_details": "MIA -14",
+        "home_spread": 14.0,
+        "home_spread_odds": -108.0,
+        "away_spread_odds": -112.0,
+        "total": 49.5,
+        "over_odds": -105.0,
+        "under_odds": -115.0,
+        "home_moneyline": 500,
+        "away_moneyline": -700,
         "draw_moneyline": null
       },
-      "pregame_odds_captured_at": "2026-10-03T20:49:17",
+      "pregame_odds_captured_at": "2026-10-03T23:37:53",
       "pregame_weather": {
         "city": "Clemson",
-        "temp_c": 26.2,
-        "precip_probability_pct": 32,
+        "temp_c": 26.4,
+        "precip_probability_pct": 22,
         "precip_mm": 0.0,
-        "wind_kmh": 5.1,
-        "cloud_cover_pct": 100,
+        "wind_kmh": 3.8,
+        "cloud_cover_pct": 91,
         "forecast_hour": "2026-10-03T23:00"
       },
       "pregame_home_form": {
@@ -12818,7 +12842,7 @@
           "ga": 26
         }
       },
-      "pregame_intel_captured_at": "2026-10-03T20:49:17",
+      "pregame_intel_captured_at": "2026-10-03T23:37:53",
       "wr_confidence_initial": 53.16
     },
     {
@@ -12952,13 +12976,13 @@
         "away_moneyline": 850,
         "draw_moneyline": null
       },
-      "pregame_odds_captured_at": "2026-10-03T20:49:17",
+      "pregame_odds_captured_at": "2026-10-03T23:37:53",
       "pregame_weather": {
         "city": "Boise",
-        "temp_c": 29.0,
+        "temp_c": 29.7,
         "precip_probability_pct": 0,
         "precip_mm": 0.0,
-        "wind_kmh": 2.2,
+        "wind_kmh": 6.9,
         "cloud_cover_pct": 0,
         "forecast_hour": "2026-10-03T23:00"
       },
@@ -13008,7 +13032,7 @@
           "ga": 49
         }
       },
-      "pregame_intel_captured_at": "2026-10-03T20:49:17",
+      "pregame_intel_captured_at": "2026-10-03T23:37:53",
       "wr_confidence_initial": 58.4
     },
     {
@@ -13036,24 +13060,24 @@
       "id": 191,
       "pregame_odds": {
         "provider": "Draft Kings",
-        "spread_details": "LSU -54.5",
-        "home_spread": -54.5,
-        "home_spread_odds": -108.0,
-        "away_spread_odds": -112.0,
+        "spread_details": "LSU -53.5",
+        "home_spread": -53.5,
+        "home_spread_odds": -115.0,
+        "away_spread_odds": -105.0,
         "total": 62.5,
-        "over_odds": -105.0,
-        "under_odds": -115.0,
+        "over_odds": -115.0,
+        "under_odds": -105.0,
         "home_moneyline": null,
         "away_moneyline": null,
         "draw_moneyline": null
       },
-      "pregame_odds_captured_at": "2026-10-03T20:49:17",
+      "pregame_odds_captured_at": "2026-10-03T23:37:53",
       "pregame_weather": {
         "city": "Baton Rouge",
-        "temp_c": 26.6,
-        "precip_probability_pct": 29,
+        "temp_c": 27.3,
+        "precip_probability_pct": 32,
         "precip_mm": 0.0,
-        "wind_kmh": 8.6,
+        "wind_kmh": 12.3,
         "cloud_cover_pct": 100,
         "forecast_hour": "2026-10-03T23:00"
       },
@@ -13103,7 +13127,7 @@
           "ga": 27
         }
       },
-      "pregame_intel_captured_at": "2026-10-03T20:49:17",
+      "pregame_intel_captured_at": "2026-10-03T23:37:53",
       "wr_confidence_initial": 35.599999999999994
     },
     {
@@ -13118,8 +13142,8 @@
       "selection": "Good-If-It-Goes Parlay",
       "odds": 591,
       "stake": 10.0,
-      "result": "pending",
-      "profit_loss": 0.0,
+      "result": "loss",
+      "profit_loss": -10.0,
       "notes": "",
       "wr_confidence": null,
       "war_room_line": "Independent-leg arithmetic +591, 14.5% break-even; hypothetical $10 returns $69.09. Exact DK combined quote unavailable; not a bookmaker quote or estimated true probability.",
@@ -13143,8 +13167,8 @@
       "selection": "Bowling Green +14.5",
       "odds": -110,
       "stake": 200.0,
-      "result": "pending",
-      "profit_loss": 0.0,
+      "result": "win",
+      "profit_loss": 181.8181818181818,
       "notes": "",
       "wr_confidence": 82.0,
       "war_room_line": "Full model 81.7 / current lines 82.1 (Walters 88, brain trust 82.6, market 76.5, 4 of 5). Own number Miami (OH) -4.9; Pinnacle -11 (-103) at 10:15 CT, -10.7 fair; THE LINE 14.5. EV +16.0%.",
@@ -13228,7 +13252,13 @@
         }
       },
       "pregame_intel_captured_at": "2026-10-03T17:06:55",
-      "wr_confidence_initial": 82.5142857142857
+      "wr_confidence_initial": 82.5142857142857,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 20,
+        "away_score": 24
+      }
     },
     {
       "parlay_leg_pick_ids": null,
@@ -13238,8 +13268,8 @@
       "selection": "Wyoming +20",
       "odds": -110,
       "stake": 200.0,
-      "result": "pending",
-      "profit_loss": 0.0,
+      "result": "loss",
+      "profit_loss": -200.0,
       "notes": "",
       "wr_confidence": 76.0,
       "war_room_line": "Full model 76.2 / current lines 74.6 (Walters 73, Peabody 83, 4 of 5). Own number NDSU -16.1; Pinnacle -17 (+100); THE LINE 20. EV +10.0%.",
@@ -13323,7 +13353,13 @@
         }
       },
       "pregame_intel_captured_at": "2026-10-03T17:06:55",
-      "wr_confidence_initial": 71.18285714285715
+      "wr_confidence_initial": 71.18285714285715,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 28,
+        "away_score": 0
+      }
     },
     {
       "parlay_leg_pick_ids": null,
@@ -13333,8 +13369,8 @@
       "selection": "NC State +6",
       "odds": -110,
       "stake": 200.0,
-      "result": "pending",
-      "profit_loss": 0.0,
+      "result": "win",
+      "profit_loss": 181.8181818181818,
       "notes": "",
       "wr_confidence": 76.0,
       "war_room_line": "Full model 75.7 / current lines 75.1 (Walters 73, 4 of 5). Own number Louisville -7.2 (was 8.7); Pinnacle -3 (-109); THE LINE 6. EV +22.6%.",
@@ -13418,7 +13454,13 @@
         }
       },
       "pregame_intel_captured_at": "2026-10-03T17:06:55",
-      "wr_confidence_initial": 84.06285714285715
+      "wr_confidence_initial": 84.06285714285715,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 31,
+        "away_score": 28
+      }
     },
     {
       "parlay_leg_pick_ids": null,
