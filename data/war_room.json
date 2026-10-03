@@ -1,6 +1,6 @@
 {
   "next_report_id": 36,
-  "next_pick_id": 184,
+  "next_pick_id": 185,
   "reports": [
     {
       "source": "ChatGPT",
@@ -12309,6 +12309,101 @@
       },
       "pregame_intel_captured_at": "2026-10-03T15:22:21",
       "wr_confidence_initial": 68.49333333333334
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 35,
+      "category": "best_bet",
+      "matchup": "Florida Gators @ Missouri Tigers",
+      "selection": "Florida -5.5",
+      "odds": -110,
+      "stake": 25.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 53.0,
+      "war_room_line": "Rank #9 of 13. DK -5.5 (-110), 2:30 CT.",
+      "edge": "Replaces Friday's Missouri selection.",
+      "price_discipline": "Ranked cover preference, separate from cash wagers; qualified money exposure $0.",
+      "espn_event_id": "401856708",
+      "bet_type": "spread",
+      "bet_side": "away",
+      "bet_line": -5.5,
+      "home_team": null,
+      "away_team": null,
+      "created_at": "2026-10-03T15:22:24",
+      "id": 184,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "FLA -5.5",
+        "home_spread": 5.5,
+        "home_spread_odds": -110.0,
+        "away_spread_odds": -110.0,
+        "total": 57.5,
+        "over_odds": -112.0,
+        "under_odds": -108.0,
+        "home_moneyline": 180,
+        "away_moneyline": -218,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-10-03T15:22:27",
+      "pregame_weather": {
+        "city": "Columbia",
+        "temp_c": 25.6,
+        "precip_probability_pct": 35,
+        "precip_mm": 0.4,
+        "wind_kmh": 5.6,
+        "cloud_cover_pct": 100,
+        "forecast_hour": "2026-10-03T19:00"
+      },
+      "pregame_home_form": {
+        "played": 4,
+        "wins": 3,
+        "win_pct": 75.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 4,
+        "wins": 4,
+        "win_pct": 100.0,
+        "quality_wins": 1
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 2,
+          "d": 0,
+          "l": 0,
+          "gf": 81,
+          "ga": 31
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 1,
+          "gf": 62,
+          "ga": 52
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 3,
+          "d": 0,
+          "l": 0,
+          "gf": 170,
+          "ga": 52
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 0,
+          "gf": 44,
+          "ga": 39
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-03T15:22:27",
+      "wr_confidence_initial": 59.08
     }
   ],
   "next_wallet_id": 24,
