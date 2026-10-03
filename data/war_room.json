@@ -1,6 +1,6 @@
 {
   "next_report_id": 37,
-  "next_pick_id": 197,
+  "next_pick_id": 198,
   "reports": [
     {
       "source": "ChatGPT",
@@ -13490,6 +13490,101 @@
       },
       "pregame_intel_captured_at": "2026-10-03T15:25:37",
       "wr_confidence_initial": 79.81714285714287
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 36,
+      "category": "best_bet",
+      "matchup": "Army Black Knights @ Louisiana Tech Bulldogs",
+      "selection": "Louisiana Tech +3.5",
+      "odds": -110,
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 71.0,
+      "war_room_line": "Current-lines-only 70.5 (a stake on that list); full model 12th. Own number Army -1.9; Pinnacle Army -1.5 (-102), fair -1.2; THE LINE 3.5, captures the 3. EV +22.0%.",
+      "edge": "Qualifies on price, model and key number; ranks 12th on the full model only because no public or RLM read exists for the game.",
+      "price_discipline": "TRACKED, $0 -- a stake under the current-lines build, an override candidate under the full model (0.5% max). Sat 6:30 CT.",
+      "espn_event_id": "401869842",
+      "bet_type": "spread",
+      "bet_side": "home",
+      "bet_line": 3.5,
+      "home_team": null,
+      "away_team": null,
+      "created_at": "2026-10-03T15:25:41",
+      "id": 197,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "ARMY -1.5",
+        "home_spread": 1.5,
+        "home_spread_odds": -110.0,
+        "away_spread_odds": -110.0,
+        "total": 46.5,
+        "over_odds": -115.0,
+        "under_odds": -105.0,
+        "home_moneyline": 102,
+        "away_moneyline": -122,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-10-03T15:25:45",
+      "pregame_weather": {
+        "city": "Ruston",
+        "temp_c": 31.1,
+        "precip_probability_pct": 15,
+        "precip_mm": 0.0,
+        "wind_kmh": 14.8,
+        "cloud_cover_pct": 100,
+        "forecast_hour": "2026-10-03T23:00"
+      },
+      "pregame_home_form": {
+        "played": 3,
+        "wins": 1,
+        "win_pct": 33.33333333333333,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 3,
+        "wins": 2,
+        "win_pct": 66.66666666666666,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 0,
+          "gf": 80,
+          "ga": 6
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 2,
+          "gf": 33,
+          "ga": 81
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 1,
+          "gf": 83,
+          "ga": 31
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 0,
+          "gf": 21,
+          "ga": 17
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-03T15:25:45",
+      "wr_confidence_initial": 76.6
     }
   ],
   "next_wallet_id": 24,
