@@ -1,5 +1,5 @@
 {
-  "next_report_id": 36,
+  "next_report_id": 37,
   "next_pick_id": 193,
   "reports": [
     {
@@ -324,6 +324,18 @@
       "lsu_review_notes": "",
       "created_at": "2026-10-03T15:21:47",
       "id": 35
+    },
+    {
+      "source": "Claude",
+      "league": "CFB",
+      "report_date": "2026-10-03",
+      "week_number": 5,
+      "week_label": "Week 5 -- College Top 10, Two Ways v3.2 Saturday edition (Maven Quant, Model A)",
+      "philosophy": "Saturday edition, 10:15 AM CT. THE LINE (Friday print, Saturday games unchanged) priced against PINNACLE -- captured this week (15:15 UTC) -- with BetMGM Top-25, DraftKings and Caesars splits and DK handle via VSiN. Top 10 built two ways: the full model (brain trust 85% + market 15%, including Spanky's movement half, reverse line movement and the market layer) and current-lines-only (100% brain trust, movement neutral, RLM zeroed). Stakes need the 70 floor, the 4-of-5 agreement gate and the college stale rule (gap above 2 points unless prime time); override candidates fail a gate and are playable only as logged overrides at 0.5% max. Quarter-Kelly, 2% per-game cap; price on the paper is not printed, -110 assumed. Line movement is not what is driving this card: strip it out and the same four teams lead both lists. The edge is the Friday paper sitting 3-4 points off Pinnacle on games where quarterback news broke after it printed -- the Walters seat working. FULL-MODEL SLIP: four underdogs at the 2% cap, 8.00% ($800 per $10k), the most the desk has put out on one college Saturday. If you want a ceiling, play the top three by score (Bowling Green, Wyoming, NC State) at 6.00% and hold Washington, the only one with no sourced news behind its move.",
+      "blind_spot_notes": "STAKED: Bowling Green +14.5 at Miami (OH) (81.7, best bet on the board -- Miami starting QB David McComb out per Chuck Martin and the preseason starter out for the season, a third-stringer starts; Pinnacle -10.7 vs paper 14.5; model, information and price all agree; void if Pinnacle reaches -14.5), Wyoming +20 at North Dakota State (76.2; Pinnacle -17; void at -20), NC State +6 vs Louisville (75.7; Kienholz a game-time decision per Thamel, model Louisville by 7.2 from 8.7, EV +22.6%, no longer a pure market bet, 4 of 5 agree; void at -6), Washington +9.5 at USC (72.6; Pinnacle -7.5; void at -9.5; no sourced news behind the move). Recheck Pinnacle at each window. CURRENT-LINES-ONLY adds Louisiana Tech +3.5 vs Army as a stake (70.5; EV +22%, Pinnacle Army -1.2, captures the 3; 12th on the full model only because no public/RLM read exists) -- logged here as tracked. Override candidates (0.5% max, not system bets): Oregon State -4 (80.0, 2 of 5), Buffalo +15.5 (73.1), Kent State +5.5 (70.3), Clemson +17.5 (69.9), Texas State -3.5 (69.5, EV +46.8% on a sheet 6 points off Pinnacle), Utah State +21 (68.9 -- DROPPED from Friday: Pinnacle moved Boise back to 19.35, price edge under the 2-point rule, RLM half a point; if placed Friday hold it, Pinnacle is not on 21 so not void, do not add), Washington State +1.5, Georgia State +1.5. Board tracked, not logged: Florida State +3, UL-Monroe +14.5, Kentucky +3.5, TCU +6.5. Information layer applied only with a named source and date (QB out full weight, QB uncertain half weight plus the Peabody penalty); weather zero by rule for college sides. Unverified, not applied: Colorado QBs Gardner (out) and Lagway (questionable), Illinois QB Hampton (out). Memphis-Charlotte off the Pinnacle board, not priced.",
+      "lsu_review_notes": "",
+      "created_at": "2026-10-03T15:25:05",
+      "id": 36
     }
   ],
   "picks": [
