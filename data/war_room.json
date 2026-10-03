@@ -1,6 +1,6 @@
 {
   "next_report_id": 36,
-  "next_pick_id": 191,
+  "next_pick_id": 192,
   "reports": [
     {
       "source": "ChatGPT",
@@ -12974,6 +12974,101 @@
       },
       "pregame_intel_captured_at": "2026-10-03T15:23:03",
       "wr_confidence_initial": 58.4
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 35,
+      "category": "best_bet",
+      "matchup": "McNeese Cowboys @ LSU Tigers",
+      "selection": "McNeese +52.5",
+      "odds": -105,
+      "stake": 10.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 48.0,
+      "war_room_line": "Rank #13 of 13. DK +52.5 (-105), 6:45 CT.",
+      "edge": "Reported DK quote: DK-attributed secondary reporting, not a refreshed betslip.",
+      "price_discipline": "Ranked cover preference, separate from cash wagers; qualified money exposure $0.",
+      "espn_event_id": "401856706",
+      "bet_type": "spread",
+      "bet_side": "away",
+      "bet_line": 52.5,
+      "home_team": null,
+      "away_team": null,
+      "created_at": "2026-10-03T15:23:06",
+      "id": 191,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "LSU -54.5",
+        "home_spread": -54.5,
+        "home_spread_odds": -108.0,
+        "away_spread_odds": -112.0,
+        "total": 62.5,
+        "over_odds": -112.0,
+        "under_odds": -108.0,
+        "home_moneyline": null,
+        "away_moneyline": null,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-10-03T15:23:13",
+      "pregame_weather": {
+        "city": "Baton Rouge",
+        "temp_c": 28.9,
+        "precip_probability_pct": 32,
+        "precip_mm": 0.0,
+        "wind_kmh": 12.6,
+        "cloud_cover_pct": 100,
+        "forecast_hour": "2026-10-03T23:00"
+      },
+      "pregame_home_form": {
+        "played": 4,
+        "wins": 3,
+        "win_pct": 75.0,
+        "quality_wins": 1
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 2,
+        "win_pct": 40.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 3,
+          "d": 0,
+          "l": 0,
+          "gf": 131,
+          "ga": 30
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 1,
+          "gf": 24,
+          "ga": 32
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 2,
+          "d": 0,
+          "l": 2,
+          "gf": 130,
+          "ga": 89
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 1,
+          "gf": 10,
+          "ga": 27
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-03T15:23:13",
+      "wr_confidence_initial": 35.599999999999994
     }
   ],
   "next_wallet_id": 24,
