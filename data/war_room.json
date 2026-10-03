@@ -1,6 +1,6 @@
 {
   "next_report_id": 36,
-  "next_pick_id": 189,
+  "next_pick_id": 190,
   "reports": [
     {
       "source": "ChatGPT",
@@ -12784,6 +12784,101 @@
       },
       "pregame_intel_captured_at": "2026-10-03T15:22:51",
       "wr_confidence_initial": 53.16
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 35,
+      "category": "best_bet",
+      "matchup": "Washington Huskies @ USC Trojans",
+      "selection": "Washington +8.5",
+      "odds": -108,
+      "stake": 25.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 52.0,
+      "war_room_line": "Rank #10 of 13. DK +8.5 (-108), 6:30 CT.",
+      "edge": "Competition only.",
+      "price_discipline": "Ranked cover preference, separate from cash wagers; qualified money exposure $0.",
+      "espn_event_id": "401858478",
+      "bet_type": "spread",
+      "bet_side": "away",
+      "bet_line": 8.5,
+      "home_team": null,
+      "away_team": null,
+      "created_at": "2026-10-03T15:22:54",
+      "id": 189,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "USC -8.5",
+        "home_spread": -8.5,
+        "home_spread_odds": -112.0,
+        "away_spread_odds": -108.0,
+        "total": 58.5,
+        "over_odds": -105.0,
+        "under_odds": -115.0,
+        "home_moneyline": -360,
+        "away_moneyline": 285,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-10-03T15:22:57",
+      "pregame_weather": {
+        "city": "Los Angeles",
+        "temp_c": 36.3,
+        "precip_probability_pct": 1,
+        "precip_mm": 0.0,
+        "wind_kmh": 17.4,
+        "cloud_cover_pct": 1,
+        "forecast_hour": "2026-10-03T23:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 4,
+        "win_pct": 80.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 4,
+        "wins": 3,
+        "win_pct": 75.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 3,
+          "d": 0,
+          "l": 1,
+          "gf": 157,
+          "ga": 97
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 0,
+          "gf": 42,
+          "ga": 35
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 3,
+          "d": 0,
+          "l": 1,
+          "gf": 112,
+          "ga": 67
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 0,
+          "gf": 0,
+          "ga": 0
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-03T15:22:57",
+      "wr_confidence_initial": 51.45333333333333
     }
   ],
   "next_wallet_id": 24,
