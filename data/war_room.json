@@ -1,6 +1,6 @@
 {
   "next_report_id": 36,
-  "next_pick_id": 180,
+  "next_pick_id": 181,
   "reports": [
     {
       "source": "ChatGPT",
@@ -11929,6 +11929,101 @@
       },
       "pregame_intel_captured_at": "2026-10-03T15:21:59",
       "wr_confidence_initial": 64.82
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 35,
+      "category": "best_bet",
+      "matchup": "Alabama Crimson Tide @ Mississippi State Bulldogs",
+      "selection": "Mississippi State +5.5",
+      "odds": -112,
+      "stake": 25.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 54.0,
+      "war_room_line": "Rank #8 of 13. DK +5.5 (-112), 11:00 CT.",
+      "edge": "Competition only.",
+      "price_discipline": "Ranked cover preference, separate from cash wagers; qualified money exposure $0.",
+      "espn_event_id": "401856707",
+      "bet_type": "spread",
+      "bet_side": "home",
+      "bet_line": 5.5,
+      "home_team": null,
+      "away_team": null,
+      "created_at": "2026-10-03T15:22:01",
+      "id": 180,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "ALA -5.5",
+        "home_spread": 5.5,
+        "home_spread_odds": -112.0,
+        "away_spread_odds": -108.0,
+        "total": 62.5,
+        "over_odds": -110.0,
+        "under_odds": -110.0,
+        "home_moneyline": 170,
+        "away_moneyline": -205,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-10-03T15:22:04",
+      "pregame_weather": {
+        "city": "Starkville",
+        "temp_c": 28.3,
+        "precip_probability_pct": 1,
+        "precip_mm": 0.0,
+        "wind_kmh": 4.9,
+        "cloud_cover_pct": 100,
+        "forecast_hour": "2026-10-03T16:00"
+      },
+      "pregame_home_form": {
+        "played": 4,
+        "wins": 4,
+        "win_pct": 100.0,
+        "quality_wins": 1
+      },
+      "pregame_away_form": {
+        "played": 4,
+        "wins": 4,
+        "win_pct": 100.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 2,
+          "d": 0,
+          "l": 0,
+          "gf": 93,
+          "ga": 37
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 0,
+          "gf": 79,
+          "ga": 47
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 3,
+          "d": 0,
+          "l": 0,
+          "gf": 147,
+          "ga": 64
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 0,
+          "gf": 45,
+          "ga": 17
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-03T15:22:04",
+      "wr_confidence_initial": 57.10666666666667
     }
   ],
   "next_wallet_id": 24,
