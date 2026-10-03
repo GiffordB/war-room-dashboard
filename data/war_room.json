@@ -1,6 +1,6 @@
 {
   "next_report_id": 37,
-  "next_pick_id": 193,
+  "next_pick_id": 194,
   "reports": [
     {
       "source": "ChatGPT",
@@ -13110,6 +13110,101 @@
       "created_at": "2026-10-03T15:23:16",
       "id": 192,
       "wr_confidence_initial": null
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 36,
+      "category": "best_bet",
+      "matchup": "Bowling Green Falcons @ Miami (OH) RedHawks",
+      "selection": "Bowling Green +14.5",
+      "odds": -110,
+      "stake": 200.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 82.0,
+      "war_room_line": "Full model 81.7 / current lines 82.1 (Walters 88, brain trust 82.6, market 76.5, 4 of 5). Own number Miami (OH) -4.9; Pinnacle -11 (-103) at 10:15 CT, -10.7 fair; THE LINE 14.5. EV +16.0%.",
+      "edge": "Best bet on the board. Miami (OH) starting QB David McComb out (Chuck Martin) and the preseason starter out for the season -- a third-stringer starts. The Friday paper printed before the news. Model, information and price all agree.",
+      "price_discipline": "STAKE 2.00% ($200). Void if Pinnacle reaches Miami (OH) -14.5 or your book is off +14.5. -110 assumed. Sat 2:30 CT.",
+      "espn_event_id": "401866477",
+      "bet_type": "spread",
+      "bet_side": "away",
+      "bet_line": 14.5,
+      "home_team": null,
+      "away_team": null,
+      "created_at": "2026-10-03T15:25:15",
+      "id": 193,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "M-OH -10.5",
+        "home_spread": -10.5,
+        "home_spread_odds": -110.0,
+        "away_spread_odds": -110.0,
+        "total": 41.5,
+        "over_odds": -112.0,
+        "under_odds": -108.0,
+        "home_moneyline": -470,
+        "away_moneyline": 360,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-10-03T15:25:18",
+      "pregame_weather": {
+        "city": "Oxford",
+        "temp_c": 15.5,
+        "precip_probability_pct": 10,
+        "precip_mm": 0.0,
+        "wind_kmh": 5.0,
+        "cloud_cover_pct": 2,
+        "forecast_hour": "2026-10-03T19:00"
+      },
+      "pregame_home_form": {
+        "played": 4,
+        "wins": 2,
+        "win_pct": 50.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 4,
+        "wins": 0,
+        "win_pct": 0.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 2,
+          "d": 0,
+          "l": 0,
+          "gf": 69,
+          "ga": 28
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 2,
+          "gf": 45,
+          "ga": 94
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 0,
+          "d": 0,
+          "l": 2,
+          "gf": 19,
+          "ga": 34
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 2,
+          "gf": 14,
+          "ga": 111
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-03T15:25:18",
+      "wr_confidence_initial": 82.5142857142857
     }
   ],
   "next_wallet_id": 24,
