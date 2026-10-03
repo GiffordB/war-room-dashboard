@@ -1,6 +1,6 @@
 {
   "next_report_id": 36,
-  "next_pick_id": 179,
+  "next_pick_id": 180,
   "reports": [
     {
       "source": "ChatGPT",
@@ -11834,6 +11834,101 @@
       "created_at": "2026-09-27T16:15:40",
       "id": 178,
       "wr_confidence_initial": null
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 35,
+      "category": "best_bet",
+      "matchup": "Syracuse Orange @ UConn Huskies",
+      "selection": "UConn +6.5",
+      "odds": -105,
+      "stake": 50.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 62.0,
+      "war_room_line": "Rank #1 of 13. DK +6.5 (-105), 11:00 CT.",
+      "edge": "Lost the key 7 since Friday.",
+      "price_discipline": "Ranked cover preference, separate from cash wagers; qualified money exposure $0.",
+      "espn_event_id": "401858252",
+      "bet_type": "spread",
+      "bet_side": "home",
+      "bet_line": 6.5,
+      "home_team": null,
+      "away_team": null,
+      "created_at": "2026-10-03T15:21:55",
+      "id": 179,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "SYR -6.5",
+        "home_spread": 6.5,
+        "home_spread_odds": -105.0,
+        "away_spread_odds": -115.0,
+        "total": 51.5,
+        "over_odds": -105.0,
+        "under_odds": -115.0,
+        "home_moneyline": 215,
+        "away_moneyline": -265,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-10-03T15:21:59",
+      "pregame_weather": {
+        "city": "East Hartford",
+        "temp_c": 18.5,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 14.5,
+        "cloud_cover_pct": 0,
+        "forecast_hour": "2026-10-03T16:00"
+      },
+      "pregame_home_form": {
+        "played": 4,
+        "wins": 2,
+        "win_pct": 50.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 3,
+        "wins": 1,
+        "win_pct": 33.33333333333333,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 1,
+          "gf": 70,
+          "ga": 45
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 1,
+          "gf": 69,
+          "ga": 44
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 1,
+          "gf": 84,
+          "ga": 24
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 1,
+          "gf": 13,
+          "ga": 27
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-03T15:21:59",
+      "wr_confidence_initial": 64.82
     }
   ],
   "next_wallet_id": 24,
