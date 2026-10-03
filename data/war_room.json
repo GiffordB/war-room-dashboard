@@ -1,6 +1,6 @@
 {
   "next_report_id": 36,
-  "next_pick_id": 183,
+  "next_pick_id": 184,
   "reports": [
     {
       "source": "ChatGPT",
@@ -12214,6 +12214,101 @@
       },
       "pregame_intel_captured_at": "2026-10-03T15:22:16",
       "wr_confidence_initial": 50.52
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 35,
+      "category": "best_bet",
+      "matchup": "Ohio State Buckeyes @ Iowa Hawkeyes",
+      "selection": "Iowa +14.5",
+      "odds": -115,
+      "stake": 50.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 61.0,
+      "war_room_line": "Rank #2 of 13. DK +14.5 (-115), 2:30 CT.",
+      "edge": "Competition only. Best watch of the day: Ohio State at Iowa.",
+      "price_discipline": "Ranked cover preference, separate from cash wagers; qualified money exposure $0.",
+      "espn_event_id": "401858473",
+      "bet_type": "spread",
+      "bet_side": "home",
+      "bet_line": 14.5,
+      "home_team": null,
+      "away_team": null,
+      "created_at": "2026-10-03T15:22:18",
+      "id": 183,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "OSU -14.5",
+        "home_spread": 14.5,
+        "home_spread_odds": -115.0,
+        "away_spread_odds": -105.0,
+        "total": 45.5,
+        "over_odds": -110.0,
+        "under_odds": -110.0,
+        "home_moneyline": 470,
+        "away_moneyline": -650,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-10-03T15:22:21",
+      "pregame_weather": {
+        "city": "Iowa City",
+        "temp_c": 16.8,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 13.8,
+        "cloud_cover_pct": 9,
+        "forecast_hour": "2026-10-03T19:00"
+      },
+      "pregame_home_form": {
+        "played": 4,
+        "wins": 4,
+        "win_pct": 100.0,
+        "quality_wins": 1
+      },
+      "pregame_away_form": {
+        "played": 4,
+        "wins": 3,
+        "win_pct": 75.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 3,
+          "d": 0,
+          "l": 0,
+          "gf": 111,
+          "ga": 13
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 0,
+          "gf": 20,
+          "ga": 19
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 3,
+          "d": 0,
+          "l": 0,
+          "gf": 157,
+          "ga": 25
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 1,
+          "gf": 23,
+          "ga": 24
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-03T15:22:21",
+      "wr_confidence_initial": 68.49333333333334
     }
   ],
   "next_wallet_id": 24,
