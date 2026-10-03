@@ -1,6 +1,6 @@
 {
   "next_report_id": 36,
-  "next_pick_id": 190,
+  "next_pick_id": 191,
   "reports": [
     {
       "source": "ChatGPT",
@@ -12879,6 +12879,101 @@
       },
       "pregame_intel_captured_at": "2026-10-03T15:22:57",
       "wr_confidence_initial": 51.45333333333333
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 35,
+      "category": "best_bet",
+      "matchup": "Utah State Aggies @ Boise State Broncos",
+      "selection": "Boise State -19.5",
+      "odds": -108,
+      "stake": 10.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 50.0,
+      "war_room_line": "Rank #11 of 13. DK -19.5 (-108), 6:30 CT.",
+      "edge": "Competition only.",
+      "price_discipline": "Ranked cover preference, separate from cash wagers; qualified money exposure $0.",
+      "espn_event_id": "401860898",
+      "bet_type": "spread",
+      "bet_side": "home",
+      "bet_line": -19.5,
+      "home_team": null,
+      "away_team": null,
+      "created_at": "2026-10-03T15:23:00",
+      "id": 190,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "BOIS -19.5",
+        "home_spread": -19.5,
+        "home_spread_odds": -108.0,
+        "away_spread_odds": -112.0,
+        "total": 51.5,
+        "over_odds": -108.0,
+        "under_odds": -112.0,
+        "home_moneyline": -1450,
+        "away_moneyline": 850,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-10-03T15:23:03",
+      "pregame_weather": {
+        "city": "Boise",
+        "temp_c": 29.0,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 3.1,
+        "cloud_cover_pct": 0,
+        "forecast_hour": "2026-10-03T23:00"
+      },
+      "pregame_home_form": {
+        "played": 4,
+        "wins": 3,
+        "win_pct": 75.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 4,
+        "wins": 1,
+        "win_pct": 25.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 2,
+          "d": 0,
+          "l": 0,
+          "gf": 76,
+          "ga": 44
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 1,
+          "gf": 59,
+          "ga": 41
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 1,
+          "gf": 38,
+          "ga": 39
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 2,
+          "gf": 14,
+          "ga": 49
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-03T15:23:03",
+      "wr_confidence_initial": 58.4
     }
   ],
   "next_wallet_id": 24,
