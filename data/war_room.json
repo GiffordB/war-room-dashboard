@@ -1,5 +1,5 @@
 {
-  "next_report_id": 37,
+  "next_report_id": 38,
   "next_pick_id": 198,
   "reports": [
     {
@@ -336,6 +336,18 @@
       "lsu_review_notes": "",
       "created_at": "2026-10-03T15:25:05",
       "id": 36
+    },
+    {
+      "source": "ChatGPT",
+      "league": "NFL",
+      "report_date": "2026-10-04",
+      "week_number": 4,
+      "week_label": "Week 4 -- Sunday NFL War Room (Morning v1.0)",
+      "philosophy": "Jesse's Sunday card, morning v1.0, condensed from the full morning report. NO QUALIFIED MONEY PLAYS -- new proposed exposure $0. Five ranked research preferences, not formal wagers: every spread sits inside its estimated fair range, so each is a PASS at the current number with a recheck trigger (review triggers, not standing orders). DraftKings snapshot 8:57-9:03 AM CT, prices not refreshed. Fair numbers are judgment estimates, not a validated model; market prices were visible during analysis. Regime: Low, no directional lean. Jesse decides every wager; an empty card is valid. Competition stakes on the dashboard follow the standing convention for these cards, not the sheet's cash calls.",
+      "blind_spot_notes": "FAIR NUMBERS: KC -3 (-1 to -5), total 46, KC 60%; HOU -2 (0 to -4), total 48, HOU 56%; SF -3 (-1 to -5), total 47, SF 60%; LAR -4 (-2 to -6), total 43, LAR 63%; DET -4 (-1 to -7), total 50, DET 63%. RECHECK TRIGGERS: Las Vegas +6 at ordinary juice or ML +225 (ML +185 is 35.1% implied vs 40% estimated, uncertainty too wide); Dallas +4.5 at -110 or better; Denver +4.5 at -110, do not chase +2.5; Philadelphia revisit around +6.5 (receiving losses, watch only); Carolina pending -- resolve line and receiver availability. DK spread tickets/money: Rams 71/75, Dallas 71/37, Houston 29/63, Raiders 58/50, Denver 36/59, Detroit 46/72 -- concentration is a research trigger, not an automatic fade. TOTALS RADAR, no weather-under qualifier: LAR-PHI 42.5 Pass (64F, NE 7 gusting 14-15, 50% light showers, wet handling but no wind signal); DET-CAR 51.5 Pass (68F, nearly calm, 30% showers mainly before 8 PM ET). No Thor Hammer Smash; no moneyline, parlay or futures recommendation; no Diamond Scores assigned. Best watch: Chiefs-Raiders. Sources: DK board and splits, official injury reports, NWS Philadelphia and Charlotte, NFLWeather.",
+      "lsu_review_notes": "",
+      "created_at": "2026-10-04T14:22:03",
+      "id": 37
     }
   ],
   "picks": [
