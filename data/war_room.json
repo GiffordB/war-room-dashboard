@@ -1,5 +1,5 @@
 {
-  "next_report_id": 38,
+  "next_report_id": 39,
   "next_pick_id": 203,
   "reports": [
     {
@@ -348,6 +348,18 @@
       "lsu_review_notes": "",
       "created_at": "2026-10-04T14:22:03",
       "id": 37
+    },
+    {
+      "source": "Claude",
+      "league": "NFL",
+      "report_date": "2026-10-04",
+      "week_number": 4,
+      "week_label": "Week 4 -- Sunday Edition v3.2 (Maven Quant, Model B)",
+      "philosophy": "Sunday edition: Model B and the famous-bettor seats on the paper (THE LINE) and the live board (FanDuel 9:35 AM CT), priced against Pinnacle at 9:36 AM CT, plus the situational layer (weather, injuries, revenge, letdown, sentiment) which carries zero score by rule. Decision = 70% brain trust (Walters 50; Peabody, Spanky, Voulgaris, Captain Jack, Wong 10 each) + 30% market layer (v3.2, all NFL kicks). Floors: EV +2%, score 70, Walters above 55, 3 of 5 agree. Quarter-Kelly, 2% game cap. Model B: 2025 adjusted-EPA prior blended with 2026 Weeks 1-3, own-number weight held at half because it is 44% ATS out of sample this season. ZERO SYSTEM BETS. THE ONE-LINE VERDICT: the market has done the work this week -- THE LINE sits on Pinnacle on 13 of 14 games and the live book on all 14; the only paper number with real value is Miami +10.5, and it is two tenths short of a stake (69.8). Three tracked at 60+, logged at $0 for the CLV ledger; everything else is a pass at both the paper and the live number. Price assumed -110 (the paper prints no price).",
+      "blind_spot_notes": "TRACKED: Miami +10.5 at Minnesota (69.8, 4 of 5 agree; Pinnacle moved to MIN -10 (+104), fair 9.3; the paper gives the 10; 58% of tickets on Minnesota while the line fell -- reverse movement toward Miami; Jefferson out; Model B has Minnesota by only 2.9; Miami 0-3 ATS vs Minnesota 3-0 ATS; 0.5% override if you want an NFL ticket; live +9.5 at -106 and the edge is gone), Atlanta +2.5 at New Orleans Monday (65.3; Pinnacle NO -2; 74% of tickets on New Orleans and the line fell from 3.5; Penix returns; Saints lost Elliss, Granderson and Jennings; model still New Orleans by 2.1, EV +0.4%; lean), Tampa Bay +3.5 vs Green Bay (62.0; the only side where the crowd flipped mid-week, 86% Tampa Wednesday to 67% Green Bay Sunday; Pinnacle GB -3 (+100), paper +3.5 gets the 3; Mayfield OUT with a dislocated thumb, UDFA rookie Jalon Daniels starts, which keeps Walters at 44; EV +6.5% on price alone; lean). SENTIMENT: 85% of DraftKings money on Buffalo, 79% on the Rams, 78% on Seattle, and none of those lines moved against the public -- the market agrees with the crowd, no contrarian edge to collect. Where model and crowd disagree most the model is on the dog (New England, Chargers, Miami, Tennessee): a flag, not a bet. Most overvalued by the sentiment lens: Baltimore (+4.8 vs our number, 69% of tickets), Kansas City (+3.7), Minnesota (+6.4). Letdown/lookahead flags with no score: Chicago off a 20-point win laying 3.5 to the Jets; Jacksonville off a 29-point win getting 2.5 at Cincinnati; Las Vegas 3-0 hosting KC. WIRE: Tampa Bay -5.0 (Mayfield out, McMillan IR), NY Giants -2.5 (Dart out for the season, Burns torn ACL), Chicago -2.0 (Williams out, Keenum starts; four more starters out), San Francisco -1.5 (Bosa out), LA Rams -1.5 (Donald, Watson out), New Orleans -1.5, Miami -1.0 (Achane torn ACL), Minnesota -1.0 (Jefferson out), New England -1.0, Carolina -0.75 (Horn torn quad). Weather a non-factor: no venue above 16 mph; rain in Philadelphia and Charlotte light and zero under the rules; wind applies to totals only at 15+. Live board: every side within 0.6 of Pinnacle and all 14 negative EV after juice. Colts-Commanders in London kicked at 8:30 CT and is excluded. If-forced sides on the rest of the board: Philadelphia +3.5 (57.0), Cincinnati -2.5 (56.3), Tennessee +11.5, LA Chargers +7, New England +6.5, Dallas +3 (50.8), Detroit -3.5, Kansas City -4.5, NY Giants +2.5, Chicago -3.5, San Francisco -2.5.",
+      "lsu_review_notes": "",
+      "created_at": "2026-10-04T15:06:59",
+      "id": 38
     }
   ],
   "picks": [
