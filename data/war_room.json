@@ -1,6 +1,6 @@
 {
   "next_report_id": 38,
-  "next_pick_id": 200,
+  "next_pick_id": 201,
   "reports": [
     {
       "source": "ChatGPT",
@@ -13895,6 +13895,101 @@
       },
       "pregame_intel_captured_at": "2026-10-04T14:22:21",
       "wr_confidence_initial": 47.5
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 37,
+      "category": "best_bet",
+      "matchup": "Kansas City Chiefs @ Las Vegas Raiders",
+      "selection": "Las Vegas +4.5",
+      "odds": -105,
+      "stake": 25.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 56.0,
+      "war_room_line": "Rank #1 of 5, the strongest home-underdog watch. DK +4.5 (-105), ML +185; fair KC -3 (-1 to -5), KC 60% / LV 40%. PASS at this number -- recheck +6 at ordinary juice or ML +225. 3:25 CT.",
+      "edge": "Four-man pressure against KC's missing left tackle supports an upset path. ML +185 is 35.1% implied vs 40% estimated.",
+      "price_discipline": "Research preference, cash Pass, $0. Tempered by LV's own guard loss, weak early opposition and turnover gains; uncertainty too wide for the moneyline. Best watch of the day.",
+      "espn_event_id": "401872976",
+      "bet_type": "spread",
+      "bet_side": "home",
+      "bet_line": 4.5,
+      "home_team": null,
+      "away_team": null,
+      "created_at": "2026-10-04T14:22:24",
+      "id": 200,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "KC -4.5",
+        "home_spread": 4.5,
+        "home_spread_odds": -105.0,
+        "away_spread_odds": -115.0,
+        "total": 47.5,
+        "over_odds": -115.0,
+        "under_odds": -105.0,
+        "home_moneyline": 185,
+        "away_moneyline": -225,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-10-04T14:22:27",
+      "pregame_weather": {
+        "city": "Las Vegas",
+        "temp_c": 34.9,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 9.5,
+        "cloud_cover_pct": 0,
+        "forecast_hour": "2026-10-04T20:00"
+      },
+      "pregame_home_form": {
+        "played": 3,
+        "wins": 3,
+        "win_pct": 100.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 3,
+        "wins": 3,
+        "win_pct": 100.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 1.0,
+      "pregame_away_injuries": 2.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 0,
+          "gf": 27,
+          "ga": 13
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 0,
+          "gf": 61,
+          "ga": 41
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 2,
+          "d": 0,
+          "l": 0,
+          "gf": 64,
+          "ga": 40
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 0,
+          "gf": 24,
+          "ga": 10
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-04T14:22:27",
+      "wr_confidence_initial": 58.6
     }
   ],
   "next_wallet_id": 28,
