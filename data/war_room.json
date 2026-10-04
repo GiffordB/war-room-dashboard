@@ -14043,7 +14043,12 @@
       "notes": null,
       "wr_confidence_at_bet": null,
       "created_at": "2026-09-19T14:05:51",
-      "id": 22
+      "id": 22,
+      "espn_event_id": "401856688",
+      "home_team": "Ole Miss Rebels",
+      "away_team": "LSU Tigers",
+      "wr_confidence": 50.0,
+      "wr_confidence_initial": 50.0
     },
     {
       "pick_id": 99,
