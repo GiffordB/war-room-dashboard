@@ -1,6 +1,6 @@
 {
   "next_report_id": 39,
-  "next_pick_id": 205,
+  "next_pick_id": 206,
   "reports": [
     {
       "source": "ChatGPT",
@@ -14382,6 +14382,101 @@
       },
       "pregame_intel_captured_at": "2026-10-04T15:07:17",
       "wr_confidence_initial": 66.11111111111111
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 38,
+      "category": "best_bet",
+      "matchup": "Atlanta Falcons @ New Orleans Saints",
+      "selection": "Atlanta +2.5",
+      "odds": -110,
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 65.0,
+      "war_room_line": "Score 65.3 (brain trust 66, market 64, 4 of 5). Own number NO -2.1; Pinnacle NO -2 (-101), fair 1.6; paper +2.5. EV +0.4% paper, -1.6% live.",
+      "edge": "74% of tickets on New Orleans and the line has fallen from 3.5. Penix returns; the Saints lost Elliss, Granderson and Jennings (New Orleans -1.5 on the wire). Revenge: Atlanta swept New Orleans in 2025.",
+      "price_discipline": "TRACK, $0 -- lean. EV under the +2% floor. Graded for CLV. Monday 7:15 CT, dome.",
+      "espn_event_id": "401872979",
+      "bet_type": "spread",
+      "bet_side": "away",
+      "bet_line": 2.5,
+      "home_team": null,
+      "away_team": null,
+      "created_at": "2026-10-04T15:07:20",
+      "id": 205,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "NO -1.5",
+        "home_spread": -1.5,
+        "home_spread_odds": -115.0,
+        "away_spread_odds": -105.0,
+        "total": 47.5,
+        "over_odds": -115.0,
+        "under_odds": -105.0,
+        "home_moneyline": -130,
+        "away_moneyline": 110,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-10-04T15:07:23",
+      "pregame_weather": {
+        "city": "New Orleans",
+        "temp_c": 24.3,
+        "precip_probability_pct": 9,
+        "precip_mm": 0.0,
+        "wind_kmh": 7.2,
+        "cloud_cover_pct": 100,
+        "forecast_hour": "2026-10-06T00:00"
+      },
+      "pregame_home_form": {
+        "played": 3,
+        "wins": 1,
+        "win_pct": 33.33333333333333,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 3,
+        "wins": 1,
+        "win_pct": 33.33333333333333,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 5.5,
+      "pregame_away_injuries": 3.75,
+      "pregame_home_split": {
+        "home": {
+          "w": 0,
+          "d": 0,
+          "l": 1,
+          "gf": 27,
+          "ga": 35
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 1,
+          "gf": 54,
+          "ga": 48
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 0,
+          "d": 0,
+          "l": 1,
+          "gf": 3,
+          "ga": 34
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 1,
+          "gf": 48,
+          "ga": 34
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-04T15:07:23",
+      "wr_confidence_initial": 73.83333333333333
     }
   ],
   "next_wallet_id": 28,
