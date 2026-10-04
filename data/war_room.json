@@ -1,6 +1,6 @@
 {
   "next_report_id": 39,
-  "next_pick_id": 204,
+  "next_pick_id": 205,
   "reports": [
     {
       "source": "ChatGPT",
@@ -14287,6 +14287,101 @@
       },
       "pregame_intel_captured_at": "2026-10-04T15:07:11",
       "wr_confidence_initial": 65.36666666666667
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 38,
+      "category": "best_bet",
+      "matchup": "Miami Dolphins @ Minnesota Vikings",
+      "selection": "Miami +10.5",
+      "odds": -110,
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 70.0,
+      "war_room_line": "Score 69.8 (brain trust 70, market 70, 4 of 5) -- two tenths short of a stake. Own number MIN -2.9; Pinnacle MIN -10 (+104), fair 9.3; paper +10.5 gives the 10. EV +4.2% paper, -3.7% live (+9.5 at -106, edge gone).",
+      "edge": "The only paper side that beats Pinnacle by more than a point. 58% of tickets on Minnesota while the line fell: reverse movement toward Miami. Jefferson out (Minnesota -1.0); Achane torn ACL (Miami -1.0). Miami 0-3 ATS vs Minnesota 3-0 ATS is why the crowd is where it is.",
+      "price_discipline": "TRACK, $0 -- 0.5% override if you want an NFL ticket. Graded for CLV. 3:05 CT, dome.",
+      "espn_event_id": "401872974",
+      "bet_type": "spread",
+      "bet_side": "away",
+      "bet_line": 10.5,
+      "home_team": null,
+      "away_team": null,
+      "created_at": "2026-10-04T15:07:14",
+      "id": 204,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "MIN -10",
+        "home_spread": -10.0,
+        "home_spread_odds": -105.0,
+        "away_spread_odds": -115.0,
+        "total": 38.5,
+        "over_odds": -108.0,
+        "under_odds": -112.0,
+        "home_moneyline": -535,
+        "away_moneyline": 400,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-10-04T15:07:17",
+      "pregame_weather": {
+        "city": "Minneapolis",
+        "temp_c": 19.8,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 17.1,
+        "cloud_cover_pct": 8,
+        "forecast_hour": "2026-10-04T20:00"
+      },
+      "pregame_home_form": {
+        "played": 3,
+        "wins": 3,
+        "win_pct": 100.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 3,
+        "wins": 0,
+        "win_pct": 0.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 3.0,
+      "pregame_away_injuries": 4.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 0,
+          "gf": 39,
+          "ga": 22
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 0,
+          "gf": 32,
+          "ga": 19
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 0,
+          "d": 0,
+          "l": 1,
+          "gf": 10,
+          "ga": 24
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 2,
+          "gf": 26,
+          "ga": 62
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-04T15:07:17",
+      "wr_confidence_initial": 66.11111111111111
     }
   ],
   "next_wallet_id": 28,
