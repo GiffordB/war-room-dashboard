@@ -1,6 +1,6 @@
 {
   "next_report_id": 38,
-  "next_pick_id": 201,
+  "next_pick_id": 202,
   "reports": [
     {
       "source": "ChatGPT",
@@ -13990,6 +13990,101 @@
       },
       "pregame_intel_captured_at": "2026-10-04T14:22:27",
       "wr_confidence_initial": 58.6
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 37,
+      "category": "best_bet",
+      "matchup": "Denver Broncos @ San Francisco 49ers",
+      "selection": "Denver +3",
+      "odds": -120,
+      "stake": 10.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 54.0,
+      "war_room_line": "Rank #3 of 5. DK +3 (-120), ML +124; fair SF -3 (-1 to -5). PASS at this number -- recheck +4.5 at -110; do not chase +2.5. 3:25 CT.",
+      "edge": "Better Denver health helps. DK split Denver 36% of tickets, 59% of money.",
+      "price_discipline": "Research preference, cash Pass, $0. SF's efficient passing and protection remain major obstacles.",
+      "espn_event_id": "401872975",
+      "bet_type": "spread",
+      "bet_side": "away",
+      "bet_line": 3.0,
+      "home_team": null,
+      "away_team": null,
+      "created_at": "2026-10-04T14:22:31",
+      "id": 201,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "SF -3",
+        "home_spread": -3.0,
+        "home_spread_odds": 100.0,
+        "away_spread_odds": -120.0,
+        "total": 48.5,
+        "over_odds": -105.0,
+        "under_odds": -115.0,
+        "home_moneyline": -148,
+        "away_moneyline": 124,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-10-04T14:22:34",
+      "pregame_weather": {
+        "city": "Santa Clara",
+        "temp_c": 28.9,
+        "precip_probability_pct": 78,
+        "precip_mm": 0.7,
+        "wind_kmh": 13.5,
+        "cloud_cover_pct": 94,
+        "forecast_hour": "2026-10-04T20:00"
+      },
+      "pregame_home_form": {
+        "played": 3,
+        "wins": 3,
+        "win_pct": 100.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 3,
+        "wins": 2,
+        "win_pct": 66.66666666666666,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 6.0,
+      "pregame_away_injuries": 3.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 2,
+          "d": 0,
+          "l": 0,
+          "gf": 71,
+          "ga": 43
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 0,
+          "gf": 27,
+          "ga": 7
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 2,
+          "d": 0,
+          "l": 0,
+          "gf": 50,
+          "ga": 39
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 1,
+          "gf": 10,
+          "ga": 31
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-04T14:22:34",
+      "wr_confidence_initial": 56.199999999999996
     }
   ],
   "next_wallet_id": 28,
