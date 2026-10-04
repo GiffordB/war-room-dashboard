@@ -12663,8 +12663,8 @@
       "selection": "TCU +6",
       "odds": -112,
       "stake": 50.0,
-      "result": "pending",
-      "profit_loss": 0.0,
+      "result": "loss",
+      "profit_loss": -50.0,
       "notes": "",
       "wr_confidence": 60.0,
       "war_room_line": "Rank #3 of 13. DK +6 (-112), 6:00 CT.",
@@ -12748,7 +12748,13 @@
         }
       },
       "pregame_intel_captured_at": "2026-10-03T20:49:17",
-      "wr_confidence_initial": 55.1
+      "wr_confidence_initial": 55.1,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 10,
+        "away_score": 17
+      }
     },
     {
       "parlay_leg_pick_ids": null,
@@ -12758,8 +12764,8 @@
       "selection": "Clemson +15.5",
       "odds": -110,
       "stake": 25.0,
-      "result": "pending",
-      "profit_loss": 0.0,
+      "result": "loss",
+      "profit_loss": -25.0,
       "notes": "",
       "wr_confidence": 56.0,
       "war_room_line": "Rank #6 of 13. DK +15.5 (-110), 6:30 CT.",
@@ -12843,7 +12849,13 @@
         }
       },
       "pregame_intel_captured_at": "2026-10-03T23:37:53",
-      "wr_confidence_initial": 53.16
+      "wr_confidence_initial": 53.16,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 13,
+        "away_score": 41
+      }
     },
     {
       "parlay_leg_pick_ids": null,
@@ -12853,8 +12865,8 @@
       "selection": "Washington +8.5",
       "odds": -108,
       "stake": 25.0,
-      "result": "pending",
-      "profit_loss": 0.0,
+      "result": "win",
+      "profit_loss": 23.14814814814815,
       "notes": "",
       "wr_confidence": 52.0,
       "war_room_line": "Rank #10 of 13. DK +8.5 (-108), 6:30 CT.",
@@ -12938,7 +12950,13 @@
         }
       },
       "pregame_intel_captured_at": "2026-10-03T20:49:17",
-      "wr_confidence_initial": 51.45333333333333
+      "wr_confidence_initial": 51.45333333333333,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 25,
+        "away_score": 21
+      }
     },
     {
       "parlay_leg_pick_ids": null,
@@ -12948,8 +12966,8 @@
       "selection": "Boise State -19.5",
       "odds": -108,
       "stake": 10.0,
-      "result": "pending",
-      "profit_loss": 0.0,
+      "result": "loss",
+      "profit_loss": -10.0,
       "notes": "",
       "wr_confidence": 50.0,
       "war_room_line": "Rank #11 of 13. DK -19.5 (-108), 6:30 CT.",
@@ -13033,7 +13051,13 @@
         }
       },
       "pregame_intel_captured_at": "2026-10-03T23:37:53",
-      "wr_confidence_initial": 58.4
+      "wr_confidence_initial": 58.4,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 37,
+        "away_score": 18
+      }
     },
     {
       "parlay_leg_pick_ids": null,
@@ -13043,8 +13067,8 @@
       "selection": "McNeese +52.5",
       "odds": -105,
       "stake": 10.0,
-      "result": "pending",
-      "profit_loss": 0.0,
+      "result": "win",
+      "profit_loss": 9.523809523809524,
       "notes": "",
       "wr_confidence": 48.0,
       "war_room_line": "Rank #13 of 13. DK +52.5 (-105), 6:45 CT.",
@@ -13128,7 +13152,13 @@
         }
       },
       "pregame_intel_captured_at": "2026-10-03T23:37:53",
-      "wr_confidence_initial": 35.599999999999994
+      "wr_confidence_initial": 35.599999999999994,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 63,
+        "away_score": 14
+      }
     },
     {
       "parlay_leg_pick_ids": [
@@ -13470,8 +13500,8 @@
       "selection": "Washington +9.5",
       "odds": -110,
       "stake": 200.0,
-      "result": "pending",
-      "profit_loss": 0.0,
+      "result": "win",
+      "profit_loss": 181.8181818181818,
       "notes": "",
       "wr_confidence": 73.0,
       "war_room_line": "Full model 72.6 / current lines 71.2 (Walters 68, Peabody 90, 3 of 5). Own number USC -5.2; Pinnacle -7.5 (-104); THE LINE 9.5. EV +7.8%.",
@@ -13555,7 +13585,13 @@
         }
       },
       "pregame_intel_captured_at": "2026-10-03T20:49:17",
-      "wr_confidence_initial": 79.81714285714287
+      "wr_confidence_initial": 79.81714285714287,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 25,
+        "away_score": 21
+      }
     },
     {
       "parlay_leg_pick_ids": null,
@@ -13565,7 +13601,7 @@
       "selection": "Louisiana Tech +3.5",
       "odds": -110,
       "stake": 0.0,
-      "result": "pending",
+      "result": "win",
       "profit_loss": 0.0,
       "notes": "",
       "wr_confidence": 71.0,
@@ -13650,7 +13686,13 @@
         }
       },
       "pregame_intel_captured_at": "2026-10-03T20:49:17",
-      "wr_confidence_initial": 76.6
+      "wr_confidence_initial": 76.6,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 31,
+        "away_score": 29
+      }
     }
   ],
   "next_wallet_id": 28,
@@ -14079,8 +14121,8 @@
       "odds": -120,
       "stake": 25.0,
       "bet_line": 6.5,
-      "result": "pending",
-      "profit_loss": 0.0,
+      "result": "loss",
+      "profit_loss": -25.0,
       "notes": null,
       "wr_confidence_at_bet": 55.06028368794326,
       "created_at": "2026-10-04T00:08:02",
@@ -14097,8 +14139,8 @@
       "odds": 105,
       "stake": 25.0,
       "bet_line": 52.5,
-      "result": "pending",
-      "profit_loss": 0.0,
+      "result": "win",
+      "profit_loss": 26.25,
       "notes": null,
       "wr_confidence_at_bet": 37.599999999999994,
       "created_at": "2026-10-04T00:08:50",
@@ -14115,8 +14157,8 @@
       "odds": -160,
       "stake": 25.0,
       "bet_line": 3.5,
-      "result": "pending",
-      "profit_loss": 0.0,
+      "result": "win",
+      "profit_loss": 15.625,
       "notes": null,
       "wr_confidence_at_bet": 78.81290322580645,
       "created_at": "2026-10-04T00:09:26",
@@ -14133,8 +14175,8 @@
       "odds": -120,
       "stake": 100.0,
       "bet_line": 9.5,
-      "result": "pending",
-      "profit_loss": 0.0,
+      "result": "win",
+      "profit_loss": 83.33333333333333,
       "notes": null,
       "wr_confidence_at_bet": 80.05032258064517,
       "created_at": "2026-10-04T00:09:58",
