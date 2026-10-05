@@ -14455,19 +14455,19 @@
         "home_spread_odds": -108.0,
         "away_spread_odds": -112.0,
         "total": 47.5,
-        "over_odds": -115.0,
-        "under_odds": -105.0,
-        "home_moneyline": -120,
-        "away_moneyline": 100,
+        "over_odds": -118.0,
+        "under_odds": -102.0,
+        "home_moneyline": -122,
+        "away_moneyline": 102,
         "draw_moneyline": null
       },
-      "pregame_odds_captured_at": "2026-10-05T15:43:06",
+      "pregame_odds_captured_at": "2026-10-05T22:24:13",
       "pregame_weather": {
         "city": "New Orleans",
-        "temp_c": 24.7,
-        "precip_probability_pct": 31,
+        "temp_c": 25.1,
+        "precip_probability_pct": 21,
         "precip_mm": 0.0,
-        "wind_kmh": 6.8,
+        "wind_kmh": 4.3,
         "cloud_cover_pct": 100,
         "forecast_hour": "2026-10-06T00:00"
       },
@@ -14517,7 +14517,7 @@
           "ga": 34
         }
       },
-      "pregame_intel_captured_at": "2026-10-05T15:43:06",
+      "pregame_intel_captured_at": "2026-10-05T22:24:13",
       "wr_confidence_initial": 73.83333333333333
     }
   ],
