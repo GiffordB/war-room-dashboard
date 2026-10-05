@@ -14452,22 +14452,22 @@
         "provider": "Draft Kings",
         "spread_details": "NO -1.5",
         "home_spread": -1.5,
-        "home_spread_odds": -115.0,
-        "away_spread_odds": -105.0,
+        "home_spread_odds": -108.0,
+        "away_spread_odds": -112.0,
         "total": 47.5,
         "over_odds": -115.0,
         "under_odds": -105.0,
-        "home_moneyline": -125,
-        "away_moneyline": 105,
+        "home_moneyline": -120,
+        "away_moneyline": 100,
         "draw_moneyline": null
       },
-      "pregame_odds_captured_at": "2026-10-05T06:41:26",
+      "pregame_odds_captured_at": "2026-10-05T15:43:06",
       "pregame_weather": {
         "city": "New Orleans",
-        "temp_c": 24.8,
-        "precip_probability_pct": 25,
+        "temp_c": 24.7,
+        "precip_probability_pct": 31,
         "precip_mm": 0.0,
-        "wind_kmh": 7.3,
+        "wind_kmh": 6.8,
         "cloud_cover_pct": 100,
         "forecast_hour": "2026-10-06T00:00"
       },
@@ -14517,7 +14517,7 @@
           "ga": 34
         }
       },
-      "pregame_intel_captured_at": "2026-10-05T06:41:26",
+      "pregame_intel_captured_at": "2026-10-05T15:43:06",
       "wr_confidence_initial": 73.83333333333333
     }
   ],
