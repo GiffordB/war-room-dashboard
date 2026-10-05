@@ -14130,8 +14130,8 @@
       "selection": "Carolina +3.5",
       "odds": -105,
       "stake": 10.0,
-      "result": "pending",
-      "profit_loss": 0.0,
+      "result": "win",
+      "profit_loss": 9.523809523809524,
       "notes": "",
       "wr_confidence": 52.0,
       "war_room_line": "Rank #5 of 5. DK +3.5 (-105), ML +154; fair DET -4 (-1 to -7). PENDING / PASS -- resolve the line and receiver availability. 7:20 CT.",
@@ -14215,7 +14215,13 @@
         }
       },
       "pregame_intel_captured_at": "2026-10-04T21:04:43",
-      "wr_confidence_initial": 50.2
+      "wr_confidence_initial": 50.2,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 32,
+        "away_score": 26
+      }
     },
     {
       "parlay_leg_pick_ids": null,
@@ -14451,17 +14457,17 @@
         "total": 47.5,
         "over_odds": -115.0,
         "under_odds": -105.0,
-        "home_moneyline": -130,
-        "away_moneyline": 110,
+        "home_moneyline": -125,
+        "away_moneyline": 105,
         "draw_moneyline": null
       },
-      "pregame_odds_captured_at": "2026-10-05T00:35:19",
+      "pregame_odds_captured_at": "2026-10-05T06:41:26",
       "pregame_weather": {
         "city": "New Orleans",
-        "temp_c": 24.7,
-        "precip_probability_pct": 9,
+        "temp_c": 24.8,
+        "precip_probability_pct": 25,
         "precip_mm": 0.0,
-        "wind_kmh": 5.4,
+        "wind_kmh": 7.3,
         "cloud_cover_pct": 100,
         "forecast_hour": "2026-10-06T00:00"
       },
@@ -14511,7 +14517,7 @@
           "ga": 34
         }
       },
-      "pregame_intel_captured_at": "2026-10-05T00:35:19",
+      "pregame_intel_captured_at": "2026-10-05T06:41:26",
       "wr_confidence_initial": 73.83333333333333
     }
   ],
