@@ -14433,7 +14433,7 @@
       "selection": "Atlanta +2.5",
       "odds": -110,
       "stake": 0.0,
-      "result": "pending",
+      "result": "win",
       "profit_loss": 0.0,
       "notes": "",
       "wr_confidence": 65.0,
@@ -14518,7 +14518,13 @@
         }
       },
       "pregame_intel_captured_at": "2026-10-05T22:24:13",
-      "wr_confidence_initial": 73.83333333333333
+      "wr_confidence_initial": 73.83333333333333,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 24,
+        "away_score": 45
+      }
     }
   ],
   "next_wallet_id": 31,
@@ -15019,8 +15025,8 @@
       "odds": -110,
       "stake": 50.0,
       "bet_line": 2.5,
-      "result": "pending",
-      "profit_loss": 0.0,
+      "result": "win",
+      "profit_loss": 45.45454545454545,
       "notes": null,
       "wr_confidence_at_bet": 73.83333333333333,
       "created_at": "2026-10-04T17:43:55",
