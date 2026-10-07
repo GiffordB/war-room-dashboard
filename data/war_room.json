@@ -1,6 +1,6 @@
 {
   "next_report_id": 40,
-  "next_pick_id": 206,
+  "next_pick_id": 207,
   "reports": [
     {
       "source": "ChatGPT",
@@ -14537,6 +14537,101 @@
         "home_score": 24,
         "away_score": 45
       }
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 39,
+      "category": "best_bet",
+      "matchup": "New Mexico State Aggies @ Florida International Panthers",
+      "selection": "New Mexico State +6.5",
+      "odds": -108,
+      "stake": 25.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 55.0,
+      "war_room_line": "Rank #5 of 5, a prospective revision before tonight's kickoff (FIU preference withdrawn). DK FIU -6.5 (-108), total 46.5; fair FIU -6 (-3 to -9), FIU 67%. Wed 6:35 PM CT.",
+      "edge": "One-point fair-spread downgrade to FIU for NMSU's QB change (Damante, third career start) and the turnover matchup (Kohl, six interceptions). Do not extrapolate last week's defensive touchdown.",
+      "price_discipline": "Pass, $0 at +6.5; NMSU +10 at -110 would merit review. Recheck starters before kickoff. Failure risk: FIU's protection and run defense force Damante into passing downs. DK split FIU 63/76.",
+      "espn_event_id": "401871066",
+      "bet_type": "spread",
+      "bet_side": "away",
+      "bet_line": 6.5,
+      "home_team": null,
+      "away_team": null,
+      "created_at": "2026-10-07T15:03:49",
+      "id": 206,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "FIU -6.5",
+        "home_spread": -6.5,
+        "home_spread_odds": -115.0,
+        "away_spread_odds": -105.0,
+        "total": 46.5,
+        "over_odds": -115.0,
+        "under_odds": -105.0,
+        "home_moneyline": -250,
+        "away_moneyline": 205,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-10-07T15:03:53",
+      "pregame_weather": {
+        "city": "Miami",
+        "temp_c": 25.0,
+        "precip_probability_pct": 28,
+        "precip_mm": 0.0,
+        "wind_kmh": 3.8,
+        "cloud_cover_pct": 100,
+        "forecast_hour": "2026-10-07T23:00"
+      },
+      "pregame_home_form": {
+        "played": 4,
+        "wins": 2,
+        "win_pct": 50.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 2,
+        "win_pct": 40.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 2,
+          "d": 0,
+          "l": 0,
+          "gf": 53,
+          "ga": 23
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 2,
+          "gf": 19,
+          "ga": 35
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 2,
+          "d": 0,
+          "l": 1,
+          "gf": 103,
+          "ga": 69
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 2,
+          "gf": 36,
+          "ga": 63
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-07T15:03:53",
+      "wr_confidence_initial": 51.46910039113429
     }
   ],
   "next_wallet_id": 31,
