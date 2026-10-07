@@ -1,6 +1,6 @@
 {
   "next_report_id": 40,
-  "next_pick_id": 210,
+  "next_pick_id": 211,
   "reports": [
     {
       "source": "ChatGPT",
@@ -14917,6 +14917,101 @@
       },
       "pregame_intel_captured_at": "2026-10-07T15:04:12",
       "wr_confidence_initial": 56.91056062581486
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 39,
+      "category": "best_bet",
+      "matchup": "Georgia Bulldogs @ Alabama Crimson Tide",
+      "selection": "Alabama -1.5",
+      "odds": -112,
+      "stake": 25.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 56.0,
+      "war_room_line": "Rank #4 of 5, downgraded for weather/availability uncertainty, side retained. DK Alabama -1.5 (-112), total 52.5 (was 55.5 Tuesday), ML BAMA -122 / UGA +102; fair Alabama -2 (Georgia -2 to Alabama -5), total 51 (46-56), Alabama 55%. Sat 6:45 PM CT.",
+      "edge": "Russell's passing upside plus home field preserves a small Alabama preference. RT Jayvin James uncertain; replacement Tyrell Miller played a full game at tackle. Favorite flipped across zero from Georgia -3 / -2.5 openers.",
+      "price_discipline": "Pass, $0. Reassess Alabama +3 or better only after storm and availability checks; under only at 57+, do not chase 52.5. Failure risk: Georgia's run game controls possessions; Alabama protection and edge depth unresolved; Saturday windy with 90% rain and tropical timing.",
+      "espn_event_id": "401856712",
+      "bet_type": "spread",
+      "bet_side": "home",
+      "bet_line": -1.5,
+      "home_team": null,
+      "away_team": null,
+      "created_at": "2026-10-07T15:04:15",
+      "id": 210,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "ALA -1.5",
+        "home_spread": -1.5,
+        "home_spread_odds": -112.0,
+        "away_spread_odds": -108.0,
+        "total": 52.5,
+        "over_odds": -110.0,
+        "under_odds": -110.0,
+        "home_moneyline": -122,
+        "away_moneyline": 102,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-10-07T15:04:18",
+      "pregame_weather": {
+        "city": "Tuscaloosa",
+        "temp_c": 20.9,
+        "precip_probability_pct": 84,
+        "precip_mm": 0.0,
+        "wind_kmh": 4.6,
+        "cloud_cover_pct": 100,
+        "forecast_hour": "2026-10-10T23:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 5,
+        "win_pct": 100.0,
+        "quality_wins": 1
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 5,
+        "win_pct": 100.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 3,
+          "d": 0,
+          "l": 0,
+          "gf": 147,
+          "ga": 64
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 0,
+          "gf": 101,
+          "ga": 40
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 4,
+          "d": 0,
+          "l": 0,
+          "gf": 212,
+          "ga": 50
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 0,
+          "gf": 45,
+          "ga": 17
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-07T15:04:18",
+      "wr_confidence_initial": 59.08292046936115
     }
   ],
   "next_wallet_id": 31,
