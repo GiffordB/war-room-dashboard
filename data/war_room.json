@@ -1,6 +1,6 @@
 {
   "next_report_id": 40,
-  "next_pick_id": 207,
+  "next_pick_id": 208,
   "reports": [
     {
       "source": "ChatGPT",
@@ -14632,6 +14632,101 @@
       },
       "pregame_intel_captured_at": "2026-10-07T15:03:53",
       "wr_confidence_initial": 51.46910039113429
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 39,
+      "category": "best_bet",
+      "matchup": "Texas A&M Aggies @ Missouri Tigers",
+      "selection": "Texas A&M +3.5",
+      "odds": -110,
+      "stake": 50.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 62.0,
+      "war_room_line": "Rank #1 of 5. DK Missouri -3.5 (-110), total 48.5, ML MIZ -180 / A&M +150; fair Missouri -1.5 (A&M -1 to MIZ -4.5), Missouri 54%. Midpoint discrepancy toward the pick: 2 points. Sat 11:00 AM CT.",
+      "edge": "Reed's mobility gives A&M a credible scoring route without a turnover avalanche; a close matchup makes points beyond three attractive. Missouri's home field is already in the baseline. DK crossed three (Sunday -3 to -3.5).",
+      "price_discipline": "Pass, $0. Review triggers: A&M +5.5 at -110 or better, or ML +175 or better, only after availability review. A&M +150 is a Sexy Moneyline research candidate only (40% implied vs 46% judgment). Failure risk: Simmons' efficient passing and Missouri's defensive front vs A&M's inconsistency.",
+      "espn_event_id": "401856716",
+      "bet_type": "spread",
+      "bet_side": "away",
+      "bet_line": 3.5,
+      "home_team": null,
+      "away_team": null,
+      "created_at": "2026-10-07T15:03:55",
+      "id": 207,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "MIZ -3.5",
+        "home_spread": -3.5,
+        "home_spread_odds": -110.0,
+        "away_spread_odds": -110.0,
+        "total": 48.5,
+        "over_odds": -105.0,
+        "under_odds": -115.0,
+        "home_moneyline": -180,
+        "away_moneyline": 150,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-10-07T15:03:59",
+      "pregame_weather": {
+        "city": "Columbia",
+        "temp_c": 17.1,
+        "precip_probability_pct": 40,
+        "precip_mm": 2.7,
+        "wind_kmh": 19.8,
+        "cloud_cover_pct": 100,
+        "forecast_hour": "2026-10-10T16:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 4,
+        "win_pct": 80.0,
+        "quality_wins": 1
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 3,
+        "win_pct": 60.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 3,
+          "d": 0,
+          "l": 0,
+          "gf": 126,
+          "ga": 48
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 1,
+          "gf": 62,
+          "ga": 52
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 3,
+          "d": 0,
+          "l": 1,
+          "gf": 153,
+          "ga": 58
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 1,
+          "gf": 6,
+          "ga": 35
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-07T15:03:59",
+      "wr_confidence_initial": 54.965840938722295
     }
   ],
   "next_wallet_id": 31,
