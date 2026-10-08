@@ -1,6 +1,6 @@
 {
   "next_report_id": 42,
-  "next_pick_id": 216,
+  "next_pick_id": 217,
   "reports": [
     {
       "source": "ChatGPT",
@@ -15517,6 +15517,101 @@
       },
       "pregame_intel_captured_at": "2026-10-08T22:44:35",
       "wr_confidence_initial": 62.379999999999995
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 41,
+      "category": "best_bet",
+      "matchup": "Cleveland Browns @ New York Jets",
+      "selection": "NY Jets -1.5",
+      "odds": -110,
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 61.0,
+      "war_room_line": "Score 61.4 (Walters 57, brain trust 62.0, market 60; 3 of 5). Sheet NY Jets -1.5; Pinnacle -2.5; model Jets by 2.2. EV +3.1%.",
+      "edge": "The print moved the Jets down to -1.5 while Pinnacle sits at -2.5: a price position, laying less than the market.",
+      "price_discipline": "TRACK, $0 -- official injury reports Thursday and Friday decide whether it clears. Sun noon CT.",
+      "espn_event_id": "401872983",
+      "bet_type": "spread",
+      "bet_side": "home",
+      "bet_line": -1.5,
+      "home_team": null,
+      "away_team": null,
+      "created_at": "2026-10-08T22:44:38",
+      "id": 216,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "NYJ -2.5",
+        "home_spread": -2.5,
+        "home_spread_odds": -110.0,
+        "away_spread_odds": -110.0,
+        "total": 39.5,
+        "over_odds": -112.0,
+        "under_odds": -108.0,
+        "home_moneyline": -135,
+        "away_moneyline": 114,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-10-08T22:44:42",
+      "pregame_weather": {
+        "city": "East Rutherford",
+        "temp_c": 17.2,
+        "precip_probability_pct": 24,
+        "precip_mm": 0.2,
+        "wind_kmh": 13.0,
+        "cloud_cover_pct": 100,
+        "forecast_hour": "2026-10-11T17:00"
+      },
+      "pregame_home_form": {
+        "played": 4,
+        "wins": 1,
+        "win_pct": 25.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 4,
+        "wins": 3,
+        "win_pct": 75.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 4.75,
+      "pregame_away_injuries": 5.25,
+      "pregame_home_split": {
+        "home": {
+          "w": 0,
+          "d": 0,
+          "l": 1,
+          "gf": 17,
+          "ga": 20
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 2,
+          "gf": 59,
+          "ga": 64
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 2,
+          "d": 0,
+          "l": 0,
+          "gf": 48,
+          "ga": 42
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 1,
+          "gf": 33,
+          "ga": 53
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-08T22:44:42",
+      "wr_confidence_initial": 58.75999999999999
     }
   ],
   "next_wallet_id": 31,
