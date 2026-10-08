@@ -1,6 +1,6 @@
 {
   "next_report_id": 42,
-  "next_pick_id": 215,
+  "next_pick_id": 216,
   "reports": [
     {
       "source": "ChatGPT",
@@ -15422,6 +15422,101 @@
       },
       "pregame_intel_captured_at": "2026-10-08T22:44:20",
       "wr_confidence_initial": 54.666666666666664
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 41,
+      "category": "best_bet",
+      "matchup": "Chicago Bears @ Green Bay Packers",
+      "selection": "Green Bay +2.5",
+      "odds": -110,
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 63.0,
+      "war_room_line": "Score 62.9 (Walters 57, brain trust 62.0, market 65; 2 of 5). Sheet Chicago -2.5; Pinnacle Chicago -1; model Chicago by 4.1 (against). EV +2.9%.",
+      "edge": "The print moved to Chicago -2.5 on an unsourced Chicago move while Pinnacle held -1: 1.5 points of paper in Green Bay's favor, the week's largest gap.",
+      "price_discipline": "TRACK, $0 -- the model is against it and only 2 of 5 agree. Sun noon CT.",
+      "espn_event_id": "401872990",
+      "bet_type": "spread",
+      "bet_side": "home",
+      "bet_line": 2.5,
+      "home_team": null,
+      "away_team": null,
+      "created_at": "2026-10-08T22:44:31",
+      "id": 215,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "CHI -2.5",
+        "home_spread": 2.5,
+        "home_spread_odds": -115.0,
+        "away_spread_odds": -105.0,
+        "total": 45.5,
+        "over_odds": -118.0,
+        "under_odds": -102.0,
+        "home_moneyline": 110,
+        "away_moneyline": -130,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-10-08T22:44:35",
+      "pregame_weather": {
+        "city": "Green Bay",
+        "temp_c": 23.9,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 21.3,
+        "cloud_cover_pct": 0,
+        "forecast_hour": "2026-10-11T17:00"
+      },
+      "pregame_home_form": {
+        "played": 4,
+        "wins": 2,
+        "win_pct": 50.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 4,
+        "wins": 3,
+        "win_pct": 75.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 6.0,
+      "pregame_away_injuries": 6.75,
+      "pregame_home_split": {
+        "home": {
+          "w": 0,
+          "d": 0,
+          "l": 1,
+          "gf": 14,
+          "ga": 35
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 1,
+          "gf": 59,
+          "ga": 70
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 2,
+          "d": 0,
+          "l": 1,
+          "gf": 53,
+          "ga": 28
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 0,
+          "gf": 59,
+          "ga": 37
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-08T22:44:35",
+      "wr_confidence_initial": 62.379999999999995
     }
   ],
   "next_wallet_id": 31,
