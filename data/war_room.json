@@ -1,6 +1,6 @@
 {
   "next_report_id": 41,
-  "next_pick_id": 211,
+  "next_pick_id": 212,
   "reports": [
     {
       "source": "ChatGPT",
@@ -15030,6 +15030,101 @@
       },
       "pregame_intel_captured_at": "2026-10-08T21:53:29",
       "wr_confidence_initial": 59.08292046936115
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 40,
+      "category": "best_bet",
+      "matchup": "Missouri State Bears @ Western Kentucky Hilltoppers",
+      "selection": "Missouri State +1.5",
+      "odds": -110,
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 68.0,
+      "war_room_line": "Score 68.1 (Walters 62, brain trust 66.8, market 75; 2 of 5 agree). Sheet WKU -1.5; Pinnacle Missouri State -1.0 -- a 4-point move since Wednesday with no sourced reason. Model WKU by 4.1. EV +5.7%.",
+      "edge": "Still the stale side after the Thursday print closed most other gaps: the sheet lets you take points with a team Pinnacle now favors.",
+      "price_discipline": "TRACK, $0 -- no bet without the reason for the move; the model is against it. Thu 6:00 PM CT.",
+      "espn_event_id": "401871052",
+      "bet_type": "spread",
+      "bet_side": "away",
+      "bet_line": 1.5,
+      "home_team": null,
+      "away_team": null,
+      "created_at": "2026-10-08T22:43:56",
+      "id": 211,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "MOST -1.5",
+        "home_spread": 1.5,
+        "home_spread_odds": -110.0,
+        "away_spread_odds": -110.0,
+        "total": 56.5,
+        "over_odds": -110.0,
+        "under_odds": -110.0,
+        "home_moneyline": 102,
+        "away_moneyline": -122,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-10-08T22:44:00",
+      "pregame_weather": {
+        "city": "Bowling Green",
+        "temp_c": 26.5,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 7.9,
+        "cloud_cover_pct": 0,
+        "forecast_hour": "2026-10-08T23:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 1,
+        "win_pct": 20.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 4,
+        "wins": 1,
+        "win_pct": 25.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 0,
+          "gf": 52,
+          "ga": 7
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 4,
+          "gf": 47,
+          "ga": 191
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 1,
+          "gf": 72,
+          "ga": 44
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 2,
+          "gf": 24,
+          "ga": 84
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-08T22:44:00",
+      "wr_confidence_initial": 74.49090909090908
     }
   ],
   "next_wallet_id": 31,
