@@ -1,6 +1,6 @@
 {
   "next_report_id": 41,
-  "next_pick_id": 212,
+  "next_pick_id": 213,
   "reports": [
     {
       "source": "ChatGPT",
@@ -15125,6 +15125,101 @@
       },
       "pregame_intel_captured_at": "2026-10-08T22:44:00",
       "wr_confidence_initial": 74.49090909090908
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 40,
+      "category": "best_bet",
+      "matchup": "South Florida Bulls @ UTSA Roadrunners",
+      "selection": "South Florida +7",
+      "odds": -110,
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 62.0,
+      "war_room_line": "Score 61.7 (Walters 61, brain trust 62.9, market 55; 3 of 5). Sheet UTSA -7; Pinnacle -6.5; model UTSA by 0.7 less than... own number -0.7. EV +2.9%.",
+      "edge": "Half a point of paper stale on the 7 with the model close to pick-em.",
+      "price_discipline": "TRACK, $0 -- a lean, not a stake. Thu 6:30 PM CT.",
+      "espn_event_id": "401862794",
+      "bet_type": "spread",
+      "bet_side": "away",
+      "bet_line": 7.0,
+      "home_team": null,
+      "away_team": null,
+      "created_at": "2026-10-08T22:44:03",
+      "id": 212,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "UTSA -5.5",
+        "home_spread": -5.5,
+        "home_spread_odds": -110.0,
+        "away_spread_odds": -110.0,
+        "total": 49.5,
+        "over_odds": -112.0,
+        "under_odds": -108.0,
+        "home_moneyline": -230,
+        "away_moneyline": 190,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-10-08T22:44:07",
+      "pregame_weather": {
+        "city": "San Antonio",
+        "temp_c": 31.5,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 5.8,
+        "cloud_cover_pct": 0,
+        "forecast_hour": "2026-10-08T23:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 4,
+        "win_pct": 80.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 4,
+        "win_pct": 80.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 2,
+          "d": 0,
+          "l": 0,
+          "gf": 104,
+          "ga": 61
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 1,
+          "gf": 53,
+          "ga": 70
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 2,
+          "d": 0,
+          "l": 1,
+          "gf": 91,
+          "ga": 43
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 0,
+          "gf": 42,
+          "ga": 30
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-08T22:44:07",
+      "wr_confidence_initial": 67.22727272727272
     }
   ],
   "next_wallet_id": 31,
