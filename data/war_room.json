@@ -14546,8 +14546,8 @@
       "selection": "New Mexico State +6.5",
       "odds": -108,
       "stake": 25.0,
-      "result": "pending",
-      "profit_loss": 0.0,
+      "result": "loss",
+      "profit_loss": -25.0,
       "notes": "",
       "wr_confidence": 55.0,
       "war_room_line": "Rank #5 of 5, a prospective revision before tonight's kickoff (FIU preference withdrawn). DK FIU -6.5 (-108), total 46.5; fair FIU -6 (-3 to -9), FIU 67%. Wed 6:35 PM CT.",
@@ -14631,7 +14631,13 @@
         }
       },
       "pregame_intel_captured_at": "2026-10-07T21:50:05",
-      "wr_confidence_initial": 51.46910039113429
+      "wr_confidence_initial": 51.46910039113429,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 22,
+        "away_score": 3
+      }
     },
     {
       "parlay_leg_pick_ids": null,
@@ -14669,13 +14675,13 @@
         "away_moneyline": 145,
         "draw_moneyline": null
       },
-      "pregame_odds_captured_at": "2026-10-08T01:38:47",
+      "pregame_odds_captured_at": "2026-10-08T08:37:45",
       "pregame_weather": {
         "city": "Columbia",
-        "temp_c": 16.8,
-        "precip_probability_pct": 40,
-        "precip_mm": 1.5,
-        "wind_kmh": 18.6,
+        "temp_c": 17.4,
+        "precip_probability_pct": 41,
+        "precip_mm": 0.3,
+        "wind_kmh": 22.0,
         "cloud_cover_pct": 100,
         "forecast_hour": "2026-10-10T16:00"
       },
@@ -14725,7 +14731,7 @@
           "ga": 35
         }
       },
-      "pregame_intel_captured_at": "2026-10-08T01:38:47",
+      "pregame_intel_captured_at": "2026-10-08T08:37:45",
       "wr_confidence_initial": 54.965840938722295
     },
     {
@@ -14764,13 +14770,13 @@
         "away_moneyline": -305,
         "draw_moneyline": null
       },
-      "pregame_odds_captured_at": "2026-10-08T01:38:47",
+      "pregame_odds_captured_at": "2026-10-08T08:37:45",
       "pregame_weather": {
         "city": "Lincoln",
-        "temp_c": 24.7,
+        "temp_c": 24.6,
         "precip_probability_pct": 0,
         "precip_mm": 0.0,
-        "wind_kmh": 30.6,
+        "wind_kmh": 29.6,
         "cloud_cover_pct": 0,
         "forecast_hour": "2026-10-10T16:00"
       },
@@ -14820,7 +14826,7 @@
           "ga": 15
         }
       },
-      "pregame_intel_captured_at": "2026-10-08T01:38:47",
+      "pregame_intel_captured_at": "2026-10-08T08:37:45",
       "wr_confidence_initial": 60.13820078226858
     },
     {
@@ -14859,13 +14865,13 @@
         "away_moneyline": -345,
         "draw_moneyline": null
       },
-      "pregame_odds_captured_at": "2026-10-08T01:38:47",
+      "pregame_odds_captured_at": "2026-10-08T08:37:45",
       "pregame_weather": {
         "city": "Lexington",
-        "temp_c": 14.0,
-        "precip_probability_pct": 39,
-        "precip_mm": 2.9,
-        "wind_kmh": 26.1,
+        "temp_c": 14.5,
+        "precip_probability_pct": 36,
+        "precip_mm": 0.4,
+        "wind_kmh": 28.7,
         "cloud_cover_pct": 100,
         "forecast_hour": "2026-10-10T23:00"
       },
@@ -14915,7 +14921,7 @@
           "ga": 32
         }
       },
-      "pregame_intel_captured_at": "2026-10-08T01:38:47",
+      "pregame_intel_captured_at": "2026-10-08T08:37:45",
       "wr_confidence_initial": 56.91056062581486
     },
     {
@@ -14948,19 +14954,19 @@
         "home_spread_odds": -112.0,
         "away_spread_odds": -108.0,
         "total": 51.5,
-        "over_odds": -115.0,
-        "under_odds": -105.0,
+        "over_odds": -105.0,
+        "under_odds": -115.0,
         "home_moneyline": -122,
         "away_moneyline": 102,
         "draw_moneyline": null
       },
-      "pregame_odds_captured_at": "2026-10-08T01:38:47",
+      "pregame_odds_captured_at": "2026-10-08T08:37:45",
       "pregame_weather": {
         "city": "Tuscaloosa",
-        "temp_c": 22.8,
-        "precip_probability_pct": 81,
-        "precip_mm": 0.0,
-        "wind_kmh": 5.9,
+        "temp_c": 20.6,
+        "precip_probability_pct": 79,
+        "precip_mm": 0.3,
+        "wind_kmh": 7.7,
         "cloud_cover_pct": 100,
         "forecast_hour": "2026-10-10T23:00"
       },
@@ -15010,7 +15016,7 @@
           "ga": 17
         }
       },
-      "pregame_intel_captured_at": "2026-10-08T01:38:47",
+      "pregame_intel_captured_at": "2026-10-08T08:37:45",
       "wr_confidence_initial": 59.08292046936115
     }
   ],
