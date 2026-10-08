@@ -1,6 +1,6 @@
 {
   "next_report_id": 41,
-  "next_pick_id": 214,
+  "next_pick_id": 215,
   "reports": [
     {
       "source": "ChatGPT",
@@ -15315,6 +15315,101 @@
       },
       "pregame_intel_captured_at": "2026-10-08T22:44:14",
       "wr_confidence_initial": 59.66666666666666
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 40,
+      "category": "best_bet",
+      "matchup": "North Dakota State Bison @ UNLV Rebels",
+      "selection": "UNLV +3.5",
+      "odds": -110,
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 61.0,
+      "war_room_line": "Score 61.0 (Walters 55, brain trust 62.0, market 55; 3 of 5). Sheet NDSU -3.5; Pinnacle -3; model NDSU by 1.7. EV +3.8%.",
+      "edge": "The sheet gives the 3 against a Pinnacle 3; model has it closer than either.",
+      "price_discipline": "TRACK, $0. Sat 6:00 PM CT.",
+      "espn_event_id": "401864518",
+      "bet_type": "spread",
+      "bet_side": "home",
+      "bet_line": 3.5,
+      "home_team": null,
+      "away_team": null,
+      "created_at": "2026-10-08T22:44:17",
+      "id": 214,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "NDSU -3",
+        "home_spread": 3.0,
+        "home_spread_odds": -102.0,
+        "away_spread_odds": -118.0,
+        "total": 47.5,
+        "over_odds": -115.0,
+        "under_odds": -105.0,
+        "home_moneyline": 136,
+        "away_moneyline": -162,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-10-08T22:44:20",
+      "pregame_weather": {
+        "city": "Las Vegas",
+        "temp_c": 32.4,
+        "precip_probability_pct": 5,
+        "precip_mm": 0.0,
+        "wind_kmh": 28.7,
+        "cloud_cover_pct": 100,
+        "forecast_hour": "2026-10-10T23:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 3,
+        "win_pct": 60.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 5,
+        "win_pct": 100.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 1,
+          "gf": 60,
+          "ga": 58
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 1,
+          "gf": 65,
+          "ga": 60
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 3,
+          "d": 0,
+          "l": 0,
+          "gf": 99,
+          "ga": 7
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 0,
+          "gf": 69,
+          "ga": 42
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-08T22:44:20",
+      "wr_confidence_initial": 54.666666666666664
     }
   ],
   "next_wallet_id": 31,
