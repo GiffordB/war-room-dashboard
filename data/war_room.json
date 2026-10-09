@@ -1,6 +1,6 @@
 {
   "next_report_id": 49,
-  "next_pick_id": 228,
+  "next_pick_id": 229,
   "reports": [
     {
       "source": "ChatGPT",
@@ -16400,6 +16400,102 @@
       "pregame_intel_captured_at": "2026-10-09T17:18:27",
       "wr_confidence_kickoff": 55.084,
       "wr_confidence_initial": 47.884
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 47,
+      "category": "best_bet",
+      "matchup": "USC Trojans @ Penn State Nittany Lions",
+      "selection": "Penn State -1.5",
+      "odds": -110,
+      "stake": 150.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 60.0,
+      "war_room_line": "Conviction #2, 1.50% ($150 per $10k). Sheet Penn State -1.5, Pinnacle -2.5 (moved 1.5 toward Penn State since Wednesday); Model A Penn State by 1.7. System score 60.2 (Walters 56, Peabody 90, 3 of 5), EV +1.7%: best score on the board, still under 70.",
+      "edge": "Prime time, Tier 1: a point of price in Campbell's first big home night. USC backup QB Huard questionable. The closest thing to a bet on the board.",
+      "price_discipline": "Sat 6:30 PM CT. Void if Pinnacle at or under -1.5, or a sourced Penn State QB item. Needs a sourced USC item or Pinnacle through 3 to become a system bet.",
+      "espn_event_id": "401858485",
+      "bet_type": "spread",
+      "bet_side": "home",
+      "bet_line": -1.5,
+      "home_team": "Penn State Nittany Lions",
+      "away_team": "USC Trojans",
+      "created_at": "2026-10-09T17:18:31",
+      "id": 228,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "PSU -1.5",
+        "home_spread": -1.5,
+        "home_spread_odds": -112.0,
+        "away_spread_odds": -108.0,
+        "total": 54.5,
+        "over_odds": -112.0,
+        "under_odds": -108.0,
+        "home_moneyline": -122,
+        "away_moneyline": 102,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-10-09T17:18:35",
+      "pregame_weather": {
+        "city": "Palo Alto",
+        "temp_c": 17.9,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 17.7,
+        "cloud_cover_pct": 3,
+        "forecast_hour": "2026-10-10T23:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 3,
+        "win_pct": 60.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 4,
+        "win_pct": 80.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 2,
+          "d": 0,
+          "l": 1,
+          "gf": 120,
+          "ga": 37
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 1,
+          "gf": 40,
+          "ga": 43
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 4,
+          "d": 0,
+          "l": 1,
+          "gf": 182,
+          "ga": 118
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 0,
+          "gf": 42,
+          "ga": 35
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-09T17:18:35",
+      "wr_confidence_kickoff": 60.4734693877551,
+      "wr_confidence_initial": 56.80680272108844
     }
   ],
   "next_wallet_id": 36,
