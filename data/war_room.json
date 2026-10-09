@@ -16480,7 +16480,7 @@
   ],
   "next_jesse_wallet_id": 1,
   "jesse_wallet_entries": [],
-  "next_lean_id": 93,
+  "next_lean_id": 94,
   "leans": [
     {
       "id": 1,
@@ -24628,6 +24628,100 @@
       "pregame_intel_captured_at": "2026-10-09T14:00:02",
       "wr_confidence_kickoff": 59.885714285714286,
       "wr_confidence_initial": 59.885714285714286
+    },
+    {
+      "id": 93,
+      "report_id": 44,
+      "source": "Claude - GB",
+      "league": "EPL",
+      "category": "lean",
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "parlay_leg_pick_ids": null,
+      "wr_confidence": 37.0,
+      "created_at": "2026-10-09T14:00:04",
+      "matchup": "Nottingham Forest @ Crystal Palace",
+      "selection": "Nottingham Forest to Win",
+      "bet_type": "match_result",
+      "bet_side": "away",
+      "bet_line": null,
+      "odds": 170,
+      "score": 37.0,
+      "espn_event_id": "401879266",
+      "note": "Pass; Palace 0 home wins but nothing priced wrong.",
+      "pregame_odds": {
+        "provider": "DraftKings",
+        "spread_details": "CRY +165",
+        "home_spread": -0.5,
+        "home_spread_odds": 145.0,
+        "away_spread_odds": -205.0,
+        "total": 2.5,
+        "over_odds": -115.0,
+        "under_odds": -110.0,
+        "home_moneyline": 165,
+        "away_moneyline": 170,
+        "draw_moneyline": 240.0
+      },
+      "pregame_odds_captured_at": "2026-10-09T14:00:09",
+      "pregame_weather": {
+        "city": "London",
+        "temp_c": 14.7,
+        "precip_probability_pct": 3,
+        "precip_mm": 0.0,
+        "wind_kmh": 6.7,
+        "cloud_cover_pct": 84,
+        "forecast_hour": "2026-10-11T13:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 1,
+        "win_pct": 20.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 1,
+        "win_pct": 20.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 0,
+          "d": 0,
+          "l": 2,
+          "gf": 3,
+          "ga": 7
+        },
+        "away": {
+          "w": 1,
+          "d": 1,
+          "l": 1,
+          "gf": 3,
+          "ga": 4
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 0,
+          "d": 1,
+          "l": 2,
+          "gf": 0,
+          "ga": 2
+        },
+        "away": {
+          "w": 1,
+          "d": 1,
+          "l": 0,
+          "gf": 4,
+          "ga": 3
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-09T14:00:09",
+      "wr_confidence_kickoff": 38.2,
+      "wr_confidence_initial": 38.2
     }
   ]
 }
