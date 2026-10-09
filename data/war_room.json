@@ -16480,7 +16480,7 @@
   ],
   "next_jesse_wallet_id": 1,
   "jesse_wallet_entries": [],
-  "next_lean_id": 76,
+  "next_lean_id": 77,
   "leans": [
     {
       "id": 1,
@@ -23046,6 +23046,92 @@
       "pregame_intel_captured_at": "2026-10-09T13:57:39",
       "wr_confidence_kickoff": 45.6,
       "wr_confidence_initial": 45.6
+    },
+    {
+      "id": 76,
+      "report_id": 43,
+      "source": "Claude - GB",
+      "league": "UCL",
+      "category": "lean",
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "parlay_leg_pick_ids": null,
+      "wr_confidence": 53.0,
+      "created_at": "2026-10-09T13:57:42",
+      "matchup": "Borussia Dortmund @ Bodo/Glimt",
+      "selection": "Under 3.5",
+      "bet_type": "total",
+      "bet_side": "under",
+      "bet_line": 3.5,
+      "odds": -125,
+      "score": 53.0,
+      "espn_event_id": "401915393",
+      "note": "Pass; own 55%, market no-vig 52%, blended 53% -> EV -4.2%.",
+      "pregame_odds": {
+        "provider": "DraftKings",
+        "spread_details": "DOR +105",
+        "home_spread": 0.5,
+        "home_spread_odds": -140.0,
+        "away_spread_odds": -105.0,
+        "total": 3.5,
+        "over_odds": -105.0,
+        "under_odds": -125.0,
+        "home_moneyline": 210,
+        "away_moneyline": 105,
+        "draw_moneyline": 300.0
+      },
+      "pregame_odds_captured_at": "2026-10-09T13:57:43",
+      "pregame_weather": null,
+      "pregame_home_form": {
+        "played": 1,
+        "wins": 0,
+        "win_pct": 0.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 1,
+        "wins": 1,
+        "win_pct": 100.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 0,
+          "d": 0,
+          "l": 0,
+          "gf": 0,
+          "ga": 0
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 1,
+          "gf": 0,
+          "ga": 5
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 0,
+          "gf": 3,
+          "ga": 2
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 0,
+          "gf": 0,
+          "ga": 0
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-09T13:57:43",
+      "wr_confidence_kickoff": 52.89090909090909,
+      "wr_confidence_initial": 52.89090909090909
     }
   ]
 }
