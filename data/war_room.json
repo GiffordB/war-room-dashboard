@@ -16480,7 +16480,7 @@
   ],
   "next_jesse_wallet_id": 1,
   "jesse_wallet_entries": [],
-  "next_lean_id": 72,
+  "next_lean_id": 73,
   "leans": [
     {
       "id": 1,
@@ -22678,6 +22678,100 @@
       "pregame_intel_captured_at": "2026-10-09T13:56:59",
       "wr_confidence_kickoff": 78.58181818181818,
       "wr_confidence_initial": 78.58181818181818
+    },
+    {
+      "id": 72,
+      "report_id": 43,
+      "source": "Claude - GB",
+      "league": "UCL",
+      "category": "lean",
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "parlay_leg_pick_ids": null,
+      "wr_confidence": 48.0,
+      "created_at": "2026-10-09T13:57:07",
+      "matchup": "Real Madrid @ AS Roma",
+      "selection": "Real Madrid to Win",
+      "bet_type": "match_result",
+      "bet_side": "away",
+      "bet_line": null,
+      "odds": -115,
+      "score": 48.0,
+      "espn_event_id": "401915414",
+      "note": "Pass; own read 44%, market no-vig 50%, blended 48% -> EV -10.0%. Team news not out yet (5 days pre-match).",
+      "pregame_odds": {
+        "provider": "DraftKings",
+        "spread_details": "RMA -115",
+        "home_spread": 0.5,
+        "home_spread_odds": -115.0,
+        "away_spread_odds": -125.0,
+        "total": 3.5,
+        "over_odds": 100.0,
+        "under_odds": -130.0,
+        "home_moneyline": 260,
+        "away_moneyline": -115,
+        "draw_moneyline": 300.0
+      },
+      "pregame_odds_captured_at": "2026-10-09T13:57:10",
+      "pregame_weather": {
+        "city": "Roma",
+        "temp_c": 12.0,
+        "precip_probability_pct": 18,
+        "precip_mm": 0.0,
+        "wind_kmh": 10.0,
+        "cloud_cover_pct": 100,
+        "forecast_hour": "2026-10-14T19:00"
+      },
+      "pregame_home_form": {
+        "played": 1,
+        "wins": 0,
+        "win_pct": 0.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 1,
+        "wins": 1,
+        "win_pct": 100.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 0,
+          "d": 0,
+          "l": 0,
+          "gf": 0,
+          "ga": 0
+        },
+        "away": {
+          "w": 0,
+          "d": 1,
+          "l": 0,
+          "gf": 1,
+          "ga": 1
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 0,
+          "gf": 2,
+          "ga": 1
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 0,
+          "gf": 0,
+          "ga": 0
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-09T13:57:10",
+      "wr_confidence_kickoff": 49.6,
+      "wr_confidence_initial": 49.6
     }
   ]
 }
