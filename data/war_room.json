@@ -1,6 +1,6 @@
 {
   "next_report_id": 46,
-  "next_pick_id": 224,
+  "next_pick_id": 225,
   "reports": [
     {
       "source": "ChatGPT",
@@ -15970,6 +15970,102 @@
       "pregame_intel_captured_at": "2026-10-09T14:32:39",
       "wr_confidence_kickoff": 56.16,
       "wr_confidence_initial": 60.16
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 45,
+      "category": "sexy_moneyline",
+      "matchup": "AFC Bournemouth @ Chelsea",
+      "selection": "Bournemouth to Win",
+      "odds": 333,
+      "stake": 85.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 26.0,
+      "war_room_line": "PRICE. Slip +333 (4.33), the posted American away price (UK consensus 15/4 = 4.75 is richer and not the slip used for EV). Shrunk Dixon-Coles blended with the de-vigged board: Bournemouth 25.7% v a de-vigged market 20.6%. EV +11.3%. Quarter-Kelly: edge on a 3.33 net, fraction 3.4%, quarter 0.85u, under the 2.50u cap.",
+      "edge": "Bournemouth are the number, not a vote of confidence. Chelsea have scored 10 and conceded 12 in five; Bournemouth winless, three draws, two defeats, 6 for 8 against. The shrink refuses to treat Stamford Bridge as a 57% home win. Chelsea themselves fail the cash gate (blend 51.5% at 1.72 is -11% EV on the UK price). Alex Scott out four to five weeks (Rose via ESPN, 9 Oct) is the reason the stake is quarter-Kelly rather than a full unit; Joao Pedro unlikely to start for Chelsea (RotoWire).",
+      "price_discipline": "The board still prices the home win as the story; the longshot is where the shrunk attack rates disagree. One club once, so Chelsea are not also a cash leg. 0.85u. Saturday 15:00 UK, Stamford Bridge; 40% rain risk around 14:00, gusts near 31 mph.",
+      "espn_event_id": "401878775",
+      "bet_type": "match_result",
+      "bet_side": "away",
+      "bet_line": null,
+      "home_team": "Chelsea",
+      "away_team": "AFC Bournemouth",
+      "created_at": "2026-10-09T14:32:43",
+      "id": 224,
+      "pregame_odds": {
+        "provider": "DraftKings",
+        "spread_details": "CHE -150",
+        "home_spread": -0.5,
+        "home_spread_odds": -160.0,
+        "away_spread_odds": 115.0,
+        "total": 3.5,
+        "over_odds": 125.0,
+        "under_odds": -155.0,
+        "home_moneyline": -150,
+        "away_moneyline": 370,
+        "draw_moneyline": 320.0
+      },
+      "pregame_odds_captured_at": "2026-10-09T14:32:46",
+      "pregame_weather": {
+        "city": "London",
+        "temp_c": 15.0,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 19.1,
+        "cloud_cover_pct": 77,
+        "forecast_hour": "2026-10-10T14:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 2,
+        "win_pct": 40.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 0,
+        "win_pct": 0.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 1,
+          "d": 1,
+          "l": 0,
+          "gf": 6,
+          "ga": 5
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 2,
+          "gf": 4,
+          "ga": 7
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 0,
+          "d": 2,
+          "l": 1,
+          "gf": 3,
+          "ga": 4
+        },
+        "away": {
+          "w": 0,
+          "d": 1,
+          "l": 1,
+          "gf": 3,
+          "ga": 4
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-09T14:32:46",
+      "wr_confidence_kickoff": 26.0,
+      "wr_confidence_initial": 18.8
     }
   ],
   "next_wallet_id": 35,
