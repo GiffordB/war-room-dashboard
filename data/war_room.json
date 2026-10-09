@@ -16218,7 +16218,7 @@
   ],
   "next_jesse_wallet_id": 1,
   "jesse_wallet_entries": [],
-  "next_lean_id": 21,
+  "next_lean_id": 29,
   "leans": [
     {
       "id": 1,
@@ -18099,6 +18099,616 @@
       "pregame_intel_captured_at": "2026-10-09T12:42:42",
       "wr_confidence_kickoff": 45.41836734693877,
       "wr_confidence_initial": 45.41836734693877
+    },
+    {
+      "id": 21,
+      "report_id": 40,
+      "source": "Claude",
+      "league": "CFB",
+      "category": "lean",
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "parlay_leg_pick_ids": null,
+      "wr_confidence": 52.5,
+      "created_at": "2026-10-09T12:42:48",
+      "matchup": "Tennessee Volunteers @ Arkansas Razorbacks",
+      "selection": "Arkansas +13.5",
+      "bet_type": "spread",
+      "bet_side": "home",
+      "bet_line": 13.5,
+      "odds": -110,
+      "score": 52.5,
+      "espn_event_id": "401856713",
+      "note": "Board #25 of 55: pass; 1/5 agree; Walters 55; EV -5.0%. If-forced side on the Thursday print.",
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "TENN -13.5",
+        "home_spread": 13.5,
+        "home_spread_odds": -110.0,
+        "away_spread_odds": -110.0,
+        "total": 51.5,
+        "over_odds": -108.0,
+        "under_odds": -112.0,
+        "home_moneyline": 410,
+        "away_moneyline": -550,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-10-09T12:43:00",
+      "pregame_weather": {
+        "city": "Fayetteville",
+        "temp_c": 22.9,
+        "precip_probability_pct": 55,
+        "precip_mm": 0.0,
+        "wind_kmh": 20.9,
+        "cloud_cover_pct": 100,
+        "forecast_hour": "2026-10-10T20:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 2,
+        "win_pct": 40.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 4,
+        "win_pct": 80.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 2,
+          "d": 0,
+          "l": 1,
+          "gf": 82,
+          "ga": 65
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 2,
+          "gf": 17,
+          "ga": 77
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 3,
+          "d": 0,
+          "l": 1,
+          "gf": 139,
+          "ga": 52
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 0,
+          "gf": 45,
+          "ga": 24
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-09T12:43:00",
+      "wr_confidence_kickoff": 45.95170068027211,
+      "wr_confidence_initial": 45.95170068027211
+    },
+    {
+      "id": 22,
+      "report_id": 40,
+      "source": "Claude",
+      "league": "CFB",
+      "category": "lean",
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "parlay_leg_pick_ids": null,
+      "wr_confidence": 52.2,
+      "created_at": "2026-10-09T12:42:48",
+      "matchup": "Texas Longhorns @ Oklahoma Sooners",
+      "selection": "Texas -7.5",
+      "bet_type": "spread",
+      "bet_side": "away",
+      "bet_line": -7.5,
+      "odds": -110,
+      "score": 52.2,
+      "espn_event_id": "401856717",
+      "note": "Board #26 of 55: pass; 2/5 agree; Walters 55; EV -3.7%. If-forced side on the Thursday print.",
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "TEX -7.5",
+        "home_spread": 7.5,
+        "home_spread_odds": -110.0,
+        "away_spread_odds": -110.0,
+        "total": 39.5,
+        "over_odds": -105.0,
+        "under_odds": -115.0,
+        "home_moneyline": 260,
+        "away_moneyline": -325,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-10-09T12:43:00",
+      "pregame_weather": {
+        "city": "Dallas",
+        "temp_c": 29.8,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 9.7,
+        "cloud_cover_pct": 0,
+        "forecast_hour": "2026-10-10T19:00"
+      },
+      "pregame_home_form": {
+        "played": 4,
+        "wins": 2,
+        "win_pct": 50.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 4,
+        "wins": 4,
+        "win_pct": 100.0,
+        "quality_wins": 2
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 2,
+          "d": 0,
+          "l": 0,
+          "gf": 65,
+          "ga": 6
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 2,
+          "gf": 23,
+          "ga": 58
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 3,
+          "d": 0,
+          "l": 0,
+          "gf": 113,
+          "ga": 36
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 0,
+          "gf": 20,
+          "ga": 17
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-09T12:43:00",
+      "wr_confidence_kickoff": 64.30416326530613,
+      "wr_confidence_initial": 64.30416326530613
+    },
+    {
+      "id": 23,
+      "report_id": 40,
+      "source": "Claude",
+      "league": "CFB",
+      "category": "lean",
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "parlay_leg_pick_ids": null,
+      "wr_confidence": 52.1,
+      "created_at": "2026-10-09T12:42:48",
+      "matchup": "Kent State Golden Flashes @ Western Michigan Broncos",
+      "selection": "Kent State +14",
+      "bet_type": "spread",
+      "bet_side": "away",
+      "bet_line": 14.0,
+      "odds": -110,
+      "score": 52.1,
+      "espn_event_id": "401866439",
+      "note": "Board #27 of 55: pass; 1/5 agree; Walters 54; EV -2.8%. If-forced side on the Thursday print.",
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "WMU -13.5",
+        "home_spread": -13.5,
+        "home_spread_odds": -120.0,
+        "away_spread_odds": 100.0,
+        "total": 43.5,
+        "over_odds": -110.0,
+        "under_odds": -110.0,
+        "home_moneyline": -575,
+        "away_moneyline": 425,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-10-09T12:43:00",
+      "pregame_weather": {
+        "city": "Kalamazoo",
+        "temp_c": 26.4,
+        "precip_probability_pct": 1,
+        "precip_mm": 0.0,
+        "wind_kmh": 16.7,
+        "cloud_cover_pct": 100,
+        "forecast_hour": "2026-10-10T19:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 3,
+        "win_pct": 60.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 2,
+        "win_pct": 40.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 1,
+          "gf": 56,
+          "ga": 46
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 1,
+          "gf": 60,
+          "ga": 51
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 2,
+          "d": 0,
+          "l": 1,
+          "gf": 72,
+          "ga": 41
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 2,
+          "gf": 3,
+          "ga": 116
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-09T12:43:00",
+      "wr_confidence_kickoff": 48.19942857142857,
+      "wr_confidence_initial": 48.19942857142857
+    },
+    {
+      "id": 24,
+      "report_id": 40,
+      "source": "Claude",
+      "league": "CFB",
+      "category": "lean",
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "parlay_leg_pick_ids": null,
+      "wr_confidence": 52.0,
+      "created_at": "2026-10-09T12:42:48",
+      "matchup": "Sacramento State Hornets @ Bowling Green Falcons",
+      "selection": "Bowling Green -7.5",
+      "bet_type": "spread",
+      "bet_side": "home",
+      "bet_line": -7.5,
+      "odds": -110,
+      "score": 52.0,
+      "espn_event_id": "401866436",
+      "note": "Board #28 of 55: pass; 1/5 agree; Walters 55; EV -4.1%. If-forced side on the Thursday print.",
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "BGSU -7.5",
+        "home_spread": -7.5,
+        "home_spread_odds": -110.0,
+        "away_spread_odds": -110.0,
+        "total": 43.5,
+        "over_odds": -118.0,
+        "under_odds": -102.0,
+        "home_moneyline": -298,
+        "away_moneyline": 240,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-10-09T12:43:00",
+      "pregame_weather": {
+        "city": "Bowling Green",
+        "temp_c": 20.9,
+        "precip_probability_pct": 23,
+        "precip_mm": 0.7,
+        "wind_kmh": 21.3,
+        "cloud_cover_pct": 100,
+        "forecast_hour": "2026-10-10T16:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 1,
+        "win_pct": 20.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 1,
+        "win_pct": 20.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 0,
+          "d": 0,
+          "l": 2,
+          "gf": 19,
+          "ga": 34
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 2,
+          "gf": 38,
+          "ga": 131
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 2,
+          "gf": 68,
+          "ga": 66
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 2,
+          "gf": 20,
+          "ga": 77
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-09T12:43:00",
+      "wr_confidence_kickoff": 52.09469387755102,
+      "wr_confidence_initial": 52.09469387755102
+    },
+    {
+      "id": 25,
+      "report_id": 40,
+      "source": "Claude",
+      "league": "CFB",
+      "category": "lean",
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "parlay_leg_pick_ids": null,
+      "wr_confidence": 52.0,
+      "created_at": "2026-10-09T12:42:48",
+      "matchup": "Iowa Hawkeyes @ Washington Huskies",
+      "selection": "Washington -3",
+      "bet_type": "spread",
+      "bet_side": "home",
+      "bet_line": -3.0,
+      "odds": -110,
+      "score": 52.0,
+      "espn_event_id": "401858487",
+      "note": "Board #29 of 55: pass; 1/5 agree; Walters 51; EV -4.1%. If-forced side on the Thursday print.",
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "WASH -2.5",
+        "home_spread": -2.5,
+        "home_spread_odds": -115.0,
+        "away_spread_odds": -105.0,
+        "total": 41.5,
+        "over_odds": -105.0,
+        "under_odds": -115.0,
+        "home_moneyline": -148,
+        "away_moneyline": 124,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-10-09T12:43:00",
+      "pregame_weather": {
+        "city": "Seattle",
+        "temp_c": 10.6,
+        "precip_probability_pct": 3,
+        "precip_mm": 0.0,
+        "wind_kmh": 11.2,
+        "cloud_cover_pct": 100,
+        "forecast_hour": "2026-10-10T01:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 3,
+        "win_pct": 60.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 4,
+        "win_pct": 80.0,
+        "quality_wins": 1
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 3,
+          "d": 0,
+          "l": 1,
+          "gf": 112,
+          "ga": 67
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 1,
+          "gf": 21,
+          "ga": 25
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 3,
+          "d": 0,
+          "l": 1,
+          "gf": 125,
+          "ga": 44
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 0,
+          "gf": 20,
+          "ga": 19
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-09T12:43:00",
+      "wr_confidence_kickoff": 44.59469387755102,
+      "wr_confidence_initial": 44.59469387755102
+    },
+    {
+      "id": 26,
+      "report_id": 40,
+      "source": "Claude",
+      "league": "CFB",
+      "category": "lean",
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "parlay_leg_pick_ids": null,
+      "wr_confidence": 51.8,
+      "created_at": "2026-10-09T12:42:48",
+      "matchup": "Central Michigan Chippewas @ Ohio Bobcats",
+      "selection": "Central Michigan +3",
+      "bet_type": "spread",
+      "bet_side": "away",
+      "bet_line": 3.0,
+      "odds": -110,
+      "score": 51.8,
+      "espn_event_id": "401866438",
+      "note": "Board #30 of 55: pass; 1/5 agree; Walters 51; EV -1.8%. If-forced side on the Thursday print.",
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "OHIO -3",
+        "home_spread": -3.0,
+        "home_spread_odds": -108.0,
+        "away_spread_odds": -112.0,
+        "total": 46.5,
+        "over_odds": -108.0,
+        "under_odds": -112.0,
+        "home_moneyline": -148,
+        "away_moneyline": 124,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-10-09T12:43:00",
+      "pregame_weather": {
+        "city": "Athens",
+        "temp_c": 19.6,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 3.9,
+        "cloud_cover_pct": 0,
+        "forecast_hour": "2026-10-10T19:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 3,
+        "win_pct": 60.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 3,
+        "win_pct": 60.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 2,
+          "d": 0,
+          "l": 0,
+          "gf": 64,
+          "ga": 34
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 2,
+          "gf": 70,
+          "ga": 100
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 3,
+          "d": 0,
+          "l": 0,
+          "gf": 78,
+          "ga": 37
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 2,
+          "gf": 10,
+          "ga": 90
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-09T12:43:00",
+      "wr_confidence_kickoff": 49.48522448979592,
+      "wr_confidence_initial": 49.48522448979592
+    },
+    {
+      "id": 27,
+      "report_id": 40,
+      "source": "Claude",
+      "league": "CFB",
+      "category": "lean",
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "parlay_leg_pick_ids": null,
+      "wr_confidence": 51.7,
+      "created_at": "2026-10-09T12:42:48",
+      "matchup": "South Alabama Jaguars @ Arkansas State Red Wolves",
+      "selection": "South Alabama +3",
+      "bet_type": "spread",
+      "bet_side": "away",
+      "bet_line": 3.0,
+      "odds": -110,
+      "score": 51.7,
+      "espn_event_id": "401869933",
+      "note": "Board #31 of 55: pass; 1/5 agree; Walters 56; EV -5.3%. If-forced side on the Thursday print.",
+      "wr_confidence_initial": 51.78048979591837
+    },
+    {
+      "id": 28,
+      "report_id": 40,
+      "source": "Claude",
+      "league": "CFB",
+      "category": "lean",
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "parlay_leg_pick_ids": null,
+      "wr_confidence": 51.7,
+      "created_at": "2026-10-09T12:42:48",
+      "matchup": "Sam Houston Bearkats @ Liberty Flames",
+      "selection": "Liberty -13.5",
+      "bet_type": "spread",
+      "bet_side": "home",
+      "bet_line": -13.5,
+      "odds": -110,
+      "score": 51.7,
+      "espn_event_id": "401870766",
+      "note": "Board #32 of 55: pass; 1/5 agree; Walters 52; EV -2.6%. If-forced side on the Thursday print.",
+      "wr_confidence_initial": 51.78048979591837
     }
   ]
 }
