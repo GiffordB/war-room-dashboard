@@ -16480,7 +16480,7 @@
   ],
   "next_jesse_wallet_id": 1,
   "jesse_wallet_entries": [],
-  "next_lean_id": 79,
+  "next_lean_id": 80,
   "leans": [
     {
       "id": 1,
@@ -23320,6 +23320,100 @@
       "pregame_intel_captured_at": "2026-10-09T13:58:03",
       "wr_confidence_kickoff": 54.81818181818182,
       "wr_confidence_initial": 54.81818181818182
+    },
+    {
+      "id": 79,
+      "report_id": 43,
+      "source": "Claude - GB",
+      "league": "UCL",
+      "category": "lean",
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "parlay_leg_pick_ids": null,
+      "wr_confidence": 45.0,
+      "created_at": "2026-10-09T13:58:08",
+      "matchup": "FC Porto @ Real Betis",
+      "selection": "Real Betis to Win",
+      "bet_type": "match_result",
+      "bet_side": "home",
+      "bet_line": null,
+      "odds": 115,
+      "score": 45.0,
+      "espn_event_id": "401915408",
+      "note": "Pass; own read 47%, market no-vig 44%, blended 45% -> EV -3.6%. Team news not out yet (5 days pre-match).",
+      "pregame_odds": {
+        "provider": "DraftKings",
+        "spread_details": "BET +115",
+        "home_spread": -0.5,
+        "home_spread_odds": 105.0,
+        "away_spread_odds": -155.0,
+        "total": 2.5,
+        "over_odds": -145.0,
+        "under_odds": 110.0,
+        "home_moneyline": 115,
+        "away_moneyline": 210,
+        "draw_moneyline": 260.0
+      },
+      "pregame_odds_captured_at": "2026-10-09T13:58:15",
+      "pregame_weather": {
+        "city": "Seville",
+        "temp_c": 25.8,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 8.9,
+        "cloud_cover_pct": 2,
+        "forecast_hour": "2026-10-14T19:00"
+      },
+      "pregame_home_form": {
+        "played": 1,
+        "wins": 1,
+        "win_pct": 100.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 1,
+        "wins": 0,
+        "win_pct": 0.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 0,
+          "d": 0,
+          "l": 0,
+          "gf": 0,
+          "ga": 0
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 0,
+          "gf": 3,
+          "ga": 2
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 0,
+          "d": 0,
+          "l": 1,
+          "gf": 0,
+          "ga": 2
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 0,
+          "gf": 0,
+          "ga": 0
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-09T13:58:15",
+      "wr_confidence_kickoff": 46.6,
+      "wr_confidence_initial": 46.6
     }
   ]
 }
