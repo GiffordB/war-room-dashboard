@@ -1,6 +1,6 @@
 {
   "next_report_id": 45,
-  "next_pick_id": 220,
+  "next_pick_id": 221,
   "reports": [
     {
       "source": "ChatGPT",
@@ -15574,6 +15574,102 @@
       "pregame_intel_captured_at": "2026-10-09T13:54:35",
       "wr_confidence_kickoff": 64.71428571428571,
       "wr_confidence_initial": 69.71428571428571
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 44,
+      "category": "sexy_moneyline",
+      "matchup": "Manchester City @ Liverpool",
+      "selection": "Manchester City to Win",
+      "odds": 140,
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "A lean, not a stake: positive EV but confidence 43% is far below the 60% bar.\nCity 5-for-5, 13 GF, GD +8, best side in the league.\nLiverpool without Isak and Gakpo (Iraola confirmed unavailable, per Liverpool Echo/FLFC).\nLiverpool 0 home wins (2 draws in 2 home games).\nFormal premierleague.com team news: Semenyo ankle doubt for City after the Sunderland game.\nContext and form lenses both favor City; Anfield and a derby-like fixture keep draw risk high.",
+      "wr_confidence": 43.0,
+      "war_room_line": "City 46% / Draw 26% / Liverpool 28% (raw); blended City 43 / D 26 / LIV 31",
+      "edge": "Price implies ~40% (vig removed); blended 43% -> +3pp edge, EV +3.2%",
+      "price_discipline": "+140 or better: tracked only ($0)\nBelow +125: pass",
+      "espn_event_id": "401879264",
+      "bet_type": "match_result",
+      "bet_side": "away",
+      "bet_line": null,
+      "home_team": "Liverpool",
+      "away_team": "Manchester City",
+      "created_at": "2026-10-09T13:54:38",
+      "id": 220,
+      "pregame_odds": {
+        "provider": "DraftKings",
+        "spread_details": "MNC +140",
+        "home_spread": 0.5,
+        "home_spread_odds": -175.0,
+        "away_spread_odds": 125.0,
+        "total": 2.5,
+        "over_odds": -170.0,
+        "under_odds": 140.0,
+        "home_moneyline": 180,
+        "away_moneyline": 140,
+        "draw_moneyline": 270.0
+      },
+      "pregame_odds_captured_at": "2026-10-09T13:54:42",
+      "pregame_weather": {
+        "city": "Liverpool",
+        "temp_c": 13.3,
+        "precip_probability_pct": 2,
+        "precip_mm": 0.0,
+        "wind_kmh": 8.4,
+        "cloud_cover_pct": 57,
+        "forecast_hour": "2026-10-11T15:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 2,
+        "win_pct": 40.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 5,
+        "win_pct": 100.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 0,
+          "d": 2,
+          "l": 0,
+          "gf": 2,
+          "ga": 2
+        },
+        "away": {
+          "w": 2,
+          "d": 1,
+          "l": 0,
+          "gf": 5,
+          "ga": 2
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 3,
+          "d": 0,
+          "l": 0,
+          "gf": 8,
+          "ga": 4
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 0,
+          "gf": 5,
+          "ga": 1
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-09T13:54:42",
+      "wr_confidence_kickoff": 43.0,
+      "wr_confidence_initial": 51.0
     }
   ],
   "next_wallet_id": 35,
