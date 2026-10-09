@@ -16480,7 +16480,7 @@
   ],
   "next_jesse_wallet_id": 1,
   "jesse_wallet_entries": [],
-  "next_lean_id": 81,
+  "next_lean_id": 82,
   "leans": [
     {
       "id": 1,
@@ -23508,6 +23508,100 @@
       "pregame_intel_captured_at": "2026-10-09T13:58:21",
       "wr_confidence_kickoff": 53.85454545454545,
       "wr_confidence_initial": 53.85454545454545
+    },
+    {
+      "id": 81,
+      "report_id": 43,
+      "source": "Claude - GB",
+      "league": "UCL",
+      "category": "lean",
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "parlay_leg_pick_ids": null,
+      "wr_confidence": 37.0,
+      "created_at": "2026-10-09T13:58:24",
+      "matchup": "AEK Athens @ Shakhtar Donetsk",
+      "selection": "AEK Athens to Win",
+      "bet_type": "match_result",
+      "bet_side": "away",
+      "bet_line": null,
+      "odds": 155,
+      "score": 37.0,
+      "espn_event_id": "401915406",
+      "note": "Pass; own read 36%, market no-vig 37%, blended 37% -> EV -6.3%. Team news not out yet (5 days pre-match).",
+      "pregame_odds": {
+        "provider": "DraftKings",
+        "spread_details": "AEK +155",
+        "home_spread": 0.5,
+        "home_spread_odds": -200.0,
+        "away_spread_odds": 135.0,
+        "total": 2.5,
+        "over_odds": -125.0,
+        "under_odds": -105.0,
+        "home_moneyline": 165,
+        "away_moneyline": 155,
+        "draw_moneyline": 250.0
+      },
+      "pregame_odds_captured_at": "2026-10-09T13:58:27",
+      "pregame_weather": {
+        "city": "London",
+        "temp_c": 17.1,
+        "precip_probability_pct": 7,
+        "precip_mm": 0.0,
+        "wind_kmh": 14.4,
+        "cloud_cover_pct": 3,
+        "forecast_hour": "2026-10-14T19:00"
+      },
+      "pregame_home_form": {
+        "played": 1,
+        "wins": 0,
+        "win_pct": 0.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 1,
+        "wins": 1,
+        "win_pct": 100.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 0,
+          "d": 0,
+          "l": 0,
+          "gf": 0,
+          "ga": 0
+        },
+        "away": {
+          "w": 0,
+          "d": 1,
+          "l": 0,
+          "gf": 1,
+          "ga": 1
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 0,
+          "gf": 1,
+          "ga": 0
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 0,
+          "gf": 0,
+          "ga": 0
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-09T13:58:27",
+      "wr_confidence_kickoff": 38.6,
+      "wr_confidence_initial": 38.6
     }
   ]
 }
