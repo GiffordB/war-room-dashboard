@@ -50,18 +50,6 @@
       "id": 7
     },
     {
-      "source": "Grok",
-      "league": "CFB",
-      "report_date": "2026-09-05",
-      "week_number": 1,
-      "week_label": "Week 1 -- Saturday Card",
-      "philosophy": "",
-      "blind_spot_notes": "",
-      "lsu_review_notes": "",
-      "created_at": "2026-09-05T13:58:33",
-      "id": 9
-    },
-    {
       "source": "Grok - GB",
       "league": "UCL",
       "report_date": "2026-09-08",
@@ -228,18 +216,6 @@
       "lsu_review_notes": "",
       "created_at": "2026-09-19T15:22:42",
       "id": 27
-    },
-    {
-      "source": "ChatGPT - Ash",
-      "league": "CFB",
-      "report_date": "2026-09-19",
-      "week_number": 4,
-      "week_label": "DraftKings Saturday Card -- Sept 19",
-      "philosophy": "DraftKings-only card built from the lines shown in chat: one main spread, one two-leg Pick6 (DK requires picks from at least two teams; kept to two legs because adding marginal legs has turned good reads into losing tickets), and one optional higher-risk spread. Selection weighs opponent quality, likely game script, injuries, and whether prior production came against starters or backups. Predictions, not guarantees; lines and player projections can move before kickoff.",
-      "blind_spot_notes": "Main bet Arkansas +24.5: the value is the cushion -- home dog getting more than three touchdowns against a national-title-level opponent; the bet only needs Arkansas within 24. Pick6: Keelon Russell (Alabama) MORE 259.5 passing yards (FSU the stronger of the two opponents, but Alabama should still create passing volume) + Arch Manning (Texas) MORE 279.5 passing yards (UTSA the weaker opponent; main risk is Texas getting ahead early and cutting second-half volume). The Chambliss passing over was removed from the Pick6 because LSU has looked excellent defensively; Ole Miss +3 is the different-shaped alternative, a field-goal cushion in a top-10 home matchup. Tracker before today: approximately -$7.41. No prices given on the sheet for the spreads -- logged at -110 assumed; Pick6 payout logged at +200 (DK two-pick multiplier) -- correct both to the ticket if different. The Pick6 legs are player props ESPN cannot grade, so that pick settles by hand.",
-      "lsu_review_notes": "",
-      "created_at": "2026-09-19T15:58:21",
-      "id": 28
     },
     {
       "source": "ChatGPT",
@@ -1006,151 +982,6 @@
         "state": "post",
         "home_score": 35,
         "away_score": 13
-      }
-    },
-    {
-      "report_id": 9,
-      "category": "totals_radar",
-      "matchup": "Clemson Tigers @ LSU Tigers",
-      "selection": "Under 50.5",
-      "odds": -110,
-      "stake": 120.0,
-      "result": "loss",
-      "profit_loss": -120.0,
-      "notes": "LSU installing Lane Kiffin in Week 1; Sam Leavitt has not taken a competitive snap since a season-ending 2025 surgery, and Clemsons Christopher Vizzina is in his first real run as starter. Death Valley at night plus two new passing games reads as a first-half stall, not a track meet. Last years meeting was 17-10 and both clubs finished 7-6; both programs have been Under machines vs FBS. Projection cluster lands 27-17 / 27-20. Public will hammer LSU -10.5 and the over because Kiffin -- thats why 50.5 is still up. Smaller-size live-game cousin: 1H Under 24.5.",
-      "wr_confidence": 82.0,
-      "war_room_line": "BetMGM ~50.5 (-108/-110)",
-      "edge": "Two new starting QBs (one off surgery) plus a Death Valley night atmosphere argues for a slow start; both teams historically play Under vs FBS competition",
-      "price_discipline": "Best number on the slate -- full 1.2 units.",
-      "espn_event_id": "401856660",
-      "bet_type": "total",
-      "bet_side": "under",
-      "bet_line": 50.5,
-      "home_team": "LSU Tigers",
-      "away_team": "Clemson Tigers",
-      "created_at": "2026-09-05T13:58:48",
-      "id": 32,
-      "final_score": {
-        "completed": true,
-        "state": "post",
-        "home_score": 51,
-        "away_score": 10
-      }
-    },
-    {
-      "report_id": 9,
-      "category": "best_bet",
-      "matchup": "Boston College Eagles @ Cincinnati Bearcats",
-      "selection": "Boston College +7.5",
-      "odds": -110,
-      "stake": 110.0,
-      "result": "loss",
-      "profit_loss": -110.0,
-      "notes": "Opened Cincinnati -9.5, now -7.5 -- that move is the tell. Cincinnatis new starter is Georgia Southern transfer JC French (turnover-prone, first start in a new system). BC rebuilt the defense with Power-4 transfers, and a hot-seat Bill OBrien staff usually plays tight and physical in Week 1. Simulation work lands around BC 23, Cincinnati 28 -- a cover. The total also slid from the mid-50s to ~50.5; when the over gets bet off the board this early it usually means both offenses are being marked down, a dog-friendly script.",
-      "wr_confidence": 74.0,
-      "war_room_line": "BetMGM BC +7.5 (-110), opened Cincinnati -9.5",
-      "edge": "Line move from -9.5 to -7.5 plus a turnover-prone new Cincinnati starter argues against laying a touchdown with this roster in Week 1",
-      "price_discipline": "1.1 units.",
-      "espn_event_id": "401856777",
-      "bet_type": "spread",
-      "bet_side": "away",
-      "bet_line": 7.5,
-      "home_team": "Cincinnati Bearcats",
-      "away_team": "Boston College Eagles",
-      "created_at": "2026-09-05T13:58:59",
-      "id": 33,
-      "final_score": {
-        "completed": true,
-        "state": "post",
-        "home_score": 34,
-        "away_score": 15
-      }
-    },
-    {
-      "report_id": 9,
-      "category": "best_bet",
-      "matchup": "Liberty Flames @ James Madison Dukes",
-      "selection": "Liberty +6.5",
-      "odds": -118,
-      "stake": 100.0,
-      "result": "loss",
-      "profit_loss": -100.0,
-      "notes": "JMU is coming off a CFP year and is a home favorite -- exactly why the number is soft. Billy Napier is new, the QB job is a committee (Camden Coleman / JC Evans), and returning defensive production is 32%, 130th nationally. Liberty already played this team tough last season and led late. Models sit around Liberty 24, JMU 29 -- a cover at +6.5. Public is on JMU (~56%); want the other side against a Group-of-5 favorite installing a new staff against a physical Liberty run game.",
-      "wr_confidence": 68.0,
-      "war_room_line": "BetMGM Liberty +6.5 (-118)",
-      "edge": "New JMU staff and a defense returning only 32% of production nationally (130th) argue the home-favorite number is soft",
-      "price_discipline": "Playable down to +6. Pass if it drips to +5.",
-      "espn_event_id": "401869960",
-      "bet_type": "spread",
-      "bet_side": "away",
-      "bet_line": 6.5,
-      "home_team": "James Madison Dukes",
-      "away_team": "Liberty Flames",
-      "created_at": "2026-09-05T13:59:12",
-      "id": 34,
-      "final_score": {
-        "completed": true,
-        "state": "post",
-        "home_score": 20,
-        "away_score": 13
-      }
-    },
-    {
-      "report_id": 9,
-      "category": "totals_radar",
-      "matchup": "Wyoming Cowboys @ Colorado State Rams",
-      "selection": "Under 46.5",
-      "odds": -110,
-      "stake": 100.0,
-      "result": "loss",
-      "profit_loss": -100.0,
-      "notes": "Two low-event offenses in a rivalry opener, and a total that never should have sniffed 50. Wyoming under Jay Sawvel still lives on defense and field position; CSU is not a Week 1 shootout team. Projected in the 22-25 range. Covers/G6 desks were already on the under -- the closest thing on the Saturday slate to an Iowa-style grind the public will ignore because it is not on ABC.",
-      "wr_confidence": 65.0,
-      "war_room_line": "BetMGM ~46.5",
-      "edge": "Two defense-first, low-event offenses in a Border War opener projected well under the posted total",
-      "price_discipline": "If 46.5 is gone, Under 47.5 is still fine. Do not chase Over 45.",
-      "espn_event_id": "401860878",
-      "bet_type": "total",
-      "bet_side": "under",
-      "bet_line": 46.5,
-      "home_team": "Colorado State Rams",
-      "away_team": "Wyoming Cowboys",
-      "created_at": "2026-09-05T13:59:23",
-      "id": 35,
-      "final_score": {
-        "completed": true,
-        "state": "post",
-        "home_score": 35,
-        "away_score": 13
-      }
-    },
-    {
-      "report_id": 9,
-      "category": "best_bet",
-      "matchup": "Boise State Broncos @ Oregon Ducks",
-      "selection": "Boise State +24.5",
-      "odds": -110,
-      "stake": 80.0,
-      "result": "win",
-      "profit_loss": 72.72727272727273,
-      "notes": "The price play, not the Oregon-is-overrated play. Oregon is better and Autzen in Week 1 is a problem, but the number is still too fat. Boise returns an experienced QB (Maddux Madsen) and enough starters that a 25-point opener against a team that does not need to empty the clip is a poor lay. Week 1 blowout favorites cover less often than the public thinks once the game is decided. You are betting that Oregon is a 17-to-21-point team today, not a 28-point team.",
-      "wr_confidence": 55.0,
-      "war_room_line": "Oregon -24.5, total 51.5",
-      "edge": "Boise returns enough experienced pieces (starting at QB) that laying 24.5 in a Week-1 environment where the favorite has no reason to empty the clip is priced too rich",
-      "price_discipline": "If the number is +23.5 or worse juice, pass.",
-      "espn_event_id": "401858433",
-      "bet_type": "spread",
-      "bet_side": "away",
-      "bet_line": 24.5,
-      "home_team": "Oregon Ducks",
-      "away_team": "Boise State Broncos",
-      "created_at": "2026-09-05T13:59:35",
-      "id": 36,
-      "final_score": {
-        "completed": true,
-        "state": "post",
-        "home_score": 34,
-        "away_score": 27
       }
     },
     {
@@ -6189,225 +6020,6 @@
         "state": "post",
         "home_score": 24,
         "away_score": 30
-      }
-    },
-    {
-      "parlay_leg_pick_ids": null,
-      "report_id": 28,
-      "category": "best_bet",
-      "matchup": "Georgia Bulldogs @ Arkansas Razorbacks",
-      "selection": "Arkansas +24.5",
-      "odds": -110,
-      "stake": 10.0,
-      "result": "loss",
-      "profit_loss": -10.0,
-      "notes": "",
-      "wr_confidence": 55.0,
-      "war_room_line": "Main bet. DK +24.5, price not shown on the sheet (-110 assumed). 11:00 AM CT.",
-      "edge": "The value is the cushion: home dog getting more than three touchdowns. Does not need Arkansas to win, only to stay within 24.",
-      "price_discipline": "$10. Opponent check: Georgia is a national-title-level team, so this is the large road-favorite number, not Arkansas stat-padding.",
-      "espn_event_id": "401856686",
-      "bet_type": "spread",
-      "bet_side": "home",
-      "bet_line": 24.5,
-      "home_team": null,
-      "away_team": null,
-      "created_at": "2026-09-19T15:58:30",
-      "id": 116,
-      "pregame_odds": {
-        "provider": "Draft Kings",
-        "spread_details": "UGA -24.5",
-        "home_spread": 24.5,
-        "home_spread_odds": -110.0,
-        "away_spread_odds": -110.0,
-        "total": 54.5,
-        "over_odds": -112.0,
-        "under_odds": -108.0,
-        "home_moneyline": 1300,
-        "away_moneyline": -2800,
-        "draw_moneyline": null
-      },
-      "pregame_odds_captured_at": "2026-09-19T15:58:33",
-      "pregame_weather": {
-        "city": "Fayetteville",
-        "temp_c": 26.7,
-        "precip_probability_pct": 0,
-        "precip_mm": 0.0,
-        "wind_kmh": 11.6,
-        "cloud_cover_pct": 40,
-        "forecast_hour": "2026-09-19T16:00"
-      },
-      "pregame_home_form": {
-        "played": 2,
-        "wins": 1,
-        "win_pct": 50.0,
-        "quality_wins": 0
-      },
-      "pregame_away_form": {
-        "played": 2,
-        "wins": 2,
-        "win_pct": 100.0,
-        "quality_wins": 0
-      },
-      "pregame_home_injuries": 0.0,
-      "pregame_away_injuries": 0.0,
-      "pregame_home_split": {
-        "home": {
-          "w": 1,
-          "d": 0,
-          "l": 0,
-          "gf": 31,
-          "ga": 14
-        },
-        "away": {
-          "w": 0,
-          "d": 0,
-          "l": 1,
-          "gf": 10,
-          "ga": 43
-        }
-      },
-      "pregame_away_split": {
-        "home": {
-          "w": 2,
-          "d": 0,
-          "l": 0,
-          "gf": 133,
-          "ga": 23
-        },
-        "away": {
-          "w": 0,
-          "d": 0,
-          "l": 0,
-          "gf": 0,
-          "ga": 0
-        }
-      },
-      "pregame_intel_captured_at": "2026-09-19T15:58:33",
-      "wr_confidence_initial": 51.2,
-      "final_score": {
-        "completed": true,
-        "state": "post",
-        "home_score": 17,
-        "away_score": 45
-      }
-    },
-    {
-      "parlay_leg_pick_ids": null,
-      "report_id": 28,
-      "category": "parlay",
-      "matchup": "Alabama (Russell) / Texas (Manning)",
-      "selection": "Pick6: Russell MORE 259.5 pass yds + Manning MORE 279.5 pass yds",
-      "odds": 200,
-      "stake": 10.0,
-      "result": "pending",
-      "profit_loss": 0.0,
-      "notes": "",
-      "wr_confidence": 40.0,
-      "war_room_line": "DraftKings Pick6, two legs, $10 total. Payout logged at +200 (DK two-pick multiplier) -- correct to the ticket if different. Player props: settle by hand.",
-      "edge": "Russell (Alabama) vs FSU: the stronger opponent of the two, but Alabama should still create enough passing opportunities. Manning (Texas) vs UTSA: the weaker opponent; main risk is Texas leading early and cutting second-half volume.",
-      "price_discipline": "Kept to two legs on purpose; extra marginal legs have turned good reads into losing tickets. Satisfies the two-team requirement.",
-      "espn_event_id": null,
-      "bet_type": null,
-      "bet_side": null,
-      "bet_line": null,
-      "home_team": null,
-      "away_team": null,
-      "created_at": "2026-09-19T15:58:35",
-      "id": 117,
-      "wr_confidence_initial": 40.0
-    },
-    {
-      "parlay_leg_pick_ids": null,
-      "report_id": 28,
-      "category": "best_bet",
-      "matchup": "LSU Tigers @ Ole Miss Rebels",
-      "selection": "Ole Miss +3",
-      "odds": -110,
-      "stake": 10.0,
-      "result": "win",
-      "profit_loss": 9.090909090909092,
-      "notes": "",
-      "wr_confidence": 52.0,
-      "war_room_line": "Optional higher-risk play. DK +3, price not shown (-110 assumed). 6:49 PM CT.",
-      "edge": "A field-goal cushion in a top-10 home matchup instead of asking one player to beat an LSU defense that has looked excellent -- which is why the Chambliss passing over came off the Pick6.",
-      "price_discipline": "Up to $10, logged at $10. Higher variance than the main bet.",
-      "espn_event_id": "401856688",
-      "bet_type": "spread",
-      "bet_side": "home",
-      "bet_line": 3.0,
-      "home_team": null,
-      "away_team": null,
-      "created_at": "2026-09-19T15:58:37",
-      "id": 118,
-      "pregame_odds": {
-        "provider": "Draft Kings",
-        "spread_details": "LSU -3",
-        "home_spread": 3.0,
-        "home_spread_odds": -112.0,
-        "away_spread_odds": -108.0,
-        "total": 58.5,
-        "over_odds": -112.0,
-        "under_odds": -108.0,
-        "home_moneyline": 124,
-        "away_moneyline": -148,
-        "draw_moneyline": null
-      },
-      "pregame_odds_captured_at": "2026-09-19T22:47:04",
-      "pregame_weather": null,
-      "pregame_home_form": {
-        "played": 2,
-        "wins": 2,
-        "win_pct": 100.0,
-        "quality_wins": 1
-      },
-      "pregame_away_form": {
-        "played": 2,
-        "wins": 2,
-        "win_pct": 100.0,
-        "quality_wins": 0
-      },
-      "pregame_home_injuries": 0.0,
-      "pregame_away_injuries": 0.0,
-      "pregame_home_split": {
-        "home": {
-          "w": 2,
-          "d": 0,
-          "l": 0,
-          "gf": 82,
-          "ga": 47
-        },
-        "away": {
-          "w": 0,
-          "d": 0,
-          "l": 0,
-          "gf": 0,
-          "ga": 0
-        }
-      },
-      "pregame_away_split": {
-        "home": {
-          "w": 2,
-          "d": 0,
-          "l": 0,
-          "gf": 96,
-          "ga": 24
-        },
-        "away": {
-          "w": 0,
-          "d": 0,
-          "l": 0,
-          "gf": 0,
-          "ga": 0
-        }
-      },
-      "pregame_intel_captured_at": "2026-09-19T22:47:04",
-      "wr_confidence_initial": 55.24,
-      "final_score": {
-        "completed": true,
-        "state": "post",
-        "home_score": 32,
-        "away_score": 24
       }
     },
     {
@@ -15690,7 +15302,7 @@
       "id": 8
     },
     {
-      "pick_id": 34,
+      "pick_id": null,
       "report_id": 9,
       "source": "Grok",
       "league": "CFB",
@@ -15708,7 +15320,7 @@
       "bet_line": 5.5
     },
     {
-      "pick_id": 32,
+      "pick_id": null,
       "report_id": 9,
       "source": "Grok",
       "league": "CFB",
@@ -15726,7 +15338,7 @@
       "id": 10
     },
     {
-      "pick_id": 33,
+      "pick_id": null,
       "report_id": 9,
       "source": "Grok",
       "league": "CFB",
