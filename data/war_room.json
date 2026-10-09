@@ -16480,7 +16480,7 @@
   ],
   "next_jesse_wallet_id": 1,
   "jesse_wallet_entries": [],
-  "next_lean_id": 87,
+  "next_lean_id": 88,
   "leans": [
     {
       "id": 1,
@@ -24072,6 +24072,100 @@
       "pregame_intel_captured_at": "2026-10-09T13:59:24",
       "wr_confidence_kickoff": 46.0,
       "wr_confidence_initial": 46.0
+    },
+    {
+      "id": 87,
+      "report_id": 44,
+      "source": "Claude - GB",
+      "league": "EPL",
+      "category": "lean",
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "parlay_leg_pick_ids": null,
+      "wr_confidence": 37.0,
+      "created_at": "2026-10-09T13:59:26",
+      "matchup": "Brentford @ Aston Villa",
+      "selection": "Brentford to Win",
+      "bet_type": "match_result",
+      "bet_side": "away",
+      "bet_line": null,
+      "odds": 160,
+      "score": 37.0,
+      "espn_event_id": "401878776",
+      "note": "Pass; blended 37.5% vs ~37% implied.",
+      "pregame_odds": {
+        "provider": "DraftKings",
+        "spread_details": "BRE +160",
+        "home_spread": 0.5,
+        "home_spread_odds": -195.0,
+        "away_spread_odds": 140.0,
+        "total": 2.5,
+        "over_odds": -145.0,
+        "under_odds": 115.0,
+        "home_moneyline": 165,
+        "away_moneyline": 160,
+        "draw_moneyline": 255.0
+      },
+      "pregame_odds_captured_at": "2026-10-09T13:59:29",
+      "pregame_weather": {
+        "city": "Birmingham",
+        "temp_c": 12.9,
+        "precip_probability_pct": 10,
+        "precip_mm": 0.0,
+        "wind_kmh": 23.4,
+        "cloud_cover_pct": 34,
+        "forecast_hour": "2026-10-10T14:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 1,
+        "win_pct": 20.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 2,
+        "win_pct": 40.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 0,
+          "d": 0,
+          "l": 2,
+          "gf": 1,
+          "ga": 3
+        },
+        "away": {
+          "w": 1,
+          "d": 1,
+          "l": 1,
+          "gf": 3,
+          "ga": 6
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 2,
+          "d": 1,
+          "l": 0,
+          "gf": 7,
+          "ga": 1
+        },
+        "away": {
+          "w": 0,
+          "d": 2,
+          "l": 0,
+          "gf": 3,
+          "ga": 3
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-09T13:59:29",
+      "wr_confidence_kickoff": 40.0,
+      "wr_confidence_initial": 40.0
     }
   ]
 }
