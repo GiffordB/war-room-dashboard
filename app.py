@@ -87,7 +87,7 @@ CATEGORY_ORDER = list(CATEGORIES.keys())
 
 # The AI sources being compared. Order here controls display order
 # everywhere (cards, chart legends, table columns).
-SOURCES = ["Claude", "Claude - GB", "Grok - GB", "ChatGPT", "War Room", "War Room Lean"]
+SOURCES = ["Claude", "Claude - GB", "Grok - GB", "ChatGPT", "War Room", "WR Lean"]
 
 # The dashboard's own card (see refresh_war_room_card): not a model that
 # submits reports, but a fixed selection rule run over everyone else's
@@ -98,7 +98,7 @@ WAR_ROOM_SOURCE = "War Room"
 # over everyone's full board - picks AND board leans - so it can take a
 # side the cards never showed. Its own record, its own rule, frozen
 # separately, so the two can be compared.
-WAR_ROOM_LEAN_SOURCE = "War Room Lean"
+WAR_ROOM_LEAN_SOURCE = "WR Lean"
 WAR_ROOM_SOURCES = frozenset({WAR_ROOM_SOURCE, WAR_ROOM_LEAN_SOURCE})
 SOURCE_STYLE = {
     "Claude": {"color": "#cc785c"},
@@ -118,7 +118,7 @@ SOURCE_STYLE = {
     # white for the main card (its leaderboard row is gold), hot pink for
     # the lean ticket (its row is purple).
     "War Room": {"color": "#ffffff"},
-    "War Room Lean": {"color": "#f472b6"},
+    "WR Lean": {"color": "#f472b6"},
 }
 
 # War Room card selection rule - FROZEN 2026-10-09, before any result.

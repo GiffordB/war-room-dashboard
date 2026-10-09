@@ -214,7 +214,7 @@ kept out of the agreement, alignment and Lock groupings. A revised rule
 belongs in a second card run alongside this one, not an edit to these
 constants.
 
-"War Room Lean" is that second ticket (`refresh_war_room_lean_card`),
+"WR Lean" is that second ticket (`refresh_war_room_lean_card`),
 with its own record and its own frozen rule: take a side when at least
 two sources favor it once every memo's full board is counted, picks and
 board leans together, and at least one of them is a board lean, i.e.
