@@ -34,7 +34,7 @@
             <div class="lock-card">
               <div class="lock-card-head">
                 <span class="badge-league">{{ lock.league }}</span>
-                <span style="color: {{ categories[lock.category].color }};">{{ categories[lock.category].icon }} {{ categories[lock.category].label }}</span>
+                <span class="pick-cat" style="color: {{ categories[lock.category].color }};" title="{{ categories[lock.category].label }}" aria-label="{{ categories[lock.category].label }}">{{ categories[lock.category].icon }}</span>
                 {% if lock.unanimous %}<span class="badge-unanimous" title="All three sources agree">Unanimous</span>{% endif %}
               </div>
               <div class="lock-matchup">{{ lock.matchup }}</div>
@@ -64,7 +64,7 @@
             <a class="lock-card lock-card-link" href="{{ url_for('report_detail', report_id=lock.report_id) }}">
               <div class="lock-card-head">
                 <span class="badge-league">{{ lock.league }}</span>
-                <span style="color: {{ categories[lock.category].color }};">{{ categories[lock.category].icon }} {{ categories[lock.category].label }}</span>
+                <span class="pick-cat" style="color: {{ categories[lock.category].color }};" title="{{ categories[lock.category].label }}" aria-label="{{ categories[lock.category].label }}">{{ categories[lock.category].icon }}</span>
               </div>
               <div class="lock-matchup">{{ lock.matchup }}</div>
               <div class="lock-sources">
@@ -153,7 +153,7 @@
           <div class="lock-card">
             <div class="lock-card-head">
               <span class="badge-league">{{ a.league }}</span>
-              <span style="color: {{ categories[a.category].color }};">{{ categories[a.category].icon }} {{ categories[a.category].label }}</span>
+              <span class="pick-cat" style="color: {{ categories[a.category].color }};" title="{{ categories[a.category].label }}" aria-label="{{ categories[a.category].label }}">{{ categories[a.category].icon }}</span>
               {% if a.is_lock %}<span class="badge-unanimous" title="Also a consensus Lock of the Week">🔒 Lock</span>{% endif %}
               {% if a.unanimous %}<span class="badge-unanimous" title="Every source covering this league is on this side">Unanimous</span>{% endif %}
               {% if a.opposing %}<span class="badge-split" title="On the other side: {{ a.opposing|join(', ') }}">Split · {{ a.opposing|join(', ') }}</span>{% endif %}
@@ -342,7 +342,7 @@
             <li class="pick-row">
               <span class="badge-source" style="background: {{ source_color(p.source) }};">{{ p.source }}</span>
               <span class="badge-league">{{ p.league }}</span>
-              <span class="pick-cat" style="color: {{ categories[p.category].color }};">{{ categories[p.category].icon }} {{ categories[p.category].label }}</span>
+              <span class="pick-cat" style="color: {{ categories[p.category].color }};" title="{{ categories[p.category].label }}" aria-label="{{ categories[p.category].label }}">{{ categories[p.category].icon }}</span>
               <span class="pick-matchup"><a href="{{ url_for('report_detail', report_id=p.report_id) }}">{{ p.matchup }} — {{ p.selection }}</a></span>
               <span class="muted">{{ '%+d'|format(p.odds) }}</span>
               <span class="muted">${{ '{:,.0f}'.format(p.stake) }}</span>

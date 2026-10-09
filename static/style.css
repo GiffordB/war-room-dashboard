@@ -574,7 +574,7 @@ section { margin-bottom: 44px; }
   flex-wrap: wrap;
   font-size: 0.88rem;
 }
-.pick-cat { font-weight: 600; }
+.pick-cat { font-weight: 600; display: inline-block; width: 1.6em; text-align: center; cursor: help; }
 .pick-matchup { flex: 1 1 220px; }
 .pick-matchup a { color: var(--text); text-decoration: none; }
 .pick-matchup a:hover { text-decoration: underline; }

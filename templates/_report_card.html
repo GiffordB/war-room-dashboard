@@ -81,7 +81,7 @@
           <div class="war-pick-card">
             <div class="war-pick-head">
               <span class="war-pick-num">{{ loop.index }}</span>
-              <span style="color: {{ categories[p.category].color }};">{{ categories[p.category].icon }} {{ categories[p.category].label }}</span>
+              <span class="pick-cat" style="color: {{ categories[p.category].color }};" title="{{ categories[p.category].label }}" aria-label="{{ categories[p.category].label }}">{{ categories[p.category].icon }}</span>
               <strong>{{ p.selection }}</strong>
               <span class="muted">${{ '{:,.0f}'.format(p.stake) }}</span>
               {% if p.espn_event_id %}<span class="badge-auto" title="Linked to a live {{ sportsbook_for(report.league) }} line — can be auto-graded from the final score">🔗 auto</span>{% endif %}
