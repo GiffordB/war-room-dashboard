@@ -2488,6 +2488,22 @@ def wr_confidence_breakdown_text(source, breakdown):
     return " · ".join(parts)
 
 
+def lean_tip_text(score):
+    """Plain-English hover popup for a board lean's score badge - see .wr-tip in style.css."""
+    return (
+        f"Board lean score: {score:.0f}/100, the source's own pre-kickoff read for this side. "
+        f"Not a pick -- no stake, doesn't count toward record, profit, or any leaderboard stat. "
+        f"Graded against the final score to train the WR probability fit and to spot agreement "
+        f"with other sources' boards."
+    )
+
+
+# Registered here, not in the main globals block above, since that block
+# runs before this function (and wr_confidence_breakdown_text) are
+# defined - see the September clv_pct NameError for why this split exists.
+app.jinja_env.globals.update(lean_tip=lean_tip_text)
+
+
 def _annotate_one_wr_confidence(item, source, league, track_record, agreement_map, frozen_at_label):
     """
     Shared by annotate_wr_confidence() and annotate_wallet_wr_confidence():
