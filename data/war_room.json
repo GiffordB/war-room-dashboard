@@ -16218,7 +16218,7 @@
   ],
   "next_jesse_wallet_id": 1,
   "jesse_wallet_entries": [],
-  "next_lean_id": 52,
+  "next_lean_id": 58,
   "leans": [
     {
       "id": 1,
@@ -20871,6 +20871,499 @@
       "pregame_intel_captured_at": "2026-10-09T12:44:05",
       "wr_confidence_kickoff": 59.13314285714286,
       "wr_confidence_initial": 59.13314285714286
+    },
+    {
+      "id": 52,
+      "report_id": 41,
+      "source": "Claude",
+      "league": "NFL",
+      "category": "lean",
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "parlay_leg_pick_ids": null,
+      "wr_confidence": 57.9,
+      "created_at": "2026-10-09T12:44:10",
+      "matchup": "Las Vegas Raiders @ New England Patriots",
+      "selection": "New England -3.5",
+      "bet_type": "spread",
+      "bet_side": "home",
+      "bet_line": -3.5,
+      "odds": -110,
+      "score": 57.9,
+      "espn_event_id": "401872986",
+      "note": "Board #3 of 15: pass; 3/5 agree; Walters 57; EV -0.2%. If-forced side on the Thursday print.",
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "NE -3.5",
+        "home_spread": -3.5,
+        "home_spread_odds": -110.0,
+        "away_spread_odds": -110.0,
+        "total": 45.5,
+        "over_odds": -105.0,
+        "under_odds": -115.0,
+        "home_moneyline": -198,
+        "away_moneyline": 164,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-10-09T12:44:22",
+      "pregame_weather": {
+        "city": "Foxborough",
+        "temp_c": 16.8,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 14.6,
+        "cloud_cover_pct": 100,
+        "forecast_hour": "2026-10-11T17:00"
+      },
+      "pregame_home_form": {
+        "played": 4,
+        "wins": 2,
+        "win_pct": 50.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 4,
+        "wins": 3,
+        "win_pct": 75.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 5.25,
+      "pregame_away_injuries": 1.25,
+      "pregame_home_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 0,
+          "gf": 20,
+          "ga": 3
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 2,
+          "gf": 45,
+          "ga": 74
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 1,
+          "gf": 54,
+          "ga": 43
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 0,
+          "gf": 61,
+          "ga": 41
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-09T12:44:22",
+      "wr_confidence_kickoff": 48.164,
+      "wr_confidence_initial": 48.164
+    },
+    {
+      "id": 53,
+      "report_id": 41,
+      "source": "Claude",
+      "league": "NFL",
+      "category": "lean",
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "parlay_leg_pick_ids": null,
+      "wr_confidence": 56.9,
+      "created_at": "2026-10-09T12:44:10",
+      "matchup": "New York Giants @ Washington Commanders",
+      "selection": "Washington -3.5",
+      "bet_type": "spread",
+      "bet_side": "home",
+      "bet_line": -3.5,
+      "odds": -110,
+      "score": 56.9,
+      "espn_event_id": "401872988",
+      "note": "Board #4 of 15: pass; 2/5 agree; Walters 50; EV +1.5%. If-forced side on the Thursday print.",
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "WSH -3.5",
+        "home_spread": -3.5,
+        "home_spread_odds": -118.0,
+        "away_spread_odds": -102.0,
+        "total": 42.5,
+        "over_odds": -105.0,
+        "under_odds": -115.0,
+        "home_moneyline": -192,
+        "away_moneyline": 160,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-10-09T12:44:22",
+      "pregame_weather": {
+        "city": "Landover",
+        "temp_c": 17.3,
+        "precip_probability_pct": 96,
+        "precip_mm": 1.3,
+        "wind_kmh": 17.3,
+        "cloud_cover_pct": 100,
+        "forecast_hour": "2026-10-11T17:00"
+      },
+      "pregame_home_form": {
+        "played": 4,
+        "wins": 1,
+        "win_pct": 25.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 4,
+        "wins": 3,
+        "win_pct": 75.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 4.75,
+      "pregame_away_injuries": 2.75,
+      "pregame_home_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 1,
+          "gf": 46,
+          "ga": 61
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 2,
+          "gf": 42,
+          "ga": 61
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 3,
+          "d": 0,
+          "l": 0,
+          "gf": 76,
+          "ga": 51
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 1,
+          "gf": 6,
+          "ga": 28
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-09T12:44:22",
+      "wr_confidence_kickoff": 49.004,
+      "wr_confidence_initial": 49.004
+    },
+    {
+      "id": 54,
+      "report_id": 41,
+      "source": "Claude",
+      "league": "NFL",
+      "category": "lean",
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "parlay_leg_pick_ids": null,
+      "wr_confidence": 55.7,
+      "created_at": "2026-10-09T12:44:10",
+      "matchup": "Baltimore Ravens @ Atlanta Falcons",
+      "selection": "Baltimore +3.5",
+      "bet_type": "spread",
+      "bet_side": "away",
+      "bet_line": 3.5,
+      "odds": -110,
+      "score": 55.7,
+      "espn_event_id": "401872993",
+      "note": "Board #5 of 15: pass; 1/5 agree; Walters 58; EV +0.4%. If-forced side on the Thursday print.",
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "ATL -3",
+        "home_spread": -3.0,
+        "home_spread_odds": -118.0,
+        "away_spread_odds": -102.0,
+        "total": 43.5,
+        "over_odds": -115.0,
+        "under_odds": -105.0,
+        "home_moneyline": -170,
+        "away_moneyline": 142,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-10-09T12:44:22",
+      "pregame_weather": {
+        "city": "Atlanta",
+        "temp_c": 19.2,
+        "precip_probability_pct": 5,
+        "precip_mm": 0.0,
+        "wind_kmh": 13.8,
+        "cloud_cover_pct": 100,
+        "forecast_hour": "2026-10-12T00:00"
+      },
+      "pregame_home_form": {
+        "played": 4,
+        "wins": 2,
+        "win_pct": 50.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 4,
+        "wins": 3,
+        "win_pct": 75.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 4.25,
+      "pregame_away_injuries": 1.75,
+      "pregame_home_split": {
+        "home": {
+          "w": 0,
+          "d": 0,
+          "l": 1,
+          "gf": 3,
+          "ga": 34
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 1,
+          "gf": 93,
+          "ga": 58
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 1,
+          "gf": 41,
+          "ga": 42
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 0,
+          "gf": 75,
+          "ga": 54
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-09T12:44:22",
+      "wr_confidence_kickoff": 66.812,
+      "wr_confidence_initial": 66.812
+    },
+    {
+      "id": 55,
+      "report_id": 41,
+      "source": "Claude",
+      "league": "NFL",
+      "category": "lean",
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "parlay_leg_pick_ids": null,
+      "wr_confidence": 54.5,
+      "created_at": "2026-10-09T12:44:10",
+      "matchup": "Tampa Bay Buccaneers @ Dallas Cowboys",
+      "selection": "Tampa Bay +8.5",
+      "bet_type": "spread",
+      "bet_side": "away",
+      "bet_line": 8.5,
+      "odds": -110,
+      "score": 54.5,
+      "espn_event_id": "401872980",
+      "note": "Board #6 of 15: pass; 1/5 agree; Walters 55; EV -6.3%. If-forced side on the Thursday print.",
+      "wr_confidence_initial": 55.22
+    },
+    {
+      "id": 56,
+      "report_id": 41,
+      "source": "Claude",
+      "league": "NFL",
+      "category": "lean",
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "parlay_leg_pick_ids": null,
+      "wr_confidence": 53.4,
+      "created_at": "2026-10-09T12:44:10",
+      "matchup": "Cincinnati Bengals @ Miami Dolphins",
+      "selection": "Cincinnati -6.5",
+      "bet_type": "spread",
+      "bet_side": "away",
+      "bet_line": -6.5,
+      "odds": -110,
+      "score": 53.4,
+      "espn_event_id": "401872982",
+      "note": "Board #7 of 15: pass; 1/5 agree; Walters 58; EV -3.7%. If-forced side on the Thursday print.",
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "CIN -6.5",
+        "home_spread": 6.5,
+        "home_spread_odds": 100.0,
+        "away_spread_odds": -120.0,
+        "total": 42.5,
+        "over_odds": -115.0,
+        "under_odds": -105.0,
+        "home_moneyline": 260,
+        "away_moneyline": -325,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-10-09T12:44:22",
+      "pregame_weather": {
+        "city": "Miami Gardens",
+        "temp_c": 32.9,
+        "precip_probability_pct": 4,
+        "precip_mm": 0.0,
+        "wind_kmh": 18.9,
+        "cloud_cover_pct": 24,
+        "forecast_hour": "2026-10-11T17:00"
+      },
+      "pregame_home_form": {
+        "played": 4,
+        "wins": 0,
+        "win_pct": 0.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 4,
+        "wins": 2,
+        "win_pct": 50.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 5.5,
+      "pregame_away_injuries": 2.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 0,
+          "d": 0,
+          "l": 1,
+          "gf": 10,
+          "ga": 24
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 3,
+          "gf": 36,
+          "ga": 77
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 1,
+          "gf": 50,
+          "ga": 49
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 1,
+          "gf": 47,
+          "ga": 36
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-09T12:44:22",
+      "wr_confidence_kickoff": 67.94399999999999,
+      "wr_confidence_initial": 67.94399999999999
+    },
+    {
+      "id": 57,
+      "report_id": 41,
+      "source": "Claude",
+      "league": "NFL",
+      "category": "lean",
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "parlay_leg_pick_ids": null,
+      "wr_confidence": 52.8,
+      "created_at": "2026-10-09T12:44:10",
+      "matchup": "Indianapolis Colts @ Pittsburgh Steelers",
+      "selection": "Pittsburgh -2.5",
+      "bet_type": "spread",
+      "bet_side": "home",
+      "bet_line": -2.5,
+      "odds": -110,
+      "score": 52.8,
+      "espn_event_id": "401872985",
+      "note": "Board #8 of 15: pass; 1/5 agree; Walters 50; EV -0.0%. If-forced side on the Thursday print.",
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "PIT -2.5",
+        "home_spread": -2.5,
+        "home_spread_odds": -118.0,
+        "away_spread_odds": -102.0,
+        "total": 44.5,
+        "over_odds": -102.0,
+        "under_odds": -118.0,
+        "home_moneyline": -148,
+        "away_moneyline": 124,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-10-09T12:44:22",
+      "pregame_weather": {
+        "city": "Pittsburgh",
+        "temp_c": 14.9,
+        "precip_probability_pct": 95,
+        "precip_mm": 4.3,
+        "wind_kmh": 10.9,
+        "cloud_cover_pct": 100,
+        "forecast_hour": "2026-10-11T17:00"
+      },
+      "pregame_home_form": {
+        "played": 4,
+        "wins": 2,
+        "win_pct": 50.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 4,
+        "wins": 2,
+        "win_pct": 50.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 4.25,
+      "pregame_away_injuries": 2.5,
+      "pregame_home_split": {
+        "home": {
+          "w": 2,
+          "d": 0,
+          "l": 0,
+          "gf": 50,
+          "ga": 40
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 2,
+          "gf": 27,
+          "ga": 47
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 1,
+          "gf": 42,
+          "ga": 58
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 1,
+          "gf": 60,
+          "ga": 46
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-09T12:44:22",
+      "wr_confidence_kickoff": 51.748,
+      "wr_confidence_initial": 51.748
     }
   ]
 }
