@@ -464,7 +464,7 @@
       "week_number": 6,
       "week_label": "",
       "philosophy": "Blend the market with our own read, stake only real edge, log everything else.",
-      "blind_spot_notes": "",
+      "blind_spot_notes": "Thin slate: only one side cleared both bars (60% confidence AND EV >= +2%): Man Utd v Spurs Under 3.5 (-155, conf 62, EV ~+2.3%). Best near-misses: Newcastle ML at Coventry (+110, blended ~50% -> EV ~+4.8%) and Man City ML at Liverpool (+130, blended ~45% -> EV ~+3.3%); both have real EV but sub-60 confidence, so they are tracked at $0. Own-number weight is 5/(5+6)=0.45 (all teams 5 games played), so every blend sits close to a market that is mostly efficient. Official team news (premierleague.com predicted line-ups, club press conferences) was checked; Liverpool's Isak/Gakpo status and Arsenal's Havertz hamstring are unresolved and could move numbers before kickoff.",
       "lsu_review_notes": "",
       "created_at": "2026-10-09T23:14:00",
       "id": 49
