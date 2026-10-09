@@ -16480,7 +16480,7 @@
   ],
   "next_jesse_wallet_id": 1,
   "jesse_wallet_entries": [],
-  "next_lean_id": 95,
+  "next_lean_id": 96,
   "leans": [
     {
       "id": 1,
@@ -24816,6 +24816,100 @@
       "pregame_intel_captured_at": "2026-10-09T14:00:15",
       "wr_confidence_kickoff": 51.96190476190476,
       "wr_confidence_initial": 51.96190476190476
+    },
+    {
+      "id": 95,
+      "report_id": 44,
+      "source": "Claude - GB",
+      "league": "EPL",
+      "category": "lean",
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "parlay_leg_pick_ids": null,
+      "wr_confidence": 55.0,
+      "created_at": "2026-10-09T14:00:19",
+      "matchup": "Everton @ Hull City",
+      "selection": "Under 2.5 Goals",
+      "bet_type": "total",
+      "bet_side": "under",
+      "bet_line": 2.5,
+      "odds": -120,
+      "score": 55.0,
+      "espn_event_id": "401878774",
+      "note": "Near miss: ~55% blended, EV +1.6%; fails both 60% and +2% bars.",
+      "pregame_odds": {
+        "provider": "DraftKings",
+        "spread_details": "EVE +105",
+        "home_spread": 0.5,
+        "home_spread_odds": -135.0,
+        "away_spread_odds": -105.0,
+        "total": 2.5,
+        "over_odds": -105.0,
+        "under_odds": -120.0,
+        "home_moneyline": 265,
+        "away_moneyline": 105,
+        "draw_moneyline": 250.0
+      },
+      "pregame_odds_captured_at": "2026-10-09T14:00:22",
+      "pregame_weather": {
+        "city": "Hull",
+        "temp_c": 13.3,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 9.5,
+        "cloud_cover_pct": 54,
+        "forecast_hour": "2026-10-11T13:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 2,
+        "win_pct": 40.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 2,
+        "win_pct": 40.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 1,
+          "d": 1,
+          "l": 0,
+          "gf": 2,
+          "ga": 0
+        },
+        "away": {
+          "w": 1,
+          "d": 1,
+          "l": 1,
+          "gf": 4,
+          "ga": 4
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 2,
+          "d": 1,
+          "l": 0,
+          "gf": 5,
+          "ga": 2
+        },
+        "away": {
+          "w": 0,
+          "d": 2,
+          "l": 0,
+          "gf": 1,
+          "ga": 1
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-09T14:00:22",
+      "wr_confidence_kickoff": 54.904761904761905,
+      "wr_confidence_initial": 54.904761904761905
     }
   ]
 }
