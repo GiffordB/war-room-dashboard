@@ -334,10 +334,14 @@ def wr_confidence_label(score):
 #
 # Training set: settled win/loss picks (pushes and parlays out), one per
 # game/market/side (the earliest submission, so a side logged by three
-# sources counts once), scored on the rating FROZEN AT SUBMISSION
-# (wr_confidence_initial) - never on a number that could have been touched
-# by later information. Sources in WR_CALIBRATION_EXCLUDED_SOURCES are left
-# out of the fit (they still get a probability read from it).
+# sources counts once), scored on the rating FROZEN AT KICKOFF
+# (wr_confidence_kickoff, the live rating at the last pregame capture -
+# see capture_pregame_lines), falling back to the rating frozen at
+# submission (wr_confidence_initial) for picks graded before kickoff
+# ratings existed, and to the raw base rating before that. Never a
+# number that could have been touched by the result. Sources in
+# WR_CALIBRATION_EXCLUDED_SOURCES are left out of the fit (they still get
+# a probability read from it).
 WR_CALIBRATION_EXCLUDED_SOURCES = frozenset({"Grok", "Grok - GB", "ChatGPT - Ash", WAR_ROOM_SOURCE})
 # Football (CFB/NFL) and futbol (EPL/UCL) get their own fits: a rating
 # earned against a spread market and one earned against a 1X2 market
@@ -360,8 +364,16 @@ def _calibration_group(league):
     return "futbol" if league in SOCCER_LEAGUES else "football"
 
 
+def _frozen_rating(pick):
+    """(rating, which) - the kickoff rating if the pick has one, else the submission rating, else the base; `which` names the one used."""
+    for key, label in (("wr_confidence_kickoff", "kickoff"), ("wr_confidence_initial", "submission"), ("wr_confidence", "base")):
+        if pick.get(key) is not None:
+            return float(pick[key]), label
+    return None, None
+
+
 def wr_calibration_sample(data, leagues):
-    """[(frozen rating, won)] the probability fit for `leagues` trains on - see the block comment above for the rules."""
+    """[(frozen rating, won, which)] the probability fit for `leagues` trains on - see the block comment above for the rules."""
     reports = {r["id"]: r for r in data["reports"]}
     rows = []
     seen = set()
@@ -371,9 +383,7 @@ def wr_calibration_sample(data, leagues):
         r = reports.get(p["report_id"])
         if not r or r["source"] in WR_CALIBRATION_EXCLUDED_SOURCES or r["league"] not in leagues:
             continue
-        score = p.get("wr_confidence_initial")
-        if score is None:
-            score = p.get("wr_confidence")
+        score, which = _frozen_rating(p)
         if score is None:
             continue
         if p.get("espn_event_id") and p.get("bet_type"):
@@ -381,7 +391,7 @@ def wr_calibration_sample(data, leagues):
             if key in seen:
                 continue
             seen.add(key)
-        rows.append((float(score), p["result"] == "win"))
+        rows.append((score, p["result"] == "win", which))
     return rows
 
 
@@ -394,8 +404,8 @@ def fit_wr_calibration(sample):
     off to infinity. With no data it returns a flat 50%; with a lot of
     data the prior is noise.
     """
-    xs = [(s - WR_CALIBRATION_CENTER) / 10.0 for s, _ in sample]
-    ys = [1.0 if w else 0.0 for _, w in sample]
+    xs = [(row[0] - WR_CALIBRATION_CENTER) / 10.0 for row in sample]
+    ys = [1.0 if row[1] else 0.0 for row in sample]
     lam = WR_CALIBRATION_PRIOR
 
     def objective(a, b):
@@ -449,7 +459,7 @@ def wr_probability(score, calib):
 def wr_calibration_table(sample, calib, width=10):
     """Per-rating-band rows {band, n, wins, observed, predicted} - predicted vs observed, the honest check on the fit."""
     buckets = {}
-    for score, won in sample:
+    for score, won, *_ in sample:
         lo = int(score // width * width)
         buckets.setdefault(lo, []).append((score, won))
     rows = []
@@ -477,6 +487,7 @@ def wr_calibration(data):
         calib = fit_wr_calibration(sample)
         calib["group"] = group
         calib["leagues"] = sorted(leagues)
+        calib["kickoff_rows"] = sum(1 for row in sample if row[2] == "kickoff")
         calib["table"] = wr_calibration_table(sample, calib)
         calib["curve"] = [(r, wr_probability(r, calib)) for r in (40, 50, 60, 70, 80, 90)]
         out[group] = calib

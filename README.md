@@ -223,17 +223,19 @@ logistic fit of how often each rating has actually cashed
 (`wr_calibration` and friends in `app.py`). Two separate fits: football
 (CFB, NFL) and futbol (EPL, UCL), each trained only on its own settled,
 deduplicated picks (one per game/market/side, pushes and parlays out),
-scored on the rating frozen at submission (`wr_confidence_initial`) so
-no training example ever saw later information. Grok, Grok - GB,
+scored on the rating frozen at kickoff (`wr_confidence_kickoff`, the
+live rating at the last pregame capture), falling back to the rating
+frozen at submission (`wr_confidence_initial`) for picks graded before
+kickoff ratings existed, so no training example ever saw the result. Grok, Grok - GB,
 ChatGPT - Ash and the War Room card are left out of the fit; their picks
 still read a probability from it. An L2 prior pulls both coefficients
 toward "every rating is a coin flip", so a small sample gives a nearly
 flat curve and the data has to earn every point of slope. The fit is
 recomputed from the data file on every request (it is a few hundred
 multiplications) and the dashboard shows the curve and a predicted-vs-
-observed table per rating band. Every pregame capture also freezes the
-live rating onto the pick as `wr_confidence_kickoff`, so a future
-calibration can train on the last number that existed before kickoff.
+observed table per rating band. Every pregame capture freezes the live rating
+onto the pick as `wr_confidence_kickoff`; the last capture before
+kickoff is the number the fit trains on.
 
 ## Prediction bot (EPL / UCL)
 
