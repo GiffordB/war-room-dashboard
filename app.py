@@ -1439,30 +1439,6 @@ def category_breakdown(data, league=None):
     return result
 
 
-def category_pick_counts(data, league=None):
-    """Bar-chart series: how many picks each source has made per category."""
-    reports = {r["id"]: r for r in data["reports"]}
-    counts = {cat: {s: 0 for s in SOURCES} for cat in CATEGORY_ORDER}
-    for p in data["picks"]:
-        r = reports.get(p["report_id"])
-        if not r or not _league_matches(r["league"], league):
-            continue
-        if p["category"] in counts and r["source"] in SOURCES:
-            counts[p["category"]][r["source"]] += 1
-
-    cat_labels = [CATEGORIES[c]["label"] for c in CATEGORY_ORDER]
-    series = [
-        {
-            "name": s,
-            "slug": s.lower(),
-            "color": SOURCE_STYLE[s]["color"],
-            "values": [counts[c][s] for c in CATEGORY_ORDER],
-        }
-        for s in SOURCES
-    ]
-    return cat_labels, series
-
-
 def cumulative_profit_chart(data, league=None):
     """Line-chart series: running real-dollar profit/loss, per source, over time."""
     reports = {r["id"]: r for r in data["reports"]}
@@ -2819,11 +2795,6 @@ def dashboard():
     else:
         wr_bucket_chart = None
 
-    count_labels, count_series = category_pick_counts(data, league)
-    counts_chart = charts.grouped_bar_chart(count_labels, count_series) if any(
-        v for s in count_series for v in s["values"]
-    ) else None
-
     breakdown = category_breakdown(data, league)
 
     recent_weeks = recent_picks_by_week(data, league)
@@ -2848,7 +2819,6 @@ def dashboard():
         week_numbers=week_numbers,
         week_labels=week_labels,
         weekly_data=weekly_data,
-        counts_chart=counts_chart,
         breakdown=breakdown,
         recent_weeks=recent_weeks,
         report_count=report_count,

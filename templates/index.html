@@ -283,15 +283,6 @@
   </section>
 
   <section>
-    <h2 class="section-label">Picks Logged by Category</h2>
-    {% if counts_chart %}
-      <div class="chart-card">{{ counts_chart }}</div>
-    {% else %}
-      <p class="empty">No picks logged yet.</p>
-    {% endif %}
-  </section>
-
-  <section>
     <h2 class="section-label">Category Breakdown</h2>
     <ul class="category-legend">
       {% for c in category_order %}
