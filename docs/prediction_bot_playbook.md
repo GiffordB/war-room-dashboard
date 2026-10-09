@@ -17,6 +17,18 @@ returns 404 on routes like `/api/standings`, the code this playbook
 depends on hasn't been deployed yet — stop and say so rather than
 guessing at a different API shape.
 
+**This run must never finish silently.** Several runs in a row produced
+nothing at all — no report, no board leans, nothing visible on the
+dashboard — even though the slate had real games every single time.
+That is a bug, not a legitimate "no edge this week" outcome. Step 1
+below is a hard checkpoint, not a formality: once you confirm real
+games exist (nearly always true), you are committed to finishing steps
+2-5 for the whole slate and leaving a visible trace — at minimum, a
+report with board leans logged for every game you researched, even in
+a week with zero real-money picks. Ending the run with nothing
+submitted, while games existed, is the one outcome this playbook
+exists to rule out.
+
 ## 1. Work out the slate
 
 - **UCL run:** target date = tomorrow (the Wednesday this run is prepping
@@ -32,18 +44,24 @@ Each game in the response has `id`, `home`, `away`, `home_id`, `away_id`,
 `matchup`, `kickoff`, `status`. Skip anything whose `status` shows it's
 already finished or in progress — this run is about upcoming games only.
 
+If this comes back empty for every target date, double check you used
+the right dates before concluding there's a genuine fixture-free week
+(an international break) — that's rare, and it's the only legitimate
+reason to end the run without a report.
+
 ## 2. Gather everything on each remaining game
 
 For every game still to be played, pull all of this before forming an
 opinion — don't skip straight to the odds:
 
-1. **The line itself:**
+1. **The line itself, pulled now and noted with a timestamp:**
    `GET /api/odds?league=<L>&event_id=<id>`
    → `home_spread`/`home_spread_odds`/`away_spread_odds`,
    `total`/`over_odds`/`under_odds`,
    `home_moneyline`/`away_moneyline`/`draw_moneyline`.
    A missing/404 result means no line is posted yet for that game — skip
-   markets you don't have a number for; don't invent one.
+   markets you don't have a number for; don't invent one. Note what you
+   pulled here — you'll re-pull it in step 3.5 to check for movement.
 
 2. **The full research bundle:**
    `GET /api/match_intel?league=<L>&event_id=<id>`
@@ -74,30 +92,41 @@ rather than picking one silently.
 
 ## 3. Evaluate every market on every remaining game
 
-Confidence and edge are two different claims, tracked as two separate
-fields on a pick — treat them that way, not as one vague sense of "I
-like this." Work through every game in this order:
+Work through every game in this order. A memo scores far more sides than
+it ever recommends — every side you evaluate here gets a score, and most
+of them end up as board leans (step 4), not picks.
 
-1. **The fair number — your own, before you react to the market.** For
-   a spread/total, your own line estimate with a range (e.g. "Man City
-   -2, range -1.5 to -3"); for a 3-way `match_result`, your own
-   probability split (e.g. "City 70% / Draw 18% / Coventry 12%"). This
-   becomes `war_room_line`. Ground it in what you gathered in step 2 —
-   form, table position, home/away trend, head-to-head, squad news,
-   weather, manager, motivation/context.
+1. **The fair number — built from more than one lens, not a single gut
+   call.** Form at least two independent reads before you touch the
+   market, and note where they land:
+   - **A form/underlying-performance lens:** table position, last-5
+     form, goal difference, home/away split, head-to-head — the
+     statistical read.
+   - **A context lens:** squad news, manager, motivation, schedule
+     congestion, weather — the situational read, especially anything
+     that wouldn't show up in a pure form model (a suspension, a
+     relegation/European-spot incentive, a fixture pile-up).
+   If the two lenses land in the same place, say so ("both reads have
+   City comfortably ahead"); if they pull apart, say that too and
+   explain which one you're weighting more and why ("form favors City
+   but the context lens flags Spurs' injury list as decisive — weighting
+   context here"). For a spread/total this becomes a line estimate with
+   a range (e.g. "Man City -2, range -1.5 to -3"); for a 3-way
+   `match_result`, a probability split (e.g. "City 70% / Draw 18% /
+   Coventry 12%"). This becomes `war_room_line`.
 
-      **Weight your own number against the market, not instead of it —
+   **Weight your own number against the market, not instead of it —
    especially early in a season.** The posted line already prices in
    information you don't have (public money, sharper models, insider
-   line moves). How much to trust your own number over the market
-   should scale with how much data you actually have: use
-   `games_played / (games_played + 6)` (capped at 0.5) as your own
-   number's weight, and blend it with the market's own implied number
-   at that weight. Two games into a season that's a weight around
-   0.25 — your blended number should sit closer to the market's than
-   to your raw read. By mid-season (~18+ games) it approaches the 0.5
-   cap — an even blend, never fully overriding the market on this
-   app's own data alone.
+   line moves) — treat it as a third lens, not noise to override. How
+   much to trust your own number over the market should scale with how
+   much data you actually have: use `games_played / (games_played + 6)`
+   (capped at 0.5) as your own number's weight, and blend it with the
+   market's own implied number at that weight. Two games into a season
+   that's a weight around 0.25 — your blended number should sit closer
+   to the market's than to your raw read. By mid-season (~18+ games) it
+   approaches the 0.5 cap — an even blend, never fully overriding the
+   market on this app's own data alone.
 
    **For UCL specifically, `games_played` means each team's current
    domestic-league games played this season — not the UCL standings'
@@ -117,42 +146,50 @@ like this." Work through every game in this order:
    fresh European autumn-start league — use the real count either way,
    it's still capped at 0.5.
 
-2. **The edge — as a number, not a feeling.** Convert the posted
-   American odds to an implied probability (`100/(odds+100)` for a dog,
-   `-odds/(-odds+100)` for a favorite), and compare it to your blended
-   probability from step 1. The gap is your edge — this becomes `edge`
-   (e.g. "City's price implies ~62%; blended estimate ~68% → +6pp
-   edge"). If they're basically the same, say so plainly ("no edge,
-   pricing looks fair") rather than inventing daylight that isn't
-   there. Also record your own **confidence** (0-100, your calibrated
-   probability that this side is correct) — this becomes the pick's
-   `wr_confidence`, the same field every other source's picks carry
-   (see step 5). Confidence and edge are different claims; a 90%
-   confidence pick priced accordingly (say, -900) usually has close to
-   zero edge, and a genuine underdog/draw lean can carry real edge at
-   45% confidence. Track both honestly rather than letting one drag the
-   other around.
+2. **The edge and the EV — both as numbers, not feelings.** Convert the
+   posted American odds to an implied probability (`100/(odds+100)` for
+   a dog, `-odds/(-odds+100)` for a favorite), and compare it to your
+   blended probability from step 1. The gap is your edge — this becomes
+   `edge` (e.g. "City's price implies ~62%; blended estimate ~68% →
+   +6pp edge"). Then convert that into an actual expected value: with
+   `d` the decimal odds (`d = odds/100 + 1` for a dog, `d = 100/-odds + 1`
+   for a favorite) and `p` your blended probability, `EV% = p*d - 1`.
+   State both the edge in points and the EV% in the `edge` field (e.g.
+   "+6pp edge, EV +4.1%") — they usually move together but a short-price
+   favorite can carry a real edge in points and still a thin EV%, which
+   matters for step 3 below. If edge and EV are both basically zero, say
+   so plainly ("no edge, pricing looks fair") rather than inventing
+   daylight that isn't there. Also record your own **confidence** (0-100,
+   your calibrated probability that this side is correct) — this becomes
+   the pick's `wr_confidence`, the same field every other source's picks
+   carry (see step 5).
 
-3. **Rank by edge — the primary decider, not a hard gate.** A no-pick
-   week is not an acceptable default outcome; the goal is roughly
-   **3 picks a week**, sized to how strong each one actually is, not a
-   pass/fail bar that a whole slate can fail at once. Across every game
-   on the slate:
-   - Sort every side with genuine positive edge (real, sourced,
-     computed the way step 2 describes — never invented just to hit a
-     count) from strongest to weakest.
-   - Take the strongest ~3. Confidence doesn't gate a pick out here —
-     it sizes the stake instead (see step 4): a strong-edge play at
-     55% confidence is a smaller, clearly-labeled "edge play," not a
-     pass. Say so plainly in the notes when you're taking a real edge
-     below 60% confidence — that's expected now, not a mistake to hide.
+3. **Rank by edge, then split into three tiers by score and EV — not
+   one hard gate.** A no-pick week is not an acceptable default outcome;
+   the goal is roughly **3 real-stake picks a week**, but plenty of
+   other scored sides still belong on the board at $0. Across the whole
+   slate:
+   - Sort every side with genuine, sourced positive edge from strongest
+     to weakest.
+   - **Real stake:** confidence ≥ 60% AND EV ≥ +2%. Take the strongest
+     ~3 of these as your real-money picks, sized per step 4's table.
+   - **Tracked, not staked:** a real, sourced edge that falls short of
+     either bar above (e.g. confident but thin EV on a short price, or
+     decent EV but confidence under 60%) — still submit it as a pick
+     (so it's visible, graded, and feeds CLV/calibration), but at
+     `"stake": 0`. Say so plainly in the notes — "a lean, not a stake"
+     or "no bet without [the missing piece]" reads fine and is exactly
+     what this tier is for. This is the tier that replaces forcing real
+     money onto a borderline side just to hit a pick count.
+   - **Everything else you scored** — no real edge, or edge too thin to
+     bother tracking — becomes a board lean (step 4), not a pick.
    - If the whole slate genuinely has nothing with real, sourced edge
      anywhere (every price already looks fair once blended against your
-     own number), that's a legitimate last-resort outcome — but it
-     should be rare. Don't manufacture edge to avoid it, and don't
-     confuse "I like this team" with "this price is wrong" — the edge
-     still has to be real, just not gated by a hard confidence floor
-     anymore.
+     own number), zero real-stake picks is a legitimate outcome — but
+     it should be rare, and it does **not** mean posting nothing: you
+     still owe a report (zero or $0-tracked picks) plus board leans for
+     the slate. Don't manufacture edge to avoid a thin week, and don't
+     confuse "I like this team" with "this price is wrong."
 
 4. **A context check — is there a structural reason the numbers are
    wrong for this specific matchup?** A new manager's tactical shift, a
@@ -165,11 +202,17 @@ like this." Work through every game in this order:
    asserted. Skip this step when nothing structural applies; most games
    don't need it.
 
-5. **The execution check — what you're actually about to submit.**
-   Re-pull the odds one more time (section 2, step 1) immediately
+5. **The line-movement and execution check — what you're actually about
+   to submit.** Re-pull the odds one more time (step 2.1) immediately
    before you submit, in case the number moved while you were
-   researching. Submit against the live number, not the one you started
-   analyzing with.
+   researching. If it moved meaningfully since your first pull and you
+   don't have a sourced reason for the move (official news, a lineup
+   leak, anything citable), treat the new price with suspicion rather
+   than reflexively fading it or chasing it — note the move and the
+   absence of a reason in the pick's notes, and let that pull your
+   confidence down rather than up. If you do have a sourced reason, cite
+   it. Either way, submit against the live number, not the one you
+   started analyzing with.
 
 A few markets have effectively lumpy outcomes rather than a smooth
 curve of probabilities — a 1-0 or 2-1 scoreline is far more common than
@@ -181,9 +224,9 @@ actual numbers support on the next pick.
 
 ## 4. Decide what to recommend
 
-Take the sides step 3 ranked out (the ~3 strongest real-edge plays on
-the slate) and assign each to a category, using the same five
-categories the rest of this app already uses for CFB/NFL:
+Take the real-stake and tracked-not-staked sides step 3 identified and
+assign each to a category, using the same five categories the rest of
+this app already uses for CFB/NFL:
 
 | Category | Guidance |
 |---|---|
@@ -193,24 +236,22 @@ categories the rest of this app already uses for CFB/NFL:
 | **Sexy Moneyline** (`sexy_moneyline`) | $25 normally, $50 max — a live underdog or draw pick at a big price, not a favorite. |
 | **Good-If-It-Goes Parlay** (`parlay`) | $10 max, 3+ legs, one per report — combine legs you'd each independently back, not filler. |
 
-**Size the stake to confidence, within a category's own range** — this
-is what lets a real sub-60% edge play still go out without pretending
-it's as sure a thing as an 80% one:
-- **70%+ confidence:** the top of the category's normal range.
-- **60-69% confidence:** the middle-to-lower end of the range.
-- **Below 60% ("edge play"):** the category's floor, or below it if the
-  category has no explicit floor (e.g. $25-30 on a `best_bet` play
-  instead of its usual $50 minimum) — and say "edge play" plainly in
-  the notes so it reads as a smaller, real-edge-but-lower-conviction
-  bet, not a mis-sized mistake.
+**Stake by tier, not by sliding confidence:**
+- **Real stake** (confidence ≥ 60% AND EV ≥ +2%): the category's normal
+  range, scaled within it by how strong the pick is — 70%+ confidence
+  near the top of the range, 60-69% toward the lower end.
+- **Tracked, not staked:** `"stake": 0` regardless of category. It still
+  needs a category (pick the closest fit) and still needs
+  `bet_type`/`bet_side`/`bet_line`/`espn_event_id` so it grades
+  automatically — only the dollar amount is zero.
 
 `thor_hammer` is the one exception — it stays reserved for genuine
-80%+ standouts regardless of edge; don't put a sub-60%-confidence edge
-play there no matter how strong its edge looks.
+80%+ standouts with real stake; never put a tracked-not-staked side
+there no matter how strong its edge looks.
 
 Don't duplicate the same game+market+side across two categories. It's
-fine for a category to end up with fewer than 3 if the slate is
-genuinely thin.
+fine for a category to end up with fewer than 3, or for every real-stake
+pick to be $0 tracked in a genuinely thin week.
 
 ## 5. Submit the report and picks
 
@@ -230,6 +271,12 @@ wherever a view can show more than one league at once, and a set
 - optional, but a nice touch that sets the tone for the slate; leave it
 out rather than forcing one if nothing fits.
 
+`blind_spot_notes` is where the report's narrative voice lives — name
+the single best near-miss on the slate even when it's a pass (what
+score and EV it carried, exactly which bar it failed), not just "nothing
+cleared this week." That near-miss is often more useful than the picks
+themselves for judging whether the process is working.
+
 ```
 POST /api/reports
 Content-Type: application/json
@@ -245,7 +292,7 @@ Content-Type: application/json
 → {"id": <report_id>}
 ```
 
-Then, once per recommended pick:
+Then, once per recommended pick (real-stake or tracked-not-staked):
 
 ```
 POST /api/reports/<report_id>/picks
@@ -255,12 +302,12 @@ Content-Type: application/json
   "matchup": "Tottenham Hotspur @ Manchester City",
   "selection": "Manchester City to Win",
   "odds": -135,                        // the American price you pulled in step 2
-  "stake": 100,
+  "stake": 100,                        // or 0 for a tracked-not-staked side - see step 3.3
   "wr_confidence": 68,                 // your 0-100 estimate from step 3.2 - the app's one confidence
                                         // score, same field every other source's picks use; the app
                                         // layers CLV/track-record/agreement on top of this automatically
   "war_room_line": "City 70% / Draw 18% / Spurs 12% (blended)",  // your own number - step 3.1
-  "edge": "City's price implies ~62%; blended estimate 70% -> +8pp edge",  // step 3.2
+  "edge": "City's price implies ~62%; blended estimate 70% -> +8pp edge, EV +5.7%",  // step 3.2
   "notes": "Man City unbeaten in 9 at home.\nSpurs missing both starting CBs per official injury news.\nSpurs also winless and scoreless through 2 games.",
   "price_discipline": "-135 or better: $100\n-150 to -136: $50\n-155 or worse: pass",
   "bet_type": "match_result",          // "match_result" | "total" | "spread"
@@ -303,28 +350,69 @@ everything else untouched. Neither can touch a report's `league`/
 `bet_line`/`espn_event_id` - a mistake there needs a delete + resubmit
 instead.
 
-## 6. Done
+## 6. Board leans — everything else you scored
 
-Nothing else to submit — grading happens on its own via the hourly
-`auto_grade_all` GitHub Action, and so does everything downstream of a
-pick's `wr_confidence`: the same hourly pass snapshots pregame lines for
-closing-line value, and that CLV feeds into the pick's *live* War Room
-Confidence Score (`wr_confidence_effective`) alongside weather, recent
-form, injuries, home/away splits, quality of wins, cross-source
-agreement, and each source's own track record. What you submit as
-`wr_confidence` is the one-time, frozen starting number (what the
-research actually said the day the pick went out); the dashboard shows
-that live-adjusted number everywhere afterward, and it's what
-`confidence_locks()` and the Lock tier are judged against — not a
-separate bot-only confidence system.
+After the report and its picks are submitted, log every other side you
+actually evaluated and scored in step 3 (0-100) as a board lean — the
+sides that didn't make the pick cut, not just close calls. This is the
+single biggest gap this playbook had: a memo scores far more games than
+it recommends, and those unrecommended scores are real data this app
+can use even though they're not picks.
 
-A zero-pick report is a rare last resort now (see step 3.3), not the
-default disciplined outcome — evaluate the whole slate once, honestly,
-and post the ~3 strongest real-edge plays you find, sized to their own
-confidence. Only post zero picks if the whole slate genuinely has no
-real, sourced edge anywhere once blended against the market; if that
-happens, still post the report so the run is visible in the Reports
-list, with a one-line note in `blind_spot_notes` saying why. Don't
-re-run the evaluation a second time with a different scope or looser
-math just to manufacture a pick count — one honest pass per slate,
-submitted as one report.
+```
+POST /api/reports/<report_id>/leans
+Content-Type: application/json
+[
+  {
+    "matchup": "Brentford @ Aston Villa",
+    "selection": "Aston Villa -1",
+    "bet_type": "spread",             // "spread" | "total" | "moneyline" | "match_result"
+    "bet_side": "home",
+    "bet_line": -1,                    // null for moneyline/match_result
+    "odds": -110,                      // optional, defaults to -110
+    "score": 54,                       // your 0-100 score from step 3.2 for this side
+    "espn_event_id": "401878776",
+    "note": "Pass; 2-lens blend has Villa -0.6, market -1 -- not enough gap to act on."
+  }
+]
+→ {"ids": [...], "created": <n>, "skipped": <n>}
+```
+
+Send one request per report with the full list of rows (a JSON array),
+not one call per lean. A row is automatically skipped (not an error) if
+you already logged a pick on that exact game+market, so there's no need
+to filter picks out yourself — just include every side you scored, picks
+and leans alike, and let the server sort it out. These never touch
+`wr_confidence`'s picks-only sibling stats, `record`, or `profit_loss` —
+they exist purely to train the WR probability calibration and to surface
+cross-source agreement the pick-only view can't see (see
+`aligned_leans()` on the dashboard).
+
+Covering the real breadth of the slate here matters more than covering
+it exhaustively to the last game — on a 10-game Premier League weekend,
+scoring and logging a lean for every side of every market you actually
+formed a view on (usually most of the slate) is the bar, the same way
+the CFB desk logs a board lean for essentially every game it looked at.
+
+## 7. Done
+
+Grading happens on its own via the hourly `auto_grade_all` GitHub
+Action, and so does everything downstream of a pick's `wr_confidence`:
+the same hourly pass snapshots pregame lines for closing-line value, and
+that CLV feeds into the pick's *live* War Room Confidence Score
+(`wr_confidence_effective`) alongside weather, recent form, injuries,
+home/away splits, quality of wins, cross-source agreement, and each
+source's own track record. What you submit as `wr_confidence` is the
+one-time, frozen starting number (what the research actually said the
+day the pick went out); the dashboard shows that live-adjusted number
+everywhere afterward, and it's what `confidence_locks()` and the Lock
+tier are judged against — not a separate bot-only confidence system.
+Board leans feed the same WR probability calibration fit (see
+`wr_calibration_sample()`), with their own indicator term so a lean's
+probability read is never confused with a pick's.
+
+Before ending the run, confirm you have actually submitted something:
+a report (even one with zero real-stake picks), and board leans covering
+the slate you researched. A run that finds real games in step 1 and
+ends without posting either of those did not do its job, regardless of
+what the research concluded — fix that before finishing, not after.
