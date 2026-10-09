@@ -1,5 +1,5 @@
 {
-  "next_report_id": 43,
+  "next_report_id": 44,
   "next_pick_id": 218,
   "reports": [
     {
@@ -384,6 +384,18 @@
       "blind_spot_notes": "This ticket never submits an opinion of its own: every selection traces back to the source picks and board leans named on it.",
       "lsu_review_notes": "",
       "created_at": "2026-10-09T13:17:01"
+    },
+    {
+      "source": "Claude - GB",
+      "league": "UCL",
+      "report_date": "2026-10-09",
+      "week_number": 2,
+      "week_label": "",
+      "philosophy": "Respect the market, bet only real gaps, log everything else.",
+      "blind_spot_notes": "",
+      "lsu_review_notes": "",
+      "created_at": "2026-10-09T13:54:05",
+      "id": 43
     }
   ],
   "picks": [
