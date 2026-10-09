@@ -1,5 +1,5 @@
 {
-  "next_report_id": 45,
+  "next_report_id": 46,
   "next_pick_id": 223,
   "reports": [
     {
@@ -408,6 +408,18 @@
       "lsu_review_notes": "",
       "created_at": "2026-10-09T13:54:21",
       "id": 44
+    },
+    {
+      "source": "Grok - GB",
+      "league": "EPL",
+      "report_date": "2026-10-10",
+      "week_number": 6,
+      "week_label": "Snyps PL Desk -- Week Card 10-12 Oct (Matchweek 6)",
+      "philosophy": "Independent number, Friday noon. Match results (1X2) only, Saturday-Monday, not a bet on every match. Cash sleeve: model Win % at or above 50, decimal 1.50-2.30, EV no worse than -5%, ranked by Win % then EV, flat 1.00u. Price sleeve: one longshot ranked by EV, quarter-Kelly, cap 2.50u. One club once. Number: five league matches, attack and defence shrunk n/(n+6) = 5/11 toward the league mean of 1.41 goals a side (shrink capped at 50%), home multiplier 1.12 / away 0.93, Dixon-Coles rho -0.08 on the low-score cells, fair 1X2 a 50/50 blend of that matrix and the de-vigged Oddschecker board. EV = model Win % x slip decimal minus one. Slip is the American board aligned to the ESPN widget. Totals are context only. The international break is a rest and travel overlay, not a European hangover. Five questions on every match: Peabody (is the price wrong, or only the team familiar?), Walters (does the goal record hold after the shrink?), Spanky (who is missing, who said so, when?), Voulgaris (has the board closed the gap?), Captain Jack (one club once, cash at 1.00u, price at quarter-Kelly). THIS WEEK: ten matches, one cash side, one price side. Man Utd v Spurs is the only result that clears the cash band; Arsenal at -260 is a pass because the short price does not pay; Brighton +135/+140 sits outside the 2.30 cap; Newcastle at Coventry prints 48.9% and stays off; Chelsea fails the EV gate, which is why the price sleeve is the other side of that match.",
+      "blind_spot_notes": "PASSED, WITH THE NUMBER ATTACHED: Arsenal v Leeds (ESPN -260 / 1.38; blend 54.8% only because the market drags a 39.5% Poisson up; EV -23% at 7/17; Tzolis the named worry, Havertz and Konsa 'we will see', Dan James misses, Rodon long-term; a 1.38 does not pay). Aston Villa v Brentford (Brentford +160; blend 45.5% at 2.63, positive EV on the UK price but under 50%, not cash; Villa 28.3% at 2.75 negative EV; Brentford unbeaten 10 for 4 against, Villa four points). Ipswich v Fulham (Fulham +140; Ipswich 38.1% at 2.90 just through the 38% price ceiling so not the longshot; Fulham 35.6% at 2.50 fails both sleeves; Fatawu suspended). Sunderland v Brighton (Brighton +135 / 2.35, outside 1.50-2.30; blend 51.8%, xG 1.28-2.46 is the shrink still believing a 16-goal sample; Tzimas, Ferguson out, Mitoma, Minteh, Wieffer edging back; Brobbey, Ballard out for Sunderland; the band says no). Crystal Palace v Forest (Palace +165; blend 35.3/28.3/36.4; Forest EV flat at 2.75, Palace -2.8%; Henderson, Tomiyasu out, Sarr ready; Sunday opener, model window, no bet). Hull v Everton (Everton +105 / 2.05; Everton 38.9%, EV -18% at 2.10, market shorter than the Poisson 1.09-0.98; Hull 30.9% at 3.90 is +20% UK / +8% at +250, second on the price list, not selected; Ali-Cho a doubt). Liverpool v Man City (City +150 / 2.50; Liverpool 34.7% EV -2.8% at 2.80, City 38.9% EV -2.8% at 2.50, neither clears a sleeve; Isak and Gakpo out for Liverpool, Jacquet fit; Haaland good, Foden suspended to 17 Oct, O'Reilly a doubt; City 15 from five, Liverpool unbeaten on nine; the crowd is the variable, not a price). Coventry v Newcastle Monday (Newcastle +105 / 2.05; blend 48.9% at 2.15, EV +5.4% UK and still under 50%; Eccles, Wright, Woolfenden out, van Ewijk and Kesler-Hayden back in training; Coventry have scored once in five; pass). WEATHER: Met Office London Saturday 15C sunny intervals, 40% rain risk around 14:00, gusts near 31 mph; Sunday 16C lighter; Monday 19C overcast 30% rain risk. Liverpool Saturday showers and breeze, Sunday cloudy. No total is on the card. Last league matchday in the sample 20 September; the break is rest, travel is whatever the internationals logged. Sources: ESPN schedule widget and injury file 9 Oct, Oddschecker 1X2 9 Oct, American board (BetVictor) where DraftKings did not print a full 1X2, Met Office, table through five matches.",
+      "lsu_review_notes": "",
+      "created_at": "2026-10-09T14:32:24",
+      "id": 45
     }
   ],
   "picks": [
