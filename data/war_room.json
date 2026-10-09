@@ -1,6 +1,6 @@
 {
   "next_report_id": 46,
-  "next_pick_id": 223,
+  "next_pick_id": 224,
   "reports": [
     {
       "source": "ChatGPT",
@@ -15874,6 +15874,102 @@
       "pregame_intel_captured_at": "2026-10-09T13:54:57",
       "wr_confidence_kickoff": 56.86666666666667,
       "wr_confidence_initial": 51.86666666666667
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 45,
+      "category": "best_bet",
+      "matchup": "Tottenham Hotspur @ Manchester United",
+      "selection": "Manchester United to Win",
+      "odds": -140,
+      "stake": 100.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 56.0,
+      "war_room_line": "CASH. Slip -140 (1.71), DraftKings. Model xG 1.78-0.94; blend Win 56.2% / draw 23.8% / Spurs 20.0%. EV -3.7%, inside the -5% tolerance. Stake 1.00u.",
+      "edge": "Spurs have two goals and two points from five; United eight goals and five points, one win. The gap is real and already in the market: model and de-vigged board both sit at 56%. Three weeks since the last league round (Fulham 1-1 United, 20 Sep); the overlay is international minutes. Dorgu, Mazraoui and Sesko missing (Sesko shin) trims the attack, not the result price. No edge to chase: the market has this match.",
+      "price_discipline": "The price is the question, not the badge: -140 is inside the cash band, a shorter number would have been a pass. One club once, so United appear nowhere else. Saturday 17:30 UK, Old Trafford; breezy with shower risk, nothing that moves a 1X2.",
+      "espn_event_id": "401878773",
+      "bet_type": "match_result",
+      "bet_side": "home",
+      "bet_line": null,
+      "home_team": "Manchester United",
+      "away_team": "Tottenham Hotspur",
+      "created_at": "2026-10-09T14:32:35",
+      "id": 223,
+      "pregame_odds": {
+        "provider": "DraftKings",
+        "spread_details": "MAN -140",
+        "home_spread": -0.5,
+        "home_spread_odds": -155.0,
+        "away_spread_odds": 110.0,
+        "total": 3.5,
+        "over_odds": 125.0,
+        "under_odds": -155.0,
+        "home_moneyline": -140,
+        "away_moneyline": 340,
+        "draw_moneyline": 330.0
+      },
+      "pregame_odds_captured_at": "2026-10-09T14:32:39",
+      "pregame_weather": {
+        "city": "Manchester",
+        "temp_c": 12.5,
+        "precip_probability_pct": 79,
+        "precip_mm": 0.0,
+        "wind_kmh": 24.8,
+        "cloud_cover_pct": 96,
+        "forecast_hour": "2026-10-10T16:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 1,
+        "win_pct": 20.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 0,
+        "win_pct": 0.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 1,
+          "gf": 5,
+          "ga": 3
+        },
+        "away": {
+          "w": 0,
+          "d": 2,
+          "l": 1,
+          "gf": 3,
+          "ga": 5
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 0,
+          "d": 1,
+          "l": 2,
+          "gf": 2,
+          "ga": 5
+        },
+        "away": {
+          "w": 0,
+          "d": 1,
+          "l": 1,
+          "gf": 0,
+          "ga": 3
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-09T14:32:39",
+      "wr_confidence_kickoff": 56.16,
+      "wr_confidence_initial": 60.16
     }
   ],
   "next_wallet_id": 35,
