@@ -16480,7 +16480,7 @@
   ],
   "next_jesse_wallet_id": 1,
   "jesse_wallet_entries": [],
-  "next_lean_id": 99,
+  "next_lean_id": 100,
   "leans": [
     {
       "id": 1,
@@ -25192,6 +25192,100 @@
       "pregame_intel_captured_at": "2026-10-09T14:00:44",
       "wr_confidence_kickoff": 47.0,
       "wr_confidence_initial": 47.0
+    },
+    {
+      "id": 99,
+      "report_id": 44,
+      "source": "Claude - GB",
+      "league": "EPL",
+      "category": "lean",
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "parlay_leg_pick_ids": null,
+      "wr_confidence": 58.0,
+      "created_at": "2026-10-09T14:00:47",
+      "matchup": "Manchester City @ Liverpool",
+      "selection": "Over 2.5 Goals",
+      "bet_type": "total",
+      "bet_side": "over",
+      "bet_line": 2.5,
+      "odds": -170,
+      "score": 58.0,
+      "espn_event_id": "401879264",
+      "note": "Pass; fair at -170 for 63% implied.",
+      "pregame_odds": {
+        "provider": "DraftKings",
+        "spread_details": "MNC +130",
+        "home_spread": 0.5,
+        "home_spread_odds": -165.0,
+        "away_spread_odds": 120.0,
+        "total": 2.5,
+        "over_odds": -175.0,
+        "under_odds": 140.0,
+        "home_moneyline": 190,
+        "away_moneyline": 130,
+        "draw_moneyline": 275.0
+      },
+      "pregame_odds_captured_at": "2026-10-09T14:00:51",
+      "pregame_weather": {
+        "city": "Liverpool",
+        "temp_c": 13.3,
+        "precip_probability_pct": 2,
+        "precip_mm": 0.0,
+        "wind_kmh": 8.4,
+        "cloud_cover_pct": 57,
+        "forecast_hour": "2026-10-11T15:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 2,
+        "win_pct": 40.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 5,
+        "win_pct": 100.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 0,
+          "d": 2,
+          "l": 0,
+          "gf": 2,
+          "ga": 2
+        },
+        "away": {
+          "w": 2,
+          "d": 1,
+          "l": 0,
+          "gf": 5,
+          "ga": 2
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 3,
+          "d": 0,
+          "l": 0,
+          "gf": 8,
+          "ga": 4
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 0,
+          "gf": 5,
+          "ga": 1
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-09T14:00:51",
+      "wr_confidence_kickoff": 57.84761904761905,
+      "wr_confidence_initial": 57.84761904761905
     }
   ]
 }
