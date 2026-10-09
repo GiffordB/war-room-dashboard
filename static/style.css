@@ -383,6 +383,49 @@ section { margin-bottom: 44px; }
   margin-top: 4px;
 }
 
+/* Hover/focus popup for a WR or Lean score badge - see wr-tip() in
+   base.html. Pure CSS, no JS: the explanation lives in data-tip and
+   is rendered by ::after on hover/keyboard focus. Positioned below the
+   badge by default so it isn't clipped by a .table-scroll ancestor's
+   top edge. */
+.wr-tip {
+  position: relative;
+  cursor: help;
+}
+.wr-tip::after {
+  content: attr(data-tip);
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  width: max-content;
+  max-width: min(280px, 80vw);
+  white-space: normal;
+  text-align: left;
+  background: var(--surface-2);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px 10px;
+  font-size: 0.72rem;
+  font-weight: 400;
+  line-height: 1.45;
+  text-transform: none;
+  letter-spacing: normal;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(2px);
+  transition: opacity 0.12s ease, transform 0.12s ease;
+  z-index: 60;
+}
+.wr-tip:hover::after,
+.wr-tip:focus-visible::after {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
 .badge-clv {
   display: inline-block;
   color: var(--muted);
