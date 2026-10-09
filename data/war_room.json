@@ -16480,7 +16480,7 @@
   ],
   "next_jesse_wallet_id": 1,
   "jesse_wallet_entries": [],
-  "next_lean_id": 91,
+  "next_lean_id": 92,
   "leans": [
     {
       "id": 1,
@@ -24448,6 +24448,100 @@
       "pregame_intel_captured_at": "2026-10-09T13:59:49",
       "wr_confidence_kickoff": 43.0,
       "wr_confidence_initial": 43.0
+    },
+    {
+      "id": 91,
+      "report_id": 44,
+      "source": "Claude - GB",
+      "league": "EPL",
+      "category": "lean",
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "parlay_leg_pick_ids": null,
+      "wr_confidence": 55.0,
+      "created_at": "2026-10-09T13:59:52",
+      "matchup": "Fulham @ Ipswich Town",
+      "selection": "Over 2.5 Goals",
+      "bet_type": "total",
+      "bet_side": "over",
+      "bet_line": 2.5,
+      "odds": -135,
+      "score": 55.0,
+      "espn_event_id": "401879265",
+      "note": "Pass; Ipswich games avg 3.6 goals but Fulham away GF 0.",
+      "pregame_odds": {
+        "provider": "DraftKings",
+        "spread_details": "FUL +150",
+        "home_spread": 0.5,
+        "home_spread_odds": -190.0,
+        "away_spread_odds": 135.0,
+        "total": 2.5,
+        "over_odds": -135.0,
+        "under_odds": 110.0,
+        "home_moneyline": 175,
+        "away_moneyline": 150,
+        "draw_moneyline": 255.0
+      },
+      "pregame_odds_captured_at": "2026-10-09T13:59:55",
+      "pregame_weather": {
+        "city": "Ipswich",
+        "temp_c": 14.0,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 23.8,
+        "cloud_cover_pct": 57,
+        "forecast_hour": "2026-10-10T14:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 2,
+        "win_pct": 40.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 0,
+        "win_pct": 0.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 1,
+          "gf": 2,
+          "ga": 3
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 2,
+          "gf": 5,
+          "ga": 8
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 0,
+          "d": 1,
+          "l": 2,
+          "gf": 5,
+          "ga": 7
+        },
+        "away": {
+          "w": 0,
+          "d": 1,
+          "l": 1,
+          "gf": 0,
+          "ga": 1
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-09T13:59:55",
+      "wr_confidence_kickoff": 54.904761904761905,
+      "wr_confidence_initial": 54.904761904761905
     }
   ]
 }
