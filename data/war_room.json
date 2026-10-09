@@ -1,6 +1,6 @@
 {
   "next_report_id": 50,
-  "next_pick_id": 234,
+  "next_pick_id": 235,
   "reports": [
     {
       "source": "ChatGPT",
@@ -16992,6 +16992,102 @@
       "pregame_intel_captured_at": "2026-10-09T23:14:08",
       "wr_confidence_kickoff": 61.77142857142857,
       "wr_confidence_initial": 66.77142857142857
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 49,
+      "category": "best_bet",
+      "matchup": "Newcastle United @ Coventry City",
+      "selection": "Newcastle United to Win",
+      "odds": 110,
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "Coventry have scored 1 league goal in 5 games and conceded 10; 0 goals in 2 home games.\nNewcastle unbeaten in 3 of last 5, 3-5 goals in most games, and lead H2H 4-0.\nA Newcastle player is reportedly out for months after a training injury (headline Oct 2026); impact on the XI unclear.\nA lean, not a stake: edge is real but 3-way confidence stays below 60%.",
+      "wr_confidence": 52.0,
+      "war_room_line": "NEW 55% / Draw 25% / COV 20% (own read); blended NEW ~50%",
+      "edge": "Price implies ~47.6% (45.6% no-vig); blended ~50% -> +2 to +4pp edge, EV +4.8%. Confidence under 60 -> tracked, not staked",
+      "price_discipline": "+110 or better: tracked only ($0)\nBelow +100: pass",
+      "espn_event_id": "401879267",
+      "bet_type": "match_result",
+      "bet_side": "away",
+      "bet_line": null,
+      "home_team": "Coventry City",
+      "away_team": "Newcastle United",
+      "created_at": "2026-10-09T23:14:11",
+      "id": 234,
+      "pregame_odds": {
+        "provider": "DraftKings",
+        "spread_details": "NEW +110",
+        "home_spread": 0.5,
+        "home_spread_odds": -135.0,
+        "away_spread_odds": 100.0,
+        "total": 2.5,
+        "over_odds": -150.0,
+        "under_odds": 125.0,
+        "home_moneyline": 240,
+        "away_moneyline": 110,
+        "draw_moneyline": 265.0
+      },
+      "pregame_odds_captured_at": "2026-10-09T23:14:14",
+      "pregame_weather": {
+        "city": "Coventry",
+        "temp_c": 18.0,
+        "precip_probability_pct": 12,
+        "precip_mm": 0.0,
+        "wind_kmh": 14.8,
+        "cloud_cover_pct": 94,
+        "forecast_hour": "2026-10-12T19:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 1,
+        "win_pct": 20.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 2,
+        "win_pct": 40.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 0,
+          "d": 0,
+          "l": 2,
+          "gf": 0,
+          "ga": 6
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 2,
+          "gf": 1,
+          "ga": 4
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 1,
+          "d": 2,
+          "l": 0,
+          "gf": 6,
+          "ga": 5
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 1,
+          "gf": 3,
+          "ga": 4
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-09T23:14:14",
+      "wr_confidence_kickoff": 51.96190476190476,
+      "wr_confidence_initial": 56.96190476190476
     }
   ],
   "next_wallet_id": 36,
