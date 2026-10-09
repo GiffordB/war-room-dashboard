@@ -1,6 +1,6 @@
 {
   "next_report_id": 49,
-  "next_pick_id": 231,
+  "next_pick_id": 232,
   "reports": [
     {
       "source": "ChatGPT",
@@ -16692,6 +16692,102 @@
       "pregame_intel_captured_at": "2026-10-09T17:18:46",
       "wr_confidence_kickoff": 66.244,
       "wr_confidence_initial": 69.244
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 47,
+      "category": "best_bet",
+      "matchup": "Texas Longhorns @ Oklahoma Sooners",
+      "selection": "Oklahoma +7.5",
+      "odds": -110,
+      "stake": 100.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 50.0,
+      "war_room_line": "Conviction #4, 1.00% ($100 per $10k). Red River, Dallas (neutral). Sheet Texas -7.5, Pinnacle -8 frozen; Model A neutral, Texas by 7.9. System score 50.1 (Walters 54, Peabody 78, 1 of 5), EV -4.3%: the sheet 7.5 is half a point worse than Pinnacle for the dog.",
+      "edge": "Casino logic: 83% of DK tickets on Texas with Pinnacle frozen at 8 against it; Oklahoma oversold after losing by 28 at Georgia (sentiment -40).",
+      "price_discipline": "Sat 2:30 PM CT. Void if Pinnacle under Texas -7, or a Mateer-type QB item for Oklahoma.",
+      "espn_event_id": "401856717",
+      "bet_type": "spread",
+      "bet_side": "home",
+      "bet_line": 7.5,
+      "home_team": "Oklahoma Sooners",
+      "away_team": "Texas Longhorns",
+      "created_at": "2026-10-09T17:18:50",
+      "id": 231,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "TEX -7.5",
+        "home_spread": 7.5,
+        "home_spread_odds": -110.0,
+        "away_spread_odds": -110.0,
+        "total": 39.5,
+        "over_odds": -105.0,
+        "under_odds": -115.0,
+        "home_moneyline": 260,
+        "away_moneyline": -325,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-10-09T17:18:54",
+      "pregame_weather": {
+        "city": "Dallas",
+        "temp_c": 29.5,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 11.6,
+        "cloud_cover_pct": 0,
+        "forecast_hour": "2026-10-10T19:00"
+      },
+      "pregame_home_form": {
+        "played": 4,
+        "wins": 2,
+        "win_pct": 50.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 4,
+        "wins": 4,
+        "win_pct": 100.0,
+        "quality_wins": 2
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 2,
+          "d": 0,
+          "l": 0,
+          "gf": 65,
+          "ga": 6
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 2,
+          "gf": 23,
+          "ga": 58
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 3,
+          "d": 0,
+          "l": 0,
+          "gf": 113,
+          "ga": 36
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 0,
+          "gf": 20,
+          "ga": 17
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-09T17:18:54",
+      "wr_confidence_kickoff": 50.0,
+      "wr_confidence_initial": 38.0
     }
   ],
   "next_wallet_id": 36,
