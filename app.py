@@ -87,7 +87,7 @@ CATEGORY_ORDER = list(CATEGORIES.keys())
 
 # The AI sources being compared. Order here controls display order
 # everywhere (cards, chart legends, table columns).
-SOURCES = ["Claude", "Claude - GB", "Grok", "Grok - GB", "ChatGPT", "ChatGPT - Ash", "War Room"]
+SOURCES = ["Claude", "Claude - GB", "Grok - GB", "ChatGPT", "War Room"]
 
 # The dashboard's own card (see refresh_war_room_card): not a model that
 # submits reports, but a fixed selection rule run over everyone else's
@@ -102,17 +102,12 @@ SOURCE_STYLE = {
     # gets tracked as its own competitor rather than blended into
     # "Claude"'s own record.
     "Claude - GB": {"color": "#a78bfa"},
-    "Grok": {"color": "#38bdf8"},
-    # Same split as "Claude - GB" above, for the same reason: Grok's
-    # EPL/UCL picks come from a separate soccer-specific brain trust
-    # (Snyps), not the football side's model, so it's tracked as its own
-    # competitor.
+    # Grok's EPL/UCL picks come from a soccer-specific brain trust
+    # (Snyps), tracked as its own competitor. Grok's CFB/NFL desk and the
+    # "ChatGPT - Ash" desk were retired on 2026-10-09 and their reports
+    # removed from the data file (the git history keeps them).
     "Grok - GB": {"color": "#fbbf24"},
     "ChatGPT": {"color": "#10a37f"},
-    # Ash's own ChatGPT desk - a separate conversation with its own card
-    # (DraftKings spreads plus Pick6 player props), tracked as its own
-    # competitor rather than folded into the main "ChatGPT" record.
-    "ChatGPT - Ash": {"color": "#f472b6"},
     "War Room": {"color": "#e2b714"},
 }
 
@@ -345,7 +340,7 @@ def wr_confidence_label(score):
 # sample too, with their own indicator term, so the fit learns a shared
 # slope from a far larger set of graded sides while a lean's probability
 # is never confused with a pick's.
-WR_CALIBRATION_EXCLUDED_SOURCES = frozenset({"Grok", "Grok - GB", "ChatGPT - Ash", WAR_ROOM_SOURCE})
+WR_CALIBRATION_EXCLUDED_SOURCES = frozenset({"Grok - GB", WAR_ROOM_SOURCE})
 # Football (CFB/NFL) and futbol (EPL/UCL) get their own fits: a rating
 # earned against a spread market and one earned against a 1X2 market
 # cash at different rates, and neither should drag the other's curve.

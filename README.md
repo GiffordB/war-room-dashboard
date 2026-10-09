@@ -226,8 +226,8 @@ deduplicated picks (one per game/market/side, pushes and parlays out),
 scored on the rating frozen at kickoff (`wr_confidence_kickoff`, the
 live rating at the last pregame capture), falling back to the rating
 frozen at submission (`wr_confidence_initial`) for picks graded before
-kickoff ratings existed, so no training example ever saw the result. Grok, Grok - GB,
-ChatGPT - Ash and the War Room card are left out of the fit; their picks
+kickoff ratings existed, so no training example ever saw the result. Grok - GB and the War
+Room card are left out of the fit; their picks
 still read a probability from it. An L2 prior pulls both coefficients
 toward "every rating is a coin flip", so a small sample gives a nearly
 flat curve and the data has to earn every point of slope. The fit is
