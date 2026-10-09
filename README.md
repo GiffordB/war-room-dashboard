@@ -251,16 +251,19 @@ kickoff is the number the fit trains on.
 Two scheduled Claude runs evaluate a full slate and log their own picks
 automatically — Tuesday 8pm ET for Wednesday's Champions League games,
 Friday 7pm ET for the weekend's Premier League games. Each side of each
-market gets an independent "fair number" blended with the market
-(weighted by how much of the season has been played) and a real,
-computed edge; the bot then ranks the whole slate by edge and takes the
-strongest ~3 as picks, sizing each one's stake to its own confidence
-rather than gating it out below a fixed bar — a zero-pick week is a rare
-last resort, not the default outcome. The confidence number it submits
-is `wr_confidence` — the same War Room Confidence Score field every
-other source's picks use, so it's adjusted live afterward by CLV, form,
-injuries, and the rest just like any other pick, not a separate bot-only
-score. The full process is in
+market gets a fair number blended from two independent lenses (a
+form/underlying-performance read and a situational/context read) plus
+the market itself, and a real, computed edge and expected value. Sides
+clearing both a confidence and an EV floor go out at real stake (~3 a
+week); real-edge sides that fall short of one of those bars still go
+out as picks, just at `$0` ("tracked, not staked"); everything else
+scored gets logged as a board lean instead of a pick — a memo scores
+far more sides than it recommends, and those scores still train the
+calibration below. The confidence number it submits is `wr_confidence`
+— the same War Room Confidence Score field every other source's picks
+use, so it's adjusted live afterward by CLV, form, injuries, and the
+rest just like any other pick, not a separate bot-only score. The full
+process is in
 [`docs/prediction_bot_playbook.md`](docs/prediction_bot_playbook.md).
 The bot writes through the same JSON API a human could script against:
 
@@ -273,11 +276,16 @@ The bot writes through the same JSON API a human could script against:
   hand-counted (and mislabeled) again.
 - `POST /api/reports`, `POST /api/reports/<id>/picks` — create a report
   and its picks in one call each, no HTML form needed. A report accepts
-  an optional `philosophy` tagline; a pick accepts optional `confidence`
+  an optional `philosophy` tagline; a pick accepts optional `wr_confidence`
   (0-100), `war_room_line` (the report's own independent number for that
   market), `edge` (the gap between that and the posted line), and
   `price_discipline` (stake tiers, one per line) — all shown on the
   report, none used in grading or payout math.
+- `POST /api/reports/<id>/leans` — bulk-log board leans: every other
+  side a report scored without recommending it. Never counted in any
+  record, leaderboard, profit, or CLV figure, but graded against the
+  final score like a pick to train the WR probability calibration and
+  to surface cross-source agreement a picks-only view can't see.
 - `PATCH /api/reports/<id>`, `PATCH /api/reports/<id>/picks/<id>` — fix
   a report's or pick's own analysis fields after the fact (week number,
   notes, confidence, war room line, edge, price discipline, philosophy)
