@@ -149,7 +149,14 @@
   <section>
     <h2 class="section-label">My Bets</h2>
     {% if entries %}
-      <div class="table-scroll">
+      {% for group in entry_weeks %}
+        <details class="week-group" {% if loop.first %}open{% endif %}>
+          <summary class="week-group-label">{{ group.label }}
+            <span class="muted small">({{ group.entries|length }} bet{{ 's' if group.entries|length != 1 }} ·
+              {{ group.stats.wins }}-{{ group.stats.losses }}{% if group.stats.pushes %}-{{ group.stats.pushes }}{% endif %}{% if group.stats.pending %}, {{ group.stats.pending }} pending{% endif %}
+              · <span class="{{ 'pos' if group.stats.profit > 0 else 'neg' if group.stats.profit < 0 else 'muted' }}">{{ '%+.0f'|format(group.stats.profit) }}$</span>{% if not loop.first %} — click to expand{% endif %})</span>
+          </summary>
+          <div class="table-scroll">
         <table class="data-table">
           <thead>
             <tr>
@@ -166,7 +173,7 @@
             </tr>
           </thead>
           <tbody>
-            {% for e in entries %}
+            {% for e in group.entries %}
               <tr>
                 <td class="muted">{{ e.created_at[:10] }}</td>
                 <td><span class="badge-source" style="background: {{ source_color(e.source) }};">{{ e.source }}</span></td>
@@ -233,7 +240,9 @@
             {% endfor %}
           </tbody>
         </table>
-      </div>
+          </div>
+        </details>
+      {% endfor %}
     {% else %}
       <p class="empty">No bets logged yet — add your first one below.</p>
     {% endif %}

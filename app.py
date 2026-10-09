@@ -3765,6 +3765,24 @@ def backfill_final_scores(data):
     return filled
 
 
+def wallet_entries_by_week(entries):
+    """
+    The wallet's bets folded into the same Tue-Mon weeks the dashboard
+    uses (week_bucket_start), keyed off the day each bet was logged,
+    newest week first, each with its own record and profit for the
+    week's header. `entries` is expected newest-first already.
+    """
+    by_week = {}
+    for e in entries:
+        wk = week_bucket_start(e["created_at"][:10])
+        group = by_week.setdefault(wk, {"week_key": wk, "label": f"Week of {week_bucket_label(wk)}", "entries": []})
+        group["entries"].append(e)
+    weeks = sorted(by_week.values(), key=lambda g: g["week_key"], reverse=True)
+    for group in weeks:
+        group["stats"] = wallet_overall_stats(group["entries"])
+    return weeks
+
+
 def wallet_overall_stats(entries):
     stats = empty_stats()
     for e in entries:
@@ -4133,6 +4151,7 @@ def _render_wallet(wallet_key):
 
     return render_template(
         "wallet.html",
+        entry_weeks=wallet_entries_by_week(entries),
         wallet_label=wallet["label"],
         add_endpoint=wallet["add_endpoint"],
         delete_endpoint=wallet["delete_endpoint"],
