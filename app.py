@@ -1667,7 +1667,7 @@ WAR_ROOM_PHILOSOPHY = {
         f"one selection per game and market; when both sides qualify, the side with more sources wins, then the higher score, "
         f"and a dead heat is skipped. Each selection copies the line and price of the highest-scoring source pick on that side at "
         f"the moment it is made, is only made while the game has not kicked off, and is staked flat at ${WAR_ROOM_STAKE:.0f}. "
-        f"Selections are made by the hourly Auto-Grade pass and whenever a new pick is logged."
+        f"Selections are made by the hourly Auto-Grade pass and whenever a new pick is logged. Football (CFB, NFL) only."
     ),
     WAR_ROOM_LEAN_SOURCE: (
         f"The dashboard's second ticket, a rule frozen before any result and kept separate from the main War Room card: take a "
@@ -1675,7 +1675,8 @@ WAR_ROOM_PHILOSOPHY = {
         f"leans together - and at least one of them is a board lean, i.e. agreement the cards never showed. One selection per game "
         f"and market; more sources wins, then the higher live rating, and a dead heat is skipped. Each selection copies the line and "
         f"price of the best-rated entry on that side at the moment it is made, is only made while the game has not kicked off, and "
-        f"is staked flat at ${WAR_ROOM_STAKE:.0f}. Selections are made by the hourly Auto-Grade pass and whenever picks or leans are logged."
+        f"is staked flat at ${WAR_ROOM_STAKE:.0f}. Selections are made by the hourly Auto-Grade pass and whenever picks or leans are logged. "
+        f"Football (CFB, NFL) only."
     ),
 }
 WAR_ROOM_LABEL = {WAR_ROOM_SOURCE: "War Room Card", WAR_ROOM_LEAN_SOURCE: "War Room Lean Ticket"}
@@ -1716,7 +1717,9 @@ def refresh_war_room_card(data, only_event=None):
     Prospective only by design: nothing is ever back-filled for games
     that have already kicked off or settled.
     """
-    groups, _ = _pending_side_groups(data)
+    # Football only (CFB/NFL): the soccer desks are a different market
+    # and the tickets' rules were frozen against spreads and totals.
+    groups, _ = _pending_side_groups(data, AMERICAN_LEAGUES)
     if not groups:
         return 0
     scores = _live_scores(data)
@@ -1967,7 +1970,7 @@ def refresh_war_room_lean_card(data, only_events=None):
     to a set of espn_event_ids (the create paths). A selection is only
     made while ESPN still shows the game as not started.
     """
-    groups = _board_side_groups(data)
+    groups = _board_side_groups(data, AMERICAN_LEAGUES)  # football only, same as the main card
     if not groups:
         return 0
     reports = {r["id"]: r for r in data["reports"]}

@@ -207,7 +207,7 @@ WR rating is 75 or higher; one selection per game and market (more
 sources wins, then the higher score, a dead heat is skipped); the line
 and price are copied from the best-scoring source pick at the moment of
 selection; flat $100; only while ESPN still shows the game as not
-started. Selections land on a per-league weekly War Room report and
+started; football (CFB, NFL) only. Selections land on a per-league weekly War Room report and
 grade like any other pick, so the card's record answers the question
 "does the scoring layer add anything?" with a number. Its own picks are
 kept out of the agreement, alignment and Lock groupings. A revised rule
