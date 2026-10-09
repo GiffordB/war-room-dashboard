@@ -1,6 +1,6 @@
 {
-  "next_report_id": 48,
-  "next_pick_id": 226,
+  "next_report_id": 49,
+  "next_pick_id": 228,
   "reports": [
     {
       "source": "ChatGPT",
@@ -444,6 +444,18 @@
       "lsu_review_notes": "",
       "created_at": "2026-10-09T17:18:10",
       "id": 47
+    },
+    {
+      "id": 48,
+      "source": "War Room",
+      "league": "CFB",
+      "report_date": "2026-10-07",
+      "week_number": 1,
+      "week_label": "War Room Card -- week of 2026-10-06",
+      "philosophy": "The dashboard's own selections, made by a rule frozen before any result: take a side when at least 2 sources are on it, or when a single pick's live WR Confidence is 75 or higher; one selection per game and market; when both sides qualify, the side with more sources wins, then the higher score, and a dead heat is skipped. Each selection copies the line and price of the highest-scoring source pick on that side at the moment it is made, is only made while the game has not kicked off, and is staked flat at $100. Selections are made by the hourly Auto-Grade pass and whenever a new pick is logged. Football (CFB, NFL) only.",
+      "blind_spot_notes": "This ticket never submits an opinion of its own: every selection traces back to the source picks and board leans named on it.",
+      "lsu_review_notes": "",
+      "created_at": "2026-10-09T17:18:24"
     }
   ],
   "picks": [
@@ -16192,6 +16204,202 @@
       "pregame_intel_captured_at": "2026-10-09T15:14:15",
       "wr_confidence_kickoff": 61.872,
       "wr_confidence_initial": 65.872
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 47,
+      "category": "best_bet",
+      "matchup": "Texas A&M Aggies @ Missouri Tigers",
+      "selection": "Texas A&M +3.5",
+      "odds": -110,
+      "stake": 150.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 56.0,
+      "war_room_line": "Conviction #1, 1.50% ($150 per $10k). Sheet Missouri -3.5, Pinnacle -3.5; Model A Missouri by 4.3, own number 2.8 after injuries. System score 55.6 (Walters 58, Peabody 90, 2 of 5), EV -3.7%: does not clear 70, logged as an override.",
+      "edge": "Every lens agrees: six Tigers out including RB Hardy (RotoWire Oct 7); 71% of DK tickets on Missouri; Missouri's 28-point rout of Florida was the most-watched performance of last week (sentiment +70, top of the map); the model has Missouri by only 2.8 after injuries.",
+      "price_discipline": "Sat 11:00 AM CT. Void if Pinnacle Missouri -4 or more, or a sourced A&M QB item. Pinnacle recheck 10 AM CT Saturday.",
+      "espn_event_id": "401856716",
+      "bet_type": "spread",
+      "bet_side": "away",
+      "bet_line": 3.5,
+      "home_team": "Missouri Tigers",
+      "away_team": "Texas A&M Aggies",
+      "created_at": "2026-10-09T17:18:20",
+      "id": 226,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "MIZ -3.5",
+        "home_spread": -3.5,
+        "home_spread_odds": -105.0,
+        "away_spread_odds": -115.0,
+        "total": 48.5,
+        "over_odds": -110.0,
+        "under_odds": -110.0,
+        "home_moneyline": -175,
+        "away_moneyline": 145,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-10-09T17:18:24",
+      "pregame_weather": {
+        "city": "Columbia",
+        "temp_c": 20.4,
+        "precip_probability_pct": 55,
+        "precip_mm": 0.4,
+        "wind_kmh": 25.5,
+        "cloud_cover_pct": 100,
+        "forecast_hour": "2026-10-10T16:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 4,
+        "win_pct": 80.0,
+        "quality_wins": 1
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 3,
+        "win_pct": 60.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 3,
+          "d": 0,
+          "l": 0,
+          "gf": 126,
+          "ga": 48
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 1,
+          "gf": 62,
+          "ga": 52
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 3,
+          "d": 0,
+          "l": 1,
+          "gf": 153,
+          "ga": 58
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 1,
+          "gf": 6,
+          "ga": 35
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-09T17:18:24",
+      "wr_confidence_kickoff": 57.00408163265306,
+      "wr_confidence_initial": 49.80408163265306
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 48,
+      "category": "best_bet",
+      "matchup": "Texas A&M Aggies @ Missouri Tigers",
+      "selection": "Texas A&M +3.5",
+      "odds": -110,
+      "stake": 100.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 54.1,
+      "war_room_line": "Rule: 2 sources aligned on this side. Line and price copied from ChatGPT pick #207 at selection (2026-10-09T17:18:24).",
+      "edge": "Source picks on this side -- Claude: Texas A&M +3.5 (-110), WR 50; ChatGPT: Texas A&M +3.5 (-110), WR 54.",
+      "price_discipline": "Flat $100. Selected before kickoff; graded off the final score like any other pick.",
+      "espn_event_id": "401856716",
+      "bet_type": "spread",
+      "bet_side": "away",
+      "bet_line": 3.5,
+      "home_team": null,
+      "away_team": null,
+      "war_room_source_pick_ids": [
+        226,
+        207
+      ],
+      "created_at": "2026-10-09T17:18:24",
+      "id": 227,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "MIZ -3.5",
+        "home_spread": -3.5,
+        "home_spread_odds": -105.0,
+        "away_spread_odds": -115.0,
+        "total": 48.5,
+        "over_odds": -110.0,
+        "under_odds": -110.0,
+        "home_moneyline": -175,
+        "away_moneyline": 145,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-10-09T17:18:27",
+      "pregame_weather": {
+        "city": "Columbia",
+        "temp_c": 20.4,
+        "precip_probability_pct": 55,
+        "precip_mm": 0.4,
+        "wind_kmh": 25.5,
+        "cloud_cover_pct": 100,
+        "forecast_hour": "2026-10-10T16:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 4,
+        "win_pct": 80.0,
+        "quality_wins": 1
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 3,
+        "win_pct": 60.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 3,
+          "d": 0,
+          "l": 0,
+          "gf": 126,
+          "ga": 48
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 1,
+          "gf": 62,
+          "ga": 52
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 3,
+          "d": 0,
+          "l": 1,
+          "gf": 153,
+          "ga": 58
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 1,
+          "gf": 6,
+          "ga": 35
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-09T17:18:27",
+      "wr_confidence_kickoff": 55.084,
+      "wr_confidence_initial": 47.884
     }
   ],
   "next_wallet_id": 36,
