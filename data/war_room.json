@@ -16480,7 +16480,7 @@
   ],
   "next_jesse_wallet_id": 1,
   "jesse_wallet_entries": [],
-  "next_lean_id": 97,
+  "next_lean_id": 98,
   "leans": [
     {
       "id": 1,
@@ -25004,6 +25004,100 @@
       "pregame_intel_captured_at": "2026-10-09T14:00:29",
       "wr_confidence_kickoff": 29.0,
       "wr_confidence_initial": 29.0
+    },
+    {
+      "id": 97,
+      "report_id": 44,
+      "source": "Claude - GB",
+      "league": "EPL",
+      "category": "lean",
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "parlay_leg_pick_ids": null,
+      "wr_confidence": 49.0,
+      "created_at": "2026-10-09T14:00:32",
+      "matchup": "Newcastle United @ Coventry City",
+      "selection": "Newcastle United to Win",
+      "bet_type": "match_result",
+      "bet_side": "away",
+      "bet_line": null,
+      "odds": 105,
+      "score": 49.0,
+      "espn_event_id": "401879267",
+      "note": "Pass; Newcastle H2H 4-0, Coventry scored 1 goal in 5, but Newcastle concede 9 and a star is out for months. EV ~+0.5%.",
+      "pregame_odds": {
+        "provider": "DraftKings",
+        "spread_details": "NEW +105",
+        "home_spread": 0.5,
+        "home_spread_odds": -140.0,
+        "away_spread_odds": -105.0,
+        "total": 2.5,
+        "over_odds": -155.0,
+        "under_odds": 120.0,
+        "home_moneyline": 235,
+        "away_moneyline": 105,
+        "draw_moneyline": 260.0
+      },
+      "pregame_odds_captured_at": "2026-10-09T14:00:37",
+      "pregame_weather": {
+        "city": "Coventry",
+        "temp_c": 18.4,
+        "precip_probability_pct": 15,
+        "precip_mm": 0.0,
+        "wind_kmh": 15.1,
+        "cloud_cover_pct": 100,
+        "forecast_hour": "2026-10-12T19:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 1,
+        "win_pct": 20.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 2,
+        "win_pct": 40.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 0,
+          "d": 0,
+          "l": 2,
+          "gf": 0,
+          "ga": 6
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 2,
+          "gf": 1,
+          "ga": 4
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 1,
+          "d": 2,
+          "l": 0,
+          "gf": 6,
+          "ga": 5
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 1,
+          "gf": 3,
+          "ga": 4
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-09T14:00:37",
+      "wr_confidence_kickoff": 54.0,
+      "wr_confidence_initial": 54.0
     }
   ]
 }
