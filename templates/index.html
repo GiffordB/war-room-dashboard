@@ -95,7 +95,7 @@
       {% for s in ranked %}
         {% set st = stats[s] %}
         {% set delta = movement.get(s, 0) %}
-        <div class="leaderboard-row{% if s == 'War Room' %} leaderboard-row-gold{% elif s == 'WR Lean' %} leaderboard-row-purple{% endif %}" style="--accent: {{ source_color(s) }};">
+        <div class="leaderboard-row{% if ticket_row(s) %} leaderboard-row-{{ ticket_row(s) }}{% endif %}" style="--accent: {{ source_color(s) }};">
           <div class="leaderboard-rank">
             <span class="rank-num">#{{ loop.index }}</span>
             {% if delta > 0 %}

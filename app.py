@@ -87,7 +87,7 @@ CATEGORY_ORDER = list(CATEGORIES.keys())
 
 # The AI sources being compared. Order here controls display order
 # everywhere (cards, chart legends, table columns).
-SOURCES = ["Claude", "Claude - GB", "Grok - GB", "ChatGPT", "War Room", "WR Lean"]
+SOURCES = ["Claude", "Claude - GB", "Grok - GB", "ChatGPT", "War Room", "WR Lean", "WR FUT", "WR FUT Lean"]
 
 # The dashboard's own card (see refresh_war_room_card): not a model that
 # submits reports, but a fixed selection rule run over everyone else's
@@ -99,7 +99,12 @@ WAR_ROOM_SOURCE = "War Room"
 # side the cards never showed. Its own record, its own rule, frozen
 # separately, so the two can be compared.
 WAR_ROOM_LEAN_SOURCE = "WR Lean"
-WAR_ROOM_SOURCES = frozenset({WAR_ROOM_SOURCE, WAR_ROOM_LEAN_SOURCE})
+# The same two tickets run over the soccer desks (EPL/UCL): a separate
+# record each, since 1X2 match results are a different market from
+# spreads and totals and the football rule was frozen against those.
+WAR_ROOM_FUT_SOURCE = "WR FUT"
+WAR_ROOM_FUT_LEAN_SOURCE = "WR FUT Lean"
+WAR_ROOM_SOURCES = frozenset({WAR_ROOM_SOURCE, WAR_ROOM_LEAN_SOURCE, WAR_ROOM_FUT_SOURCE, WAR_ROOM_FUT_LEAN_SOURCE})
 SOURCE_STYLE = {
     "Claude": {"color": "#cc785c"},
     # A genuinely different system from the CFB/NFL "Claude" above - the
@@ -119,15 +124,18 @@ SOURCE_STYLE = {
     # the lean ticket (its row is purple).
     "War Room": {"color": "#ffffff"},
     "WR Lean": {"color": "#f472b6"},
+    # The futbol tickets mimic the football pair (same gold/purple rows)
+    # with dots one shade off so the two cards stay apart in a chart.
+    "WR FUT": {"color": "#e2e8f0"},
+    "WR FUT Lean": {"color": "#fb7185"},
 }
 
 # War Room card selection rule - FROZEN 2026-10-09, before any result.
 # Changing these rewrites what the card would have picked, so a revised
 # rule belongs in a second card run alongside this one, not an edit here.
-# Extended to cover EPL/UCL on 2026-10-09 too (see refresh_war_room_card) -
-# that's a scope change (which leagues feed the rule), not an edit to the
-# rule's own numbers below, so it doesn't retroactively touch anything a
-# past selection would have picked.
+# The same numbers drive the futbol twins (WR FUT, WR FUT Lean) over
+# EPL/UCL - a separate record per sport, never one pooled card (see
+# WAR_ROOM_TICKETS).
 WAR_ROOM_MIN_ALIGNED = 2  # sources on the same side of the same market
 WAR_ROOM_SOLO_WR = 75  # or one pick whose live WR Confidence clears this
 WAR_ROOM_STAKE = 100.0  # flat one unit on every selection
@@ -138,8 +146,7 @@ WAR_ROOM_STAKE = 100.0  # flat one unit on every selection
 # (pure pick alignment is the main card's business); one per game and
 # market; more sources wins, then the higher live rating; dead heat
 # skipped; line and price copied from the best-rated entry; flat stake;
-# pre-kickoff only. Also extended to EPL/UCL on 2026-10-09 - see the note
-# above the main card's constants.
+# pre-kickoff only.
 WAR_ROOM_LEAN_MIN_ALIGNED = 2
 
 # Every report belongs to one league - a source writes a separate report
@@ -151,6 +158,18 @@ LEAGUES = {"CFB": "College Football", "NFL": "NFL", "EPL": "Premier League", "UC
 LEAGUE_ORDER = list(LEAGUES.keys())
 SOCCER_LEAGUES = frozenset(code for code in LEAGUE_ORDER if odds.is_soccer(code))
 AMERICAN_LEAGUES = frozenset(code for code in LEAGUE_ORDER if not odds.is_soccer(code))
+
+# The four War Room tickets: which leagues each one reads, whether it is
+# a main card (picks only) or a lean ticket (picks + board leans), and
+# the leaderboard row style it shares with its football twin.
+WAR_ROOM_TICKETS = {
+    WAR_ROOM_SOURCE: {"leagues": AMERICAN_LEAGUES, "kind": "main", "row": "gold", "sport": "Football (CFB, NFL)"},
+    WAR_ROOM_LEAN_SOURCE: {"leagues": AMERICAN_LEAGUES, "kind": "lean", "row": "purple", "sport": "Football (CFB, NFL)"},
+    WAR_ROOM_FUT_SOURCE: {"leagues": SOCCER_LEAGUES, "kind": "main", "row": "gold", "sport": "Futbol (EPL, UCL)"},
+    WAR_ROOM_FUT_LEAN_SOURCE: {"leagues": SOCCER_LEAGUES, "kind": "lean", "row": "purple", "sport": "Futbol (EPL, UCL)"},
+}
+WAR_ROOM_MAIN_SOURCES = tuple(s for s, t in WAR_ROOM_TICKETS.items() if t["kind"] == "main")
+WAR_ROOM_LEAN_SOURCES = tuple(s for s, t in WAR_ROOM_TICKETS.items() if t["kind"] == "lean")
 
 # Combined filters on top of the individual leagues above - "All
 # Football" is CFB+NFL together, "All Futbol" is EPL+UCL together, so a
@@ -592,6 +611,7 @@ app.jinja_env.globals.update(
     category_order=CATEGORY_ORDER,
     sources=SOURCES,
     source_color=lambda s: SOURCE_STYLE.get(s, {}).get("color", "#8b94a7"),
+    ticket_row=lambda s: WAR_ROOM_TICKETS.get(s, {}).get("row"),
     leagues=LEAGUES,
     league_order=LEAGUE_ORDER,
     soccer_leagues=SOCCER_LEAGUES,
@@ -1668,27 +1688,39 @@ def _live_scores(data):
     return scores
 
 
-WAR_ROOM_PHILOSOPHY = {
-    WAR_ROOM_SOURCE: (
+def _main_ticket_philosophy(sport):
+    return (
         f"The dashboard's own selections, made by a rule frozen before any result: take a side when at least "
         f"{WAR_ROOM_MIN_ALIGNED} sources are on it, or when a single pick's live WR Confidence is {WAR_ROOM_SOLO_WR:.0f} or higher; "
         f"one selection per game and market; when both sides qualify, the side with more sources wins, then the higher score, "
         f"and a dead heat is skipped. Each selection copies the line and price of the highest-scoring source pick on that side at "
         f"the moment it is made, is only made while the game has not kicked off, and is staked flat at ${WAR_ROOM_STAKE:.0f}. "
-        f"Selections are made by the hourly Auto-Grade pass and whenever a new pick is logged. Covers both football "
-        f"(CFB, NFL) and futbol (EPL, UCL) -- the rule itself doesn't care which market it's reading."
-    ),
-    WAR_ROOM_LEAN_SOURCE: (
-        f"The dashboard's second ticket, a rule frozen before any result and kept separate from the main War Room card: take a "
+        f"Selections are made by the hourly Auto-Grade pass and whenever a new pick is logged. {sport} only."
+    )
+
+
+def _lean_ticket_philosophy(sport):
+    return (
+        f"The dashboard's second ticket, a rule frozen before any result and kept separate from the main card: take a "
         f"side when at least {WAR_ROOM_LEAN_MIN_ALIGNED} sources favor it once every memo's full board is counted - picks and board "
         f"leans together - and at least one of them is a board lean, i.e. agreement the cards never showed. One selection per game "
         f"and market; more sources wins, then the higher live rating, and a dead heat is skipped. Each selection copies the line and "
         f"price of the best-rated entry on that side at the moment it is made, is only made while the game has not kicked off, and "
         f"is staked flat at ${WAR_ROOM_STAKE:.0f}. Selections are made by the hourly Auto-Grade pass and whenever picks or leans are logged. "
-        f"Covers both football (CFB, NFL) and futbol (EPL, UCL) -- the rule itself doesn't care which market it's reading."
-    ),
+        f"{sport} only."
+    )
+
+
+WAR_ROOM_PHILOSOPHY = {
+    src: (_main_ticket_philosophy if t["kind"] == "main" else _lean_ticket_philosophy)(t["sport"])
+    for src, t in WAR_ROOM_TICKETS.items()
 }
-WAR_ROOM_LABEL = {WAR_ROOM_SOURCE: "War Room Card", WAR_ROOM_LEAN_SOURCE: "War Room Lean Ticket"}
+WAR_ROOM_LABEL = {
+    WAR_ROOM_SOURCE: "War Room Card",
+    WAR_ROOM_LEAN_SOURCE: "War Room Lean Ticket",
+    WAR_ROOM_FUT_SOURCE: "War Room Futbol Card",
+    WAR_ROOM_FUT_LEAN_SOURCE: "War Room Futbol Lean Ticket",
+}
 
 
 def _war_room_report_for(data, league, report_date, source=WAR_ROOM_SOURCE):
@@ -1714,9 +1746,10 @@ def _war_room_report_for(data, league, report_date, source=WAR_ROOM_SOURCE):
     return report
 
 
-def refresh_war_room_card(data, only_event=None):
+def refresh_war_room_card(data, only_event=None, source=WAR_ROOM_SOURCE):
     """
-    Adds the War Room's own picks for every still-pending game/market
+    Adds the War Room's own picks (`source`: the football card by default,
+    or the futbol card) for every still-pending game/market
     whose source picks satisfy the frozen rule above and that the card
     hasn't already taken a side on. Modifies `data` in place; returns how
     many selections were made. `only_event` limits the pass to one
@@ -1726,11 +1759,10 @@ def refresh_war_room_card(data, only_event=None):
     Prospective only by design: nothing is ever back-filled for games
     that have already kicked off or settled.
     """
-    # Both sport families: the rule itself is market-agnostic (it keys
-    # off bet_type/bet_side generically), so a soccer side counts the
-    # same way a football one does once two EPL/UCL sources (or a
-    # single high-WR one) exist to agree in the first place.
-    groups, _ = _pending_side_groups(data, AMERICAN_LEAGUES | SOCCER_LEAGUES)
+    # Each card reads only its own sport's leagues: the soccer desks are a
+    # different market (1X2) from the spreads and totals the football
+    # rule was frozen against, so the two keep separate records.
+    groups, _ = _pending_side_groups(data, WAR_ROOM_TICKETS[source]["leagues"])
     if not groups:
         return 0
     scores = _live_scores(data)
@@ -1738,7 +1770,7 @@ def refresh_war_room_card(data, only_event=None):
     taken = {
         (p["espn_event_id"], p["bet_type"])
         for p in data["picks"]
-        if p.get("espn_event_id") and reports.get(p["report_id"], {}).get("source") == WAR_ROOM_SOURCE
+        if p.get("espn_event_id") and reports.get(p["report_id"], {}).get("source") == source
     }
 
     by_market = {}
@@ -1766,7 +1798,7 @@ def refresh_war_room_card(data, only_event=None):
         state = odds.final_score(src_report["league"], event)
         if not state or state.get("state") != "pre":
             continue
-        report = _war_room_report_for(data, src_report["league"], src_report["report_date"])
+        report = _war_room_report_for(data, src_report["league"], src_report["report_date"], source=source)
         sources = [s for s in SOURCES if s in choice["by_source"]]
         rule = (
             f"{choice['n']} sources aligned on this side" if choice["n"] >= WAR_ROOM_MIN_ALIGNED
@@ -1805,7 +1837,7 @@ def refresh_war_room_card(data, only_event=None):
         data["picks"].append(new_pick)
         _safe_capture_pregame_lines(data, only=[(new_pick, src_report["league"])])
         initial, _ = wr_confidence_effective(
-            new_pick, WAR_ROOM_SOURCE, source_track_record(data), pick_agreement_map(data), league=src_report["league"]
+            new_pick, source, source_track_record(data), pick_agreement_map(data), league=src_report["league"]
         )
         new_pick["wr_confidence_initial"] = initial
         created += 1
@@ -1939,12 +1971,14 @@ def aligned_leans(data, league=None):
 
 
 def _safe_refresh_war_room_card(data, only_event=None):
-    """refresh_war_room_card with any ESPN hiccup swallowed - never a reason to fail a save."""
-    try:
-        return refresh_war_room_card(data, only_event=only_event)
-    except Exception:
-        app.logger.exception("war room card refresh failed")
-        return 0
+    """refresh_war_room_card for both main cards (football, futbol) with any ESPN hiccup swallowed - never a reason to fail a save."""
+    made = 0
+    for source in WAR_ROOM_MAIN_SOURCES:
+        try:
+            made += refresh_war_room_card(data, only_event=only_event, source=source)
+        except Exception:
+            app.logger.exception("war room card refresh failed (%s)", source)
+    return made
 
 
 def _board_side_groups(data, league=None):
@@ -1972,23 +2006,24 @@ def _board_side_groups(data, league=None):
     return groups
 
 
-def refresh_war_room_lean_card(data, only_events=None):
+def refresh_war_room_lean_card(data, only_events=None, source=WAR_ROOM_LEAN_SOURCE):
     """
-    Adds the War Room Lean ticket's own picks for every still-pending
+    Adds a lean ticket's own picks (`source`: the football lean ticket by
+    default, or the futbol one) for every still-pending
     game/market satisfying the frozen WAR_ROOM_LEAN_* rule above that the
     ticket hasn't already taken a side on. Modifies `data` in place;
     returns how many selections were made. `only_events` limits the pass
     to a set of espn_event_ids (the create paths). A selection is only
     made while ESPN still shows the game as not started.
     """
-    groups = _board_side_groups(data, AMERICAN_LEAGUES | SOCCER_LEAGUES)  # both sport families, same as the main card
+    groups = _board_side_groups(data, WAR_ROOM_TICKETS[source]["leagues"])  # the ticket's own sport, same as its main card
     if not groups:
         return 0
     reports = {r["id"]: r for r in data["reports"]}
     taken = {
         (p["espn_event_id"], p["bet_type"])
         for p in data["picks"]
-        if p.get("espn_event_id") and reports.get(p["report_id"], {}).get("source") == WAR_ROOM_LEAN_SOURCE
+        if p.get("espn_event_id") and reports.get(p["report_id"], {}).get("source") == source
     }
     track_record = source_track_record(data)
     agreement_map = pick_agreement_map(data)
@@ -2023,7 +2058,7 @@ def refresh_war_room_lean_card(data, only_events=None):
         state = odds.final_score(src_report["league"], event)
         if not state or state.get("state") != "pre":
             continue
-        report = _war_room_report_for(data, src_report["league"], src_report["report_date"], source=WAR_ROOM_LEAN_SOURCE)
+        report = _war_room_report_for(data, src_report["league"], src_report["report_date"], source=source)
         sources = [s for s in SOURCES if s in choice["by_source"]]
         lines = "; ".join(
             f"{s}: {choice['by_source'][s]['item']['selection']} ({choice['by_source'][s]['item']['odds']:+d}), "
@@ -2063,7 +2098,7 @@ def refresh_war_room_lean_card(data, only_events=None):
         data["picks"].append(new_pick)
         _safe_capture_pregame_lines(data, only=[(new_pick, src_report["league"])])
         initial, _ = wr_confidence_effective(
-            new_pick, WAR_ROOM_LEAN_SOURCE, source_track_record(data), pick_agreement_map(data), league=src_report["league"]
+            new_pick, source, source_track_record(data), pick_agreement_map(data), league=src_report["league"]
         )
         new_pick["wr_confidence_initial"] = initial
         created += 1
@@ -2071,12 +2106,14 @@ def refresh_war_room_lean_card(data, only_events=None):
 
 
 def _safe_refresh_war_room_lean_card(data, only_events=None):
-    """refresh_war_room_lean_card with any ESPN hiccup swallowed - never a reason to fail a save."""
-    try:
-        return refresh_war_room_lean_card(data, only_events=only_events)
-    except Exception:
-        app.logger.exception("war room lean ticket refresh failed")
-        return 0
+    """refresh_war_room_lean_card for both lean tickets (football, futbol) with any ESPN hiccup swallowed - never a reason to fail a save."""
+    made = 0
+    for source in WAR_ROOM_LEAN_SOURCES:
+        try:
+            made += refresh_war_room_lean_card(data, only_events=only_events, source=source)
+        except Exception:
+            app.logger.exception("war room lean ticket refresh failed (%s)", source)
+    return made
 
 
 def aligned_picks(data, league=None):

@@ -223,6 +223,15 @@ game and market, more sources then higher live rating, dead heat
 skipped, line copied from the best-rated entry, flat $100, pre-kickoff
 only. The main card is gold on the leaderboard, the lean ticket purple.
 
+"WR FUT" and "WR FUT Lean" are the same two tickets run over the soccer
+desks (EPL, UCL) with the same frozen numbers, each keeping its own
+record: 1X2 match results are a different market from the spreads and
+totals the football rule was frozen against, so the sports are never
+pooled into one card. `WAR_ROOM_TICKETS` in `app.py` maps each of the
+four sources to its leagues, kind and leaderboard row; the futbol pair
+reuses the gold and purple rows with dots one shade off the football
+pair's.
+
 ## WR Probability
 
 Every WR badge on the site shows a calibrated cover probability, not
