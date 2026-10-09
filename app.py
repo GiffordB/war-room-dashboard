@@ -86,7 +86,13 @@ CATEGORY_ORDER = list(CATEGORIES.keys())
 
 # The AI sources being compared. Order here controls display order
 # everywhere (cards, chart legends, table columns).
-SOURCES = ["Claude", "Claude - GB", "Grok", "Grok - GB", "ChatGPT", "ChatGPT - Ash"]
+SOURCES = ["Claude", "Claude - GB", "Grok", "Grok - GB", "ChatGPT", "ChatGPT - Ash", "War Room"]
+
+# The dashboard's own card (see refresh_war_room_card): not a model that
+# submits reports, but a fixed selection rule run over everyone else's
+# still-pending picks, tracked as its own competitor so the question
+# "does the scoring layer add anything?" has a record to answer it with.
+WAR_ROOM_SOURCE = "War Room"
 SOURCE_STYLE = {
     "Claude": {"color": "#cc785c"},
     # A genuinely different system from the CFB/NFL "Claude" above - the
@@ -106,7 +112,15 @@ SOURCE_STYLE = {
     # (DraftKings spreads plus Pick6 player props), tracked as its own
     # competitor rather than folded into the main "ChatGPT" record.
     "ChatGPT - Ash": {"color": "#f472b6"},
+    "War Room": {"color": "#e2b714"},
 }
+
+# War Room card selection rule - FROZEN 2026-10-09, before any result.
+# Changing these rewrites what the card would have picked, so a revised
+# rule belongs in a second card run alongside this one, not an edit here.
+WAR_ROOM_MIN_ALIGNED = 2  # sources on the same side of the same market
+WAR_ROOM_SOLO_WR = 75  # or one pick whose live WR Confidence clears this
+WAR_ROOM_STAKE = 100.0  # flat one unit on every selection
 
 # Every report belongs to one league - a source writes a separate report
 # per league, even in the same week, since the slates (and the analysis
@@ -1337,7 +1351,7 @@ def _pending_side_groups(data, league=None):
         if p["result"] != "pending" or not p.get("espn_event_id") or not p.get("bet_type"):
             continue
         r = reports.get(p["report_id"])
-        if not r or not _league_matches(r["league"], league):
+        if not r or r["source"] == WAR_ROOM_SOURCE or not _league_matches(r["league"], league):
             continue
 
         key = (p["espn_event_id"], p["bet_type"], p["bet_side"])
@@ -1351,8 +1365,155 @@ def _pending_side_groups(data, league=None):
     # source like "Claude - GB" only ever writes EPL/UCL reports and
     # would make a CFB lock mathematically un-unanimous forever otherwise.
     for r in data["reports"]:
-        sources_per_league.setdefault(r["league"], set()).add(r["source"])
+        if r["source"] != WAR_ROOM_SOURCE:
+            sources_per_league.setdefault(r["league"], set()).add(r["source"])
     return groups, sources_per_league
+
+
+def _live_scores(data):
+    """{pick id: live WR Confidence} for every pick, computed without writing the annotation keys onto the stored pick dicts (this runs inside save paths)."""
+    reports = {r["id"]: r for r in data["reports"]}
+    track_record = source_track_record(data)
+    agreement_map = pick_agreement_map(data)
+    scores = {}
+    for p in data["picks"]:
+        r = reports.get(p["report_id"])
+        score, _ = wr_confidence_effective(p, r["source"] if r else None, track_record, agreement_map, league=r["league"] if r else None)
+        scores[p["id"]] = score
+    return scores
+
+
+def _war_room_report_for(data, league, report_date):
+    """The War Room's report for `league` in the Tue-Mon week containing `report_date`, created in place if it doesn't exist yet."""
+    bucket = week_bucket_start(report_date)
+    for r in data["reports"]:
+        if r["source"] == WAR_ROOM_SOURCE and r["league"] == league and week_bucket_start(r["report_date"]) == bucket:
+            return r
+    report = {
+        "id": data["next_report_id"],
+        "source": WAR_ROOM_SOURCE,
+        "league": league,
+        "report_date": report_date,
+        "week_number": 1,
+        "week_label": f"War Room Card -- week of {bucket}",
+        "philosophy": (
+            f"The dashboard's own selections, made by a rule frozen before any result: take a side when at least "
+            f"{WAR_ROOM_MIN_ALIGNED} sources are on it, or when a single pick's live WR Confidence is {WAR_ROOM_SOLO_WR:.0f} or higher; "
+            f"one selection per game and market; when both sides qualify, the side with more sources wins, then the higher score, "
+            f"and a dead heat is skipped. Each selection copies the line and price of the highest-scoring source pick on that side at "
+            f"the moment it is made, is only made while the game has not kicked off, and is staked flat at ${WAR_ROOM_STAKE:.0f}. "
+            f"Selections are made by the hourly Auto-Grade pass and whenever a new pick is logged."
+        ),
+        "blind_spot_notes": "This card never submits an opinion of its own: every selection traces back to the source picks named on it.",
+        "lsu_review_notes": "",
+        "created_at": datetime.utcnow().isoformat(timespec="seconds"),
+    }
+    data["next_report_id"] += 1
+    data["reports"].append(report)
+    return report
+
+
+def refresh_war_room_card(data, only_event=None):
+    """
+    Adds the War Room's own picks for every still-pending game/market
+    whose source picks satisfy the frozen rule above and that the card
+    hasn't already taken a side on. Modifies `data` in place; returns how
+    many selections were made. `only_event` limits the pass to one
+    espn_event_id (the create_pick path, so one new pick doesn't trigger
+    a whole-slate sweep). A selection is only made while ESPN still shows
+    the game as not started, so every one carries a real pregame line.
+    Prospective only by design: nothing is ever back-filled for games
+    that have already kicked off or settled.
+    """
+    groups, _ = _pending_side_groups(data)
+    if not groups:
+        return 0
+    scores = _live_scores(data)
+    reports = {r["id"]: r for r in data["reports"]}
+    taken = {
+        (p["espn_event_id"], p["bet_type"])
+        for p in data["picks"]
+        if p.get("espn_event_id") and reports.get(p["report_id"], {}).get("source") == WAR_ROOM_SOURCE
+    }
+
+    by_market = {}
+    for (event, bet_type, side), by_source in groups.items():
+        if only_event is not None and event != only_event:
+            continue
+        if (event, bet_type) in taken:
+            continue
+        best = max(by_source.values(), key=lambda e: scores.get(e["pick"]["id"]) or 0)
+        best_wr = scores.get(best["pick"]["id"]) or 0
+        if len(by_source) >= WAR_ROOM_MIN_ALIGNED or best_wr >= WAR_ROOM_SOLO_WR:
+            by_market.setdefault((event, bet_type), []).append(
+                {"side": side, "by_source": by_source, "best": best, "best_wr": best_wr, "n": len(by_source)}
+            )
+
+    created = 0
+    now = datetime.utcnow().isoformat(timespec="seconds")
+    for (event, bet_type), sides in by_market.items():
+        sides.sort(key=lambda s: (-s["n"], -s["best_wr"]))
+        if len(sides) > 1 and sides[0]["n"] == sides[1]["n"] and abs(sides[0]["best_wr"] - sides[1]["best_wr"]) < 1e-9:
+            continue  # dead heat between the two sides: no selection
+        choice = sides[0]
+        src = choice["best"]["pick"]
+        src_report = choice["best"]["report"]
+        state = odds.final_score(src_report["league"], event)
+        if not state or state.get("state") != "pre":
+            continue
+        report = _war_room_report_for(data, src_report["league"], src_report["report_date"])
+        sources = [s for s in SOURCES if s in choice["by_source"]]
+        rule = (
+            f"{choice['n']} sources aligned on this side" if choice["n"] >= WAR_ROOM_MIN_ALIGNED
+            else f"single pick at live WR {choice['best_wr']:.0f} (floor {WAR_ROOM_SOLO_WR})"
+        )
+        lines = "; ".join(
+            f"{s}: {choice['by_source'][s]['pick']['selection']} ({choice['by_source'][s]['pick']['odds']:+d}), WR {scores.get(choice['by_source'][s]['pick']['id']) or 0:.0f}"
+            for s in sources
+        )
+        new_pick = {
+            "parlay_leg_pick_ids": None,
+            "report_id": report["id"],
+            "category": src["category"] if src["category"] in CATEGORIES and src["category"] != "parlay" else "best_bet",
+            "matchup": src["matchup"],
+            "selection": src["selection"],
+            "odds": src["odds"],
+            "stake": WAR_ROOM_STAKE,
+            "result": "pending",
+            "profit_loss": 0.0,
+            "notes": "",
+            "wr_confidence": round(choice["best_wr"], 1),
+            "war_room_line": f"Rule: {rule}. Line and price copied from {src_report['source']} pick #{src['id']} at selection ({now}).",
+            "edge": f"Source picks on this side -- {lines}.",
+            "price_discipline": f"Flat ${WAR_ROOM_STAKE:.0f}. Selected before kickoff; graded off the final score like any other pick.",
+            "espn_event_id": event,
+            "bet_type": bet_type,
+            "bet_side": choice["side"],
+            "bet_line": src.get("bet_line"),
+            "home_team": src.get("home_team"),
+            "away_team": src.get("away_team"),
+            "war_room_source_pick_ids": [choice["by_source"][s]["pick"]["id"] for s in sources],
+            "created_at": now,
+        }
+        new_pick["id"] = data["next_pick_id"]
+        data["next_pick_id"] += 1
+        data["picks"].append(new_pick)
+        _safe_capture_pregame_lines(data, only=[(new_pick, src_report["league"])])
+        initial, _ = wr_confidence_effective(
+            new_pick, WAR_ROOM_SOURCE, source_track_record(data), pick_agreement_map(data), league=src_report["league"]
+        )
+        new_pick["wr_confidence_initial"] = initial
+        created += 1
+    return created
+
+
+def _safe_refresh_war_room_card(data, only_event=None):
+    """refresh_war_room_card with any ESPN hiccup swallowed - never a reason to fail a save."""
+    try:
+        return refresh_war_room_card(data, only_event=only_event)
+    except Exception:
+        app.logger.exception("war room card refresh failed")
+        return 0
 
 
 def aligned_picks(data, league=None):
@@ -1526,7 +1687,7 @@ def pick_agreement_map(data):
         if p["result"] != "pending" or not p.get("espn_event_id") or not p.get("bet_type"):
             continue
         r = reports.get(p["report_id"])
-        if not r:
+        if not r or r["source"] == WAR_ROOM_SOURCE:
             continue
         key = (p["espn_event_id"], p["bet_type"])
         agreement.setdefault(key, {}).setdefault(p.get("bet_side"), set()).add(r["source"])
@@ -2388,6 +2549,8 @@ def create_pick(report_id, fields):
             new_pick, source, track_record, agreement_map, league=r["league"] if r else None
         )
         new_pick["wr_confidence_initial"] = initial_score
+        if source != WAR_ROOM_SOURCE and new_pick.get("espn_event_id"):
+            _safe_refresh_war_room_card(data, only_event=new_pick["espn_event_id"])
         return new_pick["id"]
 
     return store.mutate(_mutate, message=f"Add pick: {new_pick['matchup']} -- {new_pick['selection']}")
@@ -2466,12 +2629,15 @@ def auto_grade_all():
     synced = sync_wallet_entries(data)
     captured = _safe_capture_pregame_lines(data)
     backfilled = backfill_final_scores(data)
-    if graded or synced or captured or backfilled:
+    selected = _safe_refresh_war_room_card(data)
+    if graded or synced or captured or backfilled or selected:
         message = f"Auto-grade all reports: {graded} pick(s) settled, {synced} wallet entr{'y' if synced == 1 else 'ies'} synced"
         if captured:
             message += f", {captured} line{'s' if captured != 1 else ''} captured"
         if backfilled:
             message += f", {backfilled} final score{'s' if backfilled != 1 else ''} stored"
+        if selected:
+            message += f", {selected} War Room selection{'s' if selected != 1 else ''}"
         store.save(data, token, message=message)
     return redirect(url_for("reports_list", graded=graded, still_pending=still_pending))
 
