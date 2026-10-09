@@ -341,7 +341,10 @@ def wr_confidence_label(score):
 # ratings existed, and to the raw base rating before that. Never a
 # number that could have been touched by the result. Sources in
 # WR_CALIBRATION_EXCLUDED_SOURCES are left out of the fit (they still get
-# a probability read from it).
+# a probability read from it). Board leans (data["leans"]) join the
+# sample too, with their own indicator term, so the fit learns a shared
+# slope from a far larger set of graded sides while a lean's probability
+# is never confused with a pick's.
 WR_CALIBRATION_EXCLUDED_SOURCES = frozenset({"Grok", "Grok - GB", "ChatGPT - Ash", WAR_ROOM_SOURCE})
 # Football (CFB/NFL) and futbol (EPL/UCL) get their own fits: a rating
 # earned against a spread market and one earned against a 1X2 market
@@ -373,11 +376,18 @@ def _frozen_rating(pick):
 
 
 def wr_calibration_sample(data, leagues):
-    """[(frozen rating, won, which)] the probability fit for `leagues` trains on - see the block comment above for the rules."""
+    """
+    [(frozen rating, won, which, is_lean)] the probability fit for
+    `leagues` trains on - see the block comment above for the rules.
+    Picks are taken first, then board leans; a side already in the
+    sample as a pick is not added again as a lean.
+    """
     reports = {r["id"]: r for r in data["reports"]}
     rows = []
     seen = set()
-    for p in sorted(data["picks"], key=lambda p: p["id"]):
+    items = [(p, False) for p in sorted(data["picks"], key=lambda p: p["id"])]
+    items += [(l, True) for l in sorted(data.get("leans", []), key=lambda l: l["id"])]
+    for p, is_lean in items:
         if p["result"] not in ("win", "loss") or p.get("category") == "parlay" or p.get("parlay_leg_pick_ids"):
             continue
         r = reports.get(p["report_id"])
@@ -391,89 +401,116 @@ def wr_calibration_sample(data, leagues):
             if key in seen:
                 continue
             seen.add(key)
-        rows.append((score, p["result"] == "win", which))
+        rows.append((score, p["result"] == "win", which, is_lean))
     return rows
+
+
+def _features(score, is_lean):
+    """The feature vector one sample row contributes: intercept, centered rating, lean indicator."""
+    return [1.0, (score - WR_CALIBRATION_CENTER) / 10.0, 1.0 if is_lean else 0.0]
+
+
+def _solve(matrix, rhs):
+    """Gaussian elimination with partial pivoting for the small Newton system; None if singular."""
+    n = len(rhs)
+    m = [row[:] + [rhs[i]] for i, row in enumerate(matrix)]
+    for col in range(n):
+        pivot = max(range(col, n), key=lambda r: abs(m[r][col]))
+        if abs(m[pivot][col]) < 1e-12:
+            return None
+        m[col], m[pivot] = m[pivot], m[col]
+        for r in range(n):
+            if r != col:
+                f = m[r][col] / m[col][col]
+                for c in range(col, n + 1):
+                    m[r][c] -= f * m[col][c]
+    return [m[i][n] / m[i][i] for i in range(n)]
 
 
 def fit_wr_calibration(sample):
     """
-    {a, b, n, wins}: p(win) = sigmoid(a + b * (rating - WR_CALIBRATION_CENTER) / 10),
-    the maximum of the L2-penalized log-likelihood (prior strength
-    WR_CALIBRATION_PRIOR on both coefficients), found by Newton steps
+    {"w": [a, b, c], n, wins, lean_rows}: p(win) = sigmoid(a + b * x + c * lean),
+    x = (rating - WR_CALIBRATION_CENTER) / 10, lean = 1 for a board lean.
+    The maximum of the L2-penalized log-likelihood (prior strength
+    WR_CALIBRATION_PRIOR on every coefficient), found by Newton steps
     with backtracking so a tiny or separable sample can't send the fit
     off to infinity. With no data it returns a flat 50%; with a lot of
     data the prior is noise.
     """
-    xs = [(row[0] - WR_CALIBRATION_CENTER) / 10.0 for row in sample]
-    ys = [1.0 if row[1] else 0.0 for row in sample]
+    rows = [(_features(row[0], row[3] if len(row) > 3 else False), 1.0 if row[1] else 0.0) for row in sample]
+    k = 3
     lam = WR_CALIBRATION_PRIOR
 
-    def objective(a, b):
-        total = -0.5 * lam * (a * a + b * b)
-        for x, y in zip(xs, ys):
-            z = a + b * x
-            # log-likelihood of a Bernoulli, written to stay finite
+    def objective(w):
+        total = -0.5 * lam * sum(v * v for v in w)
+        for f, y in rows:
+            z = sum(wi * fi for wi, fi in zip(w, f))
             total += y * z - (max(z, 0.0) + math.log1p(math.exp(-abs(z))))
         return total
 
-    a = b = 0.0
-    current = objective(a, b)
+    w = [0.0] * k
+    current = objective(w)
     for _ in range(100):
-        ga, gb = -lam * a, -lam * b
-        haa = hbb = -lam
-        hab = 0.0
-        for x, y in zip(xs, ys):
-            p = _sigmoid(a + b * x)
-            ga += y - p
-            gb += (y - p) * x
-            w = p * (1 - p)
-            haa -= w
-            hab -= w * x
-            hbb -= w * x * x
-        det = haa * hbb - hab * hab
-        if abs(det) < 1e-12:
+        grad = [-lam * v for v in w]
+        hess = [[-lam if i == j else 0.0 for j in range(k)] for i in range(k)]
+        for f, y in rows:
+            p = _sigmoid(sum(wi * fi for wi, fi in zip(w, f)))
+            s = p * (1 - p)
+            for i in range(k):
+                grad[i] += (y - p) * f[i]
+                for j in range(k):
+                    hess[i][j] -= s * f[i] * f[j]
+        step_dir = _solve(hess, [-g for g in grad])
+        if step_dir is None:
             break
-        da = -(hbb * ga - hab * gb) / det
-        db = -(haa * gb - hab * ga) / det
         step = 1.0
         improved = False
         while step > 1e-4:
-            na, nb = a + step * da, b + step * db
-            value = objective(na, nb)
+            cand = [wi + step * di for wi, di in zip(w, step_dir)]
+            value = objective(cand)
             if value > current:
-                a, b, current, improved = na, nb, value, True
+                w, current, improved = cand, value, True
                 break
             step /= 2
-        if not improved or (abs(step * da) < 1e-9 and abs(step * db) < 1e-9):
+        if not improved or max(abs(step * d) for d in step_dir) < 1e-9:
             break
-    return {"a": a, "b": b, "n": len(sample), "wins": int(sum(ys))}
+    return {
+        "w": w,
+        "a": w[0],
+        "b": w[1],
+        "c": w[2],
+        "n": len(rows),
+        "wins": int(sum(y for _, y in rows)),
+        "lean_rows": sum(1 for row in sample if len(row) > 3 and row[3]),
+    }
 
 
-def wr_probability(score, calib):
-    """Calibrated cover probability (0-100) for a WR rating, or None."""
+def wr_probability(score, calib, lean=False):
+    """Calibrated cover probability (0-100) for a WR rating (a pick's by default, a board lean's with lean=True), or None."""
     if score is None or not calib:
         return None
-    return 100.0 * _sigmoid(calib["a"] + calib["b"] * (score - WR_CALIBRATION_CENTER) / 10.0)
+    return 100.0 * _sigmoid(sum(wi * fi for wi, fi in zip(calib["w"], _features(score, lean))))
 
 
 def wr_calibration_table(sample, calib, width=10):
     """Per-rating-band rows {band, n, wins, observed, predicted} - predicted vs observed, the honest check on the fit."""
     buckets = {}
-    for score, won, *_ in sample:
+    for score, won, _which, is_lean in sample:
         lo = int(score // width * width)
-        buckets.setdefault(lo, []).append((score, won))
+        buckets.setdefault(lo, []).append((score, won, is_lean))
     rows = []
     for lo in sorted(buckets):
         items = buckets[lo]
         n = len(items)
-        wins = sum(1 for _, w in items if w)
+        wins = sum(1 for _, w, _l in items if w)
         rows.append(
             {
                 "band": f"{lo}-{lo + width - 1}",
                 "n": n,
+                "leans": sum(1 for _, _w, l in items if l),
                 "wins": wins,
                 "observed": 100.0 * wins / n,
-                "predicted": sum(wr_probability(s, calib) for s, _ in items) / n,
+                "predicted": sum(wr_probability(s, calib, l) for s, _, l in items) / n,
             }
         )
     return rows
@@ -488,6 +525,7 @@ def wr_calibration(data):
         calib["group"] = group
         calib["leagues"] = sorted(leagues)
         calib["kickoff_rows"] = sum(1 for row in sample if row[2] == "kickoff")
+        calib["lean_curve"] = [(r, wr_probability(r, calib, lean=True)) for r in (40, 50, 60, 70, 80, 90)]
         calib["table"] = wr_calibration_table(sample, calib)
         calib["curve"] = [(r, wr_probability(r, calib)) for r in (40, 50, 60, 70, 80, 90)]
         out[group] = calib
@@ -660,6 +698,25 @@ def auto_grade_pending(data, report_id=None):
         pick["profit_loss"] = profit_for_result(pick["stake"], pick["odds"], result)
         pick["final_score"] = final
         graded += 1
+
+    # Board leans grade the same way (no stake, so no profit) - they are
+    # the probability fit's training data, not part of any record.
+    for lean in data.get("leans", []):
+        if lean["result"] != "pending" or not lean.get("espn_event_id") or not lean.get("bet_type"):
+            continue
+        if report_id is not None and lean["report_id"] != report_id:
+            continue
+        key = (lean["league"], lean["espn_event_id"])
+        if key not in score_cache:
+            score_cache[key] = odds.final_score(lean["league"], lean["espn_event_id"])
+        final = score_cache[key]
+        if not final or not final["completed"]:
+            continue
+        result = grade_pick(lean, final)
+        if result is None:
+            continue
+        lean["result"] = result
+        lean["final_score"] = final
 
     # Parlays grade off their own legs rather than a single ESPN score -
     # run after the loop above so a leg settled in this same pass (e.g.
@@ -871,6 +928,9 @@ def capture_pregame_lines(data, only=None):
                     league = resolve_league(e.get("league"))
                     if league:
                         eligible[("wallet", wallet["entries_key"], e["id"])] = (e, league)
+        for l in data.get("leans", []):
+            if l["result"] == "pending" and l.get("espn_event_id") and l.get("bet_type"):
+                eligible[("lean", l["id"])] = (l, l["league"])
     if not eligible:
         return 0
 
@@ -911,6 +971,9 @@ def capture_pregame_lines(data, only=None):
     # wr_confidence_kickoff: the last capture before kickoff is the
     # number a future calibration can trust never saw the result.
     live_scores = _live_scores(data) if any(key[0] in ("pick", "only") for key in due_keys) else {}
+    lean_scoring = None
+    if any(key[0] == "lean" or (key[0] == "only" and eligible[key][0].get("category") == "lean") for key in due_keys):
+        lean_scoring = (source_track_record(data), pick_agreement_map(data))
     for key in due_keys:
         item, league = eligible[key]
         event_key = (league, item["espn_event_id"])
@@ -931,7 +994,10 @@ def capture_pregame_lines(data, only=None):
             item["pregame_home_split"] = split_by_team.get((league, info["home_id"]))
             item["pregame_away_split"] = split_by_team.get((league, info["away_id"]))
             item["pregame_intel_captured_at"] = now
-        if key[0] in ("pick", "only") and item.get("id") in live_scores and live_scores[item["id"]] is not None:
+        if item.get("category") == "lean":
+            if lean_scoring:
+                item["wr_confidence_kickoff"], _ = wr_confidence_effective(item, item["source"], lean_scoring[0], lean_scoring[1], league=league)
+        elif key[0] in ("pick", "only") and item.get("id") in live_scores and live_scores[item["id"]] is not None:
             item["wr_confidence_kickoff"] = live_scores[item["id"]]
         captured += 1
     return captured
@@ -1707,6 +1773,145 @@ def refresh_war_room_card(data, only_event=None):
     return created
 
 
+# ---------------------------------------------------------------------------
+# Board leans. A memo scores far more games than it recommends: Maven's
+# full board has an if-forced side on every game, ChatGPT publishes fair
+# numbers that imply a side wherever they differ from the market. Those
+# opinions were never picks and never count in any record, leaderboard,
+# profit or CLV figure - they live in data["leans"], a separate list the
+# stats code never reads. They ARE graded against the final score like a
+# pick, carry a pregame line and a kickoff rating like a pick, feed the
+# WR probability fit with their own indicator term, and surface as
+# "aligned leans" on the dashboard when two sources' boards agree on a
+# side neither put on a card.
+LEAN_BET_TYPES = ("spread", "total", "moneyline", "match_result")
+
+
+def create_leans(report_id, rows):
+    """
+    Bulk-add board leans under the memo report `report_id`. Each row:
+    {matchup, selection, bet_type, bet_side, bet_line?, odds? (-110),
+    score (the source's own 0-100 number), espn_event_id?, note?}.
+    Skipped, not errored: a row whose source already has a PICK on that
+    game and market under any report (the pick is the record), and a row
+    duplicating a lean already on this report for that game and market.
+    Returns the new lean ids.
+    """
+    cleaned = []
+    for row in rows:
+        if row.get("bet_type") not in LEAN_BET_TYPES:
+            raise ValueError(f"bet_type must be one of {LEAN_BET_TYPES}")
+        if not row.get("matchup") or not row.get("selection") or not row.get("bet_side"):
+            raise ValueError("matchup, selection and bet_side are required")
+        score = row.get("score")
+        if score in (None, "") or not (0 <= float(score) <= 100):
+            raise ValueError("score must be between 0 and 100")
+        line = row.get("bet_line")
+        cleaned.append(
+            {
+                "matchup": str(row["matchup"]).strip(),
+                "selection": str(row["selection"]).strip(),
+                "bet_type": row["bet_type"],
+                "bet_side": row["bet_side"],
+                "bet_line": float(line) if line not in (None, "") else None,
+                "odds": int(row.get("odds") or -110),
+                "score": float(score),
+                "espn_event_id": row.get("espn_event_id") or None,
+                "note": (row.get("note") or "").strip() or None,
+            }
+        )
+
+    def _mutate(data):
+        report = next((r for r in data["reports"] if r["id"] == report_id), None)
+        if report is None:
+            raise ValueError(f"no report #{report_id}")
+        reports = {r["id"]: r for r in data["reports"]}
+        source_pick_markets = {
+            (p["espn_event_id"], p["bet_type"])
+            for p in data["picks"]
+            if p.get("espn_event_id") and reports.get(p["report_id"], {}).get("source") == report["source"]
+        }
+        existing = {(l["espn_event_id"], l["bet_type"]) for l in data["leans"] if l["report_id"] == report_id and l.get("espn_event_id")}
+        now = datetime.utcnow().isoformat(timespec="seconds")
+        created = []
+        for row in cleaned:
+            market = (row["espn_event_id"], row["bet_type"])
+            if row["espn_event_id"] and (market in source_pick_markets or market in existing):
+                continue
+            lean = {
+                "id": data["next_lean_id"],
+                "report_id": report_id,
+                "source": report["source"],
+                "league": report["league"],
+                "category": "lean",
+                "stake": 0.0,
+                "result": "pending",
+                "profit_loss": 0.0,
+                "parlay_leg_pick_ids": None,
+                "wr_confidence": row["score"],
+                "created_at": now,
+                **row,
+            }
+            data["next_lean_id"] += 1
+            data["leans"].append(lean)
+            existing.add(market)
+            created.append(lean)
+        if created:
+            _safe_capture_pregame_lines(data, only=[(l, report["league"]) for l in created if l.get("espn_event_id")])
+            track_record = source_track_record(data)
+            agreement_map = pick_agreement_map(data)
+            for l in created:
+                l["wr_confidence_initial"], _ = wr_confidence_effective(l, report["source"], track_record, agreement_map, league=report["league"])
+        return [l["id"] for l in created]
+
+    return store.mutate(_mutate, message=f"Add {len(cleaned)} board lean(s) to report #{report_id}")
+
+
+def aligned_leans(data, league=None):
+    """
+    Pending game/market/sides where two or more sources agree once board
+    leans are counted alongside picks, and at least one of them is a
+    lean - i.e. agreement the Aligned Picks section cannot see because
+    one side of it was never a pick. The War Room card is excluded.
+    Callers must annotate_wr_confidence(data) first.
+    """
+    reports = {r["id"]: r for r in data["reports"]}
+    groups = {}
+    for kind, items in (("pick", data["picks"]), ("lean", data.get("leans", []))):
+        for p in items:
+            if p["result"] != "pending" or not p.get("espn_event_id") or not p.get("bet_type"):
+                continue
+            r = reports.get(p["report_id"])
+            if not r or r["source"] == WAR_ROOM_SOURCE or not _league_matches(r["league"], league):
+                continue
+            key = (p["espn_event_id"], p["bet_type"], p.get("bet_side"))
+            by_source = groups.setdefault(key, {})
+            current = by_source.get(r["source"])
+            # a pick outranks a lean from the same source; otherwise newest wins
+            if current is None or (current["kind"] == "lean" and kind == "pick") or (current["kind"] == kind and p["id"] > current["item"]["id"]):
+                by_source[r["source"]] = {"kind": kind, "item": p, "report": r}
+    out = []
+    for (event, bet_type, side), by_source in groups.items():
+        if len(by_source) < 2 or not any(e["kind"] == "lean" for e in by_source.values()):
+            continue
+        opposing = set()
+        for (oe, ot, os_), others in groups.items():
+            if oe == event and ot == bet_type and os_ != side:
+                opposing.update(others)
+        sample = next(iter(by_source.values()))
+        out.append(
+            {
+                "matchup": sample["item"]["matchup"],
+                "league": sample["report"]["league"],
+                "sources": [s for s in SOURCES if s in by_source],
+                "by_source": by_source,
+                "opposing": [s for s in SOURCES if s in opposing],
+            }
+        )
+    out.sort(key=lambda a: (-len(a["by_source"]), a["matchup"]))
+    return out
+
+
 def _safe_refresh_war_room_card(data, only_event=None):
     """refresh_war_room_card with any ESPN hiccup swallowed - never a reason to fail a save."""
     try:
@@ -2376,6 +2581,7 @@ def dashboard():
     locks = war_room_locks(data, league)
     confidence_lock_picks = confidence_locks(data, league)
     aligned = aligned_picks(data, league)
+    aligned_lean_groups = aligned_leans(data, league)
     calibration = _current_calibration()
 
     stats = {s: source_stats(data, s, league) for s in SOURCES}
@@ -2418,6 +2624,7 @@ def dashboard():
         calibration=calibration,
         calibration_excluded=sorted(WR_CALIBRATION_EXCLUDED_SOURCES),
         aligned=aligned,
+        aligned_leans=aligned_lean_groups,
         locks=locks,
         confidence_lock_picks=confidence_lock_picks,
         stats=stats,
@@ -2558,11 +2765,14 @@ def report_detail(report_id):
     picks = sorted((p for p in data["picks"] if p["report_id"] == report_id), key=lambda p: p["id"])
     auto_gradable = sum(1 for p in picks if p["result"] == "pending" and p.get("espn_event_id"))
     picks = attach_game_status(picks, league=report["league"])
+    leans = sorted((l for l in data.get("leans", []) if l["report_id"] == report_id), key=lambda l: -l["score"])
+    leans = attach_game_status(leans, league=report["league"])
 
     return render_template(
         "report_detail.html",
         report=report,
         picks=picks,
+        leans=leans,
         auto_gradable=auto_gradable,
         graded=request.args.get("graded", type=int),
         still_pending=request.args.get("still_pending", type=int),
@@ -2851,6 +3061,31 @@ def auto_grade_all():
             message += f", {selected} War Room selection{'s' if selected != 1 else ''}"
         store.save(data, token, message=message)
     return redirect(url_for("reports_list", graded=graded, still_pending=still_pending))
+
+
+@app.route("/api/reports/<int:report_id>/leans", methods=["POST"])
+def api_create_leans(report_id):
+    """Bulk-add board leans (see create_leans): a JSON list of rows, or one row."""
+    body = request.get_json(silent=True)
+    rows = body if isinstance(body, list) else [body] if isinstance(body, dict) else []
+    if not rows:
+        return jsonify({"error": "send a JSON list of lean rows"}), 400
+    try:
+        ids = create_leans(report_id, rows)
+    except (ValueError, KeyError, TypeError) as e:
+        return jsonify({"error": str(e)}), 400
+    return jsonify({"ids": ids, "created": len(ids), "skipped": len(rows) - len(ids)}), 201
+
+
+@app.route("/leans/<int:lean_id>/delete", methods=["POST"])
+def delete_lean(lean_id):
+    data, token = store.load_for_update()
+    lean = next((l for l in data["leans"] if l["id"] == lean_id), None)
+    if lean is None:
+        return redirect(url_for("reports_list"))
+    data["leans"] = [l for l in data["leans"] if l["id"] != lean_id]
+    store.save(data, token, message=f"Delete board lean #{lean_id}")
+    return redirect(url_for("report_detail", report_id=lean["report_id"]))
 
 
 @app.route("/healthz")

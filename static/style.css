@@ -774,3 +774,12 @@ section { margin-bottom: 44px; }
 .calibration-table th, .calibration-table td { padding: 8px 10px; text-align: right; border-bottom: 1px solid var(--border); }
 .calibration-table th:first-child, .calibration-table td:first-child { text-align: left; }
 .calibration-table thead th { background: var(--surface-2); color: var(--muted); font-weight: 600; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.03em; }
+
+/* Board leans */
+.badge-lean {
+  display: inline-block; padding: 2px 8px; border-radius: 999px; font-size: 0.72rem; font-weight: 700;
+  background: rgba(139, 148, 167, 0.18); color: var(--muted); border: 1px solid rgba(139, 148, 167, 0.45);
+}
+.lock-card-lean { border-style: dashed; }
+.leans-section { margin-top: 28px; }
+.leans-table td { font-size: 0.85rem; }

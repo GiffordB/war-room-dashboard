@@ -178,6 +178,39 @@
     {% else %}
       <p class="empty">No two sources are on the same side of a pending game right now.</p>
     {% endif %}
+
+    <h3 class="lock-subhead">Aligned leans</h3>
+    <p class="muted small">Agreement the cards never showed: a side that two or more sources favor once each memo's full board is counted — an if-forced side, a fair number off the market — where at least one of them never made it a pick. Leans are not in anyone's record; they are graded only to train the probability fit.</p>
+    {% if aligned_leans %}
+      <div class="locks-grid">
+        {% for a in aligned_leans %}
+          <div class="lock-card lock-card-lean">
+            <div class="lock-card-head">
+              <span class="badge-league">{{ a.league }}</span>
+              {% if a.opposing %}<span class="badge-split" title="On the other side: {{ a.opposing|join(', ') }}">Split · {{ a.opposing|join(', ') }}</span>{% endif %}
+            </div>
+            <div class="lock-matchup">{{ a.matchup }}</div>
+            <div class="lock-sources">
+              {% for s in a.sources %}
+                {% set entry = a.by_source[s] %}
+                <div class="lock-source-row">
+                  <span class="badge-source" style="background: {{ source_color(s) }};">{{ s }}</span>
+                  <a href="{{ url_for('report_detail', report_id=entry.report.id) }}">{{ entry.item.selection }}</a>
+                  <span class="muted">{{ '%+d'|format(entry.item.odds) }}</span>
+                  {% if entry.kind == 'lean' %}
+                    <span class="badge-lean" title="A board lean, not a pick: the source scored this game {{ '%.0f'|format(entry.item.score) }} without recommending it">lean · {{ '%.0f'|format(entry.item.score) }}</span>
+                  {% elif entry.item.get('wr_confidence_effective') is not none %}
+                    <span class="badge-wr-confidence" title="{{ entry.item.wr_confidence_breakdown }}">WR {{ wr_confidence_badge_text(entry.item.wr_confidence_effective, entry.item.get('wr_confidence_initial'), a.league) }}</span>
+                  {% endif %}
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    {% else %}
+      <p class="empty">No board leans line up with another source right now.</p>
+    {% endif %}
   </section>
 
   <section>
@@ -201,21 +234,24 @@
 
   <section class="calibration-section">
     <h2 class="section-label">WR Probability — how the rating becomes a percentage</h2>
-    <p class="muted small">Every WR badge on the site is a calibrated cover probability: the rating (a points checklist) passed through a fit of how often each rating has actually cashed. Football (CFB, NFL) and futbol (EPL, UCL) each get their own fit, trained only on their own settled, deduplicated picks, scored on the rating frozen at kickoff (the last pregame capture; picks graded before kickoff ratings existed fall back to their submission rating), and re-fit automatically as results come in. Left out of both fits: {{ calibration_excluded|join(', ') }}.</p>
+    <p class="muted small">Every WR badge on the site is a calibrated cover probability: the rating (a points checklist) passed through a fit of how often each rating has actually cashed. Football (CFB, NFL) and futbol (EPL, UCL) each get their own fit, trained only on their own settled, deduplicated picks and board leans (leans carry their own term in the fit, so a lean's probability is never confused with a pick's), scored on the rating frozen at kickoff (the last pregame capture; picks graded before kickoff ratings existed fall back to their submission rating), and re-fit automatically as results come in. Left out of both fits: {{ calibration_excluded|join(', ') }}.</p>
     {% for group in ('football', 'futbol') %}
       {% set c = calibration[group] %}
-      <h3 class="lock-subhead">{{ 'Football (CFB, NFL)' if group == 'football' else 'Futbol (EPL, UCL)' }} — {{ c.n }} picks, {{ c.wins }}-{{ c.n - c.wins }} <span class="muted small">({{ c.kickoff_rows }} scored at kickoff, {{ c.n - c.kickoff_rows }} at submission)</span></h3>
+      <h3 class="lock-subhead">{{ 'Football (CFB, NFL)' if group == 'football' else 'Futbol (EPL, UCL)' }} — {{ c.n }} picks, {{ c.wins }}-{{ c.n - c.wins }} <span class="muted small">({{ c.n - c.lean_rows }} picks and {{ c.lean_rows }} board leans; {{ c.kickoff_rows }} scored at kickoff, {{ c.n - c.kickoff_rows }} at submission)</span></h3>
       <div class="calibration-grid">
         <table class="calibration-table">
           <thead><tr><th>Rating</th>{% for r, p in c.curve %}<th>{{ r }}</th>{% endfor %}</tr></thead>
-          <tbody><tr><td class="muted">Cover probability</td>{% for r, p in c.curve %}<td>{{ '%.0f'|format(p) }}%</td>{% endfor %}</tr></tbody>
+          <tbody>
+            <tr><td class="muted">Pick cover probability</td>{% for r, p in c.curve %}<td>{{ '%.0f'|format(p) }}%</td>{% endfor %}</tr>
+            {% if c.lean_rows %}<tr><td class="muted">Board lean cover probability</td>{% for r, p in c.lean_curve %}<td>{{ '%.0f'|format(p) }}%</td>{% endfor %}</tr>{% endif %}
+          </tbody>
         </table>
         {% if c.table %}
           <table class="calibration-table">
-            <thead><tr><th>Rating band</th><th>Picks</th><th>Record</th><th>Observed</th><th>Predicted</th></tr></thead>
+            <thead><tr><th>Rating band</th><th>Rows</th><th>Record</th><th>Observed</th><th>Predicted</th></tr></thead>
             <tbody>
               {% for row in c.table %}
-                <tr><td>{{ row.band }}</td><td>{{ row.n }}</td><td>{{ row.wins }}-{{ row.n - row.wins }}</td><td>{{ '%.0f'|format(row.observed) }}%</td><td>{{ '%.0f'|format(row.predicted) }}%</td></tr>
+                <tr><td>{{ row.band }}</td><td>{{ row.n }}{% if row.leans %} <span class="muted small">({{ row.leans }} leans)</span>{% endif %}</td><td>{{ row.wins }}-{{ row.n - row.wins }}</td><td>{{ '%.0f'|format(row.observed) }}%</td><td>{{ '%.0f'|format(row.predicted) }}%</td></tr>
               {% endfor %}
             </tbody>
           </table>

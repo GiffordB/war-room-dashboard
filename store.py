@@ -72,6 +72,11 @@ EMPTY_STATE = {
     "picks": [],
     "wallet_entries": [],
     "jesse_wallet_entries": [],
+    # Board leans (see app.create_leans): a source's full-board opinions
+    # that were never recommendations - graded for the probability fit
+    # and for spotting agreement, never counted in any record.
+    "next_lean_id": 1,
+    "leans": [],
 }
 
 
