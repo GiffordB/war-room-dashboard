@@ -114,8 +114,11 @@ SOURCE_STYLE = {
     # removed from the data file (the git history keeps them).
     "Grok - GB": {"color": "#fbbf24"},
     "ChatGPT": {"color": "#10a37f"},
-    "War Room": {"color": "#e2b714"},
-    "War Room Lean": {"color": "#c4b5fd"},
+    # The two tickets' dots must read differently from every source's:
+    # white for the main card (its leaderboard row is gold), hot pink for
+    # the lean ticket (its row is purple).
+    "War Room": {"color": "#ffffff"},
+    "War Room Lean": {"color": "#f472b6"},
 }
 
 # War Room card selection rule - FROZEN 2026-10-09, before any result.

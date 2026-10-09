@@ -785,8 +785,8 @@ section { margin-bottom: 44px; }
 .leans-table td { font-size: 0.85rem; }
 
 /* The two War Room tickets stand apart on the leaderboard. */
-.leaderboard-row-gold { background: linear-gradient(90deg, rgba(226, 183, 20, 0.22), rgba(226, 183, 20, 0.05) 60%, var(--surface)); }
-.leaderboard-row-purple { background: linear-gradient(90deg, rgba(196, 181, 253, 0.26), rgba(196, 181, 253, 0.06) 60%, var(--surface)); }
+.leaderboard-row-gold { background: rgba(226, 183, 20, 0.38); border-color: rgba(226, 183, 20, 0.7); }
+.leaderboard-row-purple { background: rgba(167, 139, 250, 0.42); border-color: rgba(167, 139, 250, 0.75); }
 
 /* Recent picks: previous weeks fold under their title */
 details.week-group > summary.week-group-label { cursor: pointer; list-style: none; }
