@@ -783,3 +783,7 @@ section { margin-bottom: 44px; }
 .lock-card-lean { border-style: dashed; }
 .leans-section { margin-top: 28px; }
 .leans-table td { font-size: 0.85rem; }
+
+/* The two War Room tickets stand apart on the leaderboard. */
+.leaderboard-row-gold { background: linear-gradient(90deg, rgba(226, 183, 20, 0.22), rgba(226, 183, 20, 0.05) 60%, var(--surface)); }
+.leaderboard-row-purple { background: linear-gradient(90deg, rgba(196, 181, 253, 0.26), rgba(196, 181, 253, 0.06) 60%, var(--surface)); }

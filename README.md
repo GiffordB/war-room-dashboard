@@ -214,6 +214,15 @@ kept out of the agreement, alignment and Lock groupings. A revised rule
 belongs in a second card run alongside this one, not an edit to these
 constants.
 
+"War Room Lean" is that second ticket (`refresh_war_room_lean_card`),
+with its own record and its own frozen rule: take a side when at least
+two sources favor it once every memo's full board is counted, picks and
+board leans together, and at least one of them is a board lean, i.e.
+agreement the cards never showed. Same mechanics otherwise: one per
+game and market, more sources then higher live rating, dead heat
+skipped, line copied from the best-rated entry, flat $100, pre-kickoff
+only. The main card is gold on the leaderboard, the lean ticket purple.
+
 ## WR Probability
 
 Every WR badge on the site shows a calibrated cover probability, not
