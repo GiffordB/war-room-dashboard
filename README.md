@@ -196,6 +196,45 @@ Units follow the report's own convention: **$100 staked = 1 unit.**
   harmless to run when there's nothing to grade — it's a no-op. Trigger
   it by hand anytime from the repo's Actions tab (`workflow_dispatch`).
 
+## The War Room's own card
+
+"War Room" is a source on every board that never submits an opinion of
+its own. A rule frozen on 2026-10-09, before any result, runs over the
+other sources' still-pending picks (`refresh_war_room_card` in `app.py`,
+on the hourly Auto-Grade pass and whenever a pick is logged): take a
+side when at least two sources are on it, or when a single pick's live
+WR rating is 75 or higher; one selection per game and market (more
+sources wins, then the higher score, a dead heat is skipped); the line
+and price are copied from the best-scoring source pick at the moment of
+selection; flat $100; only while ESPN still shows the game as not
+started. Selections land on a per-league weekly War Room report and
+grade like any other pick, so the card's record answers the question
+"does the scoring layer add anything?" with a number. Its own picks are
+kept out of the agreement, alignment and Lock groupings. A revised rule
+belongs in a second card run alongside this one, not an edit to these
+constants.
+
+## WR Probability
+
+Every WR badge on the site shows a calibrated cover probability, not
+the raw rating. The rating (`wr_confidence_effective`) is a points
+checklist; the probability is that rating passed through a one-feature
+logistic fit of how often each rating has actually cashed
+(`wr_calibration` and friends in `app.py`). Two separate fits: football
+(CFB, NFL) and futbol (EPL, UCL), each trained only on its own settled,
+deduplicated picks (one per game/market/side, pushes and parlays out),
+scored on the rating frozen at submission (`wr_confidence_initial`) so
+no training example ever saw later information. Grok, Grok - GB,
+ChatGPT - Ash and the War Room card are left out of the fit; their picks
+still read a probability from it. An L2 prior pulls both coefficients
+toward "every rating is a coin flip", so a small sample gives a nearly
+flat curve and the data has to earn every point of slope. The fit is
+recomputed from the data file on every request (it is a few hundred
+multiplications) and the dashboard shows the curve and a predicted-vs-
+observed table per rating band. Every pregame capture also freezes the
+live rating onto the pick as `wr_confidence_kickoff`, so a future
+calibration can train on the last number that existed before kickoff.
+
 ## Prediction bot (EPL / UCL)
 
 Two scheduled Claude runs evaluate a full slate and log their own picks

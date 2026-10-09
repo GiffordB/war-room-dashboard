@@ -46,7 +46,7 @@
                     <span>{{ entry.pick.selection }}</span>
                     <span class="muted">{{ '%+d'|format(entry.pick.odds) }}</span>
                     {% if entry.pick.get('wr_confidence_effective') is not none %}
-                      <span class="badge-wr-confidence" title="{{ entry.pick.wr_confidence_breakdown }}">WR {{ wr_confidence_badge_text(entry.pick.wr_confidence_effective, entry.pick.get('wr_confidence_initial')) }}</span>
+                      <span class="badge-wr-confidence" title="{{ entry.pick.wr_confidence_breakdown }}">WR {{ wr_confidence_badge_text(entry.pick.wr_confidence_effective, entry.pick.get('wr_confidence_initial'), lock.league) }}</span>
                     {% endif %}
                   </div>
                 {% endfor %}
@@ -58,7 +58,7 @@
 
       {% if confidence_lock_picks %}
         <h3 class="lock-subhead">By WR Score</h3>
-        <p class="muted small">A single pick's own {{ lock_confidence }}%+ WR Confidence Score — still pending.</p>
+        <p class="muted small">A single pick's own WR rating of {{ lock_confidence }}+ — still pending. Badges show the calibrated probability.</p>
         <div class="locks-grid">
           {% for lock in confidence_lock_picks %}
             <a class="lock-card lock-card-link" href="{{ url_for('report_detail', report_id=lock.report_id) }}">
@@ -72,7 +72,7 @@
                   <span class="badge-source" style="background: {{ source_color(lock.source) }};">{{ lock.source }}</span>
                   <span>{{ lock.selection }}</span>
                   <span class="muted">{{ '%+d'|format(lock.odds) }}</span>
-                  <span class="badge-wr-confidence" title="{{ lock.wr_confidence_breakdown }}">WR {{ wr_confidence_badge_text(lock.wr_confidence, lock.wr_confidence_initial) }}</span>
+                  <span class="badge-wr-confidence" title="{{ lock.wr_confidence_breakdown }}">WR {{ wr_confidence_badge_text(lock.wr_confidence, lock.wr_confidence_initial, lock.league) }}</span>
                 </div>
               </div>
             </a>
@@ -167,7 +167,7 @@
                   <a href="{{ url_for('report_detail', report_id=entry.report.id) }}">{{ entry.pick.selection }}</a>
                   <span class="muted">{{ '%+d'|format(entry.pick.odds) }}</span>
                   {% if entry.pick.get('wr_confidence_effective') is not none %}
-                    <span class="badge-wr-confidence" title="{{ entry.pick.wr_confidence_breakdown }}">WR {{ wr_confidence_badge_text(entry.pick.wr_confidence_effective, entry.pick.get('wr_confidence_initial')) }}</span>
+                    <span class="badge-wr-confidence" title="{{ entry.pick.wr_confidence_breakdown }}">WR {{ wr_confidence_badge_text(entry.pick.wr_confidence_effective, entry.pick.get('wr_confidence_initial'), a.league) }}</span>
                   {% endif %}
                 </div>
               {% endfor %}
@@ -197,6 +197,34 @@
     {% else %}
       <p class="empty">No scored, settled picks yet — this fills in as WR-scored picks get graded.</p>
     {% endif %}
+  </section>
+
+  <section class="calibration-section">
+    <h2 class="section-label">WR Probability — how the rating becomes a percentage</h2>
+    <p class="muted small">Every WR badge on the site is a calibrated cover probability: the rating (a points checklist) passed through a fit of how often each rating has actually cashed. Football (CFB, NFL) and futbol (EPL, UCL) each get their own fit, trained only on their own settled, deduplicated picks, scored on the rating frozen at submission, and re-fit automatically as results come in. Left out of both fits: {{ calibration_excluded|join(', ') }}.</p>
+    {% for group in ('football', 'futbol') %}
+      {% set c = calibration[group] %}
+      <h3 class="lock-subhead">{{ 'Football (CFB, NFL)' if group == 'football' else 'Futbol (EPL, UCL)' }} — {{ c.n }} picks, {{ c.wins }}-{{ c.n - c.wins }}</h3>
+      <div class="calibration-grid">
+        <table class="calibration-table">
+          <thead><tr><th>Rating</th>{% for r, p in c.curve %}<th>{{ r }}</th>{% endfor %}</tr></thead>
+          <tbody><tr><td class="muted">Cover probability</td>{% for r, p in c.curve %}<td>{{ '%.0f'|format(p) }}%</td>{% endfor %}</tr></tbody>
+        </table>
+        {% if c.table %}
+          <table class="calibration-table">
+            <thead><tr><th>Rating band</th><th>Picks</th><th>Record</th><th>Observed</th><th>Predicted</th></tr></thead>
+            <tbody>
+              {% for row in c.table %}
+                <tr><td>{{ row.band }}</td><td>{{ row.n }}</td><td>{{ row.wins }}-{{ row.n - row.wins }}</td><td>{{ '%.0f'|format(row.observed) }}%</td><td>{{ '%.0f'|format(row.predicted) }}%</td></tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        {% else %}
+          <p class="empty">No settled picks in this group yet — badges here read a flat 50% until there are.</p>
+        {% endif %}
+      </div>
+    {% endfor %}
+    <p class="muted small">Predicted and observed should sit close together in every band once the sample is large; where they do not, the fit is telling you the rating is not yet a probability in that range. Bands with a handful of picks mean nothing on their own.</p>
   </section>
 
   {% if week_numbers %}
@@ -312,7 +340,7 @@
               <span class="pick-matchup"><a href="{{ url_for('report_detail', report_id=p.report_id) }}">{{ p.matchup }} — {{ p.selection }}</a></span>
               <span class="muted">{{ '%+d'|format(p.odds) }}</span>
               <span class="muted">${{ '{:,.0f}'.format(p.stake) }}</span>
-              {% if p.get('wr_confidence_effective') is not none %}<span class="badge-wr-confidence" title="{{ p.wr_confidence_breakdown }}">WR {{ wr_confidence_badge_text(p.wr_confidence_effective, p.get('wr_confidence_initial')) }}</span>{% endif %}
+              {% if p.get('wr_confidence_effective') is not none %}<span class="badge-wr-confidence" title="{{ p.wr_confidence_breakdown }}">WR {{ wr_confidence_badge_text(p.wr_confidence_effective, p.get('wr_confidence_initial'), p.league) }}</span>{% endif %}
               {% set move = line_move(p) %}
               {% if move is not none %}
                 <span class="badge-clv {{ 'pos' if move > 0 else 'neg' if move < 0 else '' }}" title="Closing-line value: this pick's line vs. the last captured line before kickoff">CLV {{ '%+.1f'|format(move) }}</span>

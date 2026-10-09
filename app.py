@@ -21,12 +21,13 @@ Shape of this file:
   5. `if __name__ == ...`   - the line that actually starts the server
 """
 
+import math
 import re
 import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import date, datetime, timedelta
 
-from flask import Flask, jsonify, redirect, render_template, request, url_for
+from flask import Flask, g, jsonify, redirect, render_template, request, url_for
 
 import charts
 import odds
@@ -321,20 +322,201 @@ def wr_confidence_label(score):
     return "Thin"
 
 
-def wr_confidence_badge_text(live, initial=None):
+# ---------------------------------------------------------------------------
+# WR Probability: the WR Confidence rating turned into a calibrated cover
+# probability. The rating is a points checklist (see wr_confidence_effective),
+# so "64" has never meant a 64% chance of anything. This layer learns, from
+# every settled pick the dashboard has graded, how often a given rating
+# actually cashed, and re-fits every time the data changes - so the mapping
+# keeps moving as results come in. It is a one-feature logistic fit with a
+# prior pulling it toward "every rating is a coin flip", which is what a
+# tiny sample should say; the data has to earn every point of slope.
+#
+# Training set: settled win/loss picks (pushes and parlays out), one per
+# game/market/side (the earliest submission, so a side logged by three
+# sources counts once), scored on the rating FROZEN AT SUBMISSION
+# (wr_confidence_initial) - never on a number that could have been touched
+# by later information. Sources in WR_CALIBRATION_EXCLUDED_SOURCES are left
+# out of the fit (they still get a probability read from it).
+WR_CALIBRATION_EXCLUDED_SOURCES = frozenset({"Grok", "Grok - GB", "ChatGPT - Ash", WAR_ROOM_SOURCE})
+# Football (CFB/NFL) and futbol (EPL/UCL) get their own fits: a rating
+# earned against a spread market and one earned against a 1X2 market
+# cash at different rates, and neither should drag the other's curve.
+WR_CALIBRATION_GROUPS = {"football": AMERICAN_LEAGUES, "futbol": SOCCER_LEAGUES}
+WR_CALIBRATION_CENTER = 60.0  # rating the fit is centered on; x = (rating - center) / 10
+WR_CALIBRATION_PRIOR = 6.0  # ridge strength: roughly how many coin-flip pseudo-picks the data must outweigh
+
+
+def _sigmoid(z):
+    if z >= 0:
+        e = math.exp(-z)
+        return 1.0 / (1.0 + e)
+    e = math.exp(z)
+    return e / (1.0 + e)
+
+
+def _calibration_group(league):
+    """Which fit a league's picks read from: 'futbol' for the soccer leagues, 'football' for everything else."""
+    return "futbol" if league in SOCCER_LEAGUES else "football"
+
+
+def wr_calibration_sample(data, leagues):
+    """[(frozen rating, won)] the probability fit for `leagues` trains on - see the block comment above for the rules."""
+    reports = {r["id"]: r for r in data["reports"]}
+    rows = []
+    seen = set()
+    for p in sorted(data["picks"], key=lambda p: p["id"]):
+        if p["result"] not in ("win", "loss") or p.get("category") == "parlay" or p.get("parlay_leg_pick_ids"):
+            continue
+        r = reports.get(p["report_id"])
+        if not r or r["source"] in WR_CALIBRATION_EXCLUDED_SOURCES or r["league"] not in leagues:
+            continue
+        score = p.get("wr_confidence_initial")
+        if score is None:
+            score = p.get("wr_confidence")
+        if score is None:
+            continue
+        if p.get("espn_event_id") and p.get("bet_type"):
+            key = (p["espn_event_id"], p["bet_type"], p.get("bet_side"))
+            if key in seen:
+                continue
+            seen.add(key)
+        rows.append((float(score), p["result"] == "win"))
+    return rows
+
+
+def fit_wr_calibration(sample):
     """
-    Compact badge text for a WR Confidence Score: just the live number
-    ("74%"), or "68→74%" when the pick's frozen wr_confidence_initial
-    (the score at submission - see create_pick) has since drifted from
-    the live wr_confidence_effective by a full point or more, so a
-    viewer can see at a glance whether the War Room's read on this pick
-    has moved since it went out.
+    {a, b, n, wins}: p(win) = sigmoid(a + b * (rating - WR_CALIBRATION_CENTER) / 10),
+    the maximum of the L2-penalized log-likelihood (prior strength
+    WR_CALIBRATION_PRIOR on both coefficients), found by Newton steps
+    with backtracking so a tiny or separable sample can't send the fit
+    off to infinity. With no data it returns a flat 50%; with a lot of
+    data the prior is noise.
+    """
+    xs = [(s - WR_CALIBRATION_CENTER) / 10.0 for s, _ in sample]
+    ys = [1.0 if w else 0.0 for _, w in sample]
+    lam = WR_CALIBRATION_PRIOR
+
+    def objective(a, b):
+        total = -0.5 * lam * (a * a + b * b)
+        for x, y in zip(xs, ys):
+            z = a + b * x
+            # log-likelihood of a Bernoulli, written to stay finite
+            total += y * z - (max(z, 0.0) + math.log1p(math.exp(-abs(z))))
+        return total
+
+    a = b = 0.0
+    current = objective(a, b)
+    for _ in range(100):
+        ga, gb = -lam * a, -lam * b
+        haa = hbb = -lam
+        hab = 0.0
+        for x, y in zip(xs, ys):
+            p = _sigmoid(a + b * x)
+            ga += y - p
+            gb += (y - p) * x
+            w = p * (1 - p)
+            haa -= w
+            hab -= w * x
+            hbb -= w * x * x
+        det = haa * hbb - hab * hab
+        if abs(det) < 1e-12:
+            break
+        da = -(hbb * ga - hab * gb) / det
+        db = -(haa * gb - hab * ga) / det
+        step = 1.0
+        improved = False
+        while step > 1e-4:
+            na, nb = a + step * da, b + step * db
+            value = objective(na, nb)
+            if value > current:
+                a, b, current, improved = na, nb, value, True
+                break
+            step /= 2
+        if not improved or (abs(step * da) < 1e-9 and abs(step * db) < 1e-9):
+            break
+    return {"a": a, "b": b, "n": len(sample), "wins": int(sum(ys))}
+
+
+def wr_probability(score, calib):
+    """Calibrated cover probability (0-100) for a WR rating, or None."""
+    if score is None or not calib:
+        return None
+    return 100.0 * _sigmoid(calib["a"] + calib["b"] * (score - WR_CALIBRATION_CENTER) / 10.0)
+
+
+def wr_calibration_table(sample, calib, width=10):
+    """Per-rating-band rows {band, n, wins, observed, predicted} - predicted vs observed, the honest check on the fit."""
+    buckets = {}
+    for score, won in sample:
+        lo = int(score // width * width)
+        buckets.setdefault(lo, []).append((score, won))
+    rows = []
+    for lo in sorted(buckets):
+        items = buckets[lo]
+        n = len(items)
+        wins = sum(1 for _, w in items if w)
+        rows.append(
+            {
+                "band": f"{lo}-{lo + width - 1}",
+                "n": n,
+                "wins": wins,
+                "observed": 100.0 * wins / n,
+                "predicted": sum(wr_probability(s, calib) for s, _ in items) / n,
+            }
+        )
+    return rows
+
+
+def wr_calibration(data):
+    """{group: fit + training table} for every WR_CALIBRATION_GROUPS entry, for the dashboard and for annotation."""
+    out = {}
+    for group, leagues in WR_CALIBRATION_GROUPS.items():
+        sample = wr_calibration_sample(data, leagues)
+        calib = fit_wr_calibration(sample)
+        calib["group"] = group
+        calib["leagues"] = sorted(leagues)
+        calib["table"] = wr_calibration_table(sample, calib)
+        calib["curve"] = [(r, wr_probability(r, calib)) for r in (40, 50, 60, 70, 80, 90)]
+        out[group] = calib
+    return out
+
+
+def _current_calibration():
+    """The fits for this request, computed once and kept on flask.g (templates call wr_confidence_badge_text many times per page)."""
+    try:
+        calib = getattr(g, "wr_calibration", None)
+    except RuntimeError:  # outside a request
+        return wr_calibration(store.load_data())
+    if calib is None:
+        calib = wr_calibration(store.load_data())
+        g.wr_calibration = calib
+    return calib
+
+
+def _calib_for(league):
+    """The fit a pick in `league` reads its probability from."""
+    return _current_calibration()[_calibration_group(league)]
+
+
+def wr_confidence_badge_text(live, initial=None, league=None):
+    """
+    Compact badge text for a pick's WR read, as a calibrated probability:
+    "58%" is the live rating passed through the current calibration, or
+    "55→58%" when the pick's frozen wr_confidence_initial (the rating at
+    submission - see create_pick) maps to a different probability than
+    the live wr_confidence_effective, so a viewer can see at a glance
+    whether the War Room's read on this pick has moved since it went out.
+    The underlying rating stays in the tooltip.
     """
     if live is None:
         return None
-    if initial is None or round(initial) == round(live):
-        return f"{live:.0f}%"
-    return f"{initial:.0f}→{live:.0f}%"
+    calib = _calib_for(league)
+    p_live = wr_probability(live, calib)
+    if initial is None or round(wr_probability(initial, calib)) == round(p_live):
+        return f"{p_live:.0f}%"
+    return f"{wr_probability(initial, calib):.0f}→{p_live:.0f}%"
 
 
 app.jinja_env.globals.update(
@@ -355,6 +537,7 @@ app.jinja_env.globals.update(
     lock_confidence=LOCK_CONFIDENCE,
     consensus_min_wr_confidence=CONSENSUS_MIN_WR_CONFIDENCE,
     wr_confidence_label=wr_confidence_label,
+    wr_probability=lambda score, league=None: wr_probability(score, _calib_for(league)),
     wr_confidence_badge_text=wr_confidence_badge_text,
     unit_size=UNIT_SIZE,
 )
@@ -713,6 +896,10 @@ def capture_pregame_lines(data, only=None):
 
     captured = 0
     now = datetime.utcnow().isoformat(timespec="seconds")
+    # The live WR rating at this capture, frozen onto the pick as
+    # wr_confidence_kickoff: the last capture before kickoff is the
+    # number a future calibration can trust never saw the result.
+    live_scores = _live_scores(data) if any(key[0] in ("pick", "only") for key in due_keys) else {}
     for key in due_keys:
         item, league = eligible[key]
         event_key = (league, item["espn_event_id"])
@@ -733,6 +920,8 @@ def capture_pregame_lines(data, only=None):
             item["pregame_home_split"] = split_by_team.get((league, info["home_id"]))
             item["pregame_away_split"] = split_by_team.get((league, info["away_id"]))
             item["pregame_intel_captured_at"] = now
+        if key[0] in ("pick", "only") and item.get("id") in live_scores and live_scores[item["id"]] is not None:
+            item["wr_confidence_kickoff"] = live_scores[item["id"]]
         captured += 1
     return captured
 
@@ -1947,7 +2136,15 @@ def _annotate_one_wr_confidence(item, source, league, track_record, agreement_ma
     text = wr_confidence_breakdown_text(source, breakdown)
     initial = item.get("wr_confidence_initial")
     if score is not None and initial is not None and round(initial) != round(score):
-        text = f"Locked in at {initial:.0f}% on {frozen_at_label}, now {score:.0f}% live — {text}"
+        text = f"Locked in at rating {initial:.0f} on {frozen_at_label}, now {score:.0f} live — {text}"
+    calib = _calib_for(league)
+    item["wr_probability"] = wr_probability(score, calib)
+    item["wr_probability_initial"] = wr_probability(initial, calib)
+    if score is not None:
+        text = (
+            f"Rating {score:.0f}/100 → {item['wr_probability']:.0f}% cover probability, calibrated on "
+            f"{calib['n']} settled picks · {text}"
+        )
     item["wr_confidence_breakdown"] = text
 
 
@@ -2168,6 +2365,7 @@ def dashboard():
     locks = war_room_locks(data, league)
     confidence_lock_picks = confidence_locks(data, league)
     aligned = aligned_picks(data, league)
+    calibration = _current_calibration()
 
     stats = {s: source_stats(data, s, league) for s in SOURCES}
     ranked = rank_sources(stats)
@@ -2206,6 +2404,8 @@ def dashboard():
 
     return render_template(
         "index.html",
+        calibration=calibration,
+        calibration_excluded=sorted(WR_CALIBRATION_EXCLUDED_SOURCES),
         aligned=aligned,
         locks=locks,
         confidence_lock_picks=confidence_lock_picks,
