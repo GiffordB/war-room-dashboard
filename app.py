@@ -124,6 +124,10 @@ SOURCE_STYLE = {
 # War Room card selection rule - FROZEN 2026-10-09, before any result.
 # Changing these rewrites what the card would have picked, so a revised
 # rule belongs in a second card run alongside this one, not an edit here.
+# Extended to cover EPL/UCL on 2026-10-09 too (see refresh_war_room_card) -
+# that's a scope change (which leagues feed the rule), not an edit to the
+# rule's own numbers below, so it doesn't retroactively touch anything a
+# past selection would have picked.
 WAR_ROOM_MIN_ALIGNED = 2  # sources on the same side of the same market
 WAR_ROOM_SOLO_WR = 75  # or one pick whose live WR Confidence clears this
 WAR_ROOM_STAKE = 100.0  # flat one unit on every selection
@@ -134,7 +138,8 @@ WAR_ROOM_STAKE = 100.0  # flat one unit on every selection
 # (pure pick alignment is the main card's business); one per game and
 # market; more sources wins, then the higher live rating; dead heat
 # skipped; line and price copied from the best-rated entry; flat stake;
-# pre-kickoff only.
+# pre-kickoff only. Also extended to EPL/UCL on 2026-10-09 - see the note
+# above the main card's constants.
 WAR_ROOM_LEAN_MIN_ALIGNED = 2
 
 # Every report belongs to one league - a source writes a separate report
@@ -1670,7 +1675,8 @@ WAR_ROOM_PHILOSOPHY = {
         f"one selection per game and market; when both sides qualify, the side with more sources wins, then the higher score, "
         f"and a dead heat is skipped. Each selection copies the line and price of the highest-scoring source pick on that side at "
         f"the moment it is made, is only made while the game has not kicked off, and is staked flat at ${WAR_ROOM_STAKE:.0f}. "
-        f"Selections are made by the hourly Auto-Grade pass and whenever a new pick is logged. Football (CFB, NFL) only."
+        f"Selections are made by the hourly Auto-Grade pass and whenever a new pick is logged. Covers both football "
+        f"(CFB, NFL) and futbol (EPL, UCL) -- the rule itself doesn't care which market it's reading."
     ),
     WAR_ROOM_LEAN_SOURCE: (
         f"The dashboard's second ticket, a rule frozen before any result and kept separate from the main War Room card: take a "
@@ -1679,7 +1685,7 @@ WAR_ROOM_PHILOSOPHY = {
         f"and market; more sources wins, then the higher live rating, and a dead heat is skipped. Each selection copies the line and "
         f"price of the best-rated entry on that side at the moment it is made, is only made while the game has not kicked off, and "
         f"is staked flat at ${WAR_ROOM_STAKE:.0f}. Selections are made by the hourly Auto-Grade pass and whenever picks or leans are logged. "
-        f"Football (CFB, NFL) only."
+        f"Covers both football (CFB, NFL) and futbol (EPL, UCL) -- the rule itself doesn't care which market it's reading."
     ),
 }
 WAR_ROOM_LABEL = {WAR_ROOM_SOURCE: "War Room Card", WAR_ROOM_LEAN_SOURCE: "War Room Lean Ticket"}
@@ -1720,9 +1726,11 @@ def refresh_war_room_card(data, only_event=None):
     Prospective only by design: nothing is ever back-filled for games
     that have already kicked off or settled.
     """
-    # Football only (CFB/NFL): the soccer desks are a different market
-    # and the tickets' rules were frozen against spreads and totals.
-    groups, _ = _pending_side_groups(data, AMERICAN_LEAGUES)
+    # Both sport families: the rule itself is market-agnostic (it keys
+    # off bet_type/bet_side generically), so a soccer side counts the
+    # same way a football one does once two EPL/UCL sources (or a
+    # single high-WR one) exist to agree in the first place.
+    groups, _ = _pending_side_groups(data, AMERICAN_LEAGUES | SOCCER_LEAGUES)
     if not groups:
         return 0
     scores = _live_scores(data)
@@ -1973,7 +1981,7 @@ def refresh_war_room_lean_card(data, only_events=None):
     to a set of espn_event_ids (the create paths). A selection is only
     made while ESPN still shows the game as not started.
     """
-    groups = _board_side_groups(data, AMERICAN_LEAGUES)  # football only, same as the main card
+    groups = _board_side_groups(data, AMERICAN_LEAGUES | SOCCER_LEAGUES)  # both sport families, same as the main card
     if not groups:
         return 0
     reports = {r["id"]: r for r in data["reports"]}
