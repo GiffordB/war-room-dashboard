@@ -16480,7 +16480,7 @@
   ],
   "next_jesse_wallet_id": 1,
   "jesse_wallet_entries": [],
-  "next_lean_id": 88,
+  "next_lean_id": 89,
   "leans": [
     {
       "id": 1,
@@ -24166,6 +24166,100 @@
       "pregame_intel_captured_at": "2026-10-09T13:59:29",
       "wr_confidence_kickoff": 40.0,
       "wr_confidence_initial": 40.0
+    },
+    {
+      "id": 88,
+      "report_id": 44,
+      "source": "Claude - GB",
+      "league": "EPL",
+      "category": "lean",
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "parlay_leg_pick_ids": null,
+      "wr_confidence": 58.0,
+      "created_at": "2026-10-09T13:59:33",
+      "matchup": "AFC Bournemouth @ Chelsea",
+      "selection": "Chelsea to Win",
+      "bet_type": "match_result",
+      "bet_side": "home",
+      "bet_line": null,
+      "odds": -150,
+      "score": 58.0,
+      "espn_event_id": "401878775",
+      "note": "Pass; ~58% vs 57% implied; Joao Pedro expected back, Palmer minor muscle doubt.",
+      "pregame_odds": {
+        "provider": "DraftKings",
+        "spread_details": "CHE -150",
+        "home_spread": -0.5,
+        "home_spread_odds": -160.0,
+        "away_spread_odds": 115.0,
+        "total": 3.5,
+        "over_odds": 125.0,
+        "under_odds": -155.0,
+        "home_moneyline": -150,
+        "away_moneyline": 370,
+        "draw_moneyline": 320.0
+      },
+      "pregame_odds_captured_at": "2026-10-09T13:59:39",
+      "pregame_weather": {
+        "city": "London",
+        "temp_c": 15.0,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 19.1,
+        "cloud_cover_pct": 77,
+        "forecast_hour": "2026-10-10T14:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 2,
+        "win_pct": 40.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 0,
+        "win_pct": 0.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 1,
+          "d": 1,
+          "l": 0,
+          "gf": 6,
+          "ga": 5
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 2,
+          "gf": 4,
+          "ga": 7
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 0,
+          "d": 2,
+          "l": 1,
+          "gf": 3,
+          "ga": 4
+        },
+        "away": {
+          "w": 0,
+          "d": 1,
+          "l": 1,
+          "gf": 3,
+          "ga": 4
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-09T13:59:39",
+      "wr_confidence_kickoff": 65.04761904761905,
+      "wr_confidence_initial": 65.04761904761905
     }
   ]
 }
