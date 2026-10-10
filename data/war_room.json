@@ -33057,7 +33057,7 @@
       {
         "week_key": "2026-09-08",
         "label": "Week of Sep 8\u201314",
-        "status": "grading",
+        "status": "reviewed",
         "grades": {
           "49": {
             "quality": 2,
@@ -33572,7 +33572,14 @@
             "report_id": 22
           }
         },
-        "review": null
+        "review": {
+          "lessons": [
+            "Grade pure price plays (an edge measured only against a sharp book's no-vig line, with the author admitting the model adds nothing) on one fixed scale: the size of the quantified gap and whether it crosses a key number decide the grade, not the sport or how confident the write-up sounds. Do not give one such pick 7 and a structurally identical one 5."
+          ],
+          "notes": "Story-graded picks went 7-1 this week. Most of them were short favourites that the author's own fair price showed to be slightly negative-EV, so the wins are what you would expect from the base rate and do not show the grading logic was wrong. Edge picks went 4-3 and mixed picks were roughly even, which is too small and noisy a sample to support any change to how stated edges are weighted. The one clear writing-level issue was inconsistency: similar line-shopping arguments were graded anywhere from 5 to 7, so the only new lesson is a consistency rule.",
+          "model": "claude-opus-5-5"
+        },
+        "reviewed_at": "2026-10-10T02:34:10"
       },
       {
         "week_key": "2026-09-15",
@@ -33607,6 +33614,10 @@
       {
         "week_key": "2026-09-01",
         "text": "When a stated edge falls inside the author's own fair-number range, cap the grade at mixed (5) every time, however tidy the price ladder. Do not let a price ladder lift one pick to 6 while a similar pick with the same range problem gets 5."
+      },
+      {
+        "week_key": "2026-09-08",
+        "text": "Grade pure price plays (an edge measured only against a sharp book's no-vig line, with the author admitting the model adds nothing) on one fixed scale: the size of the quantified gap and whether it crosses a key number decide the grade, not the sport or how confident the write-up sounds. Do not give one such pick 7 and a structurally identical one 5."
       }
     ],
     "started_at": "2026-10-10T02:32:27"
