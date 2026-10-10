@@ -856,3 +856,13 @@ details.week-group > summary.week-group-label { cursor: pointer; list-style: non
 details.week-group > summary.week-group-label::-webkit-details-marker { display: none; }
 details.week-group > summary.week-group-label::before { content: "▸ "; color: var(--muted); }
 details.week-group[open] > summary.week-group-label::before { content: "▾ "; }
+
+/* Recent picks: several picks on one side of one game fold into one row */
+.pick-group-item { list-style: none; }
+details.pick-group > summary.pick-group-summary { cursor: pointer; list-style: none; }
+details.pick-group > summary.pick-group-summary::-webkit-details-marker { display: none; }
+details.pick-group[open] > summary .pick-group-toggle::before { content: ""; }
+details.pick-group[open] > summary .pick-group-toggle { visibility: hidden; }
+.pick-group-sources { display: inline-flex; gap: 4px; flex-wrap: wrap; }
+.pick-list-nested { margin: 6px 0 2px 18px; gap: 6px; }
+.pick-row-nested { opacity: 0.92; }

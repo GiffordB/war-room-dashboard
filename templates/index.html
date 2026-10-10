@@ -1,5 +1,29 @@
 {% extends "base.html" %}
 {% block title %}Dashboard · War Room{% endblock %}
+{% macro pick_row(p, nested=False) %}
+            <li class="pick-row{% if nested %} pick-row-nested{% endif %}">
+              <span class="badge-source" style="background: {{ source_color(p.source) }};">{{ p.source }}</span>
+              <span class="badge-league">{{ p.league }}</span>
+              <span class="pick-cat" style="color: {{ categories[p.category].color }};" title="{{ categories[p.category].label }}" aria-label="{{ categories[p.category].label }}">{{ categories[p.category].icon }}</span>
+              <span class="pick-matchup"><a href="{{ url_for('report_detail', report_id=p.report_id) }}">{{ p.matchup }} — {{ p.selection }}</a></span>
+              <span class="muted">{{ '%+d'|format(p.odds) }}</span>
+              <span class="muted">${{ '{:,.0f}'.format(p.stake) }}</span>
+              {% if p.get('wr_confidence_effective') is not none %}<span class="badge-wr-confidence wr-tip" tabindex="0" data-tip="{{ p.wr_confidence_breakdown }}">WR {{ wr_confidence_badge_text(p.wr_confidence_effective, p.get('wr_confidence_initial'), p.league) }}</span>{% endif %}
+              {% set move = line_move(p) %}
+              {% if move is not none %}
+                <span class="badge-clv {{ 'pos' if move > 0 else 'neg' if move < 0 else '' }}" title="Closing-line value: this pick's line vs. the last captured line before kickoff">CLV {{ '%+.1f'|format(move) }}</span>
+              {% endif %}
+              <span class="badge-result" style="background: {{ result_color(p.result) }};">{{ result_label(p.result) }}</span>
+              {% if p.game %}
+                <span class="badge-live badge-live-{{ p.game.status }}">
+                  {{ '🏁 FINAL' if p.game.final else '🔴 LIVE' }} {{ p.game.score }} · {{ p.game.label }}
+                </span>
+              {% endif %}
+              <span class="{{ 'pos' if p.profit_loss > 0 else 'neg' if p.profit_loss < 0 else 'muted' }}">
+                {% if p.result != 'pending' %}{{ '%+.0f'|format(p.profit_loss) }}${% endif %}
+              </span>
+            </li>
+{% endmacro %}
 {% block content %}
 
   <div class="page-head">
@@ -329,29 +353,34 @@
         <details class="week-group" {% if loop.first %}open{% endif %}>
           <summary class="week-group-label">{{ group.label }} <span class="muted small">({{ group.picks|length }} picks{% if not loop.first %} — click to expand{% endif %})</span></summary>
         <ul class="pick-list">
-          {% for p in group.picks %}
-            <li class="pick-row">
-              <span class="badge-source" style="background: {{ source_color(p.source) }};">{{ p.source }}</span>
-              <span class="badge-league">{{ p.league }}</span>
-              <span class="pick-cat" style="color: {{ categories[p.category].color }};" title="{{ categories[p.category].label }}" aria-label="{{ categories[p.category].label }}">{{ categories[p.category].icon }}</span>
-              <span class="pick-matchup"><a href="{{ url_for('report_detail', report_id=p.report_id) }}">{{ p.matchup }} — {{ p.selection }}</a></span>
-              <span class="muted">{{ '%+d'|format(p.odds) }}</span>
-              <span class="muted">${{ '{:,.0f}'.format(p.stake) }}</span>
-              {% if p.get('wr_confidence_effective') is not none %}<span class="badge-wr-confidence wr-tip" tabindex="0" data-tip="{{ p.wr_confidence_breakdown }}">WR {{ wr_confidence_badge_text(p.wr_confidence_effective, p.get('wr_confidence_initial'), p.league) }}</span>{% endif %}
-              {% set move = line_move(p) %}
-              {% if move is not none %}
-                <span class="badge-clv {{ 'pos' if move > 0 else 'neg' if move < 0 else '' }}" title="Closing-line value: this pick's line vs. the last captured line before kickoff">CLV {{ '%+.1f'|format(move) }}</span>
-              {% endif %}
-              <span class="badge-result" style="background: {{ result_color(p.result) }};">{{ result_label(p.result) }}</span>
-              {% if p.game %}
-                <span class="badge-live badge-live-{{ p.game.status }}">
-                  {{ '🏁 FINAL' if p.game.final else '🔴 LIVE' }} {{ p.game.score }} · {{ p.game.label }}
-                </span>
-              {% endif %}
-              <span class="{{ 'pos' if p.profit_loss > 0 else 'neg' if p.profit_loss < 0 else 'muted' }}">
-                {% if p.result != 'pending' %}{{ '%+.0f'|format(p.profit_loss) }}${% endif %}
-              </span>
-            </li>
+          {% for row in group.rows %}
+            {% if row.picks|length == 1 %}
+              {{ pick_row(row.picks[0]) }}
+            {% else %}
+              {% set lead = row.lead %}
+              <li class="pick-group-item">
+                <details class="pick-group">
+                  <summary class="pick-row pick-group-summary">
+                    <span class="pick-group-sources">{% for s in row.sources %}<span class="badge-source" style="background: {{ source_color(s) }};">{{ s }}</span>{% endfor %}</span>
+                    <span class="badge-league">{{ lead.league }}</span>
+                    <span class="pick-cat" style="color: {{ categories[lead.category].color }};" title="{{ categories[lead.category].label }}" aria-label="{{ categories[lead.category].label }}">{{ categories[lead.category].icon }}</span>
+                    <span class="pick-matchup">{{ lead.matchup }} — {{ lead.selection }} <span class="muted small">× {{ row.picks|length }} picks, lowest line shown</span></span>
+                    <span class="muted">${{ '{:,.0f}'.format(row.stake) }}</span>
+                    {% if row.result == 'mixed' %}<span class="badge-result" style="background: #64748b;">Mixed</span>{% else %}<span class="badge-result" style="background: {{ result_color(row.result) }};">{{ result_label(row.result) }}</span>{% endif %}
+                    {% if lead.game %}
+                      <span class="badge-live badge-live-{{ lead.game.status }}">
+                        {{ '🏁 FINAL' if lead.game.final else '🔴 LIVE' }} {{ lead.game.score }} · {{ lead.game.label }}
+                      </span>
+                    {% endif %}
+                    <span class="{{ 'pos' if row.profit > 0 else 'neg' if row.profit < 0 else 'muted' }}">{% if row.result != 'pending' %}{{ '%+.0f'|format(row.profit) }}${% endif %}</span>
+                    <span class="muted small pick-group-toggle">▸ expand</span>
+                  </summary>
+                  <ul class="pick-list pick-list-nested">
+                    {% for p in row.picks %}{{ pick_row(p, nested=True) }}{% endfor %}
+                  </ul>
+                </details>
+              </li>
+            {% endif %}
           {% endfor %}
         </ul>
         </details>

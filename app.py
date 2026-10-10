@@ -1601,7 +1601,49 @@ def recent_picks_by_week(data, league=None, limit=4):
     for group in weeks:
         group["picks"] = attach_game_status(group["picks"])
         group["picks"].sort(key=_kickoff_sort_key)
+        group["rows"] = _collapse_same_side(group["picks"])
     return weeks
+
+
+def _hardest_line_pick(picks):
+    """Of several picks on one side of one market, the one hardest to cover: the lowest spread (fewest points taken / most laid), the highest over or lowest under; otherwise the first."""
+    bet_type = picks[0].get("bet_type")
+    lined = [p for p in picks if p.get("bet_line") is not None]
+    if bet_type == "spread" and lined:
+        return min(lined, key=lambda p: p["bet_line"])
+    if bet_type == "total" and lined:
+        return max(lined, key=lambda p: p["bet_line"]) if picks[0].get("bet_side") == "over" else min(lined, key=lambda p: p["bet_line"])
+    return picks[0]
+
+
+def _collapse_same_side(picks):
+    """
+    Display rows for a pick list: picks on the same side of the same
+    market fold into one row ({"picks": [...], "lead": hardest-line pick,
+    "sources": [...]}), everything else is a one-pick row. The lead's
+    own live/final badge is the group's badge - its line is the one that
+    has to cover for every pick in the group to cover - and the group
+    sits where the lead would in kickoff order.
+    """
+    by_key, rows = {}, []
+    for p in picks:
+        key = (p.get("espn_event_id"), p.get("bet_type"), p.get("bet_side")) if p.get("espn_event_id") and p.get("bet_type") and p.get("bet_side") else None
+        if key and key in by_key:
+            by_key[key]["picks"].append(p)
+            continue
+        row = {"picks": [p]}
+        if key:
+            by_key[key] = row
+        rows.append(row)
+    for row in rows:
+        row["lead"] = _hardest_line_pick(row["picks"])
+        row["sources"] = [s for s in SOURCES if any(p.get("source") == s for p in row["picks"])]
+        row["stake"] = sum(p.get("stake") or 0 for p in row["picks"])
+        results = {p["result"] for p in row["picks"]}
+        row["result"] = results.pop() if len(results) == 1 else "mixed"
+        row["profit"] = sum(p.get("profit_loss") or 0 for p in row["picks"] if p["result"] != "pending")
+    rows.sort(key=lambda r: _kickoff_sort_key(r["lead"]))
+    return rows
 
 
 def empty_stats(source=None):
