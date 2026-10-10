@@ -342,7 +342,12 @@ WR_WEATHER_BONUS = 5
 # (see _sample_weight): in September every team is 0% or 100% off a
 # single game, which used to read as a 100-point form gap and pin the
 # cap. One game now carries 1/5 of the weight, five games the full amount.
-WR_FORM_SCALE = 0.15
+# ZEROED 2026-10-10: over the first 123 settled football picks the form
+# nudge ran backwards (picks it boosted won 50%, picks it penalised won
+# 64%), so it contributes nothing until a learned weight (WR v2, see
+# wr_v2_walk_forward) says otherwise. The gap is still captured and
+# shown; the plumbing stays so a weight can be restored without a rebuild.
+WR_FORM_SCALE = 0.0
 WR_FORM_CAP = 8
 WR_FORM_WINDOW = 5
 
@@ -499,6 +504,179 @@ def _solve(matrix, rhs):
                 for c in range(col, n + 1):
                     m[r][c] -= f * m[col][c]
     return [m[i][n] / m[i][i] for i in range(n)]
+
+
+def _fit_penalized_logistic(rows, k, lam):
+    """
+    Maximum of the L2-penalized log-likelihood (prior strength `lam` on
+    every coefficient) for rows of (feature vector of length k, y in
+    {0,1}), by Newton steps with backtracking so a tiny or separable
+    sample can't send the fit off to infinity. Returns the weights.
+    """
+    def objective(w):
+        total = -0.5 * lam * sum(v * v for v in w)
+        for f, y in rows:
+            z = sum(wi * fi for wi, fi in zip(w, f))
+            total += y * z - (max(z, 0.0) + math.log1p(math.exp(-abs(z))))
+        return total
+
+    w = [0.0] * k
+    current = objective(w)
+    for _ in range(100):
+        grad = [-lam * v for v in w]
+        hess = [[-lam if i == j else 0.0 for j in range(k)] for i in range(k)]
+        for f, y in rows:
+            p = _sigmoid(sum(wi * fi for wi, fi in zip(w, f)))
+            sv = p * (1 - p)
+            for i in range(k):
+                grad[i] += (y - p) * f[i]
+                for j in range(k):
+                    hess[i][j] -= sv * f[i] * f[j]
+        step_dir = _solve(hess, [-g for g in grad])
+        if step_dir is None:
+            break
+        step = 1.0
+        improved = False
+        while step > 1e-4:
+            cand = [wi + step * di for wi, di in zip(w, step_dir)]
+            value = objective(cand)
+            if value > current:
+                w, current, improved = cand, value, True
+                break
+            step /= 2
+        if not improved or max(abs(step * d) for d in step_dir) < 1e-9:
+            break
+    return w
+
+
+# WR v2 - a learned rating. Instead of hand-set nudges summed into one
+# number, each ingredient gets a weight fitted on outcomes (penalized
+# logistic, prior WR_V2_PRIOR), football picks only, walk-forward by
+# week so every score is out of sample. Only ingredients that are
+# genuinely as-of-kickoff are used: who wrote it, its own base number,
+# the captured line move, the captured injury gap, what kind of bet it
+# is. Track record and agreement are left out (the reconstructed values
+# for old picks are not as-of). Lives on /AI-test until it beats the
+# flat baseline for a run of weeks; nothing on the main site reads it.
+WR_V2_PRIOR = 16.0  # strong prior: ~120 picks and 9 weights; weaker priors fit noise and lose to FLAT out of sample
+WR_V2_MIN_TRAIN = 25
+WR_V2_FEATURES = (
+    ("intercept", "baseline"),
+    ("maven", "source is Claude (Maven)"),
+    ("chatgpt", "source is ChatGPT"),
+    ("base", "source's own number, per 10 points above 60"),
+    ("clv", "captured line move, per 5 WR points of CLV nudge"),
+    ("injury", "captured injury gap, per 5 WR points of injury nudge"),
+    ("total", "bet is a total"),
+    ("dog", "bet takes points (underdog spread)"),
+    ("staked", "source put real money on it (not $0 tracked)"),
+)
+
+
+def _wr_v2_breakdown(pick):
+    return pick.get("wr_breakdown_kickoff") or pick.get("wr_breakdown_reconstructed") or pick.get("wr_breakdown_initial")
+
+
+def wr_v2_features(pick, report, breakdown):
+    base = breakdown.get("base") if breakdown else pick.get("wr_confidence")
+    if base is None:
+        return None
+    br = breakdown or {}
+    return [
+        1.0,
+        1.0 if report["source"] == "Claude" else 0.0,
+        1.0 if report["source"] == "ChatGPT" else 0.0,
+        (float(base) - 60.0) / 10.0,
+        (br.get("clv_mod") or 0.0) / 5.0,
+        (br.get("injury_mod") or 0.0) / 5.0,
+        1.0 if pick.get("bet_type") == "total" else 0.0,
+        1.0 if (pick.get("bet_type") == "spread" and (pick.get("bet_line") or 0) > 0) else 0.0,
+        1.0 if (pick.get("stake") or 0) > 0 else 0.0,
+    ]
+
+
+def _wr_v2_rows(data):
+    """[(week_key, pick, report, features, y)] for every settled football source pick with a usable breakdown, oldest week first."""
+    reports = {r["id"]: r for r in data["reports"]}
+    rows = []
+    for p in data["picks"]:
+        r = reports.get(p["report_id"])
+        if not r or r["source"] in WAR_ROOM_SOURCES or r["league"] not in AMERICAN_LEAGUES or p.get("parlay_leg_pick_ids") or p["result"] not in ("win", "loss"):
+            continue
+        f = wr_v2_features(p, r, _wr_v2_breakdown(p))
+        if f is None:
+            continue
+        rows.append((week_bucket_start(r["report_date"]), p, r, f, 1.0 if p["result"] == "win" else 0.0))
+    rows.sort(key=lambda t: (t[0], t[1]["id"]))
+    return rows
+
+
+def _logloss(p, y):
+    p = min(max(p, 1e-6), 1 - 1e-6)
+    return -(y * math.log(p) + (1 - y) * math.log(1 - p))
+
+
+def wr_v2_walk_forward(data):
+    """
+    Week by week: fit v2 (and the two baselines) on every earlier week,
+    score this week out of sample. Baselines: FLAT = the earlier weeks'
+    win rate, which is what the current badge effectively shows for
+    football; RATING = the current 3-feature calibration shape (rating
+    only) fitted the same way. Returns the per-week table, the totals,
+    the final fit on everything (coefficients with names), and v2's
+    read on every pending football pick beside the live badge.
+    """
+    rows = _wr_v2_rows(data)
+    k = len(WR_V2_FEATURES)
+    weeks = sorted({wk for wk, *_ in rows})
+    table, totals = [], {"n": 0, "v2": 0.0, "flat": 0.0, "rating": 0.0, "v2_brier": 0.0, "flat_brier": 0.0, "v2_hits": 0, "flat_hits": 0}
+    for wk in weeks:
+        train = [t for t in rows if t[0] < wk]
+        test = [t for t in rows if t[0] == wk]
+        if len(train) < WR_V2_MIN_TRAIN:
+            table.append({"week_key": wk, "label": f"Week of {week_bucket_label(wk)}", "n": len(test), "warmup": True})
+            continue
+        w = _fit_penalized_logistic([(f, y) for _, _p, _r, f, y in train], k, WR_V2_PRIOR)
+        flat = sum(y for *_, y in train) / len(train)
+        w_rating = _fit_penalized_logistic([([1.0, (float(_frozen_rating(p)[0] or p.get("wr_confidence") or 60) - WR_CALIBRATION_CENTER) / 10.0], y) for _, p, _r, _f, y in train], 2, WR_CALIBRATION_PRIOR)
+        ll_v2 = ll_flat = ll_rating = br_v2 = br_flat = 0.0
+        hits_v2 = hits_flat = 0
+        for _, p, r, f, y in test:
+            pv = _sigmoid(sum(wi * fi for wi, fi in zip(w, f)))
+            rating = _frozen_rating(p)[0] or p.get("wr_confidence") or 60
+            pr = _sigmoid(w_rating[0] + w_rating[1] * (float(rating) - WR_CALIBRATION_CENTER) / 10.0)
+            ll_v2 += _logloss(pv, y); ll_flat += _logloss(flat, y); ll_rating += _logloss(pr, y)
+            br_v2 += (pv - y) ** 2; br_flat += (flat - y) ** 2
+            hits_v2 += int((pv >= 0.5) == (y == 1.0)); hits_flat += int((flat >= 0.5) == (y == 1.0))
+        n = len(test)
+        table.append({"week_key": wk, "label": f"Week of {week_bucket_label(wk)}", "n": n, "warmup": False, "train_n": len(train),
+                      "v2": ll_v2 / n, "flat": ll_flat / n, "rating": ll_rating / n, "v2_brier": br_v2 / n, "flat_brier": br_flat / n,
+                      "v2_acc": 100 * hits_v2 / n, "flat_acc": 100 * hits_flat / n, "wins": int(sum(y for *_, y in test))})
+        totals["n"] += n; totals["v2"] += ll_v2; totals["flat"] += ll_flat; totals["rating"] += ll_rating
+        totals["v2_brier"] += br_v2; totals["flat_brier"] += br_flat; totals["v2_hits"] += hits_v2; totals["flat_hits"] += hits_flat
+    if totals["n"]:
+        n = totals["n"]
+        totals.update(v2=totals["v2"] / n, flat=totals["flat"] / n, rating=totals["rating"] / n, v2_brier=totals["v2_brier"] / n,
+                      flat_brier=totals["flat_brier"] / n, v2_acc=100 * totals["v2_hits"] / n, flat_acc=100 * totals["flat_hits"] / n)
+    final_w = _fit_penalized_logistic([(f, y) for _, _p, _r, f, y in rows], k, WR_V2_PRIOR) if len(rows) >= WR_V2_MIN_TRAIN else None
+    coefficients = [{"name": name, "meaning": meaning, "weight": final_w[i], "odds_mult": math.exp(final_w[i])} for i, (name, meaning) in enumerate(WR_V2_FEATURES)] if final_w else []
+    # v2 on the current week's pending football picks, beside the live badge
+    pending = []
+    if final_w:
+        reports = {r["id"]: r for r in data["reports"]}
+        scores, breakdowns = _live_scores_and_breakdowns(data)
+        for p in data["picks"]:
+            r = reports.get(p["report_id"])
+            if not r or r["source"] in WAR_ROOM_SOURCES or r["league"] not in AMERICAN_LEAGUES or p["result"] != "pending" or p.get("parlay_leg_pick_ids"):
+                continue
+            f = wr_v2_features(p, r, _compact_breakdown(breakdowns.get(p["id"])))
+            if f is None:
+                continue
+            pv = _sigmoid(sum(wi * fi for wi, fi in zip(final_w, f)))
+            pending.append({"pick": p, "source": r["source"], "league": r["league"], "report_id": r["id"], "v2": 100 * pv,
+                            "live": scores.get(p["id"]), "badge": wr_confidence_badge_text(scores.get(p["id"]), p.get("wr_confidence_initial"), r["league"]) if scores.get(p["id"]) is not None else "—"})
+        pending.sort(key=lambda x: -x["v2"])
+    return {"rows": len(rows), "reconstructed": sum(1 for _, p, *_ in rows if not p.get("wr_breakdown_kickoff")), "table": table, "totals": totals, "coefficients": coefficients, "pending": pending}
 
 
 def fit_wr_calibration(sample):
@@ -1056,7 +1234,7 @@ def capture_pregame_lines(data, only=None):
     # The live WR rating at this capture, frozen onto the pick as
     # wr_confidence_kickoff: the last capture before kickoff is the
     # number a future calibration can trust never saw the result.
-    live_scores = _live_scores(data) if any(key[0] in ("pick", "only") for key in due_keys) else {}
+    live_scores, live_breakdowns = _live_scores_and_breakdowns(data) if any(key[0] in ("pick", "only") for key in due_keys) else ({}, {})
     lean_scoring = None
     if any(key[0] == "lean" or (key[0] == "only" and eligible[key][0].get("category") == "lean") for key in due_keys):
         lean_scoring = (source_track_record(data), pick_agreement_map(data))
@@ -1082,9 +1260,11 @@ def capture_pregame_lines(data, only=None):
             item["pregame_intel_captured_at"] = now
         if item.get("category") == "lean":
             if lean_scoring:
-                item["wr_confidence_kickoff"], _ = wr_confidence_effective(item, item["source"], lean_scoring[0], lean_scoring[1], league=league)
+                item["wr_confidence_kickoff"], br = wr_confidence_effective(item, item["source"], lean_scoring[0], lean_scoring[1], league=league)
+                item["wr_breakdown_kickoff"] = _compact_breakdown(br)
         elif key[0] in ("pick", "only") and item.get("id") in live_scores and live_scores[item["id"]] is not None:
             item["wr_confidence_kickoff"] = live_scores[item["id"]]
+            item["wr_breakdown_kickoff"] = _compact_breakdown(live_breakdowns.get(item["id"]))
         captured += 1
     return captured
 
@@ -1698,17 +1878,72 @@ def _pending_side_groups(data, league=None):
     return groups, sources_per_league
 
 
-def _live_scores(data):
-    """{pick id: live WR Confidence} for every pick, computed without writing the annotation keys onto the stored pick dicts (this runs inside save paths)."""
+WR_BREAKDOWN_KEYS = (
+    "base", "impact_scale", "record_mod", "record_win_pct", "record_settled", "agree_mod", "conflict_mod",
+    "clv_mod", "clv_move", "weather_mod", "form_mod", "form_gap", "injury_mod", "injury_gap",
+    "home_away_mod", "home_away_gap", "quality_win_mod", "quality_win_gap",
+)
+
+
+def _compact_breakdown(breakdown):
+    """The numeric pieces of a wr_confidence_effective breakdown, plus how many sources agreed/opposed - small enough to freeze on every pick and lean."""
+    if not breakdown:
+        return None
+    out = {}
+    for k in WR_BREAKDOWN_KEYS:
+        v = breakdown.get(k)
+        if isinstance(v, (int, float)) and not isinstance(v, bool):
+            out[k] = round(v, 3)
+        elif v is None or isinstance(v, (str, bool)):
+            out[k] = v
+    out["agreeing"] = len(breakdown.get("agreeing_sources") or [])
+    out["opposing"] = len(breakdown.get("opposing_sources") or [])
+    return out
+
+
+def _live_scores_and_breakdowns(data):
+    """({pick id: live WR Confidence}, {pick id: breakdown}) for every pick, computed without writing the annotation keys onto the stored pick dicts (this runs inside save paths)."""
     reports = {r["id"]: r for r in data["reports"]}
     track_record = source_track_record(data)
     agreement_map = pick_agreement_map(data)
-    scores = {}
+    scores, breakdowns = {}, {}
     for p in data["picks"]:
         r = reports.get(p["report_id"])
-        score, _ = wr_confidence_effective(p, r["source"] if r else None, track_record, agreement_map, league=r["league"] if r else None)
+        score, br = wr_confidence_effective(p, r["source"] if r else None, track_record, agreement_map, league=r["league"] if r else None)
         scores[p["id"]] = score
-    return scores
+        breakdowns[p["id"]] = br
+    return scores, breakdowns
+
+
+def _live_scores(data):
+    return _live_scores_and_breakdowns(data)[0]
+
+
+def backfill_wr_breakdowns(data):
+    """
+    One-time: every settled pick that predates frozen breakdowns gets
+    `wr_breakdown_reconstructed` - today's breakdown of its stored
+    pregame fields. Honest about what it is: the line, injury and form
+    pieces come from data captured before kickoff and are as-of; the
+    track-record and agreement pieces are recomputed now and are not.
+    WR v2 only learns from the as-of pieces. Returns how many were added.
+    """
+    reports = {r["id"]: r for r in data["reports"]}
+    track_record = source_track_record(data)
+    agreement_map = pick_agreement_map(data)
+    n = 0
+    for p in data["picks"]:
+        if p["result"] == "pending" or p.get("wr_breakdown_kickoff") or p.get("wr_breakdown_reconstructed"):
+            continue
+        r = reports.get(p["report_id"])
+        if not r:
+            continue
+        _score, br = wr_confidence_effective(p, r["source"], track_record, agreement_map, league=r["league"])
+        compact = _compact_breakdown(br)
+        if compact:
+            p["wr_breakdown_reconstructed"] = compact
+            n += 1
+    return n
 
 
 def _main_ticket_philosophy(sport):
@@ -3392,10 +3627,11 @@ def create_pick(report_id, fields):
             _safe_capture_pregame_lines(data, only=[(new_pick, r["league"])])
         track_record = source_track_record(data)
         agreement_map = pick_agreement_map(data)
-        initial_score, _ = wr_confidence_effective(
+        initial_score, initial_breakdown = wr_confidence_effective(
             new_pick, source, track_record, agreement_map, league=r["league"] if r else None
         )
         new_pick["wr_confidence_initial"] = initial_score
+        new_pick["wr_breakdown_initial"] = _compact_breakdown(initial_breakdown)
         if source not in WAR_ROOM_SOURCES and new_pick.get("espn_event_id"):
             try:
                 grade_pick_arguments(data, picks=[new_pick])
@@ -3481,13 +3717,14 @@ def auto_grade_all():
     synced = sync_wallet_entries(data)
     captured = _safe_capture_pregame_lines(data)
     backfilled = backfill_final_scores(data)
+    breakdowns_added = backfill_wr_breakdowns(data)
     try:
         ai_graded = grade_pick_arguments(data)
     except Exception:
         app.logger.exception("ai grading pass failed")
         ai_graded = 0
     selected = _safe_refresh_war_room_card(data) + _safe_refresh_war_room_lean_card(data)
-    if graded or synced or captured or backfilled or selected or ai_graded:
+    if graded or synced or captured or backfilled or selected or ai_graded or breakdowns_added:
         message = f"Auto-grade all reports: {graded} pick(s) settled, {synced} wallet entr{'y' if synced == 1 else 'ies'} synced"
         if captured:
             message += f", {captured} line{'s' if captured != 1 else ''} captured"
@@ -3497,6 +3734,8 @@ def auto_grade_all():
             message += f", {selected} War Room selection{'s' if selected != 1 else ''}"
         if ai_graded:
             message += f", {ai_graded} argument{'s' if ai_graded != 1 else ''} AI-graded"
+        if breakdowns_added:
+            message += f", {breakdowns_added} rating breakdown{'s' if breakdowns_added != 1 else ''} reconstructed"
         store.save(data, token, message=message)
     return redirect(url_for("reports_list", graded=graded, still_pending=still_pending))
 
@@ -4732,6 +4971,7 @@ def ai_test_page():
         veto_quality=WR_AI_VETO_QUALITY,
         ai_scale=WR_AI_SCALE,
         backtest=_backtest_view(data),
+        v2=wr_v2_walk_forward(data),
     )
 
 

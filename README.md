@@ -254,6 +254,27 @@ only then fold the learnings into the rating. Needs `ANTHROPIC_API_KEY`
 on the service; without it no pick is graded and the test card behaves
 exactly like the main card.
 
+## Frozen rating breakdowns and WR v2
+
+Every pick now freezes the full component breakdown of its rating, not
+just the summed score: `wr_breakdown_initial` at submission and
+`wr_breakdown_kickoff` at the last pregame capture (leans too). Picks
+that predate this carry `wr_breakdown_reconstructed`, built once from
+their captured pregame data; its line, injury and form pieces are
+as-of, its track-record and agreement pieces are not.
+
+The form nudge (`WR_FORM_SCALE`) was zeroed on 2026-10-10: over the
+first 123 settled football picks it ran backwards.
+
+WR v2 (`wr_v2_walk_forward`) is a learned rating: a penalized logistic
+over the as-of ingredients (source, the source's own number, captured
+line move, captured injury gap, bet kind, staked or tracked), football
+only, scored week by week out of sample against FLAT (the earlier
+weeks' win rate, which is what the badge effectively shows) and RATING
+(today's rating-only calibration). It lives on /AI-test and nothing on
+the main site reads it; it is promoted to the badge only after it beats
+FLAT for a run of weeks. As of its first run it does not.
+
 ## News Watch reads
 
 The wallet's News Watch pulls ESPN's latest headlines for both teams in

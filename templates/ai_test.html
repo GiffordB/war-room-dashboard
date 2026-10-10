@@ -110,6 +110,79 @@
   </section>
 
   <section>
+    <h2 class="section-label">WR v2 — learned weights instead of hand-set nudges</h2>
+    <p class="muted small">Football picks only. Each ingredient gets a weight fitted on outcomes (penalized logistic), and every week is scored out of sample on a fit of the weeks before it. Lower log-loss is better; FLAT is the earlier weeks' win rate (what the badge effectively shows today), RATING is today's rating-only calibration fitted the same way. Trained on {{ v2.rows }} settled picks{% if v2.reconstructed %}, {{ v2.reconstructed }} of them with a breakdown reconstructed from their captured pregame data (line, injuries, form are as-of; the fit uses only those pieces){% endif %}. Form is zeroed in the live rating as of Oct 10; v2 never used it.</p>
+    {% if v2.table %}
+      <div class="table-scroll">
+        <table class="data-table">
+          <thead><tr><th>Week</th><th>Picks</th><th>Won</th><th>v2 log-loss</th><th>FLAT</th><th>RATING</th><th>v2 right</th><th>FLAT right</th></tr></thead>
+          <tbody>
+            {% for w in v2.table %}
+              <tr>
+                <td>{{ w.label }}</td><td>{{ w.n }}</td>
+                {% if w.warmup %}<td colspan="6" class="muted small">warm-up — fewer than {{ 25 }} earlier picks to train on</td>
+                {% else %}
+                  <td>{{ w.wins }}</td>
+                  <td class="{{ 'pos' if w.v2 < w.flat else 'neg' }}">{{ '%.3f'|format(w.v2) }}</td>
+                  <td class="muted">{{ '%.3f'|format(w.flat) }}</td>
+                  <td class="muted">{{ '%.3f'|format(w.rating) }}</td>
+                  <td>{{ '%.0f'|format(w.v2_acc) }}%</td><td class="muted">{{ '%.0f'|format(w.flat_acc) }}%</td>
+                {% endif %}
+              </tr>
+            {% endfor %}
+            {% if v2.totals.n %}
+              <tr>
+                <td><strong>All scored weeks</strong></td><td><strong>{{ v2.totals.n }}</strong></td><td></td>
+                <td class="{{ 'pos' if v2.totals.v2 < v2.totals.flat else 'neg' }}"><strong>{{ '%.3f'|format(v2.totals.v2) }}</strong></td>
+                <td class="muted">{{ '%.3f'|format(v2.totals.flat) }}</td><td class="muted">{{ '%.3f'|format(v2.totals.rating) }}</td>
+                <td><strong>{{ '%.0f'|format(v2.totals.v2_acc) }}%</strong></td><td class="muted">{{ '%.0f'|format(v2.totals.flat_acc) }}%</td>
+              </tr>
+            {% endif %}
+          </tbody>
+        </table>
+      </div>
+      {% if v2.totals.n %}
+        <p class="muted small">Verdict so far: v2 {{ 'beats' if v2.totals.v2 < v2.totals.flat else 'does not beat' }} the flat baseline on log-loss over {{ v2.totals.n }} out-of-sample picks ({{ '%.3f'|format(v2.totals.v2) }} vs {{ '%.3f'|format(v2.totals.flat) }}). Promote only after it wins for a run of weeks, not on one.</p>
+      {% endif %}
+    {% else %}
+      <p class="empty">Not enough settled football picks yet.</p>
+    {% endif %}
+    {% if v2.coefficients %}
+      <h3 class="section-label" style="margin-top: 16px;">What the data weights (fit on everything so far)</h3>
+      <div class="table-scroll">
+        <table class="data-table">
+          <thead><tr><th>Ingredient</th><th>Weight</th><th>Odds multiplier</th><th>Read</th></tr></thead>
+          <tbody>
+            {% for c in v2.coefficients %}
+              <tr>
+                <td>{{ c.meaning }}</td>
+                <td class="{{ 'pos' if c.weight > 0.05 else 'neg' if c.weight < -0.05 else 'muted' }}">{{ '%+.2f'|format(c.weight) }}</td>
+                <td class="muted">×{{ '%.2f'|format(c.odds_mult) }}</td>
+                <td class="muted small">{% if c.name == 'intercept' %}baseline{% elif c.weight > 0.15 %}helps{% elif c.weight < -0.15 %}hurts{% else %}no clear signal yet{% endif %}</td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    {% endif %}
+    {% if v2.pending %}
+      <h3 class="section-label" style="margin-top: 16px;">This week's pending football picks: badge vs v2</h3>
+      <ul class="pick-list">
+        {% for x in v2.pending %}
+          <li class="pick-row">
+            <span class="badge-source" style="background: {{ source_color(x.source) }};">{{ x.source }}</span>
+            <span class="badge-league">{{ x.league }}</span>
+            <span class="pick-matchup"><a href="{{ url_for('report_detail', report_id=x.report_id) }}">{{ x.pick.matchup }} — {{ x.pick.selection }}</a></span>
+            <span class="muted">{{ '%+d'|format(x.pick.odds) }}</span>
+            <span class="badge-wr-confidence">badge {{ x.badge }}</span>
+            <span class="badge-ai">v2 {{ '%.0f'|format(x.v2) }}%</span>
+          </li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  </section>
+
+  <section>
     <h2 class="section-label">Graded arguments</h2>
     {% if graded %}
       <ul class="pick-list">
