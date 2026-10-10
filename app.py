@@ -2463,9 +2463,14 @@ def _board_side_groups(data, league=None):
     # side of the same market too (a Thursday if-forced side that the
     # Saturday card then bet against is no longer that source's view), so
     # it can never count as agreeing with a rival against its own pick.
-    picked = {(event, bet_type, src) for (event, bet_type, _side), by_source in groups.items() for src, e in by_source.items() if e["kind"] == "pick"}
-    for (event, bet_type, _side), by_source in groups.items():
-        for src in [src for src, e in by_source.items() if e["kind"] == "lean" and (event, bet_type, src) in picked]:
+    best = {}
+    for (event, bet_type, side), by_source in groups.items():
+        for src, e in by_source.items():
+            rank = (1 if e["kind"] == "pick" else 0, e["item"]["id"])
+            if (event, bet_type, src) not in best or rank > best[(event, bet_type, src)][0]:
+                best[(event, bet_type, src)] = (rank, side)
+    for (event, bet_type, side), by_source in groups.items():
+        for src in [src for src in by_source if best[(event, bet_type, src)][1] != side]:
             del by_source[src]
     return groups
 
