@@ -34801,6 +34801,22 @@
             "result": "win",
             "profit": 9.090909090909092,
             "report_id": 34
+          },
+          "177": {
+            "quality": 3,
+            "verdict": "story",
+            "reason": "The fair total of 48 sits well inside the author's own 43-53 range, the 2.5-point gap rests on unvalidated judgment, the wind note is modest, and the author tracks it as low-conviction at $0.",
+            "model": "claude-opus-5-5",
+            "rubric_version": 4,
+            "source": "ChatGPT",
+            "league": "NFL",
+            "selection": "Under 50.5",
+            "matchup": "Los Angeles Chargers @ Buffalo Bills",
+            "odds": -115,
+            "stake": 10.0,
+            "result": "win",
+            "profit": 8.695652173913043,
+            "report_id": 34
           }
         },
         "review": null
