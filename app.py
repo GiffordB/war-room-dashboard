@@ -2459,6 +2459,14 @@ def _board_side_groups(data, league=None):
             current = by_source.get(r["source"])
             if current is None or (current["kind"] == "lean" and kind == "pick") or (current["kind"] == kind and p["id"] > current["item"]["id"]):
                 by_source[r["source"]] = {"kind": kind, "item": p, "report": r}
+    # A source's pick supersedes its own earlier board lean on the OTHER
+    # side of the same market too (a Thursday if-forced side that the
+    # Saturday card then bet against is no longer that source's view), so
+    # it can never count as agreeing with a rival against its own pick.
+    picked = {(event, bet_type, src) for (event, bet_type, _side), by_source in groups.items() for src, e in by_source.items() if e["kind"] == "pick"}
+    for (event, bet_type, _side), by_source in groups.items():
+        for src in [src for src, e in by_source.items() if e["kind"] == "lean" and (event, bet_type, src) in picked]:
+            del by_source[src]
     return groups
 
 
