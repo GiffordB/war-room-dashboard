@@ -37,3 +37,9 @@ services:
         sync: false
       - key: GITHUB_REPO
         value: GiffordB/war-room-dashboard
+      # Lets the wallet's News Watch read each story with Claude (see
+      # news_reader.py) instead of keyword-matching the headline. Set it
+      # under the service's Environment tab; without it the keyword read
+      # stays in place.
+      - key: ANTHROPIC_API_KEY
+        sync: false

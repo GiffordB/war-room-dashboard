@@ -232,6 +232,19 @@ four sources to its leagues, kind and leaderboard row; the futbol pair
 reuses the gold and purple rows with dots one shade off the football
 pair's.
 
+## News Watch reads
+
+The wallet's News Watch pulls ESPN's latest headlines for both teams in
+every pending bet. With `ANTHROPIC_API_KEY` set on the service,
+`news_reader.py` hands each game's headlines (with ESPN's one-paragraph
+description) to Claude once per game and gets back which team each item
+favors, a severity of 0-3, and a one-line reason; the wallet signs that
+for the side each bet backs (green up arrow helps, red down arrow
+hurts), shows the reason after the team name, and scales the live WR
+nudge by severity. Reads are cached on the exact headline set, so a
+game is re-read only when its feed changes. Without the key the older
+keyword read on the headline stays in place.
+
 ## WR Probability
 
 Every WR badge on the site shows a calibrated cover probability, not

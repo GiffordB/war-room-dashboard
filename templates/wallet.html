@@ -44,7 +44,7 @@
 
   <section>
     <h2 class="section-label">News Watch — Pending Bets</h2>
-    <p class="muted small">Recent headlines for both teams in each still-pending bet. <span class="news-up">▲</span> means the news reads as helping your side of that game, <span class="news-down">▼</span> as hurting it (bad news about the opponent is an up arrow). ⚠️ / ✅ mark injury or clearing-up language on a bet with no single side to back, like a total. Keyword reads on the headline only — a nudge to read closer, not a verdict on how much it matters. Where a bet backs one specific team, this also feeds a live-adjusted read shown on that bet below (My Bets) — the frozen "at bet" score never changes, this is a separate, always-moving number.</p>
+    <p class="muted small">Recent headlines for both teams in each still-pending bet. <span class="news-up">▲</span> means the news reads as helping your side of that game, <span class="news-down">▼</span> as hurting it (bad news about the opponent is an up arrow). ⚠️ / ✅ mark injury or clearing-up language on a bet with no single side to back, like a total. {% if news_read_enabled %}Each story is read by the model, which says which team it favors, how much, and why (shown after the team name); the live read scales with that. Still a nudge to read closer, not a verdict.{% else %}Keyword reads on the headline only — a nudge to read closer, not a verdict on how much it matters.{% endif %} Where a bet backs one specific team, this also feeds a live-adjusted read shown on that bet below (My Bets) — the frozen "at bet" score never changes, this is a separate, always-moving number.</p>
     {% if news_alerts %}
       <div class="locks-grid">
         {% for watch in news_alerts %}
@@ -58,7 +58,7 @@
                 <li class="{{ 'news-flagged' if h.sentiment == 'negative' else 'news-positive' if h.sentiment == 'positive' else '' }}">
                   {% if h.effect == 'up' %}<span class="news-arrow news-up" title="Helps your bet">▲</span> {% elif h.effect == 'down' %}<span class="news-arrow news-down" title="Hurts your bet">▼</span> {% elif h.sentiment == 'negative' %}⚠️ {% elif h.sentiment == 'positive' %}✅ {% endif -%}
                   {% if h.link %}<a href="{{ h.link }}" target="_blank" rel="noopener">{{ h.headline }}</a>{% else %}{{ h.headline }}{% endif %}
-                  <span class="muted small">— {{ h.team }}</span>
+                  <span class="muted small">— {{ h.team }}{% if h.reason and h.flagged %} · {{ h.reason }}{% endif %}</span>
                 </li>
               {% endfor %}
             </ul>

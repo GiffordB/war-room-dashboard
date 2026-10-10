@@ -30,6 +30,7 @@ from datetime import date, datetime, timedelta
 from flask import Flask, g, jsonify, redirect, render_template, request, url_for
 
 import charts
+import news_reader
 import odds
 import store
 
@@ -261,6 +262,11 @@ WR_CONFLICT_CAP = 16
 WR_NEWS_POSITIVE_BONUS = 4
 WR_NEWS_NEGATIVE_PENALTY = 6
 WR_NEWS_CAP = 12
+# When the model-backed reader (news_reader.py) has read the story, the
+# nudge scales with its severity 0-3 instead of the flat keyword amounts.
+WR_NEWS_HELPS_BY_SEVERITY = (0, 2, 4, 8)
+WR_NEWS_HURTS_BY_SEVERITY = (0, 3, 6, 10)
+_NEWS_READ_TTL = 60 * 60
 
 # How often capture_pregame_lines() will re-snapshot the same still-
 # upcoming pick's line. There's no scheduled job sampling odds right at
@@ -849,6 +855,17 @@ def _cached_final_score(league, event_id):
 
 def _cached_match_info(league, event_id):
     return _ttl_cached("match_info", _NEWS_TTL, (league, event_id), lambda: odds.match_info(league, event_id))
+
+
+def _cached_news_read(league, info, headlines):
+    """news_reader.read_game_news for one game, memoised on the exact headline set so a wallet view re-reads only when ESPN's feed changes."""
+    if not news_reader.available():
+        return None
+    key = (league, info["home_id"], info["away_id"], tuple((h["headline"], h.get("description") or "") for h in headlines))
+    return _ttl_cached(
+        "news_read", _NEWS_READ_TTL, key,
+        lambda: news_reader.read_game_news(league, info["home_name"], info["away_name"], info.get("kickoff"), headlines),
+    )
 
 
 def _cached_team_news(league, team_id, limit):
@@ -3933,13 +3950,19 @@ def _news_modifier_for_pick(pick, info, headlines):
     total = 0.0
     contributions = []
     for h in headlines:
-        if not h.get("sentiment"):
-            continue
-        for_us = h.get("team_id") == backed_team_id
-        if h["sentiment"] == "negative":
-            delta = -WR_NEWS_NEGATIVE_PENALTY if for_us else WR_NEWS_POSITIVE_BONUS
+        if h.get("read"):
+            sev = h.get("severity") or 0
+            if sev <= 0:
+                continue
+            delta = WR_NEWS_HELPS_BY_SEVERITY[sev] if h.get("favors_team_id") == backed_team_id else -WR_NEWS_HURTS_BY_SEVERITY[sev]
         else:
-            delta = WR_NEWS_POSITIVE_BONUS if for_us else -WR_NEWS_NEGATIVE_PENALTY
+            if not h.get("sentiment"):
+                continue
+            for_us = h.get("team_id") == backed_team_id
+            if h["sentiment"] == "negative":
+                delta = -WR_NEWS_NEGATIVE_PENALTY if for_us else WR_NEWS_POSITIVE_BONUS
+            else:
+                delta = WR_NEWS_POSITIVE_BONUS if for_us else -WR_NEWS_NEGATIVE_PENALTY
         total += delta
         contributions.append((h["headline"], delta))
     return _clamp(total, -WR_NEWS_CAP, WR_NEWS_CAP), contributions
@@ -4015,6 +4038,7 @@ def wallet_news_alerts(entries, picks_by_id, limit_per_team=4):
                         "team": team_name,
                         "team_id": team_id,
                         "headline": article["headline"],
+                        "description": article.get("description"),
                         "link": article.get("link"),
                         "published": article.get("published"),
                         "sentiment": sentiment,
@@ -4027,11 +4051,29 @@ def wallet_news_alerts(entries, picks_by_id, limit_per_team=4):
         # game actually back: good news for our team or bad news for the
         # opponent is "up", the reverse "down". A game where bets back both
         # sides (or only a total) gets no arrow, just the flag.
+        # Read the stories, not just the keywords: one model call per game
+        # (news_reader.py) says which team each item favors and how much.
+        # Cached on the exact headline set so it re-runs only when the
+        # feed changes. Falls back to the keyword read when unavailable.
+        reads = _cached_news_read(event_league, info, headlines)
+        for i, h in enumerate(headlines):
+            r = (reads or {}).get(i)
+            if r:
+                h["favors_team_id"] = info["home_id"] if r["favors"] == "home" else info["away_id"] if r["favors"] == "away" else None
+                h["severity"] = r["severity"] if h["favors_team_id"] else 0
+                h["reason"] = r["reason"]
+                h["read"] = True
+                h["flagged"] = h["severity"] > 0
+            else:
+                h["read"] = False
         backed = {_backed_team_id(pick, info) for _e, pick in entries_by_event.get(event_key, [])} - {None}
         for h in headlines:
             effects = set()
-            if h["sentiment"]:
-                for team_id in backed:
+            for team_id in backed:
+                if h.get("read"):
+                    if h["severity"] > 0:
+                        effects.add("up" if h["favors_team_id"] == team_id else "down")
+                elif h["sentiment"]:
                     for_us = h["team_id"] == team_id
                     helps = (h["sentiment"] == "positive") == for_us
                     effects.add("up" if helps else "down")
@@ -4136,6 +4178,7 @@ def _render_wallet(wallet_key):
     return render_template(
         "wallet.html",
         entry_weeks=wallet_entries_by_week(entries),
+        news_read_enabled=news_reader.available(),
         wallet_label=wallet["label"],
         add_endpoint=wallet["add_endpoint"],
         delete_endpoint=wallet["delete_endpoint"],

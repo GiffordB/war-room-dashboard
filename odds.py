@@ -594,6 +594,7 @@ def team_news(league, team_id, limit=6):
         articles.append(
             {
                 "headline": a.get("headline"),
+                "description": a.get("description"),
                 "published": a.get("published"),
                 "link": web_href,
             }
