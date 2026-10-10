@@ -35261,7 +35261,56 @@
         "week_key": "2026-10-06",
         "label": "Week of Oct 6\u201312",
         "status": "grading",
-        "grades": {},
+        "grades": {
+          "206": {
+            "quality": 2,
+            "verdict": "story",
+            "reason": "The bet is listed at a $25 stake while the author's own discipline says pass at $0. The half-point gap (fair FIU -6 vs -6.5) sits well inside the author's own -3 to -9 fair range, from unvalidated judgment estimates. The card also says the game already settled Wednesday, so it contradicts itself.",
+            "model": "claude-opus-5-5",
+            "rubric_version": 5,
+            "source": "ChatGPT",
+            "league": "CFB",
+            "selection": "New Mexico State +6.5",
+            "matchup": "New Mexico State Aggies @ Florida International Panthers",
+            "odds": -108,
+            "stake": 25.0,
+            "result": "loss",
+            "profit": -25.0,
+            "report_id": 39
+          },
+          "211": {
+            "quality": 3,
+            "verdict": "story",
+            "reason": "The stale-line edge is +1.5 against a Pinnacle -1.0 that moved 4 points for no sourced reason, and the author's own model makes WKU a 4.1-point favorite, so the pick contradicts its own number and is tracked at $0 with an assumed price.",
+            "model": "claude-opus-5-5",
+            "rubric_version": 5,
+            "source": "Claude",
+            "league": "CFB",
+            "selection": "Missouri State +1.5",
+            "matchup": "Missouri State Bears @ Western Kentucky Hilltoppers",
+            "odds": -110,
+            "stake": 0.0,
+            "result": "loss",
+            "profit": -0.0,
+            "report_id": 40
+          },
+          "212": {
+            "quality": 4,
+            "verdict": "mixed",
+            "reason": "The stated edge is half a point of stale paper (+7 against Pinnacle's 6.5), shown on a -110 price the author assumed rather than saw printed, and the model's near-pick'em number is muddled ('UTSA by 0.7 less than... own number -0.7'), so the quantification is unreliable even though the 7 is a key number.",
+            "model": "claude-opus-5-5",
+            "rubric_version": 5,
+            "source": "Claude",
+            "league": "CFB",
+            "selection": "South Florida +7",
+            "matchup": "South Florida Bulls @ UTSA Roadrunners",
+            "odds": -110,
+            "stake": 0.0,
+            "result": "push",
+            "profit": 0.0,
+            "report_id": 40
+          }
+        },
         "review": null
       }
     ],
