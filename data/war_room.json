@@ -1,5 +1,5 @@
 {
-  "next_report_id": 51,
+  "next_report_id": 52,
   "next_pick_id": 238,
   "reports": [
     {
@@ -480,6 +480,18 @@
       "blind_spot_notes": "This ticket never submits an opinion of its own: every selection traces back to the source picks and board leans named on it.",
       "lsu_review_notes": "",
       "created_at": "2026-10-10T02:03:48"
+    },
+    {
+      "source": "Claude",
+      "league": "CFB",
+      "report_date": "2026-10-10",
+      "week_number": 6,
+      "week_label": "Week 6 -- Saturday System Card v3.5 (Maven Quant, Model A)",
+      "philosophy": "THE LINE (Friday print) priced against Pinnacle at 9:23 AM CT, Sat Oct 10. Built entirely from the brain-trust score, v3.5: score = 80% of the seat score (Walters 50; Peabody, Spanky, Voulgaris, Captain Jack, Wong 10 each; blended 85/15 with the market layer) + 10% reverse-line-movement seat + 10% prime-time sentiment seat. Casino seat inside Spanky and the market layer: 60%+ of the money against our side in a prime-time game adds 15 to each; 60%+ on our side caps the score at 65. Both sides of every game are scored and the better one is kept. Money reads: BetMGM 9 AM table (Ewing), DraftKings (Everson). Stake ladder: 70+ = 2.0%, 65-70 = 1.0%, 60-65 = 0.5%. 46 Saturday games, two system stakes, 1.5% at risk, best score 67.3. Pinnacle recheck at the window on every position; Pinnacle on the sheet number = void. The RLM and sentiment seats are new today and are graded separately from Monday.",
+      "blind_spot_notes": "THE SATURDAY CARD ON FRIDAY'S CONVICTION CARD: Alabama -1.5 comes OFF under v3.5 (64.5 on v3.4, 59.3 now) -- Alabama's 33-point win over Mississippi State in a ranked 11 AM game is the performance the prime-time rule says to fade; the sentiment seat scores it 27 and outvotes the casino seat (61% of money on Georgia) and the point of price (Pinnacle -2.5). The new seat removing a position on its first day is the rule working as described. Penn State -1.5 stays as a 0.50% system stake (60.6; Pinnacle gave back to -2.0 overnight so the price edge is half a point; 84% of the money on USC). Texas A&M +3.5 (54.3; sentiment seat 67 for A&M but no price) and Louisiana +3 (56.7) sit under the 60 floor: if kept they are overrides at Mason's stakes; the author would keep both at 0.75%. Kentucky +8.5 off (Pinnacle holds LSU -9.5, a point against; 54.0). Kansas +15.5 off (Pinnacle to Utah -16; 55.4). Fresno State +6.5 (55.2) -- drop it: 99% of the handle on Boise, market unmoved, sentiment seat 42 against. South Carolina +11.5 is the instructive pass: RLM seat 75 (Pinnacle toward South Carolina against 94% of the money) and sentiment seat 20 (Florida lost by 28 to Missouri in a ranked game) cancel each other. FRIDAY NIGHT GRADED: Washington -2.5 v Iowa (casino rule, 79% of money on Iowa, 1.0%) LOST, Iowa 41-24; the one casino position declined, Iowa State +10.5 at BYU (67% on BYU), also lost (BYU 24-10), so a strict application of the rule would have been 0-2 on Friday. Casino rule season record 3-1. Louisville -3.5 won 44-20 (not our position). PINNACLE OVERNIGHT: toward the favorite -- Oregon State -14.5 to -16.5, Virginia -10 to -11.5, Bowling Green -7.5 to -9, North Texas -28 to -29.5, Alabama -1.5 to -2.5, Notre Dame -38.5 to -39.5, Marshall -3.5 to -4.5, Utah -15 to -16, Miami (OH) -2.5 to -5.5 (McComb cleared); toward the dog -- UMass, Buffalo +18.5 from 20.5, Penn State back to -2, Oklahoma State to -10, Florida to -11; Indiana -9 from -7.5. Daytime games with lopsided money (Oklahoma State 95%, Florida 94%, Notre Dame 94%, Ohio State 81%, Indiana 79%, Ole Miss 75%) carry no casino term by the prime-time limit; Florida and Ole Miss carry reverse line movement instead. BEFORE PLACEMENT: Pinnacle recheck on Virginia (void at -9.5 or less) and Penn State (void at -1.5 or less); reporter sweep owed on Syracuse QB Angeli, Vanderbilt QB Curtis, Kansas State's three quarterbacks. NFL card re-issues Sunday 10:35 AM CT after inactives.",
+      "lsu_review_notes": "",
+      "created_at": "2026-10-10T15:08:47",
+      "id": 51
     }
   ],
   "picks": [
