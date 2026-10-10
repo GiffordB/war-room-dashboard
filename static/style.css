@@ -875,3 +875,5 @@ tr.wallet-group { cursor: pointer; }
 tr.wallet-group:hover td { background: rgba(255, 255, 255, 0.03); }
 tr.wallet-group-row td:first-child { padding-left: 22px; }
 tr.wallet-group-row { opacity: 0.92; }
+.btn-link-plain { color: var(--muted); cursor: pointer; text-decoration: underline dotted; }
+tr.wallet-source-row td { font-size: 0.85rem; }

@@ -4430,6 +4430,53 @@ def backfill_final_scores(data):
     return filled
 
 
+def _attach_side_picks(data, entries, picks_by_id):
+    """
+    For every wallet bet that maps to a market side, every source pick
+    on that same side - the source the bet was logged under and every
+    other card or ticket that had it. Adds `sources` (in board order),
+    `side_picks` (one per source pick, with its live WR badge) and the
+    market keys the same-side collapsing needs. A custom bet with an
+    identified game gets the same treatment.
+    """
+    reports = {r["id"]: r for r in data["reports"]}
+    by_side = {}
+    for p in data["picks"]:
+        r = reports.get(p["report_id"])
+        if not r or p.get("parlay_leg_pick_ids") or not p.get("espn_event_id") or not p.get("bet_type"):
+            continue
+        by_side.setdefault((p["espn_event_id"], p["bet_type"], p.get("bet_side")), []).append((r, p))
+    scores = None
+    out = []
+    for e in entries:
+        pick = picks_by_id.get(e["pick_id"]) or {}
+        market = {
+            "espn_event_id": pick.get("espn_event_id") or e.get("espn_event_id"),
+            "bet_type": pick.get("bet_type") or e.get("bet_type"),
+            "bet_side": pick.get("bet_side") or e.get("bet_side"),
+            "bet_line": pick.get("bet_line") if pick else e.get("bet_line"),
+        }
+        side = by_side.get((market["espn_event_id"], market["bet_type"], market["bet_side"]), []) if market["espn_event_id"] else []
+        if side and scores is None:
+            scores = _live_scores(data)
+        side_picks = []
+        for r, p in sorted(side, key=lambda rp: (SOURCES.index(rp[0]["source"]) if rp[0]["source"] in SOURCES else 99, rp[1]["id"])):
+            live = scores.get(p["id"]) if scores else None
+            side_picks.append({
+                "id": p["id"], "source": r["source"], "league": r["league"], "report_id": r["id"], "selection": p["selection"], "odds": p["odds"],
+                "stake": p["stake"], "result": p["result"], "profit_loss": p.get("profit_loss", 0.0),
+                "wr": wr_confidence_badge_text(live, p.get("wr_confidence_initial"), r["league"]) if live is not None else None,
+            })
+        sources = []
+        for sp in side_picks:
+            if sp["source"] not in sources:
+                sources.append(sp["source"])
+        if e.get("source") and e["source"] not in sources:
+            sources.insert(0, e["source"])
+        out.append({**e, **market, "sources": sources, "side_picks": side_picks})
+    return out
+
+
 def wallet_entries_by_week(entries):
     """
     The wallet's bets folded into the same Tue-Mon weeks the dashboard
@@ -4466,11 +4513,14 @@ def wallet_stats_by_source(entries):
     """{source: stats} - every AI source this wallet has ever placed a real bet on."""
     result = {s: empty_stats(s) for s in PUBLIC_SOURCES}
     for e in entries:
-        stats = result.setdefault(e["source"], empty_stats(e["source"]))
-        if e["result"] == "pending":
-            stats["pending"] += 1
-        elif e["result"] in ("win", "loss", "push"):
-            _apply_result(stats, e)
+        # A bet counts for every source that had that side (see
+        # _attach_side_picks): "how do my bets do when I follow X".
+        for src in e.get("sources") or [e["source"]]:
+            stats = result.setdefault(src, empty_stats(src))
+            if e["result"] == "pending":
+                stats["pending"] += 1
+            elif e["result"] in ("win", "loss", "push"):
+                _apply_result(stats, e)
     for stats in result.values():
         _finalize(stats)
     return result
@@ -4821,6 +4871,7 @@ def _render_wallet(wallet_key):
     entries = sorted(data[wallet["entries_key"]], key=lambda e: e["id"], reverse=True)
     picks_by_id = {p["id"]: p for p in data["picks"]}
 
+    entries = _attach_side_picks(data, entries, picks_by_id)
     overall = wallet_overall_stats(entries)
     by_source = wallet_stats_by_source(entries)
     wr_buckets = wr_confidence_buckets()
@@ -4855,18 +4906,11 @@ def _render_wallet(wallet_key):
     statused = attach_game_status(status_inputs)
     game_by_entry_id = {p["wallet_entry_id"]: p["game"] for p in statused}
     kickoff_by_entry_id = {p["wallet_entry_id"]: p.get("kickoff") for p in statused}
-    def _with_market(e):
-        pick = picks_by_id.get(e["pick_id"]) or {}
-        return {
-            **e, "game": game_by_entry_id.get(e["id"]), "live_read": news_live_reads.get(e["id"]),
-            "kickoff": kickoff_by_entry_id.get(e["id"]) or pick.get("kickoff"),
-            # the market keys let same-side bets on one game fold into one row (see _collapse_same_side)
-            "espn_event_id": pick.get("espn_event_id") or e.get("espn_event_id"),
-            "bet_type": pick.get("bet_type") or e.get("bet_type"),
-            "bet_side": pick.get("bet_side") or e.get("bet_side"),
-            "bet_line": pick.get("bet_line") if pick else e.get("bet_line"),
-        }
-    entries = [_with_market(e) for e in entries]
+    entries = [
+        {**e, "game": game_by_entry_id.get(e["id"]), "live_read": news_live_reads.get(e["id"]),
+         "kickoff": kickoff_by_entry_id.get(e["id"]) or (picks_by_id.get(e["pick_id"]) or {}).get("kickoff")}
+        for e in entries
+    ]
 
     return render_template(
         "wallet.html",

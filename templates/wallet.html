@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 {% block title %}{{ wallet_label }} · War Room{% endblock %}
 {% macro entry_row(e, nested=False, group_id=None) %}
-              <tr{% if nested %} class="wallet-group-row" data-group="{{ group_id }}" hidden{% endif %}>
+              <tr{% if nested %} class="wallet-group-row" data-group="{{ group_id }}" hidden{% endif %} data-head="sp{{ e.id }}">
                 <td class="muted">{{ e.created_at[:10] }}</td>
-                <td><span class="badge-source" style="background: {{ source_color(e.source) }};">{{ e.source }}</span></td>
+                <td><span class="pick-group-sources">{% for s in (e.sources or [e.source]) %}<span class="badge-source" style="background: {{ source_color(s) }};">{{ s }}</span>{% endfor %}</span></td>
                 <td><span class="badge-league">{{ e.league }}</span></td>
                 <td>
                   {% if e.report_id %}
@@ -18,6 +18,9 @@
                     {% endif %}
                   {% endif %}
                   {% if e.notes %}<div class="muted small">{{ e.notes }}</div>{% endif %}
+                  {% if e.side_picks and e.side_picks|length > 1 %}
+                    <div class="muted small"><span class="btn-link-plain" onclick="toggleWalletGroup('sp{{ e.id }}')"><span class="group-toggle-text">▸ {{ e.side_picks|length }} sources on this side</span></span></div>
+                  {% endif %}
                   {% if e.game %}
                     <div>
                       <span class="badge-live badge-live-{{ e.game.status }}">
@@ -64,6 +67,22 @@
                   </form>
                 </td>
               </tr>
+              {% if e.side_picks and e.side_picks|length > 1 %}
+                {% for sp in e.side_picks %}
+                  <tr class="wallet-group-row wallet-source-row" data-group="sp{{ e.id }}" hidden>
+                    <td class="muted small">pick</td>
+                    <td><span class="badge-source" style="background: {{ source_color(sp.source) }};">{{ sp.source }}</span></td>
+                    <td><span class="badge-league">{{ sp.league }}</span></td>
+                    <td><a href="{{ url_for('report_detail', report_id=sp.report_id) }}">{{ sp.selection }}</a> <span class="muted small">${{ '{:,.0f}'.format(sp.stake) }} on the card</span></td>
+                    <td>{% if sp.wr %}<span class="badge-wr-confidence">{{ sp.wr }}</span>{% else %}<span class="muted">—</span>{% endif %}</td>
+                    <td class="muted">{{ '%+d'|format(sp.odds) }}</td>
+                    <td class="muted">—</td>
+                    <td><span class="badge-result" style="background: {{ result_color(sp.result) }};">{{ result_label(sp.result) }}</span></td>
+                    <td class="{{ 'pos' if sp.profit_loss > 0 else 'neg' if sp.profit_loss < 0 else 'muted' }}">{% if sp.result != 'pending' %}{{ '%+.0f'|format(sp.profit_loss) }}${% endif %}</td>
+                    <td></td>
+                  </tr>
+                {% endfor %}
+              {% endif %}
 {% endmacro %}
 {% block content %}
 
@@ -244,9 +263,9 @@
                 {{ entry_row(row.picks[0]) }}
               {% else %}
                 {% set lead = row.lead %}{% set gid = 'wg' ~ group.week_key ~ '-' ~ lead.id %}
-                <tr class="wallet-group" data-group="{{ gid }}" onclick="toggleWalletGroup('{{ gid }}')" title="Click to expand the {{ row.picks|length }} bets on this side">
+                <tr class="wallet-group" data-group="{{ gid }}" data-head="{{ gid }}" onclick="toggleWalletGroup('{{ gid }}')" title="Click to expand the {{ row.picks|length }} bets on this side">
                   <td class="muted">{{ lead.created_at[:10] }}</td>
-                  <td><span class="pick-group-sources">{% for s in row.sources %}<span class="badge-source" style="background: {{ source_color(s) }};">{{ s }}</span>{% endfor %}</span></td>
+                  <td><span class="pick-group-sources">{% for s in (lead.sources or row.sources) %}<span class="badge-source" style="background: {{ source_color(s) }};">{{ s }}</span>{% endfor %}</span></td>
                   <td><span class="badge-league">{{ lead.league }}</span></td>
                   <td>
                     {{ lead.matchup }} — {{ lead.selection }} <span class="muted small">× {{ row.picks|length }} bets, lowest line shown · <span class="group-toggle-text">▸ expand</span></span>
@@ -463,10 +482,14 @@
 <script>
 function setWalletGroup(id, open) {
   document.querySelectorAll('tr.wallet-group-row[data-group="' + id + '"]').forEach(function (r) { r.hidden = !open; });
-  var head = document.querySelector('tr.wallet-group[data-group="' + id + '"]');
+  var head = document.querySelector('tr[data-head="' + id + '"]');
   if (head) {
     head.classList.toggle('wallet-group-open', open);
-    var t = head.querySelector('.group-toggle-text'); if (t) t.textContent = open ? '▾ collapse' : '▸ expand';
+    var t = head.querySelector('.group-toggle-text');
+    if (t) {
+      if (!t.dataset.label) t.dataset.label = t.textContent.replace(/^[▸▾]\s*/, '');
+      t.textContent = (open ? '▾ ' : '▸ ') + (open && t.dataset.label === 'expand' ? 'collapse' : t.dataset.label);
+    }
   }
 }
 function toggleWalletGroup(id) {
@@ -476,7 +499,7 @@ function toggleWalletGroup(id) {
 function setWalletGroups(btn, open) {
   var week = btn.closest('details.week-group');
   if (!week) return;
-  week.querySelectorAll('tr.wallet-group').forEach(function (h) { setWalletGroup(h.getAttribute('data-group'), open); });
+  week.querySelectorAll('tr[data-head]').forEach(function (h) { setWalletGroup(h.getAttribute('data-head'), open); });
 }
 </script>
 {% endblock %}
