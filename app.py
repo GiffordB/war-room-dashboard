@@ -1250,6 +1250,7 @@ def capture_pregame_lines(data, only=None):
             item["pregame_odds"] = line
             item["pregame_odds_captured_at"] = now
         if info:
+            item["kickoff"] = info.get("kickoff") or item.get("kickoff")
             item["pregame_weather"] = weather_by_event.get(event_key)
             item["pregame_home_form"] = _form_summary(form_by_team.get((league, info["home_id"])))
             item["pregame_away_form"] = _form_summary(form_by_team.get((league, info["away_id"])))
@@ -1402,6 +1403,8 @@ def attach_game_status(picks, league=None):
         ):
             key = (pick_league, pick["espn_event_id"])
             final = score_cache.get(key)
+            if final and final.get("kickoff") and not pick.get("kickoff"):
+                pick["kickoff"] = final["kickoff"]
             if final and final["state"] in ("in", "post"):
                 score_str = f"{final['away_score']}-{final['home_score']}"
                 if pick["result"] == "pending":
@@ -1543,6 +1546,12 @@ def identify_wallet_entry_game(entry):
     return result
 
 
+def _kickoff_sort_key(pick):
+    """Soonest kickoff first; picks with no known kickoff last, newest of those first."""
+    k = pick.get("kickoff")
+    return (0, k, pick["id"]) if k else (1, "", -pick["id"])
+
+
 def recent_picks_by_week(data, league=None, limit=4):
     """
     Every pick, grouped by the calendar week of report_date (see
@@ -1585,8 +1594,8 @@ def recent_picks_by_week(data, league=None, limit=4):
 
     weeks = sorted(by_week.values(), key=lambda g: g["latest_created_at"], reverse=True)[:limit]
     for group in weeks:
-        group["picks"].sort(key=lambda p: p["id"], reverse=True)
         group["picks"] = attach_game_status(group["picks"])
+        group["picks"].sort(key=_kickoff_sort_key)
     return weeks
 
 
@@ -2186,6 +2195,47 @@ def _war_room_report_for(data, league, report_date, source=WAR_ROOM_SOURCE):
     return report
 
 
+def _withdraw_ticket_picks(data, source, chosen, events_in_scope=None):
+    """
+    Re-check a ticket's still-pending selections against what its rule
+    would choose NOW (`chosen`: {(event, bet_type): side or None}). A
+    selection whose side no longer qualifies - the sources moved, a
+    card withdrew a pick, a newer sheet put the agreement on the other
+    side - is withdrawn, but only while ESPN still shows the game as not
+    started; a kicked-off selection stands and is graded. Withdrawn
+    picks are kept in data["ticket_withdrawals"] with the reason, and
+    the pass that called this can take the other side in the same run.
+    Returns the number withdrawn.
+    """
+    reports = {r["id"]: r for r in data["reports"]}
+    withdrawn = 0
+    keep = []
+    for p in data["picks"]:
+        r = reports.get(p["report_id"])
+        if not (r and r["source"] == source and p["result"] == "pending" and p.get("espn_event_id") and p.get("bet_type")):
+            keep.append(p); continue
+        if events_in_scope is not None and p["espn_event_id"] not in events_in_scope:
+            keep.append(p); continue
+        market = (p["espn_event_id"], p["bet_type"])
+        if market in chosen and chosen[market] == p.get("bet_side"):
+            keep.append(p); continue
+        state = _cached_final_score(r["league"], p["espn_event_id"])
+        if not state or state.get("state") != "pre":
+            keep.append(p); continue
+        reason = (
+            "the rule now takes the other side of this market" if chosen.get(market) else
+            "this side no longer qualifies under the rule (sources moved, a card withdrew, or a dead heat)"
+        )
+        data.setdefault("ticket_withdrawals", []).append({
+            "pick_id": p["id"], "source": source, "league": r["league"], "matchup": p["matchup"], "selection": p["selection"], "odds": p["odds"],
+            "espn_event_id": p["espn_event_id"], "bet_type": p["bet_type"], "bet_side": p.get("bet_side"), "selected_at": p.get("created_at"),
+            "withdrawn_at": datetime.utcnow().isoformat(timespec="seconds"), "reason": reason,
+        })
+        withdrawn += 1
+    data["picks"] = keep
+    return withdrawn
+
+
 def refresh_war_room_card(data, only_event=None, source=WAR_ROOM_SOURCE):
     """
     Adds the War Room's own picks (`source`: the football card by default,
@@ -2221,8 +2271,6 @@ def refresh_war_room_card(data, only_event=None, source=WAR_ROOM_SOURCE):
     for (event, bet_type, side), by_source in groups.items():
         if only_event is not None and event != only_event:
             continue
-        if (event, bet_type) in taken:
-            continue
         best = max(by_source.values(), key=lambda e: scores.get(e["pick"]["id"]) or 0)
         best_wr = scores.get(best["pick"]["id"]) or 0
         aligned_ok = len(by_source) >= WAR_ROOM_MIN_ALIGNED
@@ -2235,12 +2283,27 @@ def refresh_war_room_card(data, only_event=None, source=WAR_ROOM_SOURCE):
                 {"side": side, "by_source": by_source, "best": best, "best_wr": best_wr, "n": len(by_source)}
             )
 
+    chosen = {}
+    for market, sides in by_market.items():
+        sides.sort(key=lambda s: (-s["n"], -s["best_wr"]))
+        dead_heat = len(sides) > 1 and sides[0]["n"] == sides[1]["n"] and abs(sides[0]["best_wr"] - sides[1]["best_wr"]) < 1e-9
+        chosen[market] = None if dead_heat else sides[0]["side"]
+    # Every new sheet is a reason to re-check what is already on the
+    # ticket: a selection the rule would no longer make is withdrawn
+    # while the game has not kicked off, then the market is open again.
+    withdrawn = _withdraw_ticket_picks(data, source, chosen, events_in_scope=None if only_event is None else {only_event})
+    if withdrawn:
+        taken = {
+            (p["espn_event_id"], p["bet_type"])
+            for p in data["picks"]
+            if p.get("espn_event_id") and reports.get(p["report_id"], {}).get("source") == source
+        }
+
     created = 0
     now = datetime.utcnow().isoformat(timespec="seconds")
     for (event, bet_type), sides in by_market.items():
-        sides.sort(key=lambda s: (-s["n"], -s["best_wr"]))
-        if len(sides) > 1 and sides[0]["n"] == sides[1]["n"] and abs(sides[0]["best_wr"] - sides[1]["best_wr"]) < 1e-9:
-            continue  # dead heat between the two sides: no selection
+        if (event, bet_type) in taken or chosen.get((event, bet_type)) is None:
+            continue
         choice = sides[0]
         src = choice["best"]["pick"]
         src_report = choice["best"]["report"]
@@ -2505,8 +2568,6 @@ def refresh_war_room_lean_card(data, only_events=None, source=WAR_ROOM_LEAN_SOUR
     for (event, bet_type, side), by_source in groups.items():
         if only_events is not None and event not in only_events:
             continue
-        if (event, bet_type) in taken:
-            continue
         if len(by_source) < WAR_ROOM_LEAN_MIN_ALIGNED or not any(e["kind"] == "lean" for e in by_source.values()):
             continue
         rated = {s: live(e) for s, e in by_source.items()}
@@ -2515,11 +2576,23 @@ def refresh_war_room_lean_card(data, only_events=None, source=WAR_ROOM_LEAN_SOUR
             {"side": side, "by_source": by_source, "rated": rated, "best": by_source[best_source], "best_wr": rated[best_source], "n": len(by_source)}
         )
 
+    chosen = {}
+    for market, sides in by_market.items():
+        sides.sort(key=lambda s: (-s["n"], -s["best_wr"]))
+        dead_heat = len(sides) > 1 and sides[0]["n"] == sides[1]["n"] and abs(sides[0]["best_wr"] - sides[1]["best_wr"]) < 1e-9
+        chosen[market] = None if dead_heat else sides[0]["side"]
+    withdrawn = _withdraw_ticket_picks(data, source, chosen, events_in_scope=only_events)
+    if withdrawn:
+        taken = {
+            (p["espn_event_id"], p["bet_type"])
+            for p in data["picks"]
+            if p.get("espn_event_id") and reports.get(p["report_id"], {}).get("source") == source
+        }
+
     created = 0
     now = datetime.utcnow().isoformat(timespec="seconds")
     for (event, bet_type), sides in by_market.items():
-        sides.sort(key=lambda s: (-s["n"], -s["best_wr"]))
-        if len(sides) > 1 and sides[0]["n"] == sides[1]["n"] and abs(sides[0]["best_wr"] - sides[1]["best_wr"]) < 1e-9:
+        if (event, bet_type) in taken or chosen.get((event, bet_type)) is None:
             continue
         choice = sides[0]
         src = choice["best"]["item"]
@@ -3438,7 +3511,7 @@ def report_detail(report_id):
 
     picks = sorted((p for p in data["picks"] if p["report_id"] == report_id), key=lambda p: p["id"])
     auto_gradable = sum(1 for p in picks if p["result"] == "pending" and p.get("espn_event_id"))
-    picks = attach_game_status(picks, league=report["league"])
+    picks = sorted(attach_game_status(picks, league=report["league"]), key=_kickoff_sort_key)
     leans = sorted((l for l in data.get("leans", []) if l["report_id"] == report_id), key=lambda l: -l["score"])
     leans = attach_game_status(leans, league=report["league"])
 
@@ -3736,8 +3809,10 @@ def auto_grade_all():
     except Exception:
         app.logger.exception("ai grading pass failed")
         ai_graded = 0
+    before_withdrawn = len(data.get("ticket_withdrawals", []))
     selected = _safe_refresh_war_room_card(data) + _safe_refresh_war_room_lean_card(data)
-    if graded or synced or captured or backfilled or selected or ai_graded or breakdowns_added:
+    withdrawn = len(data.get("ticket_withdrawals", [])) - before_withdrawn
+    if graded or synced or captured or backfilled or selected or ai_graded or breakdowns_added or withdrawn:
         message = f"Auto-grade all reports: {graded} pick(s) settled, {synced} wallet entr{'y' if synced == 1 else 'ies'} synced"
         if captured:
             message += f", {captured} line{'s' if captured != 1 else ''} captured"
@@ -3749,6 +3824,8 @@ def auto_grade_all():
             message += f", {ai_graded} argument{'s' if ai_graded != 1 else ''} AI-graded"
         if breakdowns_added:
             message += f", {breakdowns_added} rating breakdown{'s' if breakdowns_added != 1 else ''} reconstructed"
+        if withdrawn:
+            message += f", {withdrawn} ticket selection{'s' if withdrawn != 1 else ''} withdrawn"
         store.save(data, token, message=message)
     return redirect(url_for("reports_list", graded=graded, still_pending=still_pending))
 

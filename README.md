@@ -214,6 +214,16 @@ kept out of the agreement, alignment and Lock groupings. A revised rule
 belongs in a second card run alongside this one, not an edit to these
 constants.
 
+Every ticket re-checks its own pending selections on every pass (the
+hourly Auto-Grade run and whenever a pick or lean is logged): a
+selection the rule would no longer make - the sources moved, a card
+withdrew its pick, a newer sheet put the agreement on the other side,
+the AI test's veto now applies - is withdrawn while ESPN still shows
+the game as not started, and the market is open for the side the rule
+takes now. A kicked-off selection stands and is graded. Withdrawals are
+kept in `data["ticket_withdrawals"]` with the reason. Pick lists on the
+dashboard and report pages run soonest kickoff first.
+
 "WR Lean" is that second ticket (`refresh_war_room_lean_card`),
 with its own record and its own frozen rule: take a side when at least
 two sources favor it once every memo's full board is counted, picks and

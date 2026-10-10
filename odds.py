@@ -282,6 +282,7 @@ def final_score(league, event_id):
             "state": status_type.get("state", "pre"),
             "home_score": int(home_score) if home_score is not None else None,
             "away_score": int(away_score) if away_score is not None else None,
+            "kickoff": comp.get("date"),
         }
     except (KeyError, StopIteration, IndexError, TypeError, ValueError):
         return None
