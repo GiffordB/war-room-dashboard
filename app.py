@@ -2054,15 +2054,22 @@ def backfill_kickoffs(data, limit=250):
             todo.append((item, r["league"]))
             if len(todo) >= limit:
                 break
-    if not todo:
-        return 0
-    keys = list({(league, item["espn_event_id"]) for item, league in todo})
-    found = _parallel_map(lambda key: _cached_final_score(key[0], key[1]), keys)
     filled = 0
-    for item, league in todo:
-        state = found.get((league, item["espn_event_id"]))
-        if state and state.get("kickoff"):
-            item["kickoff"] = state["kickoff"]
+    if todo:
+        keys = list({(league, item["espn_event_id"]) for item, league in todo})
+        found = _parallel_map(lambda key: _cached_final_score(key[0], key[1]), keys)
+        for item, league in todo:
+            state = found.get((league, item["espn_event_id"]))
+            if state and state.get("kickoff"):
+                item["kickoff"] = state["kickoff"]
+                filled += 1
+    # A parlay sits with its last leg: its kickoff is the latest of its legs'.
+    by_id = {p["id"]: p for p in data["picks"]}
+    for p in data["picks"]:
+        legs = [by_id.get(i) for i in (p.get("parlay_leg_pick_ids") or [])]
+        latest = max((l["kickoff"] for l in legs if l and l.get("kickoff")), default=None)
+        if latest and p.get("kickoff") != latest:
+            p["kickoff"] = latest
             filled += 1
     return filled
 
