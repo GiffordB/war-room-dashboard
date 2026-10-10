@@ -169,7 +169,6 @@
               <th>Stake</th>
               <th>Result</th>
               <th>Profit</th>
-              <th></th>
             </tr>
           </thead>
           <tbody>
@@ -191,6 +190,10 @@
                     {% endif %}
                   {% endif %}
                   {% if e.notes %}<div class="muted small">{{ e.notes }}</div>{% endif %}
+                  <form method="post" action="{{ url_for(delete_endpoint, entry_id=e.id) }}" class="wallet-remove"
+                        onsubmit="return confirm('Remove this bet from your wallet? This cannot be undone.');">
+                    <button class="btn-remove" type="submit" title="Remove this bet from the wallet">🗑 Remove</button>
+                  </form>
                   {% if e.game %}
                     <div>
                       <span class="badge-live badge-live-{{ e.game.status }}">
@@ -229,12 +232,6 @@
                 </td>
                 <td class="{{ 'pos' if e.profit_loss > 0 else 'neg' if e.profit_loss < 0 else 'muted' }}">
                   {% if e.result != 'pending' %}{{ '%+.0f'|format(e.profit_loss) }}${% endif %}
-                </td>
-                <td>
-                  <form method="post" action="{{ url_for(delete_endpoint, entry_id=e.id) }}"
-                        onsubmit="return confirm('Delete this bet from your wallet?');">
-                    <button class="btn-link" type="submit">Delete</button>
-                  </form>
                 </td>
               </tr>
             {% endfor %}

@@ -130,6 +130,21 @@ section { margin-bottom: 44px; }
 
 .btn-sm { padding: 6px 12px; font-size: 0.85rem; }
 
+/* Wallet: the remove control lives in the bet cell so it is reachable
+   without scrolling the table sideways on a phone. */
+.wallet-remove { display: inline-block; margin: 4px 8px 2px 0; }
+.btn-remove {
+  background: rgba(248, 113, 113, 0.12);
+  border: 1px solid rgba(248, 113, 113, 0.55);
+  color: #f87171;
+  border-radius: 8px;
+  padding: 3px 9px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.btn-remove:hover { background: rgba(248, 113, 113, 0.25); }
+
 .btn-link {
   background: none;
   border: none;
