@@ -1551,7 +1551,10 @@ def _kickoff_sort_key(pick):
     k = pick.get("kickoff") or (pick.get("final_score") or {}).get("kickoff")
     if not k and pick.get("report_date"):
         k = f"{pick['report_date']}T00:00Z"
-    return (0, k, pick["id"]) if k else (1, "", -pick["id"])
+    # Finished games drop below everything still to come or in progress.
+    game = pick.get("game") or {}
+    finished = pick.get("result") != "pending" or bool(game.get("final"))
+    return (1 if finished else 0, 0 if k else 1, k or "", pick["id"] if k else -pick["id"])
 
 
 def recent_picks_by_week(data, league=None, limit=4):
