@@ -1,6 +1,6 @@
 {
   "next_report_id": 53,
-  "next_pick_id": 241,
+  "next_pick_id": 242,
   "reports": [
     {
       "source": "ChatGPT",
@@ -22134,6 +22134,154 @@
         "opposing": 0
       },
       "wr_confidence_initial": 72.92
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 52,
+      "category": "best_bet",
+      "matchup": "Nebraska Cornhuskers @ Indiana Hoosiers",
+      "selection": "Nebraska +8.5",
+      "odds": -115,
+      "stake": 50.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 62.0,
+      "war_room_line": "Competition rank #1 of 9 (judgment ranking, not a cover probability). DraftKings -115.",
+      "edge": "Home offense plus a two-score cushion.",
+      "price_discipline": "Principal risk: the Indiana front. 11:00 AM CT.",
+      "espn_event_id": "401858481",
+      "bet_type": "spread",
+      "bet_side": "away",
+      "bet_line": 8.5,
+      "home_team": "Indiana Hoosiers",
+      "away_team": "Nebraska Cornhuskers",
+      "created_at": "2026-10-10T15:10:21",
+      "id": 241,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "IU -8.5",
+        "home_spread": 8.5,
+        "home_spread_odds": -110.0,
+        "away_spread_odds": -110.0,
+        "total": 48.5,
+        "over_odds": -105.0,
+        "under_odds": -115.0,
+        "home_moneyline": 270,
+        "away_moneyline": -340,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-10-10T15:10:25",
+      "pregame_weather": {
+        "city": "Lincoln",
+        "temp_c": 24.8,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 26.0,
+        "cloud_cover_pct": 0,
+        "forecast_hour": "2026-10-10T16:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 5,
+        "win_pct": 100.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 5,
+        "win_pct": 100.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 4,
+          "d": 0,
+          "l": 0,
+          "gf": 187,
+          "ga": 58
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 0,
+          "gf": 31,
+          "ga": 13
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 4,
+          "d": 0,
+          "l": 0,
+          "gf": 174,
+          "ga": 39
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 0,
+          "gf": 47,
+          "ga": 15
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-10T15:10:25",
+      "wr_confidence_kickoff": 60.161509433962266,
+      "wr_breakdown_kickoff": {
+        "base": 62.0,
+        "impact_scale": 0.24,
+        "record_mod": 0.082,
+        "record_win_pct": 50.943,
+        "record_settled": 54,
+        "agree_mod": 0.0,
+        "conflict_mod": -1.92,
+        "clv_mod": 0.0,
+        "clv_move": null,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 1
+      },
+      "wr_confidence_initial": 70.16150943396227,
+      "wr_breakdown_initial": {
+        "base": 62.0,
+        "impact_scale": 0.24,
+        "record_mod": 0.082,
+        "record_win_pct": 50.943,
+        "record_settled": 54,
+        "agree_mod": 0.0,
+        "conflict_mod": -1.92,
+        "clv_mod": 10,
+        "clv_move": 17.0,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": 0.0,
+        "injury_mod": 0.0,
+        "injury_gap": 0.0,
+        "home_away_mod": 0.0,
+        "home_away_gap": 0.0,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 1
+      },
+      "ai_grade": {
+        "quality": 2,
+        "verdict": "story",
+        "reason": "The stated edge is a judgment ranking with no fair line or cover probability, and it says 'home offense' even though Nebraska is the road team; the author also admits it doesn't clear their own cash standard.",
+        "model": "claude-opus-5-5",
+        "graded_at": "2026-10-10T15:10:28",
+        "rubric_version": 5
+      }
     }
   ],
   "next_wallet_id": 43,
