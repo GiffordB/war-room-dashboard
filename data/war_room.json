@@ -1,6 +1,6 @@
 {
   "next_report_id": 53,
-  "next_pick_id": 247,
+  "next_pick_id": 249,
   "reports": [
     {
       "source": "ChatGPT",
@@ -22974,6 +22974,278 @@
         "opposing": 1
       },
       "wr_confidence_initial": 58.63466666666666
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 52,
+      "category": "best_bet",
+      "matchup": "Ole Miss Rebels @ Vanderbilt Commodores",
+      "selection": "Vanderbilt +9.5",
+      "odds": -108,
+      "stake": 50.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 58.0,
+      "war_room_line": "Competition rank #5 of 9 (judgment ranking, not a cover probability). DraftKings -108.",
+      "edge": "Home offense against a leaky defense.",
+      "price_discipline": "Principal risk: Curtis availability. 2:30 PM CT.",
+      "espn_event_id": "401856718",
+      "bet_type": "spread",
+      "bet_side": "home",
+      "bet_line": 9.5,
+      "home_team": "Vanderbilt Commodores",
+      "away_team": "Ole Miss Rebels",
+      "created_at": "2026-10-10T15:11:09",
+      "id": 247,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "MISS -9.5",
+        "home_spread": 9.5,
+        "home_spread_odds": -108.0,
+        "away_spread_odds": -112.0,
+        "total": 54.5,
+        "over_odds": -108.0,
+        "under_odds": -112.0,
+        "home_moneyline": 280,
+        "away_moneyline": -355,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-10-10T15:11:13",
+      "pregame_weather": {
+        "city": "Nashville",
+        "temp_c": 17.1,
+        "precip_probability_pct": 77,
+        "precip_mm": 1.8,
+        "wind_kmh": 22.7,
+        "cloud_cover_pct": 100,
+        "forecast_hour": "2026-10-10T19:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 3,
+        "win_pct": 60.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 4,
+        "wins": 3,
+        "win_pct": 75.0,
+        "quality_wins": 2
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 3,
+          "d": 0,
+          "l": 0,
+          "gf": 98,
+          "ga": 66
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 2,
+          "gf": 29,
+          "ga": 59
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 3,
+          "d": 0,
+          "l": 0,
+          "gf": 114,
+          "ga": 71
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 1,
+          "gf": 28,
+          "ga": 52
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-10T15:11:13",
+      "wr_confidence_kickoff": 58.05433962264151,
+      "wr_breakdown_kickoff": {
+        "base": 58.0,
+        "impact_scale": 0.16,
+        "record_mod": 0.054,
+        "record_win_pct": 50.943,
+        "record_settled": 54,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": null,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 53.25433962264151,
+      "wr_breakdown_initial": {
+        "base": 58.0,
+        "impact_scale": 0.16,
+        "record_mod": 0.054,
+        "record_win_pct": 50.943,
+        "record_settled": 54,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": 0.0,
+        "weather_mod": 0.0,
+        "form_mod": -0.0,
+        "form_gap": -15.0,
+        "injury_mod": 0.0,
+        "injury_gap": 0.0,
+        "home_away_mod": 1.2,
+        "home_away_gap": 100.0,
+        "quality_win_mod": -6,
+        "quality_win_gap": -2,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "ai_grade": {
+        "quality": 2,
+        "verdict": "story",
+        "reason": "There is no fair line or quantified gap; the stated edge is a vague matchup narrative, the key availability risk (Curtis) is flagged but unsourced, and the author admits it fails the cash standard.",
+        "model": "claude-opus-5-5",
+        "graded_at": "2026-10-10T15:11:15",
+        "rubric_version": 5
+      }
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 42,
+      "category": "best_bet",
+      "matchup": "Ole Miss Rebels @ Vanderbilt Commodores",
+      "selection": "Vanderbilt +9.5",
+      "odds": -108,
+      "stake": 100.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 53.3,
+      "war_room_line": "Rule: 2 sources on this side once board leans are counted, at least one a lean. Line and price copied from ChatGPT pick #247 at selection (2026-10-10T15:11:15).",
+      "edge": "Full-board agreement -- Claude: Vanderbilt +9.5 (-110), board lean, live WR 47; ChatGPT: Vanderbilt +9.5 (-108), pick, live WR 53.",
+      "price_discipline": "Flat $100. Selected before kickoff; graded off the final score like any other pick. Separate record from the main War Room card.",
+      "espn_event_id": "401856718",
+      "bet_type": "spread",
+      "bet_side": "home",
+      "bet_line": 9.5,
+      "home_team": "Vanderbilt Commodores",
+      "away_team": "Ole Miss Rebels",
+      "war_room_source_pick_ids": [
+        247
+      ],
+      "war_room_source_lean_ids": [
+        187
+      ],
+      "created_at": "2026-10-10T15:11:15",
+      "id": 248,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "MISS -9.5",
+        "home_spread": 9.5,
+        "home_spread_odds": -108.0,
+        "away_spread_odds": -112.0,
+        "total": 54.5,
+        "over_odds": -108.0,
+        "under_odds": -112.0,
+        "home_moneyline": 280,
+        "away_moneyline": -355,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-10-10T15:11:18",
+      "pregame_weather": {
+        "city": "Nashville",
+        "temp_c": 17.1,
+        "precip_probability_pct": 77,
+        "precip_mm": 1.8,
+        "wind_kmh": 22.7,
+        "cloud_cover_pct": 100,
+        "forecast_hour": "2026-10-10T19:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 3,
+        "win_pct": 60.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 4,
+        "wins": 3,
+        "win_pct": 75.0,
+        "quality_wins": 2
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 3,
+          "d": 0,
+          "l": 0,
+          "gf": 98,
+          "ga": 66
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 2,
+          "gf": 29,
+          "ga": 59
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 3,
+          "d": 0,
+          "l": 0,
+          "gf": 114,
+          "ga": 71
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 1,
+          "gf": 28,
+          "ga": 52
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-10T15:11:18",
+      "wr_confidence_kickoff": 53.696,
+      "wr_breakdown_kickoff": {
+        "base": 53.3,
+        "impact_scale": 0.066,
+        "record_mod": 0.0,
+        "record_win_pct": null,
+        "record_settled": 0,
+        "agree_mod": 0.396,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": null,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 1,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 48.896
     }
   ],
   "next_wallet_id": 43,
