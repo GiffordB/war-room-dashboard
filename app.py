@@ -2034,6 +2034,39 @@ def _live_scores(data):
     return _live_scores_and_breakdowns(data)[0]
 
 
+def backfill_kickoffs(data, limit=250):
+    """
+    One-time: every ESPN-linked pick or lean that predates stored
+    kickoffs gets its `kickoff` from ESPN's event summary, so pick lists
+    order by real game date and time instead of card date. Bounded per
+    pass; a lookup that fails is retried next pass. Returns how many
+    were filled.
+    """
+    reports = {r["id"]: r for r in data["reports"]}
+    todo = []
+    for coll in (data["picks"], data.get("leans", [])):
+        for item in coll:
+            if item.get("kickoff") or not item.get("espn_event_id"):
+                continue
+            r = reports.get(item["report_id"])
+            if not r:
+                continue
+            todo.append((item, r["league"]))
+            if len(todo) >= limit:
+                break
+    if not todo:
+        return 0
+    keys = list({(league, item["espn_event_id"]) for item, league in todo})
+    found = _parallel_map(lambda key: _cached_final_score(key[0], key[1]), keys)
+    filled = 0
+    for item, league in todo:
+        state = found.get((league, item["espn_event_id"]))
+        if state and state.get("kickoff"):
+            item["kickoff"] = state["kickoff"]
+            filled += 1
+    return filled
+
+
 def backfill_wr_breakdowns(data):
     """
     One-time: every settled pick that predates frozen breakdowns gets
@@ -3911,6 +3944,7 @@ def auto_grade_all():
     captured = _safe_capture_pregame_lines(data)
     backfilled = backfill_final_scores(data)
     breakdowns_added = backfill_wr_breakdowns(data)
+    kickoffs_added = backfill_kickoffs(data)
     try:
         ai_graded = grade_pick_arguments(data)
     except Exception:
@@ -3920,7 +3954,7 @@ def auto_grade_all():
     before_withdrawn = len(data.get("ticket_withdrawals", []))
     selected = _safe_refresh_war_room_card(data) + _safe_refresh_war_room_lean_card(data)
     withdrawn = len(data.get("ticket_withdrawals", [])) - before_withdrawn
-    if graded or synced or captured or backfilled or selected or ai_graded or breakdowns_added or withdrawn or superseded:
+    if graded or synced or captured or backfilled or selected or ai_graded or breakdowns_added or withdrawn or superseded or kickoffs_added:
         message = f"Auto-grade all reports: {graded} pick(s) settled, {synced} wallet entr{'y' if synced == 1 else 'ies'} synced"
         if captured:
             message += f", {captured} line{'s' if captured != 1 else ''} captured"
@@ -3936,6 +3970,8 @@ def auto_grade_all():
             message += f", {withdrawn} ticket selection{'s' if withdrawn != 1 else ''} withdrawn"
         if superseded:
             message += f", {superseded} duplicate pick{'s' if superseded != 1 else ''} superseded"
+        if kickoffs_added:
+            message += f", {kickoffs_added} kickoff time{'s' if kickoffs_added != 1 else ''} stored"
         store.save(data, token, message=message)
     return redirect(url_for("reports_list", graded=graded, still_pending=still_pending))
 
