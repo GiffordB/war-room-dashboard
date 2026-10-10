@@ -17186,7 +17186,7 @@
       "wr_confidence_initial": 57.0
     }
   ],
-  "next_wallet_id": 37,
+  "next_wallet_id": 38,
   "wallet_entries": [
     {
       "pick_id": 12,
@@ -17834,6 +17834,24 @@
       "wr_confidence_at_bet": 38.0,
       "created_at": "2026-10-10T01:19:15",
       "id": 36
+    },
+    {
+      "pick_id": 232,
+      "report_id": 47,
+      "source": "Claude",
+      "league": "CFB",
+      "category": "best_bet",
+      "matchup": "Louisiana Ragin' Cajuns @ Louisiana Tech Bulldogs",
+      "selection": "Louisiana +3",
+      "odds": -120,
+      "stake": 50.0,
+      "bet_line": 3.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": null,
+      "wr_confidence_at_bet": 58.931428571428576,
+      "created_at": "2026-10-10T01:19:47",
+      "id": 37
     }
   ],
   "next_jesse_wallet_id": 1,
