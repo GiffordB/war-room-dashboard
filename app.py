@@ -675,7 +675,7 @@ def wr_v2_walk_forward(data):
             pv = _sigmoid(sum(wi * fi for wi, fi in zip(final_w, f)))
             pending.append({"pick": p, "source": r["source"], "league": r["league"], "report_id": r["id"], "v2": 100 * pv,
                             "live": scores.get(p["id"]), "badge": wr_confidence_badge_text(scores.get(p["id"]), p.get("wr_confidence_initial"), r["league"]) if scores.get(p["id"]) is not None else "—"})
-        pending.sort(key=lambda x: -x["v2"])
+        pending.sort(key=lambda x: _kickoff_sort_key(x["pick"]))
     return {"rows": len(rows), "reconstructed": sum(1 for _, p, *_ in rows if not p.get("wr_breakdown_kickoff")), "table": table, "totals": totals, "coefficients": coefficients, "pending": pending}
 
 
@@ -2173,7 +2173,7 @@ def ai_test_diff(data):
                 rows.append({"kind": label, "pick": p, "league": reports[p["report_id"]]["league"]})
             elif o.get("bet_side") != p.get("bet_side") and src == WAR_ROOM_AI_TEST_SOURCE:
                 rows.append({"kind": "Opposite sides", "pick": p, "other": o, "league": reports[p["report_id"]]["league"]})
-    rows.sort(key=lambda r: -r["pick"]["id"])
+    rows.sort(key=lambda r: _kickoff_sort_key(r["pick"]))
     return rows
 
 
@@ -4340,6 +4340,9 @@ def wallet_entries_by_week(entries):
     weeks = sorted(by_week.values(), key=lambda g: g["week_key"], reverse=True)
     for group in weeks:
         group["stats"] = wallet_overall_stats(group["entries"])
+        # Same order as every pick list: live and upcoming first by
+        # kickoff, finished bets at the bottom.
+        group["entries"].sort(key=_kickoff_sort_key)
     return weeks
 
 
@@ -4743,9 +4746,13 @@ def _render_wallet(wallet_key):
                     "wallet_entry_id": e["id"],
                 }
             )
-    game_by_entry_id = {p["wallet_entry_id"]: p["game"] for p in attach_game_status(status_inputs)}
+    statused = attach_game_status(status_inputs)
+    game_by_entry_id = {p["wallet_entry_id"]: p["game"] for p in statused}
+    kickoff_by_entry_id = {p["wallet_entry_id"]: p.get("kickoff") for p in statused}
     entries = [
-        {**e, "game": game_by_entry_id.get(e["id"]), "live_read": news_live_reads.get(e["id"])} for e in entries
+        {**e, "game": game_by_entry_id.get(e["id"]), "live_read": news_live_reads.get(e["id"]),
+         "kickoff": kickoff_by_entry_id.get(e["id"]) or (picks_by_id.get(e["pick_id"]) or {}).get("kickoff")}
+        for e in entries
     ]
 
     return render_template(
@@ -5036,8 +5043,7 @@ def ai_test_page():
             r = reports.get(p["report_id"])
             if r:
                 graded.append({**p, "source": r["source"], "league": r["league"], "report_date": r["report_date"]})
-    graded.sort(key=lambda p: -p["id"])
-    graded = attach_game_status(graded)
+    graded = sorted(attach_game_status(graded), key=_kickoff_sort_key)
     verdict_stats = {}
     for p in graded:
         v = p["ai_grade"]["verdict"]
