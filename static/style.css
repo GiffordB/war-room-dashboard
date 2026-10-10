@@ -866,7 +866,9 @@ details.pick-group[open] > summary .pick-group-toggle { display: none; }
 details.pick-group[open] > summary .pick-group-untoggle { display: inline; }
 .group-controls { margin-left: 10px; font-weight: 400; text-transform: none; letter-spacing: 0; }
 .group-controls .btn-link { color: var(--muted); font-size: 0.75rem; }
-.pick-group-sources { display: inline-flex; gap: 4px; flex-wrap: wrap; }
+.pick-group-sources { display: inline-flex; flex-direction: column; align-items: flex-start; gap: 4px; }
+.pick-group-summary { align-items: flex-start; }
+.pick-group-summary > :not(.pick-group-sources) { margin-top: 2px; }
 .pick-list-nested { margin: 6px 0 2px 18px; gap: 6px; }
 .pick-row-nested { opacity: 0.92; }
 
