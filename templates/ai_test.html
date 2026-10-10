@@ -1,0 +1,101 @@
+{% extends "base.html" %}
+{% block title %}AI Test · War Room{% endblock %}
+{% block content %}
+  <div class="page-head">
+    <h1>War Room vs WR AI Test</h1>
+    <span class="muted small">A duplicate of the football War Room card that also reads each source pick's argument. Separate record; nothing here feeds the main rating or the main card.</span>
+  </div>
+
+  {% if not ai_grading_enabled %}
+    <p class="empty"><strong>Grading is off:</strong> set <code>ANTHROPIC_API_KEY</code> on the service. Until then no pick is graded and the test card behaves exactly like the main card.</p>
+  {% endif %}
+
+  <section>
+    <h2 class="section-label">The two records</h2>
+    <p class="muted small">Test score = live WR + (grade − 5) × {{ ai_scale|int }}. Same alignment and solo numbers as the main card; an aligned side is vetoed when every graded argument on it reads as a story ({{ veto_quality }}/10 or under), and the solo threshold and tie-breaks use the test score.</p>
+    <div class="table-scroll">
+      <table class="data-table">
+        <thead><tr><th>Card</th><th>Record</th><th>Win%</th><th>Profit</th><th>ROI</th><th>Staked</th></tr></thead>
+        <tbody>
+          {% for label, st, color in ((war_room_source, main_stats, source_color(war_room_source)), (ai_test_source, test_stats, source_color(ai_test_source))) %}
+            <tr>
+              <td><span class="badge-source" style="background: {{ color }};">{{ label }}</span></td>
+              <td>{{ st.wins }}-{{ st.losses }}{% if st.pushes %}-{{ st.pushes }}{% endif %}{% if st.pending %}<span class="muted"> (+{{ st.pending }}p)</span>{% endif %}</td>
+              <td class="muted">{% if st.win_pct is not none %}{{ '%.0f'|format(st.win_pct) }}%{% else %}—{% endif %}</td>
+              <td class="{{ 'pos' if st.profit > 0 else 'neg' if st.profit < 0 else 'muted' }}">{{ '%+.0f'|format(st.profit) }}$</td>
+              <td class="muted">{% if st.roi is not none %}{{ '%+.1f'|format(st.roi) }}%{% else %}—{% endif %}</td>
+              <td class="muted">${{ '{:,.0f}'.format(st.staked) }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-label">Where the cards parted ways</h2>
+    {% if rows %}
+      <ul class="pick-list">
+        {% for r in rows %}
+          <li class="pick-row">
+            <span class="badge-source" style="background: {{ source_color(ai_test_source) if r.kind != 'War Room only' else source_color(war_room_source) }};">{{ r.kind }}</span>
+            <span class="badge-league">{{ r.league }}</span>
+            <span class="pick-matchup"><a href="{{ url_for('report_detail', report_id=r.pick.report_id) }}">{{ r.pick.matchup }} — {{ r.pick.selection }}</a></span>
+            <span class="muted">{{ '%+d'|format(r.pick.odds) }}</span>
+            <span class="badge-result" style="background: {{ result_color(r.pick.result) }};">{{ result_label(r.pick.result) }}</span>
+            <span class="muted small">{{ r.pick.war_room_line }}</span>
+          </li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p class="empty">No divergence yet — every selection so far is on both cards or on neither.</p>
+    {% endif %}
+  </section>
+
+  <section>
+    <h2 class="section-label">Do the grades mean anything?</h2>
+    <p class="muted small">Every graded source pick, bucketed by the model's verdict on its argument. If "edge" does not out-perform "story" over time, the reader is not adding information.</p>
+    {% if verdict_stats %}
+      <div class="table-scroll">
+        <table class="data-table">
+          <thead><tr><th>Verdict</th><th>Record</th><th>Win%</th><th>Profit</th><th>ROI</th></tr></thead>
+          <tbody>
+            {% for v in verdict_order %}{% if v in verdict_stats %}{% set st = verdict_stats[v] %}
+              <tr>
+                <td>🤖 {{ v }}</td>
+                <td>{{ st.wins }}-{{ st.losses }}{% if st.pushes %}-{{ st.pushes }}{% endif %}{% if st.pending %}<span class="muted"> (+{{ st.pending }}p)</span>{% endif %}</td>
+                <td class="muted">{% if st.win_pct is not none %}{{ '%.0f'|format(st.win_pct) }}%{% else %}—{% endif %}</td>
+                <td class="{{ 'pos' if st.profit > 0 else 'neg' if st.profit < 0 else 'muted' }}">{{ '%+.0f'|format(st.profit) }}$</td>
+                <td class="muted">{% if st.roi is not none %}{{ '%+.1f'|format(st.roi) }}%{% else %}—{% endif %}</td>
+              </tr>
+            {% endif %}{% endfor %}
+          </tbody>
+        </table>
+      </div>
+    {% else %}
+      <p class="empty">Nothing graded yet.</p>
+    {% endif %}
+  </section>
+
+  <section>
+    <h2 class="section-label">Graded arguments</h2>
+    {% if graded %}
+      <ul class="pick-list">
+        {% for p in graded %}
+          <li class="pick-row">
+            <span class="badge-source" style="background: {{ source_color(p.source) }};">{{ p.source }}</span>
+            <span class="badge-league">{{ p.league }}</span>
+            <span class="badge-ai" title="{{ p.ai_grade.model }} · {{ p.ai_grade.graded_at }}">🤖 {{ p.ai_grade.quality }}/10 {{ p.ai_grade.verdict }}</span>
+            <span class="pick-matchup"><a href="{{ url_for('report_detail', report_id=p.report_id) }}">{{ p.matchup }} — {{ p.selection }}</a></span>
+            <span class="muted">{{ '%+d'|format(p.odds) }}</span>
+            <span class="badge-result" style="background: {{ result_color(p.result) }};">{{ result_label(p.result) }}</span>
+            {% if p.game %}<span class="badge-live badge-live-{{ p.game.status }}">{{ '🏁 FINAL' if p.game.final else '🔴 LIVE' }} {{ p.game.score }}</span>{% endif %}
+            <span class="muted small">{{ p.ai_grade.reason }}</span>
+          </li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p class="empty">Nothing graded yet.</p>
+    {% endif %}
+  </section>
+{% endblock %}

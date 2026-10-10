@@ -106,7 +106,7 @@
           </div>
           <div class="leaderboard-source">
             <span class="source-dot" style="background: {{ source_color(s) }};"></span>
-            <strong>{{ s }}</strong>
+            <strong>{{ s }}</strong>{% if s == 'WR AI Test' %} <a class="small" href="{{ url_for('ai_test_page') }}">details →</a>{% endif %}
           </div>
           <div class="leaderboard-stat">
             <div class="source-stat-num">{{ st.wins }}-{{ st.losses }}{% if st.pushes %}-{{ st.pushes }}{% endif %}</div>
@@ -358,27 +358,6 @@
       {% endfor %}
     {% else %}
       <p class="empty">No picks yet.</p>
-    {% endif %}
-  </section>
-
-  <section>
-    <h2 class="section-label">War Room vs WR AI Test</h2>
-    <p class="muted small">The WR AI Test card is a duplicate of the football War Room card with one extra input: each source pick's argument, read and graded 0–10 by the model and frozen on the pick. An aligned side is vetoed when every graded argument on it reads as a story (3/10 or under), so the model can veto a story two cards agree on; the solo threshold and tie-breaks use the test score. Both records sit on the leaderboard above (gold and teal rows); the rows here are where the two cards parted ways.{% if not ai_grading_enabled %} <strong>Grading is off until ANTHROPIC_API_KEY is set on the service</strong> — until then the test card behaves exactly like the main card.{% endif %}</p>
-    {% if ai_test_rows %}
-      <ul class="pick-list">
-        {% for r in ai_test_rows %}
-          <li class="pick-row">
-            <span class="badge-source" style="background: {{ '#2dd4bf' if r.kind != 'War Room only' else '#ffffff' }};">{{ r.kind }}</span>
-            <span class="badge-league">{{ r.league }}</span>
-            <span class="pick-matchup"><a href="{{ url_for('report_detail', report_id=r.pick.report_id) }}">{{ r.pick.matchup }} — {{ r.pick.selection }}</a></span>
-            <span class="muted">{{ '%+d'|format(r.pick.odds) }}</span>
-            <span class="badge-result" style="background: {{ result_color(r.pick.result) }};">{{ result_label(r.pick.result) }}</span>
-            <span class="muted small">{{ r.pick.war_room_line }}</span>
-          </li>
-        {% endfor %}
-      </ul>
-    {% else %}
-      <p class="empty">No divergence yet — every selection so far is on both cards or on neither.</p>
     {% endif %}
   </section>
 

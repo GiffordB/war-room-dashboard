@@ -2932,8 +2932,6 @@ def dashboard():
     return render_template(
         "index.html",
         calibration=calibration,
-        ai_test_rows=ai_test_diff(data),
-        ai_grading_enabled=ai_grader.available(),
         calibration_excluded=sorted(WR_CALIBRATION_EXCLUDED_SOURCES),
         aligned=aligned,
         aligned_leans=aligned_lean_groups,
@@ -4527,6 +4525,49 @@ def _api_update_wallet_entry(entry_id, wallet_key):
 
     store.save(data, token, message=f"Update {wallet['label']} entry #{entry_id}")
     return jsonify({"id": entry_id})
+
+
+@app.route("/AI-test")
+def ai_test_page():
+    """The WR AI Test card beside the main War Room card: records, where they parted ways, and every graded argument."""
+    data = store.load_data()
+    reports = {r["id"]: r for r in data["reports"]}
+    graded = []
+    for p in data["picks"]:
+        if p.get("ai_grade"):
+            r = reports.get(p["report_id"])
+            if r:
+                graded.append({**p, "source": r["source"], "league": r["league"], "report_date": r["report_date"]})
+    graded.sort(key=lambda p: -p["id"])
+    graded = attach_game_status(graded)
+    verdict_stats = {}
+    for p in graded:
+        v = p["ai_grade"]["verdict"]
+        st = verdict_stats.setdefault(v, empty_stats(v))
+        st["staked"] += p["stake"]
+        if p["result"] == "win":
+            st["wins"] += 1; st["profit"] += p["profit_loss"]
+        elif p["result"] == "loss":
+            st["losses"] += 1; st["profit"] += p["profit_loss"]
+        elif p["result"] == "push":
+            st["pushes"] += 1
+        else:
+            st["pending"] += 1
+    verdict_stats = {v: _finalize(st) for v, st in verdict_stats.items()}
+    return render_template(
+        "ai_test.html",
+        main_stats=source_stats(data, WAR_ROOM_SOURCE),
+        test_stats=source_stats(data, WAR_ROOM_AI_TEST_SOURCE),
+        rows=ai_test_diff(data),
+        graded=graded,
+        verdict_stats=verdict_stats,
+        verdict_order=["edge", "mixed", "story"],
+        ai_grading_enabled=ai_grader.available(),
+        war_room_source=WAR_ROOM_SOURCE,
+        ai_test_source=WAR_ROOM_AI_TEST_SOURCE,
+        veto_quality=WR_AI_VETO_QUALITY,
+        ai_scale=WR_AI_SCALE,
+    )
 
 
 @app.route("/MyWallet")
