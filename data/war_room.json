@@ -35260,7 +35260,7 @@
       {
         "week_key": "2026-10-06",
         "label": "Week of Oct 6\u201312",
-        "status": "grading",
+        "status": "reviewed",
         "grades": {
           "206": {
             "quality": 2,
@@ -35311,7 +35311,12 @@
             "report_id": 40
           }
         },
-        "review": null
+        "review": {
+          "lessons": [],
+          "notes": "This week had only three graded picks: two story grades (2 and 3) both lost, and the mixed pick (4) pushed on the key number. That is consistent with the existing rules on half-point gaps inside a fair range, stale lines and inconsistent numbers, and too thin to support any new lesson. The cumulative story record (51-26-1) running well ahead of mixed is worth watching over more weeks, but one week of three picks says nothing about it.",
+          "model": "claude-opus-5-5"
+        },
+        "reviewed_at": "2026-10-10T02:40:14"
       }
     ],
     "lessons": [
