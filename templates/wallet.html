@@ -44,7 +44,7 @@
 
   <section>
     <h2 class="section-label">News Watch — Pending Bets</h2>
-    <p class="muted small">Recent headlines for both teams in each still-pending bet. ⚠️ flags injury/lineup/suspension language, ✅ flags a player/situation clearing up — both are nudges to read closer, not a verdict that it actually swings this bet. Where a bet backs one specific team, this also feeds a live-adjusted read shown on that bet below (My Bets) — the frozen "at bet" score never changes, this is a separate, always-moving number.</p>
+    <p class="muted small">Recent headlines for both teams in each still-pending bet. <span class="news-up">▲</span> means the news reads as helping your side of that game, <span class="news-down">▼</span> as hurting it (bad news about the opponent is an up arrow). ⚠️ / ✅ mark injury or clearing-up language on a bet with no single side to back, like a total. Keyword reads on the headline only — a nudge to read closer, not a verdict on how much it matters. Where a bet backs one specific team, this also feeds a live-adjusted read shown on that bet below (My Bets) — the frozen "at bet" score never changes, this is a separate, always-moving number.</p>
     {% if news_alerts %}
       <div class="locks-grid">
         {% for watch in news_alerts %}
@@ -56,7 +56,7 @@
             <ul class="news-list">
               {% for h in watch.headlines %}
                 <li class="{{ 'news-flagged' if h.sentiment == 'negative' else 'news-positive' if h.sentiment == 'positive' else '' }}">
-                  {% if h.sentiment == 'negative' %}⚠️ {% elif h.sentiment == 'positive' %}✅ {% endif -%}
+                  {% if h.effect == 'up' %}<span class="news-arrow news-up" title="Helps your bet">▲</span> {% elif h.effect == 'down' %}<span class="news-arrow news-down" title="Hurts your bet">▼</span> {% elif h.sentiment == 'negative' %}⚠️ {% elif h.sentiment == 'positive' %}✅ {% endif -%}
                   {% if h.link %}<a href="{{ h.link }}" target="_blank" rel="noopener">{{ h.headline }}</a>{% else %}{{ h.headline }}{% endif %}
                   <span class="muted small">— {{ h.team }}</span>
                 </li>
@@ -208,7 +208,7 @@
                       <span class="badge-wr-confidence wr-tip" tabindex="0" data-tip="Frozen at the moment this bet was logged — doesn't move if the pick's live WR score is later revised">{{ e.wr_confidence_at_bet | round | int }}%</span>
                     {% else %}<span class="muted">—</span>{% endif %}
                     {% if e.live_read %}
-                      <div><span class="badge-wr-confidence badge-live-read wr-tip" tabindex="0" data-tip="{{ e.live_read.text }}">Live {{ e.live_read.score | round | int }}%</span></div>
+                      <div><span class="badge-wr-confidence badge-live-read wr-tip" tabindex="0" data-tip="{{ e.live_read.text }}">{% if e.live_read.effect == 'up' %}<span class="news-up">▲</span> {% elif e.live_read.effect == 'down' %}<span class="news-down">▼</span> {% endif %}Live {{ e.live_read.score | round | int }}%</span></div>
                     {% endif %}
                   {% elif e.get('wr_confidence') is not none %}
                     <span class="badge-wr-confidence wr-tip" tabindex="0" data-tip="{{ e.wr_confidence_breakdown }}">{{ wr_confidence_label(e.wr_confidence_effective) | upper }} · {{ wr_confidence_badge_text(e.wr_confidence_effective, e.get('wr_confidence_initial'), e.league) }}</span>

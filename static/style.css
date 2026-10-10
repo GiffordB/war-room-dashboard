@@ -251,6 +251,9 @@ section { margin-bottom: 44px; }
 .news-flagged { color: var(--gold-bright); }
 .news-flagged a { color: var(--gold-bright); text-decoration-color: var(--gold); }
 .news-positive { color: var(--green); }
+.news-arrow { font-weight: 700; }
+.news-up { color: var(--green); font-weight: 700; }
+.news-down { color: var(--red); font-weight: 700; }
 .news-positive a { color: var(--green); text-decoration-color: var(--green); }
 
 /* ---------------- Vs banner ---------------- */

@@ -4023,8 +4023,21 @@ def wallet_news_alerts(entries, picks_by_id, limit_per_team=4):
                 )
         if not headlines:
             continue
+        # Sign every flagged headline for the side this wallet's bets on the
+        # game actually back: good news for our team or bad news for the
+        # opponent is "up", the reverse "down". A game where bets back both
+        # sides (or only a total) gets no arrow, just the flag.
+        backed = {_backed_team_id(pick, info) for _e, pick in entries_by_event.get(event_key, [])} - {None}
+        for h in headlines:
+            effects = set()
+            if h["sentiment"]:
+                for team_id in backed:
+                    for_us = h["team_id"] == team_id
+                    helps = (h["sentiment"] == "positive") == for_us
+                    effects.add("up" if helps else "down")
+            h["effect"] = effects.pop() if len(effects) == 1 else None
         headlines.sort(key=lambda h: h["published"] or "", reverse=True)
-        headlines.sort(key=lambda h: h["flagged"], reverse=True)
+        headlines.sort(key=lambda h: (h["effect"] is not None, h["flagged"]), reverse=True)
         watches.append({"matchup": matchup, "league": event_league, "headlines": headlines[:8]})
 
         for e, pick in entries_by_event.get(event_key, []):
@@ -4038,6 +4051,7 @@ def wallet_news_alerts(entries, picks_by_id, limit_per_team=4):
             live_reads[e["id"]] = {
                 "score": score,
                 "modifier": modifier,
+                "effect": "up" if modifier > 0 else "down" if modifier < 0 else None,
                 "text": f"At bet {e['wr_confidence_at_bet']:.0f} · News {modifier:+.0f} — {detail}",
             }
 
