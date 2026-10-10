@@ -232,6 +232,26 @@ four sources to its leagues, kind and leaderboard row; the futbol pair
 reuses the gold and purple rows with dots one shade off the football
 pair's.
 
+## The WR AI Test card
+
+"WR AI Test" is a duplicate of the football War Room card with one
+input the main card does not have: each source pick's argument, read by
+Claude (`ai_grader.py`) and graded 0-10 with a verdict (edge / mixed /
+story) and a reason, frozen on the pick as `ai_grade` the first time it
+is read (the hourly pass grades pending picks, and a newly logged pick
+is graded on the spot). The test's score is live WR + (grade - 5) x 2.
+Same alignment and solo numbers as the main card, with two frozen
+differences: an aligned side is vetoed when every graded argument on
+it reads as a story (3/10 or under), and the solo threshold and
+tie-breaks use the test score.
+Its record is its own (teal leaderboard row); the dashboard's "War Room
+vs WR AI Test" section lists every selection the two cards did not
+share. Nothing from the grade reaches the main WR rating or the main
+card: the point is to find out whether reading the argument helps, and
+only then fold the learnings into the rating. Needs `ANTHROPIC_API_KEY`
+on the service; without it no pick is graded and the test card behaves
+exactly like the main card.
+
 ## News Watch reads
 
 The wallet's News Watch pulls ESPN's latest headlines for both teams in

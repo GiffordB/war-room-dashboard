@@ -29,6 +29,7 @@ from datetime import date, datetime, timedelta
 
 from flask import Flask, g, jsonify, redirect, render_template, request, url_for
 
+import ai_grader
 import charts
 import news_reader
 import odds
@@ -88,7 +89,7 @@ CATEGORY_ORDER = list(CATEGORIES.keys())
 
 # The AI sources being compared. Order here controls display order
 # everywhere (cards, chart legends, table columns).
-SOURCES = ["Claude", "Claude - GB", "Grok - GB", "ChatGPT", "War Room", "WR Lean", "WR FUT", "WR FUT Lean"]
+SOURCES = ["Claude", "Claude - GB", "Grok - GB", "ChatGPT", "War Room", "WR Lean", "WR FUT", "WR FUT Lean", "WR AI Test"]
 
 # The dashboard's own card (see refresh_war_room_card): not a model that
 # submits reports, but a fixed selection rule run over everyone else's
@@ -105,7 +106,12 @@ WAR_ROOM_LEAN_SOURCE = "WR Lean"
 # spreads and totals and the football rule was frozen against those.
 WAR_ROOM_FUT_SOURCE = "WR FUT"
 WAR_ROOM_FUT_LEAN_SOURCE = "WR FUT Lean"
-WAR_ROOM_SOURCES = frozenset({WAR_ROOM_SOURCE, WAR_ROOM_LEAN_SOURCE, WAR_ROOM_FUT_SOURCE, WAR_ROOM_FUT_LEAN_SOURCE})
+# The AI test: a duplicate of the football War Room card whose rule also
+# reads each pick's model-graded argument (ai_grader.py). Its own record,
+# run beside the main card so the two can be compared; nothing from it
+# touches the main rating or the main card until that comparison says so.
+WAR_ROOM_AI_TEST_SOURCE = "WR AI Test"
+WAR_ROOM_SOURCES = frozenset({WAR_ROOM_SOURCE, WAR_ROOM_LEAN_SOURCE, WAR_ROOM_FUT_SOURCE, WAR_ROOM_FUT_LEAN_SOURCE, WAR_ROOM_AI_TEST_SOURCE})
 SOURCE_STYLE = {
     "Claude": {"color": "#cc785c"},
     # A genuinely different system from the CFB/NFL "Claude" above - the
@@ -129,6 +135,7 @@ SOURCE_STYLE = {
     # with dots one shade off so the two cards stay apart in a chart.
     "WR FUT": {"color": "#e2e8f0"},
     "WR FUT Lean": {"color": "#fb7185"},
+    "WR AI Test": {"color": "#2dd4bf"},
 }
 
 # War Room card selection rule - FROZEN 2026-10-09, before any result.
@@ -150,6 +157,23 @@ WAR_ROOM_STAKE = 100.0  # flat one unit on every selection
 # pre-kickoff only.
 WAR_ROOM_LEAN_MIN_ALIGNED = 2
 
+# WR AI Test rule - FROZEN 2026-10-10, before any result. Same card as
+# the main War Room (same alignment / solo numbers above) with one input
+# the main card does not have: each source pick's model-graded argument
+# (ai_grader.py, 0-10, frozen on the pick when first read). The test's
+# score = live WR + (quality - 5) * WR_AI_SCALE, so a 10 adds 10 and a
+# 0 takes 10 away. Two differences from the main card follow: an aligned
+# side is vetoed when every graded pick on it reads as a story (quality
+# at or under WR_AI_VETO_QUALITY) - the model can veto a story two cards
+# agree on, but an ungraded or middling side passes exactly as on the
+# main card, so the test isolates the model's effect - and the solo
+# threshold and every tie-break use the test score (a rigorous lone
+# argument can qualify where the checklist alone would not). A pick
+# with no grade yet scores exactly as on the main card.
+WR_AI_SCALE = 2.0
+WR_AI_VETO_QUALITY = 3
+WR_AI_GRADES_PER_PASS = 40  # model calls per hourly pass, keeps the pass bounded
+
 # Every report belongs to one league - a source writes a separate report
 # per league, even in the same week, since the slates (and the analysis
 # behind them) don't overlap. EPL/UCL share the same report template and
@@ -168,8 +192,9 @@ WAR_ROOM_TICKETS = {
     WAR_ROOM_LEAN_SOURCE: {"leagues": AMERICAN_LEAGUES, "kind": "lean", "row": "purple", "sport": "Football (CFB, NFL)"},
     WAR_ROOM_FUT_SOURCE: {"leagues": SOCCER_LEAGUES, "kind": "main", "row": "gold", "sport": "Futbol (EPL, UCL)"},
     WAR_ROOM_FUT_LEAN_SOURCE: {"leagues": SOCCER_LEAGUES, "kind": "lean", "row": "purple", "sport": "Futbol (EPL, UCL)"},
+    WAR_ROOM_AI_TEST_SOURCE: {"leagues": AMERICAN_LEAGUES, "kind": "ai", "row": "teal", "sport": "Football (CFB, NFL)"},
 }
-WAR_ROOM_MAIN_SOURCES = tuple(s for s, t in WAR_ROOM_TICKETS.items() if t["kind"] == "main")
+WAR_ROOM_MAIN_SOURCES = tuple(s for s, t in WAR_ROOM_TICKETS.items() if t["kind"] in ("main", "ai"))
 WAR_ROOM_LEAN_SOURCES = tuple(s for s, t in WAR_ROOM_TICKETS.items() if t["kind"] == "lean")
 
 # Combined filters on top of the individual leagues above - "All
@@ -1704,8 +1729,19 @@ def _lean_ticket_philosophy(sport):
     )
 
 
+def _ai_ticket_philosophy(sport):
+    return (
+        _main_ticket_philosophy(sport)
+        + f" THE TEST: this duplicate of the War Room card also reads each source pick's argument with a model (0-10 grade, "
+        f"frozen on the pick when first read) and scores it as live WR + (grade - 5) x {WR_AI_SCALE:g}. An aligned side is "
+        f"vetoed when every graded argument on it reads as a story (grade {WR_AI_VETO_QUALITY} or under), so the model can veto a "
+        f"story two cards agree on; the solo threshold and tie-breaks use the test score. Nothing here feeds the main rating or the main card - "
+        f"the two records run side by side until this one proves it helps."
+    )
+
+
 WAR_ROOM_PHILOSOPHY = {
-    src: (_main_ticket_philosophy if t["kind"] == "main" else _lean_ticket_philosophy)(t["sport"])
+    src: {"main": _main_ticket_philosophy, "lean": _lean_ticket_philosophy, "ai": _ai_ticket_philosophy}[t["kind"]](t["sport"])
     for src, t in WAR_ROOM_TICKETS.items()
 }
 WAR_ROOM_LABEL = {
@@ -1713,7 +1749,66 @@ WAR_ROOM_LABEL = {
     WAR_ROOM_LEAN_SOURCE: "War Room Lean Ticket",
     WAR_ROOM_FUT_SOURCE: "War Room Futbol Card",
     WAR_ROOM_FUT_LEAN_SOURCE: "War Room Futbol Lean Ticket",
+    WAR_ROOM_AI_TEST_SOURCE: "War Room AI Test Card",
 }
+
+
+def ai_adjusted_score(score, pick):
+    """The WR AI Test's score for a pick: live WR shifted by its frozen model grade; unchanged when no grade exists."""
+    grade = (pick or {}).get("ai_grade")
+    if not grade or score is None:
+        return score
+    return _clamp(score + (grade["quality"] - 5) * WR_AI_SCALE, 0, 100)
+
+
+def grade_pick_arguments(data, picks=None, limit=WR_AI_GRADES_PER_PASS):
+    """
+    Read the argument behind every still-pending, ESPN-linked source
+    pick that has no `ai_grade` yet (or just `picks`) and freeze the
+    grade on it. Bounded to `limit` model calls, newest picks first.
+    Returns how many picks were graded. No-op without the model.
+    """
+    if not ai_grader.available():
+        return 0
+    reports = {r["id"]: r for r in data["reports"]}
+    todo = []
+    for p in (picks if picks is not None else sorted(data["picks"], key=lambda p: -p["id"])):
+        r = reports.get(p["report_id"])
+        if not r or r["source"] in WAR_ROOM_SOURCES or p.get("ai_grade") or p["result"] != "pending" or not p.get("espn_event_id") or p.get("parlay_leg_pick_ids"):
+            continue
+        todo.append((p, r))
+        if len(todo) >= limit:
+            break
+    if not todo:
+        return 0
+    by_id = {p["id"]: (p, r) for p, r in todo}
+    results = _parallel_map(lambda pid: ai_grader.grade_pick_argument(*by_id[pid]), list(by_id), max_workers=4)
+    graded = 0
+    for pid, grade in results.items():
+        if grade:
+            by_id[pid][0]["ai_grade"] = {**grade, "graded_at": datetime.utcnow().isoformat(timespec="seconds")}
+            graded += 1
+    return graded
+
+
+def ai_test_diff(data):
+    """Where the WR AI Test card and the main War Room card parted ways: selections one made that the other did not, newest first."""
+    reports = {r["id"]: r for r in data["reports"]}
+    by_source = {WAR_ROOM_SOURCE: {}, WAR_ROOM_AI_TEST_SOURCE: {}}
+    for p in data["picks"]:
+        src = reports.get(p["report_id"], {}).get("source")
+        if src in by_source and p.get("espn_event_id"):
+            by_source[src][(p["espn_event_id"], p["bet_type"])] = p
+    rows = []
+    for src, other, label in ((WAR_ROOM_AI_TEST_SOURCE, WAR_ROOM_SOURCE, "AI Test only"), (WAR_ROOM_SOURCE, WAR_ROOM_AI_TEST_SOURCE, "War Room only")):
+        for key, p in by_source[src].items():
+            o = by_source[other].get(key)
+            if o is None:
+                rows.append({"kind": label, "pick": p, "league": reports[p["report_id"]]["league"]})
+            elif o.get("bet_side") != p.get("bet_side") and src == WAR_ROOM_AI_TEST_SOURCE:
+                rows.append({"kind": "Opposite sides", "pick": p, "other": o, "league": reports[p["report_id"]]["league"]})
+    rows.sort(key=lambda r: -r["pick"]["id"])
+    return rows
 
 
 def _war_room_report_for(data, league, report_date, source=WAR_ROOM_SOURCE):
@@ -1759,6 +1854,10 @@ def refresh_war_room_card(data, only_event=None, source=WAR_ROOM_SOURCE):
     if not groups:
         return 0
     scores = _live_scores(data)
+    is_ai = WAR_ROOM_TICKETS[source]["kind"] == "ai"
+    if is_ai:
+        picks_by_id = {p["id"]: p for p in data["picks"]}
+        scores = {pid: ai_adjusted_score(sc, picks_by_id.get(pid)) for pid, sc in scores.items()}
     reports = {r["id"]: r for r in data["reports"]}
     taken = {
         (p["espn_event_id"], p["bet_type"])
@@ -1774,7 +1873,12 @@ def refresh_war_room_card(data, only_event=None, source=WAR_ROOM_SOURCE):
             continue
         best = max(by_source.values(), key=lambda e: scores.get(e["pick"]["id"]) or 0)
         best_wr = scores.get(best["pick"]["id"]) or 0
-        if len(by_source) >= WAR_ROOM_MIN_ALIGNED or best_wr >= WAR_ROOM_SOLO_WR:
+        aligned_ok = len(by_source) >= WAR_ROOM_MIN_ALIGNED
+        if aligned_ok and is_ai:
+            grades = [e["pick"]["ai_grade"]["quality"] for e in by_source.values() if e["pick"].get("ai_grade")]
+            if grades and max(grades) <= WR_AI_VETO_QUALITY:
+                aligned_ok = False  # every graded argument on this side is a story: vetoed
+        if aligned_ok or best_wr >= WAR_ROOM_SOLO_WR:
             by_market.setdefault((event, bet_type), []).append(
                 {"side": side, "by_source": by_source, "best": best, "best_wr": best_wr, "n": len(by_source)}
             )
@@ -1793,12 +1897,19 @@ def refresh_war_room_card(data, only_event=None, source=WAR_ROOM_SOURCE):
             continue
         report = _war_room_report_for(data, src_report["league"], src_report["report_date"], source=source)
         sources = [s for s in SOURCES if s in choice["by_source"]]
+        score_name = "test score" if is_ai else "live WR"
         rule = (
-            f"{choice['n']} sources aligned on this side" if choice["n"] >= WAR_ROOM_MIN_ALIGNED
-            else f"single pick at live WR {choice['best_wr']:.0f} (floor {WAR_ROOM_SOLO_WR})"
+            f"{choice['n']} sources aligned on this side" + (f", not vetoed (best AI grade above {WR_AI_VETO_QUALITY})" if is_ai else "")
+            if choice["n"] >= WAR_ROOM_MIN_ALIGNED
+            else f"single pick at {score_name} {choice['best_wr']:.0f} (floor {WAR_ROOM_SOLO_WR})"
         )
+
+        def _grade_text(pk):
+            g = pk.get("ai_grade")
+            return f", AI grade {g['quality']}/10 {g['verdict']}" if (is_ai and g) else (", no AI grade yet" if is_ai else "")
+
         lines = "; ".join(
-            f"{s}: {choice['by_source'][s]['pick']['selection']} ({choice['by_source'][s]['pick']['odds']:+d}), WR {scores.get(choice['by_source'][s]['pick']['id']) or 0:.0f}"
+            f"{s}: {choice['by_source'][s]['pick']['selection']} ({choice['by_source'][s]['pick']['odds']:+d}), {score_name} {scores.get(choice['by_source'][s]['pick']['id']) or 0:.0f}{_grade_text(choice['by_source'][s]['pick'])}"
             for s in sources
         )
         new_pick = {
@@ -2821,6 +2932,8 @@ def dashboard():
     return render_template(
         "index.html",
         calibration=calibration,
+        ai_test_rows=ai_test_diff(data),
+        ai_grading_enabled=ai_grader.available(),
         calibration_excluded=sorted(WR_CALIBRATION_EXCLUDED_SOURCES),
         aligned=aligned,
         aligned_leans=aligned_lean_groups,
@@ -3169,6 +3282,10 @@ def create_pick(report_id, fields):
         )
         new_pick["wr_confidence_initial"] = initial_score
         if source not in WAR_ROOM_SOURCES and new_pick.get("espn_event_id"):
+            try:
+                grade_pick_arguments(data, picks=[new_pick])
+            except Exception:
+                app.logger.exception("ai grade on create failed")
             _safe_refresh_war_room_card(data, only_event=new_pick["espn_event_id"])
             _safe_refresh_war_room_lean_card(data, only_events={new_pick["espn_event_id"]})
         return new_pick["id"]
@@ -3249,8 +3366,13 @@ def auto_grade_all():
     synced = sync_wallet_entries(data)
     captured = _safe_capture_pregame_lines(data)
     backfilled = backfill_final_scores(data)
+    try:
+        ai_graded = grade_pick_arguments(data)
+    except Exception:
+        app.logger.exception("ai grading pass failed")
+        ai_graded = 0
     selected = _safe_refresh_war_room_card(data) + _safe_refresh_war_room_lean_card(data)
-    if graded or synced or captured or backfilled or selected:
+    if graded or synced or captured or backfilled or selected or ai_graded:
         message = f"Auto-grade all reports: {graded} pick(s) settled, {synced} wallet entr{'y' if synced == 1 else 'ies'} synced"
         if captured:
             message += f", {captured} line{'s' if captured != 1 else ''} captured"
@@ -3258,6 +3380,8 @@ def auto_grade_all():
             message += f", {backfilled} final score{'s' if backfilled != 1 else ''} stored"
         if selected:
             message += f", {selected} War Room selection{'s' if selected != 1 else ''}"
+        if ai_graded:
+            message += f", {ai_graded} argument{'s' if ai_graded != 1 else ''} AI-graded"
         store.save(data, token, message=message)
     return redirect(url_for("reports_list", graded=graded, still_pending=still_pending))
 
