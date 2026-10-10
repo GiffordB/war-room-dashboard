@@ -30,7 +30,7 @@ _SCHEMA = {
                 "properties": {
                     "index": {"type": "integer"},
                     "favors": {"type": "string", "enum": ["home", "away", "neither"]},
-                    "severity": {"type": "integer", "minimum": 0, "maximum": 3},
+                    "severity": {"type": "integer", "description": "0-3"},
                     "reason": {"type": "string"},
                 },
                 "required": ["index", "favors", "severity", "reason"],
@@ -106,5 +106,5 @@ def read_game_news(league, home_name, away_name, kickoff, headlines):
     for r in reads:
         i = r.get("index")
         if isinstance(i, int) and 0 <= i < len(headlines) and i not in out:
-            out[i] = {"favors": r.get("favors", "neither"), "severity": int(r.get("severity") or 0), "reason": (r.get("reason") or "").strip()}
+            out[i] = {"favors": r.get("favors", "neither"), "severity": max(0, min(3, int(r.get("severity") or 0))), "reason": (r.get("reason") or "").strip()}
     return out if len(out) == len(headlines) else None

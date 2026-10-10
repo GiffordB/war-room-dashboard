@@ -27,7 +27,7 @@ LAST_ERROR = None  # repr of the most recent failure, for /api/ai_status
 _SCHEMA = {
     "type": "object",
     "properties": {
-        "quality": {"type": "integer", "minimum": 0, "maximum": 10},
+        "quality": {"type": "integer", "description": "0-10"},
         "verdict": {"type": "string", "enum": ["edge", "mixed", "story"]},
         "reason": {"type": "string"},
     },
@@ -98,7 +98,7 @@ def grade_pick_argument(pick, report):
         if not text:
             return None
         out = json.loads(text)
-        return {"quality": int(out["quality"]), "verdict": out["verdict"], "reason": (out.get("reason") or "").strip(), "model": response.model}
+        return {"quality": max(0, min(10, int(out["quality"]))), "verdict": out["verdict"], "reason": (out.get("reason") or "").strip(), "model": response.model}
     except Exception as e:
         global LAST_ERROR
         LAST_ERROR = repr(e)[:600]
