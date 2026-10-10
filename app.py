@@ -1787,13 +1787,125 @@ def grade_pick_arguments(data, picks=None, limit=WR_AI_GRADES_PER_PASS):
     if not todo:
         return 0
     by_id = {p["id"]: (p, r) for p, r in todo}
-    results = _parallel_map(lambda pid: ai_grader.grade_pick_argument(*by_id[pid]), list(by_id), max_workers=4)
+    lessons = _ai_lessons(data)
+    results = _parallel_map(lambda pid: ai_grader.grade_pick_argument(*by_id[pid], lessons=lessons), list(by_id), max_workers=4)
     graded = 0
     for pid, grade in results.items():
         if grade:
-            by_id[pid][0]["ai_grade"] = {**grade, "graded_at": datetime.utcnow().isoformat(timespec="seconds")}
+            by_id[pid][0]["ai_grade"] = {**grade, "graded_at": datetime.utcnow().isoformat(timespec="seconds"), "rubric_version": len(lessons)}
             graded += 1
     return graded
+
+
+def _ai_lessons(data):
+    """The rubric additions the walk-forward review has learned so far (see ai_backtest_step), oldest first."""
+    return [l["text"] for l in data.get("ai_backtest", {}).get("lessons", [])]
+
+
+def _backtest_pick_rows(data):
+    """Every settled, non-parlay source pick with its week bucket, oldest week first - the walk-forward's material."""
+    reports = {r["id"]: r for r in data["reports"]}
+    rows = []
+    for p in data["picks"]:
+        r = reports.get(p["report_id"])
+        if not r or r["source"] in WAR_ROOM_SOURCES or p.get("parlay_leg_pick_ids") or p["result"] not in ("win", "loss", "push"):
+            continue
+        rows.append((week_bucket_start(r["report_date"]), p, r))
+    rows.sort(key=lambda t: (t[0], t[1]["id"]))
+    return rows
+
+
+def _verdict_cumulative(bt):
+    cum = {}
+    for w in bt["weeks"]:
+        if w["status"] != "reviewed":
+            continue
+        for g in w["grades"].values():
+            c = cum.setdefault(g["verdict"], {"wins": 0, "losses": 0, "pushes": 0, "profit": 0.0})
+            c["wins" if g["result"] == "win" else "losses" if g["result"] == "loss" else "pushes"] += 1
+            c["profit"] += g["profit"]
+    return cum
+
+
+def ai_backtest_step(data, max_grades=12):
+    """
+    One step of the walk-forward: grade up to `max_grades` not-yet-graded
+    settled picks of the earliest unfinished week, blind to results,
+    with the lessons learned from the weeks before it; when a week is
+    fully graded, review its grades against its results, add the
+    lessons the review returns, and move to the next week. State lives
+    in data["ai_backtest"]. Returns a progress dict.
+    """
+    bt = data.setdefault("ai_backtest", {"weeks": [], "lessons": [], "started_at": datetime.utcnow().isoformat(timespec="seconds")})
+    rows = _backtest_pick_rows(data)
+    week_keys = sorted({wk for wk, _p, _r in rows})
+    by_week = {wk: [] for wk in week_keys}
+    for wk, p, r in rows:
+        by_week[wk].append((p, r))
+    weeks = {w["week_key"]: w for w in bt["weeks"]}
+    for wk in week_keys:
+        if wk not in weeks:
+            w = {"week_key": wk, "label": f"Week of {week_bucket_label(wk)}", "status": "grading", "grades": {}, "review": None}
+            bt["weeks"].append(w); weeks[wk] = w
+    bt["weeks"].sort(key=lambda w: w["week_key"])
+    lessons = _ai_lessons(data)
+    for wk in week_keys:
+        w = weeks[wk]
+        if w["status"] == "reviewed":
+            continue
+        todo = [(p, r) for p, r in by_week[wk] if str(p["id"]) not in w["grades"]][:max_grades]
+        if todo:
+            by_id = {p["id"]: (p, r) for p, r in todo}
+            results = _parallel_map(lambda pid: ai_grader.grade_pick_argument(*by_id[pid], lessons=lessons), list(by_id), max_workers=6)
+            graded = 0
+            for pid, grade in results.items():
+                if grade:
+                    p, r = by_id[pid]
+                    w["grades"][str(pid)] = {
+                        **grade, "rubric_version": len(lessons), "source": r["source"], "league": r["league"], "selection": p["selection"],
+                        "matchup": p["matchup"], "odds": p["odds"], "stake": p["stake"], "result": p["result"], "profit": p["profit_loss"], "report_id": r["id"],
+                    }
+                    graded += 1
+            remaining = len([1 for p, _r in by_week[wk] if str(p["id"]) not in w["grades"]])
+            return {"week": w["label"], "action": "graded", "graded_now": graded, "remaining_in_week": remaining, "failed_now": len(todo) - graded}
+        # week fully graded: review it against results
+        review_rows = list(w["grades"].values())
+        review = ai_grader.review_week(w["label"], review_rows, _verdict_cumulative(bt), lessons)
+        if review is None:
+            return {"week": w["label"], "action": "review_failed", "error": ai_grader.LAST_ERROR}
+        w["review"] = review
+        w["status"] = "reviewed"
+        w["reviewed_at"] = datetime.utcnow().isoformat(timespec="seconds")
+        for text in review["lessons"]:
+            bt["lessons"].append({"week_key": wk, "text": text})
+        return {"week": w["label"], "action": "reviewed", "new_lessons": review["lessons"], "lessons_total": len(bt["lessons"])}
+    return {"action": "done", "weeks": len(bt["weeks"]), "lessons_total": len(bt["lessons"])}
+
+
+def ai_regrade_pending(data):
+    """Re-grade every pending source pick with the lessons now in force, keeping the first grade as `ai_grade_initial`. Returns how many were regraded."""
+    reports = {r["id"]: r for r in data["reports"]}
+    lessons = _ai_lessons(data)
+    todo = {}
+    for p in data["picks"]:
+        r = reports.get(p["report_id"])
+        if not r or r["source"] in WAR_ROOM_SOURCES or p["result"] != "pending" or p.get("parlay_leg_pick_ids"):
+            continue
+        if p.get("ai_grade") and p["ai_grade"].get("rubric_version") == len(lessons):
+            continue
+        todo[p["id"]] = (p, r)
+    if not todo:
+        return 0
+    results = _parallel_map(lambda pid: ai_grader.grade_pick_argument(*todo[pid], lessons=lessons), list(todo), max_workers=6)
+    n = 0
+    for pid, grade in results.items():
+        if grade:
+            p = todo[pid][0]
+            if p.get("ai_grade") and "ai_grade_initial" not in p:
+                p["ai_grade_initial"] = p["ai_grade"]
+            p["ai_grade"] = {**grade, "graded_at": datetime.utcnow().isoformat(timespec="seconds"), "rubric_version": len(lessons)}
+            n += 1
+    return n
 
 
 def ai_test_diff(data):
@@ -4532,6 +4644,38 @@ def _api_update_wallet_entry(entry_id, wallet_key):
     return jsonify({"id": entry_id})
 
 
+@app.route("/api/ai_backtest", methods=["GET"])
+def api_ai_backtest():
+    data = store.load_data()
+    bt = data.get("ai_backtest") or {"weeks": [], "lessons": []}
+    return jsonify({"lessons": bt.get("lessons", []), "weeks": [{"week_key": w["week_key"], "status": w["status"], "graded": len(w["grades"]), "review": w.get("review")} for w in bt.get("weeks", [])]})
+
+
+@app.route("/api/ai_backtest/step", methods=["POST"])
+def api_ai_backtest_step():
+    """One walk-forward step (see ai_backtest_step); call repeatedly until it reports done."""
+    if not ai_grader.available():
+        return jsonify({"error": "ANTHROPIC_API_KEY not set"}), 400
+    max_grades = int(request.args.get("max", 12))
+    data, token = store.load_for_update()
+    progress = ai_backtest_step(data, max_grades=max_grades)
+    if progress.get("action") in ("graded", "reviewed"):
+        store.save(data, token, message=f"AI test walk-forward: {progress['action']} {progress['week']}")
+    return jsonify(progress)
+
+
+@app.route("/api/ai_backtest/regrade", methods=["POST"])
+def api_ai_backtest_regrade():
+    """Re-grade the current week's pending picks with every lesson learned so far."""
+    if not ai_grader.available():
+        return jsonify({"error": "ANTHROPIC_API_KEY not set"}), 400
+    data, token = store.load_for_update()
+    n = ai_regrade_pending(data)
+    if n:
+        store.save(data, token, message=f"AI test: re-graded {n} pending pick(s) with the learned rubric")
+    return jsonify({"regraded": n, "lessons_in_force": len(_ai_lessons(data))})
+
+
 @app.route("/api/ai_status")
 def api_ai_status():
     """Is the model reader working on this service? With ?probe=1, grades the newest pending source pick once (not saved) and returns the result or the error."""
@@ -4587,7 +4731,29 @@ def ai_test_page():
         ai_test_source=WAR_ROOM_AI_TEST_SOURCE,
         veto_quality=WR_AI_VETO_QUALITY,
         ai_scale=WR_AI_SCALE,
+        backtest=_backtest_view(data),
     )
+
+
+def _backtest_view(data):
+    """The walk-forward's weeks with per-verdict records, plus the lessons in force, for the /AI-test page."""
+    bt = data.get("ai_backtest")
+    if not bt:
+        return None
+    weeks = []
+    for w in bt["weeks"]:
+        by_v = {}
+        for g in w["grades"].values():
+            st = by_v.setdefault(g["verdict"], empty_stats(g["verdict"]))
+            st["staked"] += g["stake"]
+            if g["result"] == "win":
+                st["wins"] += 1; st["profit"] += g["profit"]
+            elif g["result"] == "loss":
+                st["losses"] += 1; st["profit"] += g["profit"]
+            else:
+                st["pushes"] += 1
+        weeks.append({**w, "by_verdict": {v: _finalize(st) for v, st in by_v.items()}, "n": len(w["grades"])})
+    return {"weeks": weeks, "lessons": bt["lessons"]}
 
 
 @app.route("/MyWallet")

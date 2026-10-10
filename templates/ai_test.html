@@ -78,6 +78,38 @@
   </section>
 
   <section>
+    <h2 class="section-label">Walk-forward: grade a week blind, see the results, learn, repeat</h2>
+    <p class="muted small">Every settled pick was graded week by week with results hidden, then each week's grades were reviewed against what actually happened and the rubric picked up lessons before the next week was graded. The current week's pending picks are graded with every lesson in force.</p>
+    {% if backtest %}
+      <div class="table-scroll">
+        <table class="data-table">
+          <thead><tr><th>Week</th><th>Graded</th><th>🤖 edge</th><th>🤖 mixed</th><th>🤖 story</th><th>Review</th></tr></thead>
+          <tbody>
+            {% for w in backtest.weeks %}
+              <tr>
+                <td>{{ w.label }} <span class="muted small">(rubric v{{ (w.grades.values()|list|first).rubric_version if w.grades else '—' }})</span></td>
+                <td>{{ w.n }}{% if w.status != 'reviewed' %} <span class="muted small">grading…</span>{% endif %}</td>
+                {% for v in verdict_order %}
+                  <td>{% if v in w.by_verdict %}{% set st = w.by_verdict[v] %}{{ st.wins }}-{{ st.losses }}{% if st.pushes %}-{{ st.pushes }}{% endif %} <span class="{{ 'pos' if st.profit > 0 else 'neg' if st.profit < 0 else 'muted' }}">{{ '%+.0f'|format(st.profit) }}$</span>{% else %}<span class="muted">—</span>{% endif %}</td>
+                {% endfor %}
+                <td class="small">{% if w.review %}{{ w.review.notes }}{% if w.review.lessons %}<ul class="small">{% for l in w.review.lessons %}<li>{{ l }}</li>{% endfor %}</ul>{% endif %}{% else %}<span class="muted">—</span>{% endif %}</td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      <h3 class="section-label" style="margin-top: 16px;">Lessons in force ({{ backtest.lessons|length }})</h3>
+      {% if backtest.lessons %}
+        <ol class="small">{% for l in backtest.lessons %}<li>{{ l.text }} <span class="muted">— learned from the week of {{ l.week_key }}</span></li>{% endfor %}</ol>
+      {% else %}
+        <p class="empty">No lessons yet — the reviews found nothing worth changing.</p>
+      {% endif %}
+    {% else %}
+      <p class="empty">Not run yet.</p>
+    {% endif %}
+  </section>
+
+  <section>
     <h2 class="section-label">Graded arguments</h2>
     {% if graded %}
       <ul class="pick-list">
@@ -85,7 +117,7 @@
           <li class="pick-row">
             <span class="badge-source" style="background: {{ source_color(p.source) }};">{{ p.source }}</span>
             <span class="badge-league">{{ p.league }}</span>
-            <span class="badge-ai" title="{{ p.ai_grade.model }} · {{ p.ai_grade.graded_at }}">🤖 {{ p.ai_grade.quality }}/10 {{ p.ai_grade.verdict }}</span>
+            <span class="badge-ai" title="{{ p.ai_grade.model }} · {{ p.ai_grade.graded_at }} · rubric v{{ p.ai_grade.rubric_version or 0 }}">🤖 {{ p.ai_grade.quality }}/10 {{ p.ai_grade.verdict }}</span>{% if p.ai_grade_initial %}<span class="muted small" title="{{ p.ai_grade_initial.reason }}">was {{ p.ai_grade_initial.quality }}/10 {{ p.ai_grade_initial.verdict }}</span>{% endif %}
             <span class="pick-matchup"><a href="{{ url_for('report_detail', report_id=p.report_id) }}">{{ p.matchup }} — {{ p.selection }}</a></span>
             <span class="muted">{{ '%+d'|format(p.odds) }}</span>
             <span class="badge-result" style="background: {{ result_color(p.result) }};">{{ result_label(p.result) }}</span>

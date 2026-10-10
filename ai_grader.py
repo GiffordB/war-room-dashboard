@@ -58,8 +58,18 @@ def _clip(text, n):
     return text if len(text) <= n else text[:n] + " [...]"
 
 
-def grade_pick_argument(pick, report):
-    """{"quality": 0-10, "verdict": str, "reason": str, "model": MODEL} or None when unavailable or the call fails."""
+def _system_with_lessons(lessons):
+    if not lessons:
+        return _SYSTEM
+    body = "\n".join(f"- {l}" for l in lessons)
+    return _SYSTEM + (
+        "\n\nLESSONS FROM REVIEWED WEEKS (learned by comparing earlier grades with the results that followed; apply them "
+        "when they fit the argument in front of you, and do not let them override the evidence that is actually written):\n" + body
+    )
+
+
+def grade_pick_argument(pick, report, lessons=None):
+    """{"quality": 0-10, "verdict": str, "reason": str, "model": MODEL} or None when unavailable or the call fails. `lessons` is the list of rubric additions learned so far (see review_week)."""
     if not available():
         return None
     try:
@@ -89,7 +99,7 @@ def grade_pick_argument(pick, report):
             betas=["server-side-fallback-2026-07-01"],
             fallbacks="default",
             output_config={"effort": "low", "format": {"type": "json_schema", "schema": _SCHEMA}},
-            system=_SYSTEM,
+            system=_system_with_lessons(lessons),
             messages=[{"role": "user", "content": prompt}],
         )
         if response.stop_reason == "refusal":
@@ -99,6 +109,82 @@ def grade_pick_argument(pick, report):
             return None
         out = json.loads(text)
         return {"quality": max(0, min(10, int(out["quality"]))), "verdict": out["verdict"], "reason": (out.get("reason") or "").strip(), "model": response.model}
+    except Exception as e:
+        global LAST_ERROR
+        LAST_ERROR = repr(e)[:600]
+        return None
+
+
+_REVIEW_SCHEMA = {
+    "type": "object",
+    "properties": {
+        "lessons": {"type": "array", "items": {"type": "string"}},
+        "notes": {"type": "string"},
+    },
+    "required": ["lessons", "notes"],
+    "additionalProperties": False,
+}
+
+_REVIEW_SYSTEM = (
+    "You are reviewing your own earlier grades of betting arguments now that the results are in. You graded each "
+    "argument 0-10 (edge 6+, mixed 4-5, story 0-3) before kickoff; you are shown the grade, the reason you gave, and "
+    "what happened. Your job is to improve the grading rubric for the NEXT week, not to explain the results. Betting "
+    "outcomes are noisy: one week is a small sample and a 52% bettor loses often, so only write a lesson when a "
+    "pattern is clear across several picks AND it is about how the ARGUMENT was written (what you over- or "
+    "under-weighted), never about teams, leagues or luck. Lessons must be short, general, actionable rules a grader "
+    "can apply to a new argument blind, e.g. 'An author's own model number that disagrees with the market by less "
+    "than a point is not an edge; grade it mixed at best.' Return at most 3 new lessons, fewer or none when the "
+    "evidence is thin, and do not repeat lessons already in force. notes: two or three sentences on what this week "
+    "showed, including when it showed nothing."
+)
+
+
+def review_week(week_label, rows, cumulative, lessons_in_force):
+    """
+    rows: [{source, league, selection, odds, stake, quality, verdict, reason, result, profit}] for one settled week.
+    cumulative: {verdict: {wins, losses, pushes, profit}} across every reviewed week so far.
+    Returns {"lessons": [str], "notes": str, "model": str} or None.
+    """
+    if not available() or not rows:
+        return None
+    try:
+        import anthropic
+    except ImportError:
+        return None
+    lines = [
+        f"[{r['source']} {r['league']}] {r['selection']} ({r['odds']:+d}, ${r['stake']:.0f}) graded {r['quality']}/10 {r['verdict']} -- "
+        f"'{r['reason']}' -> RESULT {r['result'].upper()} ({r['profit']:+.0f}$)"
+        for r in rows
+    ]
+    cum = "; ".join(
+        f"{v}: {c['wins']}-{c['losses']}" + (f"-{c['pushes']}" if c.get("pushes") else "") + f", {c['profit']:+.0f}$"
+        for v, c in cumulative.items()
+    ) or "none yet"
+    in_force = "\n".join(f"- {l}" for l in lessons_in_force) or "(none)"
+    prompt = (
+        f"Week: {week_label}. {len(rows)} graded arguments with results.\n\n" + "\n".join(lines)
+        + f"\n\nCumulative record by verdict over every reviewed week so far: {cum}."
+        + f"\n\nLessons already in force:\n{in_force}\n\nWhat, if anything, should change in how arguments are graded next week?"
+    )
+    try:
+        client = anthropic.Anthropic(max_retries=1, timeout=90.0)
+        response = client.beta.messages.create(
+            model=MODEL,
+            max_tokens=2000,
+            betas=["server-side-fallback-2026-07-01"],
+            fallbacks="default",
+            output_config={"effort": "medium", "format": {"type": "json_schema", "schema": _REVIEW_SCHEMA}},
+            system=_REVIEW_SYSTEM,
+            messages=[{"role": "user", "content": prompt}],
+        )
+        if response.stop_reason == "refusal":
+            return None
+        text = next((b.text for b in response.content if b.type == "text"), None)
+        if not text:
+            return None
+        out = json.loads(text)
+        lessons = [l.strip() for l in (out.get("lessons") or []) if l and l.strip()][:3]
+        return {"lessons": lessons, "notes": (out.get("notes") or "").strip(), "model": response.model}
     except Exception as e:
         global LAST_ERROR
         LAST_ERROR = repr(e)[:600]
