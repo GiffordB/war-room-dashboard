@@ -11625,7 +11625,15 @@
       "away_team": null,
       "created_at": "2026-09-27T16:15:40",
       "id": 178,
-      "wr_confidence_initial": null
+      "wr_confidence_initial": null,
+      "ai_grade": {
+        "quality": 2,
+        "verdict": "story",
+        "reason": "A recreational three-leg parlay with no fair probabilities or edge per leg, availability that is provisional and unsourced, and the author's own admission that the legs are not standalone picks.",
+        "model": "claude-opus-5-5",
+        "graded_at": "2026-10-10T02:40:38",
+        "rubric_version": 5
+      }
     },
     {
       "parlay_leg_pick_ids": null,
@@ -14479,6 +14487,14 @@
       "wr_confidence_initial": 54.965840938722295,
       "wr_confidence_kickoff": 54.06792452830189,
       "ai_grade": {
+        "quality": 2,
+        "verdict": "story",
+        "reason": "The +3.5 sits inside the author's own judgment-only fair range (A&M -1 to MIZ -4.5), the number has already moved to -115, and the author's own discipline says pass at $0, so the $50 best-bet label contradicts its own conclusion.",
+        "model": "claude-opus-5-5",
+        "graded_at": "2026-10-10T02:40:38",
+        "rubric_version": 5
+      },
+      "ai_grade_initial": {
         "quality": 3,
         "verdict": "story",
         "reason": "The bet is listed as a $50 best bet while the author's own discipline says pass at $0, the fair number is an unvalidated post-market judgment whose range contains the line, and the price has worsened to -115, so the argument contradicts itself and rests on narrative about Reed's mobility.",
@@ -14584,6 +14600,14 @@
       "ai_grade": {
         "quality": 2,
         "verdict": "story",
+        "reason": "The author's own fair line of Indiana -6.5 (range -4.5 to -9) puts +7.5 inside the range, these are admitted unvalidated judgment estimates, the author passes at $0 with a +10 trigger, and the stated edge rests on home field and narrative, so it contradicts the $50 best-bet label.",
+        "model": "claude-opus-5-5",
+        "graded_at": "2026-10-10T02:40:38",
+        "rubric_version": 5
+      },
+      "ai_grade_initial": {
+        "quality": 2,
+        "verdict": "story",
         "reason": "The author's own price discipline says pass with $0 at +7.5 and wants +10, yet the bet is logged as a $50 best bet off a 1-point unvalidated fair-number gap with weather already priced in, so it contradicts itself.",
         "model": "claude-opus-5-5",
         "graded_at": "2026-10-10T02:07:45"
@@ -14687,6 +14711,14 @@
       "ai_grade": {
         "quality": 2,
         "verdict": "story",
+        "reason": "The fair line of -9 sits only half a point off the -8.5 market and well inside the author's own -5 to -13 range, the judgment was formed after seeing prices, and the author's pass at $0 with a -4.5 re-entry contradicts the $25 best-bet label.",
+        "model": "claude-opus-5-5",
+        "graded_at": "2026-10-10T02:40:38",
+        "rubric_version": 5
+      },
+      "ai_grade_initial": {
+        "quality": 2,
+        "verdict": "story",
         "reason": "The bet contradicts itself: it is logged at $25 as a best bet while the author's own rule says pass at $0, and the fair line of -9 against the posted -8.5 is a negligible, admittedly post-hoc gap that sits inside a wide range, backed by unsourced availability claims.",
         "model": "claude-opus-5-5",
         "graded_at": "2026-10-10T02:07:45"
@@ -14788,6 +14820,14 @@
       "wr_confidence_initial": 59.08292046936115,
       "wr_confidence_kickoff": 63.141132075471695,
       "ai_grade": {
+        "quality": 2,
+        "verdict": "story",
+        "reason": "The fair line of Alabama -2 sits only half a point from the market at -1.5 and well inside the author's own wide range (Georgia -2 to Alabama -5), and the author passes at $0 while the bet is labelled best_bet with a $25 stake, so the pick contradicts its own analysis and shows no real edge.",
+        "model": "claude-opus-5-5",
+        "graded_at": "2026-10-10T02:40:38",
+        "rubric_version": 5
+      },
+      "ai_grade_initial": {
         "quality": 2,
         "verdict": "story",
         "reason": "The author's own analysis says pass at $0, with fair Alabama -2 versus -1.5, a half-point gap inside a wide self-admitted unvalidated range, yet it is logged as a $25 best bet that contradicts its own price discipline.",
@@ -15095,6 +15135,14 @@
       "ai_grade": {
         "quality": 3,
         "verdict": "story",
+        "reason": "The one-point stale gap against Pinnacle (+6 vs +5) crosses no key number, the price is assumed rather than printed, and the author's own model makes SJSU a 7.6-point favorite, so the reasoning contradicts the side and leaves almost no edge.",
+        "model": "claude-opus-5-5",
+        "graded_at": "2026-10-10T02:40:38",
+        "rubric_version": 5
+      },
+      "ai_grade_initial": {
+        "quality": 3,
+        "verdict": "story",
         "reason": "The bet takes Wyoming +6 because the sheet is a point stale against Pinnacle's 5, but the author's own model makes SJSU a 7.6-point favorite, the other side; with a $0 stake, an assumed price and a score below the 70 stake threshold, the position undercuts itself.",
         "model": "claude-opus-5-5",
         "graded_at": "2026-10-10T02:07:45"
@@ -15198,6 +15246,14 @@
       "ai_grade": {
         "quality": 6,
         "verdict": "edge",
+        "reason": "The model makes NDSU a 1.7-point favourite against a +3.5 that sits half a point off Pinnacle's 3 and crosses the key number, giving a specific, quantified edge, though the price is assumed rather than printed and the pick is only tracked at $0.",
+        "model": "claude-opus-5-5",
+        "graded_at": "2026-10-10T02:40:38",
+        "rubric_version": 5
+      },
+      "ai_grade_initial": {
+        "quality": 6,
+        "verdict": "edge",
         "reason": "It gives a concrete model number (NDSU by 1.7) against a +3.5 sheet line, a half point off the Pinnacle 3 with key-number awareness, and honestly tracks it at $0 under its own 70-point stake threshold, though the edge is thin and the price is assumed.",
         "model": "claude-opus-5-5",
         "graded_at": "2026-10-10T02:07:45"
@@ -15299,6 +15355,14 @@
       "wr_confidence_initial": 62.379999999999995,
       "wr_confidence_kickoff": 59.379999999999995,
       "ai_grade": {
+        "quality": 3,
+        "verdict": "story",
+        "reason": "The edge is a 1.5-point stale-paper gap against Pinnacle at Chicago -1 that does not cross 3, rests on an unsourced move, assumes the -110 price, and is contradicted by the author's own model (Chicago by 4.1), so little real edge remains at the consensus number.",
+        "model": "claude-opus-5-5",
+        "graded_at": "2026-10-10T02:40:38",
+        "rubric_version": 5
+      },
+      "ai_grade_initial": {
         "quality": 5,
         "verdict": "mixed",
         "reason": "The argument cites a concrete, timestamped 1.5-point gap between the sheet and Pinnacle, and tracking at $0 is honest, but the author's own model favors Chicago by 4.1, which works against the Green Bay side, and the -110 price is assumed rather than confirmed.",
@@ -15402,6 +15466,14 @@
       "wr_confidence_initial": 58.75999999999999,
       "wr_confidence_kickoff": 62.25999999999999,
       "ai_grade": {
+        "quality": 4,
+        "verdict": "mixed",
+        "reason": "The one-point stale-sheet gap (-1.5 vs Pinnacle -2.5) doesn't cross 3, the -110 price is assumed and bettability isn't shown, and the model's Jets by 2.2 sits inside the two numbers, so the edge is thin and largely paper.",
+        "model": "claude-opus-5-5",
+        "graded_at": "2026-10-10T02:40:38",
+        "rubric_version": 5
+      },
+      "ai_grade_initial": {
         "quality": 6,
         "verdict": "edge",
         "reason": "Concrete price edge (sheet -1.5 vs Pinnacle -2.5, model 2.2) with honest $0 tracking and pending injury discipline, though the -110 price is assumed, the gap sits short of key number 3, and calling it a 'best_bet' overstates a score below the stake threshold.",
@@ -15607,6 +15679,14 @@
       "wr_confidence_kickoff": 56.74545454545454,
       "wr_confidence_initial": 56.74545454545454,
       "ai_grade": {
+        "quality": 4,
+        "verdict": "mixed",
+        "reason": "A small blended edge (+1.3% EV, under the author's own bars) rests on a single-match form narrative, with no team news yet and an own 65% that differs widely from the blended 57%, so it is an honest lean rather than a real gap.",
+        "model": "claude-opus-5-5",
+        "graded_at": "2026-10-10T02:40:38",
+        "rubric_version": 5
+      },
+      "ai_grade_initial": {
         "quality": 6,
         "verdict": "edge",
         "reason": "It states a specific model number and a quantified gap to the no-vig price, honestly calls it below its own staking bars, and sets clear price discipline and lineup conditions, though the edge is thin and the form notes are light.",
@@ -15710,6 +15790,14 @@
       "wr_confidence_kickoff": 69.71428571428571,
       "wr_confidence_initial": 69.71428571428571,
       "ai_grade": {
+        "quality": 5,
+        "verdict": "mixed",
+        "reason": "It has a stated model total (2.6), a market-blended probability with a quantified 7pp edge and a price ladder, but the numbers rest on a 5-game sample with a heavy model weight, and the weather and unsourced injury details are partly narrative, so the edge is plausible but thinly supported.",
+        "model": "claude-opus-5-5",
+        "graded_at": "2026-10-10T02:40:38",
+        "rubric_version": 5
+      },
+      "ai_grade_initial": {
         "quality": 6,
         "verdict": "edge",
         "reason": "It states a concrete model total, a blended probability against a vig-removed price, and a tiered pass threshold, but the 5-game sample, the vague unsourced injury note and the weather leaning keep it at solid rather than rigorous.",
@@ -15813,6 +15901,14 @@
       "wr_confidence_kickoff": 51.0,
       "wr_confidence_initial": 51.0,
       "ai_grade": {
+        "quality": 4,
+        "verdict": "mixed",
+        "reason": "The write-up states a blended 43% against a 40% implied price for a +3pp edge, but there is no confidence figure on the model, the injury sourcing is muddled (Isak and Gakpo are named, yet the confirmation cites an Iraola source), and the support leans on early-season form narrative, so the thin edge is only modestly supported.",
+        "model": "claude-opus-5-5",
+        "graded_at": "2026-10-10T02:40:38",
+        "rubric_version": 5
+      },
+      "ai_grade_initial": {
         "quality": 6,
         "verdict": "edge",
         "reason": "It gives a stated model number, a blended 43% against a 40% implied price for a +3pp edge with explicit pass thresholds, and it is honest about tracking at $0 rather than staking; however, the edge is thin, the sourcing is muddled (Isak and Gakpo are tied to an 'Iraola' attribution), and the form notes lean on small samples.",
@@ -15916,6 +16012,14 @@
       "wr_confidence_kickoff": 51.0,
       "wr_confidence_initial": 51.0,
       "ai_grade": {
+        "quality": 4,
+        "verdict": "mixed",
+        "reason": "There is a stated 4pp edge from a blended model, but confidence is low, the injury note (eleven ruled out) is vague and unquantified, and the supporting points are mostly table form, head-to-head record and wind narrative, so this reads as a lean rather than a well-supported edge.",
+        "model": "claude-opus-5-5",
+        "graded_at": "2026-10-10T02:40:38",
+        "rubric_version": 5
+      },
+      "ai_grade_initial": {
         "quality": 5,
         "verdict": "mixed",
         "reason": "It states a concrete blended probability (45.5% against a 41% implied price) and sets clear price discipline, but the inputs are thin: table GD, a vague, unsourced-in-detail claim of 'eleven ruled out', H2H and wind, with no account of what the market already prices, and the author admits low confidence.",
@@ -16019,6 +16123,14 @@
       "wr_confidence_kickoff": 51.86666666666667,
       "wr_confidence_initial": 51.86666666666667,
       "ai_grade": {
+        "quality": 4,
+        "verdict": "mixed",
+        "reason": "The edge is a thin quantified one (+4pp blended), but it leans on small-sample goal averages and an unspecified injury count, and the author admits it falls below their own confidence bar, so it is tracked at $0.",
+        "model": "claude-opus-5-5",
+        "graded_at": "2026-10-10T02:40:38",
+        "rubric_version": 5
+      },
+      "ai_grade_initial": {
         "quality": 5,
         "verdict": "mixed",
         "reason": "It gives a stated fair price and gap with honest price discipline and a $0 tracking stake, but the edge is thin and blended down, rests on small-sample goal averages, and cites an unspecific, unweighed 11-player absence figure.",
@@ -16122,6 +16234,14 @@
       "wr_confidence_kickoff": 60.16,
       "wr_confidence_initial": 60.16,
       "ai_grade": {
+        "quality": 3,
+        "verdict": "story",
+        "reason": "The author admits there is no edge: the model and the market both sit at 56%, and EV is -3.7%, so this is a negative-expectation bet placed under a tolerance rule rather than an edge, despite the honest process and sourced absences.",
+        "model": "claude-opus-5-5",
+        "graded_at": "2026-10-10T02:40:38",
+        "rubric_version": 5
+      },
+      "ai_grade_initial": {
         "quality": 5,
         "verdict": "mixed",
         "reason": "The write-up is transparent and disciplined: it gives a model number, a stated rule band and sourced absences. But it openly admits negative EV (-3.7%) and says the market already has this match, so there is no actual edge, just a rule-compliant favourite.",
@@ -16217,6 +16337,14 @@
       "wr_confidence_kickoff": 18.8,
       "wr_confidence_initial": 18.8,
       "ai_grade": {
+        "quality": 5,
+        "verdict": "mixed",
+        "reason": "The quantified gap (25.7% blended v 20.6% de-vigged, +11.3% EV at +333) is real and the injury news is sourced and dated, but half of the 'fair' price is the market itself and the model runs on only five shrunk matches, so the edge is modest and thinly supported for a longshot.",
+        "model": "claude-opus-5-5",
+        "graded_at": "2026-10-10T02:40:38",
+        "rubric_version": 5
+      },
+      "ai_grade_initial": {
         "quality": 7,
         "verdict": "edge",
         "reason": "The argument gives a transparent model (25.7% against a de-vigged 20.6%), stated EV and Kelly sizing, a dated injury source, and honest slip-price choice, though five-match samples and a 50/50 market blend keep the edge modest and noisy.",
@@ -16424,6 +16552,14 @@
       "ai_grade": {
         "quality": 2,
         "verdict": "story",
+        "reason": "The author's own system scores this 55.6 with EV of -3.7%, below the 70 threshold, so the bet is a logged override. The model's 2.8 against +3.5 is a 0.7-point gap that does not cross the key number 3, and it rests on a model running 47% ATS. The supporting 'lenses' are public fade and an unscored sentiment story.",
+        "model": "claude-opus-5-5",
+        "graded_at": "2026-10-10T02:40:38",
+        "rubric_version": 5
+      },
+      "ai_grade_initial": {
+        "quality": 2,
+        "verdict": "story",
         "reason": "The author's own figures undercut the bet: EV is -3.7%, the score of 55.6 misses the 70 threshold so it is logged as an override, and model numbers of Missouri by 4.3 (2.8 after injuries) against -3.5 give A&M at most a sub-point edge off a model running 47% ATS, padded with fade-the-public and an unscored sentiment narrative.",
         "model": "claude-opus-5-5",
         "graded_at": "2026-10-10T02:07:45"
@@ -16627,6 +16763,14 @@
       "ai_grade": {
         "quality": 3,
         "verdict": "story",
+        "reason": "The edge is a stale-sheet -1.5 against Pinnacle -2.5 with no sign that -1.5 is still bettable, and the model's Penn State by 1.7 adds only about 0.2 points at the sheet number while sitting under the consensus line; the score fails the author's own 70 threshold and the USC QB item is only 'questionable', so the case rests on prime-time framing.",
+        "model": "claude-opus-5-5",
+        "graded_at": "2026-10-10T02:40:38",
+        "rubric_version": 5
+      },
+      "ai_grade_initial": {
+        "quality": 3,
+        "verdict": "story",
         "reason": "The author's own model has Penn State by 1.7, below Pinnacle's -2.5. The score of 60.2 fails the system's own 65/70 bar and is logged as an override. The USC QB item is only 'questionable', the injury that matters is a backup's, and 'Campbell's first big home night' is narrative, so this is a self-admitted non-bet staked anyway.",
         "model": "claude-opus-5-5",
         "graded_at": "2026-10-10T02:07:45"
@@ -16728,6 +16872,14 @@
       "wr_confidence_kickoff": 51.0,
       "wr_confidence_initial": 51.0,
       "ai_grade": {
+        "quality": 1,
+        "verdict": "story",
+        "reason": "The pick rests on a fade-the-public 'casino rule' with no edge against the number: the author's own figures show EV -8.0%, a model margin of 0.2 after injuries against a 1.5 line, and a system score of 48.1, so it contradicts itself.",
+        "model": "claude-opus-5-5",
+        "graded_at": "2026-10-10T02:40:38",
+        "rubric_version": 5
+      },
+      "ai_grade_initial": {
         "quality": 2,
         "verdict": "story",
         "reason": "The author's own model shows Alabama by only 0.2 after injuries against a -1.5 line, with EV of -8% and a system score of 48. The bet rests entirely on a fade-the-public 'casino rule', so it contradicts the author's own numbers.",
@@ -16931,6 +17083,14 @@
       "wr_confidence_kickoff": 38.0,
       "wr_confidence_initial": 38.0,
       "ai_grade": {
+        "quality": 1,
+        "verdict": "story",
+        "reason": "The author's own numbers contradict the bet: the model makes Texas -7.9, close to the line; EV is stated as -4.3% because the sheet is worse than Pinnacle; and the system score of 50.1 fails the threshold, so the position rests on a public-ticket 'casino' override and an untested sentiment read.",
+        "model": "claude-opus-5-5",
+        "graded_at": "2026-10-10T02:40:38",
+        "rubric_version": 5
+      },
+      "ai_grade_initial": {
         "quality": 2,
         "verdict": "story",
         "reason": "The author's own numbers contradict the bet: the model makes Texas -7.9, close to the line; EV is -4.3% because the sheet is worse than Pinnacle; the score of 50.1 is far below the 65 threshold; and the case rests on fade-the-public 'casino logic' and an untested sentiment read logged as an override.",
@@ -17036,6 +17196,14 @@
       "ai_grade": {
         "quality": 3,
         "verdict": "story",
+        "reason": "The 7.8-point model gap comes from a model hitting 47% ATS, the author's own EV is -4.1% at Pinnacle, nothing clears the system threshold, and the author admits the unmoved market may already have priced Baker, so the bet is a conviction override with no bettable edge shown.",
+        "model": "claude-opus-5-5",
+        "graded_at": "2026-10-10T02:40:38",
+        "rubric_version": 5
+      },
+      "ai_grade_initial": {
+        "quality": 3,
+        "verdict": "story",
         "reason": "The 7.8-point model gap comes from a model the author admits is running 47% ATS, the stated EV is -4.1% and the system score fails the author's own threshold, and the unmoved market is acknowledged as possibly already pricing Baker's absence, so the bet is a logged override without a demonstrated edge.",
         "model": "claude-opus-5-5",
         "graded_at": "2026-10-10T02:07:45"
@@ -17137,6 +17305,14 @@
       "wr_confidence_kickoff": 66.77142857142857,
       "wr_confidence_initial": 66.77142857142857,
       "ai_grade": {
+        "quality": 4,
+        "verdict": "mixed",
+        "reason": "The edge is a small blended 1-4pp resting on a judgment read with weak form and weather support, and the numbers are muddled: the stated range runs from +1 to +4pp, the market sits at 58% no-vig yet the price is said to imply 60.8%, and a modelled total of about 2.8 against a 3.5 line looks bigger than the claimed edge.",
+        "model": "claude-opus-5-5",
+        "graded_at": "2026-10-10T02:40:38",
+        "rubric_version": 5
+      },
+      "ai_grade_initial": {
         "quality": 5,
         "verdict": "mixed",
         "reason": "It gives a quantified blended probability, a no-vig comparison, stake tiers and a line-stability check, but the edge is thin (~1-4pp) and the 67% own read leans on small-sample form and a weather/confidence narrative rather than a modelled total that justifies the gap from the market.",
@@ -17240,6 +17416,14 @@
       "wr_confidence_kickoff": 56.96190476190476,
       "wr_confidence_initial": 56.96190476190476,
       "ai_grade": {
+        "quality": 3,
+        "verdict": "story",
+        "reason": "The 55% figure is an unmodelled judgment read: the 2-4pp edge comes from blending it with the market, the stated EV of +4.8% does not match a ~50% blended probability at +110, the support is form, H2H and unsourced narrative, and the injury is left vague.",
+        "model": "claude-opus-5-5",
+        "graded_at": "2026-10-10T02:40:38",
+        "rubric_version": 5
+      },
+      "ai_grade_initial": {
         "quality": 5,
         "verdict": "mixed",
         "reason": "It gives a stated own-number, no-vig price, a modest blended edge and honest price discipline (tracked at $0), but the 55% read rests on thin form stats and H2H, the injury is unsourced and its impact unknown, and it doesn't address what the market already prices in.",
@@ -17343,6 +17527,14 @@
       "wr_confidence_kickoff": 57.0,
       "wr_confidence_initial": 57.0,
       "ai_grade": {
+        "quality": 4,
+        "verdict": "mixed",
+        "reason": "The roughly 2-3pp blended edge rests mostly on an unquantified 'own read' (49%), and the availability notes are partly sourced but muddled. The narrative itself (form and head-to-head scorelines) does the heavy lifting, so this is a tracked lean rather than a demonstrated edge.",
+        "model": "claude-opus-5-5",
+        "graded_at": "2026-10-10T02:40:38",
+        "rubric_version": 5
+      },
+      "ai_grade_initial": {
         "quality": 6,
         "verdict": "edge",
         "reason": "It states a concrete blended probability against the no-vig price, gives a sourced and dated injury picture, and shows disciplined price tiers that keep it unstaked, though the edge is thin and the own-read 49% leans on recent form and head-to-head narrative.",
