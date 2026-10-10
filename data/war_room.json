@@ -32706,7 +32706,7 @@
       {
         "week_key": "2026-09-01",
         "label": "Week of Sep 1\u20137",
-        "status": "grading",
+        "status": "reviewed",
         "grades": {
           "4": {
             "quality": 5,
@@ -33045,7 +33045,14 @@
             "report_id": 7
           }
         },
-        "review": null
+        "review": {
+          "lessons": [
+            "When a stated edge falls inside the author's own fair-number range, cap the grade at mixed (5) every time, however tidy the price ladder. Do not let a price ladder lift one pick to 6 while a similar pick with the same range problem gets 5."
+          ],
+          "notes": "Edge-graded picks went 5-4, mixed went 4-7 and the single story pick won. That is far too small a sample to say the rubric works or fails. The line-shopping arguments against Pinnacle went 4-3, which shows nothing either way. The only usable signal is grading inconsistency: near-identical stale-line and model-range arguments were scored a point or two apart over framing details such as a 'best_bet' label. The one lesson targets that consistency problem, not the results.",
+          "model": "claude-opus-5-5"
+        },
+        "reviewed_at": "2026-10-10T02:33:16"
       },
       {
         "week_key": "2026-09-08",
@@ -33083,7 +33090,12 @@
         "review": null
       }
     ],
-    "lessons": [],
+    "lessons": [
+      {
+        "week_key": "2026-09-01",
+        "text": "When a stated edge falls inside the author's own fair-number range, cap the grade at mixed (5) every time, however tidy the price ladder. Do not let a price ladder lift one pick to 6 while a similar pick with the same range problem gets 5."
+      }
+    ],
     "started_at": "2026-10-10T02:32:27"
   }
 }
