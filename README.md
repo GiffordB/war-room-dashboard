@@ -244,8 +244,9 @@ Same alignment and solo numbers as the main card, with two frozen
 differences: an aligned side is vetoed when every graded argument on
 it reads as a story (3/10 or under), and the solo threshold and
 tie-breaks use the test score.
-Its record is its own (teal leaderboard row, linked to the /AI-test
-page), where the two records sit side by side with every selection the
+Its record is its own and is kept off every public page (leaderboard,
+charts, recent picks, report list, report pages); it lives only at
+/AI-test, where the two records sit side by side with every selection the
 two cards did not share, results bucketed by verdict, and every graded
 argument with its reason. Nothing from the grade reaches the main WR rating or the main
 card: the point is to find out whether reading the argument helps, and

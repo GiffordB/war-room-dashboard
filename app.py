@@ -90,6 +90,11 @@ CATEGORY_ORDER = list(CATEGORIES.keys())
 # The AI sources being compared. Order here controls display order
 # everywhere (cards, chart legends, table columns).
 SOURCES = ["Claude", "Claude - GB", "Grok - GB", "ChatGPT", "War Room", "WR Lean", "WR FUT", "WR FUT Lean", "WR AI Test"]
+# Sources kept off every public page (leaderboard, charts, recent picks,
+# report list) and shown only on their own page: the AI test lives at
+# /AI-test until it has earned a place on the main board.
+HIDDEN_SOURCES = frozenset({"WR AI Test"})
+PUBLIC_SOURCES = [s for s in SOURCES if s not in HIDDEN_SOURCES]
 
 # The dashboard's own card (see refresh_war_room_card): not a model that
 # submits reports, but a fixed selection rule run over everyone else's
@@ -640,7 +645,7 @@ def wr_confidence_badge_text(live, initial=None, league=None):
 app.jinja_env.globals.update(
     categories=CATEGORIES,
     category_order=CATEGORY_ORDER,
-    sources=SOURCES,
+    sources=PUBLIC_SOURCES,
     source_color=lambda s: SOURCE_STYLE.get(s, {}).get("color", "#8b94a7"),
     ticket_row=lambda s: WAR_ROOM_TICKETS.get(s, {}).get("row"),
     leagues=LEAGUES,
@@ -1388,7 +1393,7 @@ def recent_picks_by_week(data, league=None, limit=4):
     by_week = {}
     for p in data["picks"]:
         r = reports.get(p["report_id"])
-        if not r or not _league_matches(r["league"], league):
+        if not r or r["source"] in HIDDEN_SOURCES or not _league_matches(r["league"], league):
             continue
         wk = week_bucket_start(r["report_date"])
         group = by_week.setdefault(wk, {"week_key": wk, "label": f"Week of {week_bucket_label(wk)}", "latest_created_at": "", "picks": []})
@@ -1461,13 +1466,13 @@ def source_stats(data, source, league=None):
 def category_breakdown(data, league=None):
     """{category: {source: stats}} for every bettable category x source."""
     reports = {r["id"]: r for r in data["reports"]}
-    result = {cat: {s: empty_stats(s) for s in SOURCES} for cat in CATEGORY_ORDER}
+    result = {cat: {s: empty_stats(s) for s in PUBLIC_SOURCES} for cat in CATEGORY_ORDER}
     for p in data["picks"]:
         r = reports.get(p["report_id"])
         if not r or not _league_matches(r["league"], league):
             continue
         cat, src = p["category"], r["source"]
-        if cat not in result or src not in SOURCES:
+        if cat not in result or src not in PUBLIC_SOURCES:
             continue
         bucket = result[cat][src]
         if p["result"] == "pending":
@@ -1476,7 +1481,7 @@ def category_breakdown(data, league=None):
             _apply_result(bucket, p)
 
     for cat in result:
-        for src in SOURCES:
+        for src in PUBLIC_SOURCES:
             _finalize(result[cat][src])
     return result
 
@@ -1498,16 +1503,16 @@ def cumulative_profit_chart(data, league=None):
     if not all_dates:
         return [], []
 
-    running = {s: 0.0 for s in SOURCES}
-    by_source_date = {s: {} for s in SOURCES}
+    running = {s: 0.0 for s in PUBLIC_SOURCES}
+    by_source_date = {s: {} for s in PUBLIC_SOURCES}
     for report_date, _pick_id, src, profit_loss in rows:
-        if src not in SOURCES:
+        if src not in PUBLIC_SOURCES:
             continue
         running[src] += profit_loss
         by_source_date[src][report_date] = running[src]
 
     series = []
-    for s in SOURCES:
+    for s in PUBLIC_SOURCES:
         values = []
         last = None
         started = False
@@ -1569,7 +1574,7 @@ def weekly_win_pct_chart(week_numbers, week_labels, data):
     """Line-chart series: win% per source, one point per week."""
     categories = [week_labels[wn] for wn in week_numbers]
     series = []
-    for s in SOURCES:
+    for s in PUBLIC_SOURCES:
         values = [data.get((wn, s), {}).get("win_pct") for wn in week_numbers]
         series.append({"name": s, "slug": s.lower(), "color": SOURCE_STYLE[s]["color"], "values": values})
     return categories, series
@@ -2750,7 +2755,7 @@ def _freeze_wallet_entry_wr_confidence_initial(entry, data):
 
 def rank_sources(stats):
     """Sources ordered by profit, best first."""
-    return sorted(SOURCES, key=lambda s: stats[s]["profit"], reverse=True)
+    return sorted(stats, key=lambda s: stats[s]["profit"], reverse=True)
 
 
 def clv_by_source(data, league=None):
@@ -2763,10 +2768,10 @@ def clv_by_source(data, league=None):
     every source.
     """
     reports = {r["id"]: r for r in data["reports"]}
-    totals = {s: {"sum": 0.0, "count": 0} for s in SOURCES}
+    totals = {s: {"sum": 0.0, "count": 0} for s in PUBLIC_SOURCES}
     for p in data["picks"]:
         r = reports.get(p["report_id"])
-        if not r or r["source"] not in SOURCES or not _league_matches(r["league"], league):
+        if not r or r["source"] not in PUBLIC_SOURCES or not _league_matches(r["league"], league):
             continue
         move = line_move(p)
         if move is None:
@@ -2800,19 +2805,19 @@ def rank_movement(data, league=None):
     rows.sort(key=lambda row: (row[0], row[1]))
 
     if not rows:
-        return {s: 0 for s in SOURCES}
+        return {s: 0 for s in PUBLIC_SOURCES}
 
     def ranks_at(upto):
-        profit = {s: 0.0 for s in SOURCES}
+        profit = {s: 0.0 for s in PUBLIC_SOURCES}
         for _date, _id, src, pl in rows[:upto]:
-            if src in SOURCES:
+            if src in PUBLIC_SOURCES:
                 profit[src] += pl
-        order = sorted(SOURCES, key=lambda s: profit[s], reverse=True)
+        order = sorted(PUBLIC_SOURCES, key=lambda s: profit[s], reverse=True)
         return {s: i for i, s in enumerate(order)}
 
     before = ranks_at(len(rows) - 1)
     after = ranks_at(len(rows))
-    return {s: before[s] - after[s] for s in SOURCES}  # positive = moved up
+    return {s: before[s] - after[s] for s in PUBLIC_SOURCES}  # positive = moved up
 
 
 def resolve_league(value):
@@ -2899,7 +2904,7 @@ def dashboard():
     aligned_lean_groups = aligned_leans(data, league)
     calibration = _current_calibration()
 
-    stats = {s: source_stats(data, s, league) for s in SOURCES}
+    stats = {s: source_stats(data, s, league) for s in PUBLIC_SOURCES}
     ranked = rank_sources(stats)
     movement = rank_movement(data, league)
     clv = clv_by_source(data, league)
@@ -2932,7 +2937,7 @@ def dashboard():
     return render_template(
         "index.html",
         calibration=calibration,
-        calibration_excluded=sorted(WR_CALIBRATION_EXCLUDED_SOURCES),
+        calibration_excluded=sorted(WR_CALIBRATION_EXCLUDED_SOURCES - HIDDEN_SOURCES),
         aligned=aligned,
         aligned_leans=aligned_lean_groups,
         locks=locks,
@@ -2959,7 +2964,7 @@ def reports_list():
     data = store.load_data()
     current_league, league = resolve_league_filter(request.args.get("league"))
 
-    reports = [r for r in data["reports"] if _league_matches(r["league"], league)]
+    reports = [r for r in data["reports"] if _league_matches(r["league"], league) and r["source"] not in HIDDEN_SOURCES]
     reports.sort(key=lambda r: (r["report_date"], r["id"]), reverse=True)
 
     report_stats = {}
@@ -3904,7 +3909,7 @@ def wallet_overall_stats(entries):
 
 def wallet_stats_by_source(entries):
     """{source: stats} - every AI source this wallet has ever placed a real bet on."""
-    result = {s: empty_stats(s) for s in SOURCES}
+    result = {s: empty_stats(s) for s in PUBLIC_SOURCES}
     for e in entries:
         stats = result.setdefault(e["source"], empty_stats(e["source"]))
         if e["result"] == "pending":
@@ -3965,7 +3970,7 @@ def wallet_cumulative_chart(entries):
     if not all_dates:
         return [], []
 
-    sources = sorted({row[2] for row in rows} | set(SOURCES))
+    sources = sorted({row[2] for row in rows} | set(PUBLIC_SOURCES))
     running = {s: 0.0 for s in sources}
     by_source_date = {s: {} for s in sources}
     for placed_date, _entry_id, src, profit_loss in rows:
@@ -4235,7 +4240,7 @@ def _pending_picks_for_picker(data):
         if p["result"] != "pending":
             continue
         r = reports_by_id.get(p["report_id"])
-        if not r:
+        if not r or r["source"] in HIDDEN_SOURCES:
             continue
         pending_picks.append(
             {

@@ -106,7 +106,7 @@
           </div>
           <div class="leaderboard-source">
             <span class="source-dot" style="background: {{ source_color(s) }};"></span>
-            <strong>{{ s }}</strong>{% if s == 'WR AI Test' %} <a class="small" href="{{ url_for('ai_test_page') }}">details →</a>{% endif %}
+            <strong>{{ s }}</strong>
           </div>
           <div class="leaderboard-stat">
             <div class="source-stat-num">{{ st.wins }}-{{ st.losses }}{% if st.pushes %}-{{ st.pushes }}{% endif %}</div>

@@ -111,7 +111,6 @@
               <strong>{{ p.selection }}</strong>
               <span class="muted">${{ '{:,.0f}'.format(p.stake) }} ({{ '%.2f'|format(p.stake / unit_size) }}u)</span>
               {% if p.espn_event_id %}<span class="badge-auto" title="Linked to a live {{ sportsbook_for(report.league) }} line — can be auto-graded from the final score">🔗 auto</span>{% endif %}
-              {% if p.ai_grade %}<span class="badge-ai wr-tip" tabindex="0" data-tip="Model read of the argument (feeds only the WR AI Test card): {{ p.ai_grade.reason }}">🤖 {{ p.ai_grade.quality }}/10 {{ p.ai_grade.verdict }}</span>{% endif %}
               <span class="badge-result" style="background: {{ result_color(p.result) }};">{{ result_label(p.result) }}</span>
               {% if p.game %}
                 <span class="badge-live badge-live-{{ p.game.status }}">
