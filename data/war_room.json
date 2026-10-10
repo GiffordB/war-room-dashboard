@@ -1,6 +1,6 @@
 {
   "next_report_id": 53,
-  "next_pick_id": 252,
+  "next_pick_id": 253,
   "reports": [
     {
       "source": "ChatGPT",
@@ -23688,6 +23688,154 @@
         "reason": "The edge is a vague narrative (\"Reed mobility plus the hook\") with no fair number, and the author ranks it 8 of 9 while admitting it fails their own cash-bet standard.",
         "model": "claude-opus-5-5",
         "graded_at": "2026-10-10T15:11:48",
+        "rubric_version": 5
+      }
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 52,
+      "category": "best_bet",
+      "matchup": "Georgia Bulldogs @ Alabama Crimson Tide",
+      "selection": "Georgia +2.5",
+      "odds": -115,
+      "stake": 25.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 54.0,
+      "war_room_line": "Competition rank #9 of 9 (judgment ranking, not a cover probability). DraftKings -115.",
+      "edge": "Price crossed the fair midpoint.",
+      "price_discipline": "Principal risk: missing skill players. 6:30 PM CT (local coverage 6:45).",
+      "espn_event_id": "401856712",
+      "bet_type": "spread",
+      "bet_side": "away",
+      "bet_line": 2.5,
+      "home_team": "Alabama Crimson Tide",
+      "away_team": "Georgia Bulldogs",
+      "created_at": "2026-10-10T15:11:52",
+      "id": 252,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "ALA -2.5",
+        "home_spread": -2.5,
+        "home_spread_odds": -110.0,
+        "away_spread_odds": -110.0,
+        "total": 51.5,
+        "over_odds": -115.0,
+        "under_odds": -105.0,
+        "home_moneyline": -125,
+        "away_moneyline": 105,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-10-10T15:11:56",
+      "pregame_weather": {
+        "city": "Tuscaloosa",
+        "temp_c": 17.5,
+        "precip_probability_pct": 16,
+        "precip_mm": 0.0,
+        "wind_kmh": 8.8,
+        "cloud_cover_pct": 100,
+        "forecast_hour": "2026-10-10T23:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 5,
+        "win_pct": 100.0,
+        "quality_wins": 1
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 5,
+        "win_pct": 100.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 3,
+          "d": 0,
+          "l": 0,
+          "gf": 147,
+          "ga": 64
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 0,
+          "gf": 101,
+          "ga": 40
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 4,
+          "d": 0,
+          "l": 0,
+          "gf": 212,
+          "ga": 50
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 0,
+          "gf": 45,
+          "ga": 17
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-10T15:11:56",
+      "wr_confidence_kickoff": 53.38716981132075,
+      "wr_breakdown_kickoff": {
+        "base": 54.0,
+        "impact_scale": 0.08,
+        "record_mod": 0.027,
+        "record_win_pct": 50.943,
+        "record_settled": 54,
+        "agree_mod": 0.0,
+        "conflict_mod": -0.64,
+        "clv_mod": 0.0,
+        "clv_move": null,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 1
+      },
+      "wr_confidence_initial": 50.38716981132075,
+      "wr_breakdown_initial": {
+        "base": 54.0,
+        "impact_scale": 0.08,
+        "record_mod": 0.027,
+        "record_win_pct": 50.943,
+        "record_settled": 54,
+        "agree_mod": 0.0,
+        "conflict_mod": -0.64,
+        "clv_mod": 0.0,
+        "clv_move": 0.0,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": 0.0,
+        "injury_mod": 0.0,
+        "injury_gap": 0.0,
+        "home_away_mod": 0.0,
+        "home_away_gap": 0.0,
+        "quality_win_mod": -3,
+        "quality_win_gap": -1,
+        "agreeing": 0,
+        "opposing": 1
+      },
+      "ai_grade": {
+        "quality": 2,
+        "verdict": "story",
+        "reason": "The pick ranks last of nine on judgment alone, cites a fair midpoint it never states, assumes unsourced skill-player absences, and the author says no cash bet qualifies at these prices.",
+        "model": "claude-opus-5-5",
+        "graded_at": "2026-10-10T15:12:00",
         "rubric_version": 5
       }
     }
