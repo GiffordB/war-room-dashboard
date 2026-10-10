@@ -35216,6 +35216,38 @@
             "result": "win",
             "profit": 0.0,
             "report_id": 38
+          },
+          "204": {
+            "quality": 3,
+            "verdict": "story",
+            "reason": "The edge exists only on a stale paper +10.5 that the author admits is gone live (EV -3.7% at +9.5), the model number of MIN -2.9 is wildly off and unreliable at 44% ATS, and the rest is ticket-split and ATS-record narrative, so what remains at the consensus price is no edge.",
+            "model": "claude-opus-5-5",
+            "rubric_version": 5,
+            "source": "Claude",
+            "league": "NFL",
+            "selection": "Miami +10.5",
+            "matchup": "Miami Dolphins @ Minnesota Vikings",
+            "odds": -110,
+            "stake": 0.0,
+            "result": "win",
+            "profit": 0.0,
+            "report_id": 38
+          },
+          "205": {
+            "quality": 3,
+            "verdict": "story",
+            "reason": "The model edge is tiny: own number NO -2.1 against fair 1.6 gives EV of +0.4% on the paper line and -1.6% live, the live number is not shown to beat consensus, and the case leans on ticket splits, revenge and unsourced injury claims, so this reads as a $0 lean, not an edge.",
+            "model": "claude-opus-5-5",
+            "rubric_version": 5,
+            "source": "Claude",
+            "league": "NFL",
+            "selection": "Atlanta +2.5",
+            "matchup": "Atlanta Falcons @ New Orleans Saints",
+            "odds": -110,
+            "stake": 0.0,
+            "result": "win",
+            "profit": 0.0,
+            "report_id": 38
           }
         },
         "review": null
