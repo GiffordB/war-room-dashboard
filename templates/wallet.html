@@ -2,7 +2,6 @@
 {% block title %}{{ wallet_label }} · War Room{% endblock %}
 {% macro entry_row(e, nested=False, group_id=None) %}
               <tr{% if nested %} class="wallet-group-row" data-group="{{ group_id }}" hidden{% endif %} data-head="sp{{ e.id }}">
-                <td class="muted">{{ e.created_at[:10] }}</td>
                 <td><span class="pick-group-sources">{% for s in (e.sources or [e.source]) %}<span class="badge-source" style="background: {{ source_color(s) }};">{{ s }}</span>{% endfor %}</span></td>
                 <td><span class="badge-league">{{ e.league }}</span></td>
                 <td>
@@ -70,7 +69,6 @@
               {% if e.side_picks and e.side_picks|length > 1 %}
                 {% for sp in e.side_picks %}
                   <tr class="wallet-group-row wallet-source-row" data-group="sp{{ e.id }}" hidden>
-                    <td class="muted small">pick</td>
                     <td><span class="badge-source" style="background: {{ source_color(sp.source) }};">{{ sp.source }}</span></td>
                     <td><span class="badge-league">{{ sp.league }}</span></td>
                     <td><a href="{{ url_for('report_detail', report_id=sp.report_id) }}">{{ sp.selection }}</a> <span class="muted small">${{ '{:,.0f}'.format(sp.stake) }} on the card</span></td>
@@ -245,7 +243,6 @@
         <table class="data-table">
           <thead>
             <tr>
-              <th>Date</th>
               <th>Source</th>
               <th>League</th>
               <th>Bet</th>
@@ -264,7 +261,6 @@
               {% else %}
                 {% set lead = row.lead %}{% set gid = 'wg' ~ group.week_key ~ '-' ~ lead.id %}
                 <tr class="wallet-group" data-group="{{ gid }}" data-head="{{ gid }}" onclick="toggleWalletGroup('{{ gid }}')" title="Click to expand the {{ row.picks|length }} bets on this side">
-                  <td class="muted">{{ lead.created_at[:10] }}</td>
                   <td><span class="pick-group-sources">{% for s in (lead.sources or row.sources) %}<span class="badge-source" style="background: {{ source_color(s) }};">{{ s }}</span>{% endfor %}</span></td>
                   <td><span class="badge-league">{{ lead.league }}</span></td>
                   <td>
