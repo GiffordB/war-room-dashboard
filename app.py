@@ -1547,8 +1547,10 @@ def identify_wallet_entry_game(entry):
 
 
 def _kickoff_sort_key(pick):
-    """Soonest kickoff first; picks with no known kickoff last, newest of those first."""
-    k = pick.get("kickoff")
+    """Soonest kickoff first. A settled pick that predates stored kickoffs falls back to the kickoff on its stored final score, then to its card's date; picks with nothing to go on sort last, newest first."""
+    k = pick.get("kickoff") or (pick.get("final_score") or {}).get("kickoff")
+    if not k and pick.get("report_date"):
+        k = f"{pick['report_date']}T00:00Z"
     return (0, k, pick["id"]) if k else (1, "", -pick["id"])
 
 
