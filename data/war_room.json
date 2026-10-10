@@ -1,6 +1,6 @@
 {
   "next_report_id": 53,
-  "next_pick_id": 251,
+  "next_pick_id": 252,
   "reports": [
     {
       "source": "ChatGPT",
@@ -23540,6 +23540,154 @@
         "reason": "There is no model number, fair line or cover probability against -8.5, the stated edge is just \"QB and offensive ceiling,\" and the author's own report says no cash bet qualifies at these prices, so labelling this a best bet contradicts the author's process.",
         "model": "claude-opus-5-5",
         "graded_at": "2026-10-10T15:11:39",
+        "rubric_version": 5
+      }
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 52,
+      "category": "best_bet",
+      "matchup": "Texas A&M Aggies @ Missouri Tigers",
+      "selection": "Texas A&M +3.5",
+      "odds": -110,
+      "stake": 25.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 55.0,
+      "war_room_line": "Competition rank #8 of 9 (judgment ranking, not a cover probability). DraftKings -110.",
+      "edge": "Reed mobility plus the hook.",
+      "price_discipline": "Principal risk: Missouri run defense. 11:00 AM CT.",
+      "espn_event_id": "401856716",
+      "bet_type": "spread",
+      "bet_side": "away",
+      "bet_line": 3.5,
+      "home_team": "Missouri Tigers",
+      "away_team": "Texas A&M Aggies",
+      "created_at": "2026-10-10T15:11:42",
+      "id": 251,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "MIZ -4",
+        "home_spread": -4.0,
+        "home_spread_odds": -110.0,
+        "away_spread_odds": -110.0,
+        "total": 50.5,
+        "over_odds": -108.0,
+        "under_odds": -112.0,
+        "home_moneyline": -185,
+        "away_moneyline": 154,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-10-10T15:11:46",
+      "pregame_weather": {
+        "city": "Columbia",
+        "temp_c": 18.8,
+        "precip_probability_pct": 71,
+        "precip_mm": 3.6,
+        "wind_kmh": 11.6,
+        "cloud_cover_pct": 100,
+        "forecast_hour": "2026-10-10T16:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 4,
+        "win_pct": 80.0,
+        "quality_wins": 1
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 3,
+        "win_pct": 60.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 3,
+          "d": 0,
+          "l": 0,
+          "gf": 126,
+          "ga": 48
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 1,
+          "gf": 62,
+          "ga": 52
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 3,
+          "d": 0,
+          "l": 1,
+          "gf": 153,
+          "ga": 58
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 1,
+          "gf": 6,
+          "ga": 35
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-10T15:11:46",
+      "wr_confidence_kickoff": 55.633962264150945,
+      "wr_breakdown_kickoff": {
+        "base": 55.0,
+        "impact_scale": 0.1,
+        "record_mod": 0.034,
+        "record_win_pct": 50.943,
+        "record_settled": 54,
+        "agree_mod": 0.6,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": null,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 1,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 50.43396226415094,
+      "wr_breakdown_initial": {
+        "base": 55.0,
+        "impact_scale": 0.1,
+        "record_mod": 0.034,
+        "record_win_pct": 50.943,
+        "record_settled": 54,
+        "agree_mod": 0.6,
+        "conflict_mod": 0.0,
+        "clv_mod": -1.0,
+        "clv_move": -0.5,
+        "weather_mod": 0.0,
+        "form_mod": -0.0,
+        "form_gap": -20.0,
+        "injury_mod": 0.0,
+        "injury_gap": 0.0,
+        "home_away_mod": -1.2,
+        "home_away_gap": -100.0,
+        "quality_win_mod": -3,
+        "quality_win_gap": -1,
+        "agreeing": 1,
+        "opposing": 0
+      },
+      "ai_grade": {
+        "quality": 2,
+        "verdict": "story",
+        "reason": "The edge is a vague narrative (\"Reed mobility plus the hook\") with no fair number, and the author ranks it 8 of 9 while admitting it fails their own cash-bet standard.",
+        "model": "claude-opus-5-5",
+        "graded_at": "2026-10-10T15:11:48",
         "rubric_version": 5
       }
     }
