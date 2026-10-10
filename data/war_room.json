@@ -33584,7 +33584,7 @@
       {
         "week_key": "2026-09-15",
         "label": "Week of Sep 15\u201321",
-        "status": "grading",
+        "status": "reviewed",
         "grades": {
           "99": {
             "quality": 3,
@@ -34019,7 +34019,15 @@
             "report_id": 29
           }
         },
-        "review": null
+        "review": {
+          "lessons": [
+            "Internally inconsistent numbers (a stated edge or cover rate that does not match the author's own fair line, or two different probabilities for the same outcome) make the quantification unreliable: cap the grade at 4 and apply that cap the same way every time.",
+            "Honesty and process signals, such as admitting low model confidence, tracking at $0 below a stake floor, or giving a re-entry price, do not add points by themselves. Grade the size and support of the edge, and treat a model gap that comes with a self-reported confidence of 0.25 or lower like a judgment forecast."
+          ],
+          "notes": "Results this week were mixed and noisy. Story-graded picks went about 6-4, and most of the mixed picks were $0 tracking bets, so the outcomes say little about calibration. The clearer issue is inconsistency in the grading itself. Picks with self-contradicting numbers or low-confidence models got anywhere from 4 to 5, and in one case an identical range-problem structure got 2 against 4. The new lessons aim to make those grades consistent rather than react to wins and losses.",
+          "model": "claude-opus-5-5"
+        },
+        "reviewed_at": "2026-10-10T02:35:15"
       },
       {
         "week_key": "2026-09-22",
@@ -34051,6 +34059,14 @@
       {
         "week_key": "2026-09-08",
         "text": "Grade pure price plays (an edge measured only against a sharp book's no-vig line, with the author admitting the model adds nothing) on one fixed scale: the size of the quantified gap and whether it crosses a key number decide the grade, not the sport or how confident the write-up sounds. Do not give one such pick 7 and a structurally identical one 5."
+      },
+      {
+        "week_key": "2026-09-15",
+        "text": "Internally inconsistent numbers (a stated edge or cover rate that does not match the author's own fair line, or two different probabilities for the same outcome) make the quantification unreliable: cap the grade at 4 and apply that cap the same way every time."
+      },
+      {
+        "week_key": "2026-09-15",
+        "text": "Honesty and process signals, such as admitting low model confidence, tracking at $0 below a stake floor, or giving a re-entry price, do not add points by themselves. Grade the size and support of the edge, and treat a model gap that comes with a self-reported confidence of 0.25 or lower like a judgment forecast."
       }
     ],
     "started_at": "2026-10-10T02:32:27"
