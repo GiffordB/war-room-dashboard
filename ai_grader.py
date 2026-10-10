@@ -22,6 +22,7 @@ import json
 import os
 
 MODEL = "claude-opus-5-5"
+LAST_ERROR = None  # repr of the most recent failure, for /api/ai_status
 
 _SCHEMA = {
     "type": "object",
@@ -98,5 +99,7 @@ def grade_pick_argument(pick, report):
             return None
         out = json.loads(text)
         return {"quality": int(out["quality"]), "verdict": out["verdict"], "reason": (out.get("reason") or "").strip(), "model": response.model}
-    except Exception:
+    except Exception as e:
+        global LAST_ERROR
+        LAST_ERROR = repr(e)[:600]
         return None

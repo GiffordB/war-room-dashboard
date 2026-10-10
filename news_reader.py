@@ -18,6 +18,7 @@ import json
 import os
 
 MODEL = "claude-opus-5-5"
+LAST_ERROR = None  # repr of the most recent failure, for /api/ai_status
 
 _SCHEMA = {
     "type": "object",
@@ -97,7 +98,9 @@ def read_game_news(league, home_name, away_name, kickoff, headlines):
         if not text:
             return None
         reads = json.loads(text).get("reads") or []
-    except Exception:
+    except Exception as e:
+        global LAST_ERROR
+        LAST_ERROR = repr(e)[:600]
         return None
     out = {}
     for r in reads:

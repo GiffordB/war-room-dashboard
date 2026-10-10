@@ -4527,6 +4527,21 @@ def _api_update_wallet_entry(entry_id, wallet_key):
     return jsonify({"id": entry_id})
 
 
+@app.route("/api/ai_status")
+def api_ai_status():
+    """Is the model reader working on this service? With ?probe=1, grades the newest pending source pick once (not saved) and returns the result or the error."""
+    out = {"key_set": ai_grader.available(), "grader_last_error": ai_grader.LAST_ERROR, "news_last_error": news_reader.LAST_ERROR}
+    if request.args.get("probe"):
+        data = store.load_data()
+        reports = {r["id"]: r for r in data["reports"]}
+        pick = next((p for p in sorted(data["picks"], key=lambda p: -p["id"]) if p["result"] == "pending" and reports.get(p["report_id"], {}).get("source") not in WAR_ROOM_SOURCES), None)
+        if pick:
+            out["probe_pick"] = pick["id"]
+            out["probe_result"] = ai_grader.grade_pick_argument(pick, reports[pick["report_id"]])
+            out["grader_last_error"] = ai_grader.LAST_ERROR
+    return jsonify(out)
+
+
 @app.route("/AI-test")
 def ai_test_page():
     """The WR AI Test card beside the main War Room card: records, where they parted ways, and every graded argument."""
