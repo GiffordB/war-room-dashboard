@@ -1,5 +1,5 @@
 {
-  "next_report_id": 52,
+  "next_report_id": 53,
   "next_pick_id": 241,
   "reports": [
     {
@@ -492,6 +492,18 @@
       "lsu_review_notes": "",
       "created_at": "2026-10-10T15:08:47",
       "id": 51
+    },
+    {
+      "source": "ChatGPT",
+      "league": "CFB",
+      "report_date": "2026-10-10",
+      "week_number": 6,
+      "week_label": "Week 6 -- Saturday War Room Competition Card v1 (Oct 10)",
+      "philosophy": "Saturday War Room, 9:45 AM CT, DraftKings only (DK snapshots 9:33-9:34 AM CT). Nine ranked competition picks; rankings are judgment, not cover probabilities. Competition and cash kept separate: no qualified cash bets at these prices, no Thor Hammer Smash (verified edge and availability do not clear the standard; Thor cap $250), serious exposure $0. Nebraska and UCLA lead the preference list. Evening availability remains provisional. Friday actual tickets 1-3, net -$105.36; today is a new portfolio and losses do not change stakes. Jesse decides every wager. Logged at the competition convention: $50 for ranks 1-5, $25 for ranks 6-9, $10 on the parlay.",
+      "blind_spot_notes": "GOOD-IF-IT-GOES (competition only): Nebraska +8.5 + UCLA +10.5 + Texas -7.5 -- different games, shared model risk remains; DraftKings combined quote unavailable; independent-price math +590.91, 14.5% break-even, $10 returns $69.09 including stake; no cash recommendation, optional entertainment cap $10, not placed. Georgia-Alabama: local coverage lists 6:45 PM, DK table 6:30 PM. Sources DK1, DK2, DK3; publisher update times unavailable. NOTE: this card re-states three Friday value-card positions (Texas A&M +3.5, LSU -8.5, Nebraska now +8.5 from +7.5) and takes the other side of the fourth (Georgia +2.5 where Friday had Alabama -1.5 at -1.5: the price crossed the fair midpoint).",
+      "lsu_review_notes": "",
+      "created_at": "2026-10-10T15:10:12",
+      "id": 52
     }
   ],
   "picks": [
