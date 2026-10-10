@@ -119,7 +119,17 @@ def _load_github():
         return dict(EMPTY_STATE), None
     resp.raise_for_status()
     payload = resp.json()
-    content = base64.b64decode(payload["content"]).decode("utf-8")
+    content = base64.b64decode(payload.get("content") or "").decode("utf-8")
+    if not content.strip() and payload.get("size"):
+        # The Contents API stops inlining files over 1 MB (content "",
+        # encoding "none"). The blob API serves the same object, by its
+        # sha, up to 100 MB. Never treat that empty body as an empty
+        # file: a save on top of it would wipe the real data.
+        blob = requests.get(f"{_API_BASE}/repos/{GITHUB_REPO}/git/blobs/{payload['sha']}", headers=_headers(), timeout=20)
+        blob.raise_for_status()
+        content = base64.b64decode(blob.json().get("content") or "").decode("utf-8")
+        if not content.strip():
+            raise RuntimeError(f"data file {DATA_PATH_IN_REPO} is {payload['size']} bytes on GitHub but came back empty; refusing to continue")
     data = json.loads(content) if content.strip() else dict(EMPTY_STATE)
     return _normalize(data), payload["sha"]
 
