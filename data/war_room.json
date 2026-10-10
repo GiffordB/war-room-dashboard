@@ -34032,7 +34032,7 @@
       {
         "week_key": "2026-09-22",
         "label": "Week of Sep 22\u201328",
-        "status": "grading",
+        "status": "reviewed",
         "grades": {
           "130": {
             "quality": 3,
@@ -34819,7 +34819,14 @@
             "report_id": 34
           }
         },
-        "review": null
+        "review": {
+          "lessons": [
+            "When the edge is a stale or 'paper' line measured against a moved consensus, first ask whether the author shows the stale number is still bettable. If it is not, or the author's own void rule says it is gone, grade the edge left at the consensus price. If it is bettable, grade it on the fixed gap and key-number scale. Do not spread structurally identical stale-line picks across 2 to 5 on wording alone."
+          ],
+          "notes": "Story-graded picks went about 26-13 this week, and the cumulative story bucket (14-5) now beats mixed and edge. Those picks were mostly near-coin-flip spreads with one- or two-word narratives, so this looks like variance, not a sign that bare narratives deserve higher grades, and no lesson rewards them. The clearest writing-level issue was inconsistency: stale-line price plays with similar gaps got grades from 2 to 5, so the one new lesson targets that.",
+          "model": "claude-opus-5-5"
+        },
+        "reviewed_at": "2026-10-10T02:39:04"
       },
       {
         "week_key": "2026-09-29",
@@ -34852,6 +34859,10 @@
       {
         "week_key": "2026-09-15",
         "text": "Honesty and process signals, such as admitting low model confidence, tracking at $0 below a stake floor, or giving a re-entry price, do not add points by themselves. Grade the size and support of the edge, and treat a model gap that comes with a self-reported confidence of 0.25 or lower like a judgment forecast."
+      },
+      {
+        "week_key": "2026-09-22",
+        "text": "When the edge is a stale or 'paper' line measured against a moved consensus, first ask whether the author shows the stale number is still bettable. If it is not, or the author's own void rule says it is gone, grade the edge left at the consensus price. If it is bettable, grade it on the fixed gap and key-number scale. Do not spread structurally identical stale-line picks across 2 to 5 on wording alone."
       }
     ],
     "started_at": "2026-10-10T02:32:27"
