@@ -861,8 +861,17 @@ details.week-group[open] > summary.week-group-label::before { content: "▾ "; }
 .pick-group-item { list-style: none; }
 details.pick-group > summary.pick-group-summary { cursor: pointer; list-style: none; }
 details.pick-group > summary.pick-group-summary::-webkit-details-marker { display: none; }
-details.pick-group[open] > summary .pick-group-toggle::before { content: ""; }
-details.pick-group[open] > summary .pick-group-toggle { visibility: hidden; }
+.pick-group-untoggle { display: none; }
+details.pick-group[open] > summary .pick-group-toggle { display: none; }
+details.pick-group[open] > summary .pick-group-untoggle { display: inline; }
+.group-controls { margin-left: 10px; font-weight: 400; text-transform: none; letter-spacing: 0; }
+.group-controls .btn-link { color: var(--muted); font-size: 0.75rem; }
 .pick-group-sources { display: inline-flex; gap: 4px; flex-wrap: wrap; }
 .pick-list-nested { margin: 6px 0 2px 18px; gap: 6px; }
 .pick-row-nested { opacity: 0.92; }
+
+/* Wallet: same-side bets on one game fold into one clickable row */
+tr.wallet-group { cursor: pointer; }
+tr.wallet-group:hover td { background: rgba(255, 255, 255, 0.03); }
+tr.wallet-group-row td:first-child { padding-left: 22px; }
+tr.wallet-group-row { opacity: 0.92; }

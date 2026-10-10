@@ -351,7 +351,8 @@
     {% if recent_weeks %}
       {% for group in recent_weeks %}
         <details class="week-group" {% if loop.first %}open{% endif %}>
-          <summary class="week-group-label">{{ group.label }} <span class="muted small">({{ group.picks|length }} picks{% if not loop.first %} — click to expand{% endif %})</span></summary>
+          <summary class="week-group-label">{{ group.label }} <span class="muted small">({{ group.picks|length }} picks{% if not loop.first %} — click to expand{% endif %})</span>
+            <span class="group-controls"><button type="button" class="btn-link" onclick="event.preventDefault(); event.stopPropagation(); setPickGroups(this, true)">expand all</button> · <button type="button" class="btn-link" onclick="event.preventDefault(); event.stopPropagation(); setPickGroups(this, false)">collapse all</button></span></summary>
         <ul class="pick-list">
           {% for row in group.rows %}
             {% if row.picks|length == 1 %}
@@ -373,7 +374,7 @@
                       </span>
                     {% endif %}
                     <span class="{{ 'pos' if row.profit > 0 else 'neg' if row.profit < 0 else 'muted' }}">{% if row.result != 'pending' %}{{ '%+.0f'|format(row.profit) }}${% endif %}</span>
-                    <span class="muted small pick-group-toggle">▸ expand</span>
+                    <span class="muted small pick-group-toggle">▸ expand</span><span class="muted small pick-group-untoggle">▾ collapse</span>
                   </summary>
                   <ul class="pick-list pick-list-nested">
                     {% for p in row.picks %}{{ pick_row(p, nested=True) }}{% endfor %}
@@ -420,4 +421,11 @@
     {% endfor %}
     <p class="muted small">Predicted and observed should sit close together in every band once the sample is large; where they do not, the fit is telling you the rating is not yet a probability in that range. Bands with a handful of picks mean nothing on their own.</p>
   </section>
+<script>
+function setPickGroups(btn, open) {
+  var scope = btn.closest('details.week-group') || btn.closest('section');
+  if (!scope) return;
+  scope.querySelectorAll('details.pick-group').forEach(function (d) { d.open = open; });
+}
+</script>
 {% endblock %}

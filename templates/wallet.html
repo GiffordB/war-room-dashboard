@@ -1,5 +1,70 @@
 {% extends "base.html" %}
 {% block title %}{{ wallet_label }} · War Room{% endblock %}
+{% macro entry_row(e, nested=False, group_id=None) %}
+              <tr{% if nested %} class="wallet-group-row" data-group="{{ group_id }}" hidden{% endif %}>
+                <td class="muted">{{ e.created_at[:10] }}</td>
+                <td><span class="badge-source" style="background: {{ source_color(e.source) }};">{{ e.source }}</span></td>
+                <td><span class="badge-league">{{ e.league }}</span></td>
+                <td>
+                  {% if e.report_id %}
+                    <a href="{{ url_for('report_detail', report_id=e.report_id) }}">{{ e.matchup }} — {{ e.selection }}</a>
+                  {% else %}
+                    {{ e.matchup }} — {{ e.selection }}
+                    <span class="muted small">(custom)</span>
+                    {% if not e.espn_event_id %}
+                      <form method="post" action="{{ url_for(identify_endpoint, entry_id=e.id) }}" style="display: inline;">
+                        <button class="btn-link" type="submit" title="Look up this matchup on ESPN and link it, like a dashboard pick — enables the live/final score badge and auto-grading">🔍 Identify Game</button>
+                      </form>
+                    {% endif %}
+                  {% endif %}
+                  {% if e.notes %}<div class="muted small">{{ e.notes }}</div>{% endif %}
+                  {% if e.game %}
+                    <div>
+                      <span class="badge-live badge-live-{{ e.game.status }}">
+                        {{ '🏁 FINAL' if e.game.final else '🔴 LIVE' }} {{ e.game.score }} · {{ e.game.label }}
+                      </span>
+                    </div>
+                  {% endif %}
+                </td>
+                <td>
+                  {% if e.pick_id is not none %}
+                    {% if e.get('wr_confidence_at_bet') is not none %}
+                      <span class="badge-wr-confidence wr-tip" tabindex="0" data-tip="Frozen at the moment this bet was logged — doesn't move if the pick's live WR score is later revised">{{ e.wr_confidence_at_bet | round | int }}%</span>
+                    {% else %}<span class="muted">—</span>{% endif %}
+                    {% if e.live_read %}
+                      <div><span class="badge-wr-confidence badge-live-read wr-tip" tabindex="0" data-tip="{{ e.live_read.text }}">{% if e.live_read.effect == 'up' %}<span class="news-up">▲</span> {% elif e.live_read.effect == 'down' %}<span class="news-down">▼</span> {% endif %}Live {{ e.live_read.score | round | int }}%</span></div>
+                    {% endif %}
+                  {% elif e.get('wr_confidence') is not none %}
+                    <span class="badge-wr-confidence wr-tip" tabindex="0" data-tip="{{ e.wr_confidence_breakdown }}">{{ wr_confidence_label(e.wr_confidence_effective) | upper }} · {{ wr_confidence_badge_text(e.wr_confidence_effective, e.get('wr_confidence_initial'), e.league) }}</span>
+                  {% else %}<span class="muted">—</span>{% endif %}
+                </td>
+                <td class="muted">{{ '%+d'|format(e.odds) }}</td>
+                <td>${{ '{:,.0f}'.format(e.stake) }}</td>
+                <td>
+                  {% if e.pick_id is none and e.result == 'pending' %}
+                    <form method="post" action="{{ url_for(settle_endpoint, entry_id=e.id) }}">
+                      <select name="result" onchange="this.form.requestSubmit()">
+                        {% for r in results %}
+                          <option value="{{ r }}" {% if r == e.result %}selected{% endif %}>{{ result_label(r) }}</option>
+                        {% endfor %}
+                      </select>
+                      <noscript><button class="btn btn-sm" type="submit">Update</button></noscript>
+                    </form>
+                  {% else %}
+                    <span class="badge-result" style="background: {{ result_color(e.result) }};">{{ result_label(e.result) }}</span>
+                  {% endif %}
+                </td>
+                <td class="{{ 'pos' if e.profit_loss > 0 else 'neg' if e.profit_loss < 0 else 'muted' }}">
+                  {% if e.result != 'pending' %}{{ '%+.0f'|format(e.profit_loss) }}${% endif %}
+                </td>
+                <td>
+                  <form method="post" action="{{ url_for(delete_endpoint, entry_id=e.id) }}"
+                        onsubmit="return confirm('Remove this bet from your wallet? This cannot be undone.');">
+                    <button class="btn-remove" type="submit" title="Remove this bet from the wallet">🗑 Remove</button>
+                  </form>
+                </td>
+              </tr>
+{% endmacro %}
 {% block content %}
 
   <div class="page-head">
@@ -155,6 +220,7 @@
             <span class="muted small">({{ group.entries|length }} bet{{ 's' if group.entries|length != 1 }} ·
               {{ group.stats.wins }}-{{ group.stats.losses }}{% if group.stats.pushes %}-{{ group.stats.pushes }}{% endif %}{% if group.stats.pending %}, {{ group.stats.pending }} pending{% endif %}
               · <span class="{{ 'pos' if group.stats.profit > 0 else 'neg' if group.stats.profit < 0 else 'muted' }}">{{ '%+.0f'|format(group.stats.profit) }}$</span>{% if not loop.first %} — click to expand{% endif %})</span>
+            <span class="group-controls"><button type="button" class="btn-link" onclick="event.preventDefault(); event.stopPropagation(); setWalletGroups(this, true)">expand all</button> · <button type="button" class="btn-link" onclick="event.preventDefault(); event.stopPropagation(); setWalletGroups(this, false)">collapse all</button></span>
           </summary>
           <div class="table-scroll">
         <table class="data-table">
@@ -173,70 +239,30 @@
             </tr>
           </thead>
           <tbody>
-            {% for e in group.entries %}
-              <tr>
-                <td class="muted">{{ e.created_at[:10] }}</td>
-                <td><span class="badge-source" style="background: {{ source_color(e.source) }};">{{ e.source }}</span></td>
-                <td><span class="badge-league">{{ e.league }}</span></td>
-                <td>
-                  {% if e.report_id %}
-                    <a href="{{ url_for('report_detail', report_id=e.report_id) }}">{{ e.matchup }} — {{ e.selection }}</a>
-                  {% else %}
-                    {{ e.matchup }} — {{ e.selection }}
-                    <span class="muted small">(custom)</span>
-                    {% if not e.espn_event_id %}
-                      <form method="post" action="{{ url_for(identify_endpoint, entry_id=e.id) }}" style="display: inline;">
-                        <button class="btn-link" type="submit" title="Look up this matchup on ESPN and link it, like a dashboard pick — enables the live/final score badge and auto-grading">🔍 Identify Game</button>
-                      </form>
+            {% for row in group.rows %}
+              {% if row.picks|length == 1 %}
+                {{ entry_row(row.picks[0]) }}
+              {% else %}
+                {% set lead = row.lead %}{% set gid = 'wg' ~ group.week_key ~ '-' ~ lead.id %}
+                <tr class="wallet-group" data-group="{{ gid }}" onclick="toggleWalletGroup('{{ gid }}')" title="Click to expand the {{ row.picks|length }} bets on this side">
+                  <td class="muted">{{ lead.created_at[:10] }}</td>
+                  <td><span class="pick-group-sources">{% for s in row.sources %}<span class="badge-source" style="background: {{ source_color(s) }};">{{ s }}</span>{% endfor %}</span></td>
+                  <td><span class="badge-league">{{ lead.league }}</span></td>
+                  <td>
+                    {{ lead.matchup }} — {{ lead.selection }} <span class="muted small">× {{ row.picks|length }} bets, lowest line shown · <span class="group-toggle-text">▸ expand</span></span>
+                    {% if lead.game %}
+                      <div><span class="badge-live badge-live-{{ lead.game.status }}">{{ '🏁 FINAL' if lead.game.final else '🔴 LIVE' }} {{ lead.game.score }} · {{ lead.game.label }}</span></div>
                     {% endif %}
-                  {% endif %}
-                  {% if e.notes %}<div class="muted small">{{ e.notes }}</div>{% endif %}
-                  {% if e.game %}
-                    <div>
-                      <span class="badge-live badge-live-{{ e.game.status }}">
-                        {{ '🏁 FINAL' if e.game.final else '🔴 LIVE' }} {{ e.game.score }} · {{ e.game.label }}
-                      </span>
-                    </div>
-                  {% endif %}
-                </td>
-                <td>
-                  {% if e.pick_id is not none %}
-                    {% if e.get('wr_confidence_at_bet') is not none %}
-                      <span class="badge-wr-confidence wr-tip" tabindex="0" data-tip="Frozen at the moment this bet was logged — doesn't move if the pick's live WR score is later revised">{{ e.wr_confidence_at_bet | round | int }}%</span>
-                    {% else %}<span class="muted">—</span>{% endif %}
-                    {% if e.live_read %}
-                      <div><span class="badge-wr-confidence badge-live-read wr-tip" tabindex="0" data-tip="{{ e.live_read.text }}">{% if e.live_read.effect == 'up' %}<span class="news-up">▲</span> {% elif e.live_read.effect == 'down' %}<span class="news-down">▼</span> {% endif %}Live {{ e.live_read.score | round | int }}%</span></div>
-                    {% endif %}
-                  {% elif e.get('wr_confidence') is not none %}
-                    <span class="badge-wr-confidence wr-tip" tabindex="0" data-tip="{{ e.wr_confidence_breakdown }}">{{ wr_confidence_label(e.wr_confidence_effective) | upper }} · {{ wr_confidence_badge_text(e.wr_confidence_effective, e.get('wr_confidence_initial'), e.league) }}</span>
-                  {% else %}<span class="muted">—</span>{% endif %}
-                </td>
-                <td class="muted">{{ '%+d'|format(e.odds) }}</td>
-                <td>${{ '{:,.0f}'.format(e.stake) }}</td>
-                <td>
-                  {% if e.pick_id is none and e.result == 'pending' %}
-                    <form method="post" action="{{ url_for(settle_endpoint, entry_id=e.id) }}">
-                      <select name="result" onchange="this.form.requestSubmit()">
-                        {% for r in results %}
-                          <option value="{{ r }}" {% if r == e.result %}selected{% endif %}>{{ result_label(r) }}</option>
-                        {% endfor %}
-                      </select>
-                      <noscript><button class="btn btn-sm" type="submit">Update</button></noscript>
-                    </form>
-                  {% else %}
-                    <span class="badge-result" style="background: {{ result_color(e.result) }};">{{ result_label(e.result) }}</span>
-                  {% endif %}
-                </td>
-                <td class="{{ 'pos' if e.profit_loss > 0 else 'neg' if e.profit_loss < 0 else 'muted' }}">
-                  {% if e.result != 'pending' %}{{ '%+.0f'|format(e.profit_loss) }}${% endif %}
-                </td>
-                <td>
-                  <form method="post" action="{{ url_for(delete_endpoint, entry_id=e.id) }}"
-                        onsubmit="return confirm('Remove this bet from your wallet? This cannot be undone.');">
-                    <button class="btn-remove" type="submit" title="Remove this bet from the wallet">🗑 Remove</button>
-                  </form>
-                </td>
-              </tr>
+                  </td>
+                  <td>{% if lead.get('wr_confidence_at_bet') is not none %}<span class="badge-wr-confidence">{{ lead.wr_confidence_at_bet | round | int }}%</span>{% else %}<span class="muted">—</span>{% endif %}</td>
+                  <td class="muted">—</td>
+                  <td>${{ '{:,.0f}'.format(row.stake) }}</td>
+                  <td>{% if row.result == 'mixed' %}<span class="badge-result" style="background: #64748b;">Mixed</span>{% else %}<span class="badge-result" style="background: {{ result_color(row.result) }};">{{ result_label(row.result) }}</span>{% endif %}</td>
+                  <td class="{{ 'pos' if row.profit > 0 else 'neg' if row.profit < 0 else 'muted' }}">{% if row.result != 'pending' %}{{ '%+.0f'|format(row.profit) }}${% endif %}</td>
+                  <td></td>
+                </tr>
+                {% for e in row.picks %}{{ entry_row(e, nested=True, group_id=gid) }}{% endfor %}
+              {% endif %}
             {% endfor %}
           </tbody>
         </table>
@@ -433,5 +459,24 @@
   applyMode();
   populatePicks('');
 })();
+</script>
+<script>
+function setWalletGroup(id, open) {
+  document.querySelectorAll('tr.wallet-group-row[data-group="' + id + '"]').forEach(function (r) { r.hidden = !open; });
+  var head = document.querySelector('tr.wallet-group[data-group="' + id + '"]');
+  if (head) {
+    head.classList.toggle('wallet-group-open', open);
+    var t = head.querySelector('.group-toggle-text'); if (t) t.textContent = open ? '▾ collapse' : '▸ expand';
+  }
+}
+function toggleWalletGroup(id) {
+  var first = document.querySelector('tr.wallet-group-row[data-group="' + id + '"]');
+  setWalletGroup(id, !(first && !first.hidden));
+}
+function setWalletGroups(btn, open) {
+  var week = btn.closest('details.week-group');
+  if (!week) return;
+  week.querySelectorAll('tr.wallet-group').forEach(function (h) { setWalletGroup(h.getAttribute('data-group'), open); });
+}
 </script>
 {% endblock %}

@@ -1,5 +1,27 @@
 {% extends "base.html" %}
 {% block title %}AI Test · War Room{% endblock %}
+{% macro v2_row(x, nested=False) %}
+          <li class="pick-row{% if nested %} pick-row-nested{% endif %}">
+            <span class="badge-source" style="background: {{ source_color(x.source) }};">{{ x.source }}</span>
+            <span class="badge-league">{{ x.league }}</span>
+            <span class="pick-matchup"><a href="{{ url_for('report_detail', report_id=x.report_id) }}">{{ x.matchup }} — {{ x.selection }}</a></span>
+            <span class="muted">{{ '%+d'|format(x.odds) }}</span>
+            <span class="badge-wr-confidence">badge {{ x.badge }}</span>
+            <span class="badge-ai">v2 {{ '%.0f'|format(x.v2) }}%</span>
+          </li>
+{% endmacro %}
+{% macro graded_row(p, nested=False) %}
+          <li class="pick-row{% if nested %} pick-row-nested{% endif %}">
+            <span class="badge-source" style="background: {{ source_color(p.source) }};">{{ p.source }}</span>
+            <span class="badge-league">{{ p.league }}</span>
+            <span class="badge-ai" title="{{ p.ai_grade.model }} · {{ p.ai_grade.graded_at }} · rubric v{{ p.ai_grade.rubric_version or 0 }}">🤖 {{ p.ai_grade.quality }}/10 {{ p.ai_grade.verdict }}</span>{% if p.ai_grade_initial %}<span class="muted small" title="{{ p.ai_grade_initial.reason }}">was {{ p.ai_grade_initial.quality }}/10 {{ p.ai_grade_initial.verdict }}</span>{% endif %}
+            <span class="pick-matchup"><a href="{{ url_for('report_detail', report_id=p.report_id) }}">{{ p.matchup }} — {{ p.selection }}</a></span>
+            <span class="muted">{{ '%+d'|format(p.odds) }}</span>
+            <span class="badge-result" style="background: {{ result_color(p.result) }};">{{ result_label(p.result) }}</span>
+            {% if p.game %}<span class="badge-live badge-live-{{ p.game.status }}">{{ '🏁 FINAL' if p.game.final else '🔴 LIVE' }} {{ p.game.score }}</span>{% endif %}
+            <span class="muted small">{{ p.ai_grade.reason }}</span>
+          </li>
+{% endmacro %}
 {% block content %}
   <div class="page-head">
     <h1>War Room vs WR AI Test</h1>
@@ -166,41 +188,57 @@
       </div>
     {% endif %}
     {% if v2.pending %}
-      <h3 class="section-label" style="margin-top: 16px;">This week's pending football picks: badge vs v2</h3>
+      <h3 class="section-label" style="margin-top: 16px;">This week's pending football picks: badge vs v2 <span class="group-controls"><button type="button" class="btn-link" onclick="setPickGroups(this, true)">expand all</button> · <button type="button" class="btn-link" onclick="setPickGroups(this, false)">collapse all</button></span></h3>
       <ul class="pick-list">
-        {% for x in v2.pending %}
-          <li class="pick-row">
-            <span class="badge-source" style="background: {{ source_color(x.source) }};">{{ x.source }}</span>
-            <span class="badge-league">{{ x.league }}</span>
-            <span class="pick-matchup"><a href="{{ url_for('report_detail', report_id=x.report_id) }}">{{ x.pick.matchup }} — {{ x.pick.selection }}</a></span>
-            <span class="muted">{{ '%+d'|format(x.pick.odds) }}</span>
-            <span class="badge-wr-confidence">badge {{ x.badge }}</span>
-            <span class="badge-ai">v2 {{ '%.0f'|format(x.v2) }}%</span>
-          </li>
+        {% for row in v2.pending %}
+          {% if row.picks|length == 1 %}{{ v2_row(row.picks[0]) }}{% else %}{% set x = row.lead %}
+            <li class="pick-group-item"><details class="pick-group">
+              <summary class="pick-row pick-group-summary">
+                <span class="pick-group-sources">{% for s in row.sources %}<span class="badge-source" style="background: {{ source_color(s) }};">{{ s }}</span>{% endfor %}</span>
+                <span class="badge-league">{{ x.league }}</span>
+                <span class="pick-matchup">{{ x.matchup }} — {{ x.selection }} <span class="muted small">× {{ row.picks|length }} picks, lowest line shown</span></span>
+                <span class="badge-wr-confidence">badge {{ x.badge }}</span>
+                <span class="badge-ai">v2 {{ '%.0f'|format(x.v2) }}%</span>
+                <span class="muted small pick-group-toggle">▸ expand</span><span class="muted small pick-group-untoggle">▾ collapse</span>
+              </summary>
+              <ul class="pick-list pick-list-nested">{% for x in row.picks %}{{ v2_row(x, nested=True) }}{% endfor %}</ul>
+            </details></li>
+          {% endif %}
         {% endfor %}
       </ul>
     {% endif %}
   </section>
 
   <section>
-    <h2 class="section-label">Graded arguments</h2>
+    <h2 class="section-label">Graded arguments <span class="group-controls"><button type="button" class="btn-link" onclick="setPickGroups(this, true)">expand all</button> · <button type="button" class="btn-link" onclick="setPickGroups(this, false)">collapse all</button></span></h2>
     {% if graded %}
       <ul class="pick-list">
-        {% for p in graded %}
-          <li class="pick-row">
-            <span class="badge-source" style="background: {{ source_color(p.source) }};">{{ p.source }}</span>
-            <span class="badge-league">{{ p.league }}</span>
-            <span class="badge-ai" title="{{ p.ai_grade.model }} · {{ p.ai_grade.graded_at }} · rubric v{{ p.ai_grade.rubric_version or 0 }}">🤖 {{ p.ai_grade.quality }}/10 {{ p.ai_grade.verdict }}</span>{% if p.ai_grade_initial %}<span class="muted small" title="{{ p.ai_grade_initial.reason }}">was {{ p.ai_grade_initial.quality }}/10 {{ p.ai_grade_initial.verdict }}</span>{% endif %}
-            <span class="pick-matchup"><a href="{{ url_for('report_detail', report_id=p.report_id) }}">{{ p.matchup }} — {{ p.selection }}</a></span>
-            <span class="muted">{{ '%+d'|format(p.odds) }}</span>
-            <span class="badge-result" style="background: {{ result_color(p.result) }};">{{ result_label(p.result) }}</span>
-            {% if p.game %}<span class="badge-live badge-live-{{ p.game.status }}">{{ '🏁 FINAL' if p.game.final else '🔴 LIVE' }} {{ p.game.score }}</span>{% endif %}
-            <span class="muted small">{{ p.ai_grade.reason }}</span>
-          </li>
+        {% for row in graded_rows %}
+          {% if row.picks|length == 1 %}{{ graded_row(row.picks[0]) }}{% else %}{% set p = row.lead %}
+            <li class="pick-group-item"><details class="pick-group">
+              <summary class="pick-row pick-group-summary">
+                <span class="pick-group-sources">{% for s in row.sources %}<span class="badge-source" style="background: {{ source_color(s) }};">{{ s }}</span>{% endfor %}</span>
+                <span class="badge-league">{{ p.league }}</span>
+                <span class="badge-ai">🤖 {{ p.ai_grade.quality }}/10 {{ p.ai_grade.verdict }}</span>
+                <span class="pick-matchup">{{ p.matchup }} — {{ p.selection }} <span class="muted small">× {{ row.picks|length }} picks, lowest line shown</span></span>
+                {% if row.result == 'mixed' %}<span class="badge-result" style="background: #64748b;">Mixed</span>{% else %}<span class="badge-result" style="background: {{ result_color(row.result) }};">{{ result_label(row.result) }}</span>{% endif %}
+                {% if p.game %}<span class="badge-live badge-live-{{ p.game.status }}">{{ '🏁 FINAL' if p.game.final else '🔴 LIVE' }} {{ p.game.score }}</span>{% endif %}
+                <span class="muted small pick-group-toggle">▸ expand</span><span class="muted small pick-group-untoggle">▾ collapse</span>
+              </summary>
+              <ul class="pick-list pick-list-nested">{% for p in row.picks %}{{ graded_row(p, nested=True) }}{% endfor %}</ul>
+            </details></li>
+          {% endif %}
         {% endfor %}
       </ul>
     {% else %}
       <p class="empty">Nothing graded yet.</p>
     {% endif %}
   </section>
+<script>
+function setPickGroups(btn, open) {
+  var scope = btn.closest('section');
+  if (!scope) return;
+  scope.querySelectorAll('details.pick-group').forEach(function (d) { d.open = open; });
+}
+</script>
 {% endblock %}

@@ -673,9 +673,10 @@ def wr_v2_walk_forward(data):
             if f is None:
                 continue
             pv = _sigmoid(sum(wi * fi for wi, fi in zip(final_w, f)))
-            pending.append({"pick": p, "source": r["source"], "league": r["league"], "report_id": r["id"], "v2": 100 * pv,
+            pending.append({**p, "source": r["source"], "league": r["league"], "report_id": r["id"], "v2": 100 * pv,
                             "live": scores.get(p["id"]), "badge": wr_confidence_badge_text(scores.get(p["id"]), p.get("wr_confidence_initial"), r["league"]) if scores.get(p["id"]) is not None else "—"})
-        pending.sort(key=lambda x: _kickoff_sort_key(x["pick"]))
+        pending.sort(key=_kickoff_sort_key)
+        pending = _collapse_same_side(pending)
     return {"rows": len(rows), "reconstructed": sum(1 for _, p, *_ in rows if not p.get("wr_breakdown_kickoff")), "table": table, "totals": totals, "coefficients": coefficients, "pending": pending}
 
 
@@ -1603,6 +1604,64 @@ def recent_picks_by_week(data, league=None, limit=4):
         group["picks"].sort(key=_kickoff_sort_key)
         group["rows"] = _collapse_same_side(group["picks"])
     return weeks
+
+
+def supersede_duplicate_picks(data, only_source=None, only_event=None):
+    """
+    One live projection per source per market: when a source has more
+    than one still-pending pick on the same game and bet type (a later
+    card re-stating, re-pricing or flipping an earlier one), the newest
+    pick is the source's projection and the older ones are retired -
+    removed from the record and kept as a snapshot in
+    data["superseded_picks"]. A wallet bet tied to a retired pick keeps
+    its own odds and stake: it is re-pointed at the newer pick when the
+    side is the same, and becomes a stand-alone bet on its original side
+    (graded off the final score like any custom bet) when the source
+    flipped sides. Ticket picks and parlays are never touched. Returns
+    how many picks were retired.
+    """
+    reports = {r["id"]: r for r in data["reports"]}
+    groups = {}
+    for p in data["picks"]:
+        r = reports.get(p["report_id"])
+        if not r or r["source"] in WAR_ROOM_SOURCES or p.get("parlay_leg_pick_ids") or p["result"] != "pending" or not p.get("espn_event_id") or not p.get("bet_type"):
+            continue
+        if (only_source and r["source"] != only_source) or (only_event and p["espn_event_id"] != only_event):
+            continue
+        groups.setdefault((r["source"], p["espn_event_id"], p["bet_type"]), []).append(p)
+    retired_ids = {}
+    for (source, event, bet_type), ps in groups.items():
+        if len(ps) < 2:
+            continue
+        ps.sort(key=lambda p: p["id"])
+        newest = ps[-1]
+        for old in ps[:-1]:
+            for wkey in ("wallet_entries", "jesse_wallet_entries"):
+                for e in data.get(wkey, []):
+                    if e.get("pick_id") != old["id"]:
+                        continue
+                    if old.get("bet_side") == newest.get("bet_side"):
+                        e["pick_id"] = newest["id"]
+                        if "report_id" in e:
+                            e["report_id"] = newest["report_id"]
+                    else:
+                        e["pick_id"] = None
+                        for k in ("espn_event_id", "bet_type", "bet_side", "bet_line", "home_team", "away_team"):
+                            if old.get(k) is not None:
+                                e[k] = old[k]
+                        e["notes"] = ((e.get("notes") or "") + f" (source later flipped this game; bet stands on its own side, graded off the final score)").strip()
+            data.setdefault("superseded_picks", []).append({
+                "pick_id": old["id"], "report_id": old["report_id"], "source": source, "matchup": old["matchup"], "selection": old["selection"],
+                "odds": old["odds"], "stake": old["stake"], "espn_event_id": event, "bet_type": bet_type, "bet_side": old.get("bet_side"), "bet_line": old.get("bet_line"),
+                "created_at": old.get("created_at"), "superseded_by": newest["id"], "superseded_at": datetime.utcnow().isoformat(timespec="seconds"),
+            })
+            retired_ids[old["id"]] = newest["id"]
+    if retired_ids:
+        data["picks"] = [p for p in data["picks"] if p["id"] not in retired_ids]
+        for p in data["picks"]:
+            if p.get("parlay_leg_pick_ids"):
+                p["parlay_leg_pick_ids"] = [retired_ids.get(i, i) for i in p["parlay_leg_pick_ids"]]
+    return len(retired_ids)
 
 
 def _hardest_line_pick(picks):
@@ -3766,6 +3825,7 @@ def create_pick(report_id, fields):
         new_pick["wr_confidence_initial"] = initial_score
         new_pick["wr_breakdown_initial"] = _compact_breakdown(initial_breakdown)
         if source not in WAR_ROOM_SOURCES and new_pick.get("espn_event_id"):
+            supersede_duplicate_picks(data, only_source=source, only_event=new_pick["espn_event_id"])
             try:
                 grade_pick_arguments(data, picks=[new_pick])
             except Exception:
@@ -3856,10 +3916,11 @@ def auto_grade_all():
     except Exception:
         app.logger.exception("ai grading pass failed")
         ai_graded = 0
+    superseded = supersede_duplicate_picks(data)
     before_withdrawn = len(data.get("ticket_withdrawals", []))
     selected = _safe_refresh_war_room_card(data) + _safe_refresh_war_room_lean_card(data)
     withdrawn = len(data.get("ticket_withdrawals", [])) - before_withdrawn
-    if graded or synced or captured or backfilled or selected or ai_graded or breakdowns_added or withdrawn:
+    if graded or synced or captured or backfilled or selected or ai_graded or breakdowns_added or withdrawn or superseded:
         message = f"Auto-grade all reports: {graded} pick(s) settled, {synced} wallet entr{'y' if synced == 1 else 'ies'} synced"
         if captured:
             message += f", {captured} line{'s' if captured != 1 else ''} captured"
@@ -3873,6 +3934,8 @@ def auto_grade_all():
             message += f", {breakdowns_added} rating breakdown{'s' if breakdowns_added != 1 else ''} reconstructed"
         if withdrawn:
             message += f", {withdrawn} ticket selection{'s' if withdrawn != 1 else ''} withdrawn"
+        if superseded:
+            message += f", {superseded} duplicate pick{'s' if superseded != 1 else ''} superseded"
         store.save(data, token, message=message)
     return redirect(url_for("reports_list", graded=graded, still_pending=still_pending))
 
@@ -4385,6 +4448,7 @@ def wallet_entries_by_week(entries):
         # Same order as every pick list: live and upcoming first by
         # kickoff, finished bets at the bottom.
         group["entries"].sort(key=_kickoff_sort_key)
+        group["rows"] = _collapse_same_side(group["entries"])
     return weeks
 
 
@@ -4791,11 +4855,18 @@ def _render_wallet(wallet_key):
     statused = attach_game_status(status_inputs)
     game_by_entry_id = {p["wallet_entry_id"]: p["game"] for p in statused}
     kickoff_by_entry_id = {p["wallet_entry_id"]: p.get("kickoff") for p in statused}
-    entries = [
-        {**e, "game": game_by_entry_id.get(e["id"]), "live_read": news_live_reads.get(e["id"]),
-         "kickoff": kickoff_by_entry_id.get(e["id"]) or (picks_by_id.get(e["pick_id"]) or {}).get("kickoff")}
-        for e in entries
-    ]
+    def _with_market(e):
+        pick = picks_by_id.get(e["pick_id"]) or {}
+        return {
+            **e, "game": game_by_entry_id.get(e["id"]), "live_read": news_live_reads.get(e["id"]),
+            "kickoff": kickoff_by_entry_id.get(e["id"]) or pick.get("kickoff"),
+            # the market keys let same-side bets on one game fold into one row (see _collapse_same_side)
+            "espn_event_id": pick.get("espn_event_id") or e.get("espn_event_id"),
+            "bet_type": pick.get("bet_type") or e.get("bet_type"),
+            "bet_side": pick.get("bet_side") or e.get("bet_side"),
+            "bet_line": pick.get("bet_line") if pick else e.get("bet_line"),
+        }
+    entries = [_with_market(e) for e in entries]
 
     return render_template(
         "wallet.html",
@@ -5086,6 +5157,7 @@ def ai_test_page():
             if r:
                 graded.append({**p, "source": r["source"], "league": r["league"], "report_date": r["report_date"]})
     graded = sorted(attach_game_status(graded), key=_kickoff_sort_key)
+    graded_rows = _collapse_same_side(graded)
     verdict_stats = {}
     for p in graded:
         v = p["ai_grade"]["verdict"]
@@ -5106,6 +5178,7 @@ def ai_test_page():
         test_stats=source_stats(data, WAR_ROOM_AI_TEST_SOURCE),
         rows=ai_test_diff(data),
         graded=graded,
+        graded_rows=graded_rows,
         verdict_stats=verdict_stats,
         verdict_order=["edge", "mixed", "story"],
         ai_grading_enabled=ai_grader.available(),
