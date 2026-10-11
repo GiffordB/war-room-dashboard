@@ -1646,10 +1646,8 @@ def supersede_duplicate_picks(data, only_source=None, only_event=None):
                             e["report_id"] = newest["report_id"]
                     else:
                         e["pick_id"] = None
-                        for k in ("espn_event_id", "bet_type", "bet_side", "bet_line", "home_team", "away_team"):
-                            if old.get(k) is not None:
-                                e[k] = old[k]
-                        e["notes"] = ((e.get("notes") or "") + f" (source later flipped this game; bet stands on its own side, graded off the final score)").strip()
+                        e.update(_market_fields(old))
+                        e["notes"] = ((e.get("notes") or "") + " (source later flipped this game; bet stands on its own side, graded off the final score)").strip()
             data.setdefault("superseded_picks", []).append({
                 "pick_id": old["id"], "report_id": old["report_id"], "source": source, "matchup": old["matchup"], "selection": old["selection"],
                 "odds": old["odds"], "stake": old["stake"], "espn_event_id": event, "bet_type": bet_type, "bet_side": old.get("bet_side"), "bet_line": old.get("bet_line"),
@@ -2341,6 +2339,65 @@ def _war_room_report_for(data, league, report_date, source=WAR_ROOM_SOURCE):
     return report
 
 
+def _market_fields(pick_like):
+    """The keys a stand-alone wallet bet needs to be status-tracked and graded off the final score, pulled from a pick or a pick snapshot."""
+    out = {k: pick_like.get(k) for k in ("espn_event_id", "bet_type", "bet_side", "bet_line", "home_team", "away_team") if pick_like.get(k) is not None}
+    if "bet_line" not in out and pick_like.get("bet_type") in ("spread", "total"):
+        m = re.search(r"([+-]?\d+(?:\.\d+)?)\s*$", pick_like.get("selection") or "")
+        if m:
+            out["bet_line"] = float(m.group(1))
+    return out
+
+
+def _detach_wallet_entries_from_pick(data, pick_like, why):
+    """
+    A wallet bet tied to a pick that is going away keeps its own odds and
+    stake and becomes a stand-alone bet on the same side, carrying the
+    pick's market keys so it still shows a live score and grades off
+    the final like any custom bet. Returns how many were detached.
+    """
+    n = 0
+    for wkey in ("wallet_entries", "jesse_wallet_entries"):
+        for e in data.get(wkey, []):
+            if e.get("pick_id") != pick_like["id"]:
+                continue
+            e["pick_id"] = None
+            e.update(_market_fields(pick_like))
+            e["notes"] = ((e.get("notes") or "") + f" ({why})").strip()
+            n += 1
+    return n
+
+
+def repair_orphaned_wallet_entries(data):
+    """
+    A wallet bet whose pick no longer exists (withdrawn ticket selection,
+    superseded pick, or a plain delete from before bets were detached)
+    becomes a stand-alone bet using the retired pick's snapshot where one
+    was kept. Returns how many were repaired.
+    """
+    live = {p["id"] for p in data["picks"]}
+    snapshots = {}
+    for w in data.get("ticket_withdrawals", []):
+        snapshots[w["pick_id"]] = {**w, "id": w["pick_id"]}
+    for w in data.get("superseded_picks", []):
+        snapshots[w["pick_id"]] = {**w, "id": w["pick_id"]}
+    n = 0
+    for wkey in ("wallet_entries", "jesse_wallet_entries"):
+        for e in data.get(wkey, []):
+            pid = e.get("pick_id")
+            if pid is None or pid in live:
+                continue
+            snap = snapshots.get(pid)
+            e["pick_id"] = None
+            if snap:
+                e.update(_market_fields(snap))
+                e["notes"] = ((e.get("notes") or "") + " (the pick this bet followed was retired; bet stands on its own, graded off the final score)").strip()
+            else:
+                e["notes"] = ((e.get("notes") or "") + " (the pick this bet followed was deleted; settle by hand or identify the game)").strip()
+            n += 1
+    return n
+
+
 def _withdraw_ticket_picks(data, source, chosen, events_in_scope=None):
     """
     Re-check a ticket's still-pending selections against what its rule
@@ -2372,6 +2429,7 @@ def _withdraw_ticket_picks(data, source, chosen, events_in_scope=None):
             "the rule now takes the other side of this market" if chosen.get(market) else
             "this side no longer qualifies under the rule (sources moved, a card withdrew, or a dead heat)"
         )
+        _detach_wallet_entries_from_pick(data, p, f"{source} withdrew this selection before kickoff; your bet stands on its own, graded off the final score")
         data.setdefault("ticket_withdrawals", []).append({
             "pick_id": p["id"], "source": source, "league": r["league"], "matchup": p["matchup"], "selection": p["selection"], "odds": p["odds"],
             "espn_event_id": p["espn_event_id"], "bet_type": p["bet_type"], "bet_side": p.get("bet_side"), "selected_at": p.get("created_at"),
@@ -3958,10 +4016,11 @@ def auto_grade_all():
         app.logger.exception("ai grading pass failed")
         ai_graded = 0
     superseded = supersede_duplicate_picks(data)
+    repaired = repair_orphaned_wallet_entries(data)
     before_withdrawn = len(data.get("ticket_withdrawals", []))
     selected = _safe_refresh_war_room_card(data) + _safe_refresh_war_room_lean_card(data)
     withdrawn = len(data.get("ticket_withdrawals", [])) - before_withdrawn
-    if graded or synced or captured or backfilled or selected or ai_graded or breakdowns_added or withdrawn or superseded or kickoffs_added:
+    if graded or synced or captured or backfilled or selected or ai_graded or breakdowns_added or withdrawn or superseded or kickoffs_added or repaired:
         message = f"Auto-grade all reports: {graded} pick(s) settled, {synced} wallet entr{'y' if synced == 1 else 'ies'} synced"
         if captured:
             message += f", {captured} line{'s' if captured != 1 else ''} captured"
@@ -3979,6 +4038,8 @@ def auto_grade_all():
             message += f", {superseded} duplicate pick{'s' if superseded != 1 else ''} superseded"
         if kickoffs_added:
             message += f", {kickoffs_added} kickoff time{'s' if kickoffs_added != 1 else ''} stored"
+        if repaired:
+            message += f", {repaired} orphaned wallet bet{'s' if repaired != 1 else ''} detached"
         store.save(data, token, message=message)
     return redirect(url_for("reports_list", graded=graded, still_pending=still_pending))
 
@@ -4076,6 +4137,7 @@ def delete_pick(pick_id):
         return redirect(url_for("reports_list"))
 
     report_id = pick["report_id"]
+    _detach_wallet_entries_from_pick(data, pick, "the pick this bet followed was deleted; bet stands on its own, graded off the final score")
     data["picks"] = [p for p in data["picks"] if p["id"] != pick_id]
     store.save(data, token, message=f"Delete pick #{pick_id}")
     return redirect(url_for("report_detail", report_id=report_id))
