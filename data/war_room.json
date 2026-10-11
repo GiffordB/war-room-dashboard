@@ -24389,7 +24389,7 @@
   ],
   "next_jesse_wallet_id": 1,
   "jesse_wallet_entries": [],
-  "next_lean_id": 200,
+  "next_lean_id": 203,
   "leans": [
     {
       "id": 1,
@@ -47969,6 +47969,357 @@
         "away_score": 12,
         "kickoff": "2026-10-11T02:30Z"
       }
+    },
+    {
+      "id": 200,
+      "report_id": 53,
+      "source": "ChatGPT",
+      "league": "NFL",
+      "category": "lean",
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "parlay_leg_pick_ids": null,
+      "wr_confidence": 55.0,
+      "created_at": "2026-10-11T16:01:27",
+      "matchup": "Baltimore Ravens @ Atlanta Falcons",
+      "selection": "Atlanta -3",
+      "bet_type": "spread",
+      "bet_side": "home",
+      "bet_line": -3.0,
+      "odds": -110,
+      "score": 55.0,
+      "espn_event_id": "401872993",
+      "note": "Fair ATL -4 (range -1 to -7) vs DK ATL -3: a one-point lean on the favorite; watch only (Jackson out, Huntley starts, roof unconfirmed). Fair-number lean, not a pick.",
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "ATL -3",
+        "home_spread": -3.0,
+        "home_spread_odds": -120.0,
+        "away_spread_odds": 100.0,
+        "total": 43.5,
+        "over_odds": -105.0,
+        "under_odds": -115.0,
+        "home_moneyline": -175,
+        "away_moneyline": 145,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-10-11T16:01:32",
+      "kickoff": "2026-10-12T00:20Z",
+      "pregame_weather": {
+        "city": "Atlanta",
+        "temp_c": 17.5,
+        "precip_probability_pct": 1,
+        "precip_mm": 0.0,
+        "wind_kmh": 11.3,
+        "cloud_cover_pct": 78,
+        "forecast_hour": "2026-10-12T00:00"
+      },
+      "pregame_home_form": {
+        "played": 4,
+        "wins": 2,
+        "win_pct": 50.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 4,
+        "wins": 3,
+        "win_pct": 75.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 4.75,
+      "pregame_away_injuries": 3.75,
+      "pregame_home_split": {
+        "home": {
+          "w": 0,
+          "d": 0,
+          "l": 1,
+          "gf": 3,
+          "ga": 34
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 1,
+          "gf": 93,
+          "ga": 58
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 1,
+          "gf": 41,
+          "ga": 42
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 0,
+          "gf": 75,
+          "ga": 54
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-11T16:01:32",
+      "wr_confidence_kickoff": 52.282758620689656,
+      "wr_breakdown_kickoff": {
+        "base": 55.0,
+        "impact_scale": 0.1,
+        "record_mod": 0.483,
+        "record_win_pct": 65.217,
+        "record_settled": 23,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": 0.0,
+        "weather_mod": 0.0,
+        "form_mod": -0.0,
+        "form_gap": -25.0,
+        "injury_mod": -2.0,
+        "injury_gap": -1.0,
+        "home_away_mod": -1.2,
+        "home_away_gap": -100.0,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 52.282758620689656
+    },
+    {
+      "id": 201,
+      "report_id": 53,
+      "source": "ChatGPT",
+      "league": "NFL",
+      "category": "lean",
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "parlay_leg_pick_ids": null,
+      "wr_confidence": 54.0,
+      "created_at": "2026-10-11T16:01:27",
+      "matchup": "Houston Texans @ Tennessee Titans",
+      "selection": "Over 37.5",
+      "bet_type": "total",
+      "bet_side": "over",
+      "bet_line": 37.5,
+      "odds": -110,
+      "score": 54.0,
+      "espn_event_id": "401872984",
+      "note": "Fair total 39 (35-43) vs DK 37.5: 1.5 points of lean to the over. Fair-number lean, not a pick.",
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "HOU -6.5",
+        "home_spread": 6.5,
+        "home_spread_odds": -102.0,
+        "away_spread_odds": -118.0,
+        "total": 37.5,
+        "over_odds": -115.0,
+        "under_odds": -105.0,
+        "home_moneyline": 270,
+        "away_moneyline": -340,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-10-11T16:01:32",
+      "kickoff": "2026-10-11T17:00Z",
+      "pregame_weather": {
+        "city": "Nashville",
+        "temp_c": 19.1,
+        "precip_probability_pct": 1,
+        "precip_mm": 0.0,
+        "wind_kmh": 16.0,
+        "cloud_cover_pct": 100,
+        "forecast_hour": "2026-10-11T17:00"
+      },
+      "pregame_home_form": {
+        "played": 4,
+        "wins": 0,
+        "win_pct": 0.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 4,
+        "wins": 0,
+        "win_pct": 0.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 7.0,
+      "pregame_away_injuries": 9.25,
+      "pregame_home_split": {
+        "home": {
+          "w": 0,
+          "d": 0,
+          "l": 2,
+          "gf": 30,
+          "ga": 47
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 2,
+          "gf": 25,
+          "ga": 36
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 0,
+          "d": 0,
+          "l": 3,
+          "gf": 67,
+          "ga": 90
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 1,
+          "gf": 17,
+          "ga": 19
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-11T16:01:32",
+      "wr_confidence_kickoff": 54.38620689655173,
+      "wr_breakdown_kickoff": {
+        "base": 54.0,
+        "impact_scale": 0.08,
+        "record_mod": 0.386,
+        "record_win_pct": 65.217,
+        "record_settled": 23,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": 0.0,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 54.38620689655173
+    },
+    {
+      "id": 202,
+      "report_id": 53,
+      "source": "ChatGPT",
+      "league": "NFL",
+      "category": "lean",
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "parlay_leg_pick_ids": null,
+      "wr_confidence": 54.0,
+      "created_at": "2026-10-11T16:01:27",
+      "matchup": "Baltimore Ravens @ Atlanta Falcons",
+      "selection": "Under 43.5",
+      "bet_type": "total",
+      "bet_side": "under",
+      "bet_line": 43.5,
+      "odds": -110,
+      "score": 54.0,
+      "espn_event_id": "401872993",
+      "note": "Fair total 42 (38-46) vs DK 43.5: 1.5 points of lean to the under. Fair-number lean, not a pick.",
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "ATL -3",
+        "home_spread": -3.0,
+        "home_spread_odds": -120.0,
+        "away_spread_odds": 100.0,
+        "total": 43.5,
+        "over_odds": -105.0,
+        "under_odds": -115.0,
+        "home_moneyline": -175,
+        "away_moneyline": 145,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-10-11T16:01:32",
+      "kickoff": "2026-10-12T00:20Z",
+      "pregame_weather": {
+        "city": "Atlanta",
+        "temp_c": 17.5,
+        "precip_probability_pct": 1,
+        "precip_mm": 0.0,
+        "wind_kmh": 11.3,
+        "cloud_cover_pct": 78,
+        "forecast_hour": "2026-10-12T00:00"
+      },
+      "pregame_home_form": {
+        "played": 4,
+        "wins": 2,
+        "win_pct": 50.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 4,
+        "wins": 3,
+        "win_pct": 75.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 4.75,
+      "pregame_away_injuries": 3.75,
+      "pregame_home_split": {
+        "home": {
+          "w": 0,
+          "d": 0,
+          "l": 1,
+          "gf": 3,
+          "ga": 34
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 1,
+          "gf": 93,
+          "ga": 58
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 1,
+          "gf": 41,
+          "ga": 42
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 0,
+          "gf": 75,
+          "ga": 54
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-11T16:01:32",
+      "wr_confidence_kickoff": 54.38620689655173,
+      "wr_breakdown_kickoff": {
+        "base": 54.0,
+        "impact_scale": 0.08,
+        "record_mod": 0.386,
+        "record_win_pct": 65.217,
+        "record_settled": 23,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": -0.0,
+        "clv_move": -0.0,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 54.38620689655173
     }
   ],
   "ai_backtest": {
