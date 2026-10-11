@@ -1,6 +1,6 @@
 {
   "next_report_id": 54,
-  "next_pick_id": 259,
+  "next_pick_id": 260,
   "reports": [
     {
       "source": "ChatGPT",
@@ -23031,6 +23031,155 @@
         "reason": "The 2-point gap does cross the key number 3, but the fair range (PK to -3) admittedly comes from judgment with the market visible, the injury and availability claims are unsourced, and the 46% no-vig figure does not show an edge on its own, so the grade is capped at mixed.",
         "model": "claude-opus-5-5",
         "graded_at": "2026-10-11T16:00:41",
+        "rubric_version": 5
+      }
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 53,
+      "category": "best_bet",
+      "matchup": "Chicago Bears @ Green Bay Packers",
+      "selection": "Under 47.5",
+      "odds": -118,
+      "stake": 50.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 59.0,
+      "war_room_line": "Conditional totals play, $50 (0.5u). Fair total 43 (40-46), fair edge +4.5 points at 47.5. DK 47.5 on the splits page; the indexed board showed 46.5 (conflicting snapshots, not verified movement).",
+      "edge": "Backup-quarterback expectations, a run-focused Chicago approach and Green Bay's limited rushing/line depth support fewer efficient scoring possessions. Over risks: Chicago's high play volume, Green Bay's red-zone defense, Chicago secondary losses. Wind 11-13 gusting 20-21 is a small friction only.",
+      "price_discipline": "47.5 through -120, or 46.5 through -110, one position only; do not chase 46 or lower or 46.5 worse than -110. Conditions: Bagent confirmed starter; no additional material defensive absences. Noon CT.",
+      "espn_event_id": "401872990",
+      "bet_type": "total",
+      "bet_side": "under",
+      "bet_line": 47.5,
+      "home_team": "Green Bay Packers",
+      "away_team": "Chicago Bears",
+      "created_at": "2026-10-11T16:00:46",
+      "id": 259,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "CHI -1.5",
+        "home_spread": 1.5,
+        "home_spread_odds": -108.0,
+        "away_spread_odds": -112.0,
+        "total": 47.5,
+        "over_odds": -102.0,
+        "under_odds": -118.0,
+        "home_moneyline": 105,
+        "away_moneyline": -125,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-10-11T16:00:50",
+      "kickoff": "2026-10-11T17:00Z",
+      "pregame_weather": {
+        "city": "Green Bay",
+        "temp_c": 23.6,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 19.8,
+        "cloud_cover_pct": 0,
+        "forecast_hour": "2026-10-11T17:00"
+      },
+      "pregame_home_form": {
+        "played": 4,
+        "wins": 2,
+        "win_pct": 50.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 4,
+        "wins": 3,
+        "win_pct": 75.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 8.5,
+      "pregame_away_injuries": 6.25,
+      "pregame_home_split": {
+        "home": {
+          "w": 0,
+          "d": 0,
+          "l": 1,
+          "gf": 14,
+          "ga": 35
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 1,
+          "gf": 59,
+          "ga": 70
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 2,
+          "d": 0,
+          "l": 1,
+          "gf": 53,
+          "ga": 28
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 0,
+          "gf": 59,
+          "ga": 37
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-11T16:00:50",
+      "wr_confidence_kickoff": 59.86896551724138,
+      "wr_breakdown_kickoff": {
+        "base": 59.0,
+        "impact_scale": 0.18,
+        "record_mod": 0.869,
+        "record_win_pct": 65.217,
+        "record_settled": 23,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": null,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 59.86896551724138,
+      "wr_breakdown_initial": {
+        "base": 59.0,
+        "impact_scale": 0.18,
+        "record_mod": 0.869,
+        "record_win_pct": 65.217,
+        "record_settled": 23,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": -0.0,
+        "clv_move": -0.0,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "ai_grade": {
+        "quality": 5,
+        "verdict": "mixed",
+        "reason": "The author's fair total of 43 against 47.5 is a stated 4.5-point gap with clear price limits, but 47.5 sits outside the 40-46 range only marginally, the number is a self-described judgment estimate made with the market visible, the line snapshots conflict (46.5 vs 47.5), and the Bagent starter condition is unconfirmed.",
+        "model": "claude-opus-5-5",
+        "graded_at": "2026-10-11T16:00:52",
         "rubric_version": 5
       }
     }
