@@ -1,6 +1,6 @@
 {
   "next_report_id": 54,
-  "next_pick_id": 258,
+  "next_pick_id": 259,
   "reports": [
     {
       "source": "ChatGPT",
@@ -22883,6 +22883,155 @@
         "home_score": 28,
         "away_score": 25,
         "kickoff": "2026-10-10T23:30Z"
+      }
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 53,
+      "category": "best_bet",
+      "matchup": "Las Vegas Raiders @ New England Patriots",
+      "selection": "Las Vegas +3.5",
+      "odds": -112,
+      "stake": 50.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 58.0,
+      "war_room_line": "Conditional regular play, $50 (0.5u). Fair NE -1.5 (PK to -3), fair edge +2 points vs the DK NE -3.5 midpoint; no-vig LV 46% (+117). Also competition rank #1 (provisional).",
+      "edge": "The pass-catching matchup improves with New England's cornerback losses; Bowers and two starting guards cleared the injury report. The case is a competitive game with a field-goal cushion.",
+      "price_discipline": "Playable through +3.5 at -115 or better; do not chase +3 or lower or worse than -115. Conditions: Jeanty active without a new material restriction; no unexpected Cousins, Bowers or starting OL absence. Failure risk: LV receiver injuries, limited rushing, road travel, a Maye-led offense. Noon CT.",
+      "espn_event_id": "401872986",
+      "bet_type": "spread",
+      "bet_side": "away",
+      "bet_line": 3.5,
+      "home_team": "New England Patriots",
+      "away_team": "Las Vegas Raiders",
+      "created_at": "2026-10-11T16:00:26",
+      "id": 258,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "NE -3.5",
+        "home_spread": -3.5,
+        "home_spread_odds": -105.0,
+        "away_spread_odds": -115.0,
+        "total": 45.5,
+        "over_odds": -112.0,
+        "under_odds": -108.0,
+        "home_moneyline": -185,
+        "away_moneyline": 154,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-10-11T16:00:30",
+      "kickoff": "2026-10-11T17:00Z",
+      "pregame_weather": {
+        "city": "Foxborough",
+        "temp_c": 15.4,
+        "precip_probability_pct": 6,
+        "precip_mm": 0.0,
+        "wind_kmh": 12.3,
+        "cloud_cover_pct": 100,
+        "forecast_hour": "2026-10-11T17:00"
+      },
+      "pregame_home_form": {
+        "played": 4,
+        "wins": 2,
+        "win_pct": 50.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 4,
+        "wins": 3,
+        "win_pct": 75.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 8.25,
+      "pregame_away_injuries": 7.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 0,
+          "gf": 20,
+          "ga": 3
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 2,
+          "gf": 45,
+          "ga": 74
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 1,
+          "gf": 54,
+          "ga": 43
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 0,
+          "gf": 61,
+          "ga": 41
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-11T16:00:30",
+      "wr_confidence_kickoff": 58.772413793103446,
+      "wr_breakdown_kickoff": {
+        "base": 58.0,
+        "impact_scale": 0.16,
+        "record_mod": 0.772,
+        "record_win_pct": 65.217,
+        "record_settled": 23,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": null,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 61.272413793103446,
+      "wr_breakdown_initial": {
+        "base": 58.0,
+        "impact_scale": 0.16,
+        "record_mod": 0.772,
+        "record_win_pct": 65.217,
+        "record_settled": 23,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": 0.0,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": 25.0,
+        "injury_mod": 2.5,
+        "injury_gap": 1.25,
+        "home_away_mod": 0.0,
+        "home_away_gap": 0.0,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "ai_grade": {
+        "quality": 5,
+        "verdict": "mixed",
+        "reason": "The 2-point gap does cross the key number 3, but the fair range (PK to -3) admittedly comes from judgment with the market visible, the injury and availability claims are unsourced, and the 46% no-vig figure does not show an edge on its own, so the grade is capped at mixed.",
+        "model": "claude-opus-5-5",
+        "graded_at": "2026-10-11T16:00:41",
+        "rubric_version": 5
       }
     }
   ],
