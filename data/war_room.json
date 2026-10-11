@@ -1,5 +1,5 @@
 {
-  "next_report_id": 53,
+  "next_report_id": 54,
   "next_pick_id": 258,
   "reports": [
     {
@@ -504,6 +504,18 @@
       "lsu_review_notes": "",
       "created_at": "2026-10-10T15:10:12",
       "id": 52
+    },
+    {
+      "source": "ChatGPT",
+      "league": "NFL",
+      "report_date": "2026-10-11",
+      "week_number": 5,
+      "week_label": "Week 5 -- NFL War Room, Sunday morning edition v1 (Oct 11)",
+      "philosophy": "NFL War Room, Sunday morning edition (snapshot 13:16 UTC; DraftKings observed 8:04-8:15 AM CT via DK Network splits, which combine jurisdictions and may differ from the app). Two conditional $50 plays, maximum proposed exposure $100 / 1 unit; noon inactives pending, so these are proposed selections, not confirmed tickets, and Jesse decides every wager. Fair numbers are broad judgment estimates, not validated model output: the market was visible during research, no blinded model, calibrated cover probability or complete opponent-adjusted dataset is claimed, and ranges express handicapping uncertainty. Estimated point differences: LV +2 versus the fair midpoint; Chicago under +4.5 at 47.5; those support only modest conditional stakes. Houston, Seattle and Atlanta markets sit inside the fair ranges: money passes, with no authorized playable-through threshold today. Regime: Low -- localized under interest, no blanket underdog/favorite call. No Thor Hammer Smash ($250 cap; unresolved availability and uncalibrated scoring rule it out), no Sexy Moneyline, no parlay, no futures. Diamond scores unrated (no reproducible prior rubric retrieved). Competition selections (judgment ranking): 1 LV +3.5 (provisional), 2 TEN +7 (competition-only, wager pass), 3 SF +3 (competition-only, wager pass); logged at the competition convention, $50 each. Formal recommendations, competition leans and confirmed tickets are kept separate; no new ticket is confirmed here.",
+      "blind_spot_notes": "ELIGIBILITY: Raiders +3.5 -- keep +3.5 at -115 or better; do not chase +3 or lower or worse than -115; conditions: Jeanty active without a newly reported material workload restriction, no unexpected Cousins, Bowers or starting offensive-line absence, exact DK Louisiana ticket meets the threshold. Bears-Packers Under 47.5 -- 47.5 through -120, or 46.5 through -110, one position only; do not chase 46 or lower; conditions: Bagent confirmed starter, no additional material defensive absences. If conditions fail, label unactivated before kickoff, not a hindsight deletion. WHY: Las Vegas -- the pass-catching matchup improves with New England's cornerback losses while Bowers and two starting guards cleared; the case is a competitive game with a field-goal cushion; failure risk is LV's own receiver injuries, limited rushing, road travel and a Maye-led offense. Chicago-Green Bay under -- backup-quarterback expectations, a run-focused Chicago approach and Green Bay's limited rushing/line depth support fewer efficient scoring possessions; Chicago's sustained drives produce high play volume, and Green Bay's red-zone defense and Chicago secondary losses are genuine over risks. WEATHER: Green Bay noon-3 PM 74-79F, south wind 11-13 gusting 20-21, no precipitation, open air -- small passing/kicking friction only; Foxborough about 60F, light wind, modest rain risk rising after the game. FAIR NUMBERS (fair side / fair total / no-vig win chance vs DK): LV at NE -- NE -1.5 (PK to -3), 46 (43-49), NE 54% / LV 46%, DK NE -3.5 and 45.5; CHI at GB -- CHI -1 (GB -1 to CHI -3), 43 (40-46), CHI 53%, DK CHI -1.5 and 47.5 (46.5 on the indexed board: conflicting snapshots, not verified movement); HOU at TEN -- HOU -5 (-3 to -7), 39 (35-43), HOU 68%, DK HOU -7 and 37.5; SF at SEA -- SEA -1 (SF -1 to SEA -3), 45 (42-48), SEA 53%, DK SEA -3 and 45.5; BAL at ATL -- ATL -4 (-1 to -7), 42 (38-46), ATL 63%, DK ATL -3 and 43.5 (Lamar Jackson out, Huntley starts; roof not confirmed). SLATE: 49ers-Seahawks the best game to watch (SF injury losses limit the dog's apparent value); Ravens-Falcons watch only; Tennessee competition-only +7 lean (Houston passing advantage real, home field and Houston OL problems narrow it, Ward execution the failure risk, no moneyline flyer). PASSES / incomplete: PHI-JAX (London, severe Philadelphia absences, inconsistent quotes), CIN-MIA (receiver availability), CLE-NYJ, MIN-NO, IND-PIT, NYG-WAS (weather and availability), DEN-LAC (major absences both sides), DET-ARI (no price edge), BUF-LAR Monday needs its own check. EXPERIENCE: Cousins credited for NFL processing with mobility/pressure risk; Bagent limited-start credit; Huntley prior starts do not erase Jackson's loss; no numeric Age Index manufactured. VEGAS BLIND SPOT watch (all Eyeball): Las Vegas (can passing production persist against stronger opposition?), Chicago (how much defense survives opponent adjustment?), Tennessee (does underdog value survive weak QB execution?). No streak-based promotion to Confirmed. Win-total ledger: February openers retained, no new recommendation. Friday: no Oct 11 tickets confirmed.",
+      "lsu_review_notes": "",
+      "created_at": "2026-10-11T16:00:16",
+      "id": 53
     }
   ],
   "picks": [
