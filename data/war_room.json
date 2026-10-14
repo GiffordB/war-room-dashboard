@@ -1,6 +1,6 @@
 {
   "next_report_id": 56,
-  "next_pick_id": 266,
+  "next_pick_id": 267,
   "reports": [
     {
       "source": "ChatGPT",
@@ -24003,6 +24003,155 @@
         "reason": "The author quantifies a small edge of +2.6pp from a model total of 3.2 against 3.5, and the injuries are sourced to ESPN, but the gap is thin, the absences are probably already priced in, confidence sits below the author's own threshold, and official confirmation of the absences could not be retrieved.",
         "model": "claude-opus-5-5",
         "graded_at": "2026-10-14T00:13:42",
+        "rubric_version": 5
+      }
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 55,
+      "category": "best_bet",
+      "matchup": "VfB Stuttgart @ Slovan Bratislava",
+      "selection": "Slovan Bratislava +1.5",
+      "odds": 100,
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "Stuttgart are clear favorites (-340) but a 2+ goal margin is far from automatic away from home.\nSlovan lost 1-6 to PSG in MD1, so the blowout risk is real - why this is a $0 lean.\nStuttgart won 3-1 at Viking in MD1 (Demirovic hat trick).",
+      "wr_confidence": 50.0,
+      "war_room_line": "Stuttgart win by 2+ ~45% -> Slovan +1.5 ~55% (raw), 50.6% blended",
+      "edge": "+1.5 at +100 implies 50% (\u224846% no-vig); blended 50.6% -> +4pp edge vs no-vig, EV +1.2% - thin; tracked only",
+      "price_discipline": "+100 or better: tracked $0\nworse than -110: pass",
+      "espn_event_id": "401915405",
+      "bet_type": "spread",
+      "bet_side": "home",
+      "bet_line": 1.5,
+      "home_team": "Slovan Bratislava",
+      "away_team": "VfB Stuttgart",
+      "created_at": "2026-10-14T00:13:45",
+      "id": 266,
+      "pregame_odds": {
+        "provider": "DraftKings",
+        "spread_details": "VFB -340",
+        "home_spread": 1.5,
+        "home_spread_odds": 100.0,
+        "away_spread_odds": -140.0,
+        "total": 3.5,
+        "over_odds": -115.0,
+        "under_odds": -105.0,
+        "home_moneyline": 800,
+        "away_moneyline": -340,
+        "draw_moneyline": 500.0
+      },
+      "pregame_odds_captured_at": "2026-10-14T00:13:49",
+      "kickoff": "2026-10-14T19:00Z",
+      "pregame_weather": {
+        "city": "Bratislava",
+        "temp_c": 12.9,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 7.1,
+        "cloud_cover_pct": 100,
+        "forecast_hour": "2026-10-14T19:00"
+      },
+      "pregame_home_form": {
+        "played": 1,
+        "wins": 0,
+        "win_pct": 0.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 1,
+        "wins": 1,
+        "win_pct": 100.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 0,
+          "d": 0,
+          "l": 0,
+          "gf": 0,
+          "ga": 0
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 1,
+          "gf": 1,
+          "ga": 6
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 0,
+          "gf": 3,
+          "ga": 1
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 0,
+          "gf": 0,
+          "ga": 0
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-14T00:13:49",
+      "wr_confidence_kickoff": 50.0,
+      "wr_breakdown_kickoff": {
+        "base": 50.0,
+        "impact_scale": 0.0,
+        "record_mod": -0.0,
+        "record_win_pct": 40.0,
+        "record_settled": 5,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": null,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 50.0,
+      "wr_breakdown_initial": {
+        "base": 50.0,
+        "impact_scale": 0.0,
+        "record_mod": -0.0,
+        "record_win_pct": 40.0,
+        "record_settled": 5,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": 0.0,
+        "weather_mod": 0.0,
+        "form_mod": -0.0,
+        "form_gap": -100.0,
+        "injury_mod": 0.0,
+        "injury_gap": 0.0,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "ai_grade": {
+        "quality": 3,
+        "verdict": "story",
+        "reason": "The numbers don't hold together: +100 implies 50% yet is called \u224846% no-vig, the edge is given as +4pp alongside EV of only +1.2%, and the 55% raw versus 50.6% blended spread suggests the model adds almost nothing, so the quantification is unreliable and the case rests on a thin narrative about away margins.",
+        "model": "claude-opus-5-5",
+        "graded_at": "2026-10-14T00:13:55",
         "rubric_version": 5
       }
     }
