@@ -1,6 +1,6 @@
 {
   "next_report_id": 56,
-  "next_pick_id": 265,
+  "next_pick_id": 266,
   "reports": [
     {
       "source": "ChatGPT",
@@ -23854,6 +23854,155 @@
         "reason": "The +2.4pp, +1.7% EV gap is small and stated honestly, but the author admits it fails their own +2% EV bar, the 3.1-goal model barely supports it, and the support is mostly narrative ('big-game tension'), so it is a thin lean rather than an edge.",
         "model": "claude-opus-5-5",
         "graded_at": "2026-10-14T00:13:32",
+        "rubric_version": 5
+      }
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 55,
+      "category": "totals_radar",
+      "matchup": "Liverpool @ LASK Linz",
+      "selection": "Under 3.5 Goals",
+      "odds": -110,
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "ESPN (Oct 13, 15:57Z): Liverpool without Isak, Gakpo and Szoboszlai - three attackers/creators out trims Liverpool's ceiling.\nLiverpool still ~73% to win; a blowout is the risk to the under.\nOfficial club/uefa.com confirmation not retrievable (403).",
+      "wr_confidence": 56.0,
+      "war_room_line": "Model total ~3.2 goals; blended P(under 3.5) ~55%",
+      "edge": "Under -110 implies 52.4%; blended 55% -> +2.6pp edge, EV +5%, but confidence 56 < 60 - tracked only",
+      "price_discipline": "-110 or better: tracked $0\n-125 or worse: pass",
+      "espn_event_id": "401915415",
+      "bet_type": "total",
+      "bet_side": "under",
+      "bet_line": 3.5,
+      "home_team": "LASK Linz",
+      "away_team": "Liverpool",
+      "created_at": "2026-10-14T00:13:35",
+      "id": 265,
+      "pregame_odds": {
+        "provider": "DraftKings",
+        "spread_details": "LIV -340",
+        "home_spread": 1.5,
+        "home_spread_odds": -105.0,
+        "away_spread_odds": -135.0,
+        "total": 3.5,
+        "over_odds": -110.0,
+        "under_odds": -110.0,
+        "home_moneyline": 800,
+        "away_moneyline": -340,
+        "draw_moneyline": 500.0
+      },
+      "pregame_odds_captured_at": "2026-10-14T00:13:40",
+      "kickoff": "2026-10-14T16:45Z",
+      "pregame_weather": {
+        "city": "Linz",
+        "temp_c": 16.5,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 8.6,
+        "cloud_cover_pct": 100,
+        "forecast_hour": "2026-10-14T16:00"
+      },
+      "pregame_home_form": {
+        "played": 1,
+        "wins": 0,
+        "win_pct": 0.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 1,
+        "wins": 1,
+        "win_pct": 100.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 0,
+          "d": 0,
+          "l": 0,
+          "gf": 0,
+          "ga": 0
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 1,
+          "gf": 0,
+          "ga": 1
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 0,
+          "gf": 2,
+          "ga": 1
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 0,
+          "gf": 0,
+          "ga": 0
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-14T00:13:40",
+      "wr_confidence_kickoff": 55.78181818181818,
+      "wr_breakdown_kickoff": {
+        "base": 56.0,
+        "impact_scale": 0.12,
+        "record_mod": -0.218,
+        "record_win_pct": 40.0,
+        "record_settled": 5,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": null,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 55.78181818181818,
+      "wr_breakdown_initial": {
+        "base": 56.0,
+        "impact_scale": 0.12,
+        "record_mod": -0.218,
+        "record_win_pct": 40.0,
+        "record_settled": 5,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": -0.0,
+        "clv_move": -0.0,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "ai_grade": {
+        "quality": 4,
+        "verdict": "mixed",
+        "reason": "The author quantifies a small edge of +2.6pp from a model total of 3.2 against 3.5, and the injuries are sourced to ESPN, but the gap is thin, the absences are probably already priced in, confidence sits below the author's own threshold, and official confirmation of the absences could not be retrieved.",
+        "model": "claude-opus-5-5",
+        "graded_at": "2026-10-14T00:13:42",
         "rubric_version": 5
       }
     }
