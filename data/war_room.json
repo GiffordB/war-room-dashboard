@@ -1,6 +1,6 @@
 {
   "next_report_id": 57,
-  "next_pick_id": 273,
+  "next_pick_id": 274,
   "reports": [
     {
       "source": "ChatGPT",
@@ -25086,6 +25086,155 @@
         "reason": "The +5pp edge comes from a blended model whose stated confidence is below the author's own threshold, and the supporting points (winless run, sack pressure) are form narrative the market already prices, so it is a modest lean rather than a demonstrated edge.",
         "model": "claude-opus-5-5",
         "graded_at": "2026-10-16T23:14:50",
+        "rubric_version": 5
+      }
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 56,
+      "category": "sexy_moneyline",
+      "matchup": "Coventry City @ Tottenham Hotspur",
+      "selection": "Draw",
+      "odds": 370,
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "A lean, not a stake: Spurs have drawn 3 of 6 and score rarely.\nLow-confidence dog/draw price kept at $0.",
+      "wr_confidence": 24.0,
+      "war_room_line": "Spurs 53 / Draw 24 / Coventry 23 (blended)",
+      "edge": "Price implies 21.3% (20.2% no-vig); blended 24% -> +3.8pp edge, EV +13%, confidence 24",
+      "price_discipline": "Tracked only at $0",
+      "espn_event_id": "401879257",
+      "bet_type": "match_result",
+      "bet_side": "draw",
+      "bet_line": null,
+      "home_team": "Tottenham Hotspur",
+      "away_team": "Coventry City",
+      "created_at": "2026-10-16T23:14:52",
+      "id": 273,
+      "pregame_odds": {
+        "provider": "DraftKings",
+        "spread_details": "TOT -205",
+        "home_spread": -1.5,
+        "home_spread_odds": 115.0,
+        "away_spread_odds": -165.0,
+        "total": 2.5,
+        "over_odds": -175.0,
+        "under_odds": 140.0,
+        "home_moneyline": -205,
+        "away_moneyline": 500,
+        "draw_moneyline": 370.0
+      },
+      "pregame_odds_captured_at": "2026-10-16T23:14:56",
+      "kickoff": "2026-10-19T19:00Z",
+      "pregame_weather": {
+        "city": "London",
+        "temp_c": 12.2,
+        "precip_probability_pct": 16,
+        "precip_mm": 0.0,
+        "wind_kmh": 10.1,
+        "cloud_cover_pct": 73,
+        "forecast_hour": "2026-10-19T19:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 0,
+        "win_pct": 0.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 2,
+        "win_pct": 40.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 0,
+          "d": 1,
+          "l": 2,
+          "gf": 2,
+          "ga": 5
+        },
+        "away": {
+          "w": 0,
+          "d": 2,
+          "l": 1,
+          "gf": 1,
+          "ga": 4
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 2,
+          "gf": 4,
+          "ga": 7
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 2,
+          "gf": 1,
+          "ga": 4
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-16T23:14:56",
+      "wr_confidence_kickoff": 24.0,
+      "wr_breakdown_kickoff": {
+        "base": 24.0,
+        "impact_scale": 0.0,
+        "record_mod": 0.0,
+        "record_win_pct": 50.0,
+        "record_settled": 20,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": null,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 24.0,
+      "wr_breakdown_initial": {
+        "base": 24.0,
+        "impact_scale": 0.0,
+        "record_mod": 0.0,
+        "record_win_pct": 50.0,
+        "record_settled": 20,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": null,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "ai_grade": {
+        "quality": 4,
+        "verdict": "mixed",
+        "reason": "The draw is priced +370 and the author's 24% blend gives a stated 3.8pp gap, but confidence is 24, so per the lessons it grades like a judgment forecast, and the only support is the thin '3 of 6 draws' note.",
+        "model": "claude-opus-5-5",
+        "graded_at": "2026-10-16T23:14:59",
         "rubric_version": 5
       }
     }
