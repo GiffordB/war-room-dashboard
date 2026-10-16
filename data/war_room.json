@@ -26027,7 +26027,7 @@
   ],
   "next_jesse_wallet_id": 1,
   "jesse_wallet_entries": [],
-  "next_lean_id": 219,
+  "next_lean_id": 236,
   "leans": [
     {
       "id": 1,
@@ -52185,6 +52185,1995 @@
         "away_score": 6,
         "kickoff": "2026-10-14T16:45Z"
       }
+    },
+    {
+      "id": 219,
+      "report_id": 56,
+      "source": "Claude - GB",
+      "league": "EPL",
+      "category": "lean",
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "parlay_leg_pick_ids": null,
+      "wr_confidence": 30.0,
+      "created_at": "2026-10-16T23:15:03",
+      "matchup": "Chelsea @ Everton",
+      "selection": "Everton to Win",
+      "bet_type": "match_result",
+      "bet_side": "home",
+      "bet_line": null,
+      "odds": 215,
+      "score": 30.0,
+      "espn_event_id": "401878771",
+      "note": "No edge: blended Everton 30% vs 30.4% no-vig.",
+      "pregame_odds": {
+        "provider": "DraftKings",
+        "spread_details": "CHE +120",
+        "home_spread": 0.5,
+        "home_spread_odds": -150.0,
+        "away_spread_odds": 110.0,
+        "total": 2.5,
+        "over_odds": -150.0,
+        "under_odds": 120.0,
+        "home_moneyline": 215,
+        "away_moneyline": 120,
+        "draw_moneyline": 270.0
+      },
+      "pregame_odds_captured_at": "2026-10-16T23:15:10",
+      "kickoff": "2026-10-17T11:30Z",
+      "pregame_weather": {
+        "city": "Liverpool",
+        "temp_c": 11.1,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 11.9,
+        "cloud_cover_pct": 0,
+        "forecast_hour": "2026-10-17T11:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 1,
+        "win_pct": 20.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 2,
+        "win_pct": 40.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 2,
+          "d": 1,
+          "l": 0,
+          "gf": 5,
+          "ga": 2
+        },
+        "away": {
+          "w": 0,
+          "d": 3,
+          "l": 0,
+          "gf": 3,
+          "ga": 3
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 2,
+          "d": 1,
+          "l": 0,
+          "gf": 11,
+          "ga": 6
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 2,
+          "gf": 4,
+          "ga": 7
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-16T23:15:10",
+      "wr_confidence_kickoff": 32.4,
+      "wr_breakdown_kickoff": {
+        "base": 30.0,
+        "impact_scale": 0.0,
+        "record_mod": 0.0,
+        "record_win_pct": 50.0,
+        "record_settled": 20,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": null,
+        "weather_mod": 0.0,
+        "form_mod": -0.0,
+        "form_gap": -20.0,
+        "injury_mod": 0.0,
+        "injury_gap": 0.0,
+        "home_away_mod": 2.4,
+        "home_away_gap": 66.667,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 32.4
+    },
+    {
+      "id": 220,
+      "report_id": 56,
+      "source": "Claude - GB",
+      "league": "EPL",
+      "category": "lean",
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "parlay_leg_pick_ids": null,
+      "wr_confidence": 50.0,
+      "created_at": "2026-10-16T23:15:03",
+      "matchup": "Chelsea @ Everton",
+      "selection": "Over 2.5",
+      "bet_type": "total",
+      "bet_side": "over",
+      "bet_line": 2.5,
+      "odds": -150,
+      "score": 50.0,
+      "espn_event_id": "401878771",
+      "note": "Chelsea allow 13 in 6; Everton 3 draws away. Price already -150, no gap.",
+      "pregame_odds": {
+        "provider": "DraftKings",
+        "spread_details": "CHE +120",
+        "home_spread": 0.5,
+        "home_spread_odds": -150.0,
+        "away_spread_odds": 110.0,
+        "total": 2.5,
+        "over_odds": -150.0,
+        "under_odds": 120.0,
+        "home_moneyline": 215,
+        "away_moneyline": 120,
+        "draw_moneyline": 270.0
+      },
+      "pregame_odds_captured_at": "2026-10-16T23:15:10",
+      "kickoff": "2026-10-17T11:30Z",
+      "pregame_weather": {
+        "city": "Liverpool",
+        "temp_c": 11.1,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 11.9,
+        "cloud_cover_pct": 0,
+        "forecast_hour": "2026-10-17T11:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 1,
+        "win_pct": 20.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 2,
+        "win_pct": 40.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 2,
+          "d": 1,
+          "l": 0,
+          "gf": 5,
+          "ga": 2
+        },
+        "away": {
+          "w": 0,
+          "d": 3,
+          "l": 0,
+          "gf": 3,
+          "ga": 3
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 2,
+          "d": 1,
+          "l": 0,
+          "gf": 11,
+          "ga": 6
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 2,
+          "gf": 4,
+          "ga": 7
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-16T23:15:10",
+      "wr_confidence_kickoff": 50.0,
+      "wr_breakdown_kickoff": {
+        "base": 50.0,
+        "impact_scale": 0.0,
+        "record_mod": 0.0,
+        "record_win_pct": 50.0,
+        "record_settled": 20,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": 0.0,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 50.0
+    },
+    {
+      "id": 221,
+      "report_id": 56,
+      "source": "Claude - GB",
+      "league": "EPL",
+      "category": "lean",
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "parlay_leg_pick_ids": null,
+      "wr_confidence": 38.0,
+      "created_at": "2026-10-16T23:15:03",
+      "matchup": "Liverpool @ Brentford",
+      "selection": "Brentford to Win",
+      "bet_type": "match_result",
+      "bet_side": "home",
+      "bet_line": null,
+      "odds": 140,
+      "score": 38.0,
+      "espn_event_id": "401879262",
+      "note": "Blended 38% vs 39.9%; fair.",
+      "pregame_odds": {
+        "provider": "DraftKings",
+        "spread_details": "BRE +140",
+        "home_spread": -0.5,
+        "home_spread_odds": 125.0,
+        "away_spread_odds": -175.0,
+        "total": 3.5,
+        "over_odds": 140.0,
+        "under_odds": -175.0,
+        "home_moneyline": 140,
+        "away_moneyline": 180,
+        "draw_moneyline": 270.0
+      },
+      "pregame_odds_captured_at": "2026-10-16T23:15:10",
+      "kickoff": "2026-10-17T14:00Z",
+      "pregame_weather": {
+        "city": "Brentford",
+        "temp_c": 4.1,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 22.4,
+        "cloud_cover_pct": 2,
+        "forecast_hour": "2026-10-17T14:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 1,
+        "win_pct": 20.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 2,
+        "win_pct": 40.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 2,
+          "d": 1,
+          "l": 0,
+          "gf": 7,
+          "ga": 1
+        },
+        "away": {
+          "w": 0,
+          "d": 3,
+          "l": 0,
+          "gf": 5,
+          "ga": 5
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 0,
+          "d": 2,
+          "l": 1,
+          "gf": 2,
+          "ga": 5
+        },
+        "away": {
+          "w": 2,
+          "d": 1,
+          "l": 0,
+          "gf": 5,
+          "ga": 2
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-16T23:15:10",
+      "wr_confidence_kickoff": 38.0,
+      "wr_breakdown_kickoff": {
+        "base": 38.0,
+        "impact_scale": 0.0,
+        "record_mod": 0.0,
+        "record_win_pct": 50.0,
+        "record_settled": 20,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": null,
+        "weather_mod": 0.0,
+        "form_mod": -0.0,
+        "form_gap": -20.0,
+        "injury_mod": 0.0,
+        "injury_gap": 0.0,
+        "home_away_mod": 0.0,
+        "home_away_gap": 0.0,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 38.0
+    },
+    {
+      "id": 222,
+      "report_id": 56,
+      "source": "Claude - GB",
+      "league": "EPL",
+      "category": "lean",
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "parlay_leg_pick_ids": null,
+      "wr_confidence": 45.0,
+      "created_at": "2026-10-16T23:15:03",
+      "matchup": "Hull City @ Fulham",
+      "selection": "Fulham to Win",
+      "bet_type": "match_result",
+      "bet_side": "home",
+      "bet_line": null,
+      "odds": -140,
+      "score": 45.0,
+      "espn_event_id": "401878770",
+      "note": "Winless Fulham priced as -140 favourite; blended 47% vs 55.7% no-vig, negative.",
+      "pregame_odds": {
+        "provider": "DraftKings",
+        "spread_details": "FUL -140",
+        "home_spread": -0.5,
+        "home_spread_odds": -155.0,
+        "away_spread_odds": 110.0,
+        "total": 2.5,
+        "over_odds": -135.0,
+        "under_odds": 105.0,
+        "home_moneyline": -140,
+        "away_moneyline": 370,
+        "draw_moneyline": 300.0
+      },
+      "pregame_odds_captured_at": "2026-10-16T23:15:10",
+      "kickoff": "2026-10-17T14:00Z",
+      "pregame_weather": {
+        "city": "London",
+        "temp_c": 13.3,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 15.5,
+        "cloud_cover_pct": 96,
+        "forecast_hour": "2026-10-17T14:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 0,
+        "win_pct": 0.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 1,
+        "win_pct": 20.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 0,
+          "d": 1,
+          "l": 2,
+          "gf": 5,
+          "ga": 7
+        },
+        "away": {
+          "w": 0,
+          "d": 1,
+          "l": 2,
+          "gf": 1,
+          "ga": 3
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 1,
+          "d": 2,
+          "l": 0,
+          "gf": 4,
+          "ga": 2
+        },
+        "away": {
+          "w": 1,
+          "d": 1,
+          "l": 1,
+          "gf": 4,
+          "ga": 4
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-16T23:15:10",
+      "wr_confidence_kickoff": 43.0,
+      "wr_breakdown_kickoff": {
+        "base": 45.0,
+        "impact_scale": 0.0,
+        "record_mod": 0.0,
+        "record_win_pct": 50.0,
+        "record_settled": 20,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": null,
+        "weather_mod": 0.0,
+        "form_mod": -0.0,
+        "form_gap": -20.0,
+        "injury_mod": 0.0,
+        "injury_gap": 0.0,
+        "home_away_mod": -2.0,
+        "home_away_gap": -50.0,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 43.0
+    },
+    {
+      "id": 223,
+      "report_id": 56,
+      "source": "Claude - GB",
+      "league": "EPL",
+      "category": "lean",
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "parlay_leg_pick_ids": null,
+      "wr_confidence": 47.0,
+      "created_at": "2026-10-16T23:15:03",
+      "matchup": "Hull City @ Fulham",
+      "selection": "Over 2.5",
+      "bet_type": "total",
+      "bet_side": "over",
+      "bet_line": 2.5,
+      "odds": -135,
+      "score": 47.0,
+      "espn_event_id": "401878770",
+      "note": "Fulham home games leaky (7 GA in 3) but Hull low scoring; no gap.",
+      "pregame_odds": {
+        "provider": "DraftKings",
+        "spread_details": "FUL -140",
+        "home_spread": -0.5,
+        "home_spread_odds": -155.0,
+        "away_spread_odds": 110.0,
+        "total": 2.5,
+        "over_odds": -135.0,
+        "under_odds": 105.0,
+        "home_moneyline": -140,
+        "away_moneyline": 370,
+        "draw_moneyline": 300.0
+      },
+      "pregame_odds_captured_at": "2026-10-16T23:15:10",
+      "kickoff": "2026-10-17T14:00Z",
+      "pregame_weather": {
+        "city": "London",
+        "temp_c": 13.3,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 15.5,
+        "cloud_cover_pct": 96,
+        "forecast_hour": "2026-10-17T14:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 0,
+        "win_pct": 0.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 1,
+        "win_pct": 20.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 0,
+          "d": 1,
+          "l": 2,
+          "gf": 5,
+          "ga": 7
+        },
+        "away": {
+          "w": 0,
+          "d": 1,
+          "l": 2,
+          "gf": 1,
+          "ga": 3
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 1,
+          "d": 2,
+          "l": 0,
+          "gf": 4,
+          "ga": 2
+        },
+        "away": {
+          "w": 1,
+          "d": 1,
+          "l": 1,
+          "gf": 4,
+          "ga": 4
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-16T23:15:10",
+      "wr_confidence_kickoff": 47.0,
+      "wr_breakdown_kickoff": {
+        "base": 47.0,
+        "impact_scale": 0.0,
+        "record_mod": 0.0,
+        "record_win_pct": 50.0,
+        "record_settled": 20,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": 0.0,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 47.0
+    },
+    {
+      "id": 224,
+      "report_id": 56,
+      "source": "Claude - GB",
+      "league": "EPL",
+      "category": "lean",
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "parlay_leg_pick_ids": null,
+      "wr_confidence": 78.0,
+      "created_at": "2026-10-16T23:15:03",
+      "matchup": "Ipswich Town @ Manchester City",
+      "selection": "Manchester City to Win",
+      "bet_type": "match_result",
+      "bet_side": "home",
+      "bet_line": null,
+      "odds": -400,
+      "score": 78.0,
+      "espn_event_id": "401879259",
+      "note": "Blended 78% vs 75.9%; +2pp but EV negative at -400.",
+      "pregame_odds": {
+        "provider": "DraftKings",
+        "spread_details": "MNC -400",
+        "home_spread": -1.5,
+        "home_spread_odds": -155.0,
+        "away_spread_odds": 115.0,
+        "total": 3.5,
+        "over_odds": -110.0,
+        "under_odds": -115.0,
+        "home_moneyline": -400,
+        "away_moneyline": 900,
+        "draw_moneyline": 550.0
+      },
+      "pregame_odds_captured_at": "2026-10-16T23:15:10",
+      "kickoff": "2026-10-17T14:00Z",
+      "pregame_weather": {
+        "city": "Manchester",
+        "temp_c": 12.7,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 12.2,
+        "cloud_cover_pct": 34,
+        "forecast_hour": "2026-10-17T14:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 5,
+        "win_pct": 100.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 2,
+        "win_pct": 40.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 3,
+          "d": 0,
+          "l": 0,
+          "gf": 8,
+          "ga": 4
+        },
+        "away": {
+          "w": 3,
+          "d": 0,
+          "l": 0,
+          "gf": 8,
+          "ga": 1
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 2,
+          "d": 0,
+          "l": 1,
+          "gf": 4,
+          "ga": 4
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 2,
+          "gf": 5,
+          "ga": 8
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-16T23:15:10",
+      "wr_confidence_kickoff": 81.6,
+      "wr_breakdown_kickoff": {
+        "base": 78.0,
+        "impact_scale": 0.56,
+        "record_mod": 0.0,
+        "record_win_pct": 50.0,
+        "record_settled": 20,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": null,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": 60.0,
+        "injury_mod": 0.0,
+        "injury_gap": 0.0,
+        "home_away_mod": 3.6,
+        "home_away_gap": 66.667,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 81.6
+    },
+    {
+      "id": 225,
+      "report_id": 56,
+      "source": "Claude - GB",
+      "league": "EPL",
+      "category": "lean",
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "parlay_leg_pick_ids": null,
+      "wr_confidence": 58.0,
+      "created_at": "2026-10-16T23:15:03",
+      "matchup": "Ipswich Town @ Manchester City",
+      "selection": "Manchester City -1.5",
+      "bet_type": "spread",
+      "bet_side": "home",
+      "bet_line": -1.5,
+      "odds": -155,
+      "score": 58.0,
+      "espn_event_id": "401879259",
+      "note": "P(win by 2+) ~58% vs 60.8% implied; pass.",
+      "pregame_odds": {
+        "provider": "DraftKings",
+        "spread_details": "MNC -400",
+        "home_spread": -1.5,
+        "home_spread_odds": -155.0,
+        "away_spread_odds": 115.0,
+        "total": 3.5,
+        "over_odds": -110.0,
+        "under_odds": -115.0,
+        "home_moneyline": -400,
+        "away_moneyline": 900,
+        "draw_moneyline": 550.0
+      },
+      "pregame_odds_captured_at": "2026-10-16T23:15:10",
+      "kickoff": "2026-10-17T14:00Z",
+      "pregame_weather": {
+        "city": "Manchester",
+        "temp_c": 12.7,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 12.2,
+        "cloud_cover_pct": 34,
+        "forecast_hour": "2026-10-17T14:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 5,
+        "win_pct": 100.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 2,
+        "win_pct": 40.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 3,
+          "d": 0,
+          "l": 0,
+          "gf": 8,
+          "ga": 4
+        },
+        "away": {
+          "w": 3,
+          "d": 0,
+          "l": 0,
+          "gf": 8,
+          "ga": 1
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 2,
+          "d": 0,
+          "l": 1,
+          "gf": 4,
+          "ga": 4
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 2,
+          "gf": 5,
+          "ga": 8
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-16T23:15:10",
+      "wr_confidence_kickoff": 61.6,
+      "wr_breakdown_kickoff": {
+        "base": 58.0,
+        "impact_scale": 0.16,
+        "record_mod": 0.0,
+        "record_win_pct": 50.0,
+        "record_settled": 20,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": 0.0,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": 60.0,
+        "injury_mod": 0.0,
+        "injury_gap": 0.0,
+        "home_away_mod": 3.6,
+        "home_away_gap": 66.667,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 61.6
+    },
+    {
+      "id": 226,
+      "report_id": 56,
+      "source": "Claude - GB",
+      "league": "EPL",
+      "category": "lean",
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "parlay_leg_pick_ids": null,
+      "wr_confidence": 47.0,
+      "created_at": "2026-10-16T23:15:03",
+      "matchup": "Ipswich Town @ Manchester City",
+      "selection": "Over 3.5",
+      "bet_type": "total",
+      "bet_side": "over",
+      "bet_line": 3.5,
+      "odds": -110,
+      "score": 47.0,
+      "espn_event_id": "401879259",
+      "note": "Both teams average 3.5 goals but my total ~3.3; no edge.",
+      "pregame_odds": {
+        "provider": "DraftKings",
+        "spread_details": "MNC -400",
+        "home_spread": -1.5,
+        "home_spread_odds": -155.0,
+        "away_spread_odds": 115.0,
+        "total": 3.5,
+        "over_odds": -110.0,
+        "under_odds": -115.0,
+        "home_moneyline": -400,
+        "away_moneyline": 900,
+        "draw_moneyline": 550.0
+      },
+      "pregame_odds_captured_at": "2026-10-16T23:15:10",
+      "kickoff": "2026-10-17T14:00Z",
+      "pregame_weather": {
+        "city": "Manchester",
+        "temp_c": 12.7,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 12.2,
+        "cloud_cover_pct": 34,
+        "forecast_hour": "2026-10-17T14:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 5,
+        "win_pct": 100.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 2,
+        "win_pct": 40.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 3,
+          "d": 0,
+          "l": 0,
+          "gf": 8,
+          "ga": 4
+        },
+        "away": {
+          "w": 3,
+          "d": 0,
+          "l": 0,
+          "gf": 8,
+          "ga": 1
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 2,
+          "d": 0,
+          "l": 1,
+          "gf": 4,
+          "ga": 4
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 2,
+          "gf": 5,
+          "ga": 8
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-16T23:15:10",
+      "wr_confidence_kickoff": 47.0,
+      "wr_breakdown_kickoff": {
+        "base": 47.0,
+        "impact_scale": 0.0,
+        "record_mod": 0.0,
+        "record_win_pct": 50.0,
+        "record_settled": 20,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": 0.0,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 47.0
+    },
+    {
+      "id": 227,
+      "report_id": 56,
+      "source": "Claude - GB",
+      "league": "EPL",
+      "category": "lean",
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "parlay_leg_pick_ids": null,
+      "wr_confidence": 40.0,
+      "created_at": "2026-10-16T23:15:03",
+      "matchup": "Aston Villa @ Newcastle United",
+      "selection": "Newcastle United to Win",
+      "bet_type": "match_result",
+      "bet_side": "home",
+      "bet_line": null,
+      "odds": 130,
+      "score": 40.0,
+      "espn_event_id": "401879258",
+      "note": "Newcastle lost 1-4 at Coventry; blended 40% vs 41.7%.",
+      "pregame_odds": {
+        "provider": "DraftKings",
+        "spread_details": "NEW +130",
+        "home_spread": -0.5,
+        "home_spread_odds": 115.0,
+        "away_spread_odds": -160.0,
+        "total": 2.5,
+        "over_odds": -165.0,
+        "under_odds": 130.0,
+        "home_moneyline": 130,
+        "away_moneyline": 195,
+        "draw_moneyline": 270.0
+      },
+      "pregame_odds_captured_at": "2026-10-16T23:15:10",
+      "kickoff": "2026-10-17T16:30Z",
+      "pregame_weather": {
+        "city": "Newcastle upon Tyne",
+        "temp_c": 11.2,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 10.8,
+        "cloud_cover_pct": 7,
+        "forecast_hour": "2026-10-17T16:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 2,
+        "win_pct": 40.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 1,
+        "win_pct": 20.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 1,
+          "d": 2,
+          "l": 0,
+          "gf": 6,
+          "ga": 5
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 2,
+          "gf": 4,
+          "ga": 8
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 0,
+          "d": 1,
+          "l": 2,
+          "gf": 3,
+          "ga": 5
+        },
+        "away": {
+          "w": 1,
+          "d": 1,
+          "l": 1,
+          "gf": 3,
+          "ga": 6
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-16T23:15:10",
+      "wr_confidence_kickoff": 41.0,
+      "wr_breakdown_kickoff": {
+        "base": 40.0,
+        "impact_scale": 0.0,
+        "record_mod": 0.0,
+        "record_win_pct": 50.0,
+        "record_settled": 20,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": null,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": 20.0,
+        "injury_mod": 0.0,
+        "injury_gap": 0.0,
+        "home_away_mod": 1.0,
+        "home_away_gap": 50.0,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 41.0
+    },
+    {
+      "id": 228,
+      "report_id": 56,
+      "source": "Claude - GB",
+      "league": "EPL",
+      "category": "lean",
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "parlay_leg_pick_ids": null,
+      "wr_confidence": 57.0,
+      "created_at": "2026-10-16T23:15:03",
+      "matchup": "Aston Villa @ Newcastle United",
+      "selection": "Over 2.5",
+      "bet_type": "total",
+      "bet_side": "over",
+      "bet_line": 2.5,
+      "odds": -165,
+      "score": 57.0,
+      "espn_event_id": "401879258",
+      "note": "Blended 57% vs 58.9% no-vig; no edge at the price.",
+      "pregame_odds": {
+        "provider": "DraftKings",
+        "spread_details": "NEW +130",
+        "home_spread": -0.5,
+        "home_spread_odds": 115.0,
+        "away_spread_odds": -160.0,
+        "total": 2.5,
+        "over_odds": -165.0,
+        "under_odds": 130.0,
+        "home_moneyline": 130,
+        "away_moneyline": 195,
+        "draw_moneyline": 270.0
+      },
+      "pregame_odds_captured_at": "2026-10-16T23:15:10",
+      "kickoff": "2026-10-17T16:30Z",
+      "pregame_weather": {
+        "city": "Newcastle upon Tyne",
+        "temp_c": 11.2,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 10.8,
+        "cloud_cover_pct": 7,
+        "forecast_hour": "2026-10-17T16:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 2,
+        "win_pct": 40.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 1,
+        "win_pct": 20.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 1,
+          "d": 2,
+          "l": 0,
+          "gf": 6,
+          "ga": 5
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 2,
+          "gf": 4,
+          "ga": 8
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 0,
+          "d": 1,
+          "l": 2,
+          "gf": 3,
+          "ga": 5
+        },
+        "away": {
+          "w": 1,
+          "d": 1,
+          "l": 1,
+          "gf": 3,
+          "ga": 6
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-16T23:15:10",
+      "wr_confidence_kickoff": 57.0,
+      "wr_breakdown_kickoff": {
+        "base": 57.0,
+        "impact_scale": 0.14,
+        "record_mod": 0.0,
+        "record_win_pct": 50.0,
+        "record_settled": 20,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": 0.0,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 57.0
+    },
+    {
+      "id": 229,
+      "report_id": 56,
+      "source": "Claude - GB",
+      "league": "EPL",
+      "category": "lean",
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "parlay_leg_pick_ids": null,
+      "wr_confidence": 30.0,
+      "created_at": "2026-10-16T23:15:03",
+      "matchup": "Sunderland @ AFC Bournemouth",
+      "selection": "Sunderland to Win",
+      "bet_type": "match_result",
+      "bet_side": "away",
+      "bet_line": null,
+      "odds": 245,
+      "score": 30.0,
+      "espn_event_id": "401879263",
+      "note": "Both sides leaky and winless-ish; +2.8pp, EV +5%, confidence only 30.",
+      "pregame_odds": {
+        "provider": "DraftKings",
+        "spread_details": "BOU +110",
+        "home_spread": -0.5,
+        "home_spread_odds": 100.0,
+        "away_spread_odds": -140.0,
+        "total": 2.5,
+        "over_odds": -115.0,
+        "under_odds": -105.0,
+        "home_moneyline": 110,
+        "away_moneyline": 245,
+        "draw_moneyline": 255.0
+      },
+      "pregame_odds_captured_at": "2026-10-16T23:15:10",
+      "kickoff": "2026-10-18T13:00Z",
+      "pregame_weather": {
+        "city": "Bournemouth",
+        "temp_c": 13.5,
+        "precip_probability_pct": 1,
+        "precip_mm": 0.0,
+        "wind_kmh": 18.0,
+        "cloud_cover_pct": 62,
+        "forecast_hour": "2026-10-18T13:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 0,
+        "win_pct": 0.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 1,
+        "win_pct": 20.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 0,
+          "d": 2,
+          "l": 1,
+          "gf": 3,
+          "ga": 4
+        },
+        "away": {
+          "w": 0,
+          "d": 1,
+          "l": 2,
+          "gf": 4,
+          "ga": 9
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 2,
+          "gf": 1,
+          "ga": 4
+        },
+        "away": {
+          "w": 0,
+          "d": 1,
+          "l": 2,
+          "gf": 5,
+          "ga": 8
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-16T23:15:10",
+      "wr_confidence_kickoff": 30.0,
+      "wr_breakdown_kickoff": {
+        "base": 30.0,
+        "impact_scale": 0.0,
+        "record_mod": 0.0,
+        "record_win_pct": 50.0,
+        "record_settled": 20,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": null,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": 20.0,
+        "injury_mod": 0.0,
+        "injury_gap": 0.0,
+        "home_away_mod": 0.0,
+        "home_away_gap": 0.0,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 30.0
+    },
+    {
+      "id": 230,
+      "report_id": 56,
+      "source": "Claude - GB",
+      "league": "EPL",
+      "category": "lean",
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "parlay_leg_pick_ids": null,
+      "wr_confidence": 55.0,
+      "created_at": "2026-10-16T23:15:03",
+      "matchup": "Sunderland @ AFC Bournemouth",
+      "selection": "Over 2.5",
+      "bet_type": "total",
+      "bet_side": "over",
+      "bet_line": 2.5,
+      "odds": -115,
+      "score": 55.0,
+      "espn_event_id": "401879263",
+      "note": "Combined ~2.9 goals expected; blended 55% vs 51.5%, EV +2.9% but confidence 55 -- one more total than the 3-per-report radar cap.",
+      "pregame_odds": {
+        "provider": "DraftKings",
+        "spread_details": "BOU +110",
+        "home_spread": -0.5,
+        "home_spread_odds": 100.0,
+        "away_spread_odds": -140.0,
+        "total": 2.5,
+        "over_odds": -115.0,
+        "under_odds": -105.0,
+        "home_moneyline": 110,
+        "away_moneyline": 245,
+        "draw_moneyline": 255.0
+      },
+      "pregame_odds_captured_at": "2026-10-16T23:15:10",
+      "kickoff": "2026-10-18T13:00Z",
+      "pregame_weather": {
+        "city": "Bournemouth",
+        "temp_c": 13.5,
+        "precip_probability_pct": 1,
+        "precip_mm": 0.0,
+        "wind_kmh": 18.0,
+        "cloud_cover_pct": 62,
+        "forecast_hour": "2026-10-18T13:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 0,
+        "win_pct": 0.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 1,
+        "win_pct": 20.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 0,
+          "d": 2,
+          "l": 1,
+          "gf": 3,
+          "ga": 4
+        },
+        "away": {
+          "w": 0,
+          "d": 1,
+          "l": 2,
+          "gf": 4,
+          "ga": 9
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 2,
+          "gf": 1,
+          "ga": 4
+        },
+        "away": {
+          "w": 0,
+          "d": 1,
+          "l": 2,
+          "gf": 5,
+          "ga": 8
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-16T23:15:10",
+      "wr_confidence_kickoff": 55.0,
+      "wr_breakdown_kickoff": {
+        "base": 55.0,
+        "impact_scale": 0.1,
+        "record_mod": 0.0,
+        "record_win_pct": 50.0,
+        "record_settled": 20,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": 0.0,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 55.0
+    },
+    {
+      "id": 231,
+      "report_id": 56,
+      "source": "Claude - GB",
+      "league": "EPL",
+      "category": "lean",
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "parlay_leg_pick_ids": null,
+      "wr_confidence": 64.0,
+      "created_at": "2026-10-16T23:15:03",
+      "matchup": "Crystal Palace @ Brighton & Hove Albion",
+      "selection": "Brighton & Hove Albion to Win",
+      "bet_type": "match_result",
+      "bet_side": "home",
+      "bet_line": null,
+      "odds": -190,
+      "score": 64.0,
+      "espn_event_id": "401879261",
+      "note": "Blended 64% vs 62.1% no-vig, EV -2% at -190; Palace played Lyon midweek.",
+      "pregame_odds": {
+        "provider": "DraftKings",
+        "spread_details": "BHA -190",
+        "home_spread": -1.5,
+        "home_spread_odds": 125.0,
+        "away_spread_odds": -175.0,
+        "total": 3.5,
+        "over_odds": 135.0,
+        "under_odds": -170.0,
+        "home_moneyline": -190,
+        "away_moneyline": 450,
+        "draw_moneyline": 360.0
+      },
+      "pregame_odds_captured_at": "2026-10-16T23:15:10",
+      "kickoff": "2026-10-18T13:00Z",
+      "pregame_weather": {
+        "city": "Falmer",
+        "temp_c": 12.0,
+        "precip_probability_pct": 26,
+        "precip_mm": 0.0,
+        "wind_kmh": 22.0,
+        "cloud_cover_pct": 100,
+        "forecast_hour": "2026-10-18T13:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 3,
+        "win_pct": 60.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 2,
+        "win_pct": 40.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 2,
+          "d": 1,
+          "l": 0,
+          "gf": 8,
+          "ga": 1
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 1,
+          "gf": 10,
+          "ga": 4
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 2,
+          "gf": 6,
+          "ga": 8
+        },
+        "away": {
+          "w": 1,
+          "d": 1,
+          "l": 1,
+          "gf": 3,
+          "ga": 4
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-16T23:15:10",
+      "wr_confidence_kickoff": 66.0,
+      "wr_breakdown_kickoff": {
+        "base": 64.0,
+        "impact_scale": 0.28,
+        "record_mod": 0.0,
+        "record_win_pct": 50.0,
+        "record_settled": 20,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": null,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": 20.0,
+        "injury_mod": 0.0,
+        "injury_gap": 0.0,
+        "home_away_mod": 2.0,
+        "home_away_gap": 50.0,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 66.0
+    },
+    {
+      "id": 232,
+      "report_id": 56,
+      "source": "Claude - GB",
+      "league": "EPL",
+      "category": "lean",
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "parlay_leg_pick_ids": null,
+      "wr_confidence": 42.0,
+      "created_at": "2026-10-16T23:15:03",
+      "matchup": "Crystal Palace @ Brighton & Hove Albion",
+      "selection": "Brighton -1.5",
+      "bet_type": "spread",
+      "bet_side": "home",
+      "bet_line": -1.5,
+      "odds": 125,
+      "score": 42.0,
+      "espn_event_id": "401879261",
+      "note": "42% vs 41.1% fair; EV -5%.",
+      "pregame_odds": {
+        "provider": "DraftKings",
+        "spread_details": "BHA -190",
+        "home_spread": -1.5,
+        "home_spread_odds": 125.0,
+        "away_spread_odds": -175.0,
+        "total": 3.5,
+        "over_odds": 135.0,
+        "under_odds": -170.0,
+        "home_moneyline": -190,
+        "away_moneyline": 450,
+        "draw_moneyline": 360.0
+      },
+      "pregame_odds_captured_at": "2026-10-16T23:15:10",
+      "kickoff": "2026-10-18T13:00Z",
+      "pregame_weather": {
+        "city": "Falmer",
+        "temp_c": 12.0,
+        "precip_probability_pct": 26,
+        "precip_mm": 0.0,
+        "wind_kmh": 22.0,
+        "cloud_cover_pct": 100,
+        "forecast_hour": "2026-10-18T13:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 3,
+        "win_pct": 60.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 2,
+        "win_pct": 40.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 2,
+          "d": 1,
+          "l": 0,
+          "gf": 8,
+          "ga": 1
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 1,
+          "gf": 10,
+          "ga": 4
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 2,
+          "gf": 6,
+          "ga": 8
+        },
+        "away": {
+          "w": 1,
+          "d": 1,
+          "l": 1,
+          "gf": 3,
+          "ga": 4
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-16T23:15:10",
+      "wr_confidence_kickoff": 44.0,
+      "wr_breakdown_kickoff": {
+        "base": 42.0,
+        "impact_scale": 0.0,
+        "record_mod": 0.0,
+        "record_win_pct": 50.0,
+        "record_settled": 20,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": 0.0,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": 20.0,
+        "injury_mod": 0.0,
+        "injury_gap": 0.0,
+        "home_away_mod": 2.0,
+        "home_away_gap": 50.0,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 44.0
+    },
+    {
+      "id": 233,
+      "report_id": 56,
+      "source": "Claude - GB",
+      "league": "EPL",
+      "category": "lean",
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "parlay_leg_pick_ids": null,
+      "wr_confidence": 61.0,
+      "created_at": "2026-10-16T23:15:03",
+      "matchup": "Crystal Palace @ Brighton & Hove Albion",
+      "selection": "Under 3.5",
+      "bet_type": "total",
+      "bet_side": "under",
+      "bet_line": 3.5,
+      "odds": -175,
+      "score": 61.0,
+      "espn_event_id": "401879261",
+      "note": "Brighton games avg 3.8 goals; blended 61% vs 59.6% no-vig, no real gap.",
+      "pregame_odds": {
+        "provider": "DraftKings",
+        "spread_details": "BHA -190",
+        "home_spread": -1.5,
+        "home_spread_odds": 125.0,
+        "away_spread_odds": -175.0,
+        "total": 3.5,
+        "over_odds": 135.0,
+        "under_odds": -170.0,
+        "home_moneyline": -190,
+        "away_moneyline": 450,
+        "draw_moneyline": 360.0
+      },
+      "pregame_odds_captured_at": "2026-10-16T23:15:10",
+      "kickoff": "2026-10-18T13:00Z",
+      "pregame_weather": {
+        "city": "Falmer",
+        "temp_c": 12.0,
+        "precip_probability_pct": 26,
+        "precip_mm": 0.0,
+        "wind_kmh": 22.0,
+        "cloud_cover_pct": 100,
+        "forecast_hour": "2026-10-18T13:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 3,
+        "win_pct": 60.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 2,
+        "win_pct": 40.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 2,
+          "d": 1,
+          "l": 0,
+          "gf": 8,
+          "ga": 1
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 1,
+          "gf": 10,
+          "ga": 4
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 2,
+          "gf": 6,
+          "ga": 8
+        },
+        "away": {
+          "w": 1,
+          "d": 1,
+          "l": 1,
+          "gf": 3,
+          "ga": 4
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-16T23:15:10",
+      "wr_confidence_kickoff": 61.0,
+      "wr_breakdown_kickoff": {
+        "base": 61.0,
+        "impact_scale": 0.22,
+        "record_mod": 0.0,
+        "record_win_pct": 50.0,
+        "record_settled": 20,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": -0.0,
+        "clv_move": -0.0,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 61.0
+    },
+    {
+      "id": 234,
+      "report_id": 56,
+      "source": "Claude - GB",
+      "league": "EPL",
+      "category": "lean",
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "parlay_leg_pick_ids": null,
+      "wr_confidence": 39.0,
+      "created_at": "2026-10-16T23:15:03",
+      "matchup": "Manchester United @ Leeds United",
+      "selection": "Leeds United to Win",
+      "bet_type": "match_result",
+      "bet_side": "home",
+      "bet_line": null,
+      "odds": 135,
+      "score": 39.0,
+      "espn_event_id": "401879260",
+      "note": "Blended 39% vs 40.6%; fair.",
+      "pregame_odds": {
+        "provider": "DraftKings",
+        "spread_details": "LEE +135",
+        "home_spread": -0.5,
+        "home_spread_odds": 120.0,
+        "away_spread_odds": -170.0,
+        "total": 2.5,
+        "over_odds": -150.0,
+        "under_odds": 120.0,
+        "home_moneyline": 135,
+        "away_moneyline": 190,
+        "draw_moneyline": 260.0
+      },
+      "pregame_odds_captured_at": "2026-10-16T23:15:10",
+      "kickoff": "2026-10-18T13:00Z",
+      "pregame_weather": {
+        "city": "Leeds",
+        "temp_c": 11.7,
+        "precip_probability_pct": 20,
+        "precip_mm": 0.0,
+        "wind_kmh": 14.8,
+        "cloud_cover_pct": 98,
+        "forecast_hour": "2026-10-18T13:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 1,
+        "win_pct": 20.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 1,
+        "win_pct": 20.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 1,
+          "d": 2,
+          "l": 0,
+          "gf": 5,
+          "ga": 2
+        },
+        "away": {
+          "w": 1,
+          "d": 1,
+          "l": 1,
+          "gf": 3,
+          "ga": 3
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 1,
+          "d": 1,
+          "l": 1,
+          "gf": 6,
+          "ga": 4
+        },
+        "away": {
+          "w": 0,
+          "d": 2,
+          "l": 1,
+          "gf": 3,
+          "ga": 5
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-16T23:15:10",
+      "wr_confidence_kickoff": 40.2,
+      "wr_breakdown_kickoff": {
+        "base": 39.0,
+        "impact_scale": 0.0,
+        "record_mod": 0.0,
+        "record_win_pct": 50.0,
+        "record_settled": 20,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": null,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": 0.0,
+        "injury_mod": 0.0,
+        "injury_gap": 0.0,
+        "home_away_mod": 1.2,
+        "home_away_gap": 100.0,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 40.2
+    },
+    {
+      "id": 235,
+      "report_id": 56,
+      "source": "Claude - GB",
+      "league": "EPL",
+      "category": "lean",
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "parlay_leg_pick_ids": null,
+      "wr_confidence": 48.0,
+      "created_at": "2026-10-16T23:15:03",
+      "matchup": "Manchester United @ Leeds United",
+      "selection": "Under 2.5",
+      "bet_type": "total",
+      "bet_side": "under",
+      "bet_line": 2.5,
+      "odds": 120,
+      "score": 48.0,
+      "espn_event_id": "401879260",
+      "note": "Blended 48% vs 43.1% no-vig, EV +5.6% but confidence under 50 and over the radar cap.",
+      "pregame_odds": {
+        "provider": "DraftKings",
+        "spread_details": "LEE +135",
+        "home_spread": -0.5,
+        "home_spread_odds": 120.0,
+        "away_spread_odds": -170.0,
+        "total": 2.5,
+        "over_odds": -150.0,
+        "under_odds": 120.0,
+        "home_moneyline": 135,
+        "away_moneyline": 190,
+        "draw_moneyline": 260.0
+      },
+      "pregame_odds_captured_at": "2026-10-16T23:15:10",
+      "kickoff": "2026-10-18T13:00Z",
+      "pregame_weather": {
+        "city": "Leeds",
+        "temp_c": 11.7,
+        "precip_probability_pct": 20,
+        "precip_mm": 0.0,
+        "wind_kmh": 14.8,
+        "cloud_cover_pct": 98,
+        "forecast_hour": "2026-10-18T13:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 1,
+        "win_pct": 20.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 1,
+        "win_pct": 20.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 1,
+          "d": 2,
+          "l": 0,
+          "gf": 5,
+          "ga": 2
+        },
+        "away": {
+          "w": 1,
+          "d": 1,
+          "l": 1,
+          "gf": 3,
+          "ga": 3
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 1,
+          "d": 1,
+          "l": 1,
+          "gf": 6,
+          "ga": 4
+        },
+        "away": {
+          "w": 0,
+          "d": 2,
+          "l": 1,
+          "gf": 3,
+          "ga": 5
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-16T23:15:10",
+      "wr_confidence_kickoff": 48.0,
+      "wr_breakdown_kickoff": {
+        "base": 48.0,
+        "impact_scale": 0.0,
+        "record_mod": 0.0,
+        "record_win_pct": 50.0,
+        "record_settled": 20,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": -0.0,
+        "clv_move": -0.0,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 48.0
     }
   ],
   "ai_backtest": {
