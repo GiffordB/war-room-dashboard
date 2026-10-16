@@ -1,6 +1,6 @@
 {
   "next_report_id": 57,
-  "next_pick_id": 267,
+  "next_pick_id": 268,
   "reports": [
     {
       "source": "ChatGPT",
@@ -24193,6 +24193,155 @@
         "home_score": 0,
         "away_score": 3,
         "kickoff": "2026-10-14T19:00Z"
+      }
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 56,
+      "category": "best_bet",
+      "matchup": "Coventry City @ Tottenham Hotspur",
+      "selection": "Coventry City +1.5",
+      "odds": -165,
+      "stake": 75.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "Spurs winless (0-3-3), 3 goals scored in 6 league games, GD -6.\nCoventry just won 4-1 at Newcastle (Oct 12) and are 2-0-4 but with real attacking output at times.\nTwo-goal Spurs win needed to lose this; Spurs home: 0W-1D-2L, 2 GF.\nNo official team news retrievable from premierleague.com; ESPN shows no injury flags.\nOdds unchanged between first pull and submit (Oct 16 23:10-23:13 UTC).",
+      "wr_confidence": 68.0,
+      "war_room_line": "Spurs -0.4 (form lens Cov +0.2, context lens Spurs -0.6; blended ~Spurs by <1)",
+      "edge": "+1.5 priced at ~62% (-165); blended P(Cov not lose by 2+) ~71% -> +9pp edge, EV +9% at 68% conf",
+      "price_discipline": "-165 or better: $75\n-180 to -166: $40\n-190 or worse: pass",
+      "espn_event_id": "401879257",
+      "bet_type": "spread",
+      "bet_side": "away",
+      "bet_line": 1.5,
+      "home_team": "Tottenham Hotspur",
+      "away_team": "Coventry City",
+      "created_at": "2026-10-16T23:13:36",
+      "id": 267,
+      "pregame_odds": {
+        "provider": "DraftKings",
+        "spread_details": "TOT -205",
+        "home_spread": -1.5,
+        "home_spread_odds": 115.0,
+        "away_spread_odds": -165.0,
+        "total": 2.5,
+        "over_odds": -175.0,
+        "under_odds": 140.0,
+        "home_moneyline": -205,
+        "away_moneyline": 500,
+        "draw_moneyline": 370.0
+      },
+      "pregame_odds_captured_at": "2026-10-16T23:13:41",
+      "kickoff": "2026-10-19T19:00Z",
+      "pregame_weather": {
+        "city": "London",
+        "temp_c": 12.2,
+        "precip_probability_pct": 16,
+        "precip_mm": 0.0,
+        "wind_kmh": 10.1,
+        "cloud_cover_pct": 73,
+        "forecast_hour": "2026-10-19T19:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 0,
+        "win_pct": 0.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 2,
+        "win_pct": 40.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 0,
+          "d": 1,
+          "l": 2,
+          "gf": 2,
+          "ga": 5
+        },
+        "away": {
+          "w": 0,
+          "d": 2,
+          "l": 1,
+          "gf": 1,
+          "ga": 4
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 2,
+          "gf": 4,
+          "ga": 7
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 2,
+          "gf": 1,
+          "ga": 4
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-16T23:13:41",
+      "wr_confidence_kickoff": 68.0,
+      "wr_breakdown_kickoff": {
+        "base": 68.0,
+        "impact_scale": 0.36,
+        "record_mod": 0.0,
+        "record_win_pct": 50.0,
+        "record_settled": 20,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": null,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 69.33333333333333,
+      "wr_breakdown_initial": {
+        "base": 68.0,
+        "impact_scale": 0.36,
+        "record_mod": 0.0,
+        "record_win_pct": 50.0,
+        "record_settled": 20,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": 0.0,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": 40.0,
+        "injury_mod": 0.0,
+        "injury_gap": 0.0,
+        "home_away_mod": 1.333,
+        "home_away_gap": 33.333,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "ai_grade": {
+        "quality": 5,
+        "verdict": "mixed",
+        "reason": "It states a quantified 9pp gap with sourced form and price discipline, but the 71% blended probability is loosely derived from a sub-one-goal fair line, leans on a small-sample form narrative, and has no confirmed team news.",
+        "model": "claude-opus-5-5",
+        "graded_at": "2026-10-16T23:13:48",
+        "rubric_version": 5
       }
     }
   ],
