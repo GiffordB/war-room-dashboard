@@ -1,6 +1,6 @@
 {
   "next_report_id": 57,
-  "next_pick_id": 270,
+  "next_pick_id": 271,
   "reports": [
     {
       "source": "ChatGPT",
@@ -24639,6 +24639,155 @@
         "reason": "The quantified 3.7pp gap is honest, but the author's own EV of +1.2% falls below their bar, the injury note is unconfirmed, and the form stats are small-sample, so this is a logged lean rather than a real edge.",
         "model": "claude-opus-5-5",
         "graded_at": "2026-10-16T23:14:13",
+        "rubric_version": 5
+      }
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 56,
+      "category": "totals_radar",
+      "matchup": "Arsenal @ Nottingham Forest",
+      "selection": "Under 2.5 goals",
+      "odds": -115,
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "A lean, not a stake: EV clears but confidence under 60.\nForest 0 goals at home in 3; three of last four H2H under 2.5 (0-0, 0-3 is 3 goals though).\nArsenal games avg 2.5 goals.",
+      "wr_confidence": 55.0,
+      "war_room_line": "Expected total ~2.3; P(under 2.5) ~60% raw, 55.5% blended",
+      "edge": "Price implies 53.5%; blended 55.5% -> +2pp edge, EV +3.8%, confidence 55 < 60",
+      "price_discipline": "Tracked only at $0",
+      "espn_event_id": "401878769",
+      "bet_type": "total",
+      "bet_side": "under",
+      "bet_line": 2.5,
+      "home_team": "Nottingham Forest",
+      "away_team": "Arsenal",
+      "created_at": "2026-10-16T23:14:17",
+      "id": 270,
+      "pregame_odds": {
+        "provider": "DraftKings",
+        "spread_details": "ARS -160",
+        "home_spread": 0.5,
+        "home_spread_odds": 125.0,
+        "away_spread_odds": -175.0,
+        "total": 2.5,
+        "over_odds": -110.0,
+        "under_odds": -115.0,
+        "home_moneyline": 475,
+        "away_moneyline": -160,
+        "draw_moneyline": 285.0
+      },
+      "pregame_odds_captured_at": "2026-10-16T23:14:21",
+      "kickoff": "2026-10-18T15:30Z",
+      "pregame_weather": {
+        "city": "Nottingham",
+        "temp_c": 12.6,
+        "precip_probability_pct": 29,
+        "precip_mm": 0.0,
+        "wind_kmh": 16.6,
+        "cloud_cover_pct": 77,
+        "forecast_hour": "2026-10-18T15:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 1,
+        "win_pct": 20.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 4,
+        "win_pct": 80.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 0,
+          "d": 1,
+          "l": 2,
+          "gf": 0,
+          "ga": 2
+        },
+        "away": {
+          "w": 1,
+          "d": 1,
+          "l": 1,
+          "gf": 5,
+          "ga": 6
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 3,
+          "d": 0,
+          "l": 0,
+          "gf": 7,
+          "ga": 2
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 1,
+          "gf": 3,
+          "ga": 3
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-16T23:14:21",
+      "wr_confidence_kickoff": 55.0,
+      "wr_breakdown_kickoff": {
+        "base": 55.0,
+        "impact_scale": 0.1,
+        "record_mod": 0.0,
+        "record_win_pct": 50.0,
+        "record_settled": 20,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": null,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 55.0,
+      "wr_breakdown_initial": {
+        "base": 55.0,
+        "impact_scale": 0.1,
+        "record_mod": 0.0,
+        "record_win_pct": 50.0,
+        "record_settled": 20,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": -0.0,
+        "clv_move": -0.0,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "ai_grade": {
+        "quality": 4,
+        "verdict": "mixed",
+        "reason": "The 2pp blended edge is thin and rests on a small-sample judgment total of 2.3 plus H2H trivia the author partly undercuts (0-3 is three goals), so the $0 tracking adds no points to a modest, weakly supported gap.",
+        "model": "claude-opus-5-5",
+        "graded_at": "2026-10-16T23:14:30",
         "rubric_version": 5
       }
     }
