@@ -1,5 +1,5 @@
 {
-  "next_report_id": 56,
+  "next_report_id": 57,
   "next_pick_id": 267,
   "reports": [
     {
@@ -540,6 +540,18 @@
       "lsu_review_notes": "",
       "created_at": "2026-10-14T00:12:59",
       "id": 55
+    },
+    {
+      "source": "Claude - GB",
+      "league": "EPL",
+      "report_date": "2026-10-16",
+      "week_number": 7,
+      "week_label": "",
+      "philosophy": "Blend the read with the market, stake only real gaps, log the rest.",
+      "blind_spot_notes": "Best near-miss: Arsenal ML at Forest (-160): blended 62% vs 58.6% no-vig, edge +3.7pp but EV only +1.2% -- failed the +2% EV bar, tracked at $0. Caveat: no official premierleague.com team news was retrievable this run and ESPN flags no injuries beyond a Gibbs-White late test, so every number rests on form/market only; early-season sample is 6 games (own-number weight 0.5).",
+      "lsu_review_notes": "",
+      "created_at": "2026-10-16T23:13:32",
+      "id": 56
     }
   ],
   "picks": [
