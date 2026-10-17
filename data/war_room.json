@@ -1,6 +1,6 @@
 {
   "next_report_id": 61,
-  "next_pick_id": 285,
+  "next_pick_id": 286,
   "reports": [
     {
       "source": "ChatGPT",
@@ -26845,6 +26845,155 @@
         "reason": "The author admits the spread sits inside their own fair range, so there is no demonstrated edge and the money card is $0, yet the pick is labelled a best bet on an unsourced, vague 'trench uncertainty' claim.",
         "model": "claude-opus-5-5",
         "graded_at": "2026-10-17T15:16:47",
+        "rubric_version": 5
+      }
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 60,
+      "category": "best_bet",
+      "matchup": "Missouri Tigers @ Ole Miss Rebels",
+      "selection": "Missouri +5.5",
+      "odds": -115,
+      "stake": 25.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 57.0,
+      "war_room_line": "Competition rank #6 of 10 (ranked preference, not a cover probability). DraftKings -115. Qualified money card $0: the spread sits inside its fair uncertainty range.",
+      "edge": "Run-led cover path.",
+      "price_discipline": "Principal risk: Falling behind can break the script. 2:30 PM CT.",
+      "espn_event_id": "401856721",
+      "bet_type": "spread",
+      "bet_side": "away",
+      "bet_line": 5.5,
+      "home_team": "Ole Miss Rebels",
+      "away_team": "Missouri Tigers",
+      "created_at": "2026-10-17T15:16:52",
+      "id": 285,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "MISS -4",
+        "home_spread": -4.0,
+        "home_spread_odds": -108.0,
+        "away_spread_odds": -112.0,
+        "total": 58.5,
+        "over_odds": -112.0,
+        "under_odds": -108.0,
+        "home_moneyline": -185,
+        "away_moneyline": 154,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-10-17T15:16:57",
+      "kickoff": "2026-10-17T19:30Z",
+      "pregame_weather": {
+        "city": "Oxford",
+        "temp_c": 9.7,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 12.6,
+        "cloud_cover_pct": 74,
+        "forecast_hour": "2026-10-17T19:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 4,
+        "win_pct": 80.0,
+        "quality_wins": 2
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 4,
+        "win_pct": 80.0,
+        "quality_wins": 1
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 3,
+          "d": 0,
+          "l": 0,
+          "gf": 114,
+          "ga": 71
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 1,
+          "gf": 80,
+          "ga": 69
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 4,
+          "d": 0,
+          "l": 0,
+          "gf": 153,
+          "ga": 54
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 1,
+          "gf": 62,
+          "ga": 52
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-17T15:16:57",
+      "wr_confidence_kickoff": 57.04063492063492,
+      "wr_breakdown_kickoff": {
+        "base": 57.0,
+        "impact_scale": 0.14,
+        "record_mod": 0.041,
+        "record_win_pct": 50.794,
+        "record_settled": 64,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": null,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 55.04063492063492,
+      "wr_breakdown_initial": {
+        "base": 57.0,
+        "impact_scale": 0.14,
+        "record_mod": 0.041,
+        "record_win_pct": 50.794,
+        "record_settled": 64,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 3.0,
+        "clv_move": 1.5,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": 0.0,
+        "injury_mod": 0.0,
+        "injury_gap": 0.0,
+        "home_away_mod": -2.0,
+        "home_away_gap": -50.0,
+        "quality_win_mod": -3,
+        "quality_win_gap": -1,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "ai_grade": {
+        "quality": 2,
+        "verdict": "story",
+        "reason": "The author admits the spread sits inside its own fair range and the money card is $0, and the only stated edge is a narrative 'run-led cover path' with no number, so there is nothing to support a best_bet.",
+        "model": "claude-opus-5-5",
+        "graded_at": "2026-10-17T15:17:00",
         "rubric_version": 5
       }
     }
