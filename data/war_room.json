@@ -1,5 +1,5 @@
 {
-  "next_report_id": 61,
+  "next_report_id": 62,
   "next_pick_id": 291,
   "reports": [
     {
@@ -600,6 +600,18 @@
       "lsu_review_notes": "",
       "created_at": "2026-10-17T15:15:38",
       "id": 60
+    },
+    {
+      "source": "Claude",
+      "league": "CFB",
+      "report_date": "2026-10-17",
+      "week_number": 7,
+      "week_label": "Week 7 -- Stale-Sheet Analysis, Saturday 10:02 AM CT (Maven Quant, Model A)",
+      "philosophy": "THE LINE's Friday (Oct 16) numbers priced against Saturday's market at 10:02 AM CT, scored by the brain trust under rules v3.5: decision score = 0.80 x (0.85 brain trust + 0.15 market) + 0.10 reverse-line-movement seat + 0.10 prime-time sentiment seat. Price edge from Pinnacle (EV = Pinnacle's no-vig probability shifted across the empirical college landing distribution to the paper's number at -110), football case from Model A v2 (ESPN preseason FPI level + ridge-adjusted 2026 EPA, K=6, tail scale 1.28, home field 2.5; median confidence 0.45; own-number weight held at 1.25x, out-of-sample direction 47% ATS), information from the official conference availability reports (every entry sourced and dated), sentiment from DraftKings handle (Cleatz) overridden by BetOnline's Saturday liability list, and situational lenses (revenge +2/+3 in Voulgaris, ranked dog vs unranked favorite +3, prime-time casino rule). 52 of 52 games priced; system stakes 0 (nothing clears 70 under the college rule set: the stale term only counts beyond 2 points outside prime time, the contrarian read is scored in every game, the own number is half weight); 7 TRACKED positions (score 60-70, EV +2%) at 0.50% / $50 each, logged as overrides; 13 offers at EV +2%; paper vs market median +0.5 on our side. Place at the better of paper and FanDuel; the 90-minute availability reports govern and any position in those games is void if the stated status changes. Friday's three games had kicked and are excluded. No college weather adjustment (v3).",
+      "blind_spot_notes": "THE ANSWER: the paper went stale in the underdogs' favor overnight. INDIANA +3.5 is the highest-conviction bet on the board (Pinnacle moved to Ohio State -2.5 so the paper's 3.5 clears the 3 outright, EV +11.9%; Model A has Ohio State by 1.2; 76% of the money on the Buckeyes and the line fell against it -- reverse line movement toward Indiana; FanDuel +2.5 at +102 now worse than the paper; risk: a 3-point Ohio State win cashes the paper and loses the live number). FLORIDA STATE +21.5 scores highest on the mechanics (Pinnacle 19.5, two full points through 20 and 21, 86% of the money on Miami in prime time -- casino rule puts the book on FSU, revenge from last year's 28-22; a back-door position in a game Miami should control, sentiment- and price-driven). UNLV +1.5 is the quiet one (market flipped overnight to UNLV -1 so the paper has the favorite getting points; Model A UNLV by 5.1; 82% of tickets on Air Force Friday but moneyline money 92% UNLV; Air Force owns the revenge angle; service academy at home at altitude). GEORGIA TECH +10.5, GEORGIA STATE +10.5 and KANSAS +4.5 (+14.2%) are the best raw prices but sit on the public's side or BetOnline's liability list, so the seats hold them down (Kansas stays a pass: model agrees with the book). LEANS, no stake: Wisconsin +2.5 (63.8, casino side, 91% of money on UCLA), Colorado +15.5 (61.4, casino side, 84% on Utah, EV -2.6%). CASINO RULE prime-time: FSU, Wisconsin, Colorado are leans; BYU (65% on ND, EV -1.5, score 57) no bet. BOOK LIABILITIES (BetOnline): Kansas +3.5 (book needs K-State; paper a point worse, pass), LSU -17 (book needs MSU; paper 2 points worse for MSU, model LSU by 20.5 with Taylor out; conflict logged, no bet), Georgia State +9 (book needs JMU; the GSU price is real but it is the public's side), Toledo -6.5, Notre Dame -10.5. RANKINGS: Oklahoma (NR) -6.5 vs No. 15 Kentucky, 95% of money on Kentucky, line frozen, model Oklahoma by 10, pass; No. 22 LSU vs No. 16 MSU, ranking predates Taylor's injury. INFORMATION (official reports): Alabama -2.5 (WR Coleman-Williams, DL Green, DB Sherman OUT; C Delgatty questionable); Tennessee +0 (QB Brandon available, MacIntyre starts; OL Moe out); Mississippi State -6.0 (QB Kamario Taylor doubtful/expected out, freshman Puckett starts; RB Bothwell doubtful); UCLA -1.0 (QB Iamaleava OUT plus four); BYU -1.0 (RB LJ Martin OUT); Oklahoma -1.5 (Harris, Robinson, Heim OUT; four questionable); Kentucky +0 (Baxter game-time, optimistic). WEATHER: Knoxville about 60F falling into the 50s, no rain; other venues unsourced; none of the tracked positions is a total. Not priced: Clemson-Charleston Southern, Stanford-Elon, Texas A&M-Citadel (no Pinnacle market, hard pass).",
+      "lsu_review_notes": "",
+      "created_at": "2026-10-17T15:20:15",
+      "id": 61
     }
   ],
   "picks": [
