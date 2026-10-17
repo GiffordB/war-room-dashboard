@@ -172,6 +172,10 @@ section { margin-bottom: 44px; }
   border: 1px solid var(--border);
 }
 .league-tab:hover { color: var(--text); border-color: var(--gold); }
+.source-tabs { margin-top: -10px; }
+.source-tab { display: inline-flex; align-items: center; gap: 6px; }
+.source-tab .source-dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
+.source-tab.active { border-color: var(--accent); color: var(--text); }
 .league-tab.active {
   background: var(--gold);
   color: #241800;

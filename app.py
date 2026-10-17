@@ -1558,7 +1558,7 @@ def _kickoff_sort_key(pick):
     return (1 if finished else 0, 0 if k else 1, k or "", pick["id"] if k else -pick["id"])
 
 
-def recent_picks_by_week(data, league=None, limit=4):
+def recent_picks_by_week(data, league=None, limit=4, source=None):
     """
     Every pick, grouped by the calendar week of report_date (see
     week_bucket_start) - not each report's own hand-typed week_number,
@@ -1589,6 +1589,8 @@ def recent_picks_by_week(data, league=None, limit=4):
     for p in data["picks"]:
         r = reports.get(p["report_id"])
         if not r or r["source"] in HIDDEN_SOURCES or not _league_matches(r["league"], league):
+            continue
+        if source and r["source"] != source:
             continue
         wk = week_bucket_start(r["report_date"])
         group = by_week.setdefault(wk, {"week_key": wk, "label": f"Week of {week_bucket_label(wk)}", "latest_created_at": "", "picks": []})
@@ -3567,7 +3569,8 @@ def dashboard():
 
     breakdown = category_breakdown(data, league)
 
-    recent_weeks = recent_picks_by_week(data, league)
+    current_source = request.args.get("source") if request.args.get("source") in PUBLIC_SOURCES else None
+    recent_weeks = recent_picks_by_week(data, league, source=current_source)
 
     report_count = sum(1 for r in data["reports"] if _league_matches(r["league"], league))
 
@@ -3591,6 +3594,7 @@ def dashboard():
         weekly_data=weekly_data,
         breakdown=breakdown,
         recent_weeks=recent_weeks,
+        current_source=current_source,
         report_count=report_count,
         current_league=current_league,
     )

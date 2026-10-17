@@ -37,12 +37,18 @@
   </div>
 
   <div class="league-tabs">
-    <a class="league-tab {{ 'active' if not current_league }}" href="{{ url_for('dashboard') }}">All Leagues</a>
+    <a class="league-tab {{ 'active' if not current_league }}" href="{{ url_for('dashboard', source=current_source) }}">All Leagues</a>
     {% for key in league_group_order %}
-      <a class="league-tab {{ 'active' if current_league == key }}" href="{{ url_for('dashboard', league=key) }}">{{ league_group_label(key) }}</a>
+      <a class="league-tab {{ 'active' if current_league == key }}" href="{{ url_for('dashboard', league=key, source=current_source) }}">{{ league_group_label(key) }}</a>
     {% endfor %}
     {% for code in league_order %}
-      <a class="league-tab {{ 'active' if current_league == code }}" href="{{ url_for('dashboard', league=code) }}">{{ leagues[code] }}</a>
+      <a class="league-tab {{ 'active' if current_league == code }}" href="{{ url_for('dashboard', league=code, source=current_source) }}">{{ leagues[code] }}</a>
+    {% endfor %}
+  </div>
+  <div class="league-tabs source-tabs">
+    <a class="league-tab {{ 'active' if not current_source }}" href="{{ url_for('dashboard', league=current_league) }}">All Models</a>
+    {% for s in sources %}
+      <a class="league-tab source-tab {{ 'active' if current_source == s }}" href="{{ url_for('dashboard', league=current_league, source=s) }}" style="--accent: {{ source_color(s) }};"><span class="source-dot" style="background: {{ source_color(s) }};"></span>{{ s }}</a>
     {% endfor %}
   </div>
 
@@ -347,7 +353,7 @@
   </section>
 
   <section>
-    <h2 class="section-label">Recent Picks</h2>
+    <h2 class="section-label">Recent Picks{% if current_source %} <span class="muted small">— {{ current_source }} only</span>{% endif %}</h2>
     {% if recent_weeks %}
       {% for group in recent_weeks %}
         <details class="week-group" {% if loop.first %}open{% endif %}>
