@@ -1,6 +1,6 @@
 {
   "next_report_id": 66,
-  "next_pick_id": 307,
+  "next_pick_id": 310,
   "reports": [
     {
       "source": "ChatGPT",
@@ -29344,131 +29344,6 @@
     },
     {
       "parlay_leg_pick_ids": null,
-      "report_id": 64,
-      "category": "best_bet",
-      "matchup": "Wisconsin Badgers @ UCLA Bruins",
-      "selection": "Wisconsin +2.5",
-      "odds": -110,
-      "stake": 100.0,
-      "result": "pending",
-      "profit_loss": 0.0,
-      "notes": "",
-      "wr_confidence": 66.1,
-      "war_room_line": "Rule: 2 sources on this side once board leans are counted, at least one a lean. Line and price copied from Claude board lean #236 at selection (2026-10-17T15:22:29).",
-      "edge": "Full-board agreement -- Claude: Wisconsin +2.5 (-110), board lean, live WR 66; ChatGPT: Wisconsin +2.5 (-105), pick, live WR 54.",
-      "price_discipline": "Flat $100. Selected before kickoff; graded off the final score like any other pick. Separate record from the main War Room card.",
-      "espn_event_id": "401858494",
-      "bet_type": "spread",
-      "bet_side": "away",
-      "bet_line": 2.5,
-      "home_team": null,
-      "away_team": null,
-      "war_room_source_pick_ids": [
-        288
-      ],
-      "war_room_source_lean_ids": [
-        236
-      ],
-      "created_at": "2026-10-17T15:22:29",
-      "id": 304,
-      "pregame_odds": {
-        "provider": "Draft Kings",
-        "spread_details": "UCLA -1.5",
-        "home_spread": -1.5,
-        "home_spread_odds": -110.0,
-        "away_spread_odds": -110.0,
-        "total": 42.5,
-        "over_odds": -115.0,
-        "under_odds": -105.0,
-        "home_moneyline": -122,
-        "away_moneyline": 102,
-        "draw_moneyline": null
-      },
-      "pregame_odds_captured_at": "2026-10-17T15:22:40",
-      "kickoff": "2026-10-17T23:30Z",
-      "pregame_weather": {
-        "city": "Pasadena",
-        "temp_c": 20.5,
-        "precip_probability_pct": 0,
-        "precip_mm": 0.0,
-        "wind_kmh": 14.3,
-        "cloud_cover_pct": 29,
-        "forecast_hour": "2026-10-17T23:00"
-      },
-      "pregame_home_form": {
-        "played": 5,
-        "wins": 5,
-        "win_pct": 100.0,
-        "quality_wins": 1
-      },
-      "pregame_away_form": {
-        "played": 5,
-        "wins": 4,
-        "win_pct": 80.0,
-        "quality_wins": 1
-      },
-      "pregame_home_injuries": 0.0,
-      "pregame_away_injuries": 0.0,
-      "pregame_home_split": {
-        "home": {
-          "w": 2,
-          "d": 0,
-          "l": 0,
-          "gf": 80,
-          "ga": 48
-        },
-        "away": {
-          "w": 3,
-          "d": 0,
-          "l": 0,
-          "gf": 116,
-          "ga": 42
-        }
-      },
-      "pregame_away_split": {
-        "home": {
-          "w": 3,
-          "d": 0,
-          "l": 0,
-          "gf": 121,
-          "ga": 22
-        },
-        "away": {
-          "w": 1,
-          "d": 0,
-          "l": 1,
-          "gf": 37,
-          "ga": 61
-        }
-      },
-      "pregame_intel_captured_at": "2026-10-17T15:22:40",
-      "wr_confidence_kickoff": 68.032,
-      "wr_breakdown_kickoff": {
-        "base": 66.1,
-        "impact_scale": 0.322,
-        "record_mod": 0.0,
-        "record_win_pct": 50.0,
-        "record_settled": 2,
-        "agree_mod": 1.932,
-        "conflict_mod": 0.0,
-        "clv_mod": 0.0,
-        "clv_move": null,
-        "weather_mod": 0.0,
-        "form_mod": 0.0,
-        "form_gap": null,
-        "injury_mod": 0.0,
-        "injury_gap": null,
-        "home_away_mod": 0.0,
-        "home_away_gap": null,
-        "quality_win_mod": 0.0,
-        "quality_win_gap": null,
-        "agreeing": 1,
-        "opposing": 0
-      },
-      "wr_confidence_initial": 68.032
-    },
-    {
-      "parlay_leg_pick_ids": null,
       "report_id": 65,
       "category": "best_bet",
       "matchup": "Missouri Tigers @ Ole Miss Rebels",
@@ -29764,6 +29639,401 @@
         "graded_at": "2026-10-17T15:23:17",
         "rubric_version": 5
       }
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 65,
+      "category": "best_bet",
+      "matchup": "Wisconsin Badgers @ UCLA Bruins",
+      "selection": "Wisconsin +2.5",
+      "odds": -106,
+      "stake": 50.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 60.0,
+      "war_room_line": "LIVE BET 0.5% ($50) at FanDuel. +1.0 vs Pinnacle +1.5; price EV +3.5%; model edge +0.6, model EV +4.9%; casino side (91% of money on UCLA); live score 78.",
+      "edge": "A live offer where the FanDuel price beats Pinnacle and Model A points the same way.",
+      "price_discipline": "FanDuel +2.5 (-106); DraftKings +1.5 (-110). UCLA QB Iamaleava OUT. 6:30 PM CT.",
+      "espn_event_id": "401858494",
+      "bet_type": "spread",
+      "bet_side": "away",
+      "bet_line": 2.5,
+      "home_team": "UCLA Bruins",
+      "away_team": "Wisconsin Badgers",
+      "created_at": "2026-10-17T15:23:21",
+      "id": 307,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "UCLA -1.5",
+        "home_spread": -1.5,
+        "home_spread_odds": -110.0,
+        "away_spread_odds": -110.0,
+        "total": 42.5,
+        "over_odds": -115.0,
+        "under_odds": -105.0,
+        "home_moneyline": -122,
+        "away_moneyline": 102,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-10-17T15:23:25",
+      "kickoff": "2026-10-17T23:30Z",
+      "pregame_weather": {
+        "city": "Pasadena",
+        "temp_c": 20.5,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 14.3,
+        "cloud_cover_pct": 29,
+        "forecast_hour": "2026-10-17T23:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 5,
+        "win_pct": 100.0,
+        "quality_wins": 1
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 4,
+        "win_pct": 80.0,
+        "quality_wins": 1
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 2,
+          "d": 0,
+          "l": 0,
+          "gf": 80,
+          "ga": 48
+        },
+        "away": {
+          "w": 3,
+          "d": 0,
+          "l": 0,
+          "gf": 116,
+          "ga": 42
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 3,
+          "d": 0,
+          "l": 0,
+          "gf": 121,
+          "ga": 22
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 1,
+          "gf": 37,
+          "ga": 61
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-17T15:23:25",
+      "wr_confidence_kickoff": 61.68979591836735,
+      "wr_breakdown_kickoff": {
+        "base": 60.0,
+        "impact_scale": 0.2,
+        "record_mod": 0.49,
+        "record_win_pct": 57.143,
+        "record_settled": 36,
+        "agree_mod": 1.2,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": null,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 1,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 61.68979591836735,
+      "wr_breakdown_initial": {
+        "base": 60.0,
+        "impact_scale": 0.2,
+        "record_mod": 0.49,
+        "record_win_pct": 57.143,
+        "record_settled": 36,
+        "agree_mod": 1.2,
+        "conflict_mod": 0.0,
+        "clv_mod": 2.0,
+        "clv_move": 1.0,
+        "weather_mod": 0.0,
+        "form_mod": -0.0,
+        "form_gap": -20.0,
+        "injury_mod": 0.0,
+        "injury_gap": 0.0,
+        "home_away_mod": -2.0,
+        "home_away_gap": -50.0,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 1,
+        "opposing": 0
+      },
+      "ai_grade": {
+        "quality": 5,
+        "verdict": "mixed",
+        "reason": "This is a modest, quantified price play: FanDuel +2.5 against Pinnacle +1.5 gives +3.5% price EV. The model barely agrees (+0.6 edge), the extra point is not a key number, and the 'casino side' money split is a narrative add-on, so this is average rather than solid.",
+        "model": "claude-opus-5-5",
+        "graded_at": "2026-10-17T15:23:28",
+        "rubric_version": 5
+      }
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 62,
+      "category": "best_bet",
+      "matchup": "Wisconsin Badgers @ UCLA Bruins",
+      "selection": "Wisconsin +2.5",
+      "odds": -106,
+      "stake": 100.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 61.7,
+      "war_room_line": "Rule: 2 sources aligned on this side. Line and price copied from Claude pick #307 at selection (2026-10-17T15:23:28).",
+      "edge": "Source picks on this side -- Claude: Wisconsin +2.5 (-106), live WR 62; ChatGPT: Wisconsin +2.5 (-105), live WR 55.",
+      "price_discipline": "Flat $100. Selected before kickoff; graded off the final score like any other pick.",
+      "espn_event_id": "401858494",
+      "bet_type": "spread",
+      "bet_side": "away",
+      "bet_line": 2.5,
+      "home_team": "UCLA Bruins",
+      "away_team": "Wisconsin Badgers",
+      "war_room_source_pick_ids": [
+        307,
+        288
+      ],
+      "created_at": "2026-10-17T15:23:28",
+      "id": 308,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "UCLA -1.5",
+        "home_spread": -1.5,
+        "home_spread_odds": -110.0,
+        "away_spread_odds": -110.0,
+        "total": 42.5,
+        "over_odds": -115.0,
+        "under_odds": -105.0,
+        "home_moneyline": -122,
+        "away_moneyline": 102,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-10-17T15:23:31",
+      "kickoff": "2026-10-17T23:30Z",
+      "pregame_weather": {
+        "city": "Pasadena",
+        "temp_c": 20.5,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 14.3,
+        "cloud_cover_pct": 29,
+        "forecast_hour": "2026-10-17T23:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 5,
+        "win_pct": 100.0,
+        "quality_wins": 1
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 4,
+        "win_pct": 80.0,
+        "quality_wins": 1
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 2,
+          "d": 0,
+          "l": 0,
+          "gf": 80,
+          "ga": 48
+        },
+        "away": {
+          "w": 3,
+          "d": 0,
+          "l": 0,
+          "gf": 116,
+          "ga": 42
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 3,
+          "d": 0,
+          "l": 0,
+          "gf": 121,
+          "ga": 22
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 1,
+          "gf": 37,
+          "ga": 61
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-17T15:23:31",
+      "wr_confidence_kickoff": 63.923,
+      "wr_breakdown_kickoff": {
+        "base": 61.7,
+        "impact_scale": 0.234,
+        "record_mod": -0.585,
+        "record_win_pct": 0.0,
+        "record_settled": 2,
+        "agree_mod": 2.808,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": null,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 2,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 63.923
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 63,
+      "category": "best_bet",
+      "matchup": "Wisconsin Badgers @ UCLA Bruins",
+      "selection": "Wisconsin +2.5",
+      "odds": -106,
+      "stake": 100.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 61.7,
+      "war_room_line": "Rule: 2 sources aligned on this side, not vetoed (best AI grade above 3). Line and price copied from Claude pick #307 at selection (2026-10-17T15:23:31).",
+      "edge": "Source picks on this side -- Claude: Wisconsin +2.5 (-106), test score 62, AI grade 5/10 mixed; ChatGPT: Wisconsin +2.5 (-105), test score 49, AI grade 2/10 story.",
+      "price_discipline": "Flat $100. Selected before kickoff; graded off the final score like any other pick.",
+      "espn_event_id": "401858494",
+      "bet_type": "spread",
+      "bet_side": "away",
+      "bet_line": 2.5,
+      "home_team": "UCLA Bruins",
+      "away_team": "Wisconsin Badgers",
+      "war_room_source_pick_ids": [
+        307,
+        288
+      ],
+      "created_at": "2026-10-17T15:23:31",
+      "id": 309,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "UCLA -1.5",
+        "home_spread": -1.5,
+        "home_spread_odds": -110.0,
+        "away_spread_odds": -110.0,
+        "total": 42.5,
+        "over_odds": -115.0,
+        "under_odds": -105.0,
+        "home_moneyline": -122,
+        "away_moneyline": 102,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-10-17T15:23:34",
+      "kickoff": "2026-10-17T23:30Z",
+      "pregame_weather": {
+        "city": "Pasadena",
+        "temp_c": 20.5,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 14.3,
+        "cloud_cover_pct": 29,
+        "forecast_hour": "2026-10-17T23:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 5,
+        "win_pct": 100.0,
+        "quality_wins": 1
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 4,
+        "win_pct": 80.0,
+        "quality_wins": 1
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 2,
+          "d": 0,
+          "l": 0,
+          "gf": 80,
+          "ga": 48
+        },
+        "away": {
+          "w": 3,
+          "d": 0,
+          "l": 0,
+          "gf": 116,
+          "ga": 42
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 3,
+          "d": 0,
+          "l": 0,
+          "gf": 121,
+          "ga": 22
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 1,
+          "gf": 37,
+          "ga": 61
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-17T15:23:34",
+      "wr_confidence_kickoff": 64.1737142857143,
+      "wr_breakdown_kickoff": {
+        "base": 61.7,
+        "impact_scale": 0.234,
+        "record_mod": -0.334,
+        "record_win_pct": 0.0,
+        "record_settled": 1,
+        "agree_mod": 2.808,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": null,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 2,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 64.1737142857143
     }
   ],
   "next_wallet_id": 47,
@@ -66707,6 +66977,20 @@
       "bet_side": "away",
       "selected_at": "2026-10-10T15:11:03",
       "withdrawn_at": "2026-10-10T15:56:17",
+      "reason": "this side no longer qualifies under the rule (sources moved, a card withdrew, or a dead heat)"
+    },
+    {
+      "pick_id": 304,
+      "source": "WR Lean",
+      "league": "CFB",
+      "matchup": "Wisconsin Badgers @ UCLA Bruins",
+      "selection": "Wisconsin +2.5",
+      "odds": -110,
+      "espn_event_id": "401858494",
+      "bet_type": "spread",
+      "bet_side": "away",
+      "selected_at": "2026-10-17T15:22:29",
+      "withdrawn_at": "2026-10-17T15:23:34",
       "reason": "this side no longer qualifies under the rule (sources moved, a card withdrew, or a dead heat)"
     }
   ],
