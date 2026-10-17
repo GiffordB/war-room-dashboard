@@ -1,5 +1,5 @@
 {
-  "next_report_id": 57,
+  "next_report_id": 58,
   "next_pick_id": 274,
   "reports": [
     {
@@ -552,6 +552,18 @@
       "lsu_review_notes": "",
       "created_at": "2026-10-16T23:13:32",
       "id": 56
+    },
+    {
+      "source": "Grok - GB",
+      "league": "EPL",
+      "report_date": "2026-10-17",
+      "week_number": 7,
+      "week_label": "Snyps PL Desk -- Week Card 17-19 Oct (Matchweek 7)",
+      "philosophy": "Friday noon drop. Match results (1X2) only. Fair probabilities are shrunk Poisson (Dixon-Coles, n/(n+6), cap 50%) blended with de-vigged ESPN. Cash sides meet the Win % >= 50, decimal 1.50-2.30, EV >= -5% gates, ranked by Win % then EV, flat 1.00u; Price is the single longshot sleeve, ranked by EV, quarter-Kelly, cap 2.50u. One club once. Odds are DraftKings moneyline; ESPN lines noted where they diverge. Rest and travel overlays apply only where European fixtures fell midweek; injury lists current to 16 October (Squawka). Totals are context only. Sunday and Monday openers are the model window. Five questions in the blend: Peabody (home bias), Walters (form weight), Spanky (variance shrink), Voulgaris (market blend), Captain Jack (rest overlay). THIS WEEK: four cash sides were available under the rules; the card takes the top three by Win % then EV -- Brighton home 61%, Arsenal away 60% -- plus Aston Villa away as the price at 36% / +8.0% EV. Table: City unbeaten on 18, Arsenal 15, Brighton 13; Fulham bottom on two from six, Tottenham and Bournemouth three each.",
+      "blind_spot_notes": "PASSES: Everton v Chelsea (Sat 12:30; DK Chelsea +115, Everton +215; both on 10 points, Everton unbeaten 2W 4D, Chelsea 3W 1D 2L off a 5-1 over Bournemouth; Chelsea James, Gittens, Emegha out, Everton Mykolenko a doubt; model Chelsea 44%, EV negative both sides). Brentford v Liverpool (Sat 15:00; DK Brentford +135, Liverpool +190; Brentford 4th 2W 4D, Liverpool 9th after 0-3 to City; Gravenberch suspended, Isak, Gakpo, Szoboszlai doubts; mild European-hangover overlay both; model Liverpool 43%, Brentford 32%, neither meets a gate). Fulham v Hull (Sat 15:00; DK Fulham -140, Hull +370; Fulham bottom on 2, Hull 8th on 9; Robinson and Cairney doubts; model Fulham 54% but EV -7.6% outside the -5% gate). Man City v Ipswich (Sat 15:00; DK City -425 / 1.24, below the 1.50 floor -- 1.10s are a pass even if they win). Bournemouth v Sunderland (Sun 14:00; DK Bournemouth +110; model ~48%/28%, outside the gates). Leeds v Man United (Sun 14:00; DK Leeds +140, United +185; Leeds 7th, United 13th, derby intensity; model Leeds 39%, United 35%, neither qualifies). Tottenham v Coventry (Mon 20:00; DK Spurs -210 / 1.48, below the 1.50 floor; Spurs 19th, Coventry 14th after a 4-1 over Newcastle). Forest at +500 too long for cash and short of the price EV threshold after shrink. Weather mild across UK venues, no material impact. Sources: ESPN schedule widget, DraftKings Sportsbook (slip), Squawka injury tracker 16 Oct, club form and table to Matchweek 6.",
+      "lsu_review_notes": "",
+      "created_at": "2026-10-17T10:25:23",
+      "id": 57
     }
   ],
   "picks": [
