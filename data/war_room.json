@@ -1,5 +1,5 @@
 {
-  "next_report_id": 65,
+  "next_report_id": 66,
   "next_pick_id": 305,
   "reports": [
     {
@@ -648,6 +648,18 @@
       "blind_spot_notes": "This ticket never submits an opinion of its own: every selection traces back to the source picks and board leans named on it.",
       "lsu_review_notes": "",
       "created_at": "2026-10-17T15:22:29"
+    },
+    {
+      "source": "Claude",
+      "league": "CFB",
+      "report_date": "2026-10-17",
+      "week_number": 7,
+      "week_label": "Week 7 -- Live-Lines Analysis, Saturday 10:02 AM CT (Maven Quant, Model A)",
+      "philosophy": "The stale sheet is one book; this is the other. Every FanDuel and DraftKings number from the 10:02 AM CT snapshot (The Odds API) is priced against Pinnacle (price EV: Pinnacle's no-vig probability shifted across the empirical college landing distribution to the FanDuel line, settled at FanDuel's price, independent of the model) and against Model A's fair line with the sourced injury overlay (model EV: cover probability at the FanDuel line with a 16-point margin SD, independent of Pinnacle). A live bet needs both to point the same way, or a price edge the model does not argue with. Live score = 50 + 6 x price EV (capped) + 1.5 x model edge (halved below 0.40 confidence) +/- 6 for the casino side -- a ranking device for this report only; the standing decision score governs the stale-sheet card. 52 games priced live; FanDuel beats Pinnacle by half a point or more in 18; price EV +1% or better in 10; price and model agree in 6 (the live candidates). Four LIVE BETS at 0.5% ($50) each with a mandatory Pinnacle recheck before placement; a FanDuel number that has moved onto Pinnacle is void. Where the paper is better than the live number (Indiana +3.5, Florida State +21.5, UNLV +1.5, Georgia Tech +10.5, Georgia State +10.5, Kansas +4.5), bet the paper, not these.",
+      "blind_spot_notes": "LIVE LEANS (no stake): Michigan State +7.5 (-105) at FanDuel (+0.5 vs Pinnacle, price EV +1.8%, model edge +2.0, live score 70); San Diego State +7.5 (-105) (matches Pinnacle, price EV +1.4%, model edge +8.7, live score 67). MODEL'S BIGGEST DISAGREEMENTS WITH THE MARKET, listed so you can see them, not bet them (own-number direction 47% ATS out of sample): Hawaii +12.1, Colorado +8.8, San Diego State +8.7, Oregon +7.7, Washington State +7.6, Charlotte +7.2, Cincinnati +6.6, Southern Miss +12.0; only those that also clear the price test belong on a ticket. PRICE WITHOUT MODEL: Kansas +3.5 (-105) price EV +7.0% but model -3.1; Penn State +6.5 (-105) price EV +5.1% but model -2.7; Nevada +14.5 (+100) price EV +4.3% but model -3.8 -- all passed. Injury overlay, casino sides, revenge and ranking lenses and the no-weather rule carry over from the stale-sheet report.",
+      "lsu_review_notes": "",
+      "created_at": "2026-10-17T15:22:44",
+      "id": 65
     }
   ],
   "picks": [
