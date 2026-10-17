@@ -1,6 +1,6 @@
 {
-  "next_report_id": 62,
-  "next_pick_id": 291,
+  "next_report_id": 63,
+  "next_pick_id": 293,
   "reports": [
     {
       "source": "ChatGPT",
@@ -612,6 +612,18 @@
       "lsu_review_notes": "",
       "created_at": "2026-10-17T15:20:15",
       "id": 61
+    },
+    {
+      "id": 62,
+      "source": "War Room",
+      "league": "CFB",
+      "report_date": "2026-10-17",
+      "week_number": 1,
+      "week_label": "War Room Card -- week of 2026-10-13",
+      "philosophy": "The dashboard's own selections, made by a rule frozen before any result: take a side when at least 2 sources are on it, or when a single pick's live WR Confidence is 75 or higher; one selection per game and market; when both sides qualify, the side with more sources wins, then the higher score, and a dead heat is skipped. Each selection copies the line and price of the highest-scoring source pick on that side at the moment it is made, is only made while the game has not kicked off, and is staked flat at $100. Selections are made by the hourly Auto-Grade pass and whenever a new pick is logged. Football (CFB, NFL) only.",
+      "blind_spot_notes": "This ticket never submits an opinion of its own: every selection traces back to the source picks and board leans named on it.",
+      "lsu_review_notes": "",
+      "created_at": "2026-10-17T15:20:36"
     }
   ],
   "picks": [
@@ -27655,6 +27667,278 @@
         "agreeing": 0,
         "opposing": 0
       }
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 61,
+      "category": "best_bet",
+      "matchup": "Ohio State Buckeyes @ Indiana Hoosiers",
+      "selection": "Indiana +3.5",
+      "odds": -110,
+      "stake": 50.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 67.0,
+      "war_room_line": "TRACK 0.50% ($50 per $10k), logged as an override. Board #2 of 52: score 66.7, EV +11.9%. Paper +3.5 vs Pinnacle +2.5; Model A own number +1.2.",
+      "edge": "Peabody: Model A has Ohio State by 1.2 (24.7 v 20.9, home field 2.5), confidence 0.45, no QB uncertainty. Walters: paper +3.5 against Pinnacle +2.5; the paper clears the 3, which lands 10% of the time; own-number edge +2.3. Spanky: 76% of DraftKings money on Ohio State, line fell from 3.5 to 2.5 against it -- reverse line movement toward Indiana. Voulgaris: Indiana won 13-10 last year, so revenge belongs to Ohio State; No. 5 at home against No. 4.",
+      "price_discipline": "Captain Jack: EV +11.9% at the paper's -110; FanDuel +2.5 at +102 is worse. Risk: a 3-point Ohio State win cashes the paper and loses the live number. Void at +3.5. 11:00 AM CT.",
+      "espn_event_id": "401858488",
+      "bet_type": "spread",
+      "bet_side": "home",
+      "bet_line": 3.5,
+      "home_team": "Indiana Hoosiers",
+      "away_team": "Ohio State Buckeyes",
+      "created_at": "2026-10-17T15:20:25",
+      "id": 291,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "OSU -2.5",
+        "home_spread": 2.5,
+        "home_spread_odds": -105.0,
+        "away_spread_odds": -115.0,
+        "total": 49.5,
+        "over_odds": -110.0,
+        "under_odds": -110.0,
+        "home_moneyline": 124,
+        "away_moneyline": -148,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-10-17T15:20:30",
+      "kickoff": "2026-10-17T16:00Z",
+      "pregame_weather": {
+        "city": "Bloomington",
+        "temp_c": 8.5,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 14.5,
+        "cloud_cover_pct": 2,
+        "forecast_hour": "2026-10-17T16:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 5,
+        "win_pct": 100.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 4,
+        "win_pct": 80.0,
+        "quality_wins": 1
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 4,
+          "d": 0,
+          "l": 0,
+          "gf": 174,
+          "ga": 39
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 0,
+          "gf": 67,
+          "ga": 32
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 4,
+          "d": 0,
+          "l": 0,
+          "gf": 202,
+          "ga": 41
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 1,
+          "gf": 54,
+          "ga": 38
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-17T15:20:30",
+      "wr_confidence_kickoff": 69.8726530612245,
+      "wr_breakdown_kickoff": {
+        "base": 67.0,
+        "impact_scale": 0.34,
+        "record_mod": 0.833,
+        "record_win_pct": 57.143,
+        "record_settled": 36,
+        "agree_mod": 2.04,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": null,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 1,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 72.8726530612245,
+      "wr_breakdown_initial": {
+        "base": 67.0,
+        "impact_scale": 0.34,
+        "record_mod": 0.833,
+        "record_win_pct": 57.143,
+        "record_settled": 36,
+        "agree_mod": 2.04,
+        "conflict_mod": 0.0,
+        "clv_mod": 4.0,
+        "clv_move": 1.0,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": 20.0,
+        "injury_mod": 0.0,
+        "injury_gap": 0.0,
+        "home_away_mod": 2.0,
+        "home_away_gap": 50.0,
+        "quality_win_mod": -3,
+        "quality_win_gap": -1,
+        "agreeing": 1,
+        "opposing": 0
+      },
+      "ai_grade": {
+        "quality": 3,
+        "verdict": "story",
+        "reason": "The +3.5 is a stale paper line, and the author's own void rule says it is gone, so the playable number is +2.5 at +102. That leaves only a ~1.3-point edge from a low-confidence model with a 47% ATS out-of-sample record, propped up by reverse line movement and revenge narrative, and the score of 66.7 is below the author's own staking threshold.",
+        "model": "claude-opus-5-5",
+        "graded_at": "2026-10-17T15:20:36",
+        "rubric_version": 5
+      }
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 62,
+      "category": "best_bet",
+      "matchup": "Ohio State Buckeyes @ Indiana Hoosiers",
+      "selection": "Indiana +3.5",
+      "odds": -110,
+      "stake": 100.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 72.9,
+      "war_room_line": "Rule: 2 sources aligned on this side. Line and price copied from Claude pick #291 at selection (2026-10-17T15:20:36).",
+      "edge": "Source picks on this side -- Claude: Indiana +3.5 (-110), live WR 73; ChatGPT: Indiana +3 (-110), live WR 58.",
+      "price_discipline": "Flat $100. Selected before kickoff; graded off the final score like any other pick.",
+      "espn_event_id": "401858488",
+      "bet_type": "spread",
+      "bet_side": "home",
+      "bet_line": 3.5,
+      "home_team": "Indiana Hoosiers",
+      "away_team": "Ohio State Buckeyes",
+      "war_room_source_pick_ids": [
+        291,
+        281
+      ],
+      "created_at": "2026-10-17T15:20:36",
+      "id": 292,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "OSU -2.5",
+        "home_spread": 2.5,
+        "home_spread_odds": -105.0,
+        "away_spread_odds": -115.0,
+        "total": 49.5,
+        "over_odds": -110.0,
+        "under_odds": -110.0,
+        "home_moneyline": 124,
+        "away_moneyline": -148,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-10-17T15:20:38",
+      "kickoff": "2026-10-17T16:00Z",
+      "pregame_weather": {
+        "city": "Bloomington",
+        "temp_c": 8.5,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 14.5,
+        "cloud_cover_pct": 2,
+        "forecast_hour": "2026-10-17T16:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 5,
+        "win_pct": 100.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 4,
+        "win_pct": 80.0,
+        "quality_wins": 1
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 4,
+          "d": 0,
+          "l": 0,
+          "gf": 174,
+          "ga": 39
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 0,
+          "gf": 67,
+          "ga": 32
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 4,
+          "d": 0,
+          "l": 0,
+          "gf": 202,
+          "ga": 41
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 1,
+          "gf": 54,
+          "ga": 38
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-17T15:20:38",
+      "wr_confidence_kickoff": 77.251,
+      "wr_breakdown_kickoff": {
+        "base": 72.9,
+        "impact_scale": 0.458,
+        "record_mod": -1.145,
+        "record_win_pct": 0.0,
+        "record_settled": 2,
+        "agree_mod": 5.496,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": null,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 2,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 80.251
     }
   ],
   "next_wallet_id": 47,
