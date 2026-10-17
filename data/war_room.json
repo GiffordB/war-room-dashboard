@@ -1,5 +1,5 @@
 {
-  "next_report_id": 60,
+  "next_report_id": 61,
   "next_pick_id": 280,
   "reports": [
     {
@@ -588,6 +588,18 @@
       "blind_spot_notes": "This ticket never submits an opinion of its own: every selection traces back to the source picks and board leans named on it.",
       "lsu_review_notes": "",
       "created_at": "2026-10-17T10:25:57"
+    },
+    {
+      "source": "ChatGPT",
+      "league": "CFB",
+      "report_date": "2026-10-17",
+      "week_number": 7,
+      "week_label": "Week 7 -- Saturday War Room Competition Card (Oct 17)",
+      "philosophy": "Saturday War Room, pre-kickoff snapshot (prices observed 9:35-9:43 AM CT on DK Network; source refresh time not disclosed). DraftKings only. Ten definite spread picks as ranked preferences, not cover probabilities; a competition pick is a selection, not a wager recommendation. Qualified money card: $0 -- each quoted spread remains inside its fair uncertainty range, so no demonstrated price edge beyond uncertainty, and availability is unresolved. No Thor Hammer Smash (unit $100, Thor ceiling $250). All later lineups provisional; no automatic bets at review prices. Jesse decides and may pass every wager. No confirmed Oct 17 tickets. Logged at the competition convention: $50 for ranks 1-5, $25 for ranks 6-10, $10 on the parlay. Sources and full rationale are in the companion report.",
+      "blind_spot_notes": "GOOD-IF-IT-GOES (competition only): Texas -11.5 + Tennessee +7.5 + BYU +10.5 -- different games, shared estimation errors still matter; DK combined quote unavailable; independent-leg arithmetic 7.0812 decimal (about +608), 14.1% break-even, $10 returns $70.81 including stake; proposed real stake $0. RISKS BY PICK: BYU (Martin out, Notre Dame defensive returns); Nebraska (late kickoff, Oregon talent, reported new QB on the other side); Texas (offensive inconsistency); Tennessee (Russell explosive plays; Alabama center out helps); Penn State (its own injury cluster; Michigan trench uncertainty); Missouri (falling behind breaks the run-led script); Indiana (Ohio State returns several starters); Miami (rivalry margin and storms threaten a big cover); Wisconsin (UCLA defense; bye plus points versus a backup QB); Mississippi State (loss of MSU QB/RB could overwhelm the cushion).",
+      "lsu_review_notes": "",
+      "created_at": "2026-10-17T15:15:38",
+      "id": 60
     }
   ],
   "picks": [
