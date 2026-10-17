@@ -1,6 +1,6 @@
 {
   "next_report_id": 61,
-  "next_pick_id": 283,
+  "next_pick_id": 284,
   "reports": [
     {
       "source": "ChatGPT",
@@ -26547,6 +26547,155 @@
         "reason": "The author ranks this pick last, puts the spread inside their own fair range with no stated gap, leaves availability unresolved, and gives only a vague 'LSU margin risk' line, which contradicts calling it a best bet.",
         "model": "claude-opus-5-5",
         "graded_at": "2026-10-17T15:16:23",
+        "rubric_version": 5
+      }
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 60,
+      "category": "best_bet",
+      "matchup": "Alabama Crimson Tide @ Tennessee Volunteers",
+      "selection": "Tennessee +7.5",
+      "odds": -108,
+      "stake": 50.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 59.0,
+      "war_room_line": "Competition rank #4 of 10 (ranked preference, not a cover probability). DraftKings -108. Qualified money card $0: the spread sits inside its fair uncertainty range.",
+      "edge": "Alabama center out.",
+      "price_discipline": "Principal risk: Russell explosive plays. 2:30 PM CT.",
+      "espn_event_id": "401856723",
+      "bet_type": "spread",
+      "bet_side": "home",
+      "bet_line": 7.5,
+      "home_team": "Tennessee Volunteers",
+      "away_team": "Alabama Crimson Tide",
+      "created_at": "2026-10-17T15:16:27",
+      "id": 283,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "ALA -7.5",
+        "home_spread": 7.5,
+        "home_spread_odds": -108.0,
+        "away_spread_odds": -112.0,
+        "total": 50.5,
+        "over_odds": -115.0,
+        "under_odds": -105.0,
+        "home_moneyline": 270,
+        "away_moneyline": -340,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-10-17T15:16:31",
+      "kickoff": "2026-10-17T19:30Z",
+      "pregame_weather": {
+        "city": "Knoxville",
+        "temp_c": 14.4,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 24.0,
+        "cloud_cover_pct": 30,
+        "forecast_hour": "2026-10-17T19:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 4,
+        "win_pct": 80.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 4,
+        "win_pct": 80.0,
+        "quality_wins": 1
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 3,
+          "d": 0,
+          "l": 1,
+          "gf": 139,
+          "ga": 52
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 0,
+          "gf": 69,
+          "ga": 41
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 3,
+          "d": 0,
+          "l": 1,
+          "gf": 164,
+          "ga": 84
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 0,
+          "gf": 101,
+          "ga": 40
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-17T15:16:31",
+      "wr_confidence_kickoff": 59.052244897959184,
+      "wr_breakdown_kickoff": {
+        "base": 59.0,
+        "impact_scale": 0.18,
+        "record_mod": 0.052,
+        "record_win_pct": 50.794,
+        "record_settled": 64,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": null,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 55.052244897959184,
+      "wr_breakdown_initial": {
+        "base": 59.0,
+        "impact_scale": 0.18,
+        "record_mod": 0.052,
+        "record_win_pct": 50.794,
+        "record_settled": 64,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": 0.0,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": 0.0,
+        "injury_mod": 0.0,
+        "injury_gap": 0.0,
+        "home_away_mod": -1.0,
+        "home_away_gap": -25.0,
+        "quality_win_mod": -3,
+        "quality_win_gap": -1,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "ai_grade": {
+        "quality": 2,
+        "verdict": "story",
+        "reason": "The author admits the spread sits inside their own fair range, which leaves a $0 qualified card and no edge, yet logs a $50 best bet on an unsourced 'Alabama center out' note with no number behind it.",
+        "model": "claude-opus-5-5",
+        "graded_at": "2026-10-17T15:16:33",
         "rubric_version": 5
       }
     }
