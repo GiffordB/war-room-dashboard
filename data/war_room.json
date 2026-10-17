@@ -1,6 +1,6 @@
 {
   "next_report_id": 61,
-  "next_pick_id": 280,
+  "next_pick_id": 281,
   "reports": [
     {
       "source": "ChatGPT",
@@ -26102,6 +26102,155 @@
         "opposing": 0
       },
       "wr_confidence_initial": 86.12
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 60,
+      "category": "best_bet",
+      "matchup": "Florida Gators @ Texas Longhorns",
+      "selection": "Texas -11.5",
+      "odds": -108,
+      "stake": 50.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 60.0,
+      "war_room_line": "Competition rank #3 of 10 (ranked preference, not a cover probability). DraftKings -108. Qualified money card $0: the spread sits inside its fair uncertainty range.",
+      "edge": "Pressure and run-defense mismatch.",
+      "price_discipline": "Principal risk: Texas offensive inconsistency. 11 AM CT.",
+      "espn_event_id": "401856724",
+      "bet_type": "spread",
+      "bet_side": "home",
+      "bet_line": -11.5,
+      "home_team": "Texas Longhorns",
+      "away_team": "Florida Gators",
+      "created_at": "2026-10-17T15:15:48",
+      "id": 280,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "TEX -11.5",
+        "home_spread": -11.5,
+        "home_spread_odds": -112.0,
+        "away_spread_odds": -108.0,
+        "total": 50.5,
+        "over_odds": -115.0,
+        "under_odds": -105.0,
+        "home_moneyline": -455,
+        "away_moneyline": 350,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-10-17T15:15:51",
+      "kickoff": "2026-10-17T16:00Z",
+      "pregame_weather": {
+        "city": "Austin",
+        "temp_c": 15.2,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 17.3,
+        "cloud_cover_pct": 5,
+        "forecast_hour": "2026-10-17T16:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 4,
+        "win_pct": 80.0,
+        "quality_wins": 2
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 3,
+        "win_pct": 60.0,
+        "quality_wins": 1
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 3,
+          "d": 0,
+          "l": 0,
+          "gf": 113,
+          "ga": 36
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 1,
+          "gf": 44,
+          "ga": 44
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 3,
+          "d": 0,
+          "l": 1,
+          "gf": 189,
+          "ga": 90
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 1,
+          "gf": 61,
+          "ga": 84
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-17T15:15:51",
+      "wr_confidence_kickoff": 60.05804988662131,
+      "wr_breakdown_kickoff": {
+        "base": 60.0,
+        "impact_scale": 0.2,
+        "record_mod": 0.058,
+        "record_win_pct": 50.794,
+        "record_settled": 64,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": null,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 65.05804988662132,
+      "wr_breakdown_initial": {
+        "base": 60.0,
+        "impact_scale": 0.2,
+        "record_mod": 0.058,
+        "record_win_pct": 50.794,
+        "record_settled": 64,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": 0.0,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": 20.0,
+        "injury_mod": 0.0,
+        "injury_gap": 0.0,
+        "home_away_mod": 2.0,
+        "home_away_gap": 50.0,
+        "quality_win_mod": 3,
+        "quality_win_gap": 1,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "ai_grade": {
+        "quality": 2,
+        "verdict": "story",
+        "reason": "The author gives no fair number and admits the spread sits inside their own uncertainty range, putting $0 on the money card. That leaves a one-line matchup narrative logged as a $50 best bet, so the conclusion contradicts the author's own reasoning.",
+        "model": "claude-opus-5-5",
+        "graded_at": "2026-10-17T15:15:59",
+        "rubric_version": 5
+      }
     }
   ],
   "next_wallet_id": 47,
