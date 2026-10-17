@@ -1,6 +1,6 @@
 {
   "next_report_id": 61,
-  "next_pick_id": 289,
+  "next_pick_id": 290,
   "reports": [
     {
       "source": "ChatGPT",
@@ -27441,6 +27441,155 @@
         "reason": "The author admits the spread sits inside their own fair range and sets a $0 money card, so the 'bye plus backup QB' story rests on an unsourced QB claim and shows no price edge, which contradicts calling this a best bet.",
         "model": "claude-opus-5-5",
         "graded_at": "2026-10-17T15:17:38",
+        "rubric_version": 5
+      }
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 60,
+      "category": "best_bet",
+      "matchup": "Nebraska Cornhuskers @ Oregon Ducks",
+      "selection": "Nebraska +7",
+      "odds": -118,
+      "stake": 50.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 61.0,
+      "war_room_line": "Competition rank #2 of 10 (ranked preference, not a cover probability). DraftKings -118. Qualified money card $0: the spread sits inside its fair uncertainty range.",
+      "edge": "Defense versus a reported new QB.",
+      "price_discipline": "Principal risk: Late kickoff and Oregon talent. 10 PM CT.",
+      "espn_event_id": "401858492",
+      "bet_type": "spread",
+      "bet_side": "away",
+      "bet_line": 7.0,
+      "home_team": "Oregon Ducks",
+      "away_team": "Nebraska Cornhuskers",
+      "created_at": "2026-10-17T15:17:43",
+      "id": 289,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "ORE -7",
+        "home_spread": -7.0,
+        "home_spread_odds": -102.0,
+        "away_spread_odds": -118.0,
+        "total": 51.5,
+        "over_odds": -110.0,
+        "under_odds": -110.0,
+        "home_moneyline": -258,
+        "away_moneyline": 210,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-10-17T15:17:46",
+      "kickoff": "2026-10-18T03:00Z",
+      "pregame_weather": {
+        "city": "Eugene",
+        "temp_c": 11.2,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 6.9,
+        "cloud_cover_pct": 19,
+        "forecast_hour": "2026-10-18T03:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 3,
+        "win_pct": 60.0,
+        "quality_wins": 1
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 4,
+        "win_pct": 80.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 2,
+          "d": 0,
+          "l": 1,
+          "gf": 133,
+          "ga": 44
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 1,
+          "gf": 72,
+          "ga": 66
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 4,
+          "d": 0,
+          "l": 1,
+          "gf": 204,
+          "ga": 78
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 0,
+          "gf": 31,
+          "ga": 13
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-17T15:17:46",
+      "wr_confidence_kickoff": 61.06385487528345,
+      "wr_breakdown_kickoff": {
+        "base": 61.0,
+        "impact_scale": 0.22,
+        "record_mod": 0.064,
+        "record_win_pct": 50.794,
+        "record_settled": 64,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": null,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 58.73052154195011,
+      "wr_breakdown_initial": {
+        "base": 61.0,
+        "impact_scale": 0.22,
+        "record_mod": 0.064,
+        "record_win_pct": 50.794,
+        "record_settled": 64,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": 0.0,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": 20.0,
+        "injury_mod": 0.0,
+        "injury_gap": 0.0,
+        "home_away_mod": 0.667,
+        "home_away_gap": 33.333,
+        "quality_win_mod": -3,
+        "quality_win_gap": -1,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "ai_grade": {
+        "quality": 2,
+        "verdict": "story",
+        "reason": "The author admits the spread sits inside their own fair range with no price edge, offers only a vague 'defense vs reported new QB' narrative with an unsourced injury claim, and stakes $50 anyway, so the argument contradicts its own conclusion.",
+        "model": "claude-opus-5-5",
+        "graded_at": "2026-10-17T15:17:50",
         "rubric_version": 5
       }
     }
