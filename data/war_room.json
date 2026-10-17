@@ -30973,7 +30973,7 @@
   ],
   "next_jesse_wallet_id": 1,
   "jesse_wallet_entries": [],
-  "next_lean_id": 281,
+  "next_lean_id": 283,
   "leans": [
     {
       "id": 1,
@@ -64385,6 +64385,240 @@
         "opposing": 0
       },
       "wr_confidence_initial": 45.0
+    },
+    {
+      "id": 281,
+      "report_id": 65,
+      "source": "Claude",
+      "league": "CFB",
+      "category": "lean",
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "parlay_leg_pick_ids": null,
+      "wr_confidence": 70.0,
+      "created_at": "2026-10-17T15:23:50",
+      "matchup": "Northwestern Wildcats @ Michigan State Spartans",
+      "selection": "Michigan State +7.5",
+      "bet_type": "spread",
+      "bet_side": "home",
+      "bet_line": 7.5,
+      "odds": -105,
+      "score": 70.0,
+      "espn_event_id": "401858491",
+      "note": "Live lean: FanDuel +7.5 (-105), +0.5 vs Pinnacle; price EV +1.8%; model edge +2.0, model EV +9.7%; live score 70.",
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "NU -7",
+        "home_spread": 7.0,
+        "home_spread_odds": -102.0,
+        "away_spread_odds": -118.0,
+        "total": 49.5,
+        "over_odds": -110.0,
+        "under_odds": -110.0,
+        "home_moneyline": 240,
+        "away_moneyline": -298,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-10-17T15:23:54",
+      "kickoff": "2026-10-17T16:00Z",
+      "pregame_weather": {
+        "city": "East Lansing",
+        "temp_c": 6.7,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 6.7,
+        "cloud_cover_pct": 0,
+        "forecast_hour": "2026-10-17T16:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 1,
+        "win_pct": 20.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 4,
+        "win_pct": 80.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 2,
+          "d": 0,
+          "l": 2,
+          "gf": 115,
+          "ga": 96
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 2,
+          "gf": 13,
+          "ga": 58
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 4,
+          "d": 0,
+          "l": 0,
+          "gf": 154,
+          "ga": 52
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 1,
+          "gf": 23,
+          "ga": 29
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-17T15:23:54",
+      "wr_confidence_kickoff": 72.9795918367347,
+      "wr_breakdown_kickoff": {
+        "base": 70.0,
+        "impact_scale": 0.4,
+        "record_mod": 0.98,
+        "record_win_pct": 57.143,
+        "record_settled": 36,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 1.0,
+        "clv_move": 0.5,
+        "weather_mod": 0.0,
+        "form_mod": -0.0,
+        "form_gap": -60.0,
+        "injury_mod": 0.0,
+        "injury_gap": 0.0,
+        "home_away_mod": 1.0,
+        "home_away_gap": 50.0,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 72.9795918367347
+    },
+    {
+      "id": 282,
+      "report_id": 65,
+      "source": "Claude",
+      "league": "CFB",
+      "category": "lean",
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "parlay_leg_pick_ids": null,
+      "wr_confidence": 67.0,
+      "created_at": "2026-10-17T15:23:50",
+      "matchup": "Fresno State Bulldogs @ San Diego State Aztecs",
+      "selection": "San Diego State +7.5",
+      "bet_type": "spread",
+      "bet_side": "home",
+      "bet_line": 7.5,
+      "odds": -105,
+      "score": 67.0,
+      "espn_event_id": "401860904",
+      "note": "Live lean: FanDuel +7.5 (-105), matches Pinnacle; price EV +1.4%; model edge +8.7, model EV +38.0%; live score 67.",
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "FRES -7.5",
+        "home_spread": 7.5,
+        "home_spread_odds": -118.0,
+        "away_spread_odds": -102.0,
+        "total": 45.5,
+        "over_odds": -108.0,
+        "under_odds": -112.0,
+        "home_moneyline": 245,
+        "away_moneyline": -305,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-10-17T15:23:54",
+      "kickoff": "2026-10-18T02:30Z",
+      "pregame_weather": {
+        "city": "San Diego",
+        "temp_c": 28.1,
+        "precip_probability_pct": 1,
+        "precip_mm": 0.0,
+        "wind_kmh": 2.2,
+        "cloud_cover_pct": 0,
+        "forecast_hour": "2026-10-18T02:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 1,
+        "win_pct": 20.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 4,
+        "win_pct": 80.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 2,
+          "d": 0,
+          "l": 1,
+          "gf": 97,
+          "ga": 75
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 3,
+          "gf": 40,
+          "ga": 135
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 2,
+          "d": 0,
+          "l": 1,
+          "gf": 118,
+          "ga": 65
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 1,
+          "gf": 52,
+          "ga": 55
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-17T15:23:54",
+      "wr_confidence_kickoff": 67.83265306122449,
+      "wr_breakdown_kickoff": {
+        "base": 67.0,
+        "impact_scale": 0.34,
+        "record_mod": 0.833,
+        "record_win_pct": 57.143,
+        "record_settled": 36,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": 0.0,
+        "weather_mod": 0.0,
+        "form_mod": -0.0,
+        "form_gap": -60.0,
+        "injury_mod": 0.0,
+        "injury_gap": 0.0,
+        "home_away_mod": 0.0,
+        "home_away_gap": 0.0,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 67.83265306122449
     }
   ],
   "ai_backtest": {
