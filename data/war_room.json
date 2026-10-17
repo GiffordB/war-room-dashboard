@@ -1,6 +1,6 @@
 {
-  "next_report_id": 63,
-  "next_pick_id": 297,
+  "next_report_id": 64,
+  "next_pick_id": 300,
   "reports": [
     {
       "source": "ChatGPT",
@@ -624,6 +624,18 @@
       "blind_spot_notes": "This ticket never submits an opinion of its own: every selection traces back to the source picks and board leans named on it.",
       "lsu_review_notes": "",
       "created_at": "2026-10-17T15:20:36"
+    },
+    {
+      "id": 63,
+      "source": "WR AI Test",
+      "league": "CFB",
+      "report_date": "2026-10-17",
+      "week_number": 1,
+      "week_label": "War Room AI Test Card -- week of 2026-10-13",
+      "philosophy": "The dashboard's own selections, made by a rule frozen before any result: take a side when at least 2 sources are on it, or when a single pick's live WR Confidence is 75 or higher; one selection per game and market; when both sides qualify, the side with more sources wins, then the higher score, and a dead heat is skipped. Each selection copies the line and price of the highest-scoring source pick on that side at the moment it is made, is only made while the game has not kicked off, and is staked flat at $100. Selections are made by the hourly Auto-Grade pass and whenever a new pick is logged. Football (CFB, NFL) only. THE TEST: this duplicate of the War Room card also reads each source pick's argument with a model (0-10 grade, frozen on the pick when first read) and scores it as live WR + (grade - 5) x 2. An aligned side is vetoed when every graded argument on it reads as a story (grade 3 or under), so the model can veto a story two cards agree on; the solo threshold and tie-breaks use the test score. Nothing here feeds the main rating or the main card - the two records run side by side until this one proves it helps.",
+      "blind_spot_notes": "This ticket never submits an opinion of its own: every selection traces back to the source picks and board leans named on it.",
+      "lsu_review_notes": "",
+      "created_at": "2026-10-17T15:21:39"
     }
   ],
   "picks": [
@@ -28535,6 +28547,401 @@
         "graded_at": "2026-10-17T15:21:23",
         "rubric_version": 5
       }
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 61,
+      "category": "best_bet",
+      "matchup": "Missouri Tigers @ Ole Miss Rebels",
+      "selection": "Missouri +5.5",
+      "odds": -110,
+      "stake": 50.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 62.0,
+      "war_room_line": "TRACK 0.50% ($50 per $10k), logged as an override. Board #7 of 52: score 61.8, EV +3.9%. Paper +5.5 vs Pinnacle +4.5; Model A own number +2.1.",
+      "edge": "Paper +5.5 vs Pinnacle +4.5, FanDuel +5.5 (-106) matches it; EV +3.9%. Model A has Ole Miss by 2.1, so football case and price agree. 41% of the money on Missouri.",
+      "price_discipline": "Place at the better of paper and FanDuel. Void at +5.5. 2:30 PM CT.",
+      "espn_event_id": "401856721",
+      "bet_type": "spread",
+      "bet_side": "away",
+      "bet_line": 5.5,
+      "home_team": "Ole Miss Rebels",
+      "away_team": "Missouri Tigers",
+      "created_at": "2026-10-17T15:21:28",
+      "id": 297,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "MISS -4",
+        "home_spread": -4.0,
+        "home_spread_odds": -108.0,
+        "away_spread_odds": -112.0,
+        "total": 58.5,
+        "over_odds": -112.0,
+        "under_odds": -108.0,
+        "home_moneyline": -185,
+        "away_moneyline": 154,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-10-17T15:21:32",
+      "kickoff": "2026-10-17T19:30Z",
+      "pregame_weather": {
+        "city": "Oxford",
+        "temp_c": 9.7,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 11.9,
+        "cloud_cover_pct": 9,
+        "forecast_hour": "2026-10-17T19:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 4,
+        "win_pct": 80.0,
+        "quality_wins": 2
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 4,
+        "win_pct": 80.0,
+        "quality_wins": 1
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 3,
+          "d": 0,
+          "l": 0,
+          "gf": 114,
+          "ga": 71
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 1,
+          "gf": 80,
+          "ga": 69
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 4,
+          "d": 0,
+          "l": 0,
+          "gf": 153,
+          "ga": 54
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 1,
+          "gf": 62,
+          "ga": 52
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-17T15:21:32",
+      "wr_confidence_kickoff": 64.02775510204081,
+      "wr_breakdown_kickoff": {
+        "base": 62.0,
+        "impact_scale": 0.24,
+        "record_mod": 0.588,
+        "record_win_pct": 57.143,
+        "record_settled": 36,
+        "agree_mod": 1.44,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": null,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 1,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 62.027755102040814,
+      "wr_breakdown_initial": {
+        "base": 62.0,
+        "impact_scale": 0.24,
+        "record_mod": 0.588,
+        "record_win_pct": 57.143,
+        "record_settled": 36,
+        "agree_mod": 1.44,
+        "conflict_mod": 0.0,
+        "clv_mod": 3.0,
+        "clv_move": 1.5,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": 0.0,
+        "injury_mod": 0.0,
+        "injury_gap": 0.0,
+        "home_away_mod": -2.0,
+        "home_away_gap": -50.0,
+        "quality_win_mod": -3,
+        "quality_win_gap": -1,
+        "agreeing": 1,
+        "opposing": 0
+      },
+      "ai_grade": {
+        "quality": 4,
+        "verdict": "mixed",
+        "reason": "The +5.5 is still bettable at FanDuel, giving a 1-point gap to Pinnacle +4.5 that crosses no key number, but the author's own void rule triggers at +5.5, contradicting placement at that price, and the model's 47% ATS direction record makes the 'football case agrees' claim weak support.",
+        "model": "claude-opus-5-5",
+        "graded_at": "2026-10-17T15:21:36",
+        "rubric_version": 5
+      }
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 62,
+      "category": "best_bet",
+      "matchup": "Missouri Tigers @ Ole Miss Rebels",
+      "selection": "Missouri +5.5",
+      "odds": -110,
+      "stake": 100.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 62.0,
+      "war_room_line": "Rule: 2 sources aligned on this side. Line and price copied from Claude pick #297 at selection (2026-10-17T15:21:36).",
+      "edge": "Source picks on this side -- Claude: Missouri +5.5 (-110), live WR 62; ChatGPT: Missouri +5.5 (-115), live WR 56.",
+      "price_discipline": "Flat $100. Selected before kickoff; graded off the final score like any other pick.",
+      "espn_event_id": "401856721",
+      "bet_type": "spread",
+      "bet_side": "away",
+      "bet_line": 5.5,
+      "home_team": "Ole Miss Rebels",
+      "away_team": "Missouri Tigers",
+      "war_room_source_pick_ids": [
+        297,
+        285
+      ],
+      "created_at": "2026-10-17T15:21:36",
+      "id": 298,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "MISS -4",
+        "home_spread": -4.0,
+        "home_spread_odds": -108.0,
+        "away_spread_odds": -112.0,
+        "total": 58.5,
+        "over_odds": -112.0,
+        "under_odds": -108.0,
+        "home_moneyline": -185,
+        "away_moneyline": 154,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-10-17T15:21:39",
+      "kickoff": "2026-10-17T19:30Z",
+      "pregame_weather": {
+        "city": "Oxford",
+        "temp_c": 9.7,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 11.9,
+        "cloud_cover_pct": 9,
+        "forecast_hour": "2026-10-17T19:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 4,
+        "win_pct": 80.0,
+        "quality_wins": 2
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 4,
+        "win_pct": 80.0,
+        "quality_wins": 1
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 3,
+          "d": 0,
+          "l": 0,
+          "gf": 114,
+          "ga": 71
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 1,
+          "gf": 80,
+          "ga": 69
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 4,
+          "d": 0,
+          "l": 0,
+          "gf": 153,
+          "ga": 54
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 1,
+          "gf": 62,
+          "ga": 52
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-17T15:21:39",
+      "wr_confidence_kickoff": 64.28,
+      "wr_breakdown_kickoff": {
+        "base": 62.0,
+        "impact_scale": 0.24,
+        "record_mod": -0.6,
+        "record_win_pct": 0.0,
+        "record_settled": 2,
+        "agree_mod": 2.88,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": null,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 2,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 62.28
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 63,
+      "category": "best_bet",
+      "matchup": "Missouri Tigers @ Ole Miss Rebels",
+      "selection": "Missouri +5.5",
+      "odds": -110,
+      "stake": 100.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 60.0,
+      "war_room_line": "Rule: 2 sources aligned on this side, not vetoed (best AI grade above 3). Line and price copied from Claude pick #297 at selection (2026-10-17T15:21:39).",
+      "edge": "Source picks on this side -- Claude: Missouri +5.5 (-110), test score 60, AI grade 4/10 mixed; ChatGPT: Missouri +5.5 (-115), test score 50, AI grade 2/10 story.",
+      "price_discipline": "Flat $100. Selected before kickoff; graded off the final score like any other pick.",
+      "espn_event_id": "401856721",
+      "bet_type": "spread",
+      "bet_side": "away",
+      "bet_line": 5.5,
+      "home_team": "Ole Miss Rebels",
+      "away_team": "Missouri Tigers",
+      "war_room_source_pick_ids": [
+        297,
+        285
+      ],
+      "created_at": "2026-10-17T15:21:39",
+      "id": 299,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "MISS -4",
+        "home_spread": -4.0,
+        "home_spread_odds": -108.0,
+        "away_spread_odds": -112.0,
+        "total": 58.5,
+        "over_odds": -112.0,
+        "under_odds": -108.0,
+        "home_moneyline": -185,
+        "away_moneyline": 154,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-10-17T15:21:42",
+      "kickoff": "2026-10-17T19:30Z",
+      "pregame_weather": {
+        "city": "Oxford",
+        "temp_c": 9.7,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 11.9,
+        "cloud_cover_pct": 9,
+        "forecast_hour": "2026-10-17T19:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 4,
+        "win_pct": 80.0,
+        "quality_wins": 2
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 4,
+        "win_pct": 80.0,
+        "quality_wins": 1
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 3,
+          "d": 0,
+          "l": 0,
+          "gf": 114,
+          "ga": 71
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 1,
+          "gf": 80,
+          "ga": 69
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 4,
+          "d": 0,
+          "l": 0,
+          "gf": 153,
+          "ga": 54
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 1,
+          "gf": 62,
+          "ga": 52
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-17T15:21:42",
+      "wr_confidence_kickoff": 62.114285714285714,
+      "wr_breakdown_kickoff": {
+        "base": 60.0,
+        "impact_scale": 0.2,
+        "record_mod": -0.286,
+        "record_win_pct": 0.0,
+        "record_settled": 1,
+        "agree_mod": 2.4,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": null,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 2,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 60.114285714285714
     }
   ],
   "next_wallet_id": 47,
