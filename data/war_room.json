@@ -1,6 +1,6 @@
 {
   "next_report_id": 66,
-  "next_pick_id": 306,
+  "next_pick_id": 307,
   "reports": [
     {
       "source": "ChatGPT",
@@ -29613,6 +29613,155 @@
         "reason": "The author quantifies a full-point gap against Pinnacle's +4.5 and gives a +5.8% price EV, the model independently agrees (+2.4), and a recheck and void rule are stated, but +5.5 crosses no key number and the model's confidence is not given.",
         "model": "claude-opus-5-5",
         "graded_at": "2026-10-17T15:23:03",
+        "rubric_version": 5
+      }
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 65,
+      "category": "best_bet",
+      "matchup": "Massachusetts Minutemen @ Buffalo Bulls",
+      "selection": "UMass +7.5",
+      "odds": -102,
+      "stake": 50.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 60.0,
+      "war_room_line": "LIVE BET 0.5% ($50) at FanDuel. Matches Pinnacle +7.5 at a better price; price EV +3.7%; model edge +2.8, model EV +12.8%; casino side; live score 83.",
+      "edge": "A live offer where the FanDuel price beats Pinnacle and Model A points the same way.",
+      "price_discipline": "FanDuel +7.5 (-102); DraftKings +7 (-112). Revenge side (lost 28-21 last year). 12:00 PM CT.",
+      "espn_event_id": "401866442",
+      "bet_type": "spread",
+      "bet_side": "away",
+      "bet_line": 7.5,
+      "home_team": "Buffalo Bulls",
+      "away_team": "Massachusetts Minutemen",
+      "created_at": "2026-10-17T15:23:08",
+      "id": 306,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "BUF -7",
+        "home_spread": -7.0,
+        "home_spread_odds": -112.0,
+        "away_spread_odds": -108.0,
+        "total": 42.5,
+        "over_odds": -105.0,
+        "under_odds": -115.0,
+        "home_moneyline": -285,
+        "away_moneyline": 230,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-10-17T15:23:11",
+      "kickoff": "2026-10-17T17:00Z",
+      "pregame_weather": {
+        "city": "Buffalo",
+        "temp_c": 6.5,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 13.3,
+        "cloud_cover_pct": 7,
+        "forecast_hour": "2026-10-17T17:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 2,
+        "win_pct": 40.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 3,
+        "win_pct": 60.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 2,
+          "d": 0,
+          "l": 1,
+          "gf": 69,
+          "ga": 65
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 2,
+          "gf": 56,
+          "ga": 96
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 2,
+          "d": 0,
+          "l": 2,
+          "gf": 106,
+          "ga": 82
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 0,
+          "gf": 72,
+          "ga": 27
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-17T15:23:11",
+      "wr_confidence_kickoff": 60.48979591836735,
+      "wr_breakdown_kickoff": {
+        "base": 60.0,
+        "impact_scale": 0.2,
+        "record_mod": 0.49,
+        "record_win_pct": 57.143,
+        "record_settled": 36,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": null,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 62.823129251700685,
+      "wr_breakdown_initial": {
+        "base": 60.0,
+        "impact_scale": 0.2,
+        "record_mod": 0.49,
+        "record_win_pct": 57.143,
+        "record_settled": 36,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 1.0,
+        "clv_move": 0.5,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": 20.0,
+        "injury_mod": 0.0,
+        "injury_gap": 0.0,
+        "home_away_mod": 1.333,
+        "home_away_gap": 33.333,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "ai_grade": {
+        "quality": 6,
+        "verdict": "edge",
+        "reason": "A specific price edge (+3.7% EV against Pinnacle's no-vig line at the same +7.5) is backed by an agreeing model edge of +2.8 with a recheck/void rule, though the revenge narrative mention adds nothing and the gap doesn't cross a key number.",
+        "model": "claude-opus-5-5",
+        "graded_at": "2026-10-17T15:23:17",
         "rubric_version": 5
       }
     }
