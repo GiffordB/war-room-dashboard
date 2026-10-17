@@ -24222,7 +24222,7 @@
         "provider": "DraftKings",
         "spread_details": "TOT -205",
         "home_spread": -1.5,
-        "home_spread_odds": 115.0,
+        "home_spread_odds": 120.0,
         "away_spread_odds": -165.0,
         "total": 2.5,
         "over_odds": -175.0,
@@ -24231,17 +24231,9 @@
         "away_moneyline": 500,
         "draw_moneyline": 370.0
       },
-      "pregame_odds_captured_at": "2026-10-16T23:13:41",
+      "pregame_odds_captured_at": "2026-10-17T03:45:06",
       "kickoff": "2026-10-19T19:00Z",
-      "pregame_weather": {
-        "city": "London",
-        "temp_c": 12.2,
-        "precip_probability_pct": 16,
-        "precip_mm": 0.0,
-        "wind_kmh": 10.1,
-        "cloud_cover_pct": 73,
-        "forecast_hour": "2026-10-19T19:00"
-      },
+      "pregame_weather": null,
       "pregame_home_form": {
         "played": 5,
         "wins": 0,
@@ -24288,8 +24280,8 @@
           "ga": 4
         }
       },
-      "pregame_intel_captured_at": "2026-10-16T23:13:41",
-      "wr_confidence_kickoff": 68.0,
+      "pregame_intel_captured_at": "2026-10-17T03:45:06",
+      "wr_confidence_kickoff": 69.33333333333333,
       "wr_breakdown_kickoff": {
         "base": 68.0,
         "impact_scale": 0.36,
@@ -24299,14 +24291,14 @@
         "agree_mod": 0.0,
         "conflict_mod": 0.0,
         "clv_mod": 0.0,
-        "clv_move": null,
+        "clv_move": 0.0,
         "weather_mod": 0.0,
         "form_mod": 0.0,
-        "form_gap": null,
+        "form_gap": 40.0,
         "injury_mod": 0.0,
-        "injury_gap": null,
-        "home_away_mod": 0.0,
-        "home_away_gap": null,
+        "injury_gap": 0.0,
+        "home_away_mod": 1.333,
+        "home_away_gap": 33.333,
         "quality_win_mod": 0.0,
         "quality_win_gap": null,
         "agreeing": 0,
@@ -24371,23 +24363,23 @@
         "provider": "DraftKings",
         "spread_details": "BRE +140",
         "home_spread": -0.5,
-        "home_spread_odds": 125.0,
-        "away_spread_odds": -175.0,
-        "total": 3.5,
-        "over_odds": 140.0,
-        "under_odds": -175.0,
+        "home_spread_odds": 130.0,
+        "away_spread_odds": -180.0,
+        "total": 2.5,
+        "over_odds": -175.0,
+        "under_odds": 140.0,
         "home_moneyline": 140,
-        "away_moneyline": 180,
-        "draw_moneyline": 270.0
+        "away_moneyline": 175,
+        "draw_moneyline": 265.0
       },
-      "pregame_odds_captured_at": "2026-10-16T23:13:56",
+      "pregame_odds_captured_at": "2026-10-17T03:45:06",
       "kickoff": "2026-10-17T14:00Z",
       "pregame_weather": {
         "city": "Brentford",
-        "temp_c": 4.1,
+        "temp_c": 3.6,
         "precip_probability_pct": 0,
         "precip_mm": 0.0,
-        "wind_kmh": 22.4,
+        "wind_kmh": 23.4,
         "cloud_cover_pct": 2,
         "forecast_hour": "2026-10-17T14:00"
       },
@@ -24437,7 +24429,7 @@
           "ga": 2
         }
       },
-      "pregame_intel_captured_at": "2026-10-16T23:13:56",
+      "pregame_intel_captured_at": "2026-10-17T03:45:06",
       "wr_confidence_kickoff": 69.0,
       "wr_breakdown_kickoff": {
         "base": 69.0,
@@ -24447,8 +24439,8 @@
         "record_settled": 20,
         "agree_mod": 0.0,
         "conflict_mod": 0.0,
-        "clv_mod": 0.0,
-        "clv_move": null,
+        "clv_mod": -0.0,
+        "clv_move": -0.0,
         "weather_mod": 0.0,
         "form_mod": 0.0,
         "form_gap": null,
@@ -24529,15 +24521,15 @@
         "away_moneyline": -160,
         "draw_moneyline": 285.0
       },
-      "pregame_odds_captured_at": "2026-10-16T23:14:06",
+      "pregame_odds_captured_at": "2026-10-17T03:45:06",
       "kickoff": "2026-10-18T15:30Z",
       "pregame_weather": {
         "city": "Nottingham",
-        "temp_c": 12.6,
-        "precip_probability_pct": 29,
+        "temp_c": 12.4,
+        "precip_probability_pct": 12,
         "precip_mm": 0.0,
-        "wind_kmh": 16.6,
-        "cloud_cover_pct": 77,
+        "wind_kmh": 17.3,
+        "cloud_cover_pct": 36,
         "forecast_hour": "2026-10-18T15:00"
       },
       "pregame_home_form": {
@@ -24586,8 +24578,8 @@
           "ga": 3
         }
       },
-      "pregame_intel_captured_at": "2026-10-16T23:14:06",
-      "wr_confidence_kickoff": 62.0,
+      "pregame_intel_captured_at": "2026-10-17T03:45:06",
+      "wr_confidence_kickoff": 64.4,
       "wr_breakdown_kickoff": {
         "base": 62.0,
         "impact_scale": 0.24,
@@ -24600,11 +24592,11 @@
         "clv_move": null,
         "weather_mod": 0.0,
         "form_mod": 0.0,
-        "form_gap": null,
+        "form_gap": 60.0,
         "injury_mod": 0.0,
-        "injury_gap": null,
-        "home_away_mod": 0.0,
-        "home_away_gap": null,
+        "injury_gap": 0.0,
+        "home_away_mod": 2.4,
+        "home_away_gap": 66.667,
         "quality_win_mod": 0.0,
         "quality_win_gap": null,
         "agreeing": 0,
@@ -24678,15 +24670,15 @@
         "away_moneyline": -160,
         "draw_moneyline": 285.0
       },
-      "pregame_odds_captured_at": "2026-10-16T23:14:21",
+      "pregame_odds_captured_at": "2026-10-17T03:45:06",
       "kickoff": "2026-10-18T15:30Z",
       "pregame_weather": {
         "city": "Nottingham",
-        "temp_c": 12.6,
-        "precip_probability_pct": 29,
+        "temp_c": 12.4,
+        "precip_probability_pct": 12,
         "precip_mm": 0.0,
-        "wind_kmh": 16.6,
-        "cloud_cover_pct": 77,
+        "wind_kmh": 17.3,
+        "cloud_cover_pct": 36,
         "forecast_hour": "2026-10-18T15:00"
       },
       "pregame_home_form": {
@@ -24735,7 +24727,7 @@
           "ga": 3
         }
       },
-      "pregame_intel_captured_at": "2026-10-16T23:14:21",
+      "pregame_intel_captured_at": "2026-10-17T03:45:06",
       "wr_confidence_kickoff": 55.0,
       "wr_breakdown_kickoff": {
         "base": 55.0,
@@ -24745,8 +24737,8 @@
         "record_settled": 20,
         "agree_mod": 0.0,
         "conflict_mod": 0.0,
-        "clv_mod": 0.0,
-        "clv_move": null,
+        "clv_mod": -0.0,
+        "clv_move": -0.0,
         "weather_mod": 0.0,
         "form_mod": 0.0,
         "form_gap": null,
@@ -24818,7 +24810,7 @@
         "provider": "DraftKings",
         "spread_details": "TOT -205",
         "home_spread": -1.5,
-        "home_spread_odds": 115.0,
+        "home_spread_odds": 120.0,
         "away_spread_odds": -165.0,
         "total": 2.5,
         "over_odds": -175.0,
@@ -24827,17 +24819,9 @@
         "away_moneyline": 500,
         "draw_moneyline": 370.0
       },
-      "pregame_odds_captured_at": "2026-10-16T23:14:36",
+      "pregame_odds_captured_at": "2026-10-17T03:45:06",
       "kickoff": "2026-10-19T19:00Z",
-      "pregame_weather": {
-        "city": "London",
-        "temp_c": 12.2,
-        "precip_probability_pct": 16,
-        "precip_mm": 0.0,
-        "wind_kmh": 10.1,
-        "cloud_cover_pct": 73,
-        "forecast_hour": "2026-10-19T19:00"
-      },
+      "pregame_weather": null,
       "pregame_home_form": {
         "played": 5,
         "wins": 0,
@@ -24884,7 +24868,7 @@
           "ga": 4
         }
       },
-      "pregame_intel_captured_at": "2026-10-16T23:14:36",
+      "pregame_intel_captured_at": "2026-10-17T03:45:06",
       "wr_confidence_kickoff": 48.0,
       "wr_breakdown_kickoff": {
         "base": 48.0,
@@ -24894,8 +24878,8 @@
         "record_settled": 20,
         "agree_mod": 0.0,
         "conflict_mod": 0.0,
-        "clv_mod": 0.0,
-        "clv_move": null,
+        "clv_mod": -0.0,
+        "clv_move": -0.0,
         "weather_mod": 0.0,
         "form_mod": 0.0,
         "form_gap": null,
@@ -24965,26 +24949,26 @@
       "id": 272,
       "pregame_odds": {
         "provider": "DraftKings",
-        "spread_details": "FUL -140",
+        "spread_details": "FUL -145",
         "home_spread": -0.5,
         "home_spread_odds": -155.0,
         "away_spread_odds": 110.0,
         "total": 2.5,
         "over_odds": -135.0,
         "under_odds": 105.0,
-        "home_moneyline": -140,
-        "away_moneyline": 370,
+        "home_moneyline": -145,
+        "away_moneyline": 380,
         "draw_moneyline": 300.0
       },
-      "pregame_odds_captured_at": "2026-10-16T23:14:46",
+      "pregame_odds_captured_at": "2026-10-17T03:45:06",
       "kickoff": "2026-10-17T14:00Z",
       "pregame_weather": {
         "city": "London",
-        "temp_c": 13.3,
+        "temp_c": 13.6,
         "precip_probability_pct": 0,
         "precip_mm": 0.0,
-        "wind_kmh": 15.5,
-        "cloud_cover_pct": 96,
+        "wind_kmh": 15.1,
+        "cloud_cover_pct": 91,
         "forecast_hour": "2026-10-17T14:00"
       },
       "pregame_home_form": {
@@ -25033,8 +25017,8 @@
           "ga": 4
         }
       },
-      "pregame_intel_captured_at": "2026-10-16T23:14:46",
-      "wr_confidence_kickoff": 53.0,
+      "pregame_intel_captured_at": "2026-10-17T03:45:06",
+      "wr_confidence_kickoff": 55.0,
       "wr_breakdown_kickoff": {
         "base": 53.0,
         "impact_scale": 0.06,
@@ -25044,14 +25028,14 @@
         "agree_mod": 0.0,
         "conflict_mod": 0.0,
         "clv_mod": 0.0,
-        "clv_move": null,
+        "clv_move": 0.0,
         "weather_mod": 0.0,
         "form_mod": 0.0,
-        "form_gap": null,
+        "form_gap": 20.0,
         "injury_mod": 0.0,
-        "injury_gap": null,
-        "home_away_mod": 0.0,
-        "home_away_gap": null,
+        "injury_gap": 0.0,
+        "home_away_mod": 2.0,
+        "home_away_gap": 50.0,
         "quality_win_mod": 0.0,
         "quality_win_gap": null,
         "agreeing": 0,
@@ -25116,7 +25100,7 @@
         "provider": "DraftKings",
         "spread_details": "TOT -205",
         "home_spread": -1.5,
-        "home_spread_odds": 115.0,
+        "home_spread_odds": 120.0,
         "away_spread_odds": -165.0,
         "total": 2.5,
         "over_odds": -175.0,
@@ -25125,17 +25109,9 @@
         "away_moneyline": 500,
         "draw_moneyline": 370.0
       },
-      "pregame_odds_captured_at": "2026-10-16T23:14:56",
+      "pregame_odds_captured_at": "2026-10-17T03:45:06",
       "kickoff": "2026-10-19T19:00Z",
-      "pregame_weather": {
-        "city": "London",
-        "temp_c": 12.2,
-        "precip_probability_pct": 16,
-        "precip_mm": 0.0,
-        "wind_kmh": 10.1,
-        "cloud_cover_pct": 73,
-        "forecast_hour": "2026-10-19T19:00"
-      },
+      "pregame_weather": null,
       "pregame_home_form": {
         "played": 5,
         "wins": 0,
@@ -25182,7 +25158,7 @@
           "ga": 4
         }
       },
-      "pregame_intel_captured_at": "2026-10-16T23:14:56",
+      "pregame_intel_captured_at": "2026-10-17T03:45:06",
       "wr_confidence_kickoff": 24.0,
       "wr_breakdown_kickoff": {
         "base": 24.0,
@@ -52214,20 +52190,20 @@
         "home_spread_odds": -150.0,
         "away_spread_odds": 110.0,
         "total": 2.5,
-        "over_odds": -150.0,
-        "under_odds": 120.0,
+        "over_odds": -155.0,
+        "under_odds": 125.0,
         "home_moneyline": 215,
         "away_moneyline": 120,
         "draw_moneyline": 270.0
       },
-      "pregame_odds_captured_at": "2026-10-16T23:15:10",
+      "pregame_odds_captured_at": "2026-10-17T03:45:06",
       "kickoff": "2026-10-17T11:30Z",
       "pregame_weather": {
         "city": "Liverpool",
-        "temp_c": 11.1,
+        "temp_c": 10.7,
         "precip_probability_pct": 0,
         "precip_mm": 0.0,
-        "wind_kmh": 11.9,
+        "wind_kmh": 9.7,
         "cloud_cover_pct": 0,
         "forecast_hour": "2026-10-17T11:00"
       },
@@ -52277,7 +52253,7 @@
           "ga": 7
         }
       },
-      "pregame_intel_captured_at": "2026-10-16T23:15:10",
+      "pregame_intel_captured_at": "2026-10-17T03:45:06",
       "wr_confidence_kickoff": 32.4,
       "wr_breakdown_kickoff": {
         "base": 30.0,
@@ -52331,20 +52307,20 @@
         "home_spread_odds": -150.0,
         "away_spread_odds": 110.0,
         "total": 2.5,
-        "over_odds": -150.0,
-        "under_odds": 120.0,
+        "over_odds": -155.0,
+        "under_odds": 125.0,
         "home_moneyline": 215,
         "away_moneyline": 120,
         "draw_moneyline": 270.0
       },
-      "pregame_odds_captured_at": "2026-10-16T23:15:10",
+      "pregame_odds_captured_at": "2026-10-17T03:45:06",
       "kickoff": "2026-10-17T11:30Z",
       "pregame_weather": {
         "city": "Liverpool",
-        "temp_c": 11.1,
+        "temp_c": 10.7,
         "precip_probability_pct": 0,
         "precip_mm": 0.0,
-        "wind_kmh": 11.9,
+        "wind_kmh": 9.7,
         "cloud_cover_pct": 0,
         "forecast_hour": "2026-10-17T11:00"
       },
@@ -52394,7 +52370,7 @@
           "ga": 7
         }
       },
-      "pregame_intel_captured_at": "2026-10-16T23:15:10",
+      "pregame_intel_captured_at": "2026-10-17T03:45:06",
       "wr_confidence_kickoff": 50.0,
       "wr_breakdown_kickoff": {
         "base": 50.0,
@@ -52445,23 +52421,23 @@
         "provider": "DraftKings",
         "spread_details": "BRE +140",
         "home_spread": -0.5,
-        "home_spread_odds": 125.0,
-        "away_spread_odds": -175.0,
-        "total": 3.5,
-        "over_odds": 140.0,
-        "under_odds": -175.0,
+        "home_spread_odds": 130.0,
+        "away_spread_odds": -180.0,
+        "total": 2.5,
+        "over_odds": -175.0,
+        "under_odds": 140.0,
         "home_moneyline": 140,
-        "away_moneyline": 180,
-        "draw_moneyline": 270.0
+        "away_moneyline": 175,
+        "draw_moneyline": 265.0
       },
-      "pregame_odds_captured_at": "2026-10-16T23:15:10",
+      "pregame_odds_captured_at": "2026-10-17T03:45:06",
       "kickoff": "2026-10-17T14:00Z",
       "pregame_weather": {
         "city": "Brentford",
-        "temp_c": 4.1,
+        "temp_c": 3.6,
         "precip_probability_pct": 0,
         "precip_mm": 0.0,
-        "wind_kmh": 22.4,
+        "wind_kmh": 23.4,
         "cloud_cover_pct": 2,
         "forecast_hour": "2026-10-17T14:00"
       },
@@ -52511,7 +52487,7 @@
           "ga": 2
         }
       },
-      "pregame_intel_captured_at": "2026-10-16T23:15:10",
+      "pregame_intel_captured_at": "2026-10-17T03:45:06",
       "wr_confidence_kickoff": 38.0,
       "wr_breakdown_kickoff": {
         "base": 38.0,
@@ -52560,26 +52536,26 @@
       "note": "Winless Fulham priced as -140 favourite; blended 47% vs 55.7% no-vig, negative.",
       "pregame_odds": {
         "provider": "DraftKings",
-        "spread_details": "FUL -140",
+        "spread_details": "FUL -145",
         "home_spread": -0.5,
         "home_spread_odds": -155.0,
         "away_spread_odds": 110.0,
         "total": 2.5,
         "over_odds": -135.0,
         "under_odds": 105.0,
-        "home_moneyline": -140,
-        "away_moneyline": 370,
+        "home_moneyline": -145,
+        "away_moneyline": 380,
         "draw_moneyline": 300.0
       },
-      "pregame_odds_captured_at": "2026-10-16T23:15:10",
+      "pregame_odds_captured_at": "2026-10-17T03:45:06",
       "kickoff": "2026-10-17T14:00Z",
       "pregame_weather": {
         "city": "London",
-        "temp_c": 13.3,
+        "temp_c": 13.6,
         "precip_probability_pct": 0,
         "precip_mm": 0.0,
-        "wind_kmh": 15.5,
-        "cloud_cover_pct": 96,
+        "wind_kmh": 15.1,
+        "cloud_cover_pct": 91,
         "forecast_hour": "2026-10-17T14:00"
       },
       "pregame_home_form": {
@@ -52628,7 +52604,7 @@
           "ga": 4
         }
       },
-      "pregame_intel_captured_at": "2026-10-16T23:15:10",
+      "pregame_intel_captured_at": "2026-10-17T03:45:06",
       "wr_confidence_kickoff": 43.0,
       "wr_breakdown_kickoff": {
         "base": 45.0,
@@ -52677,26 +52653,26 @@
       "note": "Fulham home games leaky (7 GA in 3) but Hull low scoring; no gap.",
       "pregame_odds": {
         "provider": "DraftKings",
-        "spread_details": "FUL -140",
+        "spread_details": "FUL -145",
         "home_spread": -0.5,
         "home_spread_odds": -155.0,
         "away_spread_odds": 110.0,
         "total": 2.5,
         "over_odds": -135.0,
         "under_odds": 105.0,
-        "home_moneyline": -140,
-        "away_moneyline": 370,
+        "home_moneyline": -145,
+        "away_moneyline": 380,
         "draw_moneyline": 300.0
       },
-      "pregame_odds_captured_at": "2026-10-16T23:15:10",
+      "pregame_odds_captured_at": "2026-10-17T03:45:06",
       "kickoff": "2026-10-17T14:00Z",
       "pregame_weather": {
         "city": "London",
-        "temp_c": 13.3,
+        "temp_c": 13.6,
         "precip_probability_pct": 0,
         "precip_mm": 0.0,
-        "wind_kmh": 15.5,
-        "cloud_cover_pct": 96,
+        "wind_kmh": 15.1,
+        "cloud_cover_pct": 91,
         "forecast_hour": "2026-10-17T14:00"
       },
       "pregame_home_form": {
@@ -52745,7 +52721,7 @@
           "ga": 4
         }
       },
-      "pregame_intel_captured_at": "2026-10-16T23:15:10",
+      "pregame_intel_captured_at": "2026-10-17T03:45:06",
       "wr_confidence_kickoff": 47.0,
       "wr_breakdown_kickoff": {
         "base": 47.0,
@@ -52794,26 +52770,26 @@
       "note": "Blended 78% vs 75.9%; +2pp but EV negative at -400.",
       "pregame_odds": {
         "provider": "DraftKings",
-        "spread_details": "MNC -400",
+        "spread_details": "MNC -425",
         "home_spread": -1.5,
-        "home_spread_odds": -155.0,
+        "home_spread_odds": -160.0,
         "away_spread_odds": 115.0,
         "total": 3.5,
         "over_odds": -110.0,
-        "under_odds": -115.0,
-        "home_moneyline": -400,
-        "away_moneyline": 900,
-        "draw_moneyline": 550.0
+        "under_odds": -110.0,
+        "home_moneyline": -425,
+        "away_moneyline": 950,
+        "draw_moneyline": 600.0
       },
-      "pregame_odds_captured_at": "2026-10-16T23:15:10",
+      "pregame_odds_captured_at": "2026-10-17T03:45:06",
       "kickoff": "2026-10-17T14:00Z",
       "pregame_weather": {
         "city": "Manchester",
-        "temp_c": 12.7,
+        "temp_c": 13.0,
         "precip_probability_pct": 0,
         "precip_mm": 0.0,
         "wind_kmh": 12.2,
-        "cloud_cover_pct": 34,
+        "cloud_cover_pct": 30,
         "forecast_hour": "2026-10-17T14:00"
       },
       "pregame_home_form": {
@@ -52862,7 +52838,7 @@
           "ga": 8
         }
       },
-      "pregame_intel_captured_at": "2026-10-16T23:15:10",
+      "pregame_intel_captured_at": "2026-10-17T03:45:06",
       "wr_confidence_kickoff": 81.6,
       "wr_breakdown_kickoff": {
         "base": 78.0,
@@ -52911,26 +52887,26 @@
       "note": "P(win by 2+) ~58% vs 60.8% implied; pass.",
       "pregame_odds": {
         "provider": "DraftKings",
-        "spread_details": "MNC -400",
+        "spread_details": "MNC -425",
         "home_spread": -1.5,
-        "home_spread_odds": -155.0,
+        "home_spread_odds": -160.0,
         "away_spread_odds": 115.0,
         "total": 3.5,
         "over_odds": -110.0,
-        "under_odds": -115.0,
-        "home_moneyline": -400,
-        "away_moneyline": 900,
-        "draw_moneyline": 550.0
+        "under_odds": -110.0,
+        "home_moneyline": -425,
+        "away_moneyline": 950,
+        "draw_moneyline": 600.0
       },
-      "pregame_odds_captured_at": "2026-10-16T23:15:10",
+      "pregame_odds_captured_at": "2026-10-17T03:45:06",
       "kickoff": "2026-10-17T14:00Z",
       "pregame_weather": {
         "city": "Manchester",
-        "temp_c": 12.7,
+        "temp_c": 13.0,
         "precip_probability_pct": 0,
         "precip_mm": 0.0,
         "wind_kmh": 12.2,
-        "cloud_cover_pct": 34,
+        "cloud_cover_pct": 30,
         "forecast_hour": "2026-10-17T14:00"
       },
       "pregame_home_form": {
@@ -52979,7 +52955,7 @@
           "ga": 8
         }
       },
-      "pregame_intel_captured_at": "2026-10-16T23:15:10",
+      "pregame_intel_captured_at": "2026-10-17T03:45:06",
       "wr_confidence_kickoff": 61.6,
       "wr_breakdown_kickoff": {
         "base": 58.0,
@@ -53028,26 +53004,26 @@
       "note": "Both teams average 3.5 goals but my total ~3.3; no edge.",
       "pregame_odds": {
         "provider": "DraftKings",
-        "spread_details": "MNC -400",
+        "spread_details": "MNC -425",
         "home_spread": -1.5,
-        "home_spread_odds": -155.0,
+        "home_spread_odds": -160.0,
         "away_spread_odds": 115.0,
         "total": 3.5,
         "over_odds": -110.0,
-        "under_odds": -115.0,
-        "home_moneyline": -400,
-        "away_moneyline": 900,
-        "draw_moneyline": 550.0
+        "under_odds": -110.0,
+        "home_moneyline": -425,
+        "away_moneyline": 950,
+        "draw_moneyline": 600.0
       },
-      "pregame_odds_captured_at": "2026-10-16T23:15:10",
+      "pregame_odds_captured_at": "2026-10-17T03:45:06",
       "kickoff": "2026-10-17T14:00Z",
       "pregame_weather": {
         "city": "Manchester",
-        "temp_c": 12.7,
+        "temp_c": 13.0,
         "precip_probability_pct": 0,
         "precip_mm": 0.0,
         "wind_kmh": 12.2,
-        "cloud_cover_pct": 34,
+        "cloud_cover_pct": 30,
         "forecast_hour": "2026-10-17T14:00"
       },
       "pregame_home_form": {
@@ -53096,7 +53072,7 @@
           "ga": 8
         }
       },
-      "pregame_intel_captured_at": "2026-10-16T23:15:10",
+      "pregame_intel_captured_at": "2026-10-17T03:45:06",
       "wr_confidence_kickoff": 47.0,
       "wr_breakdown_kickoff": {
         "base": 47.0,
@@ -53156,7 +53132,7 @@
         "away_moneyline": 195,
         "draw_moneyline": 270.0
       },
-      "pregame_odds_captured_at": "2026-10-16T23:15:10",
+      "pregame_odds_captured_at": "2026-10-17T03:45:06",
       "kickoff": "2026-10-17T16:30Z",
       "pregame_weather": {
         "city": "Newcastle upon Tyne",
@@ -53213,7 +53189,7 @@
           "ga": 6
         }
       },
-      "pregame_intel_captured_at": "2026-10-16T23:15:10",
+      "pregame_intel_captured_at": "2026-10-17T03:45:06",
       "wr_confidence_kickoff": 41.0,
       "wr_breakdown_kickoff": {
         "base": 40.0,
@@ -53273,7 +53249,7 @@
         "away_moneyline": 195,
         "draw_moneyline": 270.0
       },
-      "pregame_odds_captured_at": "2026-10-16T23:15:10",
+      "pregame_odds_captured_at": "2026-10-17T03:45:06",
       "kickoff": "2026-10-17T16:30Z",
       "pregame_weather": {
         "city": "Newcastle upon Tyne",
@@ -53330,7 +53306,7 @@
           "ga": 6
         }
       },
-      "pregame_intel_captured_at": "2026-10-16T23:15:10",
+      "pregame_intel_captured_at": "2026-10-17T03:45:06",
       "wr_confidence_kickoff": 57.0,
       "wr_breakdown_kickoff": {
         "base": 57.0,
@@ -53379,28 +53355,20 @@
       "note": "Both sides leaky and winless-ish; +2.8pp, EV +5%, confidence only 30.",
       "pregame_odds": {
         "provider": "DraftKings",
-        "spread_details": "BOU +110",
+        "spread_details": "BOU +115",
         "home_spread": -0.5,
         "home_spread_odds": 100.0,
         "away_spread_odds": -140.0,
         "total": 2.5,
         "over_odds": -115.0,
         "under_odds": -105.0,
-        "home_moneyline": 110,
+        "home_moneyline": 115,
         "away_moneyline": 245,
-        "draw_moneyline": 255.0
+        "draw_moneyline": 250.0
       },
-      "pregame_odds_captured_at": "2026-10-16T23:15:10",
+      "pregame_odds_captured_at": "2026-10-17T03:45:06",
       "kickoff": "2026-10-18T13:00Z",
-      "pregame_weather": {
-        "city": "Bournemouth",
-        "temp_c": 13.5,
-        "precip_probability_pct": 1,
-        "precip_mm": 0.0,
-        "wind_kmh": 18.0,
-        "cloud_cover_pct": 62,
-        "forecast_hour": "2026-10-18T13:00"
-      },
+      "pregame_weather": null,
       "pregame_home_form": {
         "played": 5,
         "wins": 0,
@@ -53447,7 +53415,7 @@
           "ga": 8
         }
       },
-      "pregame_intel_captured_at": "2026-10-16T23:15:10",
+      "pregame_intel_captured_at": "2026-10-17T03:45:06",
       "wr_confidence_kickoff": 30.0,
       "wr_breakdown_kickoff": {
         "base": 30.0,
@@ -53496,28 +53464,20 @@
       "note": "Combined ~2.9 goals expected; blended 55% vs 51.5%, EV +2.9% but confidence 55 -- one more total than the 3-per-report radar cap.",
       "pregame_odds": {
         "provider": "DraftKings",
-        "spread_details": "BOU +110",
+        "spread_details": "BOU +115",
         "home_spread": -0.5,
         "home_spread_odds": 100.0,
         "away_spread_odds": -140.0,
         "total": 2.5,
         "over_odds": -115.0,
         "under_odds": -105.0,
-        "home_moneyline": 110,
+        "home_moneyline": 115,
         "away_moneyline": 245,
-        "draw_moneyline": 255.0
+        "draw_moneyline": 250.0
       },
-      "pregame_odds_captured_at": "2026-10-16T23:15:10",
+      "pregame_odds_captured_at": "2026-10-17T03:45:06",
       "kickoff": "2026-10-18T13:00Z",
-      "pregame_weather": {
-        "city": "Bournemouth",
-        "temp_c": 13.5,
-        "precip_probability_pct": 1,
-        "precip_mm": 0.0,
-        "wind_kmh": 18.0,
-        "cloud_cover_pct": 62,
-        "forecast_hour": "2026-10-18T13:00"
-      },
+      "pregame_weather": null,
       "pregame_home_form": {
         "played": 5,
         "wins": 0,
@@ -53564,7 +53524,7 @@
           "ga": 8
         }
       },
-      "pregame_intel_captured_at": "2026-10-16T23:15:10",
+      "pregame_intel_captured_at": "2026-10-17T03:45:06",
       "wr_confidence_kickoff": 55.0,
       "wr_breakdown_kickoff": {
         "base": 55.0,
@@ -53624,17 +53584,9 @@
         "away_moneyline": 450,
         "draw_moneyline": 360.0
       },
-      "pregame_odds_captured_at": "2026-10-16T23:15:10",
+      "pregame_odds_captured_at": "2026-10-17T03:45:06",
       "kickoff": "2026-10-18T13:00Z",
-      "pregame_weather": {
-        "city": "Falmer",
-        "temp_c": 12.0,
-        "precip_probability_pct": 26,
-        "precip_mm": 0.0,
-        "wind_kmh": 22.0,
-        "cloud_cover_pct": 100,
-        "forecast_hour": "2026-10-18T13:00"
-      },
+      "pregame_weather": null,
       "pregame_home_form": {
         "played": 5,
         "wins": 3,
@@ -53681,7 +53633,7 @@
           "ga": 4
         }
       },
-      "pregame_intel_captured_at": "2026-10-16T23:15:10",
+      "pregame_intel_captured_at": "2026-10-17T03:45:06",
       "wr_confidence_kickoff": 66.0,
       "wr_breakdown_kickoff": {
         "base": 64.0,
@@ -53741,17 +53693,9 @@
         "away_moneyline": 450,
         "draw_moneyline": 360.0
       },
-      "pregame_odds_captured_at": "2026-10-16T23:15:10",
+      "pregame_odds_captured_at": "2026-10-17T03:45:06",
       "kickoff": "2026-10-18T13:00Z",
-      "pregame_weather": {
-        "city": "Falmer",
-        "temp_c": 12.0,
-        "precip_probability_pct": 26,
-        "precip_mm": 0.0,
-        "wind_kmh": 22.0,
-        "cloud_cover_pct": 100,
-        "forecast_hour": "2026-10-18T13:00"
-      },
+      "pregame_weather": null,
       "pregame_home_form": {
         "played": 5,
         "wins": 3,
@@ -53798,7 +53742,7 @@
           "ga": 4
         }
       },
-      "pregame_intel_captured_at": "2026-10-16T23:15:10",
+      "pregame_intel_captured_at": "2026-10-17T03:45:06",
       "wr_confidence_kickoff": 44.0,
       "wr_breakdown_kickoff": {
         "base": 42.0,
@@ -53858,17 +53802,9 @@
         "away_moneyline": 450,
         "draw_moneyline": 360.0
       },
-      "pregame_odds_captured_at": "2026-10-16T23:15:10",
+      "pregame_odds_captured_at": "2026-10-17T03:45:06",
       "kickoff": "2026-10-18T13:00Z",
-      "pregame_weather": {
-        "city": "Falmer",
-        "temp_c": 12.0,
-        "precip_probability_pct": 26,
-        "precip_mm": 0.0,
-        "wind_kmh": 22.0,
-        "cloud_cover_pct": 100,
-        "forecast_hour": "2026-10-18T13:00"
-      },
+      "pregame_weather": null,
       "pregame_home_form": {
         "played": 5,
         "wins": 3,
@@ -53915,7 +53851,7 @@
           "ga": 4
         }
       },
-      "pregame_intel_captured_at": "2026-10-16T23:15:10",
+      "pregame_intel_captured_at": "2026-10-17T03:45:06",
       "wr_confidence_kickoff": 61.0,
       "wr_breakdown_kickoff": {
         "base": 61.0,
@@ -53975,12 +53911,12 @@
         "away_moneyline": 190,
         "draw_moneyline": 260.0
       },
-      "pregame_odds_captured_at": "2026-10-16T23:15:10",
+      "pregame_odds_captured_at": "2026-10-17T03:45:06",
       "kickoff": "2026-10-18T13:00Z",
       "pregame_weather": {
         "city": "Leeds",
-        "temp_c": 11.7,
-        "precip_probability_pct": 20,
+        "temp_c": 10.3,
+        "precip_probability_pct": 8,
         "precip_mm": 0.0,
         "wind_kmh": 14.8,
         "cloud_cover_pct": 98,
@@ -54032,7 +53968,7 @@
           "ga": 5
         }
       },
-      "pregame_intel_captured_at": "2026-10-16T23:15:10",
+      "pregame_intel_captured_at": "2026-10-17T03:45:06",
       "wr_confidence_kickoff": 40.2,
       "wr_breakdown_kickoff": {
         "base": 39.0,
@@ -54092,12 +54028,12 @@
         "away_moneyline": 190,
         "draw_moneyline": 260.0
       },
-      "pregame_odds_captured_at": "2026-10-16T23:15:10",
+      "pregame_odds_captured_at": "2026-10-17T03:45:06",
       "kickoff": "2026-10-18T13:00Z",
       "pregame_weather": {
         "city": "Leeds",
-        "temp_c": 11.7,
-        "precip_probability_pct": 20,
+        "temp_c": 10.3,
+        "precip_probability_pct": 8,
         "precip_mm": 0.0,
         "wind_kmh": 14.8,
         "cloud_cover_pct": 98,
@@ -54149,7 +54085,7 @@
           "ga": 5
         }
       },
-      "pregame_intel_captured_at": "2026-10-16T23:15:10",
+      "pregame_intel_captured_at": "2026-10-17T03:45:06",
       "wr_confidence_kickoff": 48.0,
       "wr_breakdown_kickoff": {
         "base": 48.0,
