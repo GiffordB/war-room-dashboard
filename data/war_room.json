@@ -1,6 +1,6 @@
 {
   "next_report_id": 68,
-  "next_pick_id": 316,
+  "next_pick_id": 317,
   "reports": [
     {
       "source": "ChatGPT",
@@ -31197,6 +31197,155 @@
         "reason": "The +4 is a Friday paper line, and the author never shows it can still be bet when the best live price is FanDuel +3, so the real edge sits at the consensus +3 (about 2.5 points short of Model B's own Baltimore -7.5 even before the 0.5-point weighting cut), and the pick is an override below the system's own score floor.",
         "model": "claude-opus-5-5",
         "graded_at": "2026-10-18T16:28:25",
+        "rubric_version": 5
+      }
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 67,
+      "category": "totals_radar",
+      "matchup": "Baltimore Ravens @ Cleveland Browns",
+      "selection": "Under 41.5",
+      "odds": -110,
+      "stake": 100.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 62.0,
+      "war_room_line": "#2, Tier 1, 1.0%. Paper U 41.5 at -110; Pinnacle U 39.5 (-106); FanDuel U 39.5 (-115). EV +6.9%. Signals 3 for, 0 against. No model score (totals model unvalidated).",
+      "edge": "Price: paper 41.5 vs Pinnacle 39.5, two full points. Information: a backup quarterback drags the total; opened 41 at BetMGM and fell 1.5. Movement toward the under with the money split 55/45. A pure price-and-information position.",
+      "price_discipline": "Place at the paper. Void if Pinnacle reaches U 41.5. Inactives at 90 minutes govern. Noon CT.",
+      "espn_event_id": "401872997",
+      "bet_type": "total",
+      "bet_side": "under",
+      "bet_line": 41.5,
+      "home_team": "Cleveland Browns",
+      "away_team": "Baltimore Ravens",
+      "created_at": "2026-10-18T16:28:32",
+      "id": 316,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "BAL -3",
+        "home_spread": 3.0,
+        "home_spread_odds": -102.0,
+        "away_spread_odds": -118.0,
+        "total": 39.5,
+        "over_odds": -112.0,
+        "under_odds": -108.0,
+        "home_moneyline": 142,
+        "away_moneyline": -170,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-10-18T16:28:35",
+      "kickoff": "2026-10-18T17:00Z",
+      "pregame_weather": {
+        "city": "Cleveland",
+        "temp_c": 13.5,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 15.5,
+        "cloud_cover_pct": 0,
+        "forecast_hour": "2026-10-18T17:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 3,
+        "win_pct": 60.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 4,
+        "win_pct": 80.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 10.0,
+      "pregame_away_injuries": 7.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 2,
+          "d": 0,
+          "l": 0,
+          "gf": 48,
+          "ga": 42
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 2,
+          "gf": 45,
+          "ga": 70
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 1,
+          "gf": 41,
+          "ga": 42
+        },
+        "away": {
+          "w": 3,
+          "d": 0,
+          "l": 0,
+          "gf": 105,
+          "ga": 77
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-18T16:28:35",
+      "wr_confidence_kickoff": 63.95,
+      "wr_breakdown_kickoff": {
+        "base": 62.0,
+        "impact_scale": 0.24,
+        "record_mod": 1.95,
+        "record_win_pct": 80.769,
+        "record_settled": 26,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": null,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 67.95,
+      "wr_breakdown_initial": {
+        "base": 62.0,
+        "impact_scale": 0.24,
+        "record_mod": 1.95,
+        "record_win_pct": 80.769,
+        "record_settled": 26,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 4.0,
+        "clv_move": 2.0,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "ai_grade": {
+        "quality": 3,
+        "verdict": "story",
+        "reason": "The two-point edge rests on a Friday paper 41.5 that no live book is shown offering (Pinnacle and FanDuel both sit at 39.5), so the gap may not be bettable; the backup-quarterback claim is unnamed and unsourced, and the totals model is admitted to be unvalidated.",
+        "model": "claude-opus-5-5",
+        "graded_at": "2026-10-18T16:28:39",
         "rubric_version": 5
       }
     }
