@@ -1,6 +1,6 @@
 {
   "next_report_id": 69,
-  "next_pick_id": 327,
+  "next_pick_id": 328,
   "reports": [
     {
       "source": "ChatGPT",
@@ -32796,6 +32796,155 @@
         "reason": "The live FanDuel +5.5 against Pinnacle +4.5 is a real, bettable one-point gap through 5 with a void rule, but it does not cross 3 or 7, the author's own Model B makes Buffalo by 7.3 and argues against the side, and the RLM and casino-side signals are sentiment adding little more than vig.",
         "model": "claude-opus-5-5",
         "graded_at": "2026-10-18T16:30:40",
+        "rubric_version": 5
+      }
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 67,
+      "category": "best_bet",
+      "matchup": "New York Jets @ New England Patriots",
+      "selection": "NY Jets +7.5",
+      "odds": -110,
+      "stake": 50.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 56.0,
+      "war_room_line": "#11, Tier 2, 0.5%. Paper +7.5 at -110; Pinnacle NE -7.5; FanDuel +7.5 (-120). EV +0.5% (no price edge, paper equals Pinnacle). Score 56.0. Signals 4 for, 2 against. Model B edge -6.2 (New England by 13.7). The purest casino-side lean on the card, sized at the floor.",
+      "edge": "Casino side at every book: 91% of BetMGM money, 79% at DraftKings and #4 in BetOnline tickets on New England (tickets 30%, money 9% on us). Bet Labs fade-the-public qualifier. Wong: +7.5 is the friendly side of 7. Against: Model B has New England by 13.7; information against (Hall, Mitchell, Parham, Ossai out). Correlated with the Jets-Patriots under (1.0% in one game).",
+      "price_discipline": "Place at the paper. Void if Pinnacle reaches +7.5. Inactives at 90 minutes govern. Noon CT.",
+      "espn_event_id": "401873001",
+      "bet_type": "spread",
+      "bet_side": "away",
+      "bet_line": 7.5,
+      "home_team": "New England Patriots",
+      "away_team": "New York Jets",
+      "created_at": "2026-10-18T16:30:47",
+      "id": 327,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "NE -7.5",
+        "home_spread": -7.5,
+        "home_spread_odds": -105.0,
+        "away_spread_odds": -115.0,
+        "total": 43.5,
+        "over_odds": -102.0,
+        "under_odds": -118.0,
+        "home_moneyline": -345,
+        "away_moneyline": 275,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-10-18T16:30:50",
+      "kickoff": "2026-10-18T17:00Z",
+      "pregame_weather": {
+        "city": "Foxborough",
+        "temp_c": 10.0,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 5.2,
+        "cloud_cover_pct": 0,
+        "forecast_hour": "2026-10-18T17:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 3,
+        "win_pct": 60.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 2,
+        "win_pct": 40.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 7.0,
+      "pregame_away_injuries": 7.25,
+      "pregame_home_split": {
+        "home": {
+          "w": 2,
+          "d": 0,
+          "l": 0,
+          "gf": 65,
+          "ga": 20
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 2,
+          "gf": 45,
+          "ga": 74
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 1,
+          "gf": 34,
+          "ga": 32
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 2,
+          "gf": 59,
+          "ga": 64
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-18T16:30:50",
+      "wr_confidence_kickoff": 56.975,
+      "wr_breakdown_kickoff": {
+        "base": 56.0,
+        "impact_scale": 0.12,
+        "record_mod": 0.975,
+        "record_win_pct": 80.769,
+        "record_settled": 26,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": null,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 54.075,
+      "wr_breakdown_initial": {
+        "base": 56.0,
+        "impact_scale": 0.12,
+        "record_mod": 0.975,
+        "record_win_pct": 80.769,
+        "record_settled": 26,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": 0.0,
+        "weather_mod": 0.0,
+        "form_mod": -0.0,
+        "form_gap": -20.0,
+        "injury_mod": -0.5,
+        "injury_gap": -0.25,
+        "home_away_mod": -2.4,
+        "home_away_gap": -66.667,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "ai_grade": {
+        "quality": 2,
+        "verdict": "story",
+        "reason": "There is no price edge (the paper equals Pinnacle and the void condition is already met), the author's own model sits 6.2 points against the bet, sourced injuries cut against it, and the case rests on public-money fading, so this is a sentiment story that contradicts its own rules.",
+        "model": "claude-opus-5-5",
+        "graded_at": "2026-10-18T16:30:55",
         "rubric_version": 5
       }
     }
