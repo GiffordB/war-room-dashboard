@@ -1,6 +1,6 @@
 {
   "next_report_id": 67,
-  "next_pick_id": 311,
+  "next_pick_id": 312,
   "reports": [
     {
       "source": "ChatGPT",
@@ -30441,6 +30441,155 @@
         "home_score": 31,
         "away_score": 32,
         "kickoff": "2026-10-17T16:00Z"
+      }
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 66,
+      "category": "best_bet",
+      "matchup": "Chicago Bears @ Atlanta Falcons",
+      "selection": "Atlanta +1.5",
+      "odds": -120,
+      "stake": 50.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 56.0,
+      "war_room_line": "Lead and competition rank #1: conditional regular play, $50 (0.5u). Fair ATL -1 (CHI -1 to ATL -3) vs DK ATL +1.5: a 2.5-point fair-margin gap against roughly 2 points of judgment uncertainty. No-vig ATL 54% (-117), an outright probability, not a cover probability.",
+      "edge": "Chicago is missing both starting defensive ends and T.J. Edwards, including his communication role; Atlanta can attack the replacement front with its rushing game and play action behind it. Penix has no designation; Williams practiced fully but is questionable. Atlanta's weakened cornerback group is the main failure route. Roof position unverified; no weather or travel points.",
+      "price_discipline": "Take only +1.5 or better at -120 or better; pass +1 or lower or more expensive juice (break-even at -120 is 54.55%). Conditions: Penix, Bijan Robinson, Drake London and the expected starting OL active without a new material limitation; pass on an additional unexpected ATL starting defensive absence. Noon inactives pending. Noon CT.",
+      "espn_event_id": "401872999",
+      "bet_type": "spread",
+      "bet_side": "home",
+      "bet_line": 1.5,
+      "home_team": "Atlanta Falcons",
+      "away_team": "Chicago Bears",
+      "created_at": "2026-10-18T14:32:33",
+      "id": 311,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "CHI -1.5",
+        "home_spread": 1.5,
+        "home_spread_odds": -118.0,
+        "away_spread_odds": -102.0,
+        "total": 51.5,
+        "over_odds": -112.0,
+        "under_odds": -108.0,
+        "home_moneyline": 100,
+        "away_moneyline": -120,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-10-18T14:32:39",
+      "kickoff": "2026-10-18T17:00Z",
+      "pregame_weather": {
+        "city": "Atlanta",
+        "temp_c": 15.8,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 20.5,
+        "cloud_cover_pct": 0,
+        "forecast_hour": "2026-10-18T17:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 2,
+        "win_pct": 40.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 3,
+        "win_pct": 60.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 4.25,
+      "pregame_away_injuries": 4.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 0,
+          "d": 0,
+          "l": 2,
+          "gf": 26,
+          "ga": 64
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 1,
+          "gf": 93,
+          "ga": 58
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 2,
+          "d": 0,
+          "l": 1,
+          "gf": 53,
+          "ga": 28
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 1,
+          "gf": 66,
+          "ga": 68
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-18T14:32:39",
+      "wr_confidence_kickoff": 56.50909090909091,
+      "wr_breakdown_kickoff": {
+        "base": 56.0,
+        "impact_scale": 0.12,
+        "record_mod": 0.509,
+        "record_win_pct": 62.963,
+        "record_settled": 27,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": null,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 54.00909090909091,
+      "wr_breakdown_initial": {
+        "base": 56.0,
+        "impact_scale": 0.12,
+        "record_mod": 0.509,
+        "record_win_pct": 62.963,
+        "record_settled": 27,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": 0.0,
+        "weather_mod": 0.0,
+        "form_mod": -0.0,
+        "form_gap": -20.0,
+        "injury_mod": -0.5,
+        "injury_gap": -0.25,
+        "home_away_mod": -2.0,
+        "home_away_gap": -50.0,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "ai_grade": {
+        "quality": 4,
+        "verdict": "mixed",
+        "reason": "The 2.5-point fair gap against ATL +1.5 sits inside the author's own wide CHI -1 to ATL -3 judgment range, and the injury specifics are sourced, but the author admits the fair number was set after seeing the market and is not a validated edge, so this caps at mixed.",
+        "model": "claude-opus-5-5",
+        "graded_at": "2026-10-18T14:32:45",
+        "rubric_version": 5
       }
     }
   ],
