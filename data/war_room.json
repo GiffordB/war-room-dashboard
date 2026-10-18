@@ -1,5 +1,5 @@
 {
-  "next_report_id": 67,
+  "next_report_id": 68,
   "next_pick_id": 315,
   "reports": [
     {
@@ -672,6 +672,18 @@
       "lsu_review_notes": "",
       "created_at": "2026-10-18T14:32:21",
       "id": 66
+    },
+    {
+      "source": "Claude",
+      "league": "NFL",
+      "report_date": "2026-10-18",
+      "week_number": 6,
+      "week_label": "Week 6 -- Conviction Top 10, Sunday card (Maven Quant, Model B)",
+      "philosophy": "Conviction Top 10 (Model B, NFL week 6; printed Sunday Oct 18, 11:15 AM CT; THE LINE paper Fri Oct 16; Pinnacle, FanDuel and DraftKings 9:58 AM CT with a FanDuel recheck at 11:12; BetMGM, BetOnline and DraftKings splits; Bet Labs; NFL.com injury report). Sides and totals ranked by conviction: the count and weight of algorithm signals pointing the same way (Walters price term and key-number capture, Model B fair line, official-report information overlay, reverse line movement from the BetMGM opener, the casino side from BetMGM and DraftKings money, BetOnline's liability list, sharp and trend reports logged without score, and the prime-time rule). Every position is an override under the 70 floor. Tier 1 at 1.0% ($100), Tier 2 at 0.5% ($50): 11 positions (8 sides, 3 totals) in 9 games, 7.5% on the day including one live add at FanDuel (Las Vegas +5.5). Average EV at paper +2.3% (Pinnacle-based); reverse line movement on 3 of 10; casino-side positions 7; Model B agrees on 3 of 8 sides. Edge sources in order of reliability: price (a Friday paper number against a Sunday sharp market; the key numbers Cleveland +4 against -3 and Philadelphia +3.5 against -3 are arithmetic, the only edge called durable), information (a quarterback out moves a line two to five points and the paper does not move), sentiment (the side the book holds when 60%+ of money is the other way; public sides cover about 48% in the 2010-2025 backtest, a vig-sized edge). Model B is weighted at half because it has picked the cover 47% of the time this season. Margin of safety: every position carries a void condition tied to the sharp line (if Pinnacle reaches the paper number the bet disappears); nothing above 1%; correlated pairs (Cleveland and its under 2.0%, Jets and their under 1.0%) inside the 3% cap; worst case -8.2% after vig. Sunday inactives at 90 minutes govern every noon position; Pinnacle recheck before placement. Grading: Monday's Report 06 scores every position against the closing line first and the result second.",
+      "blind_spot_notes": "SECOND-LEVEL READS: Baltimore-Cleveland -- the market already moved a full point against 73% Ravens money because Jackson is out and the paper has not; a 3-point Ravens win pays the paper and pays no one on the live number. Kansas City -- the public is on the Chiefs, but BetOnline's #1 liability is LAC +7.5, so the money that matters is on the other side of the tickets; upgraded to Tier 1 this morning. KNOWN: every price, opener, split and Friday injury designation. GUESSED: Model B fair lines (half weight), totals edges (no model, price only), weather (four-day-old calm forecast, no live wind read, feed blocked). UNKNOWN until 10:30 CT: Sunday inactives. WHAT WOULD MAKE US WRONG: a Baltimore blowout with Huntley (Model B has Baltimore by 7.5, the base case); a Carolina team simply better than a McKee-led Eagles team by more than a field goal; a Chiefs offense that does not need to cover 8 against a depleted Chargers secondary. On the sentiment leans (Jets, Tampa Bay, Las Vegas, Dallas) being wrong looks like the favorite covering comfortably, which the model expects in three of four; held small for that reason. CASINO-SIDE TABLE (BetMGM tickets / money; book needs): SF-WAS 70/67% SF, book needs Washington (no position); BAL-CLE 53/73% BAL, book needs Cleveland (with the book); CAR-PHI 72/78% CAR, book needs Philadelphia (with); CHI-ATL 51/56% CHI, balanced (no position); IND-TEN 63% IND tickets / 57% TEN money, balanced; NE-NYJ 70/91% NE, book needs Jets (with); NO-NYG 67% NYG tickets / 51% NO money, balanced; PIT-TB 68/61% PIT, book needs Tampa Bay (with); LAR-ARI 59/75% LAR money, book needs Arizona (Rams position is AGAINST the book); BUF-LV 69/82% BUF, book needs Las Vegas (with); KC-LAC 61/56% KC, balanced, BetOnline liability LAC +7.5 #1; GB-DAL 62/62% GB, book needs Dallas (with). BetOnline's liability list overrides BetMGM where they disagree; tickets and money pointing opposite ways (Rams) means small bettors one way and bigger bets the other, and money is the better read. KICK WINDOWS: noon 5.0% across six games, no game above 2.0%; 3:05-3:25 Rams 0.5, KC 1.0 (FanDuel), LV 0.5 (FanDuel); 7:20 Dallas 0.5. Prepared for Mason Woodard.",
+      "lsu_review_notes": "",
+      "created_at": "2026-10-18T16:28:06",
+      "id": 67
     }
   ],
   "picks": [
