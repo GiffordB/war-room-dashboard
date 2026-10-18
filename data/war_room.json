@@ -32991,7 +32991,7 @@
       }
     }
   ],
-  "next_wallet_id": 51,
+  "next_wallet_id": 52,
   "wallet_entries": [
     {
       "pick_id": 12,
@@ -33828,6 +33828,24 @@
       "wr_confidence_at_bet": 68.55446808510636,
       "created_at": "2026-10-17T23:29:11",
       "id": 50
+    },
+    {
+      "pick_id": 315,
+      "report_id": 67,
+      "source": "Claude",
+      "league": "NFL",
+      "category": "best_bet",
+      "matchup": "Baltimore Ravens @ Cleveland Browns",
+      "selection": "Cleveland +4",
+      "odds": -135,
+      "stake": 1.0,
+      "bet_line": 4.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": null,
+      "wr_confidence_at_bet": 69.13375,
+      "created_at": "2026-10-18T20:08:59",
+      "id": 51
     }
   ],
   "next_jesse_wallet_id": 1,
