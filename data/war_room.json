@@ -1,6 +1,6 @@
 {
   "next_report_id": 69,
-  "next_pick_id": 320,
+  "next_pick_id": 321,
   "reports": [
     {
       "source": "ChatGPT",
@@ -31781,6 +31781,155 @@
         "opposing": 0
       },
       "wr_confidence_initial": 82.984
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 67,
+      "category": "totals_radar",
+      "matchup": "New York Jets @ New England Patriots",
+      "selection": "Under 43.5",
+      "odds": -110,
+      "stake": 50.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 55.0,
+      "war_room_line": "#5, Tier 2, 0.5%. Paper U 43.5 at -110; Pinnacle U 42.5 (-109); FanDuel U 42.5 (-104). EV +2.5%. Signals 2 for, 0 against. No model view.",
+      "edge": "Price: paper 43.5 vs Pinnacle 42.5, one point. Information: Jets without Hall, Mitchell, Parham and Ossai; the total opened 44.5 and has fallen a point. Against: 66% of BetMGM money is on the under, so we are with the public on the total. Small edge, small size. Correlated with the Jets side (1.0% in one game).",
+      "price_discipline": "Place at the paper. Void if Pinnacle reaches U 43.5. Inactives at 90 minutes govern. Noon CT.",
+      "espn_event_id": "401873001",
+      "bet_type": "total",
+      "bet_side": "under",
+      "bet_line": 43.5,
+      "home_team": "New England Patriots",
+      "away_team": "New York Jets",
+      "created_at": "2026-10-18T16:29:16",
+      "id": 320,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "NE -7.5",
+        "home_spread": -7.5,
+        "home_spread_odds": -105.0,
+        "away_spread_odds": -115.0,
+        "total": 43.5,
+        "over_odds": -102.0,
+        "under_odds": -118.0,
+        "home_moneyline": -345,
+        "away_moneyline": 275,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-10-18T16:29:19",
+      "kickoff": "2026-10-18T17:00Z",
+      "pregame_weather": {
+        "city": "Foxborough",
+        "temp_c": 10.0,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 5.2,
+        "cloud_cover_pct": 0,
+        "forecast_hour": "2026-10-18T17:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 3,
+        "win_pct": 60.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 2,
+        "win_pct": 40.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 7.0,
+      "pregame_away_injuries": 7.25,
+      "pregame_home_split": {
+        "home": {
+          "w": 2,
+          "d": 0,
+          "l": 0,
+          "gf": 65,
+          "ga": 20
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 2,
+          "gf": 45,
+          "ga": 74
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 1,
+          "gf": 34,
+          "ga": 32
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 2,
+          "gf": 59,
+          "ga": 64
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-18T16:29:19",
+      "wr_confidence_kickoff": 55.8125,
+      "wr_breakdown_kickoff": {
+        "base": 55.0,
+        "impact_scale": 0.1,
+        "record_mod": 0.812,
+        "record_win_pct": 80.769,
+        "record_settled": 26,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": null,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 55.8125,
+      "wr_breakdown_initial": {
+        "base": 55.0,
+        "impact_scale": 0.1,
+        "record_mod": 0.812,
+        "record_win_pct": 80.769,
+        "record_settled": 26,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": -0.0,
+        "clv_move": -0.0,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "ai_grade": {
+        "quality": 5,
+        "verdict": "mixed",
+        "reason": "The edge is a pure stale-paper price play: one point (43.5 vs Pinnacle 42.5), no key number crossed, and no model view, so it is small. The listed injuries are named but not explicitly sourced to a date, the author concedes the bet sides with the public, and the paper line is not shown to be bettable beyond the stated void rule.",
+        "model": "claude-opus-5-5",
+        "graded_at": "2026-10-18T16:29:24",
+        "rubric_version": 5
+      }
     }
   ],
   "next_wallet_id": 51,
