@@ -1,6 +1,6 @@
 {
   "next_report_id": 67,
-  "next_pick_id": 314,
+  "next_pick_id": 315,
   "reports": [
     {
       "source": "ChatGPT",
@@ -30887,6 +30887,155 @@
         "reason": "A half-point judgment gap (fair -6 against -5.5) sits well inside the author's own -3 to -9 range, sets no key number, comes from estimates made after seeing the market, and leans on matchup narrative and unconfirmed questionable tags, so the author's own label of a money pass is the honest read.",
         "model": "claude-opus-5-5",
         "graded_at": "2026-10-18T14:33:14",
+        "rubric_version": 5
+      }
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 66,
+      "category": "best_bet",
+      "matchup": "Dallas Cowboys @ Green Bay Packers",
+      "selection": "Dallas +1.5",
+      "odds": -115,
+      "stake": 50.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 51.0,
+      "war_room_line": "Competition rank #4, competition-only (money pass); best game to watch. Fair GB -1 (DAL -1.5 to GB -3.5) vs DK GB -1.5; inside the fair range. No-vig DAL 48% (+108).",
+      "edge": "Green Bay's defensive-tackle losses (Hargrave and Ford out; Banks/Monk and Cisse questionable) offer Dallas a sustaining-run path; Dallas's own absences (Overshown and Durant out) give Love a clear counter. Lambeau about 57F, wind 12 gusting 21, no rain.",
+      "price_discipline": "Competition only; evening availability not confirmed. Failure risk: Green Bay wins the passing-efficiency contest and Dallas cannot get stops. 7:20 PM CT.",
+      "espn_event_id": "401873007",
+      "bet_type": "spread",
+      "bet_side": "away",
+      "bet_line": 1.5,
+      "home_team": "Green Bay Packers",
+      "away_team": "Dallas Cowboys",
+      "created_at": "2026-10-18T14:33:19",
+      "id": 314,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "GB -1.5",
+        "home_spread": -1.5,
+        "home_spread_odds": -102.0,
+        "away_spread_odds": -118.0,
+        "total": 53.5,
+        "over_odds": -112.0,
+        "under_odds": -108.0,
+        "home_moneyline": -115,
+        "away_moneyline": -105,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-10-18T14:33:24",
+      "kickoff": "2026-10-19T00:20Z",
+      "pregame_weather": {
+        "city": "Green Bay",
+        "temp_c": 11.4,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 18.3,
+        "cloud_cover_pct": 0,
+        "forecast_hour": "2026-10-19T00:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 3,
+        "win_pct": 60.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 2,
+        "win_pct": 40.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 6.25,
+      "pregame_away_injuries": 3.75,
+      "pregame_home_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 1,
+          "gf": 45,
+          "ga": 42
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 1,
+          "gf": 59,
+          "ga": 70
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 2,
+          "gf": 84,
+          "ga": 78
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 1,
+          "gf": 54,
+          "ga": 58
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-18T14:33:24",
+      "wr_confidence_kickoff": 51.084848484848486,
+      "wr_breakdown_kickoff": {
+        "base": 51.0,
+        "impact_scale": 0.02,
+        "record_mod": 0.085,
+        "record_win_pct": 62.963,
+        "record_settled": 27,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": null,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 56.084848484848486,
+      "wr_breakdown_initial": {
+        "base": 51.0,
+        "impact_scale": 0.02,
+        "record_mod": 0.085,
+        "record_win_pct": 62.963,
+        "record_settled": 27,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": 0.0,
+        "weather_mod": 0.0,
+        "form_mod": -0.0,
+        "form_gap": -20.0,
+        "injury_mod": 5.0,
+        "injury_gap": 2.5,
+        "home_away_mod": 0.0,
+        "home_away_gap": 0.0,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "ai_grade": {
+        "quality": 2,
+        "verdict": "story",
+        "reason": "The author's own fair line of GB -1 sits inside its stated range, and that gives Dallas only half a point of value with no key number crossed. The author labels it a competition-only money pass. The injury-matchup narrative is presented as judgment rather than a quantified edge, so this is essentially a story.",
+        "model": "claude-opus-5-5",
+        "graded_at": "2026-10-18T14:33:29",
         "rubric_version": 5
       }
     }
