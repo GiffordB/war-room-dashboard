@@ -1,6 +1,6 @@
 {
-  "next_report_id": 68,
-  "next_pick_id": 318,
+  "next_report_id": 69,
+  "next_pick_id": 320,
   "reports": [
     {
       "source": "ChatGPT",
@@ -684,6 +684,18 @@
       "lsu_review_notes": "",
       "created_at": "2026-10-18T16:28:06",
       "id": 67
+    },
+    {
+      "id": 68,
+      "source": "War Room",
+      "league": "NFL",
+      "report_date": "2026-10-18",
+      "week_number": 1,
+      "week_label": "War Room Card -- week of 2026-10-13",
+      "philosophy": "The dashboard's own selections, made by a rule frozen before any result: take a side when at least 2 sources are on it, or when a single pick's live WR Confidence is 75 or higher; one selection per game and market; when both sides qualify, the side with more sources wins, then the higher score, and a dead heat is skipped. Each selection copies the line and price of the highest-scoring source pick on that side at the moment it is made, is only made while the game has not kicked off, and is staked flat at $100. Selections are made by the hourly Auto-Grade pass and whenever a new pick is logged. Football (CFB, NFL) only.",
+      "blind_spot_notes": "This ticket never submits an opinion of its own: every selection traces back to the source picks and board leans named on it.",
+      "lsu_review_notes": "",
+      "created_at": "2026-10-18T16:29:06"
     }
   ],
   "picks": [
@@ -31497,6 +31509,278 @@
         "graded_at": "2026-10-18T16:28:51",
         "rubric_version": 5
       }
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 67,
+      "category": "best_bet",
+      "matchup": "Los Angeles Chargers @ Kansas City Chiefs",
+      "selection": "Kansas City -7.5",
+      "odds": -105,
+      "stake": 100.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 53.3,
+      "war_room_line": "#4, Tier 1, 1.0%, placed at FanDuel -7.5 (-105). Paper -7.5; Pinnacle -8 (+111). Price EV -7.1%. Score 53.3. Signals 4 for, 0 against. Model B edge +8.8 (Kansas City by 16.2, the largest disagreement with the market on the board). Upgraded to Tier 1 this morning when BetOnline's liability gave the model position a book behind it.",
+      "edge": "Model B: KC by 16.2. Information: Chargers without Alt, Awosika, Harris, James and D. Jackson, a full-weight multiple-starter overlay. Wong: -7.5 sits under the 8. BetOnline: LAC +7.5 is the book's #1 liability and #1 money side, so the book needs the Chiefs. Against: Captain Jack on price (-105 against Pinnacle's -8 at +111); BetMGM money balanced (56% KC), no casino seat there. Own-number direction is 47% ATS out of sample; the size reflects that.",
+      "price_discipline": "Place at FanDuel. Void if Pinnacle reaches -7.5. Inactives at 90 minutes govern. 3:25 PM CT.",
+      "espn_event_id": "401873006",
+      "bet_type": "spread",
+      "bet_side": "home",
+      "bet_line": -7.5,
+      "home_team": "Kansas City Chiefs",
+      "away_team": "Los Angeles Chargers",
+      "created_at": "2026-10-18T16:28:59",
+      "id": 318,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "KC -7.5",
+        "home_spread": -7.5,
+        "home_spread_odds": -105.0,
+        "away_spread_odds": -115.0,
+        "total": 41.5,
+        "over_odds": -112.0,
+        "under_odds": -108.0,
+        "home_moneyline": -425,
+        "away_moneyline": 330,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-10-18T16:29:03",
+      "kickoff": "2026-10-18T20:25Z",
+      "pregame_weather": {
+        "city": "Kansas City",
+        "temp_c": 17.8,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 17.1,
+        "cloud_cover_pct": 0,
+        "forecast_hour": "2026-10-18T20:00"
+      },
+      "pregame_home_form": {
+        "played": 4,
+        "wins": 4,
+        "win_pct": 100.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 0,
+        "win_pct": 0.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 3.25,
+      "pregame_away_injuries": 9.25,
+      "pregame_home_split": {
+        "home": {
+          "w": 2,
+          "d": 0,
+          "l": 0,
+          "gf": 64,
+          "ga": 40
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 0,
+          "gf": 54,
+          "ga": 37
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 0,
+          "d": 0,
+          "l": 3,
+          "gf": 45,
+          "ga": 75
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 2,
+          "gf": 39,
+          "ga": 54
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-18T16:29:03",
+      "wr_confidence_kickoff": 54.23225,
+      "wr_breakdown_kickoff": {
+        "base": 53.3,
+        "impact_scale": 0.066,
+        "record_mod": 0.536,
+        "record_win_pct": 80.769,
+        "record_settled": 26,
+        "agree_mod": 0.396,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": null,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 1,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 66.63225,
+      "wr_breakdown_initial": {
+        "base": 53.3,
+        "impact_scale": 0.066,
+        "record_mod": 0.536,
+        "record_win_pct": 80.769,
+        "record_settled": 26,
+        "agree_mod": 0.396,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": 0.0,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": 100.0,
+        "injury_mod": 10,
+        "injury_gap": 6.0,
+        "home_away_mod": 2.4,
+        "home_away_gap": 100.0,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 1,
+        "opposing": 0
+      },
+      "ai_grade": {
+        "quality": 3,
+        "verdict": "story",
+        "reason": "The author's own price EV is -7.1% against Pinnacle, and the Model B gap leans on a model the author says hits 47% ATS, while the remaining support is book-liability sentiment and an unsourced list of absences, so the argument contradicts its own price-first rule.",
+        "model": "claude-opus-5-5",
+        "graded_at": "2026-10-18T16:29:06",
+        "rubric_version": 5
+      }
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 68,
+      "category": "best_bet",
+      "matchup": "Los Angeles Chargers @ Kansas City Chiefs",
+      "selection": "Kansas City -7.5",
+      "odds": -105,
+      "stake": 100.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 66.6,
+      "war_room_line": "Rule: 2 sources aligned on this side. Line and price copied from Claude pick #318 at selection (2026-10-18T16:29:06).",
+      "edge": "Source picks on this side -- Claude: Kansas City -7.5 (-105), live WR 67; ChatGPT: Kansas City -7.5 (-108), live WR 66.",
+      "price_discipline": "Flat $100. Selected before kickoff; graded off the final score like any other pick.",
+      "espn_event_id": "401873006",
+      "bet_type": "spread",
+      "bet_side": "home",
+      "bet_line": -7.5,
+      "home_team": "Kansas City Chiefs",
+      "away_team": "Los Angeles Chargers",
+      "war_room_source_pick_ids": [
+        318,
+        312
+      ],
+      "created_at": "2026-10-18T16:29:06",
+      "id": 319,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "KC -7.5",
+        "home_spread": -7.5,
+        "home_spread_odds": -105.0,
+        "away_spread_odds": -115.0,
+        "total": 41.5,
+        "over_odds": -112.0,
+        "under_odds": -108.0,
+        "home_moneyline": -425,
+        "away_moneyline": 330,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-10-18T16:29:09",
+      "kickoff": "2026-10-18T20:25Z",
+      "pregame_weather": {
+        "city": "Kansas City",
+        "temp_c": 17.8,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 17.1,
+        "cloud_cover_pct": 0,
+        "forecast_hour": "2026-10-18T20:00"
+      },
+      "pregame_home_form": {
+        "played": 4,
+        "wins": 4,
+        "win_pct": 100.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 0,
+        "win_pct": 0.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 3.25,
+      "pregame_away_injuries": 9.25,
+      "pregame_home_split": {
+        "home": {
+          "w": 2,
+          "d": 0,
+          "l": 0,
+          "gf": 64,
+          "ga": 40
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 0,
+          "gf": 54,
+          "ga": 37
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 0,
+          "d": 0,
+          "l": 3,
+          "gf": 45,
+          "ga": 75
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 2,
+          "gf": 39,
+          "ga": 54
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-18T16:29:09",
+      "wr_confidence_kickoff": 70.58399999999999,
+      "wr_breakdown_kickoff": {
+        "base": 66.6,
+        "impact_scale": 0.332,
+        "record_mod": 0.0,
+        "record_win_pct": null,
+        "record_settled": 0,
+        "agree_mod": 3.984,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": null,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 2,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 82.984
     }
   ],
   "next_wallet_id": 51,
