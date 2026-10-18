@@ -31881,7 +31881,7 @@
   ],
   "next_jesse_wallet_id": 1,
   "jesse_wallet_entries": [],
-  "next_lean_id": 283,
+  "next_lean_id": 284,
   "leans": [
     {
       "id": 1,
@@ -65926,6 +65926,123 @@
         "away_score": 23,
         "kickoff": "2026-10-18T02:30Z"
       }
+    },
+    {
+      "id": 283,
+      "report_id": 66,
+      "source": "ChatGPT",
+      "league": "NFL",
+      "category": "lean",
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "parlay_leg_pick_ids": null,
+      "wr_confidence": 54.0,
+      "created_at": "2026-10-18T14:33:34",
+      "matchup": "Dallas Cowboys @ Green Bay Packers",
+      "selection": "Under 53.5",
+      "bet_type": "total",
+      "bet_side": "under",
+      "bet_line": 53.5,
+      "odds": -115,
+      "score": 54.0,
+      "espn_event_id": "401873007",
+      "note": "Fair total 52 (48-56) vs DK 53.5: 1.5 points of lean to the under despite concentrated over money (77% tickets / 92% money); card lists it as a totals-radar pass, $0. Fair-number lean, not a pick.",
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "GB -1.5",
+        "home_spread": -1.5,
+        "home_spread_odds": -102.0,
+        "away_spread_odds": -118.0,
+        "total": 53.5,
+        "over_odds": -112.0,
+        "under_odds": -108.0,
+        "home_moneyline": -115,
+        "away_moneyline": -105,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-10-18T14:33:39",
+      "kickoff": "2026-10-19T00:20Z",
+      "pregame_weather": {
+        "city": "Green Bay",
+        "temp_c": 11.4,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 18.3,
+        "cloud_cover_pct": 0,
+        "forecast_hour": "2026-10-19T00:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 3,
+        "win_pct": 60.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 2,
+        "win_pct": 40.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 6.25,
+      "pregame_away_injuries": 3.75,
+      "pregame_home_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 1,
+          "gf": 45,
+          "ga": 42
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 1,
+          "gf": 59,
+          "ga": 70
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 2,
+          "gf": 84,
+          "ga": 78
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 1,
+          "gf": 54,
+          "ga": 58
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-18T14:33:39",
+      "wr_confidence_kickoff": 54.339393939393936,
+      "wr_breakdown_kickoff": {
+        "base": 54.0,
+        "impact_scale": 0.08,
+        "record_mod": 0.339,
+        "record_win_pct": 62.963,
+        "record_settled": 27,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": -0.0,
+        "clv_move": -0.0,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 54.339393939393936
     }
   ],
   "ai_backtest": {
