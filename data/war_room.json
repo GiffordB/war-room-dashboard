@@ -1,6 +1,6 @@
 {
   "next_report_id": 67,
-  "next_pick_id": 313,
+  "next_pick_id": 314,
   "reports": [
     {
       "source": "ChatGPT",
@@ -30738,6 +30738,155 @@
         "reason": "The fair KC -8 is a judgment estimate made with the market already visible, and the half-point gap sits deep inside the author's own -5 to -11 range, which the author admits is a money pass, so the remaining case is an injury list with no quantified edge.",
         "model": "claude-opus-5-5",
         "graded_at": "2026-10-18T14:32:58",
+        "rubric_version": 5
+      }
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 66,
+      "category": "best_bet",
+      "matchup": "Buffalo Bills @ Las Vegas Raiders",
+      "selection": "Buffalo -5.5",
+      "odds": -102,
+      "stake": 50.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 53.0,
+      "war_room_line": "Competition rank #3, competition-only (money pass). Fair BUF -6 (-3 to -9) vs DK BUF -5.5; inside the fair range. No-vig BUF 68% (-213). LV +185 moneyline checked and rejected (35.1% implied vs a rough 32% true upset chance).",
+      "edge": "Cook/Allen rushing and Buffalo's red-zone advantage are the strongest matchup argument; Las Vegas can answer through Cousins and Bowers against vulnerable coverage. Moore, Palmer and Oliver questionable, Brown expected; Bowers and Jeanty no designation, Zuhn questionable, Hemingway out. Buffalo stayed in California after Monday overtime.",
+      "price_discipline": "Competition only. Failure risk: pass-defense and availability concerns. 3:25 PM CT.",
+      "espn_event_id": "401873005",
+      "bet_type": "spread",
+      "bet_side": "away",
+      "bet_line": -5.5,
+      "home_team": "Las Vegas Raiders",
+      "away_team": "Buffalo Bills",
+      "created_at": "2026-10-18T14:33:04",
+      "id": 313,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "BUF -5.5",
+        "home_spread": 5.5,
+        "home_spread_odds": -112.0,
+        "away_spread_odds": -108.0,
+        "total": 53.5,
+        "over_odds": -112.0,
+        "under_odds": -108.0,
+        "home_moneyline": 200,
+        "away_moneyline": -245,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-10-18T14:33:09",
+      "kickoff": "2026-10-18T20:25Z",
+      "pregame_weather": {
+        "city": "Las Vegas",
+        "temp_c": 25.6,
+        "precip_probability_pct": 1,
+        "precip_mm": 0.0,
+        "wind_kmh": 6.1,
+        "cloud_cover_pct": 2,
+        "forecast_hour": "2026-10-18T20:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 3,
+        "win_pct": 60.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 4,
+        "win_pct": 80.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 2.25,
+      "pregame_away_injuries": 3.5,
+      "pregame_home_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 1,
+          "gf": 54,
+          "ga": 43
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 1,
+          "gf": 78,
+          "ga": 86
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 2,
+          "d": 0,
+          "l": 1,
+          "gf": 91,
+          "ga": 76
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 0,
+          "gf": 73,
+          "ga": 65
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-18T14:33:09",
+      "wr_confidence_kickoff": 53.25454545454546,
+      "wr_breakdown_kickoff": {
+        "base": 53.0,
+        "impact_scale": 0.06,
+        "record_mod": 0.255,
+        "record_win_pct": 62.963,
+        "record_settled": 27,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": null,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 52.75454545454546,
+      "wr_breakdown_initial": {
+        "base": 53.0,
+        "impact_scale": 0.06,
+        "record_mod": 0.255,
+        "record_win_pct": 62.963,
+        "record_settled": 27,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": 0.0,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": 20.0,
+        "injury_mod": -2.5,
+        "injury_gap": -1.25,
+        "home_away_mod": 2.0,
+        "home_away_gap": 50.0,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "ai_grade": {
+        "quality": 3,
+        "verdict": "story",
+        "reason": "A half-point judgment gap (fair -6 against -5.5) sits well inside the author's own -3 to -9 range, sets no key number, comes from estimates made after seeing the market, and leans on matchup narrative and unconfirmed questionable tags, so the author's own label of a money pass is the honest read.",
+        "model": "claude-opus-5-5",
+        "graded_at": "2026-10-18T14:33:14",
         "rubric_version": 5
       }
     }
