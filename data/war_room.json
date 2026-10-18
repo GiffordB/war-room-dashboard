@@ -1,6 +1,6 @@
 {
   "next_report_id": 69,
-  "next_pick_id": 326,
+  "next_pick_id": 327,
   "reports": [
     {
       "source": "ChatGPT",
@@ -32647,6 +32647,155 @@
         "reason": "The edge is a half-point stale paper number against Pinnacle 44, which is not a key number in totals, plus casino-side sentiment; the author admits there is no model view and no information, and the stale line's bettability is assumed rather than shown, so little real edge remains.",
         "model": "claude-opus-5-5",
         "graded_at": "2026-10-18T16:30:28",
+        "rubric_version": 5
+      }
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 67,
+      "category": "best_bet",
+      "matchup": "Buffalo Bills @ Las Vegas Raiders",
+      "selection": "Las Vegas +5.5",
+      "odds": -115,
+      "stake": 50.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 59.2,
+      "war_room_line": "#10, Tier 2, 0.5%, live add at 11:12 CT, FanDuel only: +5.5 (-115). Paper +4.5 (do not use); Pinnacle BUF -4.5. EV +2.5% at the live book. Score 59.2. Signals 5 for, 1 against. Model B edge -2.8 (Buffalo by 7.3).",
+      "edge": "Price at the live book: FanDuel +5.5 against Pinnacle +4.5 and the paper's +4.5, a full point through the 5. RLM: Buffalo opened -6 at BetMGM and has fallen to -4.5/-5 with 82% of the money on Buffalo. Casino side at BetMGM and DraftKings (73% money) and BetOnline (BUF -4.5 #3 in tickets); tickets 31%, money 18% on us. Wong: +5.5 keeps the 5 and sits a half point from 6. Against: Model B has Buffalo by 7.3; no information edge. Same shape as the Jets position but with a point of price behind it.",
+      "price_discipline": "FanDuel only; void if FanDuel drops to +4.5. Inactives at 90 minutes govern. 3:25 PM CT.",
+      "espn_event_id": "401873005",
+      "bet_type": "spread",
+      "bet_side": "home",
+      "bet_line": 5.5,
+      "home_team": "Las Vegas Raiders",
+      "away_team": "Buffalo Bills",
+      "created_at": "2026-10-18T16:30:33",
+      "id": 326,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "BUF -5.5",
+        "home_spread": 5.5,
+        "home_spread_odds": -112.0,
+        "away_spread_odds": -108.0,
+        "total": 53.5,
+        "over_odds": -112.0,
+        "under_odds": -108.0,
+        "home_moneyline": 200,
+        "away_moneyline": -245,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-10-18T16:30:37",
+      "kickoff": "2026-10-18T20:25Z",
+      "pregame_weather": {
+        "city": "Las Vegas",
+        "temp_c": 25.5,
+        "precip_probability_pct": 1,
+        "precip_mm": 0.0,
+        "wind_kmh": 6.7,
+        "cloud_cover_pct": 9,
+        "forecast_hour": "2026-10-18T20:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 3,
+        "win_pct": 60.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 4,
+        "win_pct": 80.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 2.25,
+      "pregame_away_injuries": 3.5,
+      "pregame_home_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 1,
+          "gf": 54,
+          "ga": 43
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 1,
+          "gf": 78,
+          "ga": 86
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 2,
+          "d": 0,
+          "l": 1,
+          "gf": 91,
+          "ga": 76
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 0,
+          "gf": 73,
+          "ga": 65
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-18T16:30:37",
+      "wr_confidence_kickoff": 59.223,
+      "wr_breakdown_kickoff": {
+        "base": 59.2,
+        "impact_scale": 0.184,
+        "record_mod": 1.495,
+        "record_win_pct": 80.769,
+        "record_settled": 26,
+        "agree_mod": 0.0,
+        "conflict_mod": -1.472,
+        "clv_mod": 0.0,
+        "clv_move": null,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 1
+      },
+      "wr_confidence_initial": 59.723,
+      "wr_breakdown_initial": {
+        "base": 59.2,
+        "impact_scale": 0.184,
+        "record_mod": 1.495,
+        "record_win_pct": 80.769,
+        "record_settled": 26,
+        "agree_mod": 0.0,
+        "conflict_mod": -1.472,
+        "clv_mod": 0.0,
+        "clv_move": 0.0,
+        "weather_mod": 0.0,
+        "form_mod": -0.0,
+        "form_gap": -20.0,
+        "injury_mod": 2.5,
+        "injury_gap": 1.25,
+        "home_away_mod": -2.0,
+        "home_away_gap": -50.0,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 1
+      },
+      "ai_grade": {
+        "quality": 5,
+        "verdict": "mixed",
+        "reason": "The live FanDuel +5.5 against Pinnacle +4.5 is a real, bettable one-point gap through 5 with a void rule, but it does not cross 3 or 7, the author's own Model B makes Buffalo by 7.3 and argues against the side, and the RLM and casino-side signals are sentiment adding little more than vig.",
+        "model": "claude-opus-5-5",
+        "graded_at": "2026-10-18T16:30:40",
         "rubric_version": 5
       }
     }
