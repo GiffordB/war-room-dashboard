@@ -1,6 +1,6 @@
 {
   "next_report_id": 69,
-  "next_pick_id": 322,
+  "next_pick_id": 324,
   "reports": [
     {
       "source": "ChatGPT",
@@ -32079,6 +32079,278 @@
         "graded_at": "2026-10-18T16:29:37",
         "rubric_version": 5
       }
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 67,
+      "category": "best_bet",
+      "matchup": "Dallas Cowboys @ Green Bay Packers",
+      "selection": "Dallas +1.5",
+      "odds": -110,
+      "stake": 50.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 58.3,
+      "war_room_line": "#7, Tier 2, 0.5%. Paper +1.5 at -110; Pinnacle GB -1; FanDuel +1.5 (-118). EV -1.3%. Score 58.3. Signals 4 for, 1 against. Model B edge 0.0 (Green Bay by 1.5).",
+      "edge": "Casino side in prime time: Green Bay opened +1, now -1 with 62% of money on Green Bay (tickets 38%, money 38% on us; the book needs Dallas). Half a point of price (paper +1.5 vs Pinnacle +1). Information mildly for Dallas (Packers without Hargrave, Ford, Moore, St-Juste). Against: Model B has Green Bay by 1.5; the move went with the money, not against it.",
+      "price_discipline": "Place at the paper. Void if Pinnacle reaches +1.5. Inactives at 90 minutes govern. 7:20 PM CT.",
+      "espn_event_id": "401873007",
+      "bet_type": "spread",
+      "bet_side": "away",
+      "bet_line": 1.5,
+      "home_team": "Green Bay Packers",
+      "away_team": "Dallas Cowboys",
+      "created_at": "2026-10-18T16:29:44",
+      "id": 322,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "GB -1.5",
+        "home_spread": -1.5,
+        "home_spread_odds": -102.0,
+        "away_spread_odds": -118.0,
+        "total": 53.5,
+        "over_odds": -112.0,
+        "under_odds": -108.0,
+        "home_moneyline": -115,
+        "away_moneyline": -105,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-10-18T16:29:48",
+      "kickoff": "2026-10-19T00:20Z",
+      "pregame_weather": {
+        "city": "Green Bay",
+        "temp_c": 11.9,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 17.9,
+        "cloud_cover_pct": 0,
+        "forecast_hour": "2026-10-19T00:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 3,
+        "win_pct": 60.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 2,
+        "win_pct": 40.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 6.25,
+      "pregame_away_injuries": 3.75,
+      "pregame_home_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 1,
+          "gf": 45,
+          "ga": 42
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 1,
+          "gf": 59,
+          "ga": 70
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 2,
+          "gf": 84,
+          "ga": 78
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 1,
+          "gf": 54,
+          "ga": 58
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-18T16:29:48",
+      "wr_confidence_kickoff": 60.64475,
+      "wr_breakdown_kickoff": {
+        "base": 58.3,
+        "impact_scale": 0.166,
+        "record_mod": 1.349,
+        "record_win_pct": 80.769,
+        "record_settled": 26,
+        "agree_mod": 0.996,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": null,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 1,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 65.64475,
+      "wr_breakdown_initial": {
+        "base": 58.3,
+        "impact_scale": 0.166,
+        "record_mod": 1.349,
+        "record_win_pct": 80.769,
+        "record_settled": 26,
+        "agree_mod": 0.996,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": 0.0,
+        "weather_mod": 0.0,
+        "form_mod": -0.0,
+        "form_gap": -20.0,
+        "injury_mod": 5.0,
+        "injury_gap": 2.5,
+        "home_away_mod": 0.0,
+        "home_away_gap": 0.0,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 1,
+        "opposing": 0
+      },
+      "ai_grade": {
+        "quality": 2,
+        "verdict": "story",
+        "reason": "The author's own model has no edge (0.0) and prints EV of -1.3%, and the paper +1.5 sits at -118 at FanDuel, so the half-point isn't shown to be bettable at -110; what remains is a casino-side sentiment narrative with injuries listed but not quantified.",
+        "model": "claude-opus-5-5",
+        "graded_at": "2026-10-18T16:29:52",
+        "rubric_version": 5
+      }
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 68,
+      "category": "best_bet",
+      "matchup": "Dallas Cowboys @ Green Bay Packers",
+      "selection": "Dallas +1.5",
+      "odds": -110,
+      "stake": 100.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 65.6,
+      "war_room_line": "Rule: 2 sources aligned on this side. Line and price copied from Claude pick #322 at selection (2026-10-18T16:29:52).",
+      "edge": "Source picks on this side -- Claude: Dallas +1.5 (-110), live WR 66; ChatGPT: Dallas +1.5 (-115), live WR 56.",
+      "price_discipline": "Flat $100. Selected before kickoff; graded off the final score like any other pick.",
+      "espn_event_id": "401873007",
+      "bet_type": "spread",
+      "bet_side": "away",
+      "bet_line": 1.5,
+      "home_team": "Green Bay Packers",
+      "away_team": "Dallas Cowboys",
+      "war_room_source_pick_ids": [
+        322,
+        314
+      ],
+      "created_at": "2026-10-18T16:29:52",
+      "id": 323,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "GB -1.5",
+        "home_spread": -1.5,
+        "home_spread_odds": -102.0,
+        "away_spread_odds": -118.0,
+        "total": 53.5,
+        "over_odds": -112.0,
+        "under_odds": -108.0,
+        "home_moneyline": -115,
+        "away_moneyline": -105,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-10-18T16:29:55",
+      "kickoff": "2026-10-19T00:20Z",
+      "pregame_weather": {
+        "city": "Green Bay",
+        "temp_c": 11.9,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 17.9,
+        "cloud_cover_pct": 0,
+        "forecast_hour": "2026-10-19T00:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 3,
+        "win_pct": 60.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 2,
+        "win_pct": 40.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 6.25,
+      "pregame_away_injuries": 3.75,
+      "pregame_home_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 1,
+          "gf": 45,
+          "ga": 42
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 1,
+          "gf": 59,
+          "ga": 70
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 2,
+          "gf": 84,
+          "ga": 78
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 1,
+          "gf": 54,
+          "ga": 58
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-18T16:29:55",
+      "wr_confidence_kickoff": 69.344,
+      "wr_breakdown_kickoff": {
+        "base": 65.6,
+        "impact_scale": 0.312,
+        "record_mod": 0.0,
+        "record_win_pct": null,
+        "record_settled": 0,
+        "agree_mod": 3.744,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": null,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 2,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 74.344
     }
   ],
   "next_wallet_id": 51,
