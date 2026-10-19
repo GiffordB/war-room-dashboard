@@ -24347,8 +24347,8 @@
       "selection": "Coventry City +1.5",
       "odds": -165,
       "stake": 75.0,
-      "result": "pending",
-      "profit_loss": 0.0,
+      "result": "loss",
+      "profit_loss": -75.0,
       "notes": "Spurs winless (0-3-3), 3 goals scored in 6 league games, GD -6.\nCoventry just won 4-1 at Newcastle (Oct 12) and are 2-0-4 but with real attacking output at times.\nTwo-goal Spurs win needed to lose this; Spurs home: 0W-1D-2L, 2 GF.\nNo official team news retrievable from premierleague.com; ESPN shows no injury flags.\nOdds unchanged between first pull and submit (Oct 16 23:10-23:13 UTC).",
       "wr_confidence": 68.0,
       "war_room_line": "Spurs -0.4 (form lens Cov +0.2, context lens Spurs -0.6; blended ~Spurs by <1)",
@@ -24486,6 +24486,13 @@
         "model": "claude-opus-5-5",
         "graded_at": "2026-10-16T23:13:48",
         "rubric_version": 5
+      },
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 3,
+        "away_score": 1,
+        "kickoff": "2026-10-19T19:00Z"
       }
     },
     {
@@ -24964,8 +24971,8 @@
       "selection": "Under 2.5 goals",
       "odds": 140,
       "stake": 0.0,
-      "result": "pending",
-      "profit_loss": 0.0,
+      "result": "loss",
+      "profit_loss": -0.0,
       "notes": "A lean, not a stake: big plus price, low confidence.\nSpurs 3 goals in 6 league games; Coventry scored 4 last time but only 5 all season.\nSame game as the Coventry +1.5 pick -- correlated, so kept unstaked.",
       "wr_confidence": 48.0,
       "war_room_line": "Expected total ~2.3; P(under 2.5) ~56% raw, 48% blended",
@@ -25103,6 +25110,13 @@
         "model": "claude-opus-5-5",
         "graded_at": "2026-10-16T23:14:39",
         "rubric_version": 5
+      },
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 3,
+        "away_score": 1,
+        "kickoff": "2026-10-19T19:00Z"
       }
     },
     {
@@ -25269,8 +25283,8 @@
       "selection": "Draw",
       "odds": 370,
       "stake": 0.0,
-      "result": "pending",
-      "profit_loss": 0.0,
+      "result": "loss",
+      "profit_loss": -0.0,
       "notes": "A lean, not a stake: Spurs have drawn 3 of 6 and score rarely.\nLow-confidence dog/draw price kept at $0.",
       "wr_confidence": 24.0,
       "war_room_line": "Spurs 53 / Draw 24 / Coventry 23 (blended)",
@@ -25408,6 +25422,13 @@
         "model": "claude-opus-5-5",
         "graded_at": "2026-10-16T23:14:59",
         "rubric_version": 5
+      },
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 3,
+        "away_score": 1,
+        "kickoff": "2026-10-19T19:00Z"
       }
     },
     {
