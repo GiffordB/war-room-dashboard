@@ -24375,7 +24375,7 @@
         "away_moneyline": 500,
         "draw_moneyline": 360.0
       },
-      "pregame_odds_captured_at": "2026-10-18T22:53:39",
+      "pregame_odds_captured_at": "2026-10-19T00:57:43",
       "kickoff": "2026-10-19T19:00Z",
       "pregame_weather": {
         "city": "London",
@@ -24432,7 +24432,7 @@
           "ga": 4
         }
       },
-      "pregame_intel_captured_at": "2026-10-18T22:53:39",
+      "pregame_intel_captured_at": "2026-10-19T00:57:43",
       "wr_confidence_kickoff": 69.81333333333333,
       "wr_breakdown_kickoff": {
         "base": 68.0,
@@ -24992,7 +24992,7 @@
         "away_moneyline": 500,
         "draw_moneyline": 360.0
       },
-      "pregame_odds_captured_at": "2026-10-18T22:53:39",
+      "pregame_odds_captured_at": "2026-10-19T00:57:43",
       "kickoff": "2026-10-19T19:00Z",
       "pregame_weather": {
         "city": "London",
@@ -25049,7 +25049,7 @@
           "ga": 4
         }
       },
-      "pregame_intel_captured_at": "2026-10-18T22:53:39",
+      "pregame_intel_captured_at": "2026-10-19T00:57:43",
       "wr_confidence_kickoff": 48.0,
       "wr_breakdown_kickoff": {
         "base": 48.0,
@@ -25297,7 +25297,7 @@
         "away_moneyline": 500,
         "draw_moneyline": 360.0
       },
-      "pregame_odds_captured_at": "2026-10-18T22:53:39",
+      "pregame_odds_captured_at": "2026-10-19T00:57:43",
       "kickoff": "2026-10-19T19:00Z",
       "pregame_weather": {
         "city": "London",
@@ -25354,7 +25354,7 @@
           "ga": 4
         }
       },
-      "pregame_intel_captured_at": "2026-10-18T22:53:39",
+      "pregame_intel_captured_at": "2026-10-19T00:57:43",
       "wr_confidence_kickoff": 24.0,
       "wr_breakdown_kickoff": {
         "base": 24.0,
@@ -30673,8 +30673,8 @@
       "selection": "Kansas City -7.5",
       "odds": -108,
       "stake": 50.0,
-      "result": "pending",
-      "profit_loss": 0.0,
+      "result": "win",
+      "profit_loss": 46.2962962962963,
       "notes": "",
       "wr_confidence": 53.0,
       "war_room_line": "Competition rank #2, competition-only (money pass). Fair KC -8 (-5 to -11) vs DK KC -7.5; half a point versus the midpoint is much smaller than the uncertainty. No-vig KC 76% (-317).",
@@ -30812,6 +30812,13 @@
         "model": "claude-opus-5-5",
         "graded_at": "2026-10-18T14:32:58",
         "rubric_version": 5
+      },
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 22,
+        "away_score": 6,
+        "kickoff": "2026-10-18T20:25Z"
       }
     },
     {
@@ -30822,8 +30829,8 @@
       "selection": "Buffalo -5.5",
       "odds": -102,
       "stake": 50.0,
-      "result": "pending",
-      "profit_loss": 0.0,
+      "result": "loss",
+      "profit_loss": -50.0,
       "notes": "",
       "wr_confidence": 53.0,
       "war_room_line": "Competition rank #3, competition-only (money pass). Fair BUF -6 (-3 to -9) vs DK BUF -5.5; inside the fair range. No-vig BUF 68% (-213). LV +185 moneyline checked and rejected (35.1% implied vs a rough 32% true upset chance).",
@@ -30961,6 +30968,13 @@
         "model": "claude-opus-5-5",
         "graded_at": "2026-10-18T14:33:14",
         "rubric_version": 5
+      },
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 30,
+        "away_score": 33,
+        "kickoff": "2026-10-18T20:25Z"
       }
     },
     {
@@ -31588,8 +31602,8 @@
       "selection": "Kansas City -7.5",
       "odds": -105,
       "stake": 100.0,
-      "result": "pending",
-      "profit_loss": 0.0,
+      "result": "win",
+      "profit_loss": 95.23809523809524,
       "notes": "",
       "wr_confidence": 53.3,
       "war_room_line": "#4, Tier 1, 1.0%, placed at FanDuel -7.5 (-105). Paper -7.5; Pinnacle -8 (+111). Price EV -7.1%. Score 53.3. Signals 4 for, 0 against. Model B edge +8.8 (Kansas City by 16.2, the largest disagreement with the market on the board). Upgraded to Tier 1 this morning when BetOnline's liability gave the model position a book behind it.",
@@ -31727,6 +31741,13 @@
         "model": "claude-opus-5-5",
         "graded_at": "2026-10-18T16:29:06",
         "rubric_version": 5
+      },
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 22,
+        "away_score": 6,
+        "kickoff": "2026-10-18T20:25Z"
       }
     },
     {
@@ -31737,8 +31758,8 @@
       "selection": "Kansas City -7.5",
       "odds": -105,
       "stake": 100.0,
-      "result": "pending",
-      "profit_loss": 0.0,
+      "result": "win",
+      "profit_loss": 95.23809523809524,
       "notes": "",
       "wr_confidence": 66.6,
       "war_room_line": "Rule: 2 sources aligned on this side. Line and price copied from Claude pick #318 at selection (2026-10-18T16:29:06).",
@@ -31850,7 +31871,14 @@
         "agreeing": 2,
         "opposing": 0
       },
-      "wr_confidence_initial": 82.984
+      "wr_confidence_initial": 82.984,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 22,
+        "away_score": 6,
+        "kickoff": "2026-10-18T20:25Z"
+      }
     },
     {
       "parlay_leg_pick_ids": null,
@@ -32444,8 +32472,8 @@
       "selection": "LA Rams -12.5",
       "odds": -110,
       "stake": 50.0,
-      "result": "pending",
-      "profit_loss": 0.0,
+      "result": "loss",
+      "profit_loss": -50.0,
       "notes": "",
       "wr_confidence": 51.1,
       "war_room_line": "#8, Tier 2, 0.5%, place at either book. Paper -12.5 at -110; Pinnacle -13.5 (+104); FanDuel -12.5 (-110). EV -1.6%. Score 51.1 because of the price seats. Signals 5 for, 1 against. Model B edge +7.1 (Rams by 19.6). The one position AGAINST the book (75% of BetMGM money on the Rams, book needs Arizona).",
@@ -32583,6 +32611,13 @@
         "model": "claude-opus-5-5",
         "graded_at": "2026-10-18T16:30:11",
         "rubric_version": 5
+      },
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 16,
+        "away_score": 18,
+        "kickoff": "2026-10-18T20:05Z"
       }
     },
     {
@@ -32749,8 +32784,8 @@
       "selection": "Las Vegas +5.5",
       "odds": -115,
       "stake": 50.0,
-      "result": "pending",
-      "profit_loss": 0.0,
+      "result": "win",
+      "profit_loss": 43.47826086956522,
       "notes": "",
       "wr_confidence": 59.2,
       "war_room_line": "#10, Tier 2, 0.5%, live add at 11:12 CT, FanDuel only: +5.5 (-115). Paper +4.5 (do not use); Pinnacle BUF -4.5. EV +2.5% at the live book. Score 59.2. Signals 5 for, 1 against. Model B edge -2.8 (Buffalo by 7.3).",
@@ -32888,6 +32923,13 @@
         "model": "claude-opus-5-5",
         "graded_at": "2026-10-18T16:30:40",
         "rubric_version": 5
+      },
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 30,
+        "away_score": 33,
+        "kickoff": "2026-10-18T20:25Z"
       }
     },
     {
@@ -33914,8 +33956,8 @@
       "odds": -110,
       "stake": 100.0,
       "bet_line": -7.5,
-      "result": "pending",
-      "profit_loss": 0.0,
+      "result": "win",
+      "profit_loss": 90.9090909090909,
       "notes": null,
       "wr_confidence_at_bet": 82.984,
       "created_at": "2026-10-18T20:09:42",
@@ -33986,8 +34028,8 @@
       "odds": -115,
       "stake": 50.0,
       "bet_line": -12.0,
-      "result": "pending",
-      "profit_loss": 0.0,
+      "result": "loss",
+      "profit_loss": -50.0,
       "notes": null,
       "wr_confidence_at_bet": 60.77875,
       "created_at": "2026-10-18T20:13:07",
