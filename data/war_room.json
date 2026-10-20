@@ -33465,26 +33465,26 @@
       "id": 330,
       "pregame_odds": {
         "provider": "DraftKings",
-        "spread_details": "BET -175",
+        "spread_details": "BET -180",
         "home_spread": -1.5,
         "home_spread_odds": 125.0,
         "away_spread_odds": -175.0,
         "total": 3.5,
         "over_odds": -110.0,
         "under_odds": -115.0,
-        "home_moneyline": -175,
-        "away_moneyline": 400,
+        "home_moneyline": -180,
+        "away_moneyline": 425,
         "draw_moneyline": 380.0
       },
-      "pregame_odds_captured_at": "2026-10-20T14:51:00",
+      "pregame_odds_captured_at": "2026-10-20T19:04:35",
       "kickoff": "2026-10-21T19:00Z",
       "pregame_weather": {
         "city": "Seville",
         "temp_c": 20.6,
         "precip_probability_pct": 0,
         "precip_mm": 0.0,
-        "wind_kmh": 3.6,
-        "cloud_cover_pct": 50,
+        "wind_kmh": 3.3,
+        "cloud_cover_pct": 0,
         "forecast_hour": "2026-10-21T19:00"
       },
       "pregame_home_form": {
@@ -33533,7 +33533,7 @@
           "ga": 5
         }
       },
-      "pregame_intel_captured_at": "2026-10-20T14:51:00",
+      "pregame_intel_captured_at": "2026-10-20T19:04:35",
       "wr_confidence_kickoff": 59.92727272727273,
       "wr_breakdown_kickoff": {
         "base": 58.0,
