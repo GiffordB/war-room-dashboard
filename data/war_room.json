@@ -1,6 +1,6 @@
 {
   "next_report_id": 70,
-  "next_pick_id": 332,
+  "next_pick_id": 333,
   "reports": [
     {
       "source": "ChatGPT",
@@ -33735,6 +33735,155 @@
         "reason": "The author's own model shows negative EV (-2.7%) at -130, so the stated edge contradicts the bet, and the support offered is just narrative about form and travel.",
         "model": "claude-opus-5-5",
         "graded_at": "2026-10-20T13:41:10",
+        "rubric_version": 5
+      }
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 69,
+      "category": "sexy_moneyline",
+      "matchup": "Atl\u00e9tico Madrid @ VfB Stuttgart",
+      "selection": "Atletico Madrid to Win",
+      "odds": 105,
+      "stake": 185.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 36.0,
+      "war_room_line": "PRICE, quarter-Kelly 1.85u (cap 2.50u). DraftKings +105 (2.05). Model Atletico 36% Win, EV +4.8%. The single longshot sleeve, ranked by EV.",
+      "edge": "Stuttgart beat Slovan 3-0 on matchday two; Atletico beat United 2-0. The market has Atletico slight favourites; the model sees a lower win probability after Stuttgart's home improvement and Atletico's recent travel load, but the price still clears the longshot gate.",
+      "price_discipline": "Tue 20:00 UK, MHPArena. One club once. 1.85u.",
+      "espn_event_id": "401915392",
+      "bet_type": "match_result",
+      "bet_side": "away",
+      "bet_line": null,
+      "home_team": "VfB Stuttgart",
+      "away_team": "Atl\u00e9tico Madrid",
+      "created_at": "2026-10-20T13:41:16",
+      "id": 332,
+      "pregame_odds": {
+        "provider": "DraftKings",
+        "spread_details": "ATM +105",
+        "home_spread": 0.5,
+        "home_spread_odds": -135.0,
+        "away_spread_odds": -105.0,
+        "total": 3.5,
+        "over_odds": 115.0,
+        "under_odds": -140.0,
+        "home_moneyline": 235,
+        "away_moneyline": 105,
+        "draw_moneyline": 280.0
+      },
+      "pregame_odds_captured_at": "2026-10-20T13:41:21",
+      "kickoff": "2026-10-20T19:00Z",
+      "pregame_weather": {
+        "city": "Stuttgart",
+        "temp_c": 10.5,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 1.8,
+        "cloud_cover_pct": 100,
+        "forecast_hour": "2026-10-20T19:00"
+      },
+      "pregame_home_form": {
+        "played": 2,
+        "wins": 2,
+        "win_pct": 100.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 2,
+        "wins": 1,
+        "win_pct": 50.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 0,
+          "gf": 3,
+          "ga": 1
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 0,
+          "gf": 3,
+          "ga": 0
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 0,
+          "gf": 2,
+          "ga": 0
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 1,
+          "gf": 1,
+          "ga": 2
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-20T13:41:21",
+      "wr_confidence_kickoff": 36.0,
+      "wr_breakdown_kickoff": {
+        "base": 36.0,
+        "impact_scale": 0.0,
+        "record_mod": 0.0,
+        "record_win_pct": 80.0,
+        "record_settled": 5,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": null,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 34.8,
+      "wr_breakdown_initial": {
+        "base": 36.0,
+        "impact_scale": 0.0,
+        "record_mod": 0.0,
+        "record_win_pct": 80.0,
+        "record_settled": 5,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": null,
+        "weather_mod": 0.0,
+        "form_mod": -0.0,
+        "form_gap": -50.0,
+        "injury_mod": 0.0,
+        "injury_gap": 0.0,
+        "home_away_mod": -1.2,
+        "home_away_gap": -100.0,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "ai_grade": {
+        "quality": 2,
+        "verdict": "story",
+        "reason": "The numbers contradict each other: a 36% win chance at 2.05 gives roughly -26% EV, not +4.8%, and the author admits the model rates Atletico below the market yet backs them anyway, so the stated edge does not exist on its own figures.",
+        "model": "claude-opus-5-5",
+        "graded_at": "2026-10-20T13:41:27",
         "rubric_version": 5
       }
     }
