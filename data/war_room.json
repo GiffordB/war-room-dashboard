@@ -1,5 +1,5 @@
 {
-  "next_report_id": 69,
+  "next_report_id": 70,
   "next_pick_id": 328,
   "reports": [
     {
@@ -696,6 +696,18 @@
       "blind_spot_notes": "This ticket never submits an opinion of its own: every selection traces back to the source picks and board leans named on it.",
       "lsu_review_notes": "",
       "created_at": "2026-10-18T16:29:06"
+    },
+    {
+      "source": "Grok - GB",
+      "league": "UCL",
+      "report_date": "2026-10-20",
+      "week_number": 3,
+      "week_label": "Snyps UCL Desk -- Week Card 20-21 Oct (Matchday 3)",
+      "philosophy": "Champions League Week Card, Matchday 3 of the 2026/27 league phase: nine matches Tuesday, nine Wednesday. Match results only; the model, after shrinkage and blend with the de-vigged market, finds four cash sides that clear the Win % and price gates and one price side that clears the longshot gate. No club appears twice. Cash sides Porto, Liverpool, Real Betis and Napoli at 1.00u each; the price sleeve is Atletico Madrid at Stuttgart, quarter-Kelly 1.85u. Public numbers from ESPN and the DraftKings slip show a market that has already priced the heavy home favourites short and left the mid-tier home sides in the 1.50-1.80 range. Heavy chalk (City, Roma, Inter, Madrid, Villa, Sporting) is left alone; the prices do not pay enough once the model Win % is applied. Totals are noted where relevant but do not form part of the card. Independent number. Four to cash. One for the number.",
+      "blind_spot_notes": "PASSES: PSG v Barcelona (Tue 20:00 UK, Parc des Princes; both on six points; Barcelona without Kounde (ankle) and Garcia (thigh, 3-4 weeks), PSG without Nuno Mendes (thigh); cool with light rain possible; market close, model clears neither side for cash or price). Bayern v Arsenal (Wed 20:00 UK, Allianz Arena; Bayern without Olise (suspended) and Musiala (muscle), Kompany recovering from illness, Neuer expected to start; Arsenal without Saliba (back) and Hincapie (ankle); mild; market has Bayern slight favourites, neither side clears the cash window cleanly). Real Madrid v RB Leipzig (Wed 20:00 UK; Madrid short at -400; model Win % high but the price does not pay). Heavy chalk City, Roma, Inter, Villa and Sporting also left alone. Sources: ESPN schedule, DraftKings slip, local press injury notes.",
+      "lsu_review_notes": "",
+      "created_at": "2026-10-20T13:39:56",
+      "id": 69
     }
   ],
   "picks": [
