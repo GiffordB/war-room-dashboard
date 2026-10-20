@@ -1,6 +1,6 @@
 {
   "next_report_id": 70,
-  "next_pick_id": 329,
+  "next_pick_id": 330,
   "reports": [
     {
       "source": "ChatGPT",
@@ -33288,6 +33288,155 @@
         "reason": "The pick rests on a stated model of 61% against an implied 65.5% at -190, which is actually negative EV, so the claimed +2.1% does not match the author's own numbers, and the injury and form notes are thin and vaguely sourced.",
         "model": "claude-opus-5-5",
         "graded_at": "2026-10-20T13:40:23",
+        "rubric_version": 5
+      }
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 69,
+      "category": "best_bet",
+      "matchup": "Villarreal @ Liverpool",
+      "selection": "Liverpool to Win",
+      "odds": -200,
+      "stake": 100.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 62.0,
+      "war_room_line": "CASH 1.00u. DraftKings -200 (1.50), at the floor of the price window. Model Liverpool 62% Win, EV +0.8%.",
+      "edge": "Liverpool scored six at LASK on matchday two and sit on six points; Villarreal took three from Napoli at home. Anfield advantage is real; cool and damp but not disruptive.",
+      "price_discipline": "Tue 20:00 UK, Anfield. One club once. Flat 1.00u.",
+      "espn_event_id": "401915397",
+      "bet_type": "match_result",
+      "bet_side": "home",
+      "bet_line": null,
+      "home_team": "Liverpool",
+      "away_team": "Villarreal",
+      "created_at": "2026-10-20T13:40:30",
+      "id": 329,
+      "pregame_odds": {
+        "provider": "DraftKings",
+        "spread_details": "LIV -200",
+        "home_spread": -1.5,
+        "home_spread_odds": 115.0,
+        "away_spread_odds": -160.0,
+        "total": 3.5,
+        "over_odds": 110.0,
+        "under_odds": -140.0,
+        "home_moneyline": -200,
+        "away_moneyline": 500,
+        "draw_moneyline": 370.0
+      },
+      "pregame_odds_captured_at": "2026-10-20T13:40:35",
+      "kickoff": "2026-10-20T19:00Z",
+      "pregame_weather": {
+        "city": "Liverpool",
+        "temp_c": 11.1,
+        "precip_probability_pct": 100,
+        "precip_mm": 0.1,
+        "wind_kmh": 7.6,
+        "cloud_cover_pct": 100,
+        "forecast_hour": "2026-10-20T19:00"
+      },
+      "pregame_home_form": {
+        "played": 2,
+        "wins": 2,
+        "win_pct": 100.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 2,
+        "wins": 1,
+        "win_pct": 50.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 0,
+          "gf": 2,
+          "ga": 1
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 0,
+          "gf": 6,
+          "ga": 3
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 0,
+          "gf": 3,
+          "ga": 1
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 1,
+          "gf": 2,
+          "ga": 3
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-20T13:40:35",
+      "wr_confidence_kickoff": 63.09090909090909,
+      "wr_breakdown_kickoff": {
+        "base": 62.0,
+        "impact_scale": 0.24,
+        "record_mod": 1.091,
+        "record_win_pct": 80.0,
+        "record_settled": 5,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": null,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 64.2909090909091,
+      "wr_breakdown_initial": {
+        "base": 62.0,
+        "impact_scale": 0.24,
+        "record_mod": 1.091,
+        "record_win_pct": 80.0,
+        "record_settled": 5,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": null,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": 50.0,
+        "injury_mod": 0.0,
+        "injury_gap": 0.0,
+        "home_away_mod": 1.2,
+        "home_away_gap": 100.0,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "ai_grade": {
+        "quality": 3,
+        "verdict": "story",
+        "reason": "An EV of +0.8% at the floor of the price window is essentially no edge (62% against the 66.7% implied by -200 is actually negative), and the stated support is recent-form narrative with no sourced availability information.",
+        "model": "claude-opus-5-5",
+        "graded_at": "2026-10-20T13:40:40",
         "rubric_version": 5
       }
     }
