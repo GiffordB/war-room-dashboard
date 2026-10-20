@@ -1,6 +1,6 @@
 {
   "next_report_id": 70,
-  "next_pick_id": 328,
+  "next_pick_id": 329,
   "reports": [
     {
       "source": "ChatGPT",
@@ -33140,6 +33140,155 @@
         "home_score": 26,
         "away_score": 19,
         "kickoff": "2026-10-18T17:00Z"
+      }
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 69,
+      "category": "best_bet",
+      "matchup": "PSV Eindhoven @ FC Porto",
+      "selection": "Porto to Win",
+      "odds": -190,
+      "stake": 100.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 61.0,
+      "war_room_line": "CASH 1.00u. DraftKings -190 (1.53). Model Porto 61% Win after shrinkage, EV +2.1%. Top cash side.",
+      "edge": "Porto have shown solid home form in the league phase after a narrow loss on the road; PSV arrive off a narrow defeat at Leipzig. Rest even, travel short for both, no major injuries flagged in local press.",
+      "price_discipline": "Tue 20:00 UK, Estadio do Dragao. One club once. Flat 1.00u.",
+      "espn_event_id": "401915398",
+      "bet_type": "match_result",
+      "bet_side": "home",
+      "bet_line": null,
+      "home_team": "FC Porto",
+      "away_team": "PSV Eindhoven",
+      "created_at": "2026-10-20T13:40:08",
+      "id": 328,
+      "pregame_odds": {
+        "provider": "DraftKings",
+        "spread_details": "FCP -190",
+        "home_spread": -1.5,
+        "home_spread_odds": 130.0,
+        "away_spread_odds": -180.0,
+        "total": 2.5,
+        "over_odds": -175.0,
+        "under_odds": 140.0,
+        "home_moneyline": -190,
+        "away_moneyline": 475,
+        "draw_moneyline": 360.0
+      },
+      "pregame_odds_captured_at": "2026-10-20T13:40:13",
+      "kickoff": "2026-10-20T19:00Z",
+      "pregame_weather": {
+        "city": "Porto",
+        "temp_c": 14.6,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 2.9,
+        "cloud_cover_pct": 97,
+        "forecast_hour": "2026-10-20T19:00"
+      },
+      "pregame_home_form": {
+        "played": 2,
+        "wins": 0,
+        "win_pct": 0.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 2,
+        "wins": 0,
+        "win_pct": 0.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 0,
+          "d": 0,
+          "l": 1,
+          "gf": 0,
+          "ga": 2
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 1,
+          "gf": 2,
+          "ga": 3
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 0,
+          "d": 1,
+          "l": 0,
+          "gf": 1,
+          "ga": 1
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 1,
+          "gf": 0,
+          "ga": 1
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-20T13:40:13",
+      "wr_confidence_kickoff": 62.0,
+      "wr_breakdown_kickoff": {
+        "base": 61.0,
+        "impact_scale": 0.22,
+        "record_mod": 1.0,
+        "record_win_pct": 80.0,
+        "record_settled": 5,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": null,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 62.0,
+      "wr_breakdown_initial": {
+        "base": 61.0,
+        "impact_scale": 0.22,
+        "record_mod": 1.0,
+        "record_win_pct": 80.0,
+        "record_settled": 5,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": null,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": 0.0,
+        "injury_mod": 0.0,
+        "injury_gap": 0.0,
+        "home_away_mod": 0.0,
+        "home_away_gap": 0.0,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "ai_grade": {
+        "quality": 4,
+        "verdict": "mixed",
+        "reason": "The pick rests on a stated model of 61% against an implied 65.5% at -190, which is actually negative EV, so the claimed +2.1% does not match the author's own numbers, and the injury and form notes are thin and vaguely sourced.",
+        "model": "claude-opus-5-5",
+        "graded_at": "2026-10-20T13:40:23",
+        "rubric_version": 5
       }
     }
   ],
