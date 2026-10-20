@@ -33150,8 +33150,8 @@
       "selection": "Porto to Win",
       "odds": -190,
       "stake": 100.0,
-      "result": "pending",
-      "profit_loss": 0.0,
+      "result": "loss",
+      "profit_loss": -100.0,
       "notes": "",
       "wr_confidence": 61.0,
       "war_room_line": "CASH 1.00u. DraftKings -190 (1.53). Model Porto 61% Win after shrinkage, EV +2.1%. Top cash side.",
@@ -33289,6 +33289,13 @@
         "model": "claude-opus-5-5",
         "graded_at": "2026-10-20T13:40:23",
         "rubric_version": 5
+      },
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 0,
+        "away_score": 1,
+        "kickoff": "2026-10-20T19:00Z"
       }
     },
     {
@@ -33299,8 +33306,8 @@
       "selection": "Liverpool to Win",
       "odds": -200,
       "stake": 100.0,
-      "result": "pending",
-      "profit_loss": 0.0,
+      "result": "win",
+      "profit_loss": 50.0,
       "notes": "",
       "wr_confidence": 62.0,
       "war_room_line": "CASH 1.00u. DraftKings -200 (1.50), at the floor of the price window. Model Liverpool 62% Win, EV +0.8%.",
@@ -33438,6 +33445,13 @@
         "model": "claude-opus-5-5",
         "graded_at": "2026-10-20T13:40:40",
         "rubric_version": 5
+      },
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 4,
+        "away_score": 3,
+        "kickoff": "2026-10-20T19:00Z"
       }
     },
     {
@@ -33476,14 +33490,14 @@
         "away_moneyline": 425,
         "draw_moneyline": 380.0
       },
-      "pregame_odds_captured_at": "2026-10-20T19:04:35",
+      "pregame_odds_captured_at": "2026-10-20T23:03:28",
       "kickoff": "2026-10-21T19:00Z",
       "pregame_weather": {
         "city": "Seville",
-        "temp_c": 20.6,
+        "temp_c": 20.3,
         "precip_probability_pct": 0,
         "precip_mm": 0.0,
-        "wind_kmh": 3.3,
+        "wind_kmh": 4.0,
         "cloud_cover_pct": 0,
         "forecast_hour": "2026-10-21T19:00"
       },
@@ -33533,14 +33547,14 @@
           "ga": 5
         }
       },
-      "pregame_intel_captured_at": "2026-10-20T19:04:35",
-      "wr_confidence_kickoff": 59.92727272727273,
+      "pregame_intel_captured_at": "2026-10-20T23:03:28",
+      "wr_confidence_kickoff": 59.84,
       "wr_breakdown_kickoff": {
         "base": 58.0,
         "impact_scale": 0.16,
-        "record_mod": 0.727,
-        "record_win_pct": 80.0,
-        "record_settled": 5,
+        "record_mod": 0.64,
+        "record_win_pct": 66.667,
+        "record_settled": 9,
         "agree_mod": 0.0,
         "conflict_mod": 0.0,
         "clv_mod": 0.0,
@@ -33597,8 +33611,8 @@
       "selection": "Napoli to Win",
       "odds": -130,
       "stake": 100.0,
-      "result": "pending",
-      "profit_loss": 0.0,
+      "result": "win",
+      "profit_loss": 76.92307692307692,
       "notes": "",
       "wr_confidence": 54.0,
       "war_room_line": "CASH 1.00u. DraftKings -130 (1.77). Model Napoli 54% Win, EV -2.7% (inside the tolerance). Fourth cash side.",
@@ -33736,6 +33750,13 @@
         "model": "claude-opus-5-5",
         "graded_at": "2026-10-20T13:41:10",
         "rubric_version": 5
+      },
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 4,
+        "away_score": 3,
+        "kickoff": "2026-10-20T19:00Z"
       }
     },
     {
@@ -33746,8 +33767,8 @@
       "selection": "Atletico Madrid to Win",
       "odds": 105,
       "stake": 185.0,
-      "result": "pending",
-      "profit_loss": 0.0,
+      "result": "loss",
+      "profit_loss": -185.0,
       "notes": "",
       "wr_confidence": 36.0,
       "war_room_line": "PRICE, quarter-Kelly 1.85u (cap 2.50u). DraftKings +105 (2.05). Model Atletico 36% Win, EV +4.8%. The single longshot sleeve, ranked by EV.",
@@ -33885,6 +33906,13 @@
         "model": "claude-opus-5-5",
         "graded_at": "2026-10-20T13:41:27",
         "rubric_version": 5
+      },
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 1,
+        "away_score": 1,
+        "kickoff": "2026-10-20T19:00Z"
       }
     }
   ],
