@@ -33486,8 +33486,8 @@
       "selection": "Real Betis to Win",
       "odds": -175,
       "stake": 100.0,
-      "result": "pending",
-      "profit_loss": 0.0,
+      "result": "win",
+      "profit_loss": 57.142857142857146,
       "notes": "",
       "wr_confidence": 58.0,
       "war_room_line": "CASH 1.00u. DraftKings -175 (1.57). Model Betis 58% Win, EV -1.4% (inside the tolerance).",
@@ -33625,6 +33625,13 @@
         "model": "claude-opus-5-5",
         "graded_at": "2026-10-20T13:40:53",
         "rubric_version": 5
+      },
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 1,
+        "away_score": 0,
+        "kickoff": "2026-10-21T19:00Z"
       }
     },
     {
@@ -33947,8 +33954,8 @@
       "selection": "Under 4.5 Goals",
       "odds": -150,
       "stake": 25.0,
-      "result": "pending",
-      "profit_loss": 0.0,
+      "result": "loss",
+      "profit_loss": -25.0,
       "notes": "4.5 is an outlier line for a home favourite vs the 23rd-ranked side.\nLeipzig lost 6-1 to Bayern at the weekend; Madrid win -400 but need 5+ combined goals to beat this.\nMadrid's own games have been open (4-3 at Roma), so the own-number is held to 70% not higher.\nUEFA.com/web team news search came back thin; ESPN intel shows no confirmed injuries. Madrid player doubtful to start per Get Spanish Football News.\nOdds re-pulled 00:13 UTC, unchanged.",
       "wr_confidence": 62.0,
       "war_room_line": "Total ~3.4 (range 3.0-3.9); P(5+ goals) ~30% own read, ~43% market",
@@ -34086,6 +34093,13 @@
         "model": "claude-opus-5-5",
         "graded_at": "2026-10-21T00:14:07",
         "rubric_version": 5
+      },
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 4,
+        "away_score": 1,
+        "kickoff": "2026-10-21T19:00Z"
       }
     },
     {
@@ -34252,8 +34266,8 @@
       "selection": "Under 3.5 Goals",
       "odds": 115,
       "stake": 0.0,
-      "result": "pending",
-      "profit_loss": 0.0,
+      "result": "loss",
+      "profit_loss": -0.0,
       "notes": "A lean, not a stake: positive EV at a plus price but confidence only ~50%.\nVilla beat Fenerbahce 6-0 at home, so over side is live; own number may be low.\nWind 22 km/h and 36% rain at Villa Park.\nViking scored 3 vs Bayern but are conceding away.",
       "wr_confidence": 50.0,
       "war_room_line": "Total ~3.4 (Villa 2.7, Viking 0.7)",
@@ -34391,6 +34405,13 @@
         "model": "claude-opus-5-5",
         "graded_at": "2026-10-21T00:14:28",
         "rubric_version": 5
+      },
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 3,
+        "away_score": 1,
+        "kickoff": "2026-10-21T19:00Z"
       }
     },
     {
@@ -34401,8 +34422,8 @@
       "selection": "Real Betis to Win",
       "odds": -180,
       "stake": 100.0,
-      "result": "pending",
-      "profit_loss": 0.0,
+      "result": "win",
+      "profit_loss": 55.55555555555556,
       "notes": "",
       "wr_confidence": 63.2,
       "war_room_line": "Rule: 2 sources on this side once board leans are counted, at least one a lean. Line and price copied from Claude - GB board lean #290 at selection (2026-10-21T00:14:41).",
@@ -34516,7 +34537,14 @@
         "agreeing": 1,
         "opposing": 0
       },
-      "wr_confidence_initial": 65.98400000000001
+      "wr_confidence_initial": 65.98400000000001,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 1,
+        "away_score": 0,
+        "kickoff": "2026-10-21T19:00Z"
+      }
     }
   ],
   "next_wallet_id": 59,
@@ -69730,7 +69758,7 @@
       "league": "UCL",
       "category": "lean",
       "stake": 0.0,
-      "result": "pending",
+      "result": "win",
       "profit_loss": 0.0,
       "parlay_leg_pick_ids": null,
       "wr_confidence": 45.0,
@@ -69838,7 +69866,14 @@
         "agreeing": 0,
         "opposing": 0
       },
-      "wr_confidence_initial": 45.0
+      "wr_confidence_initial": 45.0,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 2,
+        "away_score": 2,
+        "kickoff": "2026-10-21T19:00Z"
+      }
     },
     {
       "id": 285,
@@ -69847,7 +69882,7 @@
       "league": "UCL",
       "category": "lean",
       "stake": 0.0,
-      "result": "pending",
+      "result": "loss",
       "profit_loss": 0.0,
       "parlay_leg_pick_ids": null,
       "wr_confidence": 42.0,
@@ -69955,7 +69990,14 @@
         "agreeing": 0,
         "opposing": 0
       },
-      "wr_confidence_initial": 47.0
+      "wr_confidence_initial": 47.0,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 2,
+        "away_score": 2,
+        "kickoff": "2026-10-21T19:00Z"
+      }
     },
     {
       "id": 286,
@@ -69964,7 +70006,7 @@
       "league": "UCL",
       "category": "lean",
       "stake": 0.0,
-      "result": "pending",
+      "result": "win",
       "profit_loss": 0.0,
       "parlay_leg_pick_ids": null,
       "wr_confidence": 44.0,
@@ -70072,7 +70114,14 @@
         "agreeing": 0,
         "opposing": 0
       },
-      "wr_confidence_initial": 45.2
+      "wr_confidence_initial": 45.2,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 4,
+        "away_score": 1,
+        "kickoff": "2026-10-21T19:00Z"
+      }
     },
     {
       "id": 287,
@@ -70081,7 +70130,7 @@
       "league": "UCL",
       "category": "lean",
       "stake": 0.0,
-      "result": "pending",
+      "result": "win",
       "profit_loss": 0.0,
       "parlay_leg_pick_ids": null,
       "wr_confidence": 70.0,
@@ -70189,7 +70238,14 @@
         "agreeing": 0,
         "opposing": 0
       },
-      "wr_confidence_initial": 68.8
+      "wr_confidence_initial": 68.8,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 4,
+        "away_score": 1,
+        "kickoff": "2026-10-21T19:00Z"
+      }
     },
     {
       "id": 288,
@@ -70198,7 +70254,7 @@
       "league": "UCL",
       "category": "lean",
       "stake": 0.0,
-      "result": "pending",
+      "result": "win",
       "profit_loss": 0.0,
       "parlay_leg_pick_ids": null,
       "wr_confidence": 50.0,
@@ -70306,7 +70362,14 @@
         "agreeing": 0,
         "opposing": 0
       },
-      "wr_confidence_initial": 48.8
+      "wr_confidence_initial": 48.8,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 3,
+        "away_score": 0,
+        "kickoff": "2026-10-21T19:00Z"
+      }
     },
     {
       "id": 289,
@@ -70315,7 +70378,7 @@
       "league": "UCL",
       "category": "lean",
       "stake": 0.0,
-      "result": "pending",
+      "result": "win",
       "profit_loss": 0.0,
       "parlay_leg_pick_ids": null,
       "wr_confidence": 47.0,
@@ -70423,7 +70486,14 @@
         "agreeing": 0,
         "opposing": 0
       },
-      "wr_confidence_initial": 47.0
+      "wr_confidence_initial": 47.0,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 3,
+        "away_score": 0,
+        "kickoff": "2026-10-21T19:00Z"
+      }
     },
     {
       "id": 290,
@@ -70432,7 +70502,7 @@
       "league": "UCL",
       "category": "lean",
       "stake": 0.0,
-      "result": "pending",
+      "result": "win",
       "profit_loss": 0.0,
       "parlay_leg_pick_ids": null,
       "wr_confidence": 62.0,
@@ -70540,7 +70610,14 @@
         "agreeing": 1,
         "opposing": 0
       },
-      "wr_confidence_initial": 63.2
+      "wr_confidence_initial": 63.2,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 1,
+        "away_score": 0,
+        "kickoff": "2026-10-21T19:00Z"
+      }
     },
     {
       "id": 291,
@@ -70549,7 +70626,7 @@
       "league": "UCL",
       "category": "lean",
       "stake": 0.0,
-      "result": "pending",
+      "result": "loss",
       "profit_loss": 0.0,
       "parlay_leg_pick_ids": null,
       "wr_confidence": 40.0,
@@ -70657,7 +70734,14 @@
         "agreeing": 0,
         "opposing": 0
       },
-      "wr_confidence_initial": 41.2
+      "wr_confidence_initial": 41.2,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 1,
+        "away_score": 0,
+        "kickoff": "2026-10-21T19:00Z"
+      }
     },
     {
       "id": 292,
@@ -70666,7 +70750,7 @@
       "league": "UCL",
       "category": "lean",
       "stake": 0.0,
-      "result": "pending",
+      "result": "win",
       "profit_loss": 0.0,
       "parlay_leg_pick_ids": null,
       "wr_confidence": 72.0,
@@ -70774,7 +70858,14 @@
         "agreeing": 0,
         "opposing": 0
       },
-      "wr_confidence_initial": 69.36
+      "wr_confidence_initial": 69.36,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 1,
+        "away_score": 0,
+        "kickoff": "2026-10-21T19:00Z"
+      }
     },
     {
       "id": 293,
@@ -70783,7 +70874,7 @@
       "league": "UCL",
       "category": "lean",
       "stake": 0.0,
-      "result": "pending",
+      "result": "loss",
       "profit_loss": 0.0,
       "parlay_leg_pick_ids": null,
       "wr_confidence": 52.0,
@@ -70891,7 +70982,14 @@
         "agreeing": 0,
         "opposing": 0
       },
-      "wr_confidence_initial": 51.76
+      "wr_confidence_initial": 51.76,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 1,
+        "away_score": 0,
+        "kickoff": "2026-10-21T19:00Z"
+      }
     },
     {
       "id": 294,
@@ -70900,7 +70998,7 @@
       "league": "UCL",
       "category": "lean",
       "stake": 0.0,
-      "result": "pending",
+      "result": "loss",
       "profit_loss": 0.0,
       "parlay_leg_pick_ids": null,
       "wr_confidence": 84.0,
@@ -71008,7 +71106,14 @@
         "agreeing": 0,
         "opposing": 0
       },
-      "wr_confidence_initial": 81.12
+      "wr_confidence_initial": 81.12,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 2,
+        "away_score": 3,
+        "kickoff": "2026-10-21T19:00Z"
+      }
     },
     {
       "id": 295,
@@ -71017,7 +71122,7 @@
       "league": "UCL",
       "category": "lean",
       "stake": 0.0,
-      "result": "pending",
+      "result": "win",
       "profit_loss": 0.0,
       "parlay_leg_pick_ids": null,
       "wr_confidence": 50.0,
@@ -71125,7 +71230,14 @@
         "agreeing": 0,
         "opposing": 0
       },
-      "wr_confidence_initial": 50.0
+      "wr_confidence_initial": 50.0,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 2,
+        "away_score": 3,
+        "kickoff": "2026-10-21T19:00Z"
+      }
     },
     {
       "id": 296,
@@ -71258,7 +71370,7 @@
       "league": "UCL",
       "category": "lean",
       "stake": 0.0,
-      "result": "pending",
+      "result": "win",
       "profit_loss": 0.0,
       "parlay_leg_pick_ids": null,
       "wr_confidence": 80.0,
@@ -71366,7 +71478,14 @@
         "agreeing": 0,
         "opposing": 0
       },
-      "wr_confidence_initial": 77.60000000000001
+      "wr_confidence_initial": 77.60000000000001,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 3,
+        "away_score": 1,
+        "kickoff": "2026-10-21T19:00Z"
+      }
     },
     {
       "id": 298,
@@ -71375,7 +71494,7 @@
       "league": "UCL",
       "category": "lean",
       "stake": 0.0,
-      "result": "pending",
+      "result": "loss",
       "profit_loss": 0.0,
       "parlay_leg_pick_ids": null,
       "wr_confidence": 42.0,
@@ -71483,7 +71602,14 @@
         "agreeing": 0,
         "opposing": 0
       },
-      "wr_confidence_initial": 43.2
+      "wr_confidence_initial": 43.2,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 3,
+        "away_score": 1,
+        "kickoff": "2026-10-21T19:00Z"
+      }
     }
   ],
   "ai_backtest": {
