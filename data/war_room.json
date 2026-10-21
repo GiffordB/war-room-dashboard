@@ -34096,8 +34096,8 @@
       "selection": "Under 3.5 Goals",
       "odds": -170,
       "stake": 0.0,
-      "result": "pending",
-      "profit_loss": 0.0,
+      "result": "loss",
+      "profit_loss": -0.0,
       "notes": "A lean, not a stake: confidence clears 60 but EV is 0.1pp short on a -170 price.\nHeavy rain forecast (88%) and light wind favours a lower-scoring game.\nUnited have 0 goals in their one away game; Lisandro Martinez and Rashford missed training.\nCarrick under pressure and asking for clean sheets; both sides still concede.",
       "wr_confidence": 64.0,
       "war_room_line": "Total ~2.7 (range 2.4-3.2)",
@@ -34235,6 +34235,13 @@
         "model": "claude-opus-5-5",
         "graded_at": "2026-10-21T00:14:18",
         "rubric_version": 5
+      },
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 4,
+        "away_score": 1,
+        "kickoff": "2026-10-21T16:45Z"
       }
     },
     {
@@ -71127,7 +71134,7 @@
       "league": "UCL",
       "category": "lean",
       "stake": 0.0,
-      "result": "pending",
+      "result": "win",
       "profit_loss": 0.0,
       "parlay_leg_pick_ids": null,
       "wr_confidence": 43.0,
@@ -71235,7 +71242,14 @@
         "agreeing": 0,
         "opposing": 0
       },
-      "wr_confidence_initial": 44.2
+      "wr_confidence_initial": 44.2,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 4,
+        "away_score": 1,
+        "kickoff": "2026-10-21T16:45Z"
+      }
     },
     {
       "id": 297,
