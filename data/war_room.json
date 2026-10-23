@@ -1,5 +1,5 @@
 {
-  "next_report_id": 76,
+  "next_report_id": 77,
   "next_pick_id": 349,
   "reports": [
     {
@@ -780,6 +780,18 @@
       "blind_spot_notes": "This ticket never submits an opinion of its own: every selection traces back to the source picks and board leans named on it.",
       "lsu_review_notes": "",
       "created_at": "2026-10-23T18:45:53"
+    },
+    {
+      "source": "Claude",
+      "league": "NFL",
+      "report_date": "2026-10-23",
+      "week_number": 7,
+      "week_label": "Week 7 -- Model B Sheet with Analysis, Friday print v3.6 (Maven Quant)",
+      "philosophy": "THE LINE's Friday (Oct 23) numbers for 13 NFL games (12 Sunday, 1 Monday), each priced against Pinnacle and FanDuel at 1:15 PM CT with Model B's fair line, the information overlay, the BetMGM money read and the v3.6 verdict. Two tracked positions at 0.5% (Arizona +4.5, Green Bay +3.5), two leans with no stake (Rams -3.5, Atlanta +2.5), nine passes with an if-forced side. Best score 67.4; average gap to Pinnacle 0.12; model 3+ points off the market in 2 games; reverse line movement in 4. Method (v3.6): score = 0.8 x seats + 0.1 x RLM seat + 0.1 x prime-time seat; brain trust = 0.5 Walters + 0.1 each Peabody, Spanky, Voulgaris, Captain Jack, Wong. Own-number weight 1.25x; model margins carry a 1.45x slope correction from the walk-forward test. 60 tracked at 0.5%, 70 staked, Tier 1 only with positive EV at Pinnacle. Public read is BetMGM only on this print; split-read rule applies when DraftKings, BetOnline and Caesars post. Sharp reports carry no score. Pinnacle recheck before any placement; Pinnacle on the paper number voids the bet.",
+      "blind_spot_notes": "GAME NOTES: Cincinnati at Baltimore -- paper matches Pinnacle; Model B Baltimore +1.7 (edge +0.2); 27% of BetMGM handle on Baltimore, casino side; total paper 49.5 vs Pinnacle 49, under +0.5 on the paper with 87% of money on it; pass, if forced Baltimore -1.5. Tampa Bay at Carolina -- paper +2.5 vs Pinnacle +3; Model B Tampa Bay -0.7 (edge +1.8); information +2.0 for Tampa Bay; 29% of handle on Tampa Bay, casino side; pass, if forced Tampa Bay +2.5. Cleveland at Tennessee -- Model B Tennessee -3.8 but the model leans the other way (edge -2.3); casino side Tennessee; pass. Giants at Houston -- Model B Giants -5.9 (edge +4.6, EV +7.6%) but money balanced and score 54.9; total paper 42.5 vs Pinnacle 43.5, over +1.0 on the paper; pass, if forced Giants +10.5. Rams at Las Vegas -- Model B Rams +4.8 (edge +1.3), 20% of handle on the Rams, casino side; lean, no stake. Indianapolis at Minnesota -- Model B Indianapolis -3.9 (edge +2.6), balanced; pass, if forced Indianapolis +6.5. Miami at Jets -- model leans the other way; pass, if forced Jets -4.5. Pittsburgh at New Orleans (8:30 AM CT) -- model leans the other way, RLM toward Pittsburgh; pass. San Francisco at Atlanta -- paper +2.5 vs Pinnacle +3; Model B Atlanta -2.9 (edge -0.4, model leans the other way); 32% of handle on Atlanta, casino side; RLM toward Atlanta; lean, no stake. Kansas City at Seattle -- Model B Seattle +1 (edge -1.5, model the other way); balanced; pass, if forced Seattle -2.5. MONDAY Dallas at Philadelphia -- Model B Philadelphia -2.2 (edge +2.3, EV +3.3%); information -3.0 for Philadelphia; balanced; pass, if forced Philadelphia +4.5. TOTALS (no verdicts, noted only): Under +0.5 on the paper at Baltimore (49.5), Tennessee (37.5), Arizona (43.5), Seattle (42.5), Philadelphia (44.5); Over +0.5 at Carolina (44.5), Atlanta (50); Over +1.0 at Houston (42.5).",
+      "lsu_review_notes": "",
+      "created_at": "2026-10-23T18:46:00",
+      "id": 76
     }
   ],
   "picks": [
