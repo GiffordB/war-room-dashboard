@@ -1,6 +1,6 @@
 {
   "next_report_id": 74,
-  "next_pick_id": 342,
+  "next_pick_id": 343,
   "reports": [
     {
       "source": "ChatGPT",
@@ -35312,6 +35312,155 @@
         "reason": "The author gives no fair line, no quantified edge, and no sourced injury facts, only a ranking they admit is judgment, so the +6.5 preference has no stated basis beyond being near the key number 7.",
         "model": "claude-opus-5-5",
         "graded_at": "2026-10-23T15:51:42",
+        "rubric_version": 5
+      }
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 73,
+      "category": "best_bet",
+      "matchup": "Indianapolis Colts @ Minnesota Vikings",
+      "selection": "Minnesota -6.5",
+      "odds": -108,
+      "stake": 50.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 62.0,
+      "war_room_line": "Rank #1. Cash single. Friday DK quote -108.",
+      "edge": "Ranking is a judgment, not a cover probability; final injury reports pending.",
+      "price_discipline": "-6.5 / -115 max; pass -7. Sun noon CT.",
+      "espn_event_id": "401873014",
+      "bet_type": "spread",
+      "bet_side": "home",
+      "bet_line": -6.5,
+      "home_team": "Minnesota Vikings",
+      "away_team": "Indianapolis Colts",
+      "created_at": "2026-10-23T15:51:58",
+      "id": 342,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "MIN -6.5",
+        "home_spread": -6.5,
+        "home_spread_odds": -108.0,
+        "away_spread_odds": -112.0,
+        "total": 41.5,
+        "over_odds": -110.0,
+        "under_odds": -110.0,
+        "home_moneyline": -278,
+        "away_moneyline": 225,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-10-23T15:52:02",
+      "kickoff": "2026-10-25T17:00Z",
+      "pregame_weather": {
+        "city": "Minneapolis",
+        "temp_c": 10.3,
+        "precip_probability_pct": 13,
+        "precip_mm": 0.1,
+        "wind_kmh": 5.6,
+        "cloud_cover_pct": 100,
+        "forecast_hour": "2026-10-25T17:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 5,
+        "win_pct": 100.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 2,
+        "win_pct": 40.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.5,
+      "pregame_away_injuries": 2.5,
+      "pregame_home_split": {
+        "home": {
+          "w": 2,
+          "d": 0,
+          "l": 0,
+          "gf": 54,
+          "ga": 32
+        },
+        "away": {
+          "w": 3,
+          "d": 0,
+          "l": 0,
+          "gf": 55,
+          "ga": 32
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 2,
+          "gf": 62,
+          "ga": 84
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 2,
+          "gf": 82,
+          "ga": 80
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-23T15:52:02",
+      "wr_confidence_kickoff": 62.648648648648646,
+      "wr_breakdown_kickoff": {
+        "base": 62.0,
+        "impact_scale": 0.24,
+        "record_mod": 0.649,
+        "record_win_pct": 58.065,
+        "record_settled": 31,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": null,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 69.04864864864865,
+      "wr_breakdown_initial": {
+        "base": 62.0,
+        "impact_scale": 0.24,
+        "record_mod": 0.649,
+        "record_win_pct": 58.065,
+        "record_settled": 31,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": 0.0,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": 60.0,
+        "injury_mod": 4.0,
+        "injury_gap": 2.0,
+        "home_away_mod": 2.4,
+        "home_away_gap": 66.667,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "ai_grade": {
+        "quality": 3,
+        "verdict": "story",
+        "reason": "The pick has no model number, fair price or quantified edge, only a self-described judgment ranking with injuries unverified, though it does acknowledge the -7 key number and sets a price cap.",
+        "model": "claude-opus-5-5",
+        "graded_at": "2026-10-23T15:52:05",
         "rubric_version": 5
       }
     }
