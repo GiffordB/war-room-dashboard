@@ -1,6 +1,6 @@
 {
   "next_report_id": 73,
-  "next_pick_id": 341,
+  "next_pick_id": 342,
   "reports": [
     {
       "source": "ChatGPT",
@@ -35151,6 +35151,155 @@
         "reason": "The author admits the pick is only a ranked judgment, with no fair line, no cover probability, and no sourced injury facts; the only number given is a price floor of +9.5, so no edge against the market is shown.",
         "model": "claude-opus-5-5",
         "graded_at": "2026-10-23T15:51:27",
+        "rubric_version": 5
+      }
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 72,
+      "category": "best_bet",
+      "matchup": "BYU Cougars @ UCF Knights",
+      "selection": "UCF +6.5",
+      "odds": -105,
+      "stake": 50.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 58.0,
+      "war_room_line": "Rank #5. Comp only (selection for the competition; no recommended cash stake, logged at the $50 competition convention). Friday DK quote -105.",
+      "edge": "Ranking is a judgment, not a cover probability; final injury reports pending.",
+      "price_discipline": "Prefer +6.5 or better. Sat 2:30 PM CT.",
+      "espn_event_id": "401856835",
+      "bet_type": "spread",
+      "bet_side": "home",
+      "bet_line": 6.5,
+      "home_team": "UCF Knights",
+      "away_team": "BYU Cougars",
+      "created_at": "2026-10-23T15:51:33",
+      "id": 341,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "BYU -7",
+        "home_spread": 7.0,
+        "home_spread_odds": -115.0,
+        "away_spread_odds": -105.0,
+        "total": 43.5,
+        "over_odds": -110.0,
+        "under_odds": -110.0,
+        "home_moneyline": 220,
+        "away_moneyline": -270,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-10-23T15:51:37",
+      "kickoff": "2026-10-24T19:30Z",
+      "pregame_weather": {
+        "city": "Orlando",
+        "temp_c": 26.3,
+        "precip_probability_pct": 10,
+        "precip_mm": 0.0,
+        "wind_kmh": 19.6,
+        "cloud_cover_pct": 19,
+        "forecast_hour": "2026-10-24T19:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 2,
+        "win_pct": 40.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 5,
+        "win_pct": 100.0,
+        "quality_wins": 1
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 3,
+          "d": 0,
+          "l": 0,
+          "gf": 138,
+          "ga": 49
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 3,
+          "gf": 52,
+          "ga": 81
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 4,
+          "d": 0,
+          "l": 0,
+          "gf": 143,
+          "ga": 58
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 0,
+          "gf": 58,
+          "ga": 33
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-23T15:51:37",
+      "wr_confidence_kickoff": 57.91991991991992,
+      "wr_breakdown_kickoff": {
+        "base": 58.0,
+        "impact_scale": 0.16,
+        "record_mod": -0.08,
+        "record_win_pct": 48.649,
+        "record_settled": 75,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": null,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 53.41991991991992,
+      "wr_breakdown_initial": {
+        "base": 58.0,
+        "impact_scale": 0.16,
+        "record_mod": -0.08,
+        "record_win_pct": 48.649,
+        "record_settled": 75,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": -1.5,
+        "clv_move": -0.5,
+        "weather_mod": 0.0,
+        "form_mod": -0.0,
+        "form_gap": -60.0,
+        "injury_mod": 0.0,
+        "injury_gap": 0.0,
+        "home_away_mod": 0.0,
+        "home_away_gap": 0.0,
+        "quality_win_mod": -3,
+        "quality_win_gap": -1,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "ai_grade": {
+        "quality": 2,
+        "verdict": "story",
+        "reason": "The author gives no fair line, no quantified edge, and no sourced injury facts, only a ranking they admit is judgment, so the +6.5 preference has no stated basis beyond being near the key number 7.",
+        "model": "claude-opus-5-5",
+        "graded_at": "2026-10-23T15:51:42",
         "rubric_version": 5
       }
     }
