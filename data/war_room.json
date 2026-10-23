@@ -1,6 +1,6 @@
 {
   "next_report_id": 74,
-  "next_pick_id": 343,
+  "next_pick_id": 344,
   "reports": [
     {
       "source": "ChatGPT",
@@ -35461,6 +35461,155 @@
         "reason": "The pick has no model number, fair price or quantified edge, only a self-described judgment ranking with injuries unverified, though it does acknowledge the -7 key number and sets a price cap.",
         "model": "claude-opus-5-5",
         "graded_at": "2026-10-23T15:52:05",
+        "rubric_version": 5
+      }
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 73,
+      "category": "best_bet",
+      "matchup": "Cincinnati Bengals @ Baltimore Ravens",
+      "selection": "Cincinnati +3",
+      "odds": -118,
+      "stake": 50.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 61.0,
+      "war_room_line": "Rank #2. Comp only (selection for the competition; no recommended cash stake, logged at the $50 competition convention). Friday DK quote -118.",
+      "edge": "Ranking is a judgment, not a cover probability; final injury reports pending.",
+      "price_discipline": "Preserve +3. Sun noon CT.",
+      "espn_event_id": "401873012",
+      "bet_type": "spread",
+      "bet_side": "away",
+      "bet_line": 3.0,
+      "home_team": "Baltimore Ravens",
+      "away_team": "Cincinnati Bengals",
+      "created_at": "2026-10-23T15:52:12",
+      "id": 343,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "BAL -1.5",
+        "home_spread": -1.5,
+        "home_spread_odds": -105.0,
+        "away_spread_odds": -115.0,
+        "total": 48.5,
+        "over_odds": -115.0,
+        "under_odds": -105.0,
+        "home_moneyline": -115,
+        "away_moneyline": -105,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-10-23T15:52:15",
+      "kickoff": "2026-10-25T17:00Z",
+      "pregame_weather": {
+        "city": "Baltimore",
+        "temp_c": 17.1,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 4.2,
+        "cloud_cover_pct": 0,
+        "forecast_hour": "2026-10-25T17:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 3,
+        "win_pct": 60.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 3,
+        "win_pct": 60.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 1.25,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 1,
+          "gf": 41,
+          "ga": 42
+        },
+        "away": {
+          "w": 3,
+          "d": 0,
+          "l": 1,
+          "gf": 115,
+          "ga": 90
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 1,
+          "gf": 50,
+          "ga": 49
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 1,
+          "gf": 78,
+          "ga": 60
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-23T15:52:15",
+      "wr_confidence_kickoff": 61.5945945945946,
+      "wr_breakdown_kickoff": {
+        "base": 61.0,
+        "impact_scale": 0.22,
+        "record_mod": 0.595,
+        "record_win_pct": 58.065,
+        "record_settled": 31,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": null,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 70.76126126126127,
+      "wr_breakdown_initial": {
+        "base": 61.0,
+        "impact_scale": 0.22,
+        "record_mod": 0.595,
+        "record_win_pct": 58.065,
+        "record_settled": 31,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 6.0,
+        "clv_move": 1.5,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": 0.0,
+        "injury_mod": 2.5,
+        "injury_gap": 1.25,
+        "home_away_mod": 0.667,
+        "home_away_gap": 16.667,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "ai_grade": {
+        "quality": 3,
+        "verdict": "story",
+        "reason": "The author explicitly calls this a judgment ranking with no fair line or cover probability and admits injuries are pending, so only the key-number awareness on +3 counts for anything.",
+        "model": "claude-opus-5-5",
+        "graded_at": "2026-10-23T15:52:20",
         "rubric_version": 5
       }
     }
