@@ -1,5 +1,5 @@
 {
-  "next_report_id": 74,
+  "next_report_id": 75,
   "next_pick_id": 347,
   "reports": [
     {
@@ -756,6 +756,18 @@
       "lsu_review_notes": "",
       "created_at": "2026-10-23T15:51:47",
       "id": 73
+    },
+    {
+      "source": "Claude",
+      "league": "CFB",
+      "report_date": "2026-10-23",
+      "week_number": 8,
+      "week_label": "Week 8 -- Model A Sheet with Analysis, Friday print v3.6 (Maven Quant)",
+      "philosophy": "THE LINE's Friday (Oct 23) numbers for 49 college games, each priced against Pinnacle and FanDuel at 1:15 PM CT with Model A's fair line, the information overlay, the BetMGM money read and the v3.6 verdict. One tracked position (Rutgers +16.5 at 0.5%), eight leans with no stake, forty passes with an if-forced side. Best score 60.4; average gap to Pinnacle 0.34; model 3+ points off the market in 27 games; reverse line movement in 9. Method (v3.6): score = 0.8 x seats + 0.1 x RLM seat + 0.1 x prime-time seat; brain trust = 0.5 Walters + 0.1 each Peabody, Spanky, Voulgaris, Captain Jack, Wong. Own-number weight 1.25x; model margins carry a 1.45x slope correction from the walk-forward test. 60 tracked at 0.5%, 70 staked, Tier 1 only with positive EV at Pinnacle. Public read is BetMGM only on this print; split-read rule applies when DraftKings, BetOnline and Caesars post. Sharp reports carry no score. Pinnacle recheck before any placement; Pinnacle on the paper number voids the bet.",
+      "blind_spot_notes": "LEANS, NO STAKE: UMass +14.5 at UConn (score 59.6, paper +14.5 vs Pinnacle +13.5, EV +3.7%, Model A edge +5); Texas A&M +13.5 at Alabama (58.7, RLM, casino side, model edge +4.9); Iowa State +9.5 at Arizona (58.1, RLM, casino side, model against -3.6); Georgia State -1.5 at Arkansas State (56.4); Michigan +7.5 vs Indiana (58.3); Iowa -7 at Minnesota (58.2); Eastern Michigan +11.5 at Ohio (56.9, paper +1.5 vs Pinnacle +10, model against -2.1); USC -2.5 at Wisconsin (58.9). Every other game is a pass with an if-forced side logged as a board lean. Friday games: Air Force -5.5 (pass, model +4.9), NC State -6.5 (pass, paper +1.0 vs Pinnacle), Tulsa -1.5 (pass), Virginia -2 (pass). No public split published for many mid-major games; contrarian half renormalized to movement.",
+      "lsu_review_notes": "",
+      "created_at": "2026-10-23T18:45:00",
+      "id": 74
     }
   ],
   "picks": [
