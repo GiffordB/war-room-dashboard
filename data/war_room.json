@@ -1,5 +1,5 @@
 {
-  "next_report_id": 72,
+  "next_report_id": 73,
   "next_pick_id": 337,
   "reports": [
     {
@@ -732,6 +732,18 @@
       "blind_spot_notes": "This ticket never submits an opinion of its own: every selection traces back to the source picks and board leans named on it.",
       "lsu_review_notes": "",
       "created_at": "2026-10-21T00:14:41"
+    },
+    {
+      "source": "ChatGPT",
+      "league": "CFB",
+      "report_date": "2026-10-24",
+      "week_number": 8,
+      "week_label": "Week 8 -- Weekend Competition Card, Saturday (Oct 23 issue)",
+      "philosophy": "War Room 2.0, Jesse's Weekend Competition Card, issued Friday Oct 23: 5 college + 5 NFL picks ranked as judgments. Recommended: 3 singles, $200 total / 2 units -- Ole Miss $100, Houston $50, Minnesota $50. Comp only = selection for the competition, no recommended cash stake (logged at the competition convention, $50). No wagers assumed placed. Friday DraftKings quotes; check your app. Final injury reports pending. No Thor qualifies; no parlays. Sources: DraftKings college markets and NFL Week 7 board; team injury reports.",
+      "blind_spot_notes": "COLLEGE, Saturday Oct 24. Cash: Ole Miss +3.5 at Texas $100 (+3.5 / -120 max); Houston +6.5 at Utah $50 (+6 or better / -110 max). Comp only: South Carolina -2.5 vs Tennessee (keep below -3); Illinois +9.5 vs Oregon (prefer +9.5 or better); UCF +6.5 vs BYU (prefer +6.5 or better). No Thor; no parlays.",
+      "lsu_review_notes": "",
+      "created_at": "2026-10-23T15:50:17",
+      "id": 72
     }
   ],
   "picks": [
