@@ -1,5 +1,5 @@
 {
-  "next_report_id": 78,
+  "next_report_id": 79,
   "next_pick_id": 353,
   "reports": [
     {
@@ -804,6 +804,18 @@
       "blind_spot_notes": "This ticket never submits an opinion of its own: every selection traces back to the source picks and board leans named on it.",
       "lsu_review_notes": "",
       "created_at": "2026-10-23T18:46:31"
+    },
+    {
+      "source": "Claude - GB",
+      "league": "EPL",
+      "report_date": "2026-10-23",
+      "week_number": 8,
+      "week_label": "",
+      "philosophy": "Prices are mostly fair this week - track the thin edges, stake nothing we can't defend.",
+      "blind_spot_notes": "",
+      "lsu_review_notes": "",
+      "created_at": "2026-10-23T23:10:33",
+      "id": 78
     }
   ],
   "picks": [
