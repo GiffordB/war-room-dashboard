@@ -1,6 +1,6 @@
 {
   "next_report_id": 73,
-  "next_pick_id": 338,
+  "next_pick_id": 339,
   "reports": [
     {
       "source": "ChatGPT",
@@ -34704,6 +34704,155 @@
         "reason": "The author gives no fair line or cover probability and admits the ranking is a judgment with injuries still pending; only a sensible price cap at +3.5/-120 sits on top of what is otherwise an unsupported pick.",
         "model": "claude-opus-5-5",
         "graded_at": "2026-10-23T15:50:41",
+        "rubric_version": 5
+      }
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 72,
+      "category": "best_bet",
+      "matchup": "Houston Cougars @ Utah Utes",
+      "selection": "Houston +6.5",
+      "odds": -105,
+      "stake": 50.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 61.0,
+      "war_room_line": "Rank #2. Cash single. Friday DK quote -105.",
+      "edge": "Ranking is a judgment, not a cover probability; final injury reports pending.",
+      "price_discipline": "+6 or better / -110 max. Sat 9:15 PM CT.",
+      "espn_event_id": "401856837",
+      "bet_type": "spread",
+      "bet_side": "away",
+      "bet_line": 6.5,
+      "home_team": "Utah Utes",
+      "away_team": "Houston Cougars",
+      "created_at": "2026-10-23T15:50:49",
+      "id": 338,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "UTAH -6.5",
+        "home_spread": -6.5,
+        "home_spread_odds": -120.0,
+        "away_spread_odds": 100.0,
+        "total": 56.5,
+        "over_odds": -115.0,
+        "under_odds": -105.0,
+        "home_moneyline": -250,
+        "away_moneyline": 205,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-10-23T15:50:53",
+      "kickoff": "2026-10-25T02:15Z",
+      "pregame_weather": {
+        "city": "Salt Lake City",
+        "temp_c": 9.0,
+        "precip_probability_pct": 1,
+        "precip_mm": 0.0,
+        "wind_kmh": 1.3,
+        "cloud_cover_pct": 0,
+        "forecast_hour": "2026-10-25T02:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 5,
+        "win_pct": 100.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 4,
+        "win_pct": 80.0,
+        "quality_wins": 1
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 4,
+          "d": 0,
+          "l": 0,
+          "gf": 183,
+          "ga": 48
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 0,
+          "gf": 58,
+          "ga": 41
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 4,
+          "d": 0,
+          "l": 0,
+          "gf": 172,
+          "ga": 75
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 1,
+          "gf": 103,
+          "ga": 72
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-23T15:50:53",
+      "wr_confidence_kickoff": 60.88988988988989,
+      "wr_breakdown_kickoff": {
+        "base": 61.0,
+        "impact_scale": 0.22,
+        "record_mod": -0.11,
+        "record_win_pct": 48.649,
+        "record_settled": 75,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": null,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 61.88988988988989,
+      "wr_breakdown_initial": {
+        "base": 61.0,
+        "impact_scale": 0.22,
+        "record_mod": -0.11,
+        "record_win_pct": 48.649,
+        "record_settled": 75,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": 0.0,
+        "weather_mod": 0.0,
+        "form_mod": -0.0,
+        "form_gap": -20.0,
+        "injury_mod": 0.0,
+        "injury_gap": 0.0,
+        "home_away_mod": -2.0,
+        "home_away_gap": -33.333,
+        "quality_win_mod": 3,
+        "quality_win_gap": 1,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "ai_grade": {
+        "quality": 3,
+        "verdict": "story",
+        "reason": "The pick is an explicit judgment ranking with no fair line, cover probability, or sourced injury facts, so only the price floor (+6, near-key) offers any discipline.",
+        "model": "claude-opus-5-5",
+        "graded_at": "2026-10-23T15:50:57",
         "rubric_version": 5
       }
     }
