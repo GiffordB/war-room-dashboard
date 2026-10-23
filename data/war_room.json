@@ -1,5 +1,5 @@
 {
-  "next_report_id": 73,
+  "next_report_id": 74,
   "next_pick_id": 342,
   "reports": [
     {
@@ -744,6 +744,18 @@
       "lsu_review_notes": "",
       "created_at": "2026-10-23T15:50:17",
       "id": 72
+    },
+    {
+      "source": "ChatGPT",
+      "league": "NFL",
+      "report_date": "2026-10-25",
+      "week_number": 7,
+      "week_label": "Week 7 -- Weekend Competition Card, Sunday (Oct 23 issue)",
+      "philosophy": "War Room 2.0, Jesse's Weekend Competition Card, issued Friday Oct 23: 5 college + 5 NFL picks ranked as judgments. Recommended: 3 singles, $200 total / 2 units -- Ole Miss $100, Houston $50, Minnesota $50. Comp only = selection for the competition, no recommended cash stake (logged at the competition convention, $50). No wagers assumed placed. Friday DraftKings quotes; check your app. Final injury reports pending. No Thor qualifies; no parlays. Sources: DraftKings college markets and NFL Week 7 board; team injury reports.",
+      "blind_spot_notes": "NFL, Sunday Oct 25. Cash: Minnesota -6.5 vs Indianapolis $50 (-6.5 / -115 max; pass -7). Comp only: Cincinnati +3 at Baltimore (preserve +3); Kansas City +2.5 at Seattle (prefer +2.5 or better); Green Bay +3 at Detroit (preserve +3); Denver -4.5 at Arizona (no worse than -4.5). No Thor; no parlays.",
+      "lsu_review_notes": "",
+      "created_at": "2026-10-23T15:51:47",
+      "id": 73
     }
   ],
   "picks": [
