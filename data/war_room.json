@@ -1,6 +1,6 @@
 {
   "next_report_id": 73,
-  "next_pick_id": 337,
+  "next_pick_id": 338,
   "reports": [
     {
       "source": "ChatGPT",
@@ -34556,6 +34556,155 @@
         "home_score": 1,
         "away_score": 0,
         "kickoff": "2026-10-21T19:00Z"
+      }
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 72,
+      "category": "best_bet",
+      "matchup": "Ole Miss Rebels @ Texas Longhorns",
+      "selection": "Ole Miss +3.5",
+      "odds": -118,
+      "stake": 100.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 62.0,
+      "war_room_line": "Rank #1. Cash single. Friday DK quote -118.",
+      "edge": "Ranking is a judgment, not a cover probability; final injury reports pending.",
+      "price_discipline": "+3.5 / -120 max. Sat 6:30 PM CT.",
+      "espn_event_id": "401856732",
+      "bet_type": "spread",
+      "bet_side": "away",
+      "bet_line": 3.5,
+      "home_team": "Texas Longhorns",
+      "away_team": "Ole Miss Rebels",
+      "created_at": "2026-10-23T15:50:29",
+      "id": 337,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "TEX -3.5",
+        "home_spread": -3.5,
+        "home_spread_odds": -102.0,
+        "away_spread_odds": -118.0,
+        "total": 53.5,
+        "over_odds": -115.0,
+        "under_odds": -105.0,
+        "home_moneyline": -162,
+        "away_moneyline": 136,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-10-23T15:50:33",
+      "kickoff": "2026-10-24T23:30Z",
+      "pregame_weather": {
+        "city": "Austin",
+        "temp_c": 28.2,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 13.3,
+        "cloud_cover_pct": 31,
+        "forecast_hour": "2026-10-24T23:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 3,
+        "win_pct": 60.0,
+        "quality_wins": 2
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 4,
+        "win_pct": 80.0,
+        "quality_wins": 2
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 3,
+          "d": 0,
+          "l": 1,
+          "gf": 137,
+          "ga": 63
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 1,
+          "gf": 44,
+          "ga": 44
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 4,
+          "d": 0,
+          "l": 0,
+          "gf": 145,
+          "ga": 74
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 1,
+          "gf": 80,
+          "ga": 69
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-23T15:50:33",
+      "wr_confidence_kickoff": 61.87987987987988,
+      "wr_breakdown_kickoff": {
+        "base": 62.0,
+        "impact_scale": 0.24,
+        "record_mod": -0.12,
+        "record_win_pct": 48.649,
+        "record_settled": 75,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": null,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 60.87987987987988,
+      "wr_breakdown_initial": {
+        "base": 62.0,
+        "impact_scale": 0.24,
+        "record_mod": -0.12,
+        "record_win_pct": 48.649,
+        "record_settled": 75,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": 0.0,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": 20.0,
+        "injury_mod": 0.0,
+        "injury_gap": 0.0,
+        "home_away_mod": -1.0,
+        "home_away_gap": -25.0,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "ai_grade": {
+        "quality": 3,
+        "verdict": "story",
+        "reason": "The author gives no fair line or cover probability and admits the ranking is a judgment with injuries still pending; only a sensible price cap at +3.5/-120 sits on top of what is otherwise an unsupported pick.",
+        "model": "claude-opus-5-5",
+        "graded_at": "2026-10-23T15:50:41",
+        "rubric_version": 5
       }
     }
   ],
