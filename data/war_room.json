@@ -1,6 +1,6 @@
 {
   "next_report_id": 73,
-  "next_pick_id": 339,
+  "next_pick_id": 340,
   "reports": [
     {
       "source": "ChatGPT",
@@ -34853,6 +34853,155 @@
         "reason": "The pick is an explicit judgment ranking with no fair line, cover probability, or sourced injury facts, so only the price floor (+6, near-key) offers any discipline.",
         "model": "claude-opus-5-5",
         "graded_at": "2026-10-23T15:50:57",
+        "rubric_version": 5
+      }
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 72,
+      "category": "best_bet",
+      "matchup": "Tennessee Volunteers @ South Carolina Gamecocks",
+      "selection": "South Carolina -2.5",
+      "odds": -108,
+      "stake": 50.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 60.0,
+      "war_room_line": "Rank #3. Comp only (selection for the competition; no recommended cash stake, logged at the $50 competition convention). Friday DK quote -108.",
+      "edge": "Ranking is a judgment, not a cover probability; final injury reports pending.",
+      "price_discipline": "Keep below -3. Sat 2:30 PM CT.",
+      "espn_event_id": "401856731",
+      "bet_type": "spread",
+      "bet_side": "home",
+      "bet_line": -2.5,
+      "home_team": "South Carolina Gamecocks",
+      "away_team": "Tennessee Volunteers",
+      "created_at": "2026-10-23T15:51:03",
+      "id": 339,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "SC -2.5",
+        "home_spread": -2.5,
+        "home_spread_odds": -108.0,
+        "away_spread_odds": -112.0,
+        "total": 50.5,
+        "over_odds": -110.0,
+        "under_odds": -110.0,
+        "home_moneyline": -135,
+        "away_moneyline": 114,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-10-23T15:51:08",
+      "kickoff": "2026-10-24T19:30Z",
+      "pregame_weather": {
+        "city": "Columbia",
+        "temp_c": 21.7,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 18.7,
+        "cloud_cover_pct": 3,
+        "forecast_hour": "2026-10-24T19:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 2,
+        "win_pct": 40.0,
+        "quality_wins": 1
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 4,
+        "win_pct": 80.0,
+        "quality_wins": 1
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 2,
+          "d": 0,
+          "l": 2,
+          "gf": 170,
+          "ga": 85
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 1,
+          "gf": 56,
+          "ga": 68
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 4,
+          "d": 0,
+          "l": 1,
+          "gf": 165,
+          "ga": 62
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 0,
+          "gf": 69,
+          "ga": 41
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-23T15:51:08",
+      "wr_confidence_kickoff": 59.8998998998999,
+      "wr_breakdown_kickoff": {
+        "base": 60.0,
+        "impact_scale": 0.2,
+        "record_mod": -0.1,
+        "record_win_pct": 48.649,
+        "record_settled": 75,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": null,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 57.8998998998999,
+      "wr_breakdown_initial": {
+        "base": 60.0,
+        "impact_scale": 0.2,
+        "record_mod": -0.1,
+        "record_win_pct": 48.649,
+        "record_settled": 75,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": 0.0,
+        "weather_mod": 0.0,
+        "form_mod": -0.0,
+        "form_gap": -40.0,
+        "injury_mod": 0.0,
+        "injury_gap": 0.0,
+        "home_away_mod": -2.0,
+        "home_away_gap": -50.0,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "ai_grade": {
+        "quality": 3,
+        "verdict": "story",
+        "reason": "There is no model number or fair price, the author admits the ranking is a judgment and the injury reports are pending, and the only discipline shown is a sensible keep-below-3 cap on the key number.",
+        "model": "claude-opus-5-5",
+        "graded_at": "2026-10-23T15:51:12",
         "rubric_version": 5
       }
     }
