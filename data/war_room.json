@@ -1,6 +1,6 @@
 {
-  "next_report_id": 77,
-  "next_pick_id": 350,
+  "next_report_id": 78,
+  "next_pick_id": 352,
   "reports": [
     {
       "source": "ChatGPT",
@@ -792,6 +792,18 @@
       "lsu_review_notes": "",
       "created_at": "2026-10-23T18:46:00",
       "id": 76
+    },
+    {
+      "id": 77,
+      "source": "War Room",
+      "league": "NFL",
+      "report_date": "2026-10-23",
+      "week_number": 1,
+      "week_label": "War Room Card -- week of 2026-10-20",
+      "philosophy": "The dashboard's own selections, made by a rule frozen before any result: take a side when at least 2 sources are on it, or when a single pick's live WR Confidence is 75 or higher; one selection per game and market; when both sides qualify, the side with more sources wins, then the higher score, and a dead heat is skipped. Each selection copies the line and price of the highest-scoring source pick on that side at the moment it is made, is only made while the game has not kicked off, and is staked flat at $100. Selections are made by the hourly Auto-Grade pass and whenever a new pick is logged. Football (CFB, NFL) only.",
+      "blind_spot_notes": "This ticket never submits an opinion of its own: every selection traces back to the source picks and board leans named on it.",
+      "lsu_review_notes": "",
+      "created_at": "2026-10-23T18:46:31"
     }
   ],
   "picks": [
@@ -36518,6 +36530,278 @@
         "graded_at": "2026-10-23T18:46:18",
         "rubric_version": 5
       }
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 76,
+      "category": "best_bet",
+      "matchup": "Green Bay Packers @ Detroit Lions",
+      "selection": "Green Bay +3.5",
+      "odds": -110,
+      "stake": 50.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 66.0,
+      "war_room_line": "TRACKED 0.5% ($50 per $10k), logged as an override under the 70 floor. Score 65.5; EV -0%. Paper +3.5 matches Pinnacle +3.5 (-102); FanDuel +3; no stale edge.",
+      "edge": "Model B: fair line Green Bay -0.1, edge +3.4 points for Green Bay. Money: 44% of tickets and 20% of BetMGM handle on Green Bay; the book needs our side (casino side). Reverse line movement toward Green Bay.",
+      "price_discipline": "Pinnacle recheck before placement; Pinnacle on +3.5 voids the bet. Sun 3:25 PM CT.",
+      "espn_event_id": "401873020",
+      "bet_type": "spread",
+      "bet_side": "away",
+      "bet_line": 3.5,
+      "home_team": "Detroit Lions",
+      "away_team": "Green Bay Packers",
+      "created_at": "2026-10-23T18:46:23",
+      "id": 350,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "DET -3",
+        "home_spread": -3.0,
+        "home_spread_odds": -118.0,
+        "away_spread_odds": -102.0,
+        "total": 53.5,
+        "over_odds": -118.0,
+        "under_odds": -102.0,
+        "home_moneyline": -175,
+        "away_moneyline": 145,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-10-23T18:46:27",
+      "kickoff": "2026-10-25T20:25Z",
+      "pregame_weather": {
+        "city": "Detroit",
+        "temp_c": 20.1,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 9.9,
+        "cloud_cover_pct": 100,
+        "forecast_hour": "2026-10-25T20:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 3,
+        "win_pct": 60.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 4,
+        "win_pct": 80.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 4.25,
+      "pregame_away_injuries": 6.25,
+      "pregame_home_split": {
+        "home": {
+          "w": 2,
+          "d": 0,
+          "l": 0,
+          "gf": 62,
+          "ga": 54
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 2,
+          "gf": 102,
+          "ga": 94
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 2,
+          "d": 0,
+          "l": 1,
+          "gf": 68,
+          "ga": 55
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 1,
+          "gf": 59,
+          "ga": 70
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-23T18:46:27",
+      "wr_confidence_kickoff": 70.15255813953489,
+      "wr_breakdown_kickoff": {
+        "base": 66.0,
+        "impact_scale": 0.32,
+        "record_mod": 2.233,
+        "record_win_pct": 70.27,
+        "record_settled": 37,
+        "agree_mod": 1.92,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": null,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 1,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 65.81922480620156,
+      "wr_breakdown_initial": {
+        "base": 66.0,
+        "impact_scale": 0.32,
+        "record_mod": 2.233,
+        "record_win_pct": 70.27,
+        "record_settled": 37,
+        "agree_mod": 1.92,
+        "conflict_mod": 0.0,
+        "clv_mod": 1.0,
+        "clv_move": 0.5,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": 20.0,
+        "injury_mod": -4.0,
+        "injury_gap": -2.0,
+        "home_away_mod": -1.333,
+        "home_away_gap": -33.333,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 1,
+        "opposing": 0
+      },
+      "ai_grade": {
+        "quality": 2,
+        "verdict": "story",
+        "reason": "The author's own sheet shows EV of -0% and a score of 65.5, below the 70 floor, and their void rule (Pinnacle on +3.5) is already triggered, so the claimed 3.4-point model edge contradicts their own pricing and the rest is a public-money read.",
+        "model": "claude-opus-5-5",
+        "graded_at": "2026-10-23T18:46:31",
+        "rubric_version": 5
+      }
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 77,
+      "category": "best_bet",
+      "matchup": "Green Bay Packers @ Detroit Lions",
+      "selection": "Green Bay +3.5",
+      "odds": -110,
+      "stake": 100.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 65.8,
+      "war_room_line": "Rule: 2 sources aligned on this side. Line and price copied from Claude pick #350 at selection (2026-10-23T18:46:31).",
+      "edge": "Source picks on this side -- Claude: Green Bay +3.5 (-110), live WR 66; ChatGPT: Green Bay +3 (-112), live WR 55.",
+      "price_discipline": "Flat $100. Selected before kickoff; graded off the final score like any other pick.",
+      "espn_event_id": "401873020",
+      "bet_type": "spread",
+      "bet_side": "away",
+      "bet_line": 3.5,
+      "home_team": "Detroit Lions",
+      "away_team": "Green Bay Packers",
+      "war_room_source_pick_ids": [
+        350,
+        345
+      ],
+      "created_at": "2026-10-23T18:46:31",
+      "id": 351,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "DET -3",
+        "home_spread": -3.0,
+        "home_spread_odds": -118.0,
+        "away_spread_odds": -102.0,
+        "total": 53.5,
+        "over_odds": -118.0,
+        "under_odds": -102.0,
+        "home_moneyline": -175,
+        "away_moneyline": 145,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-10-23T18:46:34",
+      "kickoff": "2026-10-25T20:25Z",
+      "pregame_weather": {
+        "city": "Detroit",
+        "temp_c": 20.1,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 9.9,
+        "cloud_cover_pct": 100,
+        "forecast_hour": "2026-10-25T20:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 3,
+        "win_pct": 60.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 4,
+        "win_pct": 80.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 4.25,
+      "pregame_away_injuries": 6.25,
+      "pregame_home_split": {
+        "home": {
+          "w": 2,
+          "d": 0,
+          "l": 0,
+          "gf": 62,
+          "ga": 54
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 2,
+          "gf": 102,
+          "ga": 94
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 2,
+          "d": 0,
+          "l": 1,
+          "gf": 68,
+          "ga": 55
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 1,
+          "gf": 59,
+          "ga": 70
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-23T18:46:34",
+      "wr_confidence_kickoff": 69.592,
+      "wr_breakdown_kickoff": {
+        "base": 65.8,
+        "impact_scale": 0.316,
+        "record_mod": 0.0,
+        "record_win_pct": 50.0,
+        "record_settled": 2,
+        "agree_mod": 3.792,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": null,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 2,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 65.25866666666667
     }
   ],
   "next_wallet_id": 59,
