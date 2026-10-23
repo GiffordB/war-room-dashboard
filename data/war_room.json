@@ -1,6 +1,6 @@
 {
   "next_report_id": 79,
-  "next_pick_id": 355,
+  "next_pick_id": 356,
   "reports": [
     {
       "source": "ChatGPT",
@@ -37232,6 +37232,155 @@
         "reason": "The +2.1pp edge comes only from blending the author's own 52% judgment with the market, the fair total of 2.5 (range 2.3-2.8) sits right on the posted line, and the support is thin (small-sample draw counts, a wind forecast), so this is a tracked thin edge rather than a quantified one.",
         "model": "claude-opus-5-5",
         "graded_at": "2026-10-23T23:10:59",
+        "rubric_version": 5
+      }
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 78,
+      "category": "totals_radar",
+      "matchup": "Tottenham Hotspur @ Chelsea",
+      "selection": "Tottenham Hotspur @ Chelsea: Under 3.5",
+      "odds": -160,
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "Spurs matches average only ~2.3 goals (6 scored in 7); two 0-0s in last 5.\nChelsea games run high (4.3/game) and Chelsea have conceded 13, which caps the confidence.\nHeavy rain (100%) and ~26 km/h wind forecast at Stamford Bridge.\nClears 60% confidence but EV is under +2% at -160: a lean, not a stake.",
+      "wr_confidence": 62.0,
+      "war_room_line": "Total ~3.3 (range 2.9-3.7); P(under 3.5) own 66% / market no-vig 58% -> ~62%",
+      "edge": "Under 3.5 implies ~61.5%; blended ~62% -> +0.5pp edge, EV +0.8%",
+      "price_discipline": "-150 or better: would stake $25\n-151 to -165: track only\n-170 or worse: pass",
+      "espn_event_id": "401878767",
+      "bet_type": "total",
+      "bet_side": "under",
+      "bet_line": 3.5,
+      "home_team": "Chelsea",
+      "away_team": "Tottenham Hotspur",
+      "created_at": "2026-10-23T23:11:02",
+      "id": 355,
+      "pregame_odds": {
+        "provider": "DraftKings",
+        "spread_details": "CHE -125",
+        "home_spread": -0.5,
+        "home_spread_odds": -135.0,
+        "away_spread_odds": -105.0,
+        "total": 3.5,
+        "over_odds": 130.0,
+        "under_odds": -160.0,
+        "home_moneyline": -125,
+        "away_moneyline": 300,
+        "draw_moneyline": 300.0
+      },
+      "pregame_odds_captured_at": "2026-10-23T23:11:06",
+      "kickoff": "2026-10-24T16:30Z",
+      "pregame_weather": {
+        "city": "London",
+        "temp_c": 12.3,
+        "precip_probability_pct": 100,
+        "precip_mm": 2.6,
+        "wind_kmh": 26.3,
+        "cloud_cover_pct": 100,
+        "forecast_hour": "2026-10-24T16:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 2,
+        "win_pct": 40.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 1,
+        "win_pct": 20.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 2,
+          "d": 1,
+          "l": 0,
+          "gf": 11,
+          "ga": 6
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 2,
+          "gf": 6,
+          "ga": 7
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 1,
+          "d": 1,
+          "l": 2,
+          "gf": 5,
+          "ga": 6
+        },
+        "away": {
+          "w": 0,
+          "d": 2,
+          "l": 1,
+          "gf": 1,
+          "ga": 4
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-23T23:11:06",
+      "wr_confidence_kickoff": 61.85454545454545,
+      "wr_breakdown_kickoff": {
+        "base": 62.0,
+        "impact_scale": 0.24,
+        "record_mod": -0.145,
+        "record_win_pct": 48.148,
+        "record_settled": 27,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": null,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 66.85454545454544,
+      "wr_breakdown_initial": {
+        "base": 62.0,
+        "impact_scale": 0.24,
+        "record_mod": -0.145,
+        "record_win_pct": 48.148,
+        "record_settled": 27,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": -0.0,
+        "clv_move": -0.0,
+        "weather_mod": 5,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "ai_grade": {
+        "quality": 4,
+        "verdict": "mixed",
+        "reason": "The author is honest about a +0.5pp blended edge that sits well inside their own wide 2.9-3.7 range, but there is no real quantified edge at -160, and the weather and form notes are unsourced context that the market likely already prices.",
+        "model": "claude-opus-5-5",
+        "graded_at": "2026-10-23T23:11:11",
         "rubric_version": 5
       }
     }
