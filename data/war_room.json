@@ -1,6 +1,6 @@
 {
   "next_report_id": 74,
-  "next_pick_id": 346,
+  "next_pick_id": 347,
   "reports": [
     {
       "source": "ChatGPT",
@@ -35908,6 +35908,155 @@
         "reason": "The pick rests only on a ranked judgment with no model number, no cover probability and injury reports still pending; its one real strength is awareness of the key number 3 in insisting on preserving +3.",
         "model": "claude-opus-5-5",
         "graded_at": "2026-10-23T15:52:47",
+        "rubric_version": 5
+      }
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 73,
+      "category": "best_bet",
+      "matchup": "Denver Broncos @ Arizona Cardinals",
+      "selection": "Denver -4.5",
+      "odds": -110,
+      "stake": 50.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 58.0,
+      "war_room_line": "Rank #5. Comp only (selection for the competition; no recommended cash stake, logged at the $50 competition convention). Friday DK quote -110.",
+      "edge": "Ranking is a judgment, not a cover probability; final injury reports pending.",
+      "price_discipline": "No worse than -4.5. Sun 3:05 PM CT.",
+      "espn_event_id": "401873019",
+      "bet_type": "spread",
+      "bet_side": "away",
+      "bet_line": -4.5,
+      "home_team": "Arizona Cardinals",
+      "away_team": "Denver Broncos",
+      "created_at": "2026-10-23T15:52:54",
+      "id": 346,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "DEN -4.5",
+        "home_spread": 4.5,
+        "home_spread_odds": -110.0,
+        "away_spread_odds": -110.0,
+        "total": 43.5,
+        "over_odds": -112.0,
+        "under_odds": -108.0,
+        "home_moneyline": 190,
+        "away_moneyline": -230,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-10-23T15:52:57",
+      "kickoff": "2026-10-25T20:05Z",
+      "pregame_weather": {
+        "city": "Glendale",
+        "temp_c": 25.2,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 5.1,
+        "cloud_cover_pct": 0,
+        "forecast_hour": "2026-10-25T20:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 1,
+        "win_pct": 20.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 4,
+        "win_pct": 80.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 4.0,
+      "pregame_away_injuries": 3.25,
+      "pregame_home_split": {
+        "home": {
+          "w": 0,
+          "d": 0,
+          "l": 2,
+          "gf": 28,
+          "ga": 76
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 2,
+          "gf": 98,
+          "ga": 102
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 3,
+          "d": 0,
+          "l": 0,
+          "gf": 67,
+          "ga": 53
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 2,
+          "gf": 47,
+          "ga": 72
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-23T15:52:57",
+      "wr_confidence_kickoff": 58.432432432432435,
+      "wr_breakdown_kickoff": {
+        "base": 58.0,
+        "impact_scale": 0.16,
+        "record_mod": 0.432,
+        "record_win_pct": 58.065,
+        "record_settled": 31,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": null,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 61.26576576576577,
+      "wr_breakdown_initial": {
+        "base": 58.0,
+        "impact_scale": 0.16,
+        "record_mod": 0.432,
+        "record_win_pct": 58.065,
+        "record_settled": 31,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": 0.0,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": 60.0,
+        "injury_mod": 1.5,
+        "injury_gap": 0.75,
+        "home_away_mod": 1.333,
+        "home_away_gap": 33.333,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "ai_grade": {
+        "quality": 2,
+        "verdict": "story",
+        "reason": "The pick gives no model number, fair line or quantified edge, only a judgment rank with injuries pending, so the only substance is a price limit at -4.5 that sits right on the posted number.",
+        "model": "claude-opus-5-5",
+        "graded_at": "2026-10-23T15:53:01",
         "rubric_version": 5
       }
     }
