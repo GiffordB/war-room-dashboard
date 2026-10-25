@@ -35763,22 +35763,22 @@
         "home_spread": -3.0,
         "home_spread_odds": -102.0,
         "away_spread_odds": -118.0,
-        "total": 42.5,
-        "over_odds": -112.0,
-        "under_odds": -108.0,
-        "home_moneyline": -155,
-        "away_moneyline": 130,
+        "total": 43.5,
+        "over_odds": -102.0,
+        "under_odds": -118.0,
+        "home_moneyline": -162,
+        "away_moneyline": 136,
         "draw_moneyline": null
       },
-      "pregame_odds_captured_at": "2026-10-25T21:33:10",
+      "pregame_odds_captured_at": "2026-10-25T23:58:13",
       "kickoff": "2026-10-26T00:20Z",
       "pregame_weather": {
         "city": "Seattle",
-        "temp_c": 11.7,
-        "precip_probability_pct": 16,
+        "temp_c": 11.2,
+        "precip_probability_pct": 8,
         "precip_mm": 0.0,
-        "wind_kmh": 2.8,
-        "cloud_cover_pct": 6,
+        "wind_kmh": 7.3,
+        "cloud_cover_pct": 49,
         "forecast_hour": "2026-10-26T00:00"
       },
       "pregame_home_form": {
@@ -35793,8 +35793,8 @@
         "win_pct": 100.0,
         "quality_wins": 0
       },
-      "pregame_home_injuries": 6.25,
-      "pregame_away_injuries": 3.25,
+      "pregame_home_injuries": 9.0,
+      "pregame_away_injuries": 7.0,
       "pregame_home_split": {
         "home": {
           "w": 2,
@@ -35827,14 +35827,14 @@
           "ga": 37
         }
       },
-      "pregame_intel_captured_at": "2026-10-25T21:33:10",
-      "wr_confidence_kickoff": 64.24615384615385,
+      "pregame_intel_captured_at": "2026-10-25T23:58:13",
+      "wr_confidence_kickoff": 64.33591582974653,
       "wr_breakdown_kickoff": {
         "base": 60.0,
         "impact_scale": 0.2,
-        "record_mod": 0.513,
-        "record_win_pct": 57.576,
-        "record_settled": 33,
+        "record_mod": 0.603,
+        "record_win_pct": 58.824,
+        "record_settled": 35,
         "agree_mod": 0.0,
         "conflict_mod": -1.6,
         "clv_mod": -2.0,
@@ -35891,7 +35891,7 @@
       "selection": "Green Bay +3",
       "odds": -112,
       "stake": 50.0,
-      "result": "pending",
+      "result": "push",
       "profit_loss": 0.0,
       "notes": "",
       "wr_confidence": 59.0,
@@ -36030,6 +36030,13 @@
         "model": "claude-opus-5-5",
         "graded_at": "2026-10-23T15:52:47",
         "rubric_version": 5
+      },
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 20,
+        "away_score": 17,
+        "kickoff": "2026-10-25T20:25Z"
       }
     },
     {
@@ -36040,8 +36047,8 @@
       "selection": "Denver -4.5",
       "odds": -110,
       "stake": 50.0,
-      "result": "pending",
-      "profit_loss": 0.0,
+      "result": "win",
+      "profit_loss": 45.45454545454545,
       "notes": "",
       "wr_confidence": 58.0,
       "war_room_line": "Rank #5. Comp only (selection for the competition; no recommended cash stake, logged at the $50 competition convention). Friday DK quote -110.",
@@ -36179,6 +36186,13 @@
         "model": "claude-opus-5-5",
         "graded_at": "2026-10-23T15:53:01",
         "rubric_version": 5
+      },
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 16,
+        "away_score": 30,
+        "kickoff": "2026-10-25T20:05Z"
       }
     },
     {
@@ -36477,8 +36491,8 @@
       "selection": "Arizona +4.5",
       "odds": -110,
       "stake": 50.0,
-      "result": "pending",
-      "profit_loss": 0.0,
+      "result": "loss",
+      "profit_loss": -50.0,
       "notes": "",
       "wr_confidence": 67.0,
       "war_room_line": "TRACKED 0.5% ($50 per $10k), logged as an override under the 70 floor. Score 67.4, the best on the NFL board; EV +0.8%. Paper +4.5 vs Pinnacle +4 (-110), half a point; FanDuel +4.5.",
@@ -36616,6 +36630,13 @@
         "model": "claude-opus-5-5",
         "graded_at": "2026-10-23T18:46:18",
         "rubric_version": 5
+      },
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 16,
+        "away_score": 30,
+        "kickoff": "2026-10-25T20:05Z"
       }
     },
     {
@@ -36626,8 +36647,8 @@
       "selection": "Green Bay +3.5",
       "odds": -110,
       "stake": 50.0,
-      "result": "pending",
-      "profit_loss": 0.0,
+      "result": "win",
+      "profit_loss": 45.45454545454545,
       "notes": "",
       "wr_confidence": 66.0,
       "war_room_line": "TRACKED 0.5% ($50 per $10k), logged as an override under the 70 floor. Score 65.5; EV -0%. Paper +3.5 matches Pinnacle +3.5 (-102); FanDuel +3; no stale edge.",
@@ -36765,6 +36786,13 @@
         "model": "claude-opus-5-5",
         "graded_at": "2026-10-23T18:46:31",
         "rubric_version": 5
+      },
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 20,
+        "away_score": 17,
+        "kickoff": "2026-10-25T20:25Z"
       }
     },
     {
@@ -36775,8 +36803,8 @@
       "selection": "Green Bay +3.5",
       "odds": -110,
       "stake": 100.0,
-      "result": "pending",
-      "profit_loss": 0.0,
+      "result": "win",
+      "profit_loss": 90.9090909090909,
       "notes": "",
       "wr_confidence": 65.8,
       "war_room_line": "Rule: 2 sources aligned on this side. Line and price copied from Claude pick #350 at selection (2026-10-23T18:46:31).",
@@ -36888,7 +36916,14 @@
         "agreeing": 2,
         "opposing": 0
       },
-      "wr_confidence_initial": 65.25866666666667
+      "wr_confidence_initial": 65.25866666666667,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 20,
+        "away_score": 17,
+        "kickoff": "2026-10-25T20:25Z"
+      }
     },
     {
       "parlay_leg_pick_ids": null,
@@ -37672,22 +37707,22 @@
         "home_spread": -3.0,
         "home_spread_odds": -102.0,
         "away_spread_odds": -118.0,
-        "total": 42.5,
-        "over_odds": -112.0,
-        "under_odds": -108.0,
-        "home_moneyline": -155,
-        "away_moneyline": 130,
+        "total": 43.5,
+        "over_odds": -102.0,
+        "under_odds": -118.0,
+        "home_moneyline": -162,
+        "away_moneyline": 136,
         "draw_moneyline": null
       },
-      "pregame_odds_captured_at": "2026-10-25T21:33:10",
+      "pregame_odds_captured_at": "2026-10-25T23:58:13",
       "kickoff": "2026-10-26T00:20Z",
       "pregame_weather": {
         "city": "Seattle",
-        "temp_c": 11.7,
-        "precip_probability_pct": 16,
+        "temp_c": 11.2,
+        "precip_probability_pct": 8,
         "precip_mm": 0.0,
-        "wind_kmh": 2.8,
-        "cloud_cover_pct": 6,
+        "wind_kmh": 7.3,
+        "cloud_cover_pct": 49,
         "forecast_hour": "2026-10-26T00:00"
       },
       "pregame_home_form": {
@@ -37702,8 +37737,8 @@
         "win_pct": 100.0,
         "quality_wins": 0
       },
-      "pregame_home_injuries": 6.25,
-      "pregame_away_injuries": 3.25,
+      "pregame_home_injuries": 9.0,
+      "pregame_away_injuries": 7.0,
       "pregame_home_split": {
         "home": {
           "w": 2,
@@ -37736,14 +37771,14 @@
           "ga": 37
         }
       },
-      "pregame_intel_captured_at": "2026-10-25T21:33:10",
-      "wr_confidence_kickoff": 53.306666666666665,
+      "pregame_intel_captured_at": "2026-10-25T23:58:13",
+      "wr_confidence_kickoff": 53.24579710144928,
       "wr_breakdown_kickoff": {
         "base": 61.0,
         "impact_scale": 0.22,
-        "record_mod": 1.4,
-        "record_win_pct": 68.421,
-        "record_settled": 38,
+        "record_mod": 1.339,
+        "record_win_pct": 67.5,
+        "record_settled": 40,
         "agree_mod": 0.0,
         "conflict_mod": -1.76,
         "clv_mod": 0.0,
@@ -38821,8 +38856,8 @@
       "odds": -110,
       "stake": 50.0,
       "bet_line": 4.5,
-      "result": "pending",
-      "profit_loss": 0.0,
+      "result": "loss",
+      "profit_loss": -50.0,
       "notes": null,
       "wr_confidence_at_bet": 57.31875968992248,
       "created_at": "2026-10-25T20:44:59",
@@ -38839,8 +38874,8 @@
       "odds": -110,
       "stake": 100.0,
       "bet_line": 3.5,
-      "result": "pending",
-      "profit_loss": 0.0,
+      "result": "win",
+      "profit_loss": 90.9090909090909,
       "notes": null,
       "wr_confidence_at_bet": 66.6230303030303,
       "created_at": "2026-10-25T23:48:51",
@@ -81383,7 +81418,7 @@
       "league": "NFL",
       "category": "lean",
       "stake": 0.0,
-      "result": "pending",
+      "result": "win",
       "profit_loss": 0.0,
       "parlay_leg_pick_ids": null,
       "wr_confidence": 56.5,
@@ -81491,7 +81526,14 @@
         "agreeing": 0,
         "opposing": 0
       },
-      "wr_confidence_initial": 56.07364341085271
+      "wr_confidence_initial": 56.07364341085271,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 21,
+        "away_score": 35,
+        "kickoff": "2026-10-25T20:25Z"
+      }
     },
     {
       "id": 352,
@@ -82016,22 +82058,22 @@
         "home_spread": -3.0,
         "home_spread_odds": -102.0,
         "away_spread_odds": -118.0,
-        "total": 42.5,
-        "over_odds": -112.0,
-        "under_odds": -108.0,
-        "home_moneyline": -155,
-        "away_moneyline": 130,
+        "total": 43.5,
+        "over_odds": -102.0,
+        "under_odds": -118.0,
+        "home_moneyline": -162,
+        "away_moneyline": 136,
         "draw_moneyline": null
       },
-      "pregame_odds_captured_at": "2026-10-25T21:33:10",
+      "pregame_odds_captured_at": "2026-10-25T23:58:13",
       "kickoff": "2026-10-26T00:20Z",
       "pregame_weather": {
         "city": "Seattle",
-        "temp_c": 11.7,
-        "precip_probability_pct": 16,
+        "temp_c": 11.2,
+        "precip_probability_pct": 8,
         "precip_mm": 0.0,
-        "wind_kmh": 2.8,
-        "cloud_cover_pct": 6,
+        "wind_kmh": 7.3,
+        "cloud_cover_pct": 49,
         "forecast_hour": "2026-10-26T00:00"
       },
       "pregame_home_form": {
@@ -82046,8 +82088,8 @@
         "win_pct": 100.0,
         "quality_wins": 0
       },
-      "pregame_home_injuries": 6.25,
-      "pregame_away_injuries": 3.25,
+      "pregame_home_injuries": 9.0,
+      "pregame_away_injuries": 7.0,
       "pregame_home_split": {
         "home": {
           "w": 2,
@@ -82080,14 +82122,14 @@
           "ga": 37
         }
       },
-      "pregame_intel_captured_at": "2026-10-25T21:33:10",
-      "wr_confidence_kickoff": 45.50448484848484,
+      "pregame_intel_captured_at": "2026-10-25T23:58:13",
+      "wr_confidence_kickoff": 47.49397101449275,
       "wr_breakdown_kickoff": {
         "base": 51.9,
         "impact_scale": 0.038,
-        "record_mod": 0.242,
-        "record_win_pct": 68.421,
-        "record_settled": 38,
+        "record_mod": 0.231,
+        "record_win_pct": 67.5,
+        "record_settled": 40,
         "agree_mod": 0.0,
         "conflict_mod": -0.304,
         "clv_mod": 1.0,
@@ -82095,8 +82137,8 @@
         "weather_mod": 0.0,
         "form_mod": -0.0,
         "form_gap": -60.0,
-        "injury_mod": -6.0,
-        "injury_gap": -3.0,
+        "injury_mod": -4.0,
+        "injury_gap": -2.0,
         "home_away_mod": -1.333,
         "home_away_gap": -33.333,
         "quality_win_mod": 0.0,
@@ -82136,11 +82178,11 @@
         "total": 43.5,
         "over_odds": -118.0,
         "under_odds": -102.0,
-        "home_moneyline": 180,
-        "away_moneyline": -218,
+        "home_moneyline": 185,
+        "away_moneyline": -225,
         "draw_moneyline": null
       },
-      "pregame_odds_captured_at": "2026-10-25T21:33:10",
+      "pregame_odds_captured_at": "2026-10-25T23:58:13",
       "kickoff": "2026-10-27T00:15Z",
       "pregame_weather": {
         "city": "Philadelphia",
@@ -82197,14 +82239,14 @@
           "ga": 81
         }
       },
-      "pregame_intel_captured_at": "2026-10-25T21:33:10",
-      "wr_confidence_kickoff": 42.70545454545454,
+      "pregame_intel_captured_at": "2026-10-25T23:58:13",
+      "wr_confidence_kickoff": 42.692173913043476,
       "wr_breakdown_kickoff": {
         "base": 52.4,
         "impact_scale": 0.048,
-        "record_mod": 0.305,
-        "record_win_pct": 68.421,
-        "record_settled": 38,
+        "record_mod": 0.292,
+        "record_win_pct": 67.5,
+        "record_settled": 40,
         "agree_mod": 0.0,
         "conflict_mod": 0.0,
         "clv_mod": 0.0,
@@ -84090,7 +84132,7 @@
       "league": "NFL",
       "category": "lean",
       "stake": 0.0,
-      "result": "pending",
+      "result": "win",
       "profit_loss": 0.0,
       "parlay_leg_pick_ids": null,
       "wr_confidence": 57.0,
@@ -84198,7 +84240,14 @@
         "agreeing": 0,
         "opposing": 0
       },
-      "wr_confidence_initial": 58.143410852713174
+      "wr_confidence_initial": 58.143410852713174,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 21,
+        "away_score": 35,
+        "kickoff": "2026-10-25T20:25Z"
+      }
     },
     {
       "id": 374,
