@@ -1,6 +1,6 @@
 {
   "next_report_id": 80,
-  "next_pick_id": 357,
+  "next_pick_id": 358,
   "reports": [
     {
       "source": "ChatGPT",
@@ -37598,6 +37598,155 @@
         "reason": "The half-point edge (-10 vs Pinnacle -10.5) is real but small, does not cross a key number at 10, and is largely eaten by the -112 versus -105 juice; the rest leans on RLM and book-need reads while the author's own Model B has the Giants 4.6 points better, contradicting the side.",
         "model": "claude-opus-5-5",
         "graded_at": "2026-10-25T17:00:33",
+        "rubric_version": 5
+      }
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 79,
+      "category": "best_bet",
+      "matchup": "Kansas City Chiefs @ Seattle Seahawks",
+      "selection": "Seattle -3",
+      "odds": 100,
+      "stake": 50.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 61.0,
+      "war_room_line": "LIVE CARD, tracked 0.5% ($50) at DraftKings -3 (+100) only. Pinnacle -3 (-103); even money is a shade better than the sharp price, but no half-point: at -3 the most common margin becomes a push rather than a win, worth roughly 3 points of score and the difference between conviction and a tracked position. Live score 61 (paper -2.5 was a staked position).",
+      "edge": "Everything that made Seattle a position survives: the line moved from -2 to -3 against two thirds of the money, the largest retail book names Seahawks -3 as a top liability, and 78% of moneyline money is on Kansas City (RLM plus book need).",
+      "price_discipline": "DraftKings -3 (+100) only; push risk on 3. Sharp-market recheck before placement. 7:20 PM CT.",
+      "espn_event_id": "401873022",
+      "bet_type": "spread",
+      "bet_side": "home",
+      "bet_line": -3.0,
+      "home_team": "Seattle Seahawks",
+      "away_team": "Kansas City Chiefs",
+      "created_at": "2026-10-25T17:00:39",
+      "id": 357,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "SEA -3",
+        "home_spread": -3.0,
+        "home_spread_odds": 100.0,
+        "away_spread_odds": -120.0,
+        "total": 42.5,
+        "over_odds": -110.0,
+        "under_odds": -110.0,
+        "home_moneyline": -148,
+        "away_moneyline": 124,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-10-25T17:00:42",
+      "kickoff": "2026-10-26T00:20Z",
+      "pregame_weather": {
+        "city": "Seattle",
+        "temp_c": 11.4,
+        "precip_probability_pct": 12,
+        "precip_mm": 0.0,
+        "wind_kmh": 13.0,
+        "cloud_cover_pct": 100,
+        "forecast_hour": "2026-10-26T00:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 2,
+        "win_pct": 40.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 5,
+        "win_pct": 100.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 6.25,
+      "pregame_away_injuries": 3.25,
+      "pregame_home_split": {
+        "home": {
+          "w": 2,
+          "d": 0,
+          "l": 1,
+          "gf": 72,
+          "ga": 65
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 2,
+          "gf": 76,
+          "ga": 57
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 3,
+          "d": 0,
+          "l": 0,
+          "gf": 86,
+          "ga": 46
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 0,
+          "gf": 54,
+          "ga": 37
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-25T17:00:42",
+      "wr_confidence_kickoff": 60.774883720930234,
+      "wr_breakdown_kickoff": {
+        "base": 61.0,
+        "impact_scale": 0.22,
+        "record_mod": 1.535,
+        "record_win_pct": 70.27,
+        "record_settled": 37,
+        "agree_mod": 0.0,
+        "conflict_mod": -1.76,
+        "clv_mod": 0.0,
+        "clv_move": null,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 1
+      },
+      "wr_confidence_initial": 53.4415503875969,
+      "wr_breakdown_initial": {
+        "base": 61.0,
+        "impact_scale": 0.22,
+        "record_mod": 1.535,
+        "record_win_pct": 70.27,
+        "record_settled": 37,
+        "agree_mod": 0.0,
+        "conflict_mod": -1.76,
+        "clv_mod": 0.0,
+        "clv_move": 0.0,
+        "weather_mod": 0.0,
+        "form_mod": -0.0,
+        "form_gap": -60.0,
+        "injury_mod": -6.0,
+        "injury_gap": -3.0,
+        "home_away_mod": -1.333,
+        "home_away_gap": -33.333,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 1
+      },
+      "ai_grade": {
+        "quality": 4,
+        "verdict": "mixed",
+        "reason": "The edge is a market-structure read (RLM, book liability) with no model number. The author's own report puts EV near 0% and calls +100 only a shade better than Pinnacle's -103. They also concede that losing the half-point turns the most common margin into a push, so there is little quantified edge beyond honest sizing.",
+        "model": "claude-opus-5-5",
+        "graded_at": "2026-10-25T17:00:46",
         "rubric_version": 5
       }
     }
