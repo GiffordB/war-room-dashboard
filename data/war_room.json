@@ -1,6 +1,6 @@
 {
   "next_report_id": 80,
-  "next_pick_id": 356,
+  "next_pick_id": 357,
   "reports": [
     {
       "source": "ChatGPT",
@@ -37450,6 +37450,155 @@
         "home_score": 0,
         "away_score": 2,
         "kickoff": "2026-10-24T16:30Z"
+      }
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 79,
+      "category": "best_bet",
+      "matchup": "New York Giants @ Houston Texans",
+      "selection": "Houston -10",
+      "odds": -112,
+      "stake": 50.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 60.0,
+      "war_room_line": "LIVE CARD, tracked 0.5% ($50) at DraftKings -10 (-112). Pinnacle -10.5 (-105); the retail books are still laying 10, a key number: half a point of live price edge. Live score 59-61. The one position that is better live than on the paper (-10.5, a pass on Friday).",
+      "edge": "The line walked from -9 to -10.5 against 57% of the money on the Giants (reverse line movement toward Houston), and the book lists Texans -10 as a house need. Model B has the Giants 4.6 points better than the spread, which caps this at a tracked 0.5% rather than a stake.",
+      "price_discipline": "A bet only at -10. Sharp-market recheck before placement. Noon CT.",
+      "espn_event_id": "401873016",
+      "bet_type": "spread",
+      "bet_side": "home",
+      "bet_line": -10.0,
+      "home_team": "Houston Texans",
+      "away_team": "New York Giants",
+      "created_at": "2026-10-25T17:00:24",
+      "id": 356,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "HOU -10",
+        "home_spread": -10.0,
+        "home_spread_odds": -110.0,
+        "away_spread_odds": -110.0,
+        "total": 42.5,
+        "over_odds": -115.0,
+        "under_odds": -105.0,
+        "home_moneyline": -485,
+        "away_moneyline": 370,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-10-25T17:00:27",
+      "kickoff": "2026-10-25T17:00Z",
+      "pregame_weather": {
+        "city": "Houston",
+        "temp_c": 24.2,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 14.1,
+        "cloud_cover_pct": 100,
+        "forecast_hour": "2026-10-25T17:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 2,
+        "win_pct": 40.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 2,
+        "win_pct": 40.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 10.25,
+      "pregame_away_injuries": 7.25,
+      "pregame_home_split": {
+        "home": {
+          "w": 0,
+          "d": 0,
+          "l": 3,
+          "gf": 67,
+          "ga": 90
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 1,
+          "gf": 77,
+          "ga": 53
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 3,
+          "d": 0,
+          "l": 1,
+          "gf": 103,
+          "ga": 85
+        },
+        "away": {
+          "w": 0,
+          "d": 1,
+          "l": 1,
+          "gf": 33,
+          "ga": 55
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-25T17:00:27",
+      "wr_confidence_kickoff": 61.395348837209305,
+      "wr_breakdown_kickoff": {
+        "base": 60.0,
+        "impact_scale": 0.2,
+        "record_mod": 1.395,
+        "record_win_pct": 70.27,
+        "record_settled": 37,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": null,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 55.395348837209305,
+      "wr_breakdown_initial": {
+        "base": 60.0,
+        "impact_scale": 0.2,
+        "record_mod": 1.395,
+        "record_win_pct": 70.27,
+        "record_settled": 37,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": 0.0,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": 0.0,
+        "injury_mod": -6.0,
+        "injury_gap": -3.0,
+        "home_away_mod": 0.0,
+        "home_away_gap": 0.0,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "ai_grade": {
+        "quality": 3,
+        "verdict": "story",
+        "reason": "The half-point edge (-10 vs Pinnacle -10.5) is real but small, does not cross a key number at 10, and is largely eaten by the -112 versus -105 juice; the rest leans on RLM and book-need reads while the author's own Model B has the Giants 4.6 points better, contradicting the side.",
+        "model": "claude-opus-5-5",
+        "graded_at": "2026-10-25T17:00:33",
+        "rubric_version": 5
       }
     }
   ],
