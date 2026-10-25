@@ -1,5 +1,5 @@
 {
-  "next_report_id": 79,
+  "next_report_id": 80,
   "next_pick_id": 356,
   "reports": [
     {
@@ -816,6 +816,18 @@
       "lsu_review_notes": "",
       "created_at": "2026-10-23T23:10:33",
       "id": 78
+    },
+    {
+      "source": "Claude",
+      "league": "NFL",
+      "report_date": "2026-10-25",
+      "week_number": 7,
+      "week_label": "Week 7 -- Position Brief Addendum, Live Lines Only (Maven Quant, Sunday 11:23 AM CT)",
+      "philosophy": "The same Sunday on live lines only: every position on the Sunday paper card re-priced at the best live number across FanDuel, DraftKings and the third retail book (boards verified 11:23 AM CT) against Pinnacle (10:30 AM CT), same algorithm, same rules. Without the paper the price layer that carries this week disappears; what remains is the market-structure layer (reverse line movement, the books' stated needs, and the half-points retail books give away against the sharp market). Live card: 2 positions staked at 0.5% each, 1.0% at risk (was 2.0% on the paper); largest price gap 0.5 pt (was 4.5); expected value of the best position about 0% (was +14%); 2 of 3 paper positions die. THE LIVE CARD: Seattle -3 (+100, DraftKings) 0.5% and Houston -10 (-112, DraftKings) 0.5%. Live leans, no stake: Green Bay +3.5, Rams -3 (improves live), Jets -3.5 (live only, not on the paper card), Indianapolis +7, Tennessee +1.5. Passes: Cincinnati (the entire 4.5-point edge was the paper), Cincinnati-Baltimore under (three and a half points vanish), Miami (the paper was the only good number), Atlanta (RLM but books split on exposure), KC-Seattle under 42.5 (61% of money on the over). WHAT THE COMPARISON SAYS: the paper is the business. On the printed card the staked positions carry roughly +14% EV on Cincinnati and about zero on Seattle; on live lines the best position rests entirely on reading the books, a thinner and more crowded edge that has to be sized like it. If the paper ever tightens to the market permanently, halve stakes and treat market-structure positions as the 0.5% tracked tier. The casino and RLM reads are about 9-6 for the season: promising, unproven, not yet a reason to carry 1.0% on any of them. Rule note for Monday: adopt a standing live-line column in the board (paper, best live, Pinnacle, live verdict side by side).",
+      "blind_spot_notes": "LIVE TABLE (paper / best live / Pinnacle / live score / verdict): Cincinnati +1.5 / -2.5 (-120) FanDuel, -3 (-104) DraftKings / -3 (+102) / under 55 / pass, public side at every book, capped. Cincinnati-Baltimore under 49.5 / 46.5 (-110) all books / 46 / under 50 / pass, money balanced. Seattle -2.5 / -3 (+100) DraftKings / -3 (-103) / 61 / tracked 0.5% at DraftKings -3 (+100) only, push risk on 3. Houston -10.5 (was a pass) / -10 (-112) DraftKings, -10 (-118) third book / -10.5 (-105) / 59-61 / tracked 0.5% at -10 only; model is 4.6 the other way, which caps it. Green Bay +3.5 / +3.5 (-110) all books / +3.5 (+105) / 56 / lean; casino side, no RLM, no move. Rams -3.5 / -3 (-121) third book / -3.5 (+105) / 57 / lean, improves live; casino side (78% money on LV), no RLM. Miami +4.5 / +3.5 (+100) DraftKings / +4 / 52 / pass, worse than Pinnacle. Jets (not on paper card) -4.5 / -3.5 (-110) FanDuel / -4 (+100) / 55 / lean, live only; money roughly balanced, model slightly Miami. Indianapolis +6.5 / +7 (-109) third book / +7.5 (-125) / 55 / lean, about even after price; casino side (71% on MIN). Atlanta +2.5 / +2.5 (-105) / +2.5 (+100) / 55 split / pass. Tennessee +1.5 / +1.5 (-104) FanDuel / +1.5 (+100) / 53 / lean; casino side (64% on CLE), model Cleveland. KC-Seattle under 42.5 / 42.5 (-112) / 42 / 54 / pass. NOTE: this addendum re-prices a Sunday paper card (Cincinnati +1.5 and Seattle -2.5 staked, 2.0% at risk) that was not separately logged; only the addendum's live verdicts are recorded here.",
+      "lsu_review_notes": "",
+      "created_at": "2026-10-25T17:00:14",
+      "id": 79
     }
   ],
   "picks": [
