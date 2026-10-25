@@ -37765,7 +37765,7 @@
       }
     }
   ],
-  "next_wallet_id": 59,
+  "next_wallet_id": 60,
   "wallet_entries": [
     {
       "pick_id": 12,
@@ -38746,6 +38746,23 @@
       "wr_confidence_at_bet": 55.8125,
       "created_at": "2026-10-18T20:14:28",
       "id": 58
+    },
+    {
+      "pick_id": null,
+      "report_id": null,
+      "source": "Claude",
+      "league": "CFB",
+      "category": "custom",
+      "matchup": "TEN @ South Carolina",
+      "selection": "SC -2.5",
+      "odds": -110,
+      "stake": 25.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": null,
+      "wr_confidence_at_bet": null,
+      "created_at": "2026-10-25T20:42:26",
+      "id": 59
     }
   ],
   "next_jesse_wallet_id": 1,
