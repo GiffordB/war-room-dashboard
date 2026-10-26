@@ -35742,8 +35742,8 @@
       "selection": "Kansas City +2.5",
       "odds": -102,
       "stake": 50.0,
-      "result": "pending",
-      "profit_loss": 0.0,
+      "result": "loss",
+      "profit_loss": -50.0,
       "notes": "",
       "wr_confidence": 60.0,
       "war_room_line": "Rank #3. Comp only (selection for the competition; no recommended cash stake, logged at the $50 competition convention). Friday DK quote -102.",
@@ -35881,6 +35881,13 @@
         "model": "claude-opus-5-5",
         "graded_at": "2026-10-23T15:52:34",
         "rubric_version": 5
+      },
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 20,
+        "away_score": 3,
+        "kickoff": "2026-10-26T00:20Z"
       }
     },
     {
@@ -37686,8 +37693,8 @@
       "selection": "Seattle -3",
       "odds": 100,
       "stake": 50.0,
-      "result": "pending",
-      "profit_loss": 0.0,
+      "result": "win",
+      "profit_loss": 50.0,
       "notes": "",
       "wr_confidence": 61.0,
       "war_room_line": "LIVE CARD, tracked 0.5% ($50) at DraftKings -3 (+100) only. Pinnacle -3 (-103); even money is a shade better than the sharp price, but no half-point: at -3 the most common margin becomes a push rather than a win, worth roughly 3 points of score and the difference between conviction and a tracked position. Live score 61 (paper -2.5 was a staked position).",
@@ -37825,6 +37832,13 @@
         "model": "claude-opus-5-5",
         "graded_at": "2026-10-25T17:00:46",
         "rubric_version": 5
+      },
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 20,
+        "away_score": 3,
+        "kickoff": "2026-10-26T00:20Z"
       }
     }
   ],
@@ -38838,8 +38852,8 @@
       "odds": -105,
       "stake": 25.0,
       "bet_line": 2.5,
-      "result": "pending",
-      "profit_loss": 0.0,
+      "result": "win",
+      "profit_loss": 23.80952380952381,
       "notes": null,
       "wr_confidence_at_bet": 53.4415503875969,
       "created_at": "2026-10-25T20:43:35",
@@ -82038,7 +82052,7 @@
       "league": "NFL",
       "category": "lean",
       "stake": 0.0,
-      "result": "pending",
+      "result": "win",
       "profit_loss": 0.0,
       "parlay_leg_pick_ids": null,
       "wr_confidence": 51.9,
@@ -82146,7 +82160,14 @@
         "agreeing": 0,
         "opposing": 1
       },
-      "wr_confidence_initial": 50.027782945736426
+      "wr_confidence_initial": 50.027782945736426,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 20,
+        "away_score": 3,
+        "kickoff": "2026-10-26T00:20Z"
+      }
     },
     {
       "id": 357,
@@ -82176,17 +82197,17 @@
         "home_spread_odds": -112.0,
         "away_spread_odds": -108.0,
         "total": 43.5,
-        "over_odds": -118.0,
-        "under_odds": -102.0,
-        "home_moneyline": 185,
-        "away_moneyline": -225,
+        "over_odds": -115.0,
+        "under_odds": -105.0,
+        "home_moneyline": 180,
+        "away_moneyline": -218,
         "draw_moneyline": null
       },
-      "pregame_odds_captured_at": "2026-10-25T23:58:13",
+      "pregame_odds_captured_at": "2026-10-26T04:31:09",
       "kickoff": "2026-10-27T00:15Z",
       "pregame_weather": {
         "city": "Philadelphia",
-        "temp_c": 14.1,
+        "temp_c": 14.2,
         "precip_probability_pct": 1,
         "precip_mm": 0.0,
         "wind_kmh": 8.6,
@@ -82239,14 +82260,14 @@
           "ga": 81
         }
       },
-      "pregame_intel_captured_at": "2026-10-25T23:58:13",
-      "wr_confidence_kickoff": 42.692173913043476,
+      "pregame_intel_captured_at": "2026-10-26T04:31:09",
+      "wr_confidence_kickoff": 42.706382978723404,
       "wr_breakdown_kickoff": {
         "base": 52.4,
         "impact_scale": 0.048,
-        "record_mod": 0.292,
-        "record_win_pct": 67.5,
-        "record_settled": 40,
+        "record_mod": 0.306,
+        "record_win_pct": 68.293,
+        "record_settled": 41,
         "agree_mod": 0.0,
         "conflict_mod": 0.0,
         "clv_mod": 0.0,
