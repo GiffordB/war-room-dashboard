@@ -82196,21 +82196,21 @@
         "home_spread": 4.5,
         "home_spread_odds": -112.0,
         "away_spread_odds": -108.0,
-        "total": 43.5,
-        "over_odds": -112.0,
-        "under_odds": -108.0,
+        "total": 44.5,
+        "over_odds": -105.0,
+        "under_odds": -115.0,
         "home_moneyline": 170,
         "away_moneyline": -205,
         "draw_moneyline": null
       },
-      "pregame_odds_captured_at": "2026-10-26T10:51:44",
+      "pregame_odds_captured_at": "2026-10-26T17:11:24",
       "kickoff": "2026-10-27T00:15Z",
       "pregame_weather": {
         "city": "Philadelphia",
         "temp_c": 14.2,
         "precip_probability_pct": 0,
         "precip_mm": 0.0,
-        "wind_kmh": 9.0,
+        "wind_kmh": 8.0,
         "cloud_cover_pct": 0,
         "forecast_hour": "2026-10-27T00:00"
       },
@@ -82260,7 +82260,7 @@
           "ga": 81
         }
       },
-      "pregame_intel_captured_at": "2026-10-26T10:51:44",
+      "pregame_intel_captured_at": "2026-10-26T17:11:24",
       "wr_confidence_kickoff": 42.706382978723404,
       "wr_breakdown_kickoff": {
         "base": 52.4,
