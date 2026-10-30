@@ -1,6 +1,6 @@
 {
   "next_report_id": 84,
-  "next_pick_id": 372,
+  "next_pick_id": 373,
   "reports": [
     {
       "source": "ChatGPT",
@@ -39876,6 +39876,155 @@
         "reason": "A model number is stated, but the edge is a thin 2pp after the market blend at a juiced price, the team news is unverified, and the fatigue point is admitted to cut either way, so this is average substance rather than a clear edge.",
         "model": "claude-opus-5-5",
         "graded_at": "2026-10-30T23:11:35",
+        "rubric_version": 5
+      }
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 83,
+      "category": "sexy_moneyline",
+      "matchup": "Sunderland @ Coventry City",
+      "selection": "Coventry City to Win",
+      "odds": 210,
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "A lean, not a stake: confidence 34% is far under the 60% bar, though EV clears +2%.\nMarket makes bottom-club Sunderland (1W-2D-5L, GD -8) the favorite at +135 even though they are 0-1-3 away with 10 conceded.\nCoventry beat Sunderland-type opposition rarely this year (2W-6L) but lead the series 3-1-1.\nBoth sides score ~0.75 goals/game, so a one-goal swing decides it.\nNo injury flags on ESPN; official club pages unretrievable.",
+      "wr_confidence": 34.0,
+      "war_room_line": "Coventry 38% / Draw 28% / Sunderland 34% raw; 33.9% blended for Coventry",
+      "edge": "Price implies 32.3%; blended 33.9% -> +1.6pp edge, EV +5.1%",
+      "price_discipline": "+210 or better: tracked at $0\nNo real stake without confirmed lineups",
+      "espn_event_id": "401879247",
+      "bet_type": "match_result",
+      "bet_side": "home",
+      "bet_line": null,
+      "home_team": "Coventry City",
+      "away_team": "Sunderland",
+      "created_at": "2026-10-30T23:11:38",
+      "id": 372,
+      "pregame_odds": {
+        "provider": "DraftKings",
+        "spread_details": "SUN +135",
+        "home_spread": 0.5,
+        "home_spread_odds": -170.0,
+        "away_spread_odds": 120.0,
+        "total": 2.5,
+        "over_odds": -105.0,
+        "under_odds": -120.0,
+        "home_moneyline": 210,
+        "away_moneyline": 135,
+        "draw_moneyline": 235.0
+      },
+      "pregame_odds_captured_at": "2026-10-30T23:11:42",
+      "kickoff": "2026-10-31T15:00Z",
+      "pregame_weather": {
+        "city": "Coventry",
+        "temp_c": 13.7,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 6.8,
+        "cloud_cover_pct": 14,
+        "forecast_hour": "2026-10-31T15:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 2,
+        "win_pct": 40.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 0,
+        "win_pct": 0.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 3,
+          "gf": 4,
+          "ga": 8
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 3,
+          "gf": 2,
+          "ga": 7
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 1,
+          "d": 1,
+          "l": 2,
+          "gf": 1,
+          "ga": 4
+        },
+        "away": {
+          "w": 0,
+          "d": 1,
+          "l": 3,
+          "gf": 5,
+          "ga": 10
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-30T23:11:42",
+      "wr_confidence_kickoff": 34.0,
+      "wr_breakdown_kickoff": {
+        "base": 34.0,
+        "impact_scale": 0.0,
+        "record_mod": 0.0,
+        "record_win_pct": 53.333,
+        "record_settled": 30,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": null,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 35.5,
+      "wr_breakdown_initial": {
+        "base": 34.0,
+        "impact_scale": 0.0,
+        "record_mod": 0.0,
+        "record_win_pct": 53.333,
+        "record_settled": 30,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": null,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": 40.0,
+        "injury_mod": 0.0,
+        "injury_gap": 0.0,
+        "home_away_mod": 1.5,
+        "home_away_gap": 25.0,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "ai_grade": {
+        "quality": 4,
+        "verdict": "mixed",
+        "reason": "The edge is a thin 1.6pp gap, built on a blend that pulls the raw 38% down toward the market, with a self-reported confidence of 34% and supporting stats that are mostly narrative, so the quantification is too weak to count as a real edge.",
+        "model": "claude-opus-5-5",
+        "graded_at": "2026-10-30T23:11:45",
         "rubric_version": 5
       }
     }
