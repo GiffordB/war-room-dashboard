@@ -872,7 +872,7 @@
       "week_number": 9,
       "week_label": "",
       "philosophy": "Prices are mostly fair early on; one real stake, two tracked edges, no forced action.",
-      "blind_spot_notes": "",
+      "blind_spot_notes": "Best near-miss: Hull City ML +160 vs Ipswich (blended 39% vs 38.5% implied, EV +1.4%, confidence ~39%) failed both the 60% confidence and +2% EV bars. Man City-Brighton and Liverpool-Arsenal were priced fairly after blending (Arsenal ML blended 41.5% vs 41.7% implied). Only one real-stake pick (Chelsea-United over 2.5) cleared 60%/+2%; no side reached 80% for Thor. Caveat: premierleague.com pages (news, injuries) returned navigation only via fetch, so team news relied on ESPN feeds and club/press headlines.",
       "lsu_review_notes": "",
       "created_at": "2026-10-30T23:11:21",
       "id": 83
