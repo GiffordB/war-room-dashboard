@@ -1,6 +1,6 @@
 {
   "next_report_id": 84,
-  "next_pick_id": 371,
+  "next_pick_id": 372,
   "reports": [
     {
       "source": "ChatGPT",
@@ -39729,6 +39729,155 @@
         "opposing": 0
       },
       "wr_confidence_initial": 50.495999999999995
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 83,
+      "category": "totals_radar",
+      "matchup": "Manchester United @ Chelsea",
+      "selection": "Over 2.5 Goals",
+      "odds": -160,
+      "stake": 50.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "Chelsea games average 4.0 goals (17 for, 15 against in 8); 19 goals in 4 at Stamford Bridge.\nUnited away: 10 goals in 4, three of four draws, but defense has leaked 13 in 8.\nBoth managers (Alonso, Carrick) under pressure; Chelsea played extra time + pens in Carabao Cup midweek, so rotation or fatigue could cut either way.\nChelsea team news from official club site (30 Oct) not retrievable: premierleague.com pages came back JS-only. ESPN flags no injuries.\nForm lens and context lens agree on goals; context pulls a little toward cagey, trimmed from 70% to 63.5% by market blend.\nLine unchanged between 23:08 and 23:10 UTC pulls.",
+      "wr_confidence": 62.0,
+      "war_room_line": "Total 3.1 goals; P(over 2.5) ~70% raw, 63.5% blended",
+      "edge": "Price implies 61.5%; blended 63.5% -> +2.0pp edge, EV +3.2%",
+      "price_discipline": "-160 or better: $50\n-161 to -175: $25\n-180 or worse: pass",
+      "espn_event_id": "401879248",
+      "bet_type": "total",
+      "bet_side": "over",
+      "bet_line": 2.5,
+      "home_team": "Chelsea",
+      "away_team": "Manchester United",
+      "created_at": "2026-10-30T23:11:25",
+      "id": 371,
+      "pregame_odds": {
+        "provider": "DraftKings",
+        "spread_details": "CHE +100",
+        "home_spread": -0.5,
+        "home_spread_odds": -110.0,
+        "away_spread_odds": -130.0,
+        "total": 2.5,
+        "over_odds": -160.0,
+        "under_odds": 130.0,
+        "home_moneyline": 100,
+        "away_moneyline": 255,
+        "draw_moneyline": 275.0
+      },
+      "pregame_odds_captured_at": "2026-10-30T23:11:29",
+      "kickoff": "2026-10-31T12:30Z",
+      "pregame_weather": {
+        "city": "London",
+        "temp_c": 13.9,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 9.4,
+        "cloud_cover_pct": 19,
+        "forecast_hour": "2026-10-31T12:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 2,
+        "win_pct": 40.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 0,
+        "win_pct": 0.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 2,
+          "d": 1,
+          "l": 1,
+          "gf": 11,
+          "ga": 8
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 2,
+          "gf": 6,
+          "ga": 7
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 1,
+          "d": 1,
+          "l": 2,
+          "gf": 6,
+          "ga": 7
+        },
+        "away": {
+          "w": 0,
+          "d": 3,
+          "l": 1,
+          "gf": 4,
+          "ga": 6
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-30T23:11:29",
+      "wr_confidence_kickoff": 62.266666666666666,
+      "wr_breakdown_kickoff": {
+        "base": 62.0,
+        "impact_scale": 0.24,
+        "record_mod": 0.267,
+        "record_win_pct": 53.333,
+        "record_settled": 30,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": null,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 62.266666666666666,
+      "wr_breakdown_initial": {
+        "base": 62.0,
+        "impact_scale": 0.24,
+        "record_mod": 0.267,
+        "record_win_pct": 53.333,
+        "record_settled": 30,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": 0.0,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "ai_grade": {
+        "quality": 5,
+        "verdict": "mixed",
+        "reason": "A model number is stated, but the edge is a thin 2pp after the market blend at a juiced price, the team news is unverified, and the fatigue point is admitted to cut either way, so this is average substance rather than a clear edge.",
+        "model": "claude-opus-5-5",
+        "graded_at": "2026-10-30T23:11:35",
+        "rubric_version": 5
+      }
     }
   ],
   "next_wallet_id": 64,
