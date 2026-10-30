@@ -1,6 +1,6 @@
 {
   "next_report_id": 82,
-  "next_pick_id": 365,
+  "next_pick_id": 366,
   "reports": [
     {
       "source": "ChatGPT",
@@ -38905,6 +38905,155 @@
         "reason": "The only edge is a 1.5-point stale paper line plus a 90%-public-on-the-over read, with no totals model and EV shown as +0.0%; the report also says no paper line is more than a point off Pinnacle, which contradicts the 1.5-point gap and leaves it unclear whether 58.5 is actually bettable.",
         "model": "claude-opus-5-5",
         "graded_at": "2026-10-30T18:29:32",
+        "rubric_version": 5
+      }
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 81,
+      "category": "totals_radar",
+      "matchup": "Minnesota Golden Gophers @ Indiana Hoosiers",
+      "selection": "Over 40.5",
+      "odds": -110,
+      "stake": 50.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 61.0,
+      "war_room_line": "TOTAL OVERRIDE 0.5% ($50 per $10k). Minnesota-Indiana over: paper 40.5 vs Pinnacle 41.5, a point stale; 78% of money on the under, the book needs the over. Totals score 68, override 0.5%. EV -1.5% (price proxy).",
+      "edge": "Totals need a full stale point with the book on our side, or 2+ points of reverse line movement; the totals model is unvalidated.",
+      "price_discipline": "Sat 2:30 PM CT. Void if Pinnacle reaches 40.5.",
+      "espn_event_id": "401858501",
+      "bet_type": "total",
+      "bet_side": "over",
+      "bet_line": 40.5,
+      "home_team": "Indiana Hoosiers",
+      "away_team": "Minnesota Golden Gophers",
+      "created_at": "2026-10-30T18:29:38",
+      "id": 365,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "IU -20.5",
+        "home_spread": -20.5,
+        "home_spread_odds": -112.0,
+        "away_spread_odds": -108.0,
+        "total": 40.5,
+        "over_odds": -118.0,
+        "under_odds": -102.0,
+        "home_moneyline": -1450,
+        "away_moneyline": 850,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-10-30T18:29:42",
+      "kickoff": "2026-10-31T19:30Z",
+      "pregame_weather": {
+        "city": "Bloomington",
+        "temp_c": 21.4,
+        "precip_probability_pct": 4,
+        "precip_mm": 0.0,
+        "wind_kmh": 14.5,
+        "cloud_cover_pct": 100,
+        "forecast_hour": "2026-10-31T19:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 4,
+        "win_pct": 80.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 4,
+        "win_pct": 80.0,
+        "quality_wins": 1
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 4,
+          "d": 0,
+          "l": 1,
+          "gf": 189,
+          "ga": 58
+        },
+        "away": {
+          "w": 3,
+          "d": 0,
+          "l": 0,
+          "gf": 80,
+          "ga": 38
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 4,
+          "d": 0,
+          "l": 1,
+          "gf": 146,
+          "ga": 76
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 1,
+          "gf": 40,
+          "ga": 65
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-30T18:29:42",
+      "wr_confidence_kickoff": 61.33929450369155,
+      "wr_breakdown_kickoff": {
+        "base": 61.0,
+        "impact_scale": 0.22,
+        "record_mod": 0.339,
+        "record_win_pct": 54.348,
+        "record_settled": 47,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": null,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 61.33929450369155,
+      "wr_breakdown_initial": {
+        "base": 61.0,
+        "impact_scale": 0.22,
+        "record_mod": 0.339,
+        "record_win_pct": 54.348,
+        "record_settled": 47,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": 0.0,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "ai_grade": {
+        "quality": 3,
+        "verdict": "story",
+        "reason": "The edge is a single stale point on an unvalidated totals model, with negative stated EV (-1.5%) and a fade-the-public money read; nothing shows the stale 40.5 survives the Pinnacle 41.5 void rule, and no fair total is given.",
+        "model": "claude-opus-5-5",
+        "graded_at": "2026-10-30T18:29:44",
         "rubric_version": 5
       }
     }
