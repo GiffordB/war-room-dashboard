@@ -1,6 +1,6 @@
 {
   "next_report_id": 81,
-  "next_pick_id": 360,
+  "next_pick_id": 361,
   "reports": [
     {
       "source": "ChatGPT",
@@ -38148,6 +38148,155 @@
         "reason": "The 0.5-point edge sits deep inside the author's own -1.5 to -6.5 fair range, the author admits uncertainty exceeds the advantage, and the support is narrative (interior pressure, home field) with no sourced availability or key-number case for -3.5.",
         "model": "claude-opus-5-5",
         "graded_at": "2026-10-30T18:27:55",
+        "rubric_version": 5
+      }
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 80,
+      "category": "best_bet",
+      "matchup": "Wisconsin Badgers @ Iowa Hawkeyes",
+      "selection": "Wisconsin +2.5",
+      "odds": -102,
+      "stake": 50.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 61.0,
+      "war_room_line": "Competition pick #2, competition only ($0 proposed stake; logged at the $50 competition convention). DK -102.",
+      "edge": "Defense + Iowa RB attrition. Fair Iowa -2 (PK to -5) vs DK -2.5; Wisconsin crossed 3.",
+      "price_discipline": "Risk: Limited offense; +3.5 protection is gone. Sat 11 AM CT.",
+      "espn_event_id": "401858502",
+      "bet_type": "spread",
+      "bet_side": "away",
+      "bet_line": 2.5,
+      "home_team": "Iowa Hawkeyes",
+      "away_team": "Wisconsin Badgers",
+      "created_at": "2026-10-30T18:28:02",
+      "id": 360,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "IOWA -2.5",
+        "home_spread": -2.5,
+        "home_spread_odds": -118.0,
+        "away_spread_odds": -102.0,
+        "total": 36.5,
+        "over_odds": -108.0,
+        "under_odds": -112.0,
+        "home_moneyline": -135,
+        "away_moneyline": 114,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-10-30T18:28:06",
+      "kickoff": "2026-10-31T16:00Z",
+      "pregame_weather": {
+        "city": "Iowa City",
+        "temp_c": 12.1,
+        "precip_probability_pct": 38,
+        "precip_mm": 0.0,
+        "wind_kmh": 12.1,
+        "cloud_cover_pct": 100,
+        "forecast_hour": "2026-10-31T16:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 3,
+        "win_pct": 60.0,
+        "quality_wins": 1
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 4,
+        "win_pct": 80.0,
+        "quality_wins": 2
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 3,
+          "d": 0,
+          "l": 1,
+          "gf": 125,
+          "ga": 44
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 1,
+          "gf": 71,
+          "ga": 56
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 4,
+          "d": 0,
+          "l": 0,
+          "gf": 145,
+          "ga": 29
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 2,
+          "gf": 44,
+          "ga": 78
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-30T18:28:06",
+      "wr_confidence_kickoff": 60.94818957904033,
+      "wr_breakdown_kickoff": {
+        "base": 61.0,
+        "impact_scale": 0.22,
+        "record_mod": -0.052,
+        "record_win_pct": 49.367,
+        "record_settled": 80,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": null,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 61.44818957904033,
+      "wr_breakdown_initial": {
+        "base": 61.0,
+        "impact_scale": 0.22,
+        "record_mod": -0.052,
+        "record_win_pct": 49.367,
+        "record_settled": 80,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": 0.0,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": 20.0,
+        "injury_mod": 0.0,
+        "injury_gap": 0.0,
+        "home_away_mod": -2.5,
+        "home_away_gap": -41.667,
+        "quality_win_mod": 3,
+        "quality_win_gap": 1,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "ai_grade": {
+        "quality": 4,
+        "verdict": "mixed",
+        "reason": "The 0.5-point gap (fair Iowa -2 against -2.5) sits well inside the author's own PK to -5 range, the RB attrition is unsourced, and the author admits the +3.5 key-number protection is gone, so this is a low-conviction lean rather than an edge.",
+        "model": "claude-opus-5-5",
+        "graded_at": "2026-10-30T18:28:09",
         "rubric_version": 5
       }
     }
