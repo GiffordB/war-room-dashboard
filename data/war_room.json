@@ -1,5 +1,5 @@
 {
-  "next_report_id": 80,
+  "next_report_id": 81,
   "next_pick_id": 358,
   "reports": [
     {
@@ -828,6 +828,18 @@
       "lsu_review_notes": "",
       "created_at": "2026-10-25T17:00:14",
       "id": 79
+    },
+    {
+      "source": "ChatGPT",
+      "league": "CFB",
+      "report_date": "2026-10-30",
+      "week_number": 9,
+      "week_label": "Week 9 -- College War Room one-pager (Oct 30)",
+      "philosophy": "College War Room, Friday 8:55 AM CT report, unit $100. Five competition picks, no qualified money wagers, new exposure $0: all five are competition-only, low-conviction preferences logged at the $50 competition convention. The first four spread edges are only 0.5 point; uncertainty exceeds the advantage. UCF +1.5 is provisional: the 8 AM CT feed reports +1.5 but the same-day DK article lists -1.5; no verified favorite flip, and the earlier UCF money call remains withdrawn. No Thor Hammer Smash qualifies; Diamond Scores unscored; no totals, Sexy ML, parlay, Heisman or Early Stink recommendation; no Bet Now / Still Playable instruction. LSU: bye; Alabama Nov 7, 2:30 PM CT. Jesse decides every wager.",
+      "blind_spot_notes": "FAIR NUMBERS (judgment estimates, not calibrated model output; fair spread / range; DK total vs fair (range); win probability): ARI-TTU -- TTU -4 (-1.5 to -6.5); 54.5 vs 54 (49-59); TTU 59% / ARI 41%. WIS-IOWA -- IOWA -2 (PK to -5); 36.5 vs 35 (31-40); IOWA 57% / WIS 43%. OSU-USC -- OSU -6 (-3 to -9); 51.5 vs 48 (43-53); OSU 72% / USC 28%. UTAH-CIN -- UTAH -6.5 (-3 to -10); 56.5 vs 54 (49-60); UTAH 70% / CIN 30%. BAY-UCF -- UCF -2 (BAY -1 to UCF -5); 48.5 (disputed) vs 48 (44-52); UCF 56% / BAY 44%. Changes: Wisconsin crossed 3; Cincinnati reached 7; Tyo uncertainty moves fair Utah -5.5 to -6.5 and total 55 to 54. WEATHER: light winds in Iowa City, Cincinnati and Lubbock; Orlando NE 5-10 mph with a slight shower chance; Los Angeles rain timing needs confirmation; no weather-based total bet. Public splits and timestamped openers unverified. AUDIT: keep competition picks, formal calls and confirmed tickets separate; no new tickets assumed; no verified numerical age index, spending bonus or directional slate regime; do not extrapolate Tech's five defensive TDs in four games. Sources: DK-attributed AgentBets/Betwatch quotes (Oct 30, principally 8 AM CT); DK Network; official team previews; availability reports; NWS. Condensed snapshot, not a fresh odds update.",
+      "lsu_review_notes": "",
+      "created_at": "2026-10-30T18:27:19",
+      "id": 80
     }
   ],
   "picks": [
