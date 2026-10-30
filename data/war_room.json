@@ -39655,7 +39655,7 @@
   ],
   "next_jesse_wallet_id": 1,
   "jesse_wallet_entries": [],
-  "next_lean_id": 377,
+  "next_lean_id": 380,
   "leans": [
     {
       "id": 1,
@@ -85398,6 +85398,357 @@
         "away_score": 27,
         "kickoff": "2026-10-25T17:00Z"
       }
+    },
+    {
+      "id": 377,
+      "report_id": 80,
+      "source": "ChatGPT",
+      "league": "CFB",
+      "category": "lean",
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "parlay_leg_pick_ids": null,
+      "wr_confidence": 54.0,
+      "created_at": "2026-10-30T18:28:45",
+      "matchup": "Wisconsin Badgers @ Iowa Hawkeyes",
+      "selection": "Under 36.5",
+      "bet_type": "total",
+      "bet_side": "under",
+      "bet_line": 36.5,
+      "odds": -110,
+      "score": 54.0,
+      "espn_event_id": "401858502",
+      "note": "Fair total 35 (31-40) vs DK 36.5: 1.5 points of lean to the under. Fair-number lean, not a pick.",
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "IOWA -2.5",
+        "home_spread": -2.5,
+        "home_spread_odds": -118.0,
+        "away_spread_odds": -102.0,
+        "total": 36.5,
+        "over_odds": -108.0,
+        "under_odds": -112.0,
+        "home_moneyline": -135,
+        "away_moneyline": 114,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-10-30T18:28:48",
+      "kickoff": "2026-10-31T16:00Z",
+      "pregame_weather": {
+        "city": "Iowa City",
+        "temp_c": 12.1,
+        "precip_probability_pct": 38,
+        "precip_mm": 0.0,
+        "wind_kmh": 12.1,
+        "cloud_cover_pct": 100,
+        "forecast_hour": "2026-10-31T16:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 3,
+        "win_pct": 60.0,
+        "quality_wins": 1
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 4,
+        "win_pct": 80.0,
+        "quality_wins": 2
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 3,
+          "d": 0,
+          "l": 1,
+          "gf": 125,
+          "ga": 44
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 1,
+          "gf": 71,
+          "ga": 56
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 4,
+          "d": 0,
+          "l": 0,
+          "gf": 145,
+          "ga": 29
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 2,
+          "gf": 44,
+          "ga": 78
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-30T18:28:48",
+      "wr_confidence_kickoff": 53.98115984692376,
+      "wr_breakdown_kickoff": {
+        "base": 54.0,
+        "impact_scale": 0.08,
+        "record_mod": -0.019,
+        "record_win_pct": 49.367,
+        "record_settled": 80,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": -0.0,
+        "clv_move": -0.0,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 53.98115984692376
+    },
+    {
+      "id": 378,
+      "report_id": 80,
+      "source": "ChatGPT",
+      "league": "CFB",
+      "category": "lean",
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "parlay_leg_pick_ids": null,
+      "wr_confidence": 56.0,
+      "created_at": "2026-10-30T18:28:45",
+      "matchup": "Ohio State Buckeyes @ USC Trojans",
+      "selection": "Under 51.5",
+      "bet_type": "total",
+      "bet_side": "under",
+      "bet_line": 51.5,
+      "odds": -110,
+      "score": 56.0,
+      "espn_event_id": "401858509",
+      "note": "Fair total 48 (43-53) vs DK 51.5: 3.5 points of lean to the under. Fair-number lean, not a pick.",
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "OSU -6.5",
+        "home_spread": 6.5,
+        "home_spread_odds": -105.0,
+        "away_spread_odds": -115.0,
+        "total": 51.5,
+        "over_odds": -108.0,
+        "under_odds": -112.0,
+        "home_moneyline": 200,
+        "away_moneyline": -245,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-10-30T18:28:48",
+      "kickoff": "2026-10-31T23:30Z",
+      "pregame_weather": {
+        "city": "Los Angeles",
+        "temp_c": 16.3,
+        "precip_probability_pct": 10,
+        "precip_mm": 0.7,
+        "wind_kmh": 5.4,
+        "cloud_cover_pct": 100,
+        "forecast_hour": "2026-10-31T23:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 3,
+        "win_pct": 60.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 5,
+        "win_pct": 100.0,
+        "quality_wins": 2
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 4,
+          "d": 0,
+          "l": 1,
+          "gf": 182,
+          "ga": 118
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 1,
+          "gf": 80,
+          "ga": 82
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 4,
+          "d": 0,
+          "l": 0,
+          "gf": 202,
+          "ga": 41
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 1,
+          "gf": 73,
+          "ga": 53
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-30T18:28:48",
+      "wr_confidence_kickoff": 55.97173977038563,
+      "wr_breakdown_kickoff": {
+        "base": 56.0,
+        "impact_scale": 0.12,
+        "record_mod": -0.028,
+        "record_win_pct": 49.367,
+        "record_settled": 80,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": -0.0,
+        "clv_move": -0.0,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 55.97173977038563
+    },
+    {
+      "id": 379,
+      "report_id": 80,
+      "source": "ChatGPT",
+      "league": "CFB",
+      "category": "lean",
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "parlay_leg_pick_ids": null,
+      "wr_confidence": 55.0,
+      "created_at": "2026-10-30T18:28:45",
+      "matchup": "Utah Utes @ Cincinnati Bearcats",
+      "selection": "Under 56.5",
+      "bet_type": "total",
+      "bet_side": "under",
+      "bet_line": 56.5,
+      "odds": -110,
+      "score": 55.0,
+      "espn_event_id": "401856848",
+      "note": "Fair total 54 (49-60) vs DK 56.5 after the Tyo adjustment: 2.5 points of lean to the under. Fair-number lean, not a pick.",
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "UTAH -7",
+        "home_spread": 7.0,
+        "home_spread_odds": -108.0,
+        "away_spread_odds": -112.0,
+        "total": 56.5,
+        "over_odds": -110.0,
+        "under_odds": -110.0,
+        "home_moneyline": 220,
+        "away_moneyline": -270,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-10-30T18:28:48",
+      "kickoff": "2026-10-31T19:45Z",
+      "pregame_weather": {
+        "city": "Cincinnati",
+        "temp_c": 21.7,
+        "precip_probability_pct": 3,
+        "precip_mm": 0.0,
+        "wind_kmh": 15.0,
+        "cloud_cover_pct": 100,
+        "forecast_hour": "2026-10-31T19:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 3,
+        "win_pct": 60.0,
+        "quality_wins": 1
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 5,
+        "win_pct": 100.0,
+        "quality_wins": 1
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 5,
+          "d": 0,
+          "l": 0,
+          "gf": 199,
+          "ga": 106
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 2,
+          "gf": 49,
+          "ga": 79
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 5,
+          "d": 0,
+          "l": 0,
+          "gf": 204,
+          "ga": 61
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 0,
+          "gf": 58,
+          "ga": 41
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-30T18:28:48",
+      "wr_confidence_kickoff": 54.97644980865469,
+      "wr_breakdown_kickoff": {
+        "base": 55.0,
+        "impact_scale": 0.1,
+        "record_mod": -0.024,
+        "record_win_pct": 49.367,
+        "record_settled": 80,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": -0.0,
+        "clv_move": -0.0,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 54.97644980865469
     }
   ],
   "ai_backtest": {
