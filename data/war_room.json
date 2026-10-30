@@ -1,6 +1,6 @@
 {
   "next_report_id": 81,
-  "next_pick_id": 359,
+  "next_pick_id": 360,
   "reports": [
     {
       "source": "ChatGPT",
@@ -37999,6 +37999,155 @@
         "reason": "No fair number or quantified gap, just 'Jenkins + home field', and the line itself is disputed (+1.5 vs -1.5) with the author withdrawing the money call, so there is no verified edge at all.",
         "model": "claude-opus-5-5",
         "graded_at": "2026-10-30T18:27:40",
+        "rubric_version": 5
+      }
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 80,
+      "category": "best_bet",
+      "matchup": "Arizona Wildcats @ Texas Tech Red Raiders",
+      "selection": "Texas Tech -3.5",
+      "odds": -108,
+      "stake": 50.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 62.0,
+      "war_room_line": "Competition pick #1, competition only ($0 proposed stake; logged at the $50 competition convention). DK -108.",
+      "edge": "Interior pressure + home field. Fair TTU -4 (-1.5 to -6.5) vs DK -3.5, a 0.5-point edge.",
+      "price_discipline": "Risk: Fifita and Arizona pressure against Hammond. Sat 11 AM CT.",
+      "espn_event_id": "401856842",
+      "bet_type": "spread",
+      "bet_side": "home",
+      "bet_line": -3.5,
+      "home_team": "Texas Tech Red Raiders",
+      "away_team": "Arizona Wildcats",
+      "created_at": "2026-10-30T18:27:47",
+      "id": 359,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "TTU -3.5",
+        "home_spread": -3.5,
+        "home_spread_odds": -112.0,
+        "away_spread_odds": -108.0,
+        "total": 54.5,
+        "over_odds": -105.0,
+        "under_odds": -115.0,
+        "home_moneyline": -180,
+        "away_moneyline": 150,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-10-30T18:27:51",
+      "kickoff": "2026-10-31T16:00Z",
+      "pregame_weather": {
+        "city": "Lubbock",
+        "temp_c": 13.5,
+        "precip_probability_pct": 2,
+        "precip_mm": 0.0,
+        "wind_kmh": 5.8,
+        "cloud_cover_pct": 100,
+        "forecast_hour": "2026-10-31T16:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 4,
+        "win_pct": 80.0,
+        "quality_wins": 1
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 5,
+        "win_pct": 100.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 4,
+          "d": 0,
+          "l": 0,
+          "gf": 163,
+          "ga": 75
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 1,
+          "gf": 88,
+          "ga": 68
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 4,
+          "d": 0,
+          "l": 0,
+          "gf": 150,
+          "ga": 34
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 1,
+          "gf": 103,
+          "ga": 83
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-30T18:27:51",
+      "wr_confidence_kickoff": 61.94347954077127,
+      "wr_breakdown_kickoff": {
+        "base": 62.0,
+        "impact_scale": 0.24,
+        "record_mod": -0.057,
+        "record_win_pct": 49.367,
+        "record_settled": 80,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": null,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 66.94347954077128,
+      "wr_breakdown_initial": {
+        "base": 62.0,
+        "impact_scale": 0.24,
+        "record_mod": -0.057,
+        "record_win_pct": 49.367,
+        "record_settled": 80,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": 0.0,
+        "weather_mod": 0.0,
+        "form_mod": -0.0,
+        "form_gap": -20.0,
+        "injury_mod": 0.0,
+        "injury_gap": 0.0,
+        "home_away_mod": 2.0,
+        "home_away_gap": 33.333,
+        "quality_win_mod": 3,
+        "quality_win_gap": 1,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "ai_grade": {
+        "quality": 3,
+        "verdict": "story",
+        "reason": "The 0.5-point edge sits deep inside the author's own -1.5 to -6.5 fair range, the author admits uncertainty exceeds the advantage, and the support is narrative (interior pressure, home field) with no sourced availability or key-number case for -3.5.",
+        "model": "claude-opus-5-5",
+        "graded_at": "2026-10-30T18:27:55",
         "rubric_version": 5
       }
     }
