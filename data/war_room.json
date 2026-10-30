@@ -1,5 +1,5 @@
 {
-  "next_report_id": 81,
+  "next_report_id": 82,
   "next_pick_id": 363,
   "reports": [
     {
@@ -840,6 +840,18 @@
       "lsu_review_notes": "",
       "created_at": "2026-10-30T18:27:19",
       "id": 80
+    },
+    {
+      "source": "Claude",
+      "league": "CFB",
+      "report_date": "2026-10-30",
+      "week_number": 9,
+      "week_label": "Week 9 -- 03A1 Stale Sheet Analysis, Friday print v3.7 (Maven Quant, Model A)",
+      "philosophy": "THE LINE's Friday (Oct 30) numbers for 50 college games priced against Pinnacle, FanDuel, DraftKings and BetMGM at 1:25 PM CT (BetMGM Top 25 table loaded). Brain trust v3 seats, v3.5 RLM and prime-time seats, v3.6 caps, v3.7 gates (3-point daytime college gate, no RLM bypass, 60-62 band pass on 5+ model disagreement, injury bypass of the public cap). Official availability reports Wed/Thu Oct 28-29. THE ANSWER: one tracked side and three total overrides, 2.0% of bankroll ($200 per $10k). Nothing else clears 60: the paper is within half a point of Pinnacle on 47 of 50 games and never more than a point off, so under the 3-point daytime gate the price layer scores zero everywhere. Best score 63.8; average paper-vs-Pinnacle gap 0.28; 18 games with a money read. Totals need a full stale point with the book on our side (or 2+ points of reverse line movement); the totals model is unvalidated and the EV shown is a price proxy. A split public read is a pass. Pinnacle reaching the paper number voids any position. Model A v2: ESPN preseason FPI level, 2026 ridge-adjusted EPA (through Oct 24), K=6, confidence 0.50 for every FBS team, FCS floor -24, home field 2.5; walk-forward weeks 6-9 (123 games) slope 1.31, correlation 0.57, covering side picked 61% (63% on 4+ point disagreements) -- an upper bound, not a validated edge. Own-number weight 1.25x; at 2.5x no position changes tier; Mason's decision on the weight stands open.",
+      "blind_spot_notes": "LEANS UNDER THE TRACKED FLOOR (no stake, logged for the Monday review): Texas State +10.5 (59.1; RLM and 87% of money on Boise, but Pinnacle is already 11, past the paper: void); Virginia +12.5 (59.0; RLM and 78% of money on Wake, model Wake by only 6; daytime, no movement credit); Florida +12.5 (58.7; 83% of money on Georgia at BetMGM but Hard Rock reports Florida money: split read, pass); Iowa State +9.5 (58.4; 88% of money on Oklahoma State, book needs Iowa State, model Oklahoma State by 9); Northern Illinois +24.5 (57.0; model UNLV by 17); Navy +30.5 (56.4; 94% of money on Notre Dame); Sacramento State +7.5 (55.3); Arizona State +16.5 (55.0). OHIO STATE-USC: Sayin out is official and already in the number; USC +6.5 is the casino side (59% of money on Ohio State) and still scores 52 with the model saying Ohio State by 7. Pass. TOTALS LEANS (no money read, 1 point stale): Tulane-Charlotte under 47.5, UConn-Air Force over 51.5, Clemson-Florida State under 50.5, Army-Memphis under 60.5, New Mexico-San Jose State under 42.5, Northern Illinois-UNLV under 54.5. Public reads: BetMGM Top 25 table (18 games, Fri 12:50 CT), Hard Rock Bet and Borgata notes on Georgia-Florida. Games outside the Top 25 table have no read: movement half doubled, no casino side.",
+      "lsu_review_notes": "",
+      "created_at": "2026-10-30T18:28:52",
+      "id": 81
     }
   ],
   "picks": [
