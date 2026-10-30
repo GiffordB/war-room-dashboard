@@ -1,6 +1,6 @@
 {
   "next_report_id": 82,
-  "next_pick_id": 366,
+  "next_pick_id": 367,
   "reports": [
     {
       "source": "ChatGPT",
@@ -39054,6 +39054,155 @@
         "reason": "The edge is a single stale point on an unvalidated totals model, with negative stated EV (-1.5%) and a fade-the-public money read; nothing shows the stale 40.5 survives the Pinnacle 41.5 void rule, and no fair total is given.",
         "model": "claude-opus-5-5",
         "graded_at": "2026-10-30T18:29:44",
+        "rubric_version": 5
+      }
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 81,
+      "category": "totals_radar",
+      "matchup": "Arizona Wildcats @ Texas Tech Red Raiders",
+      "selection": "Under 54.5",
+      "odds": -110,
+      "stake": 50.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 63.0,
+      "war_room_line": "TOTAL OVERRIDE 0.5% ($50 per $10k). Arizona-Texas Tech under: the total dropped 56.5 to 54.5 against 89% of money on the over, reverse line movement; Pinnacle 54.5 (no stale point, the RLM carries it). Totals score 70, override 0.5%. EV -4.5% (price proxy).",
+      "edge": "Totals need a full stale point with the book on our side, or 2+ points of reverse line movement; the totals model is unvalidated.",
+      "price_discipline": "Sat 11:00 AM CT. Void if Pinnacle reaches 54.5.",
+      "espn_event_id": "401856842",
+      "bet_type": "total",
+      "bet_side": "under",
+      "bet_line": 54.5,
+      "home_team": "Texas Tech Red Raiders",
+      "away_team": "Arizona Wildcats",
+      "created_at": "2026-10-30T18:29:51",
+      "id": 366,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "TTU -3.5",
+        "home_spread": -3.5,
+        "home_spread_odds": -112.0,
+        "away_spread_odds": -108.0,
+        "total": 54.5,
+        "over_odds": -105.0,
+        "under_odds": -115.0,
+        "home_moneyline": -180,
+        "away_moneyline": 150,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-10-30T18:29:55",
+      "kickoff": "2026-10-31T16:00Z",
+      "pregame_weather": {
+        "city": "Lubbock",
+        "temp_c": 13.5,
+        "precip_probability_pct": 2,
+        "precip_mm": 0.0,
+        "wind_kmh": 5.8,
+        "cloud_cover_pct": 100,
+        "forecast_hour": "2026-10-31T16:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 4,
+        "win_pct": 80.0,
+        "quality_wins": 1
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 5,
+        "win_pct": 100.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 4,
+          "d": 0,
+          "l": 0,
+          "gf": 163,
+          "ga": 75
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 1,
+          "gf": 88,
+          "ga": 68
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 4,
+          "d": 0,
+          "l": 0,
+          "gf": 150,
+          "ga": 34
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 1,
+          "gf": 103,
+          "ga": 83
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-30T18:29:55",
+      "wr_confidence_kickoff": 63.40098441345365,
+      "wr_breakdown_kickoff": {
+        "base": 63.0,
+        "impact_scale": 0.26,
+        "record_mod": 0.401,
+        "record_win_pct": 54.348,
+        "record_settled": 47,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": null,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 63.40098441345365,
+      "wr_breakdown_initial": {
+        "base": 63.0,
+        "impact_scale": 0.26,
+        "record_mod": 0.401,
+        "record_win_pct": 54.348,
+        "record_settled": 47,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": -0.0,
+        "clv_move": -0.0,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "ai_grade": {
+        "quality": 2,
+        "verdict": "story",
+        "reason": "The edge is a 2-point RLM against an unvalidated totals model, with negative stated EV (-4.5%), and the author's own void rule (Pinnacle at 54.5) is already triggered, so the position contradicts itself.",
+        "model": "claude-opus-5-5",
+        "graded_at": "2026-10-30T18:29:58",
         "rubric_version": 5
       }
     }
