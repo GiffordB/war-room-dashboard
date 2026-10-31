@@ -1,6 +1,6 @@
 {
   "next_report_id": 87,
-  "next_pick_id": 392,
+  "next_pick_id": 394,
   "reports": [
     {
       "source": "ChatGPT",
@@ -41611,6 +41611,280 @@
         "opposing": 0
       },
       "wr_confidence_initial": 52.352000000000004
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 85,
+      "category": "sexy_moneyline",
+      "matchup": "Arsenal @ Liverpool",
+      "selection": "Liverpool to Win",
+      "odds": 200,
+      "stake": 75.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 35.0,
+      "war_room_line": "PRICE, quarter-Kelly 0.75u. DraftKings +200 (3.00); draw +255, Arsenal +125. Model fair Liverpool 35% (shrunk Poisson + blend), EV +5.0%. The single longshot sleeve, ranked by EV.",
+      "edge": "Liverpool 4th on 15, Arsenal joint-top on 21; the market has moved toward the visitors. Arsenal missing Saka and Saliba; Liverpool missing Szoboszlai, Bradley, Frimpong. Both had cup ties. Sunday opener is the model window.",
+      "price_discipline": "Sun 16:30 GMT, Anfield. One club once. 0.75u.",
+      "espn_event_id": "401879246",
+      "bet_type": "match_result",
+      "bet_side": "home",
+      "bet_line": null,
+      "home_team": "Liverpool",
+      "away_team": "Arsenal",
+      "created_at": "2026-10-31T16:12:31",
+      "id": 392,
+      "pregame_odds": {
+        "provider": "DraftKings",
+        "spread_details": "ARS +140",
+        "home_spread": 0.5,
+        "home_spread_odds": -180.0,
+        "away_spread_odds": 130.0,
+        "total": 2.5,
+        "over_odds": -115.0,
+        "under_odds": -105.0,
+        "home_moneyline": 190,
+        "away_moneyline": 140,
+        "draw_moneyline": 245.0
+      },
+      "pregame_odds_captured_at": "2026-10-31T16:12:36",
+      "kickoff": "2026-11-01T16:30Z",
+      "pregame_weather": {
+        "city": "Liverpool",
+        "temp_c": 12.4,
+        "precip_probability_pct": 1,
+        "precip_mm": 0.0,
+        "wind_kmh": 8.3,
+        "cloud_cover_pct": 90,
+        "forecast_hour": "2026-11-01T16:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 3,
+        "win_pct": 60.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 4,
+        "win_pct": 80.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 1,
+          "d": 2,
+          "l": 1,
+          "gf": 4,
+          "ga": 5
+        },
+        "away": {
+          "w": 3,
+          "d": 1,
+          "l": 0,
+          "gf": 7,
+          "ga": 3
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 4,
+          "d": 0,
+          "l": 0,
+          "gf": 9,
+          "ga": 2
+        },
+        "away": {
+          "w": 3,
+          "d": 0,
+          "l": 1,
+          "gf": 4,
+          "ga": 3
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-31T16:12:36",
+      "wr_confidence_kickoff": 35.0,
+      "wr_breakdown_kickoff": {
+        "base": 35.0,
+        "impact_scale": 0.0,
+        "record_mod": 0.0,
+        "record_win_pct": 57.143,
+        "record_settled": 14,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": null,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 34.0,
+      "wr_breakdown_initial": {
+        "base": 35.0,
+        "impact_scale": 0.0,
+        "record_mod": 0.0,
+        "record_win_pct": 57.143,
+        "record_settled": 14,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": null,
+        "weather_mod": 0.0,
+        "form_mod": -0.0,
+        "form_gap": -20.0,
+        "injury_mod": 0.0,
+        "injury_gap": 0.0,
+        "home_away_mod": -1.0,
+        "home_away_gap": -25.0,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "ai_grade": {
+        "quality": 5,
+        "verdict": "mixed",
+        "reason": "The author gives a stated fair price of 35% against an implied 33.3%, for a 5% EV, and cites specific injuries for both sides. But the gap is small, the injury facts carry no source or date, nothing shows the Friday price was still bettable after the market moved toward Arsenal, and the card was uploaded late but logged at the issued prices.",
+        "model": "claude-opus-5-5",
+        "graded_at": "2026-10-31T16:12:38",
+        "rubric_version": 5
+      }
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 86,
+      "category": "sexy_moneyline",
+      "matchup": "Arsenal @ Liverpool",
+      "selection": "Liverpool to Win",
+      "odds": 200,
+      "stake": 100.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 34.0,
+      "war_room_line": "Rule: 2 sources on this side once board leans are counted, at least one a lean. Line and price copied from Grok - GB pick #392 at selection (2026-10-31T16:12:38).",
+      "edge": "Full-board agreement -- Claude - GB: Liverpool to Win (+190), board lean, live WR 29; Grok - GB: Liverpool to Win (+200), pick, live WR 34.",
+      "price_discipline": "Flat $100. Selected before kickoff; graded off the final score like any other pick. Separate record from the main War Room card.",
+      "espn_event_id": "401879246",
+      "bet_type": "match_result",
+      "bet_side": "home",
+      "bet_line": null,
+      "home_team": "Liverpool",
+      "away_team": "Arsenal",
+      "war_room_source_pick_ids": [
+        392
+      ],
+      "war_room_source_lean_ids": [
+        449
+      ],
+      "created_at": "2026-10-31T16:12:38",
+      "id": 393,
+      "pregame_odds": {
+        "provider": "DraftKings",
+        "spread_details": "ARS +140",
+        "home_spread": 0.5,
+        "home_spread_odds": -180.0,
+        "away_spread_odds": 130.0,
+        "total": 2.5,
+        "over_odds": -115.0,
+        "under_odds": -105.0,
+        "home_moneyline": 190,
+        "away_moneyline": 140,
+        "draw_moneyline": 245.0
+      },
+      "pregame_odds_captured_at": "2026-10-31T16:12:41",
+      "kickoff": "2026-11-01T16:30Z",
+      "pregame_weather": {
+        "city": "Liverpool",
+        "temp_c": 12.4,
+        "precip_probability_pct": 1,
+        "precip_mm": 0.0,
+        "wind_kmh": 8.3,
+        "cloud_cover_pct": 90,
+        "forecast_hour": "2026-11-01T16:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 3,
+        "win_pct": 60.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 4,
+        "win_pct": 80.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 1,
+          "d": 2,
+          "l": 1,
+          "gf": 4,
+          "ga": 5
+        },
+        "away": {
+          "w": 3,
+          "d": 1,
+          "l": 0,
+          "gf": 7,
+          "ga": 3
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 4,
+          "d": 0,
+          "l": 0,
+          "gf": 9,
+          "ga": 2
+        },
+        "away": {
+          "w": 3,
+          "d": 0,
+          "l": 1,
+          "gf": 4,
+          "ga": 3
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-31T16:12:41",
+      "wr_confidence_kickoff": 34.0,
+      "wr_breakdown_kickoff": {
+        "base": 34.0,
+        "impact_scale": 0.0,
+        "record_mod": 0.0,
+        "record_win_pct": 50.0,
+        "record_settled": 2,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": null,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 1,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 33.0
     }
   ],
   "next_wallet_id": 64,
