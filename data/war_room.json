@@ -1,6 +1,6 @@
 {
   "next_report_id": 85,
-  "next_pick_id": 381,
+  "next_pick_id": 382,
   "reports": [
     {
       "source": "ChatGPT",
@@ -40610,6 +40610,53 @@
         "model": "claude-opus-5-5",
         "graded_at": "2026-10-31T14:53:55",
         "rubric_version": 5
+      }
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 84,
+      "category": "parlay",
+      "matchup": "Texas Tech ML / Utah ML / Georgia ML",
+      "selection": "3-leg Good-If-It-Goes (moneylines)",
+      "odds": 160,
+      "stake": 10.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 40.0,
+      "war_room_line": "GOOD-IF-IT-GOES, competition only: Texas Tech ML -180 + Utah ML -278 + Georgia ML -440. Combined DK quote unavailable; independent-leg arithmetic +160, 38.5% implied; hypothetical $10 returns $25.96 including stake. Proposed actual stake $0, optional entertainment cap $10 (logged at $10).",
+      "edge": "Three moneyline favorites in different games; value unproven.",
+      "price_discipline": "Entertainment cap $10. Grades on all three favorites winning outright.",
+      "espn_event_id": null,
+      "bet_type": null,
+      "bet_side": null,
+      "bet_line": null,
+      "home_team": null,
+      "away_team": null,
+      "created_at": "2026-10-31T14:54:01",
+      "id": 381,
+      "wr_confidence_initial": 40.0,
+      "wr_breakdown_initial": {
+        "base": 40.0,
+        "impact_scale": 0.0,
+        "record_mod": -0.0,
+        "record_win_pct": 48.75,
+        "record_settled": 81,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": null,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
       }
     }
   ],
