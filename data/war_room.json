@@ -1,6 +1,6 @@
 {
   "next_report_id": 86,
-  "next_pick_id": 387,
+  "next_pick_id": 388,
   "reports": [
     {
       "source": "ChatGPT",
@@ -40994,6 +40994,61 @@
         "reason": "The model gives 56% against an implied 54.5% at -120, a thin +2.5% EV with no fair-price threshold, and it is logged at Friday prices after kickoff, so bettability is unproven; the injuries are listed but not weighed, and table position is mostly narrative.",
         "model": "claude-opus-5-5",
         "graded_at": "2026-10-31T16:11:35",
+        "rubric_version": 5
+      }
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 85,
+      "category": "best_bet",
+      "matchup": "Brighton & Hove Albion @ Manchester City",
+      "selection": "Manchester City to Win",
+      "odds": -160,
+      "stake": 100.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 62.0,
+      "war_room_line": "CASH 1.00u. DraftKings -160 (1.63). Model City 62% Win (draw 20, Brighton 18), EV +0.8%. Top cash side by Win %.",
+      "edge": "City joint-top on 21 after a first defeat last week; Brighton 3rd on 16 with the best goal difference but travel to the Etihad. Semenyo out for City; Brighton missing Mitoma and Ferguson. Both played midweek.",
+      "price_discipline": "Sat 15:00 GMT, Etihad. One club once. Flat 1.00u.",
+      "espn_event_id": "401879245",
+      "bet_type": "match_result",
+      "bet_side": "home",
+      "bet_line": null,
+      "home_team": "Manchester City",
+      "away_team": "Brighton & Hove Albion",
+      "created_at": "2026-10-31T16:11:43",
+      "id": 387,
+      "wr_confidence_initial": 62.48,
+      "wr_breakdown_initial": {
+        "base": 62.0,
+        "impact_scale": 0.24,
+        "record_mod": 0.48,
+        "record_win_pct": 57.143,
+        "record_settled": 14,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": null,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "ai_grade": {
+        "quality": 3,
+        "verdict": "story",
+        "reason": "The stated EV is +0.8% (62% model against a 61.5% implied price), which is within noise. The pick is ranked by win probability rather than by edge. The injury notes are unsourced, and the card was logged at Friday prices after the kickoffs, so the price may not have been bettable.",
+        "model": "claude-opus-5-5",
+        "graded_at": "2026-10-31T16:11:48",
         "rubric_version": 5
       }
     }
