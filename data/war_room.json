@@ -1,5 +1,5 @@
 {
-  "next_report_id": 85,
+  "next_report_id": 86,
   "next_pick_id": 386,
   "reports": [
     {
@@ -888,6 +888,18 @@
       "lsu_review_notes": "",
       "created_at": "2026-10-31T14:52:17",
       "id": 84
+    },
+    {
+      "source": "Grok - GB",
+      "league": "EPL",
+      "report_date": "2026-10-30",
+      "week_number": 9,
+      "week_label": "Snyps PL Desk -- Week Card 31 Oct-2 Nov (Matchweek 9)",
+      "philosophy": "Friday noon drop, Matchweek 9. Match results only. Win % is the model fair probability after Poisson shrinkage and blend with the de-vigged ESPN number; EV calculated against the DraftKings slip. Cash ranked by Win % then EV, flat 1.00u; Price ranked by EV, quarter-Kelly capped. One club once. Rest and travel overlay only; high pressure dominates the UK forecast (mild, light winds, limited rain). Injuries are material for several sides: Chelsea without James, Lacroix and Martinez; United missing Sesko and Shaw; Arsenal without Saka and Saliba; Liverpool without Szoboszlai and others. The short version: City joint-top on 21 after eight and face a free-scoring Brighton at the Etihad; Chelsea host a United side still searching for consistency under Carrick; Liverpool welcome Arsenal to Anfield on Sunday with the market moving toward the visitors; Newcastle host Everton on Monday after midweek cup ties. Four to cash, one for the number. Card uploaded after Saturday's 12:30 and 15:00 kickoffs; logged at the Friday prices as issued.",
+      "blind_spot_notes": "PASS: Newcastle v Everton (Mon 20:00 GMT, St James' Park; both on 10-11 points; Newcastle slight home favourites; injuries lighter; no edge on the card; Monday opener is the model window). Write-ups: Chelsea v Man Utd (Sat 12:30; Chelsea 5th on 13, United 16th on 7; DK Chelsea -120, draw +295, United +300; model Chelsea 56 / draw 24 / United 20; Chelsea out James (knee), Lacroix (hamstring), Martinez (jaw); United out Sesko, Shaw, Ugarte, Dorgu; Palmer returns from suspension). Man City v Brighton (Sat 15:00; City joint-top on 21 after a first defeat last week, Brighton 3rd on 16 with the best goal difference; DK City -160, draw +360, Brighton +370; model City 62 / draw 20 / Brighton 18; Semenyo out for City, Brighton missing Mitoma and Ferguson; both played midweek). Tottenham v Crystal Palace (Sat 17:30; Spurs 9th on 9, Palace 17th on 7; around -170; model 58% home; injuries limited). Aston Villa v Fulham (Sat 20:00; Villa 9th on 11, Fulham 15th on 8; DK around -105; model 52%; Wan-Bissaka and Ruggeri out). Liverpool v Arsenal (Sun 16:30; Liverpool 4th on 15, Arsenal joint-top on 21; DK Liverpool +200, draw +255, Arsenal +125; model Liverpool 35%; Arsenal missing Saka and Saliba, Liverpool missing Szoboszlai, Bradley, Frimpong; both had cup ties; Sunday opener is the model window).",
+      "lsu_review_notes": "",
+      "created_at": "2026-10-31T16:11:16",
+      "id": 85
     }
   ],
   "picks": [
