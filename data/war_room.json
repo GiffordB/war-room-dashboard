@@ -1,6 +1,6 @@
 {
   "next_report_id": 85,
-  "next_pick_id": 377,
+  "next_pick_id": 378,
   "reports": [
     {
       "source": "ChatGPT",
@@ -40349,6 +40349,141 @@
         "reason": "There is no fair number or quantified edge, just a vague 'veteran QB' narrative, and the author concedes the spread sits inside their own fair range and that these picks are not calibrated cover probabilities.",
         "model": "claude-opus-5-5",
         "graded_at": "2026-10-31T14:53:07",
+        "rubric_version": 5
+      }
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 84,
+      "category": "best_bet",
+      "matchup": "Florida Gators @ Georgia Bulldogs",
+      "selection": "Florida +12.5",
+      "odds": -112,
+      "stake": 50.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 61.0,
+      "war_room_line": "Competition pick #2 of 6, competition only (new qualified cash exposure $0; logged at the competition convention). DK -112.",
+      "edge": "Baugh plus the returning QB, a two-score cushion. New supplemental selection.",
+      "price_discipline": "Risk: Georgia passing. Sat 2:30 PM CT.",
+      "espn_event_id": "401856850",
+      "bet_type": "spread",
+      "bet_side": "away",
+      "bet_line": 12.5,
+      "home_team": "Georgia Bulldogs",
+      "away_team": "Florida Gators",
+      "created_at": "2026-10-31T14:53:14",
+      "id": 377,
+      "kickoff": "2026-11-07T05:00Z",
+      "pregame_weather": {
+        "city": "Lawrence",
+        "temp_c": 10.3,
+        "precip_probability_pct": 5,
+        "precip_mm": 0.0,
+        "wind_kmh": 7.4,
+        "cloud_cover_pct": 97,
+        "forecast_hour": "2026-11-07T05:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 2,
+        "win_pct": 40.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 2,
+        "win_pct": 40.0,
+        "quality_wins": 1
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 3,
+          "d": 0,
+          "l": 2,
+          "gf": 169,
+          "ga": 92
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 2,
+          "gf": 48,
+          "ga": 76
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 4,
+          "d": 0,
+          "l": 1,
+          "gf": 186,
+          "ga": 121
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 3,
+          "gf": 52,
+          "ga": 81
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-31T14:53:18",
+      "wr_confidence_kickoff": 60.89758620689655,
+      "wr_breakdown_kickoff": {
+        "base": 61.0,
+        "impact_scale": 0.22,
+        "record_mod": -0.102,
+        "record_win_pct": 48.75,
+        "record_settled": 81,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": null,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 60.29758620689655,
+      "wr_breakdown_initial": {
+        "base": 61.0,
+        "impact_scale": 0.22,
+        "record_mod": -0.102,
+        "record_win_pct": 48.75,
+        "record_settled": 81,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": null,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": 0.0,
+        "injury_mod": 0.0,
+        "injury_gap": 0.0,
+        "home_away_mod": -3.6,
+        "home_away_gap": -60.0,
+        "quality_win_mod": 3,
+        "quality_win_gap": 1,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "ai_grade": {
+        "quality": 2,
+        "verdict": "story",
+        "reason": "Narrative about a returning QB and a two-score cushion, with no fair number or sourced availability, and the report itself admits the spread sits inside its fair range and these are not calibrated probabilities.",
+        "model": "claude-opus-5-5",
+        "graded_at": "2026-10-31T14:53:21",
         "rubric_version": 5
       }
     }
