@@ -1,6 +1,6 @@
 {
   "next_report_id": 85,
-  "next_pick_id": 378,
+  "next_pick_id": 380,
   "reports": [
     {
       "source": "ChatGPT",
@@ -38061,155 +38061,6 @@
       "parlay_leg_pick_ids": null,
       "report_id": 80,
       "category": "best_bet",
-      "matchup": "Utah Utes @ Cincinnati Bearcats",
-      "selection": "Cincinnati +7",
-      "odds": -108,
-      "stake": 50.0,
-      "result": "pending",
-      "profit_loss": 0.0,
-      "notes": "",
-      "wr_confidence": 59.0,
-      "war_room_line": "Competition pick #4, competition only ($0 proposed stake; logged at the $50 competition convention). DK -108.",
-      "edge": "French/Tabb offense + home field. Fair Utah -6.5 (-3 to -10) vs DK -7; Cincinnati reached 7.",
-      "price_discipline": "Risk: Center Taran Tyo questionable; Utah run defense. Sat 2:45 PM CT.",
-      "espn_event_id": "401856848",
-      "bet_type": "spread",
-      "bet_side": "home",
-      "bet_line": 7.0,
-      "home_team": "Cincinnati Bearcats",
-      "away_team": "Utah Utes",
-      "created_at": "2026-10-30T18:28:15",
-      "id": 361,
-      "pregame_odds": {
-        "provider": "Draft Kings",
-        "spread_details": "UTAH -7",
-        "home_spread": 7.0,
-        "home_spread_odds": -105.0,
-        "away_spread_odds": -115.0,
-        "total": 56.5,
-        "over_odds": -110.0,
-        "under_odds": -110.0,
-        "home_moneyline": 220,
-        "away_moneyline": -270,
-        "draw_moneyline": null
-      },
-      "pregame_odds_captured_at": "2026-10-31T09:26:33",
-      "kickoff": "2026-10-31T19:45Z",
-      "pregame_weather": {
-        "city": "Cincinnati",
-        "temp_c": 22.8,
-        "precip_probability_pct": 2,
-        "precip_mm": 0.0,
-        "wind_kmh": 13.7,
-        "cloud_cover_pct": 100,
-        "forecast_hour": "2026-10-31T19:00"
-      },
-      "pregame_home_form": {
-        "played": 5,
-        "wins": 3,
-        "win_pct": 60.0,
-        "quality_wins": 1
-      },
-      "pregame_away_form": {
-        "played": 5,
-        "wins": 5,
-        "win_pct": 100.0,
-        "quality_wins": 1
-      },
-      "pregame_home_injuries": 0.0,
-      "pregame_away_injuries": 0.0,
-      "pregame_home_split": {
-        "home": {
-          "w": 5,
-          "d": 0,
-          "l": 0,
-          "gf": 199,
-          "ga": 106
-        },
-        "away": {
-          "w": 0,
-          "d": 0,
-          "l": 2,
-          "gf": 49,
-          "ga": 79
-        }
-      },
-      "pregame_away_split": {
-        "home": {
-          "w": 5,
-          "d": 0,
-          "l": 0,
-          "gf": 204,
-          "ga": 61
-        },
-        "away": {
-          "w": 2,
-          "d": 0,
-          "l": 0,
-          "gf": 58,
-          "ga": 41
-        }
-      },
-      "pregame_intel_captured_at": "2026-10-31T09:26:33",
-      "wr_confidence_kickoff": 58.91620689655172,
-      "wr_breakdown_kickoff": {
-        "base": 59.0,
-        "impact_scale": 0.18,
-        "record_mod": -0.084,
-        "record_win_pct": 48.75,
-        "record_settled": 81,
-        "agree_mod": 0.0,
-        "conflict_mod": 0.0,
-        "clv_mod": 0.0,
-        "clv_move": 0.0,
-        "weather_mod": 0.0,
-        "form_mod": -0.0,
-        "form_gap": -40.0,
-        "injury_mod": 0.0,
-        "injury_gap": 0.0,
-        "home_away_mod": 0.0,
-        "home_away_gap": 0.0,
-        "quality_win_mod": 0.0,
-        "quality_win_gap": null,
-        "agreeing": 0,
-        "opposing": 0
-      },
-      "wr_confidence_initial": 58.95760965557845,
-      "wr_breakdown_initial": {
-        "base": 59.0,
-        "impact_scale": 0.18,
-        "record_mod": -0.042,
-        "record_win_pct": 49.367,
-        "record_settled": 80,
-        "agree_mod": 0.0,
-        "conflict_mod": 0.0,
-        "clv_mod": 0.0,
-        "clv_move": 0.0,
-        "weather_mod": 0.0,
-        "form_mod": -0.0,
-        "form_gap": -40.0,
-        "injury_mod": 0.0,
-        "injury_gap": 0.0,
-        "home_away_mod": 0.0,
-        "home_away_gap": 0.0,
-        "quality_win_mod": 0.0,
-        "quality_win_gap": null,
-        "agreeing": 0,
-        "opposing": 0
-      },
-      "ai_grade": {
-        "quality": 3,
-        "verdict": "story",
-        "reason": "The stated edge is only 0.5 point (fair -6.5 against -7), which sits well inside the author's own -3 to -10 range, and the report admits uncertainty exceeds the advantage, so the case rests mostly on narrative, with an unsourced questionable center flagged.",
-        "model": "claude-opus-5-5",
-        "graded_at": "2026-10-30T18:28:22",
-        "rubric_version": 5
-      }
-    },
-    {
-      "parlay_leg_pick_ids": null,
-      "report_id": 80,
-      "category": "best_bet",
       "matchup": "Ohio State Buckeyes @ USC Trojans",
       "selection": "USC +6.5",
       "odds": -105,
@@ -40486,6 +40337,280 @@
         "graded_at": "2026-10-31T14:53:21",
         "rubric_version": 5
       }
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 84,
+      "category": "best_bet",
+      "matchup": "Utah Utes @ Cincinnati Bearcats",
+      "selection": "Utah -7",
+      "odds": -115,
+      "stake": 25.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 57.0,
+      "war_room_line": "Competition pick #6 of 6, competition only (new qualified cash exposure $0; logged at the competition convention). DK -115.",
+      "edge": "Cincinnati center Taran Tyo ruled out; replaces Friday's Cincinnati +7 prospectively.",
+      "price_discipline": "Risk: The home rushing game and Utah's OL loss. Sat 2:45 PM CT.",
+      "espn_event_id": "401856848",
+      "bet_type": "spread",
+      "bet_side": "away",
+      "bet_line": -7.0,
+      "home_team": "Cincinnati Bearcats",
+      "away_team": "Utah Utes",
+      "created_at": "2026-10-31T14:53:29",
+      "id": 378,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "UTAH -7.5",
+        "home_spread": 7.5,
+        "home_spread_odds": -118.0,
+        "away_spread_odds": -102.0,
+        "total": 56.5,
+        "over_odds": -110.0,
+        "under_odds": -110.0,
+        "home_moneyline": 225,
+        "away_moneyline": -278,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-10-31T14:53:34",
+      "kickoff": "2026-10-31T19:45Z",
+      "pregame_weather": {
+        "city": "Cincinnati",
+        "temp_c": 21.1,
+        "precip_probability_pct": 2,
+        "precip_mm": 0.0,
+        "wind_kmh": 17.3,
+        "cloud_cover_pct": 100,
+        "forecast_hour": "2026-10-31T19:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 3,
+        "win_pct": 60.0,
+        "quality_wins": 1
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 5,
+        "win_pct": 100.0,
+        "quality_wins": 1
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 5,
+          "d": 0,
+          "l": 0,
+          "gf": 199,
+          "ga": 106
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 2,
+          "gf": 49,
+          "ga": 79
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 5,
+          "d": 0,
+          "l": 0,
+          "gf": 204,
+          "ga": 61
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 0,
+          "gf": 58,
+          "ga": 41
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-31T14:53:34",
+      "wr_confidence_kickoff": 55.814827586206896,
+      "wr_breakdown_kickoff": {
+        "base": 57.0,
+        "impact_scale": 0.14,
+        "record_mod": -0.065,
+        "record_win_pct": 48.75,
+        "record_settled": 81,
+        "agree_mod": 0.0,
+        "conflict_mod": -1.12,
+        "clv_mod": 0.0,
+        "clv_move": null,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 1
+      },
+      "wr_confidence_initial": 57.314827586206896,
+      "wr_breakdown_initial": {
+        "base": 57.0,
+        "impact_scale": 0.14,
+        "record_mod": -0.065,
+        "record_win_pct": 48.75,
+        "record_settled": 81,
+        "agree_mod": 0.0,
+        "conflict_mod": -1.12,
+        "clv_mod": 1.5,
+        "clv_move": 0.5,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": 40.0,
+        "injury_mod": 0.0,
+        "injury_gap": 0.0,
+        "home_away_mod": 0.0,
+        "home_away_gap": 0.0,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 1
+      },
+      "ai_grade": {
+        "quality": 3,
+        "verdict": "story",
+        "reason": "The flip from Cincinnati +7 to Utah -7 rests on one center being ruled out, with no fair number, no quantified impact, and no sourced timing; the author also admits the spread sits inside their own reasonable fair range, so there is no stated edge against -7 at -115.",
+        "model": "claude-opus-5-5",
+        "graded_at": "2026-10-31T14:53:39",
+        "rubric_version": 5
+      }
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 82,
+      "category": "best_bet",
+      "matchup": "Utah Utes @ Cincinnati Bearcats",
+      "selection": "Utah -7",
+      "odds": -115,
+      "stake": 100.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 58.4,
+      "war_room_line": "Rule: 2 sources on this side once board leans are counted, at least one a lean. Line and price copied from ChatGPT pick #378 at selection (2026-10-31T14:53:39).",
+      "edge": "Full-board agreement -- Claude: Utah -7.5 (-110), board lean, live WR 54; ChatGPT: Utah -7 (-115), pick, live WR 58.",
+      "price_discipline": "Flat $100. Selected before kickoff; graded off the final score like any other pick. Separate record from the main War Room card.",
+      "espn_event_id": "401856848",
+      "bet_type": "spread",
+      "bet_side": "away",
+      "bet_line": -7.0,
+      "home_team": "Cincinnati Bearcats",
+      "away_team": "Utah Utes",
+      "war_room_source_pick_ids": [
+        378
+      ],
+      "war_room_source_lean_ids": [
+        388
+      ],
+      "created_at": "2026-10-31T14:53:39",
+      "id": 379,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "UTAH -7.5",
+        "home_spread": 7.5,
+        "home_spread_odds": -118.0,
+        "away_spread_odds": -102.0,
+        "total": 56.5,
+        "over_odds": -110.0,
+        "under_odds": -110.0,
+        "home_moneyline": 225,
+        "away_moneyline": -278,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-10-31T14:53:42",
+      "kickoff": "2026-10-31T19:45Z",
+      "pregame_weather": {
+        "city": "Cincinnati",
+        "temp_c": 21.1,
+        "precip_probability_pct": 2,
+        "precip_mm": 0.0,
+        "wind_kmh": 17.3,
+        "cloud_cover_pct": 100,
+        "forecast_hour": "2026-10-31T19:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 3,
+        "win_pct": 60.0,
+        "quality_wins": 1
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 5,
+        "win_pct": 100.0,
+        "quality_wins": 1
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 5,
+          "d": 0,
+          "l": 0,
+          "gf": 199,
+          "ga": 106
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 2,
+          "gf": 49,
+          "ga": 79
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 5,
+          "d": 0,
+          "l": 0,
+          "gf": 204,
+          "ga": 61
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 0,
+          "gf": 58,
+          "ga": 41
+        }
+      },
+      "pregame_intel_captured_at": "2026-10-31T14:53:42",
+      "wr_confidence_kickoff": 59.66646153846154,
+      "wr_breakdown_kickoff": {
+        "base": 58.4,
+        "impact_scale": 0.168,
+        "record_mod": 0.258,
+        "record_win_pct": 57.143,
+        "record_settled": 7,
+        "agree_mod": 1.008,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": null,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 1,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 61.16646153846154
     }
   ],
   "next_wallet_id": 64,
@@ -99132,6 +99257,22 @@
       "created_at": "2026-10-30T18:28:02",
       "superseded_by": 375,
       "superseded_at": "2026-10-31T14:52:51"
+    },
+    {
+      "pick_id": 361,
+      "report_id": 80,
+      "source": "ChatGPT",
+      "matchup": "Utah Utes @ Cincinnati Bearcats",
+      "selection": "Cincinnati +7",
+      "odds": -108,
+      "stake": 50.0,
+      "espn_event_id": "401856848",
+      "bet_type": "spread",
+      "bet_side": "home",
+      "bet_line": 7.0,
+      "created_at": "2026-10-30T18:28:15",
+      "superseded_by": 378,
+      "superseded_at": "2026-10-31T14:53:34"
     }
   ]
 }
