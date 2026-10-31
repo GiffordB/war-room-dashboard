@@ -1,5 +1,5 @@
 {
-  "next_report_id": 84,
+  "next_report_id": 85,
   "next_pick_id": 374,
   "reports": [
     {
@@ -876,6 +876,18 @@
       "lsu_review_notes": "",
       "created_at": "2026-10-30T23:11:21",
       "id": 83
+    },
+    {
+      "source": "ChatGPT",
+      "league": "CFB",
+      "report_date": "2026-10-31",
+      "week_number": 9,
+      "week_label": "Week 9 -- Saturday War Room Competition Card (Oct 31)",
+      "philosophy": "Saturday War Room, pre-game only (9:38 AM CT; DraftKings only; $100 unit). Six ranked competition picks; new qualified cash exposure $0. These are football judgments, not calibrated cover probabilities; all current spreads remain inside the reasonable fair ranges. Logged at the competition convention ($50 ranks 1-5, $25 rank 6). REVISION from Friday: Cincinnati +7 becomes Utah -7 prospectively after center Taran Tyo was ruled out (Friday's original remains archived); Northwestern +3.5 and Florida +12.5 are new supplemental selections; evening availability remains provisional. No Thor Hammer Smash qualifies (price edge, verified availability and a defensible 90+ score do not clear). Good-If-It-Goes, competition only: Texas Tech ML -180 + Utah ML -278 + Georgia ML -440, independent-leg arithmetic +160 (38.5% implied), hypothetical $10 returns $25.96; proposed actual stake $0, optional entertainment cap $10; different games, value unproven. LSU bye; Alabama Nov 7. Record: UCF 9-41 loss preserved; no current-week actual tickets confirmed. No new total, longshot moneyline or futures wager. Jesse decides every wager; earlier results never increase later stakes.",
+      "blind_spot_notes": "MORNING: #3 Texas Tech -3.5 (-112) -- home front and healthier RB/OL; risk Fifita and pass protection. #5 Wisconsin +2.5 (-105) -- defensive disruption; risk limited scoring and loss of the key 3. AFTERNOON: #1 Northwestern +3.5 (-102) -- veteran QB/skill execution; risk Oregon rush and a new play-caller. #2 Florida +12.5 (-112) -- Baugh plus the returning QB, two-score cushion; risk Georgia passing. #6 Utah -7 (-115) -- Cincinnati center out; risk the home rushing game and Utah's OL loss. EVENING: #4 USC +6.5 (-108) -- OSU replacement QB; risk USC protection and questionable DTs. Prices: DK Network official sportsbook splits retrieved 9:34-9:36 AM CT; publisher refresh time not disclosed; local DK prices can differ.",
+      "lsu_review_notes": "",
+      "created_at": "2026-10-31T14:52:17",
+      "id": 84
     }
   ],
   "picks": [
