@@ -43592,7 +43592,7 @@
   ],
   "next_jesse_wallet_id": 1,
   "jesse_wallet_entries": [],
-  "next_lean_id": 453,
+  "next_lean_id": 468,
   "leans": [
     {
       "id": 1,
@@ -98642,6 +98642,1761 @@
         "opposing": 0
       },
       "wr_confidence_initial": 53.06666666666667
+    },
+    {
+      "id": 453,
+      "report_id": 87,
+      "source": "Claude",
+      "league": "NFL",
+      "category": "lean",
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "parlay_leg_pick_ids": null,
+      "wr_confidence": 56.8,
+      "created_at": "2026-11-01T17:52:07",
+      "matchup": "Minnesota Vikings @ Detroit Lions",
+      "selection": "Minnesota +3.5",
+      "bet_type": "spread",
+      "bet_side": "away",
+      "bet_line": 3.5,
+      "odds": -110,
+      "score": 56.8,
+      "espn_event_id": "401873030",
+      "note": "Board #3 of 13: lean; score 56.8; EV +1.5%; paper +3.5 vs Pinnacle +3.5, FanDuel +3.5; Model B fair +3.5 (own edge -2); money on us -0.6; reverse line movement toward us. Best side on the stale-sheet board.",
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "DET -3",
+        "home_spread": -3.0,
+        "home_spread_odds": -118.0,
+        "away_spread_odds": -102.0,
+        "total": 46.5,
+        "over_odds": 100.0,
+        "under_odds": -120.0,
+        "home_moneyline": -175,
+        "away_moneyline": 145,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-11-01T17:52:21",
+      "kickoff": "2026-11-01T18:00Z",
+      "pregame_weather": {
+        "city": "Detroit",
+        "temp_c": 20.5,
+        "precip_probability_pct": 1,
+        "precip_mm": 0.0,
+        "wind_kmh": 2.2,
+        "cloud_cover_pct": 42,
+        "forecast_hour": "2026-11-01T18:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 3,
+        "win_pct": 60.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 5,
+        "win_pct": 100.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 8.0,
+      "pregame_away_injuries": 7.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 3,
+          "d": 0,
+          "l": 0,
+          "gf": 82,
+          "ga": 71
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 2,
+          "gf": 102,
+          "ga": 94
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 3,
+          "d": 0,
+          "l": 0,
+          "gf": 70,
+          "ga": 42
+        },
+        "away": {
+          "w": 3,
+          "d": 0,
+          "l": 0,
+          "gf": 55,
+          "ga": 32
+        }
+      },
+      "pregame_intel_captured_at": "2026-11-01T17:52:21",
+      "wr_confidence_kickoff": 60.668085106382975,
+      "wr_breakdown_kickoff": {
+        "base": 56.8,
+        "impact_scale": 0.136,
+        "record_mod": 0.868,
+        "record_win_pct": 68.293,
+        "record_settled": 41,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 1.0,
+        "clv_move": 0.5,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": 40.0,
+        "injury_mod": 2.0,
+        "injury_gap": 1.0,
+        "home_away_mod": 0.0,
+        "home_away_gap": 0.0,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 60.668085106382975
+    },
+    {
+      "id": 454,
+      "report_id": 87,
+      "source": "Claude",
+      "league": "NFL",
+      "category": "lean",
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "parlay_leg_pick_ids": null,
+      "wr_confidence": 54.4,
+      "created_at": "2026-11-01T17:52:07",
+      "matchup": "Los Angeles Chargers @ Los Angeles Rams",
+      "selection": "Los Angeles Chargers +6.5",
+      "bet_type": "spread",
+      "bet_side": "away",
+      "bet_line": 6.5,
+      "odds": -110,
+      "score": 54.4,
+      "espn_event_id": "401873032",
+      "note": "Board #4 of 13: lean; score 54.4; EV -2.7%; paper +6.5 vs Pinnacle +6.5, FanDuel +6.5; Model B fair +6.5 (own edge -9.2); money on us -5.4; reverse line movement toward us. Best side on the stale-sheet board.",
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "LAR -6.5",
+        "home_spread": -6.5,
+        "home_spread_odds": -115.0,
+        "away_spread_odds": -105.0,
+        "total": 45.5,
+        "over_odds": -112.0,
+        "under_odds": -108.0,
+        "home_moneyline": -270,
+        "away_moneyline": 220,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-11-01T17:52:21",
+      "kickoff": "2026-11-01T21:05Z",
+      "pregame_weather": {
+        "city": "Inglewood",
+        "temp_c": 21.3,
+        "precip_probability_pct": 3,
+        "precip_mm": 0.0,
+        "wind_kmh": 28.2,
+        "cloud_cover_pct": 3,
+        "forecast_hour": "2026-11-01T21:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 2,
+        "win_pct": 40.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 0,
+        "win_pct": 0.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 2.25,
+      "pregame_away_injuries": 5.5,
+      "pregame_home_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 3,
+          "gf": 85,
+          "ga": 88
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 1,
+          "gf": 85,
+          "ga": 71
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 0,
+          "d": 0,
+          "l": 3,
+          "gf": 45,
+          "ga": 75
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 3,
+          "gf": 45,
+          "ga": 76
+        }
+      },
+      "pregame_intel_captured_at": "2026-11-01T17:52:21",
+      "wr_confidence_kickoff": 46.96170212765957,
+      "wr_breakdown_kickoff": {
+        "base": 54.4,
+        "impact_scale": 0.088,
+        "record_mod": 0.562,
+        "record_win_pct": 68.293,
+        "record_settled": 41,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": 0.0,
+        "weather_mod": 0.0,
+        "form_mod": -0.0,
+        "form_gap": -40.0,
+        "injury_mod": -6.5,
+        "injury_gap": -3.25,
+        "home_away_mod": -1.5,
+        "home_away_gap": -25.0,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 46.96170212765957
+    },
+    {
+      "id": 455,
+      "report_id": 87,
+      "source": "Claude",
+      "league": "NFL",
+      "category": "lean",
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "parlay_leg_pick_ids": null,
+      "wr_confidence": 54.2,
+      "created_at": "2026-11-01T17:52:07",
+      "matchup": "Philadelphia Eagles @ Washington Commanders",
+      "selection": "Philadelphia +6.5",
+      "bet_type": "spread",
+      "bet_side": "away",
+      "bet_line": 6.5,
+      "odds": -110,
+      "score": 54.2,
+      "espn_event_id": "401873035",
+      "note": "Board #5 of 13: lean; score 54.2; EV +3.2%; paper +6.5 vs Pinnacle +6.5, FanDuel +6; Model B fair +5.5 (own edge -3.3); money on us +0.4; reverse line movement toward us. Best side on the stale-sheet board.",
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "WSH -6",
+        "home_spread": -6.0,
+        "home_spread_odds": -112.0,
+        "away_spread_odds": -108.0,
+        "total": 40.5,
+        "over_odds": -110.0,
+        "under_odds": -110.0,
+        "home_moneyline": -270,
+        "away_moneyline": 220,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-11-01T17:52:21",
+      "kickoff": "2026-11-02T01:20Z",
+      "pregame_weather": {
+        "city": "Landover",
+        "temp_c": 10.2,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 5.1,
+        "cloud_cover_pct": 74,
+        "forecast_hour": "2026-11-02T01:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 1,
+        "win_pct": 20.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 0,
+        "win_pct": 0.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 2.75,
+      "pregame_away_injuries": 8.5,
+      "pregame_home_split": {
+        "home": {
+          "w": 1,
+          "d": 1,
+          "l": 1,
+          "gf": 73,
+          "ga": 88
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 3,
+          "gf": 59,
+          "ga": 84
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 3,
+          "gf": 79,
+          "ga": 109
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 2,
+          "gf": 48,
+          "ga": 66
+        }
+      },
+      "pregame_intel_captured_at": "2026-11-01T17:52:21",
+      "wr_confidence_kickoff": 45.0695035460993,
+      "wr_breakdown_kickoff": {
+        "base": 54.2,
+        "impact_scale": 0.084,
+        "record_mod": 0.536,
+        "record_win_pct": 68.293,
+        "record_settled": 41,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 1.0,
+        "clv_move": 0.5,
+        "weather_mod": 0.0,
+        "form_mod": -0.0,
+        "form_gap": -20.0,
+        "injury_mod": -10,
+        "injury_gap": -5.75,
+        "home_away_mod": -0.667,
+        "home_away_gap": -16.667,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 45.0695035460993
+    },
+    {
+      "id": 456,
+      "report_id": 87,
+      "source": "Claude",
+      "league": "NFL",
+      "category": "lean",
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "parlay_leg_pick_ids": null,
+      "wr_confidence": 54.1,
+      "created_at": "2026-11-01T17:52:07",
+      "matchup": "Tennessee Titans @ Cincinnati Bengals",
+      "selection": "Cincinnati -11.5",
+      "bet_type": "spread",
+      "bet_side": "home",
+      "bet_line": -11.5,
+      "odds": -110,
+      "score": 54.1,
+      "espn_event_id": "401873031",
+      "note": "Board #6 of 13: lean; score 54.1; EV +0.9%; paper -11.5 vs Pinnacle -11.5, FanDuel -13.5; Model B fair -13.5 (own edge +12.4); money on us +4.3; reverse line movement toward us. Best side on the stale-sheet board.",
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "CIN -13.5",
+        "home_spread": -13.5,
+        "home_spread_odds": -115.0,
+        "away_spread_odds": -105.0,
+        "total": 45.5,
+        "over_odds": -115.0,
+        "under_odds": -105.0,
+        "home_moneyline": -900,
+        "away_moneyline": 600,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-11-01T17:52:21",
+      "kickoff": "2026-11-01T18:00Z",
+      "pregame_weather": {
+        "city": "Cincinnati",
+        "temp_c": 22.1,
+        "precip_probability_pct": 4,
+        "precip_mm": 0.0,
+        "wind_kmh": 3.8,
+        "cloud_cover_pct": 100,
+        "forecast_hour": "2026-11-01T18:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 3,
+        "win_pct": 60.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 1,
+        "win_pct": 20.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 6.0,
+      "pregame_away_injuries": 7.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 1,
+          "gf": 50,
+          "ga": 49
+        },
+        "away": {
+          "w": 3,
+          "d": 0,
+          "l": 1,
+          "gf": 113,
+          "ga": 73
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 0,
+          "d": 0,
+          "l": 4,
+          "gf": 57,
+          "ga": 100
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 2,
+          "gf": 51,
+          "ga": 56
+        }
+      },
+      "pregame_intel_captured_at": "2026-11-01T17:52:21",
+      "wr_confidence_kickoff": 61.290070921985816,
+      "wr_breakdown_kickoff": {
+        "base": 54.1,
+        "impact_scale": 0.082,
+        "record_mod": 0.523,
+        "record_win_pct": 68.293,
+        "record_settled": 41,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 4.0,
+        "clv_move": 2.0,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": 40.0,
+        "injury_mod": 2.0,
+        "injury_gap": 1.0,
+        "home_away_mod": 0.667,
+        "home_away_gap": 16.667,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 61.290070921985816
+    },
+    {
+      "id": 457,
+      "report_id": 87,
+      "source": "Claude",
+      "league": "NFL",
+      "category": "lean",
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "parlay_leg_pick_ids": null,
+      "wr_confidence": 53.9,
+      "created_at": "2026-11-01T17:52:07",
+      "matchup": "Atlanta Falcons @ Tampa Bay Buccaneers",
+      "selection": "Atlanta +2.5",
+      "bet_type": "spread",
+      "bet_side": "away",
+      "bet_line": 2.5,
+      "odds": -110,
+      "score": 53.9,
+      "espn_event_id": "401873025",
+      "note": "Board #7 of 13: pass; score 53.9; EV +0.6%; paper +2.5 vs Pinnacle +2.5, FanDuel +2.5; Model B fair +1.5 (own edge -1.9); money on us -6.4; reverse line movement toward us. Best side on the stale-sheet board.",
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "TB -2.5",
+        "home_spread": -2.5,
+        "home_spread_odds": -102.0,
+        "away_spread_odds": -118.0,
+        "total": 42.5,
+        "over_odds": -118.0,
+        "under_odds": -102.0,
+        "home_moneyline": -130,
+        "away_moneyline": 110,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-11-01T17:52:21",
+      "kickoff": "2026-11-01T18:00Z",
+      "pregame_weather": {
+        "city": "Tampa",
+        "temp_c": 26.9,
+        "precip_probability_pct": 49,
+        "precip_mm": 0.0,
+        "wind_kmh": 15.4,
+        "cloud_cover_pct": 97,
+        "forecast_hour": "2026-11-01T18:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 2,
+        "win_pct": 40.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 3,
+        "win_pct": 60.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 5.0,
+      "pregame_away_injuries": 10.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 0,
+          "d": 0,
+          "l": 4,
+          "gf": 68,
+          "ga": 89
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 1,
+          "gf": 94,
+          "ga": 62
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 3,
+          "gf": 78,
+          "ga": 115
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 1,
+          "gf": 93,
+          "ga": 58
+        }
+      },
+      "pregame_intel_captured_at": "2026-11-01T17:52:21",
+      "wr_confidence_kickoff": 47.99787234042553,
+      "wr_breakdown_kickoff": {
+        "base": 53.9,
+        "impact_scale": 0.078,
+        "record_mod": 0.498,
+        "record_win_pct": 68.293,
+        "record_settled": 41,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": 0.0,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": 20.0,
+        "injury_mod": -10,
+        "injury_gap": -5.0,
+        "home_away_mod": 3.6,
+        "home_away_gap": 66.667,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 47.99787234042553
+    },
+    {
+      "id": 458,
+      "report_id": 87,
+      "source": "Claude",
+      "league": "NFL",
+      "category": "lean",
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "parlay_leg_pick_ids": null,
+      "wr_confidence": 53.2,
+      "created_at": "2026-11-01T17:52:07",
+      "matchup": "Chicago Bears @ Seattle Seahawks",
+      "selection": "Chicago +3",
+      "bet_type": "spread",
+      "bet_side": "away",
+      "bet_line": 3.0,
+      "odds": -110,
+      "score": 53.2,
+      "espn_event_id": "401873036",
+      "note": "Board #8 of 13: pass; score 53.2; EV -0.8%; paper +3 vs Pinnacle +3, FanDuel +3; Model B fair +3 (own edge -3.8); money on us -6.8; reverse line movement toward us. Best side on the stale-sheet board.",
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "SEA -3",
+        "home_spread": -3.0,
+        "home_spread_odds": -115.0,
+        "away_spread_odds": -105.0,
+        "total": 46.5,
+        "over_odds": -110.0,
+        "under_odds": -110.0,
+        "home_moneyline": -166,
+        "away_moneyline": 140,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-11-01T17:52:21",
+      "kickoff": "2026-11-03T01:15Z",
+      "pregame_weather": {
+        "city": "Seattle",
+        "temp_c": 10.4,
+        "precip_probability_pct": 2,
+        "precip_mm": 0.0,
+        "wind_kmh": 3.7,
+        "cloud_cover_pct": 100,
+        "forecast_hour": "2026-11-03T01:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 2,
+        "win_pct": 40.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 4,
+        "win_pct": 80.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 6.75,
+      "pregame_away_injuries": 1.75,
+      "pregame_home_split": {
+        "home": {
+          "w": 3,
+          "d": 0,
+          "l": 1,
+          "gf": 92,
+          "ga": 68
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 2,
+          "gf": 76,
+          "ga": 57
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 3,
+          "d": 0,
+          "l": 1,
+          "gf": 83,
+          "ga": 52
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 1,
+          "gf": 97,
+          "ga": 91
+        }
+      },
+      "pregame_intel_captured_at": "2026-11-01T17:52:21",
+      "wr_confidence_kickoff": 63.10851063829787,
+      "wr_breakdown_kickoff": {
+        "base": 53.2,
+        "impact_scale": 0.064,
+        "record_mod": 0.409,
+        "record_win_pct": 68.293,
+        "record_settled": 41,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": 0.0,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": 40.0,
+        "injury_mod": 10,
+        "injury_gap": 5.0,
+        "home_away_mod": -0.5,
+        "home_away_gap": -8.333,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 63.10851063829787
+    },
+    {
+      "id": 459,
+      "report_id": 87,
+      "source": "Claude",
+      "league": "NFL",
+      "category": "lean",
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "parlay_leg_pick_ids": null,
+      "wr_confidence": 52.8,
+      "created_at": "2026-11-01T17:52:07",
+      "matchup": "Indianapolis Colts @ Jacksonville Jaguars",
+      "selection": "Indianapolis +9.5",
+      "bet_type": "spread",
+      "bet_side": "away",
+      "bet_line": 9.5,
+      "odds": -110,
+      "score": 52.8,
+      "espn_event_id": "401873028",
+      "note": "Board #9 of 13: pass; score 52.8; EV +1.6%; paper +9.5 vs Pinnacle +9.5, FanDuel +10.5; Model B fair +10.5 (own edge -7.9); money on us -3.5; reverse line movement toward us. Best side on the stale-sheet board.",
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "JAX -10",
+        "home_spread": -10.0,
+        "home_spread_odds": -112.0,
+        "away_spread_odds": -108.0,
+        "total": 45.5,
+        "over_odds": -110.0,
+        "under_odds": -110.0,
+        "home_moneyline": -485,
+        "away_moneyline": 370,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-11-01T17:52:21",
+      "kickoff": "2026-11-01T18:00Z",
+      "pregame_weather": {
+        "city": "Jacksonville",
+        "temp_c": 26.0,
+        "precip_probability_pct": 18,
+        "precip_mm": 0.0,
+        "wind_kmh": 18.6,
+        "cloud_cover_pct": 100,
+        "forecast_hour": "2026-11-01T18:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 3,
+        "win_pct": 60.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 2,
+        "win_pct": 40.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 6.25,
+      "pregame_away_injuries": 7.25,
+      "pregame_home_split": {
+        "home": {
+          "w": 3,
+          "d": 0,
+          "l": 1,
+          "gf": 119,
+          "ga": 67
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 1,
+          "gf": 35,
+          "ga": 37
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 2,
+          "gf": 62,
+          "ga": 84
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 3,
+          "gf": 92,
+          "ga": 96
+        }
+      },
+      "pregame_intel_captured_at": "2026-11-01T17:52:21",
+      "wr_confidence_kickoff": 46.157446808510635,
+      "wr_breakdown_kickoff": {
+        "base": 52.8,
+        "impact_scale": 0.056,
+        "record_mod": 0.357,
+        "record_win_pct": 68.293,
+        "record_settled": 41,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": -1.0,
+        "clv_move": -0.5,
+        "weather_mod": 0.0,
+        "form_mod": -0.0,
+        "form_gap": -20.0,
+        "injury_mod": -2.0,
+        "injury_gap": -1.0,
+        "home_away_mod": -4.0,
+        "home_away_gap": -50.0,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 46.157446808510635
+    },
+    {
+      "id": 460,
+      "report_id": 87,
+      "source": "Claude",
+      "league": "NFL",
+      "category": "lean",
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "parlay_leg_pick_ids": null,
+      "wr_confidence": 50.9,
+      "created_at": "2026-11-01T17:52:07",
+      "matchup": "Baltimore Ravens @ Buffalo Bills",
+      "selection": "Baltimore +3",
+      "bet_type": "spread",
+      "bet_side": "away",
+      "bet_line": 3.0,
+      "odds": -110,
+      "score": 50.9,
+      "espn_event_id": "401873026",
+      "note": "Board #10 of 13: pass; score 50.9; EV +1.2%; paper +3 vs Pinnacle +3, FanDuel +3.5; Model B fair +3 (own edge -1.8); money on us -1.7; reverse line movement toward us. Best side on the stale-sheet board.",
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "BUF -3",
+        "home_spread": -3.0,
+        "home_spread_odds": -115.0,
+        "away_spread_odds": -105.0,
+        "total": 54.5,
+        "over_odds": -115.0,
+        "under_odds": -105.0,
+        "home_moneyline": -162,
+        "away_moneyline": 136,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-11-01T17:52:21",
+      "kickoff": "2026-11-01T18:00Z",
+      "pregame_weather": {
+        "city": "Orchard Park",
+        "temp_c": 20.6,
+        "precip_probability_pct": 1,
+        "precip_mm": 0.0,
+        "wind_kmh": 14.4,
+        "cloud_cover_pct": 1,
+        "forecast_hour": "2026-11-01T18:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 4,
+        "win_pct": 80.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 3,
+        "win_pct": 60.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 9.0,
+      "pregame_away_injuries": 7.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 2,
+          "d": 0,
+          "l": 1,
+          "gf": 91,
+          "ga": 76
+        },
+        "away": {
+          "w": 3,
+          "d": 0,
+          "l": 0,
+          "gf": 106,
+          "ga": 95
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 2,
+          "gf": 54,
+          "ga": 77
+        },
+        "away": {
+          "w": 3,
+          "d": 0,
+          "l": 1,
+          "gf": 115,
+          "ga": 90
+        }
+      },
+      "pregame_intel_captured_at": "2026-11-01T17:52:21",
+      "wr_confidence_kickoff": 55.51489361702127,
+      "wr_breakdown_kickoff": {
+        "base": 50.9,
+        "impact_scale": 0.018,
+        "record_mod": 0.115,
+        "record_win_pct": 68.293,
+        "record_settled": 41,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": 0.0,
+        "weather_mod": 0.0,
+        "form_mod": -0.0,
+        "form_gap": -20.0,
+        "injury_mod": 4.0,
+        "injury_gap": 2.0,
+        "home_away_mod": 0.5,
+        "home_away_gap": 8.333,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 55.51489361702127
+    },
+    {
+      "id": 461,
+      "report_id": 87,
+      "source": "Claude",
+      "league": "NFL",
+      "category": "lean",
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "parlay_leg_pick_ids": null,
+      "wr_confidence": 50.6,
+      "created_at": "2026-11-01T17:52:07",
+      "matchup": "Las Vegas Raiders @ New York Jets",
+      "selection": "New York Jets -1.5",
+      "bet_type": "spread",
+      "bet_side": "home",
+      "bet_line": -1.5,
+      "odds": -110,
+      "score": 50.6,
+      "espn_event_id": "401873029",
+      "note": "Board #11 of 13: pass; score 50.6; EV +0.2%; paper -1.5 vs Pinnacle -1.5, FanDuel -1; Model B fair -1.5 (own edge +1.7); money on us +0.7; reverse line movement toward us. Best side on the stale-sheet board.",
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "NYJ -1.5",
+        "home_spread": -1.5,
+        "home_spread_odds": -112.0,
+        "away_spread_odds": -108.0,
+        "total": 46.5,
+        "over_odds": -105.0,
+        "under_odds": -115.0,
+        "home_moneyline": -125,
+        "away_moneyline": 105,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-11-01T17:52:21",
+      "kickoff": "2026-11-01T18:00Z",
+      "pregame_weather": {
+        "city": "East Rutherford",
+        "temp_c": 15.7,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 4.1,
+        "cloud_cover_pct": 5,
+        "forecast_hour": "2026-11-01T18:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 1,
+        "win_pct": 20.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 1,
+        "win_pct": 20.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 8.25,
+      "pregame_away_injuries": 7.25,
+      "pregame_home_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 2,
+          "gf": 59,
+          "ga": 60
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 3,
+          "gf": 78,
+          "ga": 90
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 3,
+          "gf": 105,
+          "ga": 111
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 1,
+          "gf": 78,
+          "ga": 86
+        }
+      },
+      "pregame_intel_captured_at": "2026-11-01T17:52:21",
+      "wr_confidence_kickoff": 46.67659574468085,
+      "wr_breakdown_kickoff": {
+        "base": 50.6,
+        "impact_scale": 0.012,
+        "record_mod": 0.077,
+        "record_win_pct": 68.293,
+        "record_settled": 41,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": 0.0,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": 0.0,
+        "injury_mod": -2.0,
+        "injury_gap": -1.0,
+        "home_away_mod": -2.0,
+        "home_away_gap": -33.333,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 46.67659574468085
+    },
+    {
+      "id": 462,
+      "report_id": 87,
+      "source": "Claude",
+      "league": "NFL",
+      "category": "lean",
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "parlay_leg_pick_ids": null,
+      "wr_confidence": 49.7,
+      "created_at": "2026-11-01T17:52:07",
+      "matchup": "Arizona Cardinals @ Dallas Cowboys",
+      "selection": "Arizona +7",
+      "bet_type": "spread",
+      "bet_side": "away",
+      "bet_line": 7.0,
+      "odds": -110,
+      "score": 49.7,
+      "espn_event_id": "401873024",
+      "note": "Board #12 of 13: pass; score 49.7; EV +3.5%; paper +7 vs Pinnacle +7, FanDuel +7.5; Model B fair +7 (own edge -3.5); money on us -3.5; reverse line movement toward us. Best side on the stale-sheet board.",
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "DAL -7",
+        "home_spread": -7.0,
+        "home_spread_odds": -118.0,
+        "away_spread_odds": -102.0,
+        "total": 54.5,
+        "over_odds": -110.0,
+        "under_odds": -110.0,
+        "home_moneyline": -340,
+        "away_moneyline": 270,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-11-01T17:52:21",
+      "kickoff": "2026-11-01T18:00Z",
+      "pregame_weather": {
+        "city": "Arlington",
+        "temp_c": 22.6,
+        "precip_probability_pct": 1,
+        "precip_mm": 0.0,
+        "wind_kmh": 6.4,
+        "cloud_cover_pct": 91,
+        "forecast_hour": "2026-11-01T18:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 2,
+        "win_pct": 40.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 1,
+        "win_pct": 20.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 6.0,
+      "pregame_away_injuries": 8.5,
+      "pregame_home_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 2,
+          "gf": 84,
+          "ga": 78
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 2,
+          "gf": 105,
+          "ga": 102
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 0,
+          "d": 0,
+          "l": 3,
+          "gf": 44,
+          "ga": 106
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 2,
+          "gf": 98,
+          "ga": 102
+        }
+      },
+      "pregame_intel_captured_at": "2026-11-01T17:52:21",
+      "wr_confidence_kickoff": 45.7,
+      "wr_breakdown_kickoff": {
+        "base": 49.7,
+        "impact_scale": 0.0,
+        "record_mod": 0.0,
+        "record_win_pct": 68.293,
+        "record_settled": 41,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": 0.0,
+        "weather_mod": 0.0,
+        "form_mod": -0.0,
+        "form_gap": -20.0,
+        "injury_mod": -5.0,
+        "injury_gap": -2.5,
+        "home_away_mod": 1.0,
+        "home_away_gap": 16.667,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 45.7
+    },
+    {
+      "id": 463,
+      "report_id": 87,
+      "source": "Claude",
+      "league": "NFL",
+      "category": "lean",
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "parlay_leg_pick_ids": null,
+      "wr_confidence": 49.5,
+      "created_at": "2026-11-01T17:52:07",
+      "matchup": "Cleveland Browns @ Pittsburgh Steelers",
+      "selection": "Pittsburgh -3.5",
+      "bet_type": "spread",
+      "bet_side": "home",
+      "bet_line": -3.5,
+      "odds": -110,
+      "score": 49.5,
+      "espn_event_id": "401873027",
+      "note": "Board #13 of 13: pass; score 49.5; EV +1.4%; paper -3.5 vs Pinnacle -3.5, FanDuel -3.5; Model B fair -3.5 (own edge +4.9); money on us -5.9; reverse line movement toward us. Best side on the stale-sheet board.",
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "PIT -3.5",
+        "home_spread": -3.5,
+        "home_spread_odds": -115.0,
+        "away_spread_odds": -105.0,
+        "total": 38.5,
+        "over_odds": -115.0,
+        "under_odds": -105.0,
+        "home_moneyline": -198,
+        "away_moneyline": 164,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-11-01T17:52:21",
+      "kickoff": "2026-11-01T18:00Z",
+      "pregame_weather": {
+        "city": "Pittsburgh",
+        "temp_c": 19.4,
+        "precip_probability_pct": 3,
+        "precip_mm": 0.0,
+        "wind_kmh": 10.0,
+        "cloud_cover_pct": 100,
+        "forecast_hour": "2026-11-01T18:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 4,
+        "win_pct": 80.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 4,
+        "win_pct": 80.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 8.0,
+      "pregame_away_injuries": 10.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 3,
+          "d": 0,
+          "l": 0,
+          "gf": 84,
+          "ga": 62
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 2,
+          "gf": 69,
+          "ga": 76
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 3,
+          "d": 0,
+          "l": 0,
+          "gf": 61,
+          "ga": 52
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 2,
+          "gf": 72,
+          "ga": 94
+        }
+      },
+      "pregame_intel_captured_at": "2026-11-01T17:52:21",
+      "wr_confidence_kickoff": 56.5,
+      "wr_breakdown_kickoff": {
+        "base": 49.5,
+        "impact_scale": 0.0,
+        "record_mod": 0.0,
+        "record_win_pct": 68.293,
+        "record_settled": 41,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": 0.0,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": 0.0,
+        "injury_mod": 4.0,
+        "injury_gap": 2.0,
+        "home_away_mod": 3.0,
+        "home_away_gap": 50.0,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 56.5
+    },
+    {
+      "id": 464,
+      "report_id": 87,
+      "source": "Claude",
+      "league": "NFL",
+      "category": "lean",
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "parlay_leg_pick_ids": null,
+      "wr_confidence": 56.0,
+      "created_at": "2026-11-01T17:52:07",
+      "matchup": "New England Patriots @ Miami Dolphins",
+      "selection": "Over 43.5",
+      "bet_type": "total",
+      "bet_side": "over",
+      "bet_line": 43.5,
+      "odds": -110,
+      "score": 56.0,
+      "espn_event_id": "401873034",
+      "note": "Totals board: lean (no money read); totals score 56; paper 43.5 vs Pinnacle 41.5, FanDuel 41.5; +2 stale; over money 75%.",
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "NE -7",
+        "home_spread": 7.0,
+        "home_spread_odds": -110.0,
+        "away_spread_odds": -110.0,
+        "total": 41.5,
+        "over_odds": -108.0,
+        "under_odds": -112.0,
+        "home_moneyline": 275,
+        "away_moneyline": -345,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-11-01T17:52:21",
+      "kickoff": "2026-11-01T21:25Z",
+      "pregame_weather": {
+        "city": "Miami Gardens",
+        "temp_c": 25.5,
+        "precip_probability_pct": 58,
+        "precip_mm": 1.4,
+        "wind_kmh": 8.1,
+        "cloud_cover_pct": 94,
+        "forecast_hour": "2026-11-01T21:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 1,
+        "win_pct": 20.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 3,
+        "win_pct": 60.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 2.5,
+      "pregame_away_injuries": 3.5,
+      "pregame_home_split": {
+        "home": {
+          "w": 0,
+          "d": 0,
+          "l": 2,
+          "gf": 34,
+          "ga": 55
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 3,
+          "gf": 64,
+          "ga": 102
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 3,
+          "d": 0,
+          "l": 0,
+          "gf": 91,
+          "ga": 39
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 3,
+          "gf": 69,
+          "ga": 104
+        }
+      },
+      "pregame_intel_captured_at": "2026-11-01T17:52:21",
+      "wr_confidence_kickoff": 52.765957446808514,
+      "wr_breakdown_kickoff": {
+        "base": 56.0,
+        "impact_scale": 0.12,
+        "record_mod": 0.766,
+        "record_win_pct": 68.293,
+        "record_settled": 41,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": -4.0,
+        "clv_move": -2.0,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 52.765957446808514
+    },
+    {
+      "id": 465,
+      "report_id": 87,
+      "source": "Claude",
+      "league": "NFL",
+      "category": "lean",
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "parlay_leg_pick_ids": null,
+      "wr_confidence": 52.0,
+      "created_at": "2026-11-01T17:52:07",
+      "matchup": "Atlanta Falcons @ Tampa Bay Buccaneers",
+      "selection": "Over 44.5",
+      "bet_type": "total",
+      "bet_side": "over",
+      "bet_line": 44.5,
+      "odds": -110,
+      "score": 52.0,
+      "espn_event_id": "401873025",
+      "note": "Totals board: lean (no money read); totals score 52; paper 44.5 vs Pinnacle 43, FanDuel 43.5; +1.5 stale; over money 65%.",
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "TB -2.5",
+        "home_spread": -2.5,
+        "home_spread_odds": -102.0,
+        "away_spread_odds": -118.0,
+        "total": 42.5,
+        "over_odds": -118.0,
+        "under_odds": -102.0,
+        "home_moneyline": -130,
+        "away_moneyline": 110,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-11-01T17:52:21",
+      "kickoff": "2026-11-01T18:00Z",
+      "pregame_weather": {
+        "city": "Tampa",
+        "temp_c": 26.9,
+        "precip_probability_pct": 49,
+        "precip_mm": 0.0,
+        "wind_kmh": 15.4,
+        "cloud_cover_pct": 97,
+        "forecast_hour": "2026-11-01T18:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 2,
+        "win_pct": 40.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 3,
+        "win_pct": 60.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 5.0,
+      "pregame_away_injuries": 10.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 0,
+          "d": 0,
+          "l": 4,
+          "gf": 68,
+          "ga": 89
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 1,
+          "gf": 94,
+          "ga": 62
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 3,
+          "gf": 78,
+          "ga": 115
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 1,
+          "gf": 93,
+          "ga": 58
+        }
+      },
+      "pregame_intel_captured_at": "2026-11-01T17:52:21",
+      "wr_confidence_kickoff": 48.255319148936174,
+      "wr_breakdown_kickoff": {
+        "base": 52.0,
+        "impact_scale": 0.04,
+        "record_mod": 0.255,
+        "record_win_pct": 68.293,
+        "record_settled": 41,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": -4.0,
+        "clv_move": -2.0,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 48.255319148936174
+    },
+    {
+      "id": 466,
+      "report_id": 87,
+      "source": "Claude",
+      "league": "NFL",
+      "category": "lean",
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "parlay_leg_pick_ids": null,
+      "wr_confidence": 48.0,
+      "created_at": "2026-11-01T17:52:07",
+      "matchup": "Las Vegas Raiders @ New York Jets",
+      "selection": "Under 45.5",
+      "bet_type": "total",
+      "bet_side": "under",
+      "bet_line": 45.5,
+      "odds": -110,
+      "score": 48.0,
+      "espn_event_id": "401873029",
+      "note": "Totals board: lean (no money read); totals score 48; paper 45.5 vs Pinnacle 46.5, FanDuel 46.5; +1 stale; over money 70%.",
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "NYJ -1.5",
+        "home_spread": -1.5,
+        "home_spread_odds": -112.0,
+        "away_spread_odds": -108.0,
+        "total": 46.5,
+        "over_odds": -105.0,
+        "under_odds": -115.0,
+        "home_moneyline": -125,
+        "away_moneyline": 105,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-11-01T17:52:21",
+      "kickoff": "2026-11-01T18:00Z",
+      "pregame_weather": {
+        "city": "East Rutherford",
+        "temp_c": 15.7,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 4.1,
+        "cloud_cover_pct": 5,
+        "forecast_hour": "2026-11-01T18:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 1,
+        "win_pct": 20.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 1,
+        "win_pct": 20.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 8.25,
+      "pregame_away_injuries": 7.25,
+      "pregame_home_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 2,
+          "gf": 59,
+          "ga": 60
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 3,
+          "gf": 78,
+          "ga": 90
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 3,
+          "gf": 105,
+          "ga": 111
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 1,
+          "gf": 78,
+          "ga": 86
+        }
+      },
+      "pregame_intel_captured_at": "2026-11-01T17:52:21",
+      "wr_confidence_kickoff": 46.0,
+      "wr_breakdown_kickoff": {
+        "base": 48.0,
+        "impact_scale": 0.0,
+        "record_mod": 0.0,
+        "record_win_pct": 68.293,
+        "record_settled": 41,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": -2.0,
+        "clv_move": -1.0,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 46.0
+    },
+    {
+      "id": 467,
+      "report_id": 87,
+      "source": "Claude",
+      "league": "NFL",
+      "category": "lean",
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "parlay_leg_pick_ids": null,
+      "wr_confidence": 48.0,
+      "created_at": "2026-11-01T17:52:07",
+      "matchup": "Cleveland Browns @ Pittsburgh Steelers",
+      "selection": "Over 39.5",
+      "bet_type": "total",
+      "bet_side": "over",
+      "bet_line": 39.5,
+      "odds": -110,
+      "score": 48.0,
+      "espn_event_id": "401873027",
+      "note": "Totals board: lean (no money read); totals score 48; paper 39.5 vs Pinnacle 38.5, FanDuel 38.5; +1 stale; over money 66%.",
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "PIT -3.5",
+        "home_spread": -3.5,
+        "home_spread_odds": -115.0,
+        "away_spread_odds": -105.0,
+        "total": 38.5,
+        "over_odds": -115.0,
+        "under_odds": -105.0,
+        "home_moneyline": -198,
+        "away_moneyline": 164,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-11-01T17:52:21",
+      "kickoff": "2026-11-01T18:00Z",
+      "pregame_weather": {
+        "city": "Pittsburgh",
+        "temp_c": 19.4,
+        "precip_probability_pct": 3,
+        "precip_mm": 0.0,
+        "wind_kmh": 10.0,
+        "cloud_cover_pct": 100,
+        "forecast_hour": "2026-11-01T18:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 4,
+        "win_pct": 80.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 4,
+        "win_pct": 80.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 8.0,
+      "pregame_away_injuries": 10.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 3,
+          "d": 0,
+          "l": 0,
+          "gf": 84,
+          "ga": 62
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 2,
+          "gf": 69,
+          "ga": 76
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 3,
+          "d": 0,
+          "l": 0,
+          "gf": 61,
+          "ga": 52
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 2,
+          "gf": 72,
+          "ga": 94
+        }
+      },
+      "pregame_intel_captured_at": "2026-11-01T17:52:21",
+      "wr_confidence_kickoff": 46.0,
+      "wr_breakdown_kickoff": {
+        "base": 48.0,
+        "impact_scale": 0.0,
+        "record_mod": 0.0,
+        "record_win_pct": 68.293,
+        "record_settled": 41,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": -2.0,
+        "clv_move": -1.0,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 46.0
     }
   ],
   "ai_backtest": {
