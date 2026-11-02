@@ -42571,7 +42571,7 @@
       }
     }
   ],
-  "next_wallet_id": 67,
+  "next_wallet_id": 68,
   "wallet_entries": [
     {
       "pick_id": 12,
@@ -43677,6 +43677,24 @@
       "wr_confidence_at_bet": 69.50736842105262,
       "created_at": "2026-11-02T03:44:47",
       "id": 66
+    },
+    {
+      "pick_id": 393,
+      "report_id": 86,
+      "source": "WR FUT Lean",
+      "league": "EPL",
+      "category": "sexy_moneyline",
+      "matchup": "Arsenal @ Liverpool",
+      "selection": "Liverpool to Win",
+      "odds": 190,
+      "stake": 50.0,
+      "bet_line": null,
+      "result": "loss",
+      "profit_loss": -50.0,
+      "notes": "Hard Rock Bet, placed before kickoff.",
+      "wr_confidence_at_bet": 33.0,
+      "created_at": "2026-11-02T03:44:54",
+      "id": 67
     }
   ],
   "next_jesse_wallet_id": 1,
