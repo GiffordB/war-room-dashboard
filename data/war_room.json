@@ -99479,10 +99479,10 @@
       "note": "Board #8 of 13: pass; score 53.2; EV -0.8%; paper +3 vs Pinnacle +3, FanDuel +3; Model B fair +3 (own edge -3.8); money on us -6.8; reverse line movement toward us. Best side on the stale-sheet board.",
       "pregame_odds": {
         "provider": "Draft Kings",
-        "spread_details": "SEA -3",
-        "home_spread": -3.0,
-        "home_spread_odds": -118.0,
-        "away_spread_odds": -102.0,
+        "spread_details": "SEA -3.5",
+        "home_spread": -3.5,
+        "home_spread_odds": -102.0,
+        "away_spread_odds": -118.0,
         "total": 46.5,
         "over_odds": -110.0,
         "under_odds": -110.0,
@@ -99490,14 +99490,14 @@
         "away_moneyline": 145,
         "draw_moneyline": null
       },
-      "pregame_odds_captured_at": "2026-11-02T10:44:45",
+      "pregame_odds_captured_at": "2026-11-02T20:39:55",
       "kickoff": "2026-11-03T01:15Z",
       "pregame_weather": {
         "city": "Seattle",
-        "temp_c": 9.4,
-        "precip_probability_pct": 2,
+        "temp_c": 7.4,
+        "precip_probability_pct": 1,
         "precip_mm": 0.0,
-        "wind_kmh": 5.7,
+        "wind_kmh": 0.7,
         "cloud_cover_pct": 100,
         "forecast_hour": "2026-11-03T01:00"
       },
@@ -99547,8 +99547,8 @@
           "ga": 91
         }
       },
-      "pregame_intel_captured_at": "2026-11-02T10:44:45",
-      "wr_confidence_kickoff": 63.1608,
+      "pregame_intel_captured_at": "2026-11-02T20:39:55",
+      "wr_confidence_kickoff": 62.1608,
       "wr_breakdown_kickoff": {
         "base": 53.2,
         "impact_scale": 0.064,
@@ -99557,8 +99557,8 @@
         "record_settled": 44,
         "agree_mod": 0.0,
         "conflict_mod": 0.0,
-        "clv_mod": 0.0,
-        "clv_move": 0.0,
+        "clv_mod": -1.0,
+        "clv_move": -0.5,
         "weather_mod": 0.0,
         "form_mod": 0.0,
         "form_gap": 40.0,
