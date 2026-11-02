@@ -42571,7 +42571,7 @@
       }
     }
   ],
-  "next_wallet_id": 66,
+  "next_wallet_id": 67,
   "wallet_entries": [
     {
       "pick_id": 12,
@@ -43659,6 +43659,24 @@
       "wr_confidence_at_bet": 62.14,
       "created_at": "2026-11-02T03:44:40",
       "id": 65
+    },
+    {
+      "pick_id": 367,
+      "report_id": 82,
+      "source": "WR Lean",
+      "league": "CFB",
+      "category": "best_bet",
+      "matchup": "Baylor Bears @ UCF Knights",
+      "selection": "UCF +2.5",
+      "odds": -115,
+      "stake": 50.0,
+      "bet_line": 2.5,
+      "result": "loss",
+      "profit_loss": -50.0,
+      "notes": "Hard Rock Bet, placed before kickoff.",
+      "wr_confidence_at_bet": 69.50736842105262,
+      "created_at": "2026-11-02T03:44:47",
+      "id": 66
     }
   ],
   "next_jesse_wallet_id": 1,
