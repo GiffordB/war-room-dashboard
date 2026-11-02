@@ -98625,26 +98625,26 @@
       "note": "Blended 42% vs price-implied 43% (raw read 42%); EV -3.9%. Lean, no actionable edge.",
       "pregame_odds": {
         "provider": "DraftKings",
-        "spread_details": "NEW +130",
+        "spread_details": "NEW +115",
         "home_spread": -0.5,
-        "home_spread_odds": 115.0,
-        "away_spread_odds": -160.0,
+        "home_spread_odds": 105.0,
+        "away_spread_odds": -145.0,
         "total": 2.5,
         "over_odds": -145.0,
         "under_odds": 115.0,
-        "home_moneyline": 130,
-        "away_moneyline": 205,
-        "draw_moneyline": 255.0
+        "home_moneyline": 115,
+        "away_moneyline": 225,
+        "draw_moneyline": 260.0
       },
-      "pregame_odds_captured_at": "2026-11-02T02:12:31",
+      "pregame_odds_captured_at": "2026-11-02T10:44:45",
       "kickoff": "2026-11-02T20:00Z",
       "pregame_weather": {
         "city": "Newcastle upon Tyne",
-        "temp_c": 9.6,
-        "precip_probability_pct": 50,
+        "temp_c": 8.7,
+        "precip_probability_pct": 45,
         "precip_mm": 0.0,
-        "wind_kmh": 10.8,
-        "cloud_cover_pct": 100,
+        "wind_kmh": 10.4,
+        "cloud_cover_pct": 95,
         "forecast_hour": "2026-11-02T20:00"
       },
       "pregame_home_form": {
@@ -98693,7 +98693,7 @@
           "ga": 5
         }
       },
-      "pregame_intel_captured_at": "2026-11-02T02:12:31",
+      "pregame_intel_captured_at": "2026-11-02T10:44:45",
       "wr_confidence_kickoff": 43.0,
       "wr_breakdown_kickoff": {
         "base": 42.0,
@@ -98742,26 +98742,26 @@
       "note": "Blended 53% vs price-implied 59% (raw read 50%); EV -11.2%. Lean, no actionable edge.",
       "pregame_odds": {
         "provider": "DraftKings",
-        "spread_details": "NEW +130",
+        "spread_details": "NEW +115",
         "home_spread": -0.5,
-        "home_spread_odds": 115.0,
-        "away_spread_odds": -160.0,
+        "home_spread_odds": 105.0,
+        "away_spread_odds": -145.0,
         "total": 2.5,
         "over_odds": -145.0,
         "under_odds": 115.0,
-        "home_moneyline": 130,
-        "away_moneyline": 205,
-        "draw_moneyline": 255.0
+        "home_moneyline": 115,
+        "away_moneyline": 225,
+        "draw_moneyline": 260.0
       },
-      "pregame_odds_captured_at": "2026-11-02T02:12:31",
+      "pregame_odds_captured_at": "2026-11-02T10:44:45",
       "kickoff": "2026-11-02T20:00Z",
       "pregame_weather": {
         "city": "Newcastle upon Tyne",
-        "temp_c": 9.6,
-        "precip_probability_pct": 50,
+        "temp_c": 8.7,
+        "precip_probability_pct": 45,
         "precip_mm": 0.0,
-        "wind_kmh": 10.8,
-        "cloud_cover_pct": 100,
+        "wind_kmh": 10.4,
+        "cloud_cover_pct": 95,
         "forecast_hour": "2026-11-02T20:00"
       },
       "pregame_home_form": {
@@ -98810,7 +98810,7 @@
           "ga": 5
         }
       },
-      "pregame_intel_captured_at": "2026-11-02T02:12:31",
+      "pregame_intel_captured_at": "2026-11-02T10:44:45",
       "wr_confidence_kickoff": 53.09230769230769,
       "wr_breakdown_kickoff": {
         "base": 53.0,
@@ -99091,7 +99091,7 @@
       "league": "NFL",
       "category": "lean",
       "stake": 0.0,
-      "result": "pending",
+      "result": "loss",
       "profit_loss": 0.0,
       "parlay_leg_pick_ids": null,
       "wr_confidence": 54.2,
@@ -99199,7 +99199,14 @@
         "agreeing": 0,
         "opposing": 0
       },
-      "wr_confidence_initial": 45.0695035460993
+      "wr_confidence_initial": 45.0695035460993,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 27,
+        "away_score": 10,
+        "kickoff": "2026-11-02T01:20Z"
+      }
     },
     {
       "id": 456,
@@ -99483,14 +99490,14 @@
         "away_moneyline": 145,
         "draw_moneyline": null
       },
-      "pregame_odds_captured_at": "2026-11-02T02:12:31",
+      "pregame_odds_captured_at": "2026-11-02T10:44:45",
       "kickoff": "2026-11-03T01:15Z",
       "pregame_weather": {
         "city": "Seattle",
-        "temp_c": 9.9,
-        "precip_probability_pct": 1,
+        "temp_c": 9.4,
+        "precip_probability_pct": 2,
         "precip_mm": 0.0,
-        "wind_kmh": 6.8,
+        "wind_kmh": 5.7,
         "cloud_cover_pct": 100,
         "forecast_hour": "2026-11-03T01:00"
       },
@@ -99540,7 +99547,7 @@
           "ga": 91
         }
       },
-      "pregame_intel_captured_at": "2026-11-02T02:12:31",
+      "pregame_intel_captured_at": "2026-11-02T10:44:45",
       "wr_confidence_kickoff": 63.1608,
       "wr_breakdown_kickoff": {
         "base": 53.2,
