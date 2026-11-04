@@ -1,6 +1,6 @@
 {
   "next_report_id": 89,
-  "next_pick_id": 398,
+  "next_pick_id": 399,
   "reports": [
     {
       "source": "ChatGPT",
@@ -42728,6 +42728,155 @@
         "reason": "The author does quantify a 4.4pp gap with a price ladder, but it is a blended judgment number held at a self-admitted 35% confidence, it is padded with small-sample narrative (0 home goals, a 4-3 win), it relies on a news search that found nothing, and it is staked at $0 because it fails the author's own bar.",
         "model": "claude-opus-5-5",
         "graded_at": "2026-11-04T00:10:20",
+        "rubric_version": 5
+      }
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 88,
+      "category": "sexy_moneyline",
+      "matchup": "Sabah FK @ Viking FK",
+      "selection": "Sabah FK to Win",
+      "odds": 550,
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "Viking winless (0 W, 1 D, 2 L), 9 conceded in 3.\nViking -240 looks rich for that form.\nSabah beat Slavia 2-0 and lost only narrowly to Dortmund.\nA lean, not a stake: low-confidence longshot, small sample.",
+      "wr_confidence": 21.0,
+      "war_room_line": "Viking 55% / Draw 24% / Sabah 21% (blended: Viking 61 / D 21 / SAB 17.8)",
+      "edge": "Price implies ~14.7%; blended ~17.8% -> +3pp edge, EV +16%",
+      "price_discipline": "+500 or better: tracked only\nBelow +400: pass",
+      "espn_event_id": "401915302",
+      "bet_type": "match_result",
+      "bet_side": "away",
+      "bet_line": null,
+      "home_team": "Viking FK",
+      "away_team": "Sabah FK",
+      "created_at": "2026-11-04T00:10:24",
+      "id": 398,
+      "pregame_odds": {
+        "provider": "DraftKings",
+        "spread_details": "VFK -240",
+        "home_spread": -1.5,
+        "home_spread_odds": -110.0,
+        "away_spread_odds": -130.0,
+        "total": 3.5,
+        "over_odds": -120.0,
+        "under_odds": -105.0,
+        "home_moneyline": -240,
+        "away_moneyline": 550,
+        "draw_moneyline": 425.0
+      },
+      "pregame_odds_captured_at": "2026-11-04T00:10:27",
+      "kickoff": "2026-11-04T20:00Z",
+      "pregame_weather": {
+        "city": "Stavanger",
+        "temp_c": 7.7,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 11.9,
+        "cloud_cover_pct": 90,
+        "forecast_hour": "2026-11-04T20:00"
+      },
+      "pregame_home_form": {
+        "played": 3,
+        "wins": 0,
+        "win_pct": 0.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 3,
+        "wins": 1,
+        "win_pct": 33.33333333333333,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 0,
+          "d": 1,
+          "l": 0,
+          "gf": 3,
+          "ga": 3
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 2,
+          "gf": 2,
+          "ga": 6
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 1,
+          "gf": 3,
+          "ga": 2
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 1,
+          "gf": 0,
+          "ga": 4
+        }
+      },
+      "pregame_intel_captured_at": "2026-11-04T00:10:27",
+      "wr_confidence_kickoff": 21.0,
+      "wr_breakdown_kickoff": {
+        "base": 21.0,
+        "impact_scale": 0.0,
+        "record_mod": -0.0,
+        "record_win_pct": 16.667,
+        "record_settled": 12,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": null,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 21.0,
+      "wr_breakdown_initial": {
+        "base": 21.0,
+        "impact_scale": 0.0,
+        "record_mod": -0.0,
+        "record_win_pct": 16.667,
+        "record_settled": 12,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": null,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": 33.333,
+        "injury_mod": 0.0,
+        "injury_gap": 0.0,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "ai_grade": {
+        "quality": 4,
+        "verdict": "mixed",
+        "reason": "The +3pp gap on a longshot rests on a small, form-driven sample and has two inconsistent model numbers (21% vs 17.8%), the author admits it is low-confidence, and the $0 stake adds no credit.",
+        "model": "claude-opus-5-5",
+        "graded_at": "2026-11-04T00:10:32",
         "rubric_version": 5
       }
     }
