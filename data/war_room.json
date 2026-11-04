@@ -1,6 +1,6 @@
 {
   "next_report_id": 89,
-  "next_pick_id": 399,
+  "next_pick_id": 400,
   "reports": [
     {
       "source": "ChatGPT",
@@ -42877,6 +42877,155 @@
         "reason": "The +3pp gap on a longshot rests on a small, form-driven sample and has two inconsistent model numbers (21% vs 17.8%), the author admits it is low-confidence, and the $0 stake adds no credit.",
         "model": "claude-opus-5-5",
         "graded_at": "2026-11-04T00:10:32",
+        "rubric_version": 5
+      }
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 88,
+      "category": "best_bet",
+      "matchup": "Arsenal @ Slavia Prague",
+      "selection": "Slavia Prague +1.5",
+      "odds": 110,
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "uefa.com (Nov 3): Saka out (quad), Saliba doubtful/out (back) - thins Arsenal.\nArsenal scored 1, 3, 2 in games so far; 1-0 wins common.\nSlavia winless, 7 conceded, so a 2+ goal Arsenal win is very live.\nTracked only; edge too thin to stake.",
+      "wr_confidence": 52.0,
+      "war_room_line": "Arsenal -1.5 cover ~48% (range 42-55%); market ~56%; blend ~52%",
+      "edge": "Price implies 47.6%; blended Slavia cover ~48% -> ~0pp edge, EV ~+1%",
+      "price_discipline": "+110 or better: tracked only\n-120 or worse: pass",
+      "espn_event_id": "401915381",
+      "bet_type": "spread",
+      "bet_side": "home",
+      "bet_line": 1.5,
+      "home_team": "Slavia Prague",
+      "away_team": "Arsenal",
+      "created_at": "2026-11-04T00:10:35",
+      "id": 399,
+      "pregame_odds": {
+        "provider": "DraftKings",
+        "spread_details": "ARS -400",
+        "home_spread": 1.5,
+        "home_spread_odds": 110.0,
+        "away_spread_odds": -150.0,
+        "total": 3.5,
+        "over_odds": 135.0,
+        "under_odds": -170.0,
+        "home_moneyline": 1000,
+        "away_moneyline": -400,
+        "draw_moneyline": 550.0
+      },
+      "pregame_odds_captured_at": "2026-11-04T00:10:39",
+      "kickoff": "2026-11-04T20:00Z",
+      "pregame_weather": {
+        "city": "Prague",
+        "temp_c": 6.0,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 10.1,
+        "cloud_cover_pct": 70,
+        "forecast_hour": "2026-11-04T20:00"
+      },
+      "pregame_home_form": {
+        "played": 3,
+        "wins": 0,
+        "win_pct": 0.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 3,
+        "wins": 2,
+        "win_pct": 66.66666666666666,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 0,
+          "d": 0,
+          "l": 1,
+          "gf": 2,
+          "ga": 3
+        },
+        "away": {
+          "w": 0,
+          "d": 1,
+          "l": 1,
+          "gf": 2,
+          "ga": 4
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 0,
+          "gf": 3,
+          "ga": 0
+        },
+        "away": {
+          "w": 1,
+          "d": 1,
+          "l": 0,
+          "gf": 3,
+          "ga": 2
+        }
+      },
+      "pregame_intel_captured_at": "2026-11-04T00:10:39",
+      "wr_confidence_kickoff": 51.733333333333334,
+      "wr_breakdown_kickoff": {
+        "base": 52.0,
+        "impact_scale": 0.04,
+        "record_mod": -0.267,
+        "record_win_pct": 16.667,
+        "record_settled": 12,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": null,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 50.53333333333333,
+      "wr_breakdown_initial": {
+        "base": 52.0,
+        "impact_scale": 0.04,
+        "record_mod": -0.267,
+        "record_win_pct": 16.667,
+        "record_settled": 12,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": 0.0,
+        "weather_mod": 0.0,
+        "form_mod": -0.0,
+        "form_gap": -66.667,
+        "injury_mod": 0.0,
+        "injury_gap": 0.0,
+        "home_away_mod": -1.2,
+        "home_away_gap": -100.0,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "ai_grade": {
+        "quality": 3,
+        "verdict": "story",
+        "reason": "The author's own numbers show roughly a 0pp edge sitting inside a wide 42-55% range, and the probabilities are muddled (Arsenal cover ~48% versus Slavia cover ~48%), which caps the grade, so this is a tracked non-edge despite the sourced injury news.",
+        "model": "claude-opus-5-5",
+        "graded_at": "2026-11-04T00:10:42",
         "rubric_version": 5
       }
     }
