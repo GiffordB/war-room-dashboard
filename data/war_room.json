@@ -1,5 +1,5 @@
 {
-  "next_report_id": 89,
+  "next_report_id": 90,
   "next_pick_id": 400,
   "reports": [
     {
@@ -936,6 +936,18 @@
       "lsu_review_notes": "",
       "created_at": "2026-11-04T00:10:00",
       "id": 88
+    },
+    {
+      "source": "Claude - GB",
+      "league": "EPL",
+      "report_date": "2026-11-06",
+      "week_number": 10,
+      "week_label": "",
+      "philosophy": "Blend the market, not fight it; tracked leans over forced stakes.",
+      "blind_spot_notes": "",
+      "lsu_review_notes": "",
+      "created_at": "2026-11-06T23:09:53",
+      "id": 89
     }
   ],
   "picks": [
