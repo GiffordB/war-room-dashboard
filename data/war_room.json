@@ -1,6 +1,6 @@
 {
   "next_report_id": 90,
-  "next_pick_id": 400,
+  "next_pick_id": 401,
   "reports": [
     {
       "source": "ChatGPT",
@@ -43060,6 +43060,155 @@
         "home_score": 1,
         "away_score": 2,
         "kickoff": "2026-11-04T20:00Z"
+      }
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 89,
+      "category": "sexy_moneyline",
+      "matchup": "Aston Villa @ Manchester United",
+      "selection": "Aston Villa to Win",
+      "odds": 210,
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "Villa unbeaten-ish form W/W/D/W/D vs United winless in 5 (L L D D D).\nBoth lenses lean Villa; market still prices United as home favorite.\nConfidence far below 60%: a tracked lean, not a stake.\nNo premierleague.com team news retrievable this run; ESPN injury flags empty.",
+      "wr_confidence": 36.0,
+      "war_room_line": "MUN 39% / Draw 26% / AVL 34% (blended, own read AVL 40%)",
+      "edge": "+2.0pp edge, EV +6.2% (price implies ~32%, blend 34%)",
+      "price_discipline": "+190 or better: tracked only\n+180 or worse: pass",
+      "espn_event_id": "401879240",
+      "bet_type": "match_result",
+      "bet_side": "away",
+      "bet_line": null,
+      "home_team": "Manchester United",
+      "away_team": "Aston Villa",
+      "created_at": "2026-11-06T23:10:16",
+      "id": 400,
+      "pregame_odds": {
+        "provider": "DraftKings",
+        "spread_details": "MAN +120",
+        "home_spread": -0.5,
+        "home_spread_odds": 105.0,
+        "away_spread_odds": -150.0,
+        "total": 3.5,
+        "over_odds": 140.0,
+        "under_odds": -175.0,
+        "home_moneyline": 120,
+        "away_moneyline": 210,
+        "draw_moneyline": 270.0
+      },
+      "pregame_odds_captured_at": "2026-11-06T23:10:20",
+      "kickoff": "2026-11-08T16:30Z",
+      "pregame_weather": {
+        "city": "Manchester",
+        "temp_c": 10.0,
+        "precip_probability_pct": 5,
+        "precip_mm": 0.0,
+        "wind_kmh": 2.2,
+        "cloud_cover_pct": 46,
+        "forecast_hour": "2026-11-08T16:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 0,
+        "win_pct": 0.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 3,
+        "win_pct": 60.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 1,
+          "d": 1,
+          "l": 2,
+          "gf": 6,
+          "ga": 7
+        },
+        "away": {
+          "w": 0,
+          "d": 3,
+          "l": 2,
+          "gf": 4,
+          "ga": 8
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 1,
+          "d": 2,
+          "l": 2,
+          "gf": 6,
+          "ga": 7
+        },
+        "away": {
+          "w": 2,
+          "d": 1,
+          "l": 1,
+          "gf": 4,
+          "ga": 6
+        }
+      },
+      "pregame_intel_captured_at": "2026-11-06T23:10:20",
+      "wr_confidence_kickoff": 36.0,
+      "wr_breakdown_kickoff": {
+        "base": 36.0,
+        "impact_scale": 0.0,
+        "record_mod": 0.0,
+        "record_win_pct": 54.545,
+        "record_settled": 33,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": null,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 38.0,
+      "wr_breakdown_initial": {
+        "base": 36.0,
+        "impact_scale": 0.0,
+        "record_mod": 0.0,
+        "record_win_pct": 54.545,
+        "record_settled": 33,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": null,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": 60.0,
+        "injury_mod": 0.0,
+        "injury_gap": 0.0,
+        "home_away_mod": 2.0,
+        "home_away_gap": 33.333,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "ai_grade": {
+        "quality": 4,
+        "verdict": "mixed",
+        "reason": "The 2pp blended edge is thin and leans on recent-form narrative, team news is unverified, and the author's own 40% read diverges from the 34% blend without explanation, so the quantification is soft despite honest $0 tracking.",
+        "model": "claude-opus-5-5",
+        "graded_at": "2026-11-06T23:10:28",
+        "rubric_version": 5
       }
     }
   ],
