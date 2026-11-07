@@ -1,5 +1,5 @@
 {
-  "next_report_id": 93,
+  "next_report_id": 94,
   "next_pick_id": 412,
   "reports": [
     {
@@ -984,6 +984,18 @@
       "blind_spot_notes": "This ticket never submits an opinion of its own: every selection traces back to the source picks and board leans named on it.",
       "lsu_review_notes": "",
       "created_at": "2026-11-07T16:30:39"
+    },
+    {
+      "source": "ChatGPT",
+      "league": "CFB",
+      "report_date": "2026-11-07",
+      "week_number": 10,
+      "week_label": "Week 10 -- Jesse's Saturday Competition Card (Nov 7)",
+      "philosophy": "Jesse's Saturday Competition Card, published 9:43 AM CT (DK snapshots 9:08-9:26 AM CT, not a guaranteed executable quote). Six ranked spread selections, one daily portfolio, unit $100; pregame only; judgment estimates, not a validated model. Cash recommendations: none; proposed new exposure $0; all six spreads sit inside the fair ranges. Competition selections remain definite; ranks are preferences, not calibrated confidence (logged at the competition convention: $50 ranks 1-5, $25 rank 6). No Thor Hammer Smash qualifies (no verified edge outside uncertainty, final availability incomplete, no documented Diamond rubric). Good-If-It-Goes, competition only: Utah ML -192 + LSU ML -225 + Georgia ML -175, independent-leg arithmetic +245 (29.0% break-even), hypothetical $10 returns $34.52; proposed cash $0; LSU can win while Alabama covers +6. Friday's card was recovered: four competition choices, zero formal cash recommendations; Virginia Tech was a Friday game and is not reissued. Jesse decides every wager; earlier results never increase later stakes.",
+      "blind_spot_notes": "FAIR NUMBERS (fair spread [range] / fair total [range] / no-vig win): Alabama vs LSU -- LSU -3.5 [-6,-1]; 51 [47,55]; LSU 60%. Utah vs BYU -- Utah -6 [-9,-3]; 49 [45,54]; Utah 66%. Oregon vs Ohio State -- OSU -6 [-10,-3]; 44.5 [40,49]; OSU 66%. Miami vs Notre Dame -- ND -4.5 [-8,-1]; 54 [49,59]; ND 62%. Georgia vs Ole Miss -- Georgia -4 [-7,-1]; 55 [50,60]; Georgia 60%. Missouri vs Texas -- Texas -2.5 [-5,0]; 44.5 [40,49]; Texas 56%. MIDPOINT DISCREPANCY / cash review threshold (not automatic): Alabama 2.5 pts, +7 at -110 or better; Utah 1.5, -2.5 or better; Oregon 1.5, +10.5 or better; Miami 2.5, +8.5 or better; Georgia 0.5, -0.5 or better; Missouri 0, +6 or better. FRIDAY-TO-SATURDAY REVISIONS: Oregon OSU -5 -> -6 (Ian Moore's return strengthens OSU protection); Texas -2 -> -2.5 (Wingo/secondary upgrades); LSU unchanged; Utah, Miami and Georgia are new judgment records. DK MOVEMENT: Bama +6 -105 -> +6 -110 (archived Nov 1 opener +4.5, no 7 crossing); Oregon +7.5 unchanged, total 46.5 -> 45.5, Nov 3 +7 -> +7.5 crosses 7. ALABAMA: center Racin Delgatty, Ryan Coleman-Williams and NT Terrance Green improved to probable; remaining questions Zabien Brown, EJ Crowell, William Sanders; LSU TE Trey'Dez Green questionable, Whit Weeks doubtful; failure: LSU wins early downs and forces long-yardage protection. OREGON: OSU LT Ian Moore off the report, Inniss and Boyd doubtful; Oregon without Dante Moore (season) and Jordon Davison; case rests on the hook above seven; failure: Oregon cannot sustain drives and OSU converts short fields.",
+      "lsu_review_notes": "",
+      "created_at": "2026-11-07T16:33:38",
+      "id": 93
     }
   ],
   "picks": [
