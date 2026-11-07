@@ -1,6 +1,6 @@
 {
   "next_report_id": 94,
-  "next_pick_id": 412,
+  "next_pick_id": 413,
   "reports": [
     {
       "source": "ChatGPT",
@@ -44693,6 +44693,155 @@
         "reason": "The pick is logged from a Friday sheet that was never uploaded, so there is no stated edge, model number, fair line or current market price, only a reference to a header.",
         "model": "claude-opus-5-5",
         "graded_at": "2026-11-07T16:31:38",
+        "rubric_version": 5
+      }
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 93,
+      "category": "best_bet",
+      "matchup": "BYU Cougars @ Utah Utes",
+      "selection": "Utah -4.5",
+      "odds": -105,
+      "stake": 50.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 61.0,
+      "war_room_line": "Competition pick #2 of 6, competition only (proposed new exposure $0; logged at the competition convention). DK -105 at 9:08-9:26 AM CT.",
+      "edge": "Dampier/Parker rushing versus BYU defensive depth losses; home setting. Fair Utah -6 [-9,-3] vs DK -4.5, 1.5-point discrepancy.",
+      "price_discipline": "Risk: LJ Martin plays effectively and BYU prevents explosive runs. Sat 11 AM CT.",
+      "espn_event_id": "401856849",
+      "bet_type": "spread",
+      "bet_side": "home",
+      "bet_line": -4.5,
+      "home_team": "Utah Utes",
+      "away_team": "BYU Cougars",
+      "created_at": "2026-11-07T16:33:50",
+      "id": 412,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "UTAH -4",
+        "home_spread": -4.0,
+        "home_spread_odds": -112.0,
+        "away_spread_odds": -108.0,
+        "total": 49.5,
+        "over_odds": -110.0,
+        "under_odds": -110.0,
+        "home_moneyline": -192,
+        "away_moneyline": 160,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-11-07T16:33:55",
+      "kickoff": "2026-11-07T17:00Z",
+      "pregame_weather": {
+        "city": "Salt Lake City",
+        "temp_c": 8.8,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 4.7,
+        "cloud_cover_pct": 5,
+        "forecast_hour": "2026-11-07T17:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 5,
+        "win_pct": 100.0,
+        "quality_wins": 1
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 4,
+        "win_pct": 80.0,
+        "quality_wins": 1
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 5,
+          "d": 0,
+          "l": 0,
+          "gf": 204,
+          "ga": 61
+        },
+        "away": {
+          "w": 3,
+          "d": 0,
+          "l": 0,
+          "gf": 107,
+          "ga": 66
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 5,
+          "d": 0,
+          "l": 0,
+          "gf": 170,
+          "ga": 78
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 1,
+          "gf": 89,
+          "ga": 72
+        }
+      },
+      "pregame_intel_captured_at": "2026-11-07T16:33:55",
+      "wr_confidence_kickoff": 60.90427606901726,
+      "wr_breakdown_kickoff": {
+        "base": 61.0,
+        "impact_scale": 0.22,
+        "record_mod": -0.096,
+        "record_win_pct": 48.837,
+        "record_settled": 87,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": null,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 61.90427606901726,
+      "wr_breakdown_initial": {
+        "base": 61.0,
+        "impact_scale": 0.22,
+        "record_mod": -0.096,
+        "record_win_pct": 48.837,
+        "record_settled": 87,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": -1.0,
+        "clv_move": -0.5,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": 20.0,
+        "injury_mod": 0.0,
+        "injury_gap": 0.0,
+        "home_away_mod": 2.0,
+        "home_away_gap": 33.333,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "ai_grade": {
+        "quality": 4,
+        "verdict": "mixed",
+        "reason": "The 1.5-point gap (fair -6 vs -4.5) sits well inside the author's own [-9,-3] range, the estimate is judgment rather than a model, and the injury and depth claims are unsourced, so this is capped at mixed with little support beyond narrative.",
+        "model": "claude-opus-5-5",
+        "graded_at": "2026-11-07T16:34:00",
         "rubric_version": 5
       }
     }
