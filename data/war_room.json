@@ -1,5 +1,5 @@
 {
-  "next_report_id": 90,
+  "next_report_id": 91,
   "next_pick_id": 403,
   "reports": [
     {
@@ -948,6 +948,18 @@
       "lsu_review_notes": "",
       "created_at": "2026-11-06T23:09:53",
       "id": 89
+    },
+    {
+      "source": "Claude",
+      "league": "CFB",
+      "report_date": "2026-11-07",
+      "week_number": 10,
+      "week_label": "Week 10 -- 03A1 Stale Sheet Analysis, Saturday issue 3 v3.7 (Maven Quant, Model A)",
+      "philosophy": "THE LINE's Friday (Nov 6) numbers, Saturday games only (50 priced), against Pinnacle, FanDuel, DraftKings and BetMGM at Sat Nov 7 10:03 AM CT, with a 10 AM Pinnacle recheck. Brain trust v3 seats, v3.5 RLM and prime-time seats, v3.6 caps, v3.7 gates (3-point daytime college gate, no RLM bypass, 60-62 band pass on 5+ model disagreement, injury bypass of the public cap). Public reads are now the BetMGM Week 10 table (Sat 8:22 AM CT, bets and handle on spread, total and moneyline for 14 games), which also feeds the RLM seat; the Friday most-bet proxies are retired. SATURDAY ISSUE 3: three staked sides and one totals override, 3.5% of bankroll ($350 per $10k), plus the 0.5% South Florida +2.5 tracked Friday; 4.0% against the 8% weekend cap with the NFL card still empty. MARSHALL +10.5 (71.9): Pinnacle moved Georgia Southern -10 to -7.5 overnight, a market-wide move of 2.5-3.5 points through the 10 and onto the 7.5 that clears the 3-point daytime gate; Model A has Georgia Southern by only 2.4; EV +13% from Pinnacle's fair line; no public read; cause of the move unsourced, flagged price-only. IOWA +2.5 (70.7): Pinnacle now Iowa -3, so the paper is 5.5 points stale and the full landing mass on 3 is ours (Wong 100); still a public side (64% of handle) carried by the injury bypass; conditional on Chiles' absence being official at game time. WEST VIRGINIA +17.5 (70.6): Pinnacle -16, 76% of handle on Texas Tech, book on us. TEXAS A&M-SOUTH CAROLINA OVER 51.5 (68, override 0.5%): paper 51.5, Pinnacle and FanDuel 52.5, 90% of handle on the under. Best score 71.9; average gap vs Pinnacle 0.74; 28 games with a public read. Pinnacle reaching the paper number voids any position; recheck Pinnacle at 5:30 PM CT before the Iowa and West Virginia placements. Totals score = 50 + 8 x stale points + 10 if the book needs our side + 10 for RLM; staked only at 65+ with the book on our side and at least a point of stale price.",
+      "blind_spot_notes": "MASON'S EIGHT (section 1c): Iowa +2.5 and West Virginia +17.5 are system positions. Tennessee -6.5, Utah -4.5 and LSU -6.5 have Pinnacle past the paper and the public money on them: the paper is the wrong place to bet them and the model is against two of the three. Missouri +2.5 and Ole Miss +3.5 have no price edge and the model on the other side. Minnesota +5 is the one non-system side with a real argument (paper a full point better than Pinnacle +4, model edge +1.9) but 71% of handle is on Minnesota and the line has moved with the public since open. LEANS UNDER THE FLOOR: Sam Houston +17.5 (59.7), Texas State +6.5 (59.1), Wyoming +5.5 (58.6; UNLV moved -4.5 to -4, 1.5 stale, model against), Oklahoma +5.5 (58.2), Miami +7.5 (58.1), Colorado State +17.5 (58.0), Army -3 (57.2), Utah State +2.5 (56.6), Rice +16.5 (56.2), Oregon +7.5 (55.2), Michigan -13.5 (55.1), Temple +7.5 (54.9), Colorado +3.5 (54.7), South Alabama +7.5 (54.3), UTEP +8.5 (54.2), San Jose State -10 (54.0), Boston College +6.5 (54.0). Cincinnati +10.5 is void (Pinnacle past the paper). TOTALS failing the book test: Northwestern-Iowa under 45.5 (Pinnacle 43 but 79% of handle on the under), Ohio State-Oregon under 46.5 (71% under), Houston-Cincinnati under 62.5 (65% under). Jacksonville State-Sam Houston under 48.5 (Pinnacle 46) has no public read and an unsourced cause: 0.25% at most, logged as a lean. Weather: no college adjustment. Wake Forest-Merrimack has no Pinnacle market: hard pass. FRIDAY: South Florida +2.5 was tracked at 0.5% on the Friday print (graded Monday); logged here from this sheet's reference. Availability: official reports Wed/Thu Nov 4-5 plus Friday afternoon reports (Chiles, Madsen, Hopkins, Marshall); Marshall's Del Rio-Wilson a game-time decision (Turner starts, immaterial).",
+      "lsu_review_notes": "",
+      "created_at": "2026-11-07T16:30:11",
+      "id": 90
     }
   ],
   "picks": [
