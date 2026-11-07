@@ -1,6 +1,6 @@
 {
-  "next_report_id": 91,
-  "next_pick_id": 403,
+  "next_report_id": 93,
+  "next_pick_id": 406,
   "reports": [
     {
       "source": "ChatGPT",
@@ -960,6 +960,30 @@
       "lsu_review_notes": "",
       "created_at": "2026-11-07T16:30:11",
       "id": 90
+    },
+    {
+      "id": 91,
+      "source": "War Room",
+      "league": "CFB",
+      "report_date": "2026-11-07",
+      "week_number": 1,
+      "week_label": "War Room Card -- week of 2026-11-03",
+      "philosophy": "The dashboard's own selections, made by a rule frozen before any result: take a side when at least 2 sources are on it, or when a single pick's live WR Confidence is 75 or higher; one selection per game and market; when both sides qualify, the side with more sources wins, then the higher score, and a dead heat is skipped. Each selection copies the line and price of the highest-scoring source pick on that side at the moment it is made, is only made while the game has not kicked off, and is staked flat at $100. Selections are made by the hourly Auto-Grade pass and whenever a new pick is logged. Football (CFB, NFL) only.",
+      "blind_spot_notes": "This ticket never submits an opinion of its own: every selection traces back to the source picks and board leans named on it.",
+      "lsu_review_notes": "",
+      "created_at": "2026-11-07T16:30:36"
+    },
+    {
+      "id": 92,
+      "source": "WR AI Test",
+      "league": "CFB",
+      "report_date": "2026-11-07",
+      "week_number": 1,
+      "week_label": "War Room AI Test Card -- week of 2026-11-03",
+      "philosophy": "The dashboard's own selections, made by a rule frozen before any result: take a side when at least 2 sources are on it, or when a single pick's live WR Confidence is 75 or higher; one selection per game and market; when both sides qualify, the side with more sources wins, then the higher score, and a dead heat is skipped. Each selection copies the line and price of the highest-scoring source pick on that side at the moment it is made, is only made while the game has not kicked off, and is staked flat at $100. Selections are made by the hourly Auto-Grade pass and whenever a new pick is logged. Football (CFB, NFL) only. THE TEST: this duplicate of the War Room card also reads each source pick's argument with a model (0-10 grade, frozen on the pick when first read) and scores it as live WR + (grade - 5) x 2. An aligned side is vetoed when every graded argument on it reads as a story (grade 3 or under), so the model can veto a story two cards agree on; the solo threshold and tie-breaks use the test score. Nothing here feeds the main rating or the main card - the two records run side by side until this one proves it helps.",
+      "blind_spot_notes": "This ticket never submits an opinion of its own: every selection traces back to the source picks and board leans named on it.",
+      "lsu_review_notes": "",
+      "created_at": "2026-11-07T16:30:39"
     }
   ],
   "picks": [
@@ -43520,6 +43544,399 @@
         "graded_at": "2026-11-06T23:10:50",
         "rubric_version": 5
       }
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 90,
+      "category": "best_bet",
+      "matchup": "Marshall Thundering Herd @ Georgia Southern Eagles",
+      "selection": "Marshall +10.5",
+      "odds": -110,
+      "stake": 100.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 72.0,
+      "war_room_line": "Tier 1, 1.0% ($100 per $10k), the top side on the board. Score 71.9; EV +13.3% at the paper. Paper +10.5 vs Pinnacle +7.5 (FanDuel +7.5, DraftKings +7, BetMGM +7.5): three points stale through the 10 and onto the 7.5, clearing the 3-point daytime gate.",
+      "edge": "Model A has Georgia Southern by only 2.4, so the own number is on Marshall by eight points at the paper (own edge +8.1). No public read for this game. The cause of the overnight market-wide move is not sourced (Sun Belt availability shows Marshall's Del Rio-Wilson a game-time decision, Turner starts, immaterial): flagged as price-only. Seats: Walters 78, Peabody 78, Spanky 80, Voulgaris 49, Captain Jack 10, Wong 72.",
+      "price_discipline": "Place at the paper. Void if Pinnacle reaches +10.5. Sat 2:30 PM CT.",
+      "espn_event_id": "401869951",
+      "bet_type": "spread",
+      "bet_side": "away",
+      "bet_line": 10.5,
+      "home_team": "Georgia Southern Eagles",
+      "away_team": "Marshall Thundering Herd",
+      "created_at": "2026-11-07T16:30:24",
+      "id": 403,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "GASO -7",
+        "home_spread": -7.0,
+        "home_spread_odds": -118.0,
+        "away_spread_odds": -102.0,
+        "total": 54.5,
+        "over_odds": -110.0,
+        "under_odds": -110.0,
+        "home_moneyline": -310,
+        "away_moneyline": 250,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-11-07T16:30:29",
+      "kickoff": "2026-11-07T20:30Z",
+      "pregame_weather": {
+        "city": "Statesboro",
+        "temp_c": 23.3,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 9.1,
+        "cloud_cover_pct": 100,
+        "forecast_hour": "2026-11-07T20:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 3,
+        "win_pct": 60.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 3,
+        "win_pct": 60.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 2,
+          "d": 0,
+          "l": 2,
+          "gf": 102,
+          "ga": 72
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 2,
+          "gf": 88,
+          "ga": 92
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 3,
+          "d": 0,
+          "l": 1,
+          "gf": 105,
+          "ga": 101
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 2,
+          "gf": 83,
+          "ga": 137
+        }
+      },
+      "pregame_intel_captured_at": "2026-11-07T16:30:29",
+      "wr_confidence_kickoff": 72.31494736842106,
+      "wr_breakdown_kickoff": {
+        "base": 72.0,
+        "impact_scale": 0.44,
+        "record_mod": 0.315,
+        "record_win_pct": 52.0,
+        "record_settled": 51,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": null,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 79.31494736842106,
+      "wr_breakdown_initial": {
+        "base": 72.0,
+        "impact_scale": 0.44,
+        "record_mod": 0.315,
+        "record_win_pct": 52.0,
+        "record_settled": 51,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 7.0,
+        "clv_move": 3.5,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": 0.0,
+        "injury_mod": 0.0,
+        "injury_gap": 0.0,
+        "home_away_mod": 0.0,
+        "home_away_gap": 0.0,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "ai_grade": {
+        "quality": 4,
+        "verdict": "mixed",
+        "reason": "Paper +10.5 against a Pinnacle +7.5 consensus crosses 10 and 7.5, but the write-up never shows +10.5 is still bettable anywhere, the move is unsourced and labelled price-only, and the model's 8-point disagreement with the market is unexplained, so the edge rests on a probably dead line.",
+        "model": "claude-opus-5-5",
+        "graded_at": "2026-11-07T16:30:36",
+        "rubric_version": 5
+      }
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 91,
+      "category": "best_bet",
+      "matchup": "Marshall Thundering Herd @ Georgia Southern Eagles",
+      "selection": "Marshall +10.5",
+      "odds": -110,
+      "stake": 100.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 79.3,
+      "war_room_line": "Rule: single pick at live WR 79 (floor 75). Line and price copied from Claude pick #403 at selection (2026-11-07T16:30:36).",
+      "edge": "Source picks on this side -- Claude: Marshall +10.5 (-110), live WR 79.",
+      "price_discipline": "Flat $100. Selected before kickoff; graded off the final score like any other pick.",
+      "espn_event_id": "401869951",
+      "bet_type": "spread",
+      "bet_side": "away",
+      "bet_line": 10.5,
+      "home_team": "Georgia Southern Eagles",
+      "away_team": "Marshall Thundering Herd",
+      "war_room_source_pick_ids": [
+        403
+      ],
+      "created_at": "2026-11-07T16:30:36",
+      "id": 404,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "GASO -7",
+        "home_spread": -7.0,
+        "home_spread_odds": -118.0,
+        "away_spread_odds": -102.0,
+        "total": 54.5,
+        "over_odds": -110.0,
+        "under_odds": -110.0,
+        "home_moneyline": -310,
+        "away_moneyline": 250,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-11-07T16:30:39",
+      "kickoff": "2026-11-07T20:30Z",
+      "pregame_weather": {
+        "city": "Statesboro",
+        "temp_c": 23.3,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 9.1,
+        "cloud_cover_pct": 100,
+        "forecast_hour": "2026-11-07T20:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 3,
+        "win_pct": 60.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 3,
+        "win_pct": 60.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 2,
+          "d": 0,
+          "l": 2,
+          "gf": 102,
+          "ga": 72
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 2,
+          "gf": 88,
+          "ga": 92
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 3,
+          "d": 0,
+          "l": 1,
+          "gf": 105,
+          "ga": 101
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 2,
+          "gf": 83,
+          "ga": 137
+        }
+      },
+      "pregame_intel_captured_at": "2026-11-07T16:30:39",
+      "wr_confidence_kickoff": 80.15236363636365,
+      "wr_breakdown_kickoff": {
+        "base": 79.3,
+        "impact_scale": 0.586,
+        "record_mod": -2.664,
+        "record_win_pct": 0.0,
+        "record_settled": 5,
+        "agree_mod": 3.516,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": null,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 1,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 87.15236363636365
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 92,
+      "category": "best_bet",
+      "matchup": "Marshall Thundering Herd @ Georgia Southern Eagles",
+      "selection": "Marshall +10.5",
+      "odds": -110,
+      "stake": 100.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 77.3,
+      "war_room_line": "Rule: single pick at test score 77 (floor 75). Line and price copied from Claude pick #403 at selection (2026-11-07T16:30:39).",
+      "edge": "Source picks on this side -- Claude: Marshall +10.5 (-110), test score 77, AI grade 4/10 mixed.",
+      "price_discipline": "Flat $100. Selected before kickoff; graded off the final score like any other pick.",
+      "espn_event_id": "401869951",
+      "bet_type": "spread",
+      "bet_side": "away",
+      "bet_line": 10.5,
+      "home_team": "Georgia Southern Eagles",
+      "away_team": "Marshall Thundering Herd",
+      "war_room_source_pick_ids": [
+        403
+      ],
+      "created_at": "2026-11-07T16:30:39",
+      "id": 405,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "GASO -7",
+        "home_spread": -7.0,
+        "home_spread_odds": -118.0,
+        "away_spread_odds": -102.0,
+        "total": 54.5,
+        "over_odds": -110.0,
+        "under_odds": -110.0,
+        "home_moneyline": -310,
+        "away_moneyline": 250,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-11-07T16:30:41",
+      "kickoff": "2026-11-07T20:30Z",
+      "pregame_weather": {
+        "city": "Statesboro",
+        "temp_c": 23.3,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 9.1,
+        "cloud_cover_pct": 100,
+        "forecast_hour": "2026-11-07T20:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 3,
+        "win_pct": 60.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 3,
+        "win_pct": 60.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 2,
+          "d": 0,
+          "l": 2,
+          "gf": 102,
+          "ga": 72
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 2,
+          "gf": 88,
+          "ga": 92
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 3,
+          "d": 0,
+          "l": 1,
+          "gf": 105,
+          "ga": 101
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 2,
+          "gf": 83,
+          "ga": 137
+        }
+      },
+      "pregame_intel_captured_at": "2026-11-07T16:30:41",
+      "wr_confidence_kickoff": 78.756,
+      "wr_breakdown_kickoff": {
+        "base": 77.3,
+        "impact_scale": 0.546,
+        "record_mod": -1.82,
+        "record_win_pct": 0.0,
+        "record_settled": 3,
+        "agree_mod": 3.276,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": null,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 1,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 85.756
     }
   ],
   "next_wallet_id": 72,
