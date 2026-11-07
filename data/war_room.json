@@ -1,6 +1,6 @@
 {
   "next_report_id": 93,
-  "next_pick_id": 410,
+  "next_pick_id": 411,
   "reports": [
     {
       "source": "ChatGPT",
@@ -44477,6 +44477,155 @@
         "reason": "The pick quantifies a 1.5-point stale line against Pinnacle, with a void rule and a 2-point model edge that crosses no key number (the 17 is minor), but the public-handle 'book is on us' framing and the brain-trust seats are noise, and bettability depends on a 5:30 recheck.",
         "model": "claude-opus-5-5",
         "graded_at": "2026-11-07T16:31:13",
+        "rubric_version": 5
+      }
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 90,
+      "category": "totals_radar",
+      "matchup": "Texas A&M Aggies @ South Carolina Gamecocks",
+      "selection": "Over 51.5",
+      "odds": -110,
+      "stake": 50.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 61.0,
+      "war_room_line": "TOTAL OVERRIDE 0.5% ($50 per $10k), totals model unvalidated. Texas A&M-South Carolina over: paper 51.5 vs Pinnacle and FanDuel 52.5, a full stale point; 90% of handle on the under so the book needs the over. Totals score 68; EV +3.5% (price proxy).",
+      "edge": "The one total that clears 65 with the book on our side and at least a point of stale price.",
+      "price_discipline": "Place at the paper. Void if Pinnacle reaches 51.5. Sat 2:00 PM CT.",
+      "espn_event_id": "401856744",
+      "bet_type": "total",
+      "bet_side": "over",
+      "bet_line": 51.5,
+      "home_team": "South Carolina Gamecocks",
+      "away_team": "Texas A&M Aggies",
+      "created_at": "2026-11-07T16:31:20",
+      "id": 410,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "SC -6.5",
+        "home_spread": -6.5,
+        "home_spread_odds": -115.0,
+        "away_spread_odds": -105.0,
+        "total": 52.5,
+        "over_odds": -108.0,
+        "under_odds": -112.0,
+        "home_moneyline": -250,
+        "away_moneyline": 205,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-11-07T16:31:24",
+      "kickoff": "2026-11-07T20:00Z",
+      "pregame_weather": {
+        "city": "Columbia",
+        "temp_c": 21.0,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 8.3,
+        "cloud_cover_pct": 100,
+        "forecast_hour": "2026-11-07T20:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 3,
+        "win_pct": 60.0,
+        "quality_wins": 2
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 2,
+        "win_pct": 40.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 3,
+          "d": 0,
+          "l": 2,
+          "gf": 197,
+          "ga": 109
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 1,
+          "gf": 98,
+          "ga": 93
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 4,
+          "d": 0,
+          "l": 1,
+          "gf": 194,
+          "ga": 58
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 3,
+          "gf": 32,
+          "ga": 93
+        }
+      },
+      "pregame_intel_captured_at": "2026-11-07T16:31:24",
+      "wr_confidence_kickoff": 61.15747368421053,
+      "wr_breakdown_kickoff": {
+        "base": 61.0,
+        "impact_scale": 0.22,
+        "record_mod": 0.157,
+        "record_win_pct": 52.0,
+        "record_settled": 51,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": null,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 63.15747368421053,
+      "wr_breakdown_initial": {
+        "base": 61.0,
+        "impact_scale": 0.22,
+        "record_mod": 0.157,
+        "record_win_pct": 52.0,
+        "record_settled": 51,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 2.0,
+        "clv_move": 1.0,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "ai_grade": {
+        "quality": 4,
+        "verdict": "mixed",
+        "reason": "The pick rests on a one-point stale gap at 51.5 against a 52.5 consensus, which is not a key number in college football totals, plus a contrarian handle bonus, all from a model the author calls unvalidated; it also never shows that the paper 51.5 can still be bet.",
+        "model": "claude-opus-5-5",
+        "graded_at": "2026-11-07T16:31:26",
         "rubric_version": 5
       }
     }
