@@ -1,6 +1,6 @@
 {
   "next_report_id": 95,
-  "next_pick_id": 422,
+  "next_pick_id": 423,
   "reports": [
     {
       "source": "ChatGPT",
@@ -46101,6 +46101,53 @@
         "opposing": 0
       },
       "wr_confidence_initial": 65.43747368421052
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 93,
+      "category": "parlay",
+      "matchup": "Utah ML / LSU ML / Georgia ML",
+      "selection": "3-leg Good-If-It-Goes (moneylines)",
+      "odds": 245,
+      "stake": 10.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 40.0,
+      "war_room_line": "GOOD-IF-IT-GOES, competition only: Utah ML -192 + LSU ML -225 + Georgia ML -175. Combined DK quote unavailable; independent-leg arithmetic +245, 29.0% break-even; hypothetical $10 returns $34.52 including stake. Proposed cash $0 (logged at the $10 entertainment cap).",
+      "edge": "Backs Utah's ground game, LSU's home offense/pressure and Georgia's defensive front; separate games, all favor stronger teams. LSU can win while Alabama covers +6.",
+      "price_discipline": "Grades on all three favorites winning outright.",
+      "espn_event_id": null,
+      "bet_type": null,
+      "bet_side": null,
+      "bet_line": null,
+      "home_team": null,
+      "away_team": null,
+      "created_at": "2026-11-07T16:35:34",
+      "id": 422,
+      "wr_confidence_initial": 40.0,
+      "wr_breakdown_initial": {
+        "base": 40.0,
+        "impact_scale": 0.0,
+        "record_mod": -0.0,
+        "record_win_pct": 48.837,
+        "record_settled": 87,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": null,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      }
     }
   ],
   "next_wallet_id": 72,
