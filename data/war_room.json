@@ -1,6 +1,6 @@
 {
-  "next_report_id": 94,
-  "next_pick_id": 414,
+  "next_report_id": 95,
+  "next_pick_id": 416,
   "reports": [
     {
       "source": "ChatGPT",
@@ -996,6 +996,18 @@
       "lsu_review_notes": "",
       "created_at": "2026-11-07T16:33:38",
       "id": 93
+    },
+    {
+      "id": 94,
+      "source": "WR Lean",
+      "league": "CFB",
+      "report_date": "2026-11-07",
+      "week_number": 1,
+      "week_label": "War Room Lean Ticket -- week of 2026-11-03",
+      "philosophy": "The dashboard's second ticket, a rule frozen before any result and kept separate from the main card: take a side when at least 2 sources favor it once every memo's full board is counted - picks and board leans together - and at least one of them is a board lean, i.e. agreement the cards never showed. One selection per game and market; more sources wins, then the higher live rating, and a dead heat is skipped. Each selection copies the line and price of the best-rated entry on that side at the moment it is made, is only made while the game has not kicked off, and is staked flat at $100. Selections are made by the hourly Auto-Grade pass and whenever picks or leans are logged. Football (CFB, NFL) only.",
+      "blind_spot_notes": "This ticket never submits an opinion of its own: every selection traces back to the source picks and board leans named on it.",
+      "lsu_review_notes": "",
+      "created_at": "2026-11-07T16:34:27"
     }
   ],
   "picks": [
@@ -44993,6 +45005,280 @@
         "graded_at": "2026-11-07T16:34:14",
         "rubric_version": 5
       }
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 93,
+      "category": "best_bet",
+      "matchup": "Alabama Crimson Tide @ LSU Tigers",
+      "selection": "Alabama +6",
+      "odds": -110,
+      "stake": 50.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 62.0,
+      "war_room_line": "Competition pick #1 of 6, competition only (proposed new exposure $0; logged at the competition convention). DK -110 at 9:08-9:26 AM CT.",
+      "edge": "Center and receiving upgrades support a competitive offense; six points exceeds the judgment midpoint (fair LSU -3.5 [-6,-1], 2.5-point discrepancy). LSU remains the outright preference.",
+      "price_discipline": "Risk: LSU pressure and home offense can expose Alabama protection. Sat 2:30 PM CT.",
+      "espn_event_id": "401856740",
+      "bet_type": "spread",
+      "bet_side": "away",
+      "bet_line": 6.0,
+      "home_team": "LSU Tigers",
+      "away_team": "Alabama Crimson Tide",
+      "created_at": "2026-11-07T16:34:19",
+      "id": 414,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "LSU -6",
+        "home_spread": -6.0,
+        "home_spread_odds": -110.0,
+        "away_spread_odds": -110.0,
+        "total": 53.5,
+        "over_odds": -108.0,
+        "under_odds": -112.0,
+        "home_moneyline": -225,
+        "away_moneyline": 185,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-11-07T16:34:24",
+      "kickoff": "2026-11-07T20:30Z",
+      "pregame_weather": {
+        "city": "Baton Rouge",
+        "temp_c": 25.0,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 12.6,
+        "cloud_cover_pct": 100,
+        "forecast_hour": "2026-11-07T20:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 4,
+        "win_pct": 80.0,
+        "quality_wins": 2
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 3,
+        "win_pct": 60.0,
+        "quality_wins": 1
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 5,
+          "d": 0,
+          "l": 0,
+          "gf": 225,
+          "ga": 44
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 2,
+          "gf": 96,
+          "ga": 84
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 4,
+          "d": 0,
+          "l": 1,
+          "gf": 195,
+          "ga": 104
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 1,
+          "gf": 111,
+          "ga": 66
+        }
+      },
+      "pregame_intel_captured_at": "2026-11-07T16:34:24",
+      "wr_confidence_kickoff": 61.89557389347337,
+      "wr_breakdown_kickoff": {
+        "base": 62.0,
+        "impact_scale": 0.24,
+        "record_mod": -0.104,
+        "record_win_pct": 48.837,
+        "record_settled": 87,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": null,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 56.89557389347337,
+      "wr_breakdown_initial": {
+        "base": 62.0,
+        "impact_scale": 0.24,
+        "record_mod": -0.104,
+        "record_win_pct": 48.837,
+        "record_settled": 87,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": 0.0,
+        "weather_mod": 0.0,
+        "form_mod": -0.0,
+        "form_gap": -20.0,
+        "injury_mod": 0.0,
+        "injury_gap": 0.0,
+        "home_away_mod": -2.0,
+        "home_away_gap": -33.333,
+        "quality_win_mod": -3,
+        "quality_win_gap": -1,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "ai_grade": {
+        "quality": 4,
+        "verdict": "mixed",
+        "reason": "The 2.5-point gap to a fair LSU -3.5 rests on a judgment estimate and falls inside the author's own [-6,-1] range, and the support is mostly narrative ('center and receiving upgrades') with no sourced availability and no verified executable price.",
+        "model": "claude-opus-5-5",
+        "graded_at": "2026-11-07T16:34:27",
+        "rubric_version": 5
+      }
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 94,
+      "category": "best_bet",
+      "matchup": "Alabama Crimson Tide @ LSU Tigers",
+      "selection": "Alabama +6",
+      "odds": -110,
+      "stake": 100.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 56.9,
+      "war_room_line": "Rule: 2 sources on this side once board leans are counted, at least one a lean. Line and price copied from ChatGPT pick #414 at selection (2026-11-07T16:34:27).",
+      "edge": "Full-board agreement -- Claude: Alabama +6.5 (-110), board lean, live WR 46; ChatGPT: Alabama +6 (-110), pick, live WR 57.",
+      "price_discipline": "Flat $100. Selected before kickoff; graded off the final score like any other pick. Separate record from the main War Room card.",
+      "espn_event_id": "401856740",
+      "bet_type": "spread",
+      "bet_side": "away",
+      "bet_line": 6.0,
+      "home_team": "LSU Tigers",
+      "away_team": "Alabama Crimson Tide",
+      "war_room_source_pick_ids": [
+        414
+      ],
+      "war_room_source_lean_ids": [
+        532
+      ],
+      "created_at": "2026-11-07T16:34:27",
+      "id": 415,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "LSU -6",
+        "home_spread": -6.0,
+        "home_spread_odds": -110.0,
+        "away_spread_odds": -110.0,
+        "total": 53.5,
+        "over_odds": -108.0,
+        "under_odds": -112.0,
+        "home_moneyline": -225,
+        "away_moneyline": 185,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-11-07T16:34:29",
+      "kickoff": "2026-11-07T20:30Z",
+      "pregame_weather": {
+        "city": "Baton Rouge",
+        "temp_c": 25.0,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 12.6,
+        "cloud_cover_pct": 100,
+        "forecast_hour": "2026-11-07T20:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 4,
+        "win_pct": 80.0,
+        "quality_wins": 2
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 3,
+        "win_pct": 60.0,
+        "quality_wins": 1
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 5,
+          "d": 0,
+          "l": 0,
+          "gf": 225,
+          "ga": 44
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 2,
+          "gf": 96,
+          "ga": 84
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 4,
+          "d": 0,
+          "l": 1,
+          "gf": 195,
+          "ga": 104
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 1,
+          "gf": 111,
+          "ga": 66
+        }
+      },
+      "pregame_intel_captured_at": "2026-11-07T16:34:29",
+      "wr_confidence_kickoff": 57.87326315789474,
+      "wr_breakdown_kickoff": {
+        "base": 56.9,
+        "impact_scale": 0.138,
+        "record_mod": 0.145,
+        "record_win_pct": 53.846,
+        "record_settled": 13,
+        "agree_mod": 0.828,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": null,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 1,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 52.87326315789474
     }
   ],
   "next_wallet_id": 72,
