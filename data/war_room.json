@@ -43279,8 +43279,8 @@
       "selection": "Chelsea to Win",
       "odds": 100,
       "stake": 0.0,
-      "result": "pending",
-      "profit_loss": 0.0,
+      "result": "loss",
+      "profit_loss": -0.0,
       "notes": "Sunderland 1-2-6, lost 4 of last 5, 13 GA on the road/9 games.\nChelsea +100 as an away side is the best price on the board vs their quality.\nEV just under +2% and confidence under 60%: tracked, $0.",
       "wr_confidence": 51.0,
       "war_room_line": "SUN 24% / Draw 25% / CHE 51% (blended, own read CHE 56%)",
@@ -43418,6 +43418,13 @@
         "model": "claude-opus-5-5",
         "graded_at": "2026-11-06T23:10:41",
         "rubric_version": 5
+      },
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 1,
+        "away_score": 0,
+        "kickoff": "2026-11-08T14:00Z"
       }
     },
     {
@@ -106691,7 +106698,7 @@
       "league": "EPL",
       "category": "lean",
       "stake": 0.0,
-      "result": "pending",
+      "result": "win",
       "profit_loss": 0.0,
       "parlay_leg_pick_ids": null,
       "wr_confidence": 50.0,
@@ -106799,7 +106806,14 @@
         "agreeing": 0,
         "opposing": 0
       },
-      "wr_confidence_initial": 50.0
+      "wr_confidence_initial": 50.0,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 2,
+        "away_score": 0,
+        "kickoff": "2026-11-08T14:00Z"
+      }
     },
     {
       "id": 491,
@@ -106808,7 +106822,7 @@
       "league": "EPL",
       "category": "lean",
       "stake": 0.0,
-      "result": "pending",
+      "result": "win",
       "profit_loss": 0.0,
       "parlay_leg_pick_ids": null,
       "wr_confidence": 57.0,
@@ -106916,7 +106930,14 @@
         "agreeing": 0,
         "opposing": 0
       },
-      "wr_confidence_initial": 60.815384615384616
+      "wr_confidence_initial": 60.815384615384616,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 1,
+        "away_score": 3,
+        "kickoff": "2026-11-08T14:00Z"
+      }
     },
     {
       "id": 492,
@@ -106925,7 +106946,7 @@
       "league": "EPL",
       "category": "lean",
       "stake": 0.0,
-      "result": "pending",
+      "result": "win",
       "profit_loss": 0.0,
       "parlay_leg_pick_ids": null,
       "wr_confidence": 47.0,
@@ -107033,7 +107054,14 @@
         "agreeing": 0,
         "opposing": 0
       },
-      "wr_confidence_initial": 45.0
+      "wr_confidence_initial": 45.0,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 1,
+        "away_score": 2,
+        "kickoff": "2026-11-08T14:00Z"
+      }
     },
     {
       "id": 493,
