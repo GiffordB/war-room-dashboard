@@ -1,6 +1,6 @@
 {
-  "next_report_id": 99,
-  "next_pick_id": 429,
+  "next_report_id": 100,
+  "next_pick_id": 431,
   "reports": [
     {
       "source": "ChatGPT",
@@ -1056,6 +1056,18 @@
       "lsu_review_notes": "",
       "created_at": "2026-11-08T17:52:43",
       "id": 98
+    },
+    {
+      "id": 99,
+      "source": "WR Lean",
+      "league": "NFL",
+      "report_date": "2026-11-08",
+      "week_number": 1,
+      "week_label": "War Room Lean Ticket -- week of 2026-11-03",
+      "philosophy": "The dashboard's second ticket, a rule frozen before any result and kept separate from the main card: take a side when at least 2 sources favor it once every memo's full board is counted - picks and board leans together - and at least one of them is a board lean, i.e. agreement the cards never showed. One selection per game and market; more sources wins, then the higher live rating, and a dead heat is skipped. Each selection copies the line and price of the best-rated entry on that side at the moment it is made, is only made while the game has not kicked off, and is staked flat at $100. Selections are made by the hourly Auto-Grade pass and whenever picks or leans are logged. Football (CFB, NFL) only.",
+      "blind_spot_notes": "This ticket never submits an opinion of its own: every selection traces back to the source picks and board leans named on it.",
+      "lsu_review_notes": "",
+      "created_at": "2026-11-08T17:53:16"
     }
   ],
   "picks": [
@@ -47206,6 +47218,280 @@
         "graded_at": "2026-11-08T17:53:02",
         "rubric_version": 5
       }
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 98,
+      "category": "best_bet",
+      "matchup": "Tampa Bay Buccaneers @ Chicago Bears",
+      "selection": "Tampa Bay +6",
+      "odds": -108,
+      "stake": 50.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 61.0,
+      "war_room_line": "Ranked spread lean #2 of 3; money card pass, new proposed exposure $0 (logged at the competition convention). DK -108 at about 8 AM CT, not refreshed.",
+      "edge": "Mayfield gives Tampa a credible path to stay within a score.",
+      "price_discipline": "Risk: Reduced pass rush; evening availability pending. Reassess only at a better number. Sun 7:20 PM CT. DK 21% / 30% on Tampa Bay.",
+      "espn_event_id": "401873050",
+      "bet_type": "spread",
+      "bet_side": "away",
+      "bet_line": 6.0,
+      "home_team": "Chicago Bears",
+      "away_team": "Tampa Bay Buccaneers",
+      "created_at": "2026-11-08T17:53:09",
+      "id": 429,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "CHI -6",
+        "home_spread": -6.0,
+        "home_spread_odds": -112.0,
+        "away_spread_odds": -108.0,
+        "total": 47.5,
+        "over_odds": -108.0,
+        "under_odds": -112.0,
+        "home_moneyline": -270,
+        "away_moneyline": 220,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-11-08T17:53:13",
+      "kickoff": "2026-11-09T01:20Z",
+      "pregame_weather": {
+        "city": "Chicago",
+        "temp_c": 9.4,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 11.7,
+        "cloud_cover_pct": 0,
+        "forecast_hour": "2026-11-09T01:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 4,
+        "win_pct": 80.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 3,
+        "win_pct": 60.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 1.0,
+      "pregame_away_injuries": 1.25,
+      "pregame_home_split": {
+        "home": {
+          "w": 3,
+          "d": 0,
+          "l": 1,
+          "gf": 83,
+          "ga": 52
+        },
+        "away": {
+          "w": 3,
+          "d": 0,
+          "l": 1,
+          "gf": 131,
+          "ga": 108
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 4,
+          "gf": 84,
+          "ga": 89
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 1,
+          "gf": 94,
+          "ga": 62
+        }
+      },
+      "pregame_intel_captured_at": "2026-11-08T17:53:13",
+      "wr_confidence_kickoff": 61.53877551020408,
+      "wr_breakdown_kickoff": {
+        "base": 61.0,
+        "impact_scale": 0.22,
+        "record_mod": 0.539,
+        "record_win_pct": 57.143,
+        "record_settled": 36,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": null,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 60.53877551020408,
+      "wr_breakdown_initial": {
+        "base": 61.0,
+        "impact_scale": 0.22,
+        "record_mod": 0.539,
+        "record_win_pct": 57.143,
+        "record_settled": 36,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": 0.0,
+        "weather_mod": 0.0,
+        "form_mod": -0.0,
+        "form_gap": -20.0,
+        "injury_mod": -0.5,
+        "injury_gap": -0.25,
+        "home_away_mod": -0.5,
+        "home_away_gap": -8.333,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "ai_grade": {
+        "quality": 2,
+        "verdict": "story",
+        "reason": "The case is a one-line narrative about Mayfield with no fair number or quantified gap, the line sits inside the author's own judgment range, the price is stale, and the author passes on the bet with $0 exposure, so the argument contradicts its own 'best_bet' label.",
+        "model": "claude-opus-5-5",
+        "graded_at": "2026-11-08T17:53:15",
+        "rubric_version": 5
+      }
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 99,
+      "category": "best_bet",
+      "matchup": "Tampa Bay Buccaneers @ Chicago Bears",
+      "selection": "Tampa Bay +6",
+      "odds": -108,
+      "stake": 100.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 60.5,
+      "war_room_line": "Rule: 2 sources on this side once board leans are counted, at least one a lean. Line and price copied from ChatGPT pick #429 at selection (2026-11-08T17:53:15).",
+      "edge": "Full-board agreement -- Claude: Tampa Bay +6 (-110), board lean, live WR 58; ChatGPT: Tampa Bay +6 (-108), pick, live WR 61.",
+      "price_discipline": "Flat $100. Selected before kickoff; graded off the final score like any other pick. Separate record from the main War Room card.",
+      "espn_event_id": "401873050",
+      "bet_type": "spread",
+      "bet_side": "away",
+      "bet_line": 6.0,
+      "home_team": "Chicago Bears",
+      "away_team": "Tampa Bay Buccaneers",
+      "war_room_source_pick_ids": [
+        429
+      ],
+      "war_room_source_lean_ids": [
+        551
+      ],
+      "created_at": "2026-11-08T17:53:15",
+      "id": 430,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "CHI -6",
+        "home_spread": -6.0,
+        "home_spread_odds": -112.0,
+        "away_spread_odds": -108.0,
+        "total": 47.5,
+        "over_odds": -108.0,
+        "under_odds": -112.0,
+        "home_moneyline": -270,
+        "away_moneyline": 220,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-11-08T17:53:18",
+      "kickoff": "2026-11-09T01:20Z",
+      "pregame_weather": {
+        "city": "Chicago",
+        "temp_c": 9.4,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 11.7,
+        "cloud_cover_pct": 0,
+        "forecast_hour": "2026-11-09T01:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 4,
+        "win_pct": 80.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 3,
+        "win_pct": 60.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 1.0,
+      "pregame_away_injuries": 1.25,
+      "pregame_home_split": {
+        "home": {
+          "w": 3,
+          "d": 0,
+          "l": 1,
+          "gf": 83,
+          "ga": 52
+        },
+        "away": {
+          "w": 3,
+          "d": 0,
+          "l": 1,
+          "gf": 131,
+          "ga": 108
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 4,
+          "gf": 84,
+          "ga": 89
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 1,
+          "gf": 94,
+          "ga": 62
+        }
+      },
+      "pregame_intel_captured_at": "2026-11-08T17:53:18",
+      "wr_confidence_kickoff": 62.059999999999995,
+      "wr_breakdown_kickoff": {
+        "base": 60.5,
+        "impact_scale": 0.21,
+        "record_mod": 0.3,
+        "record_win_pct": 100.0,
+        "record_settled": 1,
+        "agree_mod": 1.26,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": null,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 1,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 61.059999999999995
     }
   ],
   "next_wallet_id": 72,
