@@ -1,6 +1,6 @@
 {
   "next_report_id": 100,
-  "next_pick_id": 431,
+  "next_pick_id": 432,
   "reports": [
     {
       "source": "ChatGPT",
@@ -47492,6 +47492,155 @@
         "opposing": 0
       },
       "wr_confidence_initial": 61.059999999999995
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 98,
+      "category": "best_bet",
+      "matchup": "Green Bay Packers @ New England Patriots",
+      "selection": "Green Bay +3",
+      "odds": -108,
+      "stake": 50.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 60.0,
+      "war_room_line": "Ranked spread lean #3 of 3; money card pass, new proposed exposure $0 (logged at the competition convention). DK -108 at about 8 AM CT, not refreshed.",
+      "edge": "Packers coverage can limit an injury-depleted Patriots offense.",
+      "price_discipline": "Risk: Green Bay interior line and weak run game. Reassess only at a better number. Sun 3:25 PM CT. DK 36% / 29% on Green Bay.",
+      "espn_event_id": "401873049",
+      "bet_type": "spread",
+      "bet_side": "away",
+      "bet_line": 3.0,
+      "home_team": "New England Patriots",
+      "away_team": "Green Bay Packers",
+      "created_at": "2026-11-08T17:53:26",
+      "id": 431,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "NE -3",
+        "home_spread": -3.0,
+        "home_spread_odds": -115.0,
+        "away_spread_odds": -105.0,
+        "total": 44.5,
+        "over_odds": -112.0,
+        "under_odds": -108.0,
+        "home_moneyline": -170,
+        "away_moneyline": 142,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-11-08T17:53:30",
+      "kickoff": "2026-11-08T21:25Z",
+      "pregame_weather": {
+        "city": "Foxborough",
+        "temp_c": 9.7,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 12.2,
+        "cloud_cover_pct": 3,
+        "forecast_hour": "2026-11-08T21:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 4,
+        "win_pct": 80.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 4,
+        "win_pct": 80.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 4.0,
+      "pregame_away_injuries": 6.5,
+      "pregame_home_split": {
+        "home": {
+          "w": 3,
+          "d": 0,
+          "l": 0,
+          "gf": 91,
+          "ga": 39
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 3,
+          "gf": 93,
+          "ga": 123
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 3,
+          "d": 0,
+          "l": 1,
+          "gf": 95,
+          "ga": 74
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 2,
+          "gf": 76,
+          "ga": 90
+        }
+      },
+      "pregame_intel_captured_at": "2026-11-08T17:53:30",
+      "wr_confidence_kickoff": 60.48979591836735,
+      "wr_breakdown_kickoff": {
+        "base": 60.0,
+        "impact_scale": 0.2,
+        "record_mod": 0.49,
+        "record_win_pct": 57.143,
+        "record_settled": 36,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": null,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 52.48979591836735,
+      "wr_breakdown_initial": {
+        "base": 60.0,
+        "impact_scale": 0.2,
+        "record_mod": 0.49,
+        "record_win_pct": 57.143,
+        "record_settled": 36,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": 0.0,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": 0.0,
+        "injury_mod": -5.0,
+        "injury_gap": -2.5,
+        "home_away_mod": -3.0,
+        "home_away_gap": -50.0,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "ai_grade": {
+        "quality": 2,
+        "verdict": "story",
+        "reason": "The case is a vague narrative about coverage against an 'injury-depleted' offense with no sourced injuries and no fair number, and the author's own report says the current +3 sits inside their judgment range and passes it at $0, waiting for +5.",
+        "model": "claude-opus-5-5",
+        "graded_at": "2026-11-08T17:53:34",
+        "rubric_version": 5
+      }
     }
   ],
   "next_wallet_id": 72,
