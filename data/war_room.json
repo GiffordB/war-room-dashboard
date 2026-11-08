@@ -1,5 +1,5 @@
 {
-  "next_report_id": 95,
+  "next_report_id": 96,
   "next_pick_id": 423,
   "reports": [
     {
@@ -1008,6 +1008,18 @@
       "blind_spot_notes": "This ticket never submits an opinion of its own: every selection traces back to the source picks and board leans named on it.",
       "lsu_review_notes": "",
       "created_at": "2026-11-07T16:34:27"
+    },
+    {
+      "source": "Claude",
+      "league": "NFL",
+      "report_date": "2026-11-08",
+      "week_number": 9,
+      "week_label": "Week 9 -- 03B1 Stale Sheet Analysis, Sunday issue 3 v3.7 (Maven Quant, Model B)",
+      "philosophy": "THE LINE's Friday (Nov 6) numbers for the Sunday and Monday games (13 priced; Cincinnati-Atlanta kicked at 8:30 AM in Madrid and is excluded) against Pinnacle, FanDuel, DraftKings and BetMGM at Sun Nov 8 11:25 AM CT, with an 11 AM Pinnacle recheck (no sheet spread moved since 8:45; Detroit's official Friday status lists five starters out). Brain trust v3 seats, v3.5 RLM and prime-time seats, v3.6 caps, v3.7 gates; decision = 0.70 brain trust / 0.30 market layer; stale price counts at any size in the NFL. Information: official Friday reports plus Saturday designations (Murray out; Milton starts in Philadelphia, Sanders in Cleveland, Lock in Seattle). Public reads: BetMGM Week 9 table (bets and handle with openers, every game), DraftKings percentages and Action Network consensus; the BetMGM openers feed the RLM seat. SUNDAY ISSUE: one staked position and two tracked, 2.0% of bankroll. Three favorites have moved toward the dog since open while 74-84% of the handle sits on the favorite, the reverse line movement the system was built to find: Detroit -7.5 to -6.5 (80% on the Lions), Dallas -5.5 to -4.5 (84%), Rams -6 to -5.5 (74%); all three dogs are the book's side. MIAMI +7 (71.3) staked Tier 1 1.0%: the paper gives the 7 (Pinnacle, FanDuel, BetMGM 6.5), a full point of movement against 80% of the money, five Lions starters out (Campbell, Joseph, Mays, Reed, Wonnum), EV +5.6%, book needs Miami; Model B has Detroit by 6.9, neutral. INDIANAPOLIS +5.5 (66.5) tracked 0.5%: a point of reverse movement against 84% of the handle, Model B has Dallas by only 0.7 (own edge +4.8), no price edge (paper = Pinnacle = FanDuel 5.5) but the paper is a point better than the live 4.5. WASHINGTON +4.5 (63.3) tracked 0.5%: half a point of reverse movement against 74%, book's side, paper = Pinnacle, Model B Rams by 4.3. Best score 71.3; average gap vs Pinnacle 0.19; 22 games with a public read.",
+      "blind_spot_notes": "LEANS: Minnesota +3.5 (59.0, Monday; 72% of handle on Buffalo, paper captures the 3 against Pinnacle's 3, but Murray is out; re-run Monday). Under the floor with the book on our side and no price: Chargers +5.5 (58.4; Houston opened -3.5 and moved with the money to -5.5), Tampa Bay +6 (57.6, Sunday night), Philadelphia +3 (56.2, Milton starting), Las Vegas +9.5 (56.1, Pinnacle past the paper), Arizona +8.5 (55.7, information for us, read flat). PASSES: NY Jets and Green Bay (split reads: BetMGM handle on the Jets vs Action on the Chiefs; BetMGM handle on New England vs Action money on Green Bay), New Orleans -3 and Denver -2.5 (public sides). NEW ORLEANS -3: the best stale number on the sheet (Pinnacle -3.5 at -123, every recreational book -4.5), Model B Saints by 4.8, information for them (Sanders starting), but 74% of the handle is on New Orleans and the line moved with the money, so it scores 51.0 and passes under the casino rule; EV flat because the better number mostly buys the push on 3; if played it is an override, 0.5% maximum, at the paper only, void if Pinnacle returns to -3. TOTALS: Dallas-Indianapolis, Rams-Washington and Buffalo-Minnesota unders are each a half point stale with the book on the under (score 64, under the 65 floor); no totals stake. Void rules: Miami if Pinnacle reaches +7; Indianapolis if Pinnacle reaches Dallas -5 or shorter; Washington if Pinnacle reaches +4.5 or shorter on the Rams side.",
+      "lsu_review_notes": "",
+      "created_at": "2026-11-08T17:51:27",
+      "id": 95
     }
   ],
   "picks": [
