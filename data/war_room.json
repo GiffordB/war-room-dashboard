@@ -47276,8 +47276,8 @@
       "selection": "Tampa Bay +6",
       "odds": -108,
       "stake": 50.0,
-      "result": "pending",
-      "profit_loss": 0.0,
+      "result": "win",
+      "profit_loss": 46.2962962962963,
       "notes": "",
       "wr_confidence": 61.0,
       "war_room_line": "Ranked spread lean #2 of 3; money card pass, new proposed exposure $0 (logged at the competition convention). DK -108 at about 8 AM CT, not refreshed.",
@@ -47415,6 +47415,13 @@
         "model": "claude-opus-5-5",
         "graded_at": "2026-11-08T17:53:15",
         "rubric_version": 5
+      },
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 27,
+        "away_score": 24,
+        "kickoff": "2026-11-09T01:20Z"
       }
     },
     {
@@ -47425,8 +47432,8 @@
       "selection": "Tampa Bay +6",
       "odds": -108,
       "stake": 100.0,
-      "result": "pending",
-      "profit_loss": 0.0,
+      "result": "win",
+      "profit_loss": 92.5925925925926,
       "notes": "",
       "wr_confidence": 60.5,
       "war_room_line": "Rule: 2 sources on this side once board leans are counted, at least one a lean. Line and price copied from ChatGPT pick #429 at selection (2026-11-08T17:53:15).",
@@ -47540,7 +47547,14 @@
         "agreeing": 1,
         "opposing": 0
       },
-      "wr_confidence_initial": 61.059999999999995
+      "wr_confidence_initial": 61.059999999999995,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 27,
+        "away_score": 24,
+        "kickoff": "2026-11-09T01:20Z"
+      }
     },
     {
       "parlay_leg_pick_ids": null,
@@ -115411,8 +115425,8 @@
         "provider": "Draft Kings",
         "spread_details": "BUF -3",
         "home_spread": 3.0,
-        "home_spread_odds": -102.0,
-        "away_spread_odds": -118.0,
+        "home_spread_odds": 100.0,
+        "away_spread_odds": -120.0,
         "total": 43.5,
         "over_odds": -118.0,
         "under_odds": -102.0,
@@ -115420,15 +115434,15 @@
         "away_moneyline": -175,
         "draw_moneyline": null
       },
-      "pregame_odds_captured_at": "2026-11-09T00:45:43",
+      "pregame_odds_captured_at": "2026-11-09T07:46:27",
       "kickoff": "2026-11-10T01:15Z",
       "pregame_weather": {
         "city": "Minneapolis",
-        "temp_c": 7.6,
+        "temp_c": 8.6,
         "precip_probability_pct": 0,
         "precip_mm": 0.0,
-        "wind_kmh": 7.8,
-        "cloud_cover_pct": 5,
+        "wind_kmh": 10.9,
+        "cloud_cover_pct": 0,
         "forecast_hour": "2026-11-10T01:00"
       },
       "pregame_home_form": {
@@ -115477,7 +115491,7 @@
           "ga": 95
         }
       },
-      "pregame_intel_captured_at": "2026-11-09T00:45:43",
+      "pregame_intel_captured_at": "2026-11-09T07:46:27",
       "wr_confidence_kickoff": 59.654716981132076,
       "wr_breakdown_kickoff": {
         "base": 59.0,
@@ -115634,7 +115648,7 @@
       "league": "NFL",
       "category": "lean",
       "stake": 0.0,
-      "result": "pending",
+      "result": "win",
       "profit_loss": 0.0,
       "parlay_leg_pick_ids": null,
       "wr_confidence": 57.5,
@@ -115742,7 +115756,14 @@
         "agreeing": 1,
         "opposing": 0
       },
-      "wr_confidence_initial": 57.58
+      "wr_confidence_initial": 57.58,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 27,
+        "away_score": 24,
+        "kickoff": "2026-11-09T01:20Z"
+      }
     },
     {
       "id": 552,
