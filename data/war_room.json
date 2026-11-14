@@ -1,5 +1,5 @@
 {
-  "next_report_id": 103,
+  "next_report_id": 104,
   "next_pick_id": 445,
   "reports": [
     {
@@ -1104,6 +1104,18 @@
       "blind_spot_notes": "This ticket never submits an opinion of its own: every selection traces back to the source picks and board leans named on it.",
       "lsu_review_notes": "",
       "created_at": "2026-11-14T15:47:58"
+    },
+    {
+      "source": "ChatGPT",
+      "league": "CFB",
+      "report_date": "2026-11-14",
+      "week_number": 11,
+      "week_label": "Week 11 -- Jesse's Saturday College War Room (Nov 14)",
+      "philosophy": "Jesse's Saturday College War Room, revision 9:34 AM CT, DraftKings only, unit $100. Texas and USC lead the competition card; money card $0; five competition selections, zero qualified cash recommendations (logged at the competition convention, $50 each). Rank is preference, not calibrated confidence; every current spread remains inside its fair range. No Thor Hammer Smash qualifies (price uncertainty and unresolved availability; no Diamond Score manufactured). Good-If-It-Goes, competition only: Alabama ML -675 + Indiana ML -340 + LSU ML -205, independent-leg arithmetic +121 (45.2% implied), $22.11 total return on $10; proposed actual stake $0, optional entertainment cap $10; Indiana/LSU winning is compatible with USC/Texas covering. No new totals or futures. Best game to watch: Texas-LSU. Earlier results never authorize later stake increases. Jesse decides every wager.",
+      "blind_spot_notes": "FAIR NUMBERS (fair spread [range] / fair total [range] / win %): Alabama -15 [-19,-11], 48 [44,52], 81% (Friday -18.5 and 51 became -15 and 48 for expected Mack usage); Texas A&M +0 [-3,+3], 43 [39,47], 50% (new; home field and Tennessee guard losses vs A&M receiver/line losses and Reed's turnover risk); USC +7 [+4,+10], 49 [45,53], 30%; Texas +2 [-1,+5], 45 [41,49], 43%; Utah -2 [-6,+2], 54 [49,59], 56% (new; baseline -3 becomes -2 for disrupted preparation; travel adjustment unvalidated). DK MOVES: Texas +4 -> +4.5 (-105), total 46.5; USC +8.5 -> +9.5 (-108), total 50.5 -> 51.5; Alabama -17.5 -> -14 (-110), total 50.5 -> 47.5 (crosses 17, reaches 14); Utah -2.5 Friday -> -1.5. REVIEW TRIGGERS (not orders, -110 or better after rechecking roles): Alabama -10.5; A&M +4.5; USC +11.5; Texas +6.5; Utah +3.5. STATUS: Alabama downgraded, Mack expected to start; A&M new, receiver/OL risk; USC unchanged side, better cushion; Texas unchanged, provisional (LSU Whit Weeks questionable; Texas Goosby, Smothers, Townsend, Wesley out, Hutson questionable; failure: LSU pressures Arch Manning into long-yardage mistakes); Utah new, travel/availability provisional. USC case: Indiana's Brunner/Richard absences constrain its offense; Hoover/Wilson decision unresolved.",
+      "lsu_review_notes": "",
+      "created_at": "2026-11-14T15:49:52",
+      "id": 103
     }
   ],
   "picks": [
