@@ -1,6 +1,6 @@
 {
   "next_report_id": 103,
-  "next_pick_id": 444,
+  "next_pick_id": 445,
   "reports": [
     {
       "source": "ChatGPT",
@@ -49344,6 +49344,155 @@
         "reason": "The paper +2.5 against Pinnacle +1 is a 1.5-point stale-line gap that is not shown to be bettable and does not cross the key number 3, and the supporting case leans on ticket splits plus a model at Tennessee -1.5, which sits only 1 point from the number.",
         "model": "claude-opus-5-5",
         "graded_at": "2026-11-14T15:49:06",
+        "rubric_version": 5
+      }
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 100,
+      "category": "best_bet",
+      "matchup": "USC Trojans @ Indiana Hoosiers",
+      "selection": "Indiana -7.5",
+      "odds": -110,
+      "stake": 50.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 60.0,
+      "war_room_line": "ALREADY ON: tracked 0.50% ($50 per $10k) from the Wednesday print (not uploaded; logged from this card's reference). Pinnacle now -9, so the position carries +1.5 points of closing-line value.",
+      "edge": "Casino read: 67-85% of the money is on USC and the line has gone from 7 to 9. Hold; do not add at the paper's 8.5.",
+      "price_discipline": "Wednesday position. Sat 2:30 PM CT.",
+      "espn_event_id": "401858518",
+      "bet_type": "spread",
+      "bet_side": "home",
+      "bet_line": -7.5,
+      "home_team": "Indiana Hoosiers",
+      "away_team": "USC Trojans",
+      "created_at": "2026-11-14T15:49:14",
+      "id": 444,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "IU -9.5",
+        "home_spread": -9.5,
+        "home_spread_odds": -112.0,
+        "away_spread_odds": -108.0,
+        "total": 51.5,
+        "over_odds": -112.0,
+        "under_odds": -108.0,
+        "home_moneyline": -340,
+        "away_moneyline": 270,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-11-14T15:49:18",
+      "kickoff": "2026-11-14T20:30Z",
+      "pregame_weather": {
+        "city": "Bloomington",
+        "temp_c": 8.0,
+        "precip_probability_pct": 1,
+        "precip_mm": 0.0,
+        "wind_kmh": 13.2,
+        "cloud_cover_pct": 13,
+        "forecast_hour": "2026-11-14T20:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 4,
+        "win_pct": 80.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 3,
+        "win_pct": 60.0,
+        "quality_wins": 1
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 5,
+          "d": 0,
+          "l": 1,
+          "gf": 212,
+          "ga": 74
+        },
+        "away": {
+          "w": 3,
+          "d": 0,
+          "l": 0,
+          "gf": 80,
+          "ga": 38
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 5,
+          "d": 0,
+          "l": 1,
+          "gf": 212,
+          "ga": 136
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 1,
+          "gf": 80,
+          "ga": 82
+        }
+      },
+      "pregame_intel_captured_at": "2026-11-14T15:49:18",
+      "wr_confidence_kickoff": 60.065689149560114,
+      "wr_breakdown_kickoff": {
+        "base": 60.0,
+        "impact_scale": 0.2,
+        "record_mod": 0.066,
+        "record_win_pct": 50.909,
+        "record_settled": 56,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": null,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 62.065689149560114,
+      "wr_breakdown_initial": {
+        "base": 60.0,
+        "impact_scale": 0.2,
+        "record_mod": 0.066,
+        "record_win_pct": 50.909,
+        "record_settled": 56,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 4.0,
+        "clv_move": 2.0,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": 20.0,
+        "injury_mod": 0.0,
+        "injury_gap": 0.0,
+        "home_away_mod": 1.0,
+        "home_away_gap": 16.667,
+        "quality_win_mod": -3,
+        "quality_win_gap": -1,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "ai_grade": {
+        "quality": 3,
+        "verdict": "story",
+        "reason": "The case is a contrarian public-money read with no model number; the only quantified edge is +1.5 of CLV on a Wednesday position that is already placed and not documented, so it is not an edge the reader can bet at the posted -7.5, and the author says not to add at the current price.",
+        "model": "claude-opus-5-5",
+        "graded_at": "2026-11-14T15:49:22",
         "rubric_version": 5
       }
     }
