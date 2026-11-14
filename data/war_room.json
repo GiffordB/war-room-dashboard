@@ -1,6 +1,6 @@
 {
   "next_report_id": 104,
-  "next_pick_id": 448,
+  "next_pick_id": 449,
   "reports": [
     {
       "source": "ChatGPT",
@@ -49952,6 +49952,155 @@
         "reason": "The fair line of -15 sits only 1 point off the posted -14, well inside the author's own [-19,-11] range, and the QB downgrade is described as 'expected' rather than sourced. That leaves no real edge, and the author admits it is a competition-only pick with $0 of real money behind it.",
         "model": "claude-opus-5-5",
         "graded_at": "2026-11-14T15:50:35",
+        "rubric_version": 5
+      }
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 103,
+      "category": "best_bet",
+      "matchup": "Utah Utes @ Arizona Wildcats",
+      "selection": "Utah -1.5",
+      "odds": -102,
+      "stake": 50.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 59.0,
+      "war_room_line": "Competition pick #4 of 5, competition only; new, travel/availability provisional. DK -1.5 (-102) at 9:20 AM CT (Friday -2.5). Fair Utah -2 [-6,+2].",
+      "edge": "Dampier's rushing and Utah's defense offset Arizona's productive veteran QB; baseline -3 becomes -2 after disrupted preparation; travel adjustment unvalidated.",
+      "price_discipline": "Review trigger +3.5 (the other way). Sat 9:30 PM CT.",
+      "espn_event_id": "401856864",
+      "bet_type": "spread",
+      "bet_side": "away",
+      "bet_line": -1.5,
+      "home_team": "Arizona Wildcats",
+      "away_team": "Utah Utes",
+      "created_at": "2026-11-14T15:50:42",
+      "id": 448,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "UTAH -1.5",
+        "home_spread": 1.5,
+        "home_spread_odds": -118.0,
+        "away_spread_odds": -102.0,
+        "total": 55.5,
+        "over_odds": -108.0,
+        "under_odds": -112.0,
+        "home_moneyline": -102,
+        "away_moneyline": -118,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-11-14T15:50:45",
+      "kickoff": "2026-11-15T03:30Z",
+      "pregame_weather": {
+        "city": "Tucson",
+        "temp_c": 14.2,
+        "precip_probability_pct": 1,
+        "precip_mm": 0.0,
+        "wind_kmh": 7.3,
+        "cloud_cover_pct": 0,
+        "forecast_hour": "2026-11-15T03:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 4,
+        "win_pct": 80.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 5,
+        "win_pct": 100.0,
+        "quality_wins": 2
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 5,
+          "d": 0,
+          "l": 0,
+          "gf": 179,
+          "ga": 62
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 2,
+          "gf": 129,
+          "ga": 117
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 6,
+          "d": 0,
+          "l": 0,
+          "gf": 232,
+          "ga": 81
+        },
+        "away": {
+          "w": 3,
+          "d": 0,
+          "l": 0,
+          "gf": 107,
+          "ga": 66
+        }
+      },
+      "pregame_intel_captured_at": "2026-11-14T15:50:45",
+      "wr_confidence_kickoff": 59.03716283716284,
+      "wr_breakdown_kickoff": {
+        "base": 59.0,
+        "impact_scale": 0.18,
+        "record_mod": 0.037,
+        "record_win_pct": 50.549,
+        "record_settled": 93,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": null,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 65.03716283716284,
+      "wr_breakdown_initial": {
+        "base": 59.0,
+        "impact_scale": 0.18,
+        "record_mod": 0.037,
+        "record_win_pct": 50.549,
+        "record_settled": 93,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": 0.0,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": 20.0,
+        "injury_mod": 0.0,
+        "injury_gap": 0.0,
+        "home_away_mod": 0.0,
+        "home_away_gap": 0.0,
+        "quality_win_mod": 6,
+        "quality_win_gap": 2,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "ai_grade": {
+        "quality": 3,
+        "verdict": "story",
+        "reason": "The fair line of Utah -2 is only half a point off the -1.5 posted, which sits well inside the author's own wide [-6,+2] range, and that edge comes from an unvalidated travel adjustment plus narrative matchup claims with no sourced availability, so it is a competition-only preference rather than a real edge.",
+        "model": "claude-opus-5-5",
+        "graded_at": "2026-11-14T15:50:50",
         "rubric_version": 5
       }
     }
