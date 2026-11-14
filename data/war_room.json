@@ -1,5 +1,5 @@
 {
-  "next_report_id": 100,
+  "next_report_id": 101,
   "next_pick_id": 432,
   "reports": [
     {
@@ -1068,6 +1068,18 @@
       "blind_spot_notes": "This ticket never submits an opinion of its own: every selection traces back to the source picks and board leans named on it.",
       "lsu_review_notes": "",
       "created_at": "2026-11-08T17:53:16"
+    },
+    {
+      "source": "Claude",
+      "league": "CFB",
+      "report_date": "2026-11-14",
+      "week_number": 11,
+      "week_label": "Week 11 -- 03A Top 25 / Top 10 / Top 5 Saturday card v3.7 (Maven Quant, Model A)",
+      "philosophy": "THE LINE (Friday print) priced against Pinnacle, pulled Sat Nov 14 9:29 AM CT; public tables BetMGM (7:22 AM), DraftKings, Action Network; rules v3.7. 56 FBS games on the feed, 34 priced at the paper (the sheet image cuts off above East Carolina and below Texas State, so 22 games, among them Alabama, Boise State, BYU, Clemson, Utah and UCF, are ranked on live numbers only and cannot be bet from this report). Three staked, two tracked, 4.0% of bankroll (cap 8%); best decision score 76.4. The best position is OKLAHOMA +1.5 (76.4): the paper still prints Ole Miss -1.5 while Pinnacle has flipped to Oklahoma -3 with 87% of tickets and 95% of money on Ole Miss; the game is rescheduled to Sunday noon. TEXAS A&M +2.5 tracked against a market +1 with 77-88% of tickets on Tennessee. SMU is a correct read with no price (the paper already prints SMU -1.5; book's-side leans without a price went 0-4 in the Week 9 review). Two positions that are not casino reads are injury and price: TCU -10.5 (Kansas State's top two quarterbacks out; Pinnacle -13.5) and PENN STATE -9.5 in prime time (Pinnacle -12). NEW MEXICO -14.5 tracked (Pinnacle -17.5). Staked = 1.00% (Tier 1, EV positive against Pinnacle, score 70+); tracked = 0.50% (60-69). No two positions share a game or a conference outcome. Recheck Pinnacle before each placement. Totals: none in the Top 5.",
+      "blind_spot_notes": "VOID CONDITIONS: Oklahoma -- confirm first that the book will write Friday's number on the rescheduled game; void if Pinnacle is Oklahoma -1 or shorter at the Sunday 11 AM CT recheck. TCU -- void if Pinnacle is TCU -12 or shorter before the 1 PM kick, or if Kansas State's Avery Johnson is upgraded on the game-day report. Penn State -- void if Pinnacle is -10.5 or shorter at 5 PM; cut to 0.50% if a book shows 60%+ of spread money on Penn State. New Mexico -- void if Pinnacle is -16 or shorter at 5:30 PM. Texas A&M -- void if Pinnacle is back to +2 or longer before the 2 PM kick. ALREADY ON: Indiana -7.5 (Wednesday, 0.50%) now carries +1.5 points of closing-line value with Pinnacle at -9; hold it, do not add at the paper's 8.5; the casino read still supports it (67-85% of the money on USC, line from 7 to 9). The Wednesday print was not uploaded, so that position is logged here from this card's reference. TOP 25 PASSES: Indiana -8.5 (58.9), North Dakota State -6.5 (58.4), Michigan +10.5 (58.3), Rice -2.5 (57.9), Georgia State +6.5 (56.9), James Madison -4 (56.1), Syracuse -2.5 (55.5), LSU -4 (54.6, split read), Ohio State -14 (54.6), Texas Tech +3.5 (54.5, split), Miami -13.5 (53.9), Northern Illinois +6.5 (53.6), Purdue +17.5 (52.8), Western Kentucky +7.5 (52.7). LIVE ONLY (no paper price): Arizona +1 vs Utah (55.6, split), Tulsa -6.5 (53.4), Vanderbilt +14 (53.4, 77/77 on Alabama), Washington -2.5 (53.1), Utah State -2.5 (53.0), Arizona State +3.5 (53.0).",
+      "lsu_review_notes": "",
+      "created_at": "2026-11-14T15:47:36",
+      "id": 100
     }
   ],
   "picks": [
