@@ -1,6 +1,6 @@
 {
   "next_report_id": 104,
-  "next_pick_id": 445,
+  "next_pick_id": 446,
   "reports": [
     {
       "source": "ChatGPT",
@@ -49505,6 +49505,155 @@
         "reason": "The case is a contrarian public-money read with no model number; the only quantified edge is +1.5 of CLV on a Wednesday position that is already placed and not documented, so it is not an edge the reader can bet at the posted -7.5, and the author says not to add at the current price.",
         "model": "claude-opus-5-5",
         "graded_at": "2026-11-14T15:49:22",
+        "rubric_version": 5
+      }
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 103,
+      "category": "best_bet",
+      "matchup": "Texas Longhorns @ LSU Tigers",
+      "selection": "Texas +4.5",
+      "odds": -105,
+      "stake": 50.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 62.0,
+      "war_room_line": "Competition pick #1 of 5, competition only (money card $0; logged at the competition convention). DK +4.5 (-105) at 9:23 AM CT; Friday +4 (-110). Fair Texas +2 [-1,+5].",
+      "edge": "Texas's defensive returnees and the cushion support a competitive game; LSU's home field and pressure keep it the outright favorite.",
+      "price_discipline": "Risk: LSU pressures Arch Manning into long-yardage mistakes; Texas cannot protect consistently. Evening availability provisional. Review trigger +6.5. Sat 6:30 PM CT.",
+      "espn_event_id": "401856885",
+      "bet_type": "spread",
+      "bet_side": "away",
+      "bet_line": 4.5,
+      "home_team": "LSU Tigers",
+      "away_team": "Texas Longhorns",
+      "created_at": "2026-11-14T15:50:03",
+      "id": 445,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "LSU -4.5",
+        "home_spread": -4.5,
+        "home_spread_odds": -115.0,
+        "away_spread_odds": -105.0,
+        "total": 46.5,
+        "over_odds": -108.0,
+        "under_odds": -112.0,
+        "home_moneyline": -205,
+        "away_moneyline": 170,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-11-14T15:50:07",
+      "kickoff": "2026-11-15T00:30Z",
+      "pregame_weather": {
+        "city": "Baton Rouge",
+        "temp_c": 12.7,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 7.7,
+        "cloud_cover_pct": 100,
+        "forecast_hour": "2026-11-15T00:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 3,
+        "win_pct": 60.0,
+        "quality_wins": 1
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 3,
+        "win_pct": 60.0,
+        "quality_wins": 2
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 5,
+          "d": 0,
+          "l": 1,
+          "gf": 238,
+          "ga": 75
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 2,
+          "gf": 96,
+          "ga": 84
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 5,
+          "d": 0,
+          "l": 1,
+          "gf": 202,
+          "ga": 93
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 1,
+          "gf": 78,
+          "ga": 64
+        }
+      },
+      "pregame_intel_captured_at": "2026-11-14T15:50:07",
+      "wr_confidence_kickoff": 62.04955044955045,
+      "wr_breakdown_kickoff": {
+        "base": 62.0,
+        "impact_scale": 0.24,
+        "record_mod": 0.05,
+        "record_win_pct": 50.549,
+        "record_settled": 93,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": null,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 64.04955044955045,
+      "wr_breakdown_initial": {
+        "base": 62.0,
+        "impact_scale": 0.24,
+        "record_mod": 0.05,
+        "record_win_pct": 50.549,
+        "record_settled": 93,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": 0.0,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": 0.0,
+        "injury_mod": 0.0,
+        "injury_gap": 0.0,
+        "home_away_mod": -1.0,
+        "home_away_gap": -16.667,
+        "quality_win_mod": 3,
+        "quality_win_gap": 1,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "ai_grade": {
+        "quality": 4,
+        "verdict": "mixed",
+        "reason": "The stated 2.5-point gap to a fair line of Texas +2 falls inside the author's own [-1,+5] range, and the case is mostly a narrative about returning defenders with unsourced availability, so the pick earns no more than mixed.",
+        "model": "claude-opus-5-5",
+        "graded_at": "2026-11-14T15:50:11",
         "rubric_version": 5
       }
     }
