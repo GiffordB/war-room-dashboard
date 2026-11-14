@@ -51747,7 +51747,7 @@
   ],
   "next_jesse_wallet_id": 1,
   "jesse_wallet_entries": [],
-  "next_lean_id": 578,
+  "next_lean_id": 580,
   "leans": [
     {
       "id": 1,
@@ -121689,6 +121689,240 @@
         "opposing": 0
       },
       "wr_confidence_initial": 53.717736070381235
+    },
+    {
+      "id": 578,
+      "report_id": 103,
+      "source": "ChatGPT",
+      "league": "CFB",
+      "category": "lean",
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "parlay_leg_pick_ids": null,
+      "wr_confidence": 55.0,
+      "created_at": "2026-11-14T15:51:22",
+      "matchup": "USC Trojans @ Indiana Hoosiers",
+      "selection": "Under 51.5",
+      "bet_type": "total",
+      "bet_side": "under",
+      "bet_line": 51.5,
+      "odds": -110,
+      "score": 55.0,
+      "espn_event_id": "401858518",
+      "note": "Fair total 49 [45,53] vs DK 51.5 (moved from 50.5): 2.5 points of lean to the under. Fair-number lean, not a pick.",
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "IU -9.5",
+        "home_spread": -9.5,
+        "home_spread_odds": -112.0,
+        "away_spread_odds": -108.0,
+        "total": 51.5,
+        "over_odds": -112.0,
+        "under_odds": -108.0,
+        "home_moneyline": -340,
+        "away_moneyline": 270,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-11-14T15:51:25",
+      "kickoff": "2026-11-14T20:30Z",
+      "pregame_weather": {
+        "city": "Bloomington",
+        "temp_c": 8.0,
+        "precip_probability_pct": 1,
+        "precip_mm": 0.0,
+        "wind_kmh": 13.2,
+        "cloud_cover_pct": 13,
+        "forecast_hour": "2026-11-14T20:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 4,
+        "win_pct": 80.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 3,
+        "win_pct": 60.0,
+        "quality_wins": 1
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 5,
+          "d": 0,
+          "l": 1,
+          "gf": 212,
+          "ga": 74
+        },
+        "away": {
+          "w": 3,
+          "d": 0,
+          "l": 0,
+          "gf": 80,
+          "ga": 38
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 5,
+          "d": 0,
+          "l": 1,
+          "gf": 212,
+          "ga": 136
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 1,
+          "gf": 80,
+          "ga": 82
+        }
+      },
+      "pregame_intel_captured_at": "2026-11-14T15:51:25",
+      "wr_confidence_kickoff": 55.02064602064602,
+      "wr_breakdown_kickoff": {
+        "base": 55.0,
+        "impact_scale": 0.1,
+        "record_mod": 0.021,
+        "record_win_pct": 50.549,
+        "record_settled": 93,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": -0.0,
+        "clv_move": -0.0,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 55.02064602064602
+    },
+    {
+      "id": 579,
+      "report_id": 103,
+      "source": "ChatGPT",
+      "league": "CFB",
+      "category": "lean",
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "parlay_leg_pick_ids": null,
+      "wr_confidence": 54.0,
+      "created_at": "2026-11-14T15:51:22",
+      "matchup": "Texas Longhorns @ LSU Tigers",
+      "selection": "Under 46.5",
+      "bet_type": "total",
+      "bet_side": "under",
+      "bet_line": 46.5,
+      "odds": -110,
+      "score": 54.0,
+      "espn_event_id": "401856885",
+      "note": "Fair total 45 [41,49] vs DK 46.5: 1.5 points of lean to the under. Fair-number lean, not a pick.",
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "LSU -4.5",
+        "home_spread": -4.5,
+        "home_spread_odds": -115.0,
+        "away_spread_odds": -105.0,
+        "total": 46.5,
+        "over_odds": -108.0,
+        "under_odds": -112.0,
+        "home_moneyline": -205,
+        "away_moneyline": 170,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-11-14T15:51:25",
+      "kickoff": "2026-11-15T00:30Z",
+      "pregame_weather": {
+        "city": "Baton Rouge",
+        "temp_c": 12.7,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 7.7,
+        "cloud_cover_pct": 100,
+        "forecast_hour": "2026-11-15T00:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 3,
+        "win_pct": 60.0,
+        "quality_wins": 1
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 3,
+        "win_pct": 60.0,
+        "quality_wins": 2
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 5,
+          "d": 0,
+          "l": 1,
+          "gf": 238,
+          "ga": 75
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 2,
+          "gf": 96,
+          "ga": 84
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 5,
+          "d": 0,
+          "l": 1,
+          "gf": 202,
+          "ga": 93
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 1,
+          "gf": 78,
+          "ga": 64
+        }
+      },
+      "pregame_intel_captured_at": "2026-11-14T15:51:25",
+      "wr_confidence_kickoff": 54.01651681651682,
+      "wr_breakdown_kickoff": {
+        "base": 54.0,
+        "impact_scale": 0.08,
+        "record_mod": 0.017,
+        "record_win_pct": 50.549,
+        "record_settled": 93,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": -0.0,
+        "clv_move": -0.0,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 54.01651681651682
     }
   ],
   "ai_backtest": {
