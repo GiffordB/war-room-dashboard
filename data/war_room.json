@@ -1,6 +1,6 @@
 {
   "next_report_id": 104,
-  "next_pick_id": 446,
+  "next_pick_id": 447,
   "reports": [
     {
       "source": "ChatGPT",
@@ -49654,6 +49654,155 @@
         "reason": "The stated 2.5-point gap to a fair line of Texas +2 falls inside the author's own [-1,+5] range, and the case is mostly a narrative about returning defenders with unsourced availability, so the pick earns no more than mixed.",
         "model": "claude-opus-5-5",
         "graded_at": "2026-11-14T15:50:11",
+        "rubric_version": 5
+      }
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 103,
+      "category": "best_bet",
+      "matchup": "USC Trojans @ Indiana Hoosiers",
+      "selection": "USC +9.5",
+      "odds": -108,
+      "stake": 50.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 61.0,
+      "war_room_line": "Competition pick #2 of 5, competition only. DK +9.5 (-108) at 9:05 AM CT; Friday +8.5 (-110). Fair USC +7 [+4,+10].",
+      "edge": "Indiana's Brunner/Richard absences constrain its offense; USC gets another point. Beebe's production limits the running-back penalty.",
+      "price_discipline": "Risk: Indiana's Hoover/Wilson decision unresolved. Review trigger +11.5. Sat 2:30 PM CT.",
+      "espn_event_id": "401858518",
+      "bet_type": "spread",
+      "bet_side": "away",
+      "bet_line": 9.5,
+      "home_team": "Indiana Hoosiers",
+      "away_team": "USC Trojans",
+      "created_at": "2026-11-14T15:50:17",
+      "id": 446,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "IU -9.5",
+        "home_spread": -9.5,
+        "home_spread_odds": -112.0,
+        "away_spread_odds": -108.0,
+        "total": 51.5,
+        "over_odds": -112.0,
+        "under_odds": -108.0,
+        "home_moneyline": -340,
+        "away_moneyline": 270,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-11-14T15:50:20",
+      "kickoff": "2026-11-14T20:30Z",
+      "pregame_weather": {
+        "city": "Bloomington",
+        "temp_c": 8.0,
+        "precip_probability_pct": 1,
+        "precip_mm": 0.0,
+        "wind_kmh": 13.2,
+        "cloud_cover_pct": 13,
+        "forecast_hour": "2026-11-14T20:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 4,
+        "win_pct": 80.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 3,
+        "win_pct": 60.0,
+        "quality_wins": 1
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 5,
+          "d": 0,
+          "l": 1,
+          "gf": 212,
+          "ga": 74
+        },
+        "away": {
+          "w": 3,
+          "d": 0,
+          "l": 0,
+          "gf": 80,
+          "ga": 38
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 5,
+          "d": 0,
+          "l": 1,
+          "gf": 212,
+          "ga": 136
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 1,
+          "gf": 80,
+          "ga": 82
+        }
+      },
+      "pregame_intel_captured_at": "2026-11-14T15:50:20",
+      "wr_confidence_kickoff": 59.28542124542125,
+      "wr_breakdown_kickoff": {
+        "base": 61.0,
+        "impact_scale": 0.22,
+        "record_mod": 0.045,
+        "record_win_pct": 50.549,
+        "record_settled": 93,
+        "agree_mod": 0.0,
+        "conflict_mod": -1.76,
+        "clv_mod": 0.0,
+        "clv_move": null,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 1
+      },
+      "wr_confidence_initial": 61.28542124542125,
+      "wr_breakdown_initial": {
+        "base": 61.0,
+        "impact_scale": 0.22,
+        "record_mod": 0.045,
+        "record_win_pct": 50.549,
+        "record_settled": 93,
+        "agree_mod": 0.0,
+        "conflict_mod": -1.76,
+        "clv_mod": 0.0,
+        "clv_move": 0.0,
+        "weather_mod": 0.0,
+        "form_mod": -0.0,
+        "form_gap": -20.0,
+        "injury_mod": 0.0,
+        "injury_gap": 0.0,
+        "home_away_mod": -1.0,
+        "home_away_gap": -16.667,
+        "quality_win_mod": 3,
+        "quality_win_gap": 1,
+        "agreeing": 0,
+        "opposing": 1
+      },
+      "ai_grade": {
+        "quality": 5,
+        "verdict": "mixed",
+        "reason": "The fair line of +7 against the posted +9.5 is a 2.5-point gap that crosses the 8, but it sits inside the author's own wide [+4,+10] range, and the absences named in the edge are not dated or sourced while a key availability decision is still unresolved, so the grade is capped at mixed.",
+        "model": "claude-opus-5-5",
+        "graded_at": "2026-11-14T15:50:23",
         "rubric_version": 5
       }
     }
