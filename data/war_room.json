@@ -50697,7 +50697,7 @@
   ],
   "next_jesse_wallet_id": 1,
   "jesse_wallet_entries": [],
-  "next_lean_id": 559,
+  "next_lean_id": 578,
   "leans": [
     {
       "id": 1,
@@ -118416,6 +118416,2229 @@
         "away_score": 26,
         "kickoff": "2026-11-08T18:00Z"
       }
+    },
+    {
+      "id": 559,
+      "report_id": 100,
+      "source": "Claude",
+      "league": "CFB",
+      "category": "lean",
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "parlay_leg_pick_ids": null,
+      "wr_confidence": 58.4,
+      "created_at": "2026-11-14T15:49:29",
+      "matchup": "North Dakota State Bison @ Hawai'i Rainbow Warriors",
+      "selection": "North Dakota State -6.5",
+      "bet_type": "spread",
+      "bet_side": "away",
+      "bet_line": -6.5,
+      "odds": -110,
+      "score": 58.4,
+      "espn_event_id": "401864537",
+      "note": "Top 25 #7: PASS; score 58.4; paper -6.5 vs Pinnacle -7 (0.5); Model A NDSU -13; EV +0.5. Best side by Maven's numbers.",
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "NDSU -7",
+        "home_spread": 7.0,
+        "home_spread_odds": -112.0,
+        "away_spread_odds": -108.0,
+        "total": 39.5,
+        "over_odds": -108.0,
+        "under_odds": -112.0,
+        "home_moneyline": 220,
+        "away_moneyline": -270,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-11-14T15:49:48",
+      "kickoff": "2026-11-15T04:00Z",
+      "pregame_weather": {
+        "city": "Honolulu",
+        "temp_c": 23.2,
+        "precip_probability_pct": 7,
+        "precip_mm": 0.1,
+        "wind_kmh": 17.1,
+        "cloud_cover_pct": 33,
+        "forecast_hour": "2026-11-15T04:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 2,
+        "win_pct": 40.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 3,
+        "win_pct": 60.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 3,
+          "gf": 61,
+          "ga": 81
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 3,
+          "gf": 122,
+          "ga": 129
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 5,
+          "d": 0,
+          "l": 0,
+          "gf": 161,
+          "ga": 31
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 2,
+          "gf": 92,
+          "ga": 76
+        }
+      },
+      "pregame_intel_captured_at": "2026-11-14T15:49:48",
+      "wr_confidence_kickoff": 61.455178885630495,
+      "wr_breakdown_kickoff": {
+        "base": 58.4,
+        "impact_scale": 0.168,
+        "record_mod": 0.055,
+        "record_win_pct": 50.909,
+        "record_settled": 56,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 1.0,
+        "clv_move": 0.5,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": 20.0,
+        "injury_mod": 0.0,
+        "injury_gap": 0.0,
+        "home_away_mod": 2.0,
+        "home_away_gap": 25.0,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 61.455178885630495
+    },
+    {
+      "id": 560,
+      "report_id": 100,
+      "source": "Claude",
+      "league": "CFB",
+      "category": "lean",
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "parlay_leg_pick_ids": null,
+      "wr_confidence": 58.3,
+      "created_at": "2026-11-14T15:49:29",
+      "matchup": "Michigan Wolverines @ Oregon Ducks",
+      "selection": "Michigan +10.5",
+      "bet_type": "spread",
+      "bet_side": "away",
+      "bet_line": 10.5,
+      "odds": -110,
+      "score": 58.3,
+      "espn_event_id": "401858523",
+      "note": "Top 25 #8: PASS; score 58.3; paper Oregon -10.5 vs Pinnacle -10 (0.5); Model A Oregon -11; EV +1.6; 73/68 on Oregon, casino side Michigan. Best side by Maven's numbers.",
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "ORE -10",
+        "home_spread": -10.0,
+        "home_spread_odds": -108.0,
+        "away_spread_odds": -112.0,
+        "total": 39.5,
+        "over_odds": -115.0,
+        "under_odds": -105.0,
+        "home_moneyline": -395,
+        "away_moneyline": 310,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-11-14T15:49:48",
+      "kickoff": "2026-11-14T20:30Z",
+      "pregame_weather": {
+        "city": "Eugene",
+        "temp_c": 14.4,
+        "precip_probability_pct": 3,
+        "precip_mm": 0.0,
+        "wind_kmh": 18.3,
+        "cloud_cover_pct": 100,
+        "forecast_hour": "2026-11-14T20:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 3,
+        "win_pct": 60.0,
+        "quality_wins": 2
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 2,
+        "win_pct": 40.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 4,
+          "d": 0,
+          "l": 1,
+          "gf": 184,
+          "ga": 84
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 2,
+          "gf": 123,
+          "ga": 115
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 4,
+          "d": 0,
+          "l": 3,
+          "gf": 134,
+          "ga": 105
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 1,
+          "gf": 42,
+          "ga": 41
+        }
+      },
+      "pregame_intel_captured_at": "2026-11-14T15:49:48",
+      "wr_confidence_kickoff": 52.15452199413489,
+      "wr_breakdown_kickoff": {
+        "base": 58.3,
+        "impact_scale": 0.166,
+        "record_mod": 0.055,
+        "record_win_pct": 50.909,
+        "record_settled": 56,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 1.0,
+        "clv_move": 0.5,
+        "weather_mod": 0.0,
+        "form_mod": -0.0,
+        "form_gap": -20.0,
+        "injury_mod": 0.0,
+        "injury_gap": 0.0,
+        "home_away_mod": -1.2,
+        "home_away_gap": -30.0,
+        "quality_win_mod": -6,
+        "quality_win_gap": -2,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 52.15452199413489
+    },
+    {
+      "id": 561,
+      "report_id": 100,
+      "source": "Claude",
+      "league": "CFB",
+      "category": "lean",
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "parlay_leg_pick_ids": null,
+      "wr_confidence": 57.9,
+      "created_at": "2026-11-14T15:49:29",
+      "matchup": "Tulane Green Wave @ Rice Owls",
+      "selection": "Rice -2.5",
+      "bet_type": "spread",
+      "bet_side": "home",
+      "bet_line": -2.5,
+      "odds": -110,
+      "score": 57.9,
+      "espn_event_id": "401862828",
+      "note": "Top 25 #9: PASS; score 57.9; paper -2.5 vs Pinnacle -3 (0.5); Model A Tulane -2; EV +8.3. Best side by Maven's numbers.",
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "RICE -3",
+        "home_spread": -3.0,
+        "home_spread_odds": -118.0,
+        "away_spread_odds": -102.0,
+        "total": 48.5,
+        "over_odds": -112.0,
+        "under_odds": -108.0,
+        "home_moneyline": -166,
+        "away_moneyline": 140,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-11-14T15:49:48",
+      "kickoff": "2026-11-14T21:30Z",
+      "pregame_weather": {
+        "city": "Houston",
+        "temp_c": 17.2,
+        "precip_probability_pct": 1,
+        "precip_mm": 0.0,
+        "wind_kmh": 13.4,
+        "cloud_cover_pct": 100,
+        "forecast_hour": "2026-11-14T21:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 0,
+        "win_pct": 0.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 2,
+        "win_pct": 40.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 3,
+          "gf": 83,
+          "ga": 85
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 5,
+          "gf": 108,
+          "ga": 221
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 3,
+          "d": 0,
+          "l": 2,
+          "gf": 112,
+          "ga": 164
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 3,
+          "gf": 78,
+          "ga": 99
+        }
+      },
+      "pregame_intel_captured_at": "2026-11-14T15:49:48",
+      "wr_confidence_kickoff": 58.95189442815249,
+      "wr_breakdown_kickoff": {
+        "base": 57.9,
+        "impact_scale": 0.158,
+        "record_mod": 0.052,
+        "record_win_pct": 50.909,
+        "record_settled": 56,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 1.0,
+        "clv_move": 0.5,
+        "weather_mod": 0.0,
+        "form_mod": -0.0,
+        "form_gap": -40.0,
+        "injury_mod": 0.0,
+        "injury_gap": 0.0,
+        "home_away_mod": 0.0,
+        "home_away_gap": 0.0,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 58.95189442815249
+    },
+    {
+      "id": 562,
+      "report_id": 100,
+      "source": "Claude",
+      "league": "CFB",
+      "category": "lean",
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "parlay_leg_pick_ids": null,
+      "wr_confidence": 56.9,
+      "created_at": "2026-11-14T15:49:29",
+      "matchup": "Georgia Southern Eagles @ Georgia State Panthers",
+      "selection": "Georgia State +6.5",
+      "bet_type": "spread",
+      "bet_side": "home",
+      "bet_line": 6.5,
+      "odds": -110,
+      "score": 56.9,
+      "espn_event_id": "401869952",
+      "note": "Top 25 #10: PASS; score 56.9; paper Georgia Southern -6.5 vs Pinnacle -5.5 (1.0); Model A Georgia Southern -1.5; EV +1.4. Best side by Maven's numbers.",
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "GASO -6",
+        "home_spread": 6.0,
+        "home_spread_odds": -108.0,
+        "away_spread_odds": -112.0,
+        "total": 55.5,
+        "over_odds": -112.0,
+        "under_odds": -108.0,
+        "home_moneyline": 185,
+        "away_moneyline": -225,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-11-14T15:49:48",
+      "kickoff": "2026-11-14T20:30Z",
+      "pregame_weather": {
+        "city": "Atlanta",
+        "temp_c": 12.0,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 17.7,
+        "cloud_cover_pct": 1,
+        "forecast_hour": "2026-11-14T20:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 2,
+        "win_pct": 40.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 4,
+        "win_pct": 80.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 3,
+          "d": 0,
+          "l": 1,
+          "gf": 156,
+          "ga": 65
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 3,
+          "gf": 154,
+          "ga": 171
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 3,
+          "d": 0,
+          "l": 2,
+          "gf": 151,
+          "ga": 85
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 2,
+          "gf": 88,
+          "ga": 92
+        }
+      },
+      "pregame_intel_captured_at": "2026-11-14T15:49:48",
+      "wr_confidence_kickoff": 59.94532551319648,
+      "wr_breakdown_kickoff": {
+        "base": 56.9,
+        "impact_scale": 0.138,
+        "record_mod": 0.045,
+        "record_win_pct": 50.909,
+        "record_settled": 56,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 1.0,
+        "clv_move": 0.5,
+        "weather_mod": 0.0,
+        "form_mod": -0.0,
+        "form_gap": -40.0,
+        "injury_mod": 0.0,
+        "injury_gap": 0.0,
+        "home_away_mod": 2.0,
+        "home_away_gap": 25.0,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 59.94532551319648
+    },
+    {
+      "id": 563,
+      "report_id": 100,
+      "source": "Claude",
+      "league": "CFB",
+      "category": "lean",
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "parlay_leg_pick_ids": null,
+      "wr_confidence": 56.1,
+      "created_at": "2026-11-14T15:49:29",
+      "matchup": "James Madison Dukes @ UConn Huskies",
+      "selection": "James Madison -4",
+      "bet_type": "spread",
+      "bet_side": "away",
+      "bet_line": -4.0,
+      "odds": -110,
+      "score": 56.1,
+      "espn_event_id": "401861967",
+      "note": "Top 25 #11: PASS; score 56.1; paper -4 vs Pinnacle -4.5 (0.5); Model A JMU -13; EV +0.9. Best side by Maven's numbers.",
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "JMU -4.5",
+        "home_spread": 4.5,
+        "home_spread_odds": -110.0,
+        "away_spread_odds": -110.0,
+        "total": 56.5,
+        "over_odds": -108.0,
+        "under_odds": -112.0,
+        "home_moneyline": 170,
+        "away_moneyline": -205,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-11-14T15:49:48",
+      "kickoff": "2026-11-14T17:00Z",
+      "pregame_weather": {
+        "city": "East Hartford",
+        "temp_c": 4.8,
+        "precip_probability_pct": 1,
+        "precip_mm": 0.0,
+        "wind_kmh": 14.2,
+        "cloud_cover_pct": 100,
+        "forecast_hour": "2026-11-14T17:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 2,
+        "win_pct": 40.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 3,
+        "win_pct": 60.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 2,
+          "d": 0,
+          "l": 3,
+          "gf": 167,
+          "ga": 141
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 2,
+          "gf": 129,
+          "ga": 99
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 4,
+          "d": 0,
+          "l": 1,
+          "gf": 222,
+          "ga": 79
+        },
+        "away": {
+          "w": 4,
+          "d": 0,
+          "l": 1,
+          "gf": 184,
+          "ga": 114
+        }
+      },
+      "pregame_intel_captured_at": "2026-11-14T15:49:48",
+      "wr_confidence_kickoff": 61.14007038123167,
+      "wr_breakdown_kickoff": {
+        "base": 56.1,
+        "impact_scale": 0.122,
+        "record_mod": 0.04,
+        "record_win_pct": 50.909,
+        "record_settled": 56,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 1.0,
+        "clv_move": 0.5,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": 20.0,
+        "injury_mod": 0.0,
+        "injury_gap": 0.0,
+        "home_away_mod": 4.0,
+        "home_away_gap": 40.0,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 61.14007038123167
+    },
+    {
+      "id": 564,
+      "report_id": 100,
+      "source": "Claude",
+      "league": "CFB",
+      "category": "lean",
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "parlay_leg_pick_ids": null,
+      "wr_confidence": 55.6,
+      "created_at": "2026-11-14T15:49:29",
+      "matchup": "Utah Utes @ Arizona Wildcats",
+      "selection": "Arizona +1",
+      "bet_type": "spread",
+      "bet_side": "home",
+      "bet_line": 1.0,
+      "odds": -110,
+      "score": 55.6,
+      "espn_event_id": "401856864",
+      "note": "Top 25 #12: LIVE ONLY; score 55.6; not on the sheet image; Pinnacle Utah -1; Model A Utah -0.5; 55/39 on Utah, split read. Best side by Maven's numbers.",
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "UTAH -1.5",
+        "home_spread": 1.5,
+        "home_spread_odds": -118.0,
+        "away_spread_odds": -102.0,
+        "total": 55.5,
+        "over_odds": -108.0,
+        "under_odds": -112.0,
+        "home_moneyline": -102,
+        "away_moneyline": -118,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-11-14T15:49:48",
+      "kickoff": "2026-11-15T03:30Z",
+      "pregame_weather": {
+        "city": "Tucson",
+        "temp_c": 14.2,
+        "precip_probability_pct": 1,
+        "precip_mm": 0.0,
+        "wind_kmh": 7.3,
+        "cloud_cover_pct": 0,
+        "forecast_hour": "2026-11-15T03:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 4,
+        "win_pct": 80.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 5,
+        "win_pct": 100.0,
+        "quality_wins": 2
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 5,
+          "d": 0,
+          "l": 0,
+          "gf": 179,
+          "ga": 62
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 2,
+          "gf": 129,
+          "ga": 117
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 6,
+          "d": 0,
+          "l": 0,
+          "gf": 232,
+          "ga": 81
+        },
+        "away": {
+          "w": 3,
+          "d": 0,
+          "l": 0,
+          "gf": 107,
+          "ga": 66
+        }
+      },
+      "pregame_intel_captured_at": "2026-11-14T15:49:48",
+      "wr_confidence_kickoff": 48.63678592375366,
+      "wr_breakdown_kickoff": {
+        "base": 55.6,
+        "impact_scale": 0.112,
+        "record_mod": 0.037,
+        "record_win_pct": 50.909,
+        "record_settled": 56,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": -1.0,
+        "clv_move": -0.5,
+        "weather_mod": 0.0,
+        "form_mod": -0.0,
+        "form_gap": -20.0,
+        "injury_mod": 0.0,
+        "injury_gap": 0.0,
+        "home_away_mod": 0.0,
+        "home_away_gap": 0.0,
+        "quality_win_mod": -6,
+        "quality_win_gap": -2,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 48.63678592375366
+    },
+    {
+      "id": 565,
+      "report_id": 100,
+      "source": "Claude",
+      "league": "CFB",
+      "category": "lean",
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "parlay_leg_pick_ids": null,
+      "wr_confidence": 55.5,
+      "created_at": "2026-11-14T15:49:29",
+      "matchup": "Syracuse Orange @ NC State Wolfpack",
+      "selection": "Syracuse -2.5",
+      "bet_type": "spread",
+      "bet_side": "away",
+      "bet_line": -2.5,
+      "odds": -110,
+      "score": 55.5,
+      "espn_event_id": "401858300",
+      "note": "Top 25 #13: PASS; score 55.5; paper -2.5 vs Pinnacle -3 (0.5); Model A NC State -2.5; EV +3.4. Best side by Maven's numbers.",
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "SYR -3",
+        "home_spread": 3.0,
+        "home_spread_odds": -120.0,
+        "away_spread_odds": 100.0,
+        "total": 54.5,
+        "over_odds": -110.0,
+        "under_odds": -110.0,
+        "home_moneyline": 120,
+        "away_moneyline": -142,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-11-14T15:49:48",
+      "kickoff": "2026-11-14T17:00Z",
+      "pregame_weather": {
+        "city": "Raleigh",
+        "temp_c": 11.0,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 18.9,
+        "cloud_cover_pct": 28,
+        "forecast_hour": "2026-11-14T17:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 2,
+        "win_pct": 40.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 2,
+        "win_pct": 40.0,
+        "quality_wins": 1
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 4,
+          "d": 0,
+          "l": 2,
+          "gf": 193,
+          "ga": 148
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 3,
+          "gf": 67,
+          "ga": 100
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 2,
+          "d": 0,
+          "l": 3,
+          "gf": 153,
+          "ga": 103
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 2,
+          "gf": 111,
+          "ga": 126
+        }
+      },
+      "pregame_intel_captured_at": "2026-11-14T15:49:48",
+      "wr_confidence_kickoff": 58.20279569892473,
+      "wr_breakdown_kickoff": {
+        "base": 55.5,
+        "impact_scale": 0.11,
+        "record_mod": 0.036,
+        "record_win_pct": 50.909,
+        "record_settled": 56,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 1.0,
+        "clv_move": 0.5,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": 0.0,
+        "injury_mod": 0.0,
+        "injury_gap": 0.0,
+        "home_away_mod": -1.333,
+        "home_away_gap": -16.667,
+        "quality_win_mod": 3,
+        "quality_win_gap": 1,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 58.20279569892473
+    },
+    {
+      "id": 566,
+      "report_id": 100,
+      "source": "Claude",
+      "league": "CFB",
+      "category": "lean",
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "parlay_leg_pick_ids": null,
+      "wr_confidence": 54.6,
+      "created_at": "2026-11-14T15:49:29",
+      "matchup": "Texas Longhorns @ LSU Tigers",
+      "selection": "LSU -4",
+      "bet_type": "spread",
+      "bet_side": "home",
+      "bet_line": -4.0,
+      "odds": -110,
+      "score": 54.6,
+      "espn_event_id": "401856885",
+      "note": "Top 25 #14: PASS (split); score 54.6; paper -4 vs Pinnacle -4.5 (0.5); Model A LSU -6; EV 0.0; 43/50, split read. Best side by Maven's numbers.",
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "LSU -4.5",
+        "home_spread": -4.5,
+        "home_spread_odds": -115.0,
+        "away_spread_odds": -105.0,
+        "total": 46.5,
+        "over_odds": -108.0,
+        "under_odds": -112.0,
+        "home_moneyline": -205,
+        "away_moneyline": 170,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-11-14T15:49:48",
+      "kickoff": "2026-11-15T00:30Z",
+      "pregame_weather": {
+        "city": "Baton Rouge",
+        "temp_c": 12.7,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 7.7,
+        "cloud_cover_pct": 100,
+        "forecast_hour": "2026-11-15T00:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 3,
+        "win_pct": 60.0,
+        "quality_wins": 1
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 3,
+        "win_pct": 60.0,
+        "quality_wins": 2
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 5,
+          "d": 0,
+          "l": 1,
+          "gf": 238,
+          "ga": 75
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 2,
+          "gf": 96,
+          "ga": 84
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 5,
+          "d": 0,
+          "l": 1,
+          "gf": 202,
+          "ga": 93
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 1,
+          "gf": 78,
+          "ga": 64
+        }
+      },
+      "pregame_intel_captured_at": "2026-11-14T15:49:48",
+      "wr_confidence_kickoff": 53.63021700879766,
+      "wr_breakdown_kickoff": {
+        "base": 54.6,
+        "impact_scale": 0.092,
+        "record_mod": 0.03,
+        "record_win_pct": 50.909,
+        "record_settled": 56,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 1.0,
+        "clv_move": 0.5,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": 0.0,
+        "injury_mod": 0.0,
+        "injury_gap": 0.0,
+        "home_away_mod": 1.0,
+        "home_away_gap": 16.667,
+        "quality_win_mod": -3,
+        "quality_win_gap": -1,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 53.63021700879766
+    },
+    {
+      "id": 567,
+      "report_id": 100,
+      "source": "Claude",
+      "league": "CFB",
+      "category": "lean",
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "parlay_leg_pick_ids": null,
+      "wr_confidence": 54.6,
+      "created_at": "2026-11-14T15:49:29",
+      "matchup": "Northwestern Wildcats @ Ohio State Buckeyes",
+      "selection": "Ohio State -14",
+      "bet_type": "spread",
+      "bet_side": "home",
+      "bet_line": -14.0,
+      "odds": -110,
+      "score": 54.6,
+      "espn_event_id": "401858522",
+      "note": "Top 25 #15: PASS; score 54.6; paper = Pinnacle -14; Model A Ohio State -19.5; EV -5.2; 43/66, casino side Northwestern. Best side by Maven's numbers.",
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "OSU -14",
+        "home_spread": -14.0,
+        "home_spread_odds": -108.0,
+        "away_spread_odds": -112.0,
+        "total": 45.5,
+        "over_odds": -105.0,
+        "under_odds": -115.0,
+        "home_moneyline": -600,
+        "away_moneyline": 440,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-11-14T15:49:48",
+      "kickoff": "2026-11-14T17:00Z",
+      "pregame_weather": {
+        "city": "Columbus",
+        "temp_c": 5.1,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 17.2,
+        "cloud_cover_pct": 15,
+        "forecast_hour": "2026-11-14T17:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 3,
+        "win_pct": 60.0,
+        "quality_wins": 2
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 3,
+        "win_pct": 60.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 4,
+          "d": 0,
+          "l": 1,
+          "gf": 230,
+          "ga": 82
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 2,
+          "gf": 91,
+          "ga": 83
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 5,
+          "d": 0,
+          "l": 1,
+          "gf": 206,
+          "ga": 90
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 2,
+          "gf": 73,
+          "ga": 84
+        }
+      },
+      "pregame_intel_captured_at": "2026-11-14T15:49:48",
+      "wr_confidence_kickoff": 63.430217008797655,
+      "wr_breakdown_kickoff": {
+        "base": 54.6,
+        "impact_scale": 0.092,
+        "record_mod": 0.03,
+        "record_win_pct": 50.909,
+        "record_settled": 56,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": 0.0,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": 0.0,
+        "injury_mod": 0.0,
+        "injury_gap": 0.0,
+        "home_away_mod": 2.8,
+        "home_away_gap": 46.667,
+        "quality_win_mod": 6,
+        "quality_win_gap": 2,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 63.430217008797655
+    },
+    {
+      "id": 568,
+      "report_id": 100,
+      "source": "Claude",
+      "league": "CFB",
+      "category": "lean",
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "parlay_leg_pick_ids": null,
+      "wr_confidence": 54.5,
+      "created_at": "2026-11-14T15:49:29",
+      "matchup": "Texas Tech Red Raiders @ Oklahoma State Cowboys",
+      "selection": "Texas Tech +3.5",
+      "bet_type": "spread",
+      "bet_side": "away",
+      "bet_line": 3.5,
+      "odds": -110,
+      "score": 54.5,
+      "espn_event_id": "401856863",
+      "note": "Top 25 #16: PASS (split); score 54.5; paper = Pinnacle Oklahoma State -3.5; Model A Texas Tech -4; EV -1.1; 56/46, split. Best side by Maven's numbers.",
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "OKST -3.5",
+        "home_spread": -3.5,
+        "home_spread_odds": -102.0,
+        "away_spread_odds": -118.0,
+        "total": 73.5,
+        "over_odds": -110.0,
+        "under_odds": -110.0,
+        "home_moneyline": -170,
+        "away_moneyline": 142,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-11-14T15:49:48",
+      "kickoff": "2026-11-15T02:30Z",
+      "pregame_weather": {
+        "city": "Stillwater",
+        "temp_c": 9.2,
+        "precip_probability_pct": 7,
+        "precip_mm": 0.0,
+        "wind_kmh": 15.8,
+        "cloud_cover_pct": 100,
+        "forecast_hour": "2026-11-15T02:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 3,
+        "win_pct": 60.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 4,
+        "win_pct": 80.0,
+        "quality_wins": 1
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 4,
+          "d": 0,
+          "l": 0,
+          "gf": 197,
+          "ga": 83
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 3,
+          "gf": 198,
+          "ga": 162
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 6,
+          "d": 0,
+          "l": 0,
+          "gf": 250,
+          "ga": 149
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 1,
+          "gf": 88,
+          "ga": 68
+        }
+      },
+      "pregame_intel_captured_at": "2026-11-14T15:49:48",
+      "wr_confidence_kickoff": 55.529560117302054,
+      "wr_breakdown_kickoff": {
+        "base": 54.5,
+        "impact_scale": 0.09,
+        "record_mod": 0.03,
+        "record_win_pct": 50.909,
+        "record_settled": 56,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": 0.0,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": 20.0,
+        "injury_mod": 0.0,
+        "injury_gap": 0.0,
+        "home_away_mod": -2.0,
+        "home_away_gap": -33.333,
+        "quality_win_mod": 3,
+        "quality_win_gap": 1,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 55.529560117302054
+    },
+    {
+      "id": 569,
+      "report_id": 100,
+      "source": "Claude",
+      "league": "CFB",
+      "category": "lean",
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "parlay_leg_pick_ids": null,
+      "wr_confidence": 53.9,
+      "created_at": "2026-11-14T15:49:29",
+      "matchup": "Duke Blue Devils @ Miami Hurricanes",
+      "selection": "Miami -13.5",
+      "bet_type": "spread",
+      "bet_side": "home",
+      "bet_line": -13.5,
+      "odds": -110,
+      "score": 53.9,
+      "espn_event_id": "401858296",
+      "note": "Top 25 #17: PASS; score 53.9; paper -13.5 vs Pinnacle -14 (0.5); Model A Miami -16.5; EV +0.2; 49/68, casino side Duke. Best side by Maven's numbers.",
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "MIA -14",
+        "home_spread": -14.0,
+        "home_spread_odds": -108.0,
+        "away_spread_odds": -112.0,
+        "total": 54.5,
+        "over_odds": -115.0,
+        "under_odds": -105.0,
+        "home_moneyline": -600,
+        "away_moneyline": 440,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-11-14T15:49:48",
+      "kickoff": "2026-11-14T17:00Z",
+      "pregame_weather": {
+        "city": "Miami Gardens",
+        "temp_c": 21.4,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 13.5,
+        "cloud_cover_pct": 3,
+        "forecast_hour": "2026-11-14T17:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 4,
+        "win_pct": 80.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 3,
+        "win_pct": 60.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 4,
+          "d": 0,
+          "l": 0,
+          "gf": 224,
+          "ga": 68
+        },
+        "away": {
+          "w": 4,
+          "d": 0,
+          "l": 1,
+          "gf": 181,
+          "ga": 105
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 4,
+          "d": 0,
+          "l": 1,
+          "gf": 181,
+          "ga": 43
+        },
+        "away": {
+          "w": 3,
+          "d": 0,
+          "l": 1,
+          "gf": 116,
+          "ga": 74
+        }
+      },
+      "pregame_intel_captured_at": "2026-11-14T15:49:48",
+      "wr_confidence_kickoff": 56.92561876832844,
+      "wr_breakdown_kickoff": {
+        "base": 53.9,
+        "impact_scale": 0.078,
+        "record_mod": 0.026,
+        "record_win_pct": 50.909,
+        "record_settled": 56,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 1.0,
+        "clv_move": 0.5,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": 20.0,
+        "injury_mod": 0.0,
+        "injury_gap": 0.0,
+        "home_away_mod": 2.0,
+        "home_away_gap": 25.0,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 56.92561876832844
+    },
+    {
+      "id": 570,
+      "report_id": 100,
+      "source": "Claude",
+      "league": "CFB",
+      "category": "lean",
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "parlay_leg_pick_ids": null,
+      "wr_confidence": 53.6,
+      "created_at": "2026-11-14T15:49:29",
+      "matchup": "Nevada Wolf Pack @ Northern Illinois Huskies",
+      "selection": "Northern Illinois +6.5",
+      "bet_type": "spread",
+      "bet_side": "home",
+      "bet_line": 6.5,
+      "odds": -110,
+      "score": 53.6,
+      "espn_event_id": "401864536",
+      "note": "Top 25 #18: PASS; score 53.6; paper Nevada -6.5 vs Pinnacle -6 (0.5); Model A Northern Illinois -1.5; EV -1.5. Best side by Maven's numbers.",
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "NEV -6",
+        "home_spread": 6.0,
+        "home_spread_odds": -108.0,
+        "away_spread_odds": -112.0,
+        "total": 47.5,
+        "over_odds": -108.0,
+        "under_odds": -112.0,
+        "home_moneyline": 190,
+        "away_moneyline": -230,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-11-14T15:49:48",
+      "kickoff": "2026-11-14T20:30Z",
+      "pregame_weather": {
+        "city": "DeKalb",
+        "temp_c": 5.3,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 11.3,
+        "cloud_cover_pct": 3,
+        "forecast_hour": "2026-11-14T20:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 0,
+        "win_pct": 0.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 2,
+        "win_pct": 40.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 0,
+          "d": 0,
+          "l": 3,
+          "gf": 52,
+          "ga": 112
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 6,
+          "gf": 97,
+          "ga": 219
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 2,
+          "d": 0,
+          "l": 3,
+          "gf": 120,
+          "ga": 114
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 3,
+          "gf": 67,
+          "ga": 98
+        }
+      },
+      "pregame_intel_captured_at": "2026-11-14T15:49:48",
+      "wr_confidence_kickoff": 53.123648093841645,
+      "wr_breakdown_kickoff": {
+        "base": 53.6,
+        "impact_scale": 0.072,
+        "record_mod": 0.024,
+        "record_win_pct": 50.909,
+        "record_settled": 56,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 1.0,
+        "clv_move": 0.5,
+        "weather_mod": 0.0,
+        "form_mod": -0.0,
+        "form_gap": -40.0,
+        "injury_mod": 0.0,
+        "injury_gap": 0.0,
+        "home_away_mod": -1.5,
+        "home_away_gap": -25.0,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 53.123648093841645
+    },
+    {
+      "id": 571,
+      "report_id": 100,
+      "source": "Claude",
+      "league": "CFB",
+      "category": "lean",
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "parlay_leg_pick_ids": null,
+      "wr_confidence": 53.4,
+      "created_at": "2026-11-14T15:49:29",
+      "matchup": "Florida Atlantic Owls @ Tulsa Golden Hurricane",
+      "selection": "Tulsa -6.5",
+      "bet_type": "spread",
+      "bet_side": "home",
+      "bet_line": -6.5,
+      "odds": -110,
+      "score": 53.4,
+      "espn_event_id": "401862826",
+      "note": "Top 25 #19: LIVE ONLY; score 53.4; not on the sheet image; Pinnacle Tulsa -6.5; Model A Tulsa -12.5. Best side by Maven's numbers.",
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "TLSA -6.5",
+        "home_spread": -6.5,
+        "home_spread_odds": -115.0,
+        "away_spread_odds": -105.0,
+        "total": 72.5,
+        "over_odds": -115.0,
+        "under_odds": -105.0,
+        "home_moneyline": -238,
+        "away_moneyline": 195,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-11-14T15:49:48",
+      "kickoff": "2026-11-15T00:15Z",
+      "pregame_weather": {
+        "city": "Tulsa",
+        "temp_c": 8.9,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 8.6,
+        "cloud_cover_pct": 100,
+        "forecast_hour": "2026-11-15T00:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 2,
+        "win_pct": 40.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 3,
+        "win_pct": 60.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 2,
+          "d": 0,
+          "l": 2,
+          "gf": 145,
+          "ga": 93
+        },
+        "away": {
+          "w": 3,
+          "d": 0,
+          "l": 2,
+          "gf": 153,
+          "ga": 112
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 5,
+          "d": 0,
+          "l": 0,
+          "gf": 231,
+          "ga": 128
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 3,
+          "gf": 131,
+          "ga": 187
+        }
+      },
+      "pregame_intel_captured_at": "2026-11-14T15:49:48",
+      "wr_confidence_kickoff": 55.42233431085044,
+      "wr_breakdown_kickoff": {
+        "base": 53.4,
+        "impact_scale": 0.068,
+        "record_mod": 0.022,
+        "record_win_pct": 50.909,
+        "record_settled": 56,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": 0.0,
+        "weather_mod": 0.0,
+        "form_mod": -0.0,
+        "form_gap": -20.0,
+        "injury_mod": 0.0,
+        "injury_gap": 0.0,
+        "home_away_mod": 2.0,
+        "home_away_gap": 25.0,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 55.42233431085044
+    },
+    {
+      "id": 572,
+      "report_id": 100,
+      "source": "Claude",
+      "league": "CFB",
+      "category": "lean",
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "parlay_leg_pick_ids": null,
+      "wr_confidence": 53.4,
+      "created_at": "2026-11-14T15:49:29",
+      "matchup": "Alabama Crimson Tide @ Vanderbilt Commodores",
+      "selection": "Vanderbilt +14",
+      "bet_type": "spread",
+      "bet_side": "home",
+      "bet_line": 14.0,
+      "odds": -110,
+      "score": 53.4,
+      "espn_event_id": "401856889",
+      "note": "Top 25 #20: LIVE ONLY; score 53.4; not on the sheet image; Pinnacle Alabama -14; Model A Alabama -18; 77/77 on Alabama, casino side Vanderbilt. Best side by Maven's numbers.",
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "ALA -14",
+        "home_spread": 14.0,
+        "home_spread_odds": -108.0,
+        "away_spread_odds": -112.0,
+        "total": 47.5,
+        "over_odds": -115.0,
+        "under_odds": -105.0,
+        "home_moneyline": 500,
+        "away_moneyline": -700,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-11-14T15:49:48",
+      "kickoff": "2026-11-14T17:45Z",
+      "pregame_weather": {
+        "city": "Nashville",
+        "temp_c": 8.9,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 9.8,
+        "cloud_cover_pct": 0,
+        "forecast_hour": "2026-11-14T17:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 1,
+        "win_pct": 20.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 3,
+        "win_pct": 60.0,
+        "quality_wins": 2
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 3,
+          "d": 0,
+          "l": 2,
+          "gf": 136,
+          "ga": 149
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 3,
+          "gf": 71,
+          "ga": 116
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 4,
+          "d": 0,
+          "l": 1,
+          "gf": 195,
+          "ga": 104
+        },
+        "away": {
+          "w": 3,
+          "d": 0,
+          "l": 1,
+          "gf": 142,
+          "ga": 79
+        }
+      },
+      "pregame_intel_captured_at": "2026-11-14T15:49:48",
+      "wr_confidence_kickoff": 46.222334310850435,
+      "wr_breakdown_kickoff": {
+        "base": 53.4,
+        "impact_scale": 0.068,
+        "record_mod": 0.022,
+        "record_win_pct": 50.909,
+        "record_settled": 56,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": 0.0,
+        "weather_mod": 0.0,
+        "form_mod": -0.0,
+        "form_gap": -40.0,
+        "injury_mod": 0.0,
+        "injury_gap": 0.0,
+        "home_away_mod": -1.2,
+        "home_away_gap": -15.0,
+        "quality_win_mod": -6,
+        "quality_win_gap": -2,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 46.222334310850435
+    },
+    {
+      "id": 573,
+      "report_id": 100,
+      "source": "Claude",
+      "league": "CFB",
+      "category": "lean",
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "parlay_leg_pick_ids": null,
+      "wr_confidence": 53.1,
+      "created_at": "2026-11-14T15:49:29",
+      "matchup": "Washington Huskies @ Michigan State Spartans",
+      "selection": "Washington -2.5",
+      "bet_type": "spread",
+      "bet_side": "away",
+      "bet_line": -2.5,
+      "odds": -110,
+      "score": 53.1,
+      "espn_event_id": "401858521",
+      "note": "Top 25 #21: LIVE ONLY; score 53.1; not on the sheet image; Pinnacle Washington -2.5; Model A Washington -9.5. Best side by Maven's numbers.",
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "WASH -2.5",
+        "home_spread": 2.5,
+        "home_spread_odds": -112.0,
+        "away_spread_odds": -108.0,
+        "total": 44.5,
+        "over_odds": -102.0,
+        "under_odds": -118.0,
+        "home_moneyline": 114,
+        "away_moneyline": -135,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-11-14T15:49:48",
+      "kickoff": "2026-11-14T22:30Z",
+      "pregame_weather": {
+        "city": "East Lansing",
+        "temp_c": 3.7,
+        "precip_probability_pct": 2,
+        "precip_mm": 0.0,
+        "wind_kmh": 9.8,
+        "cloud_cover_pct": 100,
+        "forecast_hour": "2026-11-14T22:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 1,
+        "win_pct": 20.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 2,
+        "win_pct": 40.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 2,
+          "d": 0,
+          "l": 3,
+          "gf": 136,
+          "ga": 120
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 3,
+          "gf": 38,
+          "ga": 92
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 3,
+          "d": 0,
+          "l": 3,
+          "gf": 161,
+          "ga": 136
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 1,
+          "gf": 76,
+          "ga": 61
+        }
+      },
+      "pregame_intel_captured_at": "2026-11-14T15:49:48",
+      "wr_confidence_kickoff": 54.720363636363636,
+      "wr_breakdown_kickoff": {
+        "base": 53.1,
+        "impact_scale": 0.062,
+        "record_mod": 0.02,
+        "record_win_pct": 50.909,
+        "record_settled": 56,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": 0.0,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": 20.0,
+        "injury_mod": 0.0,
+        "injury_gap": 0.0,
+        "home_away_mod": 1.6,
+        "home_away_gap": 26.667,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 54.720363636363636
+    },
+    {
+      "id": 574,
+      "report_id": 100,
+      "source": "Claude",
+      "league": "CFB",
+      "category": "lean",
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "parlay_leg_pick_ids": null,
+      "wr_confidence": 53.0,
+      "created_at": "2026-11-14T15:49:29",
+      "matchup": "Utah State Aggies @ San Diego State Aztecs",
+      "selection": "Utah State -2.5",
+      "bet_type": "spread",
+      "bet_side": "away",
+      "bet_line": -2.5,
+      "odds": -110,
+      "score": 53.0,
+      "espn_event_id": "401860915",
+      "note": "Top 25 #22: LIVE ONLY; score 53; not on the sheet image; Pinnacle Utah State -2.5; Model A Utah State -2.5. Best side by Maven's numbers.",
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "USU -3",
+        "home_spread": 3.0,
+        "home_spread_odds": -115.0,
+        "away_spread_odds": -105.0,
+        "total": 43.5,
+        "over_odds": -115.0,
+        "under_odds": -105.0,
+        "home_moneyline": 124,
+        "away_moneyline": -148,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-11-14T15:49:48",
+      "kickoff": "2026-11-15T02:30Z",
+      "pregame_weather": {
+        "city": "San Diego",
+        "temp_c": 18.3,
+        "precip_probability_pct": 1,
+        "precip_mm": 0.0,
+        "wind_kmh": 7.1,
+        "cloud_cover_pct": 12,
+        "forecast_hour": "2026-11-15T02:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 3,
+        "win_pct": 60.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 3,
+        "win_pct": 60.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 4,
+          "d": 0,
+          "l": 1,
+          "gf": 149,
+          "ga": 118
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 4,
+          "gf": 89,
+          "ga": 191
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 4,
+          "d": 0,
+          "l": 1,
+          "gf": 103,
+          "ga": 79
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 4,
+          "gf": 49,
+          "ga": 106
+        }
+      },
+      "pregame_intel_captured_at": "2026-11-14T15:49:48",
+      "wr_confidence_kickoff": 49.219706744868034,
+      "wr_breakdown_kickoff": {
+        "base": 53.0,
+        "impact_scale": 0.06,
+        "record_mod": 0.02,
+        "record_win_pct": 50.909,
+        "record_settled": 56,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 1.0,
+        "clv_move": 0.5,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": 0.0,
+        "injury_mod": 0.0,
+        "injury_gap": 0.0,
+        "home_away_mod": -4.8,
+        "home_away_gap": -80.0,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 49.219706744868034
+    },
+    {
+      "id": 575,
+      "report_id": 100,
+      "source": "Claude",
+      "league": "CFB",
+      "category": "lean",
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "parlay_leg_pick_ids": null,
+      "wr_confidence": 53.0,
+      "created_at": "2026-11-14T15:49:29",
+      "matchup": "Arizona State Sun Devils @ UCF Knights",
+      "selection": "Arizona State +3.5",
+      "bet_type": "spread",
+      "bet_side": "away",
+      "bet_line": 3.5,
+      "odds": -110,
+      "score": 53.0,
+      "espn_event_id": "401856857",
+      "note": "Top 25 #23: LIVE ONLY; score 53; not on the sheet image; Pinnacle UCF -3.5; Model A Arizona State -3. Best side by Maven's numbers.",
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "UCF -3.5",
+        "home_spread": -3.5,
+        "home_spread_odds": -105.0,
+        "away_spread_odds": -115.0,
+        "total": 46.5,
+        "over_odds": -118.0,
+        "under_odds": -102.0,
+        "home_moneyline": -175,
+        "away_moneyline": 145,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-11-14T15:49:48",
+      "kickoff": "2026-11-14T22:30Z",
+      "pregame_weather": {
+        "city": "Orlando",
+        "temp_c": 15.3,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 11.9,
+        "cloud_cover_pct": 88,
+        "forecast_hour": "2026-11-14T22:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 2,
+        "win_pct": 40.0,
+        "quality_wins": 1
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 3,
+        "win_pct": 60.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 4,
+          "d": 0,
+          "l": 1,
+          "gf": 186,
+          "ga": 121
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 3,
+          "gf": 85,
+          "ga": 113
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 4,
+          "d": 0,
+          "l": 1,
+          "gf": 167,
+          "ga": 101
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 3,
+          "gf": 89,
+          "ga": 145
+        }
+      },
+      "pregame_intel_captured_at": "2026-11-14T15:49:48",
+      "wr_confidence_kickoff": 45.61970674486804,
+      "wr_breakdown_kickoff": {
+        "base": 53.0,
+        "impact_scale": 0.06,
+        "record_mod": 0.02,
+        "record_win_pct": 50.909,
+        "record_settled": 56,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": 0.0,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": 20.0,
+        "injury_mod": 0.0,
+        "injury_gap": 0.0,
+        "home_away_mod": -4.4,
+        "home_away_gap": -55.0,
+        "quality_win_mod": -3,
+        "quality_win_gap": -1,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 45.61970674486804
+    },
+    {
+      "id": 576,
+      "report_id": 100,
+      "source": "Claude",
+      "league": "CFB",
+      "category": "lean",
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "parlay_leg_pick_ids": null,
+      "wr_confidence": 52.8,
+      "created_at": "2026-11-14T15:49:29",
+      "matchup": "Purdue Boilermakers @ Iowa Hawkeyes",
+      "selection": "Purdue +17.5",
+      "bet_type": "spread",
+      "bet_side": "away",
+      "bet_line": 17.5,
+      "odds": -110,
+      "score": 52.8,
+      "espn_event_id": "401858519",
+      "note": "Top 25 #24: PASS; score 52.8; paper = Pinnacle Iowa -17.5; Model A Iowa -21; EV -4.5; 74/94 on Iowa, casino side Purdue. Best side by Maven's numbers.",
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "IOWA -17.5",
+        "home_spread": -17.5,
+        "home_spread_odds": -108.0,
+        "away_spread_odds": -112.0,
+        "total": 47.5,
+        "over_odds": -112.0,
+        "under_odds": -108.0,
+        "home_moneyline": -1000,
+        "away_moneyline": 650,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-11-14T15:49:48",
+      "kickoff": "2026-11-15T00:30Z",
+      "pregame_weather": {
+        "city": "Iowa City",
+        "temp_c": 2.7,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 4.9,
+        "cloud_cover_pct": 0,
+        "forecast_hour": "2026-11-15T00:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 3,
+        "win_pct": 60.0,
+        "quality_wins": 1
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 2,
+        "win_pct": 40.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 4,
+          "d": 0,
+          "l": 1,
+          "gf": 155,
+          "ga": 44
+        },
+        "away": {
+          "w": 3,
+          "d": 0,
+          "l": 1,
+          "gf": 95,
+          "ga": 66
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 2,
+          "d": 0,
+          "l": 4,
+          "gf": 186,
+          "ga": 191
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 2,
+          "gf": 79,
+          "ga": 100
+        }
+      },
+      "pregame_intel_captured_at": "2026-11-14T15:49:48",
+      "wr_confidence_kickoff": 47.018392961876835,
+      "wr_breakdown_kickoff": {
+        "base": 52.8,
+        "impact_scale": 0.056,
+        "record_mod": 0.018,
+        "record_win_pct": 50.909,
+        "record_settled": 56,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": 0.0,
+        "weather_mod": 0.0,
+        "form_mod": -0.0,
+        "form_gap": -20.0,
+        "injury_mod": 0.0,
+        "injury_gap": 0.0,
+        "home_away_mod": -2.8,
+        "home_away_gap": -46.667,
+        "quality_win_mod": -3,
+        "quality_win_gap": -1,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 47.018392961876835
+    },
+    {
+      "id": 577,
+      "report_id": 100,
+      "source": "Claude",
+      "league": "CFB",
+      "category": "lean",
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "parlay_leg_pick_ids": null,
+      "wr_confidence": 52.7,
+      "created_at": "2026-11-14T15:49:29",
+      "matchup": "Jacksonville State Gamecocks @ Western Kentucky Hilltoppers",
+      "selection": "Western Kentucky +7.5",
+      "bet_type": "spread",
+      "bet_side": "home",
+      "bet_line": 7.5,
+      "odds": -110,
+      "score": 52.7,
+      "espn_event_id": "401870752",
+      "note": "Top 25 #25: PASS; score 52.7; paper = Pinnacle Jacksonville State -7.5; Model A Jacksonville State -1; EV -2.8. Best side by Maven's numbers.",
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "JXST -7.5",
+        "home_spread": 7.5,
+        "home_spread_odds": -112.0,
+        "away_spread_odds": -108.0,
+        "total": 54.5,
+        "over_odds": -108.0,
+        "under_odds": -112.0,
+        "home_moneyline": 240,
+        "away_moneyline": -298,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-11-14T15:49:48",
+      "kickoff": "2026-11-14T20:30Z",
+      "pregame_weather": {
+        "city": "Bowling Green",
+        "temp_c": 9.3,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 12.5,
+        "cloud_cover_pct": 3,
+        "forecast_hour": "2026-11-14T20:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 2,
+        "win_pct": 40.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 5,
+        "win_pct": 100.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 2,
+          "d": 0,
+          "l": 1,
+          "gf": 107,
+          "ga": 55
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 5,
+          "gf": 105,
+          "ga": 245
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 5,
+          "d": 0,
+          "l": 0,
+          "gf": 177,
+          "ga": 85
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 2,
+          "gf": 85,
+          "ga": 88
+        }
+      },
+      "pregame_intel_captured_at": "2026-11-14T15:49:48",
+      "wr_confidence_kickoff": 53.717736070381235,
+      "wr_breakdown_kickoff": {
+        "base": 52.7,
+        "impact_scale": 0.054,
+        "record_mod": 0.018,
+        "record_win_pct": 50.909,
+        "record_settled": 56,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": 0.0,
+        "weather_mod": 0.0,
+        "form_mod": -0.0,
+        "form_gap": -60.0,
+        "injury_mod": 0.0,
+        "injury_gap": 0.0,
+        "home_away_mod": 1.0,
+        "home_away_gap": 16.667,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 53.717736070381235
     }
   ],
   "ai_backtest": {
