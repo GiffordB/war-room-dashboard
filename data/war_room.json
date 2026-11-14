@@ -1,6 +1,6 @@
 {
   "next_report_id": 103,
-  "next_pick_id": 441,
+  "next_pick_id": 443,
   "reports": [
     {
       "source": "ChatGPT",
@@ -48926,6 +48926,277 @@
         "opposing": 0
       },
       "wr_confidence_initial": 82.07672727272727
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 100,
+      "category": "best_bet",
+      "matchup": "UNLV Rebels @ New Mexico Lobos",
+      "selection": "New Mexico -14.5",
+      "odds": -110,
+      "stake": 50.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 66.0,
+      "war_room_line": "TRACKED 0.50% ($50 per $10k). Score 66.4; EV +10.2%. Paper -14.5 vs Pinnacle -17.5: three points of gap through 15, 16 and 17.",
+      "edge": "Model A has New Mexico by 13, against the market's 17.5 but inside the paper. No public read.",
+      "price_discipline": "Void if Pinnacle is New Mexico -16 or shorter at 5:30 PM. Tracked tier only. Sat 6:30 PM CT.",
+      "espn_event_id": "401864539",
+      "bet_type": "spread",
+      "bet_side": "home",
+      "bet_line": -14.5,
+      "home_team": "New Mexico Lobos",
+      "away_team": "UNLV Rebels",
+      "created_at": "2026-11-14T15:48:44",
+      "id": 441,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "UNM -17.5",
+        "home_spread": -17.5,
+        "home_spread_odds": -108.0,
+        "away_spread_odds": -112.0,
+        "total": 46.5,
+        "over_odds": -110.0,
+        "under_odds": -110.0,
+        "home_moneyline": -900,
+        "away_moneyline": 600,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-11-14T15:48:48",
+      "kickoff": "2026-11-15T00:30Z",
+      "pregame_weather": {
+        "city": "Albuquerque",
+        "temp_c": 8.3,
+        "precip_probability_pct": 18,
+        "precip_mm": 0.0,
+        "wind_kmh": 8.1,
+        "cloud_cover_pct": 100,
+        "forecast_hour": "2026-11-15T00:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 5,
+        "win_pct": 100.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 3,
+        "win_pct": 60.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 4,
+          "d": 0,
+          "l": 0,
+          "gf": 190,
+          "ga": 37
+        },
+        "away": {
+          "w": 4,
+          "d": 0,
+          "l": 1,
+          "gf": 121,
+          "ga": 61
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 3,
+          "d": 0,
+          "l": 2,
+          "gf": 139,
+          "ga": 130
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 2,
+          "gf": 96,
+          "ga": 101
+        }
+      },
+      "pregame_intel_captured_at": "2026-11-14T15:48:48",
+      "wr_confidence_kickoff": 66.10510263929619,
+      "wr_breakdown_kickoff": {
+        "base": 66.0,
+        "impact_scale": 0.32,
+        "record_mod": 0.105,
+        "record_win_pct": 50.909,
+        "record_settled": 56,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": null,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 76.10510263929619,
+      "wr_breakdown_initial": {
+        "base": 66.0,
+        "impact_scale": 0.32,
+        "record_mod": 0.105,
+        "record_win_pct": 50.909,
+        "record_settled": 56,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 6.0,
+        "clv_move": 3.0,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": 40.0,
+        "injury_mod": 0.0,
+        "injury_gap": 0.0,
+        "home_away_mod": 4.0,
+        "home_away_gap": 50.0,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "ai_grade": {
+        "quality": 4,
+        "verdict": "mixed",
+        "reason": "The 3-point stale-line gap through 15/16/17 is real and has a void rule. But the author's own model makes New Mexico only 13, which does not support laying 14.5, so the claimed +10.2% EV rests on the paper-vs-Pinnacle gap and contradicts the model's own number.",
+        "model": "claude-opus-5-5",
+        "graded_at": "2026-11-14T15:48:51",
+        "rubric_version": 5
+      }
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 101,
+      "category": "best_bet",
+      "matchup": "UNLV Rebels @ New Mexico Lobos",
+      "selection": "New Mexico -14.5",
+      "odds": -110,
+      "stake": 100.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "",
+      "wr_confidence": 76.1,
+      "war_room_line": "Rule: single pick at live WR 76 (floor 75). Line and price copied from Claude pick #441 at selection (2026-11-14T15:48:51).",
+      "edge": "Source picks on this side -- Claude: New Mexico -14.5 (-110), live WR 76.",
+      "price_discipline": "Flat $100. Selected before kickoff; graded off the final score like any other pick.",
+      "espn_event_id": "401864539",
+      "bet_type": "spread",
+      "bet_side": "home",
+      "bet_line": -14.5,
+      "home_team": "New Mexico Lobos",
+      "away_team": "UNLV Rebels",
+      "war_room_source_pick_ids": [
+        441
+      ],
+      "created_at": "2026-11-14T15:48:51",
+      "id": 442,
+      "pregame_odds": {
+        "provider": "Draft Kings",
+        "spread_details": "UNM -17.5",
+        "home_spread": -17.5,
+        "home_spread_odds": -108.0,
+        "away_spread_odds": -112.0,
+        "total": 46.5,
+        "over_odds": -110.0,
+        "under_odds": -110.0,
+        "home_moneyline": -900,
+        "away_moneyline": 600,
+        "draw_moneyline": null
+      },
+      "pregame_odds_captured_at": "2026-11-14T15:48:53",
+      "kickoff": "2026-11-15T00:30Z",
+      "pregame_weather": {
+        "city": "Albuquerque",
+        "temp_c": 8.3,
+        "precip_probability_pct": 18,
+        "precip_mm": 0.0,
+        "wind_kmh": 8.1,
+        "cloud_cover_pct": 100,
+        "forecast_hour": "2026-11-15T00:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 5,
+        "win_pct": 100.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 3,
+        "win_pct": 60.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 4,
+          "d": 0,
+          "l": 0,
+          "gf": 190,
+          "ga": 37
+        },
+        "away": {
+          "w": 4,
+          "d": 0,
+          "l": 1,
+          "gf": 121,
+          "ga": 61
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 3,
+          "d": 0,
+          "l": 2,
+          "gf": 139,
+          "ga": 130
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 2,
+          "gf": 96,
+          "ga": 101
+        }
+      },
+      "pregame_intel_captured_at": "2026-11-14T15:48:53",
+      "wr_confidence_kickoff": 76.42123076923077,
+      "wr_breakdown_kickoff": {
+        "base": 76.1,
+        "impact_scale": 0.522,
+        "record_mod": -2.811,
+        "record_win_pct": 14.286,
+        "record_settled": 7,
+        "agree_mod": 3.132,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": null,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 1,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 86.42123076923077
     }
   ],
   "next_wallet_id": 72,
