@@ -47792,18 +47792,18 @@
         "total": 48.5,
         "over_odds": -112.0,
         "under_odds": -108.0,
-        "home_moneyline": -148,
-        "away_moneyline": 124,
+        "home_moneyline": -142,
+        "away_moneyline": 120,
         "draw_moneyline": null
       },
-      "pregame_odds_captured_at": "2026-11-15T01:37:15",
+      "pregame_odds_captured_at": "2026-11-15T08:59:03",
       "kickoff": "2026-11-15T18:00Z",
       "pregame_weather": {
         "city": "Norman",
         "temp_c": 5.8,
-        "precip_probability_pct": 76,
-        "precip_mm": 0.4,
-        "wind_kmh": 17.3,
+        "precip_probability_pct": 88,
+        "precip_mm": 0.7,
+        "wind_kmh": 17.8,
         "cloud_cover_pct": 100,
         "forecast_hour": "2026-11-15T18:00"
       },
@@ -47853,14 +47853,14 @@
           "ga": 103
         }
       },
-      "pregame_intel_captured_at": "2026-11-15T01:37:15",
+      "pregame_intel_captured_at": "2026-11-15T08:59:03",
       "wr_confidence_kickoff": 88.6,
       "wr_breakdown_kickoff": {
         "base": 76.0,
         "impact_scale": 0.52,
         "record_mod": 0.0,
         "record_win_pct": 50.0,
-        "record_settled": 59,
+        "record_settled": 61,
         "agree_mod": 0.0,
         "conflict_mod": 0.0,
         "clv_mod": 8.0,
@@ -47944,18 +47944,18 @@
         "total": 48.5,
         "over_odds": -112.0,
         "under_odds": -108.0,
-        "home_moneyline": -148,
-        "away_moneyline": 124,
+        "home_moneyline": -142,
+        "away_moneyline": 120,
         "draw_moneyline": null
       },
-      "pregame_odds_captured_at": "2026-11-15T01:37:15",
+      "pregame_odds_captured_at": "2026-11-15T08:59:03",
       "kickoff": "2026-11-15T18:00Z",
       "pregame_weather": {
         "city": "Norman",
         "temp_c": 5.8,
-        "precip_probability_pct": 76,
-        "precip_mm": 0.4,
-        "wind_kmh": 17.3,
+        "precip_probability_pct": 88,
+        "precip_mm": 0.7,
+        "wind_kmh": 17.8,
         "cloud_cover_pct": 100,
         "forecast_hour": "2026-11-15T18:00"
       },
@@ -48005,14 +48005,14 @@
           "ga": 103
         }
       },
-      "pregame_intel_captured_at": "2026-11-15T01:37:15",
+      "pregame_intel_captured_at": "2026-11-15T08:59:03",
       "wr_confidence_kickoff": 100,
       "wr_breakdown_kickoff": {
         "base": 88.8,
         "impact_scale": 0.776,
-        "record_mod": -4.656,
-        "record_win_pct": 11.111,
-        "record_settled": 9,
+        "record_mod": -5.021,
+        "record_win_pct": 18.182,
+        "record_settled": 11,
         "agree_mod": 4.656,
         "conflict_mod": 0.0,
         "clv_mod": 8.0,
@@ -48066,18 +48066,18 @@
         "total": 48.5,
         "over_odds": -112.0,
         "under_odds": -108.0,
-        "home_moneyline": -148,
-        "away_moneyline": 124,
+        "home_moneyline": -142,
+        "away_moneyline": 120,
         "draw_moneyline": null
       },
-      "pregame_odds_captured_at": "2026-11-15T01:37:15",
+      "pregame_odds_captured_at": "2026-11-15T08:59:03",
       "kickoff": "2026-11-15T18:00Z",
       "pregame_weather": {
         "city": "Norman",
         "temp_c": 5.8,
-        "precip_probability_pct": 76,
-        "precip_mm": 0.4,
-        "wind_kmh": 17.3,
+        "precip_probability_pct": 88,
+        "precip_mm": 0.7,
+        "wind_kmh": 17.8,
         "cloud_cover_pct": 100,
         "forecast_hour": "2026-11-15T18:00"
       },
@@ -48127,14 +48127,14 @@
           "ga": 103
         }
       },
-      "pregame_intel_captured_at": "2026-11-15T01:37:15",
+      "pregame_intel_captured_at": "2026-11-15T08:59:03",
       "wr_confidence_kickoff": 100,
       "wr_breakdown_kickoff": {
         "base": 88.8,
         "impact_scale": 0.776,
-        "record_mod": -4.178,
-        "record_win_pct": 14.286,
-        "record_settled": 7,
+        "record_mod": -4.434,
+        "record_win_pct": 25.0,
+        "record_settled": 8,
         "agree_mod": 4.656,
         "conflict_mod": 0.0,
         "clv_mod": 8.0,
@@ -48575,8 +48575,8 @@
       "selection": "Penn State -9.5",
       "odds": -110,
       "stake": 100.0,
-      "result": "pending",
-      "profit_loss": 0.0,
+      "result": "win",
+      "profit_loss": 90.9090909090909,
       "notes": "",
       "wr_confidence": 72.0,
       "war_room_line": "STAKED Tier 1, 1.00% ($100 per $10k). Score 71.7; EV +10.0%. Paper -9.5 vs Pinnacle -12: 2.5 points of gap through 10 and 11, in prime time. Price, not a casino read.",
@@ -48714,6 +48714,13 @@
         "model": "claude-opus-5-5",
         "graded_at": "2026-11-14T15:48:32",
         "rubric_version": 5
+      },
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 42,
+        "away_score": 14,
+        "kickoff": "2026-11-15T00:00Z"
       }
     },
     {
@@ -48724,8 +48731,8 @@
       "selection": "Penn State -9.5",
       "odds": -110,
       "stake": 100.0,
-      "result": "pending",
-      "profit_loss": 0.0,
+      "result": "win",
+      "profit_loss": 90.9090909090909,
       "notes": "",
       "wr_confidence": 76.7,
       "war_room_line": "Rule: single pick at live WR 77 (floor 75). Line and price copied from Claude pick #438 at selection (2026-11-14T15:48:32).",
@@ -48836,7 +48843,14 @@
         "agreeing": 1,
         "opposing": 0
       },
-      "wr_confidence_initial": 81.62861538461537
+      "wr_confidence_initial": 81.62861538461537,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 42,
+        "away_score": 14,
+        "kickoff": "2026-11-15T00:00Z"
+      }
     },
     {
       "parlay_leg_pick_ids": null,
@@ -48846,8 +48860,8 @@
       "selection": "Penn State -9.5",
       "odds": -110,
       "stake": 100.0,
-      "result": "pending",
-      "profit_loss": 0.0,
+      "result": "win",
+      "profit_loss": 90.9090909090909,
       "notes": "",
       "wr_confidence": 76.7,
       "war_room_line": "Rule: single pick at test score 77 (floor 75). Line and price copied from Claude pick #438 at selection (2026-11-14T15:48:34).",
@@ -48958,7 +48972,14 @@
         "agreeing": 1,
         "opposing": 0
       },
-      "wr_confidence_initial": 82.07672727272727
+      "wr_confidence_initial": 82.07672727272727,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 42,
+        "away_score": 14,
+        "kickoff": "2026-11-15T00:00Z"
+      }
     },
     {
       "parlay_leg_pick_ids": null,
@@ -48968,8 +48989,8 @@
       "selection": "New Mexico -14.5",
       "odds": -110,
       "stake": 50.0,
-      "result": "pending",
-      "profit_loss": 0.0,
+      "result": "loss",
+      "profit_loss": -50.0,
       "notes": "",
       "wr_confidence": 66.0,
       "war_room_line": "TRACKED 0.50% ($50 per $10k). Score 66.4; EV +10.2%. Paper -14.5 vs Pinnacle -17.5: three points of gap through 15, 16 and 17.",
@@ -49107,6 +49128,13 @@
         "model": "claude-opus-5-5",
         "graded_at": "2026-11-14T15:48:51",
         "rubric_version": 5
+      },
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 17,
+        "away_score": 21,
+        "kickoff": "2026-11-15T00:30Z"
       }
     },
     {
@@ -49117,8 +49145,8 @@
       "selection": "New Mexico -14.5",
       "odds": -110,
       "stake": 100.0,
-      "result": "pending",
-      "profit_loss": 0.0,
+      "result": "loss",
+      "profit_loss": -100.0,
       "notes": "",
       "wr_confidence": 76.1,
       "war_room_line": "Rule: single pick at live WR 76 (floor 75). Line and price copied from Claude pick #441 at selection (2026-11-14T15:48:51).",
@@ -49229,7 +49257,14 @@
         "agreeing": 1,
         "opposing": 0
       },
-      "wr_confidence_initial": 86.42123076923077
+      "wr_confidence_initial": 86.42123076923077,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 17,
+        "away_score": 21,
+        "kickoff": "2026-11-15T00:30Z"
+      }
     },
     {
       "parlay_leg_pick_ids": null,
@@ -49551,8 +49586,8 @@
       "selection": "Texas +4.5",
       "odds": -105,
       "stake": 50.0,
-      "result": "pending",
-      "profit_loss": 0.0,
+      "result": "win",
+      "profit_loss": 47.61904761904762,
       "notes": "",
       "wr_confidence": 62.0,
       "war_room_line": "Competition pick #1 of 5, competition only (money card $0; logged at the competition convention). DK +4.5 (-105) at 9:23 AM CT; Friday +4 (-110). Fair Texas +2 [-1,+5].",
@@ -49690,6 +49725,13 @@
         "model": "claude-opus-5-5",
         "graded_at": "2026-11-14T15:50:11",
         "rubric_version": 5
+      },
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 21,
+        "away_score": 22,
+        "kickoff": "2026-11-15T00:30Z"
       }
     },
     {
@@ -50012,8 +50054,8 @@
       "selection": "Utah -1.5",
       "odds": -102,
       "stake": 50.0,
-      "result": "pending",
-      "profit_loss": 0.0,
+      "result": "loss",
+      "profit_loss": -50.0,
       "notes": "",
       "wr_confidence": 59.0,
       "war_room_line": "Competition pick #4 of 5, competition only; new, travel/availability provisional. DK -1.5 (-102) at 9:20 AM CT (Friday -2.5). Fair Utah -2 [-6,+2].",
@@ -50151,6 +50193,13 @@
         "model": "claude-opus-5-5",
         "graded_at": "2026-11-14T15:50:50",
         "rubric_version": 5
+      },
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 39,
+        "away_score": 40,
+        "kickoff": "2026-11-15T03:30Z"
       }
     },
     {
@@ -119551,7 +119600,7 @@
       "league": "CFB",
       "category": "lean",
       "stake": 0.0,
-      "result": "pending",
+      "result": "win",
       "profit_loss": 0.0,
       "parlay_leg_pick_ids": null,
       "wr_confidence": 58.4,
@@ -119659,7 +119708,14 @@
         "agreeing": 0,
         "opposing": 0
       },
-      "wr_confidence_initial": 61.455178885630495
+      "wr_confidence_initial": 61.455178885630495,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 13,
+        "away_score": 21,
+        "kickoff": "2026-11-15T04:00Z"
+      }
     },
     {
       "id": 560,
@@ -120164,7 +120220,7 @@
       "league": "CFB",
       "category": "lean",
       "stake": 0.0,
-      "result": "pending",
+      "result": "push",
       "profit_loss": 0.0,
       "parlay_leg_pick_ids": null,
       "wr_confidence": 55.6,
@@ -120272,7 +120328,14 @@
         "agreeing": 0,
         "opposing": 1
       },
-      "wr_confidence_initial": 48.63678592375366
+      "wr_confidence_initial": 48.63678592375366,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 39,
+        "away_score": 40,
+        "kickoff": "2026-11-15T03:30Z"
+      }
     },
     {
       "id": 565,
@@ -120405,7 +120468,7 @@
       "league": "CFB",
       "category": "lean",
       "stake": 0.0,
-      "result": "pending",
+      "result": "loss",
       "profit_loss": 0.0,
       "parlay_leg_pick_ids": null,
       "wr_confidence": 54.6,
@@ -120513,7 +120576,14 @@
         "agreeing": 0,
         "opposing": 1
       },
-      "wr_confidence_initial": 53.63021700879766
+      "wr_confidence_initial": 53.63021700879766,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 21,
+        "away_score": 22,
+        "kickoff": "2026-11-15T00:30Z"
+      }
     },
     {
       "id": 567,
@@ -120646,7 +120716,7 @@
       "league": "CFB",
       "category": "lean",
       "stake": 0.0,
-      "result": "pending",
+      "result": "win",
       "profit_loss": 0.0,
       "parlay_leg_pick_ids": null,
       "wr_confidence": 54.5,
@@ -120754,7 +120824,14 @@
         "agreeing": 0,
         "opposing": 0
       },
-      "wr_confidence_initial": 55.529560117302054
+      "wr_confidence_initial": 55.529560117302054,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 27,
+        "away_score": 52,
+        "kickoff": "2026-11-15T02:30Z"
+      }
     },
     {
       "id": 569,
@@ -121011,7 +121088,7 @@
       "league": "CFB",
       "category": "lean",
       "stake": 0.0,
-      "result": "pending",
+      "result": "win",
       "profit_loss": 0.0,
       "parlay_leg_pick_ids": null,
       "wr_confidence": 53.4,
@@ -121119,7 +121196,14 @@
         "agreeing": 0,
         "opposing": 0
       },
-      "wr_confidence_initial": 55.42233431085044
+      "wr_confidence_initial": 55.42233431085044,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 38,
+        "away_score": 21,
+        "kickoff": "2026-11-15T00:15Z"
+      }
     },
     {
       "id": 572,
@@ -121252,7 +121336,7 @@
       "league": "CFB",
       "category": "lean",
       "stake": 0.0,
-      "result": "pending",
+      "result": "win",
       "profit_loss": 0.0,
       "parlay_leg_pick_ids": null,
       "wr_confidence": 53.1,
@@ -121360,7 +121444,14 @@
         "agreeing": 0,
         "opposing": 0
       },
-      "wr_confidence_initial": 54.720363636363636
+      "wr_confidence_initial": 54.720363636363636,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 14,
+        "away_score": 21,
+        "kickoff": "2026-11-14T22:30Z"
+      }
     },
     {
       "id": 574,
@@ -121369,7 +121460,7 @@
       "league": "CFB",
       "category": "lean",
       "stake": 0.0,
-      "result": "pending",
+      "result": "loss",
       "profit_loss": 0.0,
       "parlay_leg_pick_ids": null,
       "wr_confidence": 53.0,
@@ -121477,7 +121568,14 @@
         "agreeing": 0,
         "opposing": 0
       },
-      "wr_confidence_initial": 49.219706744868034
+      "wr_confidence_initial": 49.219706744868034,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 30,
+        "away_score": 13,
+        "kickoff": "2026-11-15T02:30Z"
+      }
     },
     {
       "id": 575,
@@ -121486,7 +121584,7 @@
       "league": "CFB",
       "category": "lean",
       "stake": 0.0,
-      "result": "pending",
+      "result": "win",
       "profit_loss": 0.0,
       "parlay_leg_pick_ids": null,
       "wr_confidence": 53.0,
@@ -121594,7 +121692,14 @@
         "agreeing": 0,
         "opposing": 0
       },
-      "wr_confidence_initial": 45.61970674486804
+      "wr_confidence_initial": 45.61970674486804,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 13,
+        "away_score": 26,
+        "kickoff": "2026-11-14T22:30Z"
+      }
     },
     {
       "id": 576,
@@ -121603,7 +121708,7 @@
       "league": "CFB",
       "category": "lean",
       "stake": 0.0,
-      "result": "pending",
+      "result": "loss",
       "profit_loss": 0.0,
       "parlay_leg_pick_ids": null,
       "wr_confidence": 52.8,
@@ -121711,7 +121816,14 @@
         "agreeing": 0,
         "opposing": 0
       },
-      "wr_confidence_initial": 47.018392961876835
+      "wr_confidence_initial": 47.018392961876835,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 28,
+        "away_score": 7,
+        "kickoff": "2026-11-15T00:30Z"
+      }
     },
     {
       "id": 577,
@@ -121968,7 +122080,7 @@
       "league": "CFB",
       "category": "lean",
       "stake": 0.0,
-      "result": "pending",
+      "result": "win",
       "profit_loss": 0.0,
       "parlay_leg_pick_ids": null,
       "wr_confidence": 54.0,
@@ -122076,7 +122188,14 @@
         "agreeing": 0,
         "opposing": 0
       },
-      "wr_confidence_initial": 54.01651681651682
+      "wr_confidence_initial": 54.01651681651682,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 21,
+        "away_score": 22,
+        "kickoff": "2026-11-15T00:30Z"
+      }
     }
   ],
   "ai_backtest": {
