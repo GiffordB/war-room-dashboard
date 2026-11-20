@@ -1,6 +1,6 @@
 {
   "next_report_id": 105,
-  "next_pick_id": 453,
+  "next_pick_id": 454,
   "reports": [
     {
       "source": "ChatGPT",
@@ -50696,6 +50696,155 @@
         "quality_win_gap": null,
         "agreeing": 0,
         "opposing": 0
+      }
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 104,
+      "category": "totals_radar",
+      "matchup": "Manchester United @ Liverpool",
+      "selection": "Under 3.5 Goals",
+      "odds": -150,
+      "stake": 50.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "Liverpool home form is poor: 1-2-2, only 4 scored / 6 conceded at Anfield.\nUnited attack depleted: Rashford (hip), Sesko out; Baleba and Ugarte also out (previews 20-21 Nov).\nPochettino's first game after a training-ground drone breach - new coaches usually start compact, not open.\nLiverpool without Ekitike (Achilles), Bradley, Leoni; Gravenberch managing a heel issue, Van Dijk expected fit.\nForm lens (Utd games 3.3 goals/gm) is the risk; context lens and Anfield goal drought favour <=3.\nLine unchanged at -150 on re-pull 23:11 UTC.",
+      "wr_confidence": 64.0,
+      "war_room_line": "Total ~2.6 xG (LIV 1.6 / MUN 1.0); P(4+) raw 28%, market 43% -> blended 35.5% over / 64.5% under",
+      "edge": "-150 implies 60.0%; blended 64.5% -> +4.5pp edge, EV +7.5%",
+      "price_discipline": "-150 or better: $50\n-151 to -170: $25\n-175 or worse: pass",
+      "espn_event_id": "401878755",
+      "bet_type": "total",
+      "bet_side": "under",
+      "bet_line": 3.5,
+      "home_team": "Liverpool",
+      "away_team": "Manchester United",
+      "created_at": "2026-11-20T23:12:02",
+      "id": 453,
+      "pregame_odds": {
+        "provider": "DraftKings",
+        "spread_details": "LIV -140",
+        "home_spread": -0.5,
+        "home_spread_odds": -155.0,
+        "away_spread_odds": 110.0,
+        "total": 3.5,
+        "over_odds": 120.0,
+        "under_odds": -150.0,
+        "home_moneyline": -140,
+        "away_moneyline": 340,
+        "draw_moneyline": 330.0
+      },
+      "pregame_odds_captured_at": "2026-11-20T23:12:06",
+      "kickoff": "2026-11-22T16:30Z",
+      "pregame_weather": {
+        "city": "Liverpool",
+        "temp_c": 7.2,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 14.4,
+        "cloud_cover_pct": 0,
+        "forecast_hour": "2026-11-22T16:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 3,
+        "win_pct": 60.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 0,
+        "win_pct": 0.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 1,
+          "d": 2,
+          "l": 2,
+          "gf": 4,
+          "ga": 6
+        },
+        "away": {
+          "w": 4,
+          "d": 1,
+          "l": 0,
+          "gf": 10,
+          "ga": 4
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 1,
+          "d": 2,
+          "l": 2,
+          "gf": 10,
+          "ga": 11
+        },
+        "away": {
+          "w": 0,
+          "d": 3,
+          "l": 2,
+          "gf": 4,
+          "ga": 8
+        }
+      },
+      "pregame_intel_captured_at": "2026-11-20T23:12:06",
+      "wr_confidence_kickoff": 64.0,
+      "wr_breakdown_kickoff": {
+        "base": 64.0,
+        "impact_scale": 0.28,
+        "record_mod": 0.0,
+        "record_win_pct": 50.0,
+        "record_settled": 36,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": null,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 64.0,
+      "wr_breakdown_initial": {
+        "base": 64.0,
+        "impact_scale": 0.28,
+        "record_mod": 0.0,
+        "record_win_pct": 50.0,
+        "record_settled": 36,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": -0.0,
+        "clv_move": -0.0,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "ai_grade": {
+        "quality": 5,
+        "verdict": "mixed",
+        "reason": "The author gives a concrete model figure (2.6 xG, a raw 28% chance of 4+ goals), blends it with the market, prices the bet against -150 and lists sourced absences, but the 4.5pp edge rests mainly on the blend and on narrative such as the new-coach compactness claim, with the 3.3 goals-per-game form risk acknowledged rather than resolved.",
+        "model": "claude-opus-5-5",
+        "graded_at": "2026-11-20T23:12:14",
+        "rubric_version": 5
       }
     }
   ],
