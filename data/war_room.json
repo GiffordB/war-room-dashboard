@@ -1,5 +1,5 @@
 {
-  "next_report_id": 104,
+  "next_report_id": 105,
   "next_pick_id": 453,
   "reports": [
     {
@@ -1116,6 +1116,18 @@
       "lsu_review_notes": "",
       "created_at": "2026-11-14T15:49:52",
       "id": 103
+    },
+    {
+      "source": "Claude - GB",
+      "league": "EPL",
+      "report_date": "2026-11-20",
+      "week_number": 11,
+      "week_label": "",
+      "philosophy": "Back from the break: trust the low-event matchups, respect the market everywhere else.",
+      "blind_spot_notes": "Best near-miss: Arsenal @ Newcastle Under 2.5 (+120). Blended 52.5% vs 45.5% implied, +7.1pp, EV +15.6% - the biggest EV on the slate, but it fails the 60% confidence bar, so it is tracked at $0. Arsenal have scored/conceded just 20 total goals in 10 (five 1-0/2-0/2-1 type wins) and travel without Saka (out ~4 weeks per Arteta), Zubimendi (hamstring) and Dowman (suspended); Newcastle are 12th and in crisis around Jaissle with Joelinton out.\nNo match-result side cleared: every favourite (City -255, Brighton -200, Arsenal -180, Spurs -175, Liverpool -140) priced richer than the 50/50 blend.\nCaution on the process this week: my Poisson read sits below the market on nearly every total, so the under lean is partly systematic - real stakes kept to the two strongest (both 3.5 lines) at the bottom of the range.\nMan City's 3-game skid + Semenyo out / Guehi doubt made Fulham +600 tempting (+1.5pp, EV +10.5%) but conf 16% and thin edge -> board lean only.\nPochettino debut at Anfield is the biggest unknown on the slate (new-manager bounce cuts both ways for the U3.5).",
+      "lsu_review_notes": "",
+      "created_at": "2026-11-20T23:11:34",
+      "id": 104
     }
   ],
   "picks": [
