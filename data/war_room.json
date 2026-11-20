@@ -1,6 +1,6 @@
 {
   "next_report_id": 105,
-  "next_pick_id": 456,
+  "next_pick_id": 457,
   "reports": [
     {
       "source": "ChatGPT",
@@ -51142,6 +51142,155 @@
         "reason": "It has a concrete xG model, blends it 50/50 with the market and sources the absences with dates, but half the 7pp edge is just the raw model fighting the market, it is tracked at $0 below the author's own confidence bar, and the weather and pressure notes are narrative.",
         "model": "claude-opus-5-5",
         "graded_at": "2026-11-20T23:12:36",
+        "rubric_version": 5
+      }
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 104,
+      "category": "sexy_moneyline",
+      "matchup": "Brighton & Hove Albion @ Hull City",
+      "selection": "Draw",
+      "odds": 350,
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "A lean, not a stake - draw prices never clear the 60% bar.\nHull unbeaten at home (1-4-0), four draws at the MKM.\nHull Live (19-20 Nov) report two key players back for this one.\nBrighton strong (26-7 GD) but away record 3-0-2 is less dominant than home; Mitoma/Tzimas fitness flagged by Hurzeler.",
+      "wr_confidence": 23.0,
+      "war_room_line": "Brighton 60.6% / Draw 23.0% / Hull 16.4% (blended)",
+      "edge": "+350 implies 22.2%; blended 23.0% -> +0.8pp edge, EV +3.6%",
+      "price_discipline": "+350 or better: $0 tracked\n+300 to +345: $0 tracked\nbelow +300: pass",
+      "espn_event_id": "401879234",
+      "bet_type": "match_result",
+      "bet_side": "draw",
+      "bet_line": null,
+      "home_team": "Hull City",
+      "away_team": "Brighton & Hove Albion",
+      "created_at": "2026-11-20T23:12:39",
+      "id": 456,
+      "pregame_odds": {
+        "provider": "DraftKings",
+        "spread_details": "BHA -200",
+        "home_spread": 1.5,
+        "home_spread_odds": -185.0,
+        "away_spread_odds": 130.0,
+        "total": 2.5,
+        "over_odds": -140.0,
+        "under_odds": 115.0,
+        "home_moneyline": 500,
+        "away_moneyline": -200,
+        "draw_moneyline": 350.0
+      },
+      "pregame_odds_captured_at": "2026-11-20T23:12:43",
+      "kickoff": "2026-11-22T14:00Z",
+      "pregame_weather": {
+        "city": "Hull",
+        "temp_c": 8.5,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 9.4,
+        "cloud_cover_pct": 1,
+        "forecast_hour": "2026-11-22T14:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 0,
+        "win_pct": 0.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 4,
+        "win_pct": 80.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 1,
+          "d": 4,
+          "l": 0,
+          "gf": 7,
+          "ga": 5
+        },
+        "away": {
+          "w": 1,
+          "d": 1,
+          "l": 3,
+          "gf": 4,
+          "ga": 6
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 4,
+          "d": 1,
+          "l": 0,
+          "gf": 15,
+          "ga": 1
+        },
+        "away": {
+          "w": 3,
+          "d": 0,
+          "l": 2,
+          "gf": 11,
+          "ga": 6
+        }
+      },
+      "pregame_intel_captured_at": "2026-11-20T23:12:43",
+      "wr_confidence_kickoff": 23.0,
+      "wr_breakdown_kickoff": {
+        "base": 23.0,
+        "impact_scale": 0.0,
+        "record_mod": 0.0,
+        "record_win_pct": 50.0,
+        "record_settled": 36,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": null,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 23.0,
+      "wr_breakdown_initial": {
+        "base": 23.0,
+        "impact_scale": 0.0,
+        "record_mod": 0.0,
+        "record_win_pct": 50.0,
+        "record_settled": 36,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": null,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "ai_grade": {
+        "quality": 3,
+        "verdict": "story",
+        "reason": "The edge is a 0.8pp sliver against a +350 price whose implied probability likely carries vig, so it sits within any reasonable model error, and the author admits it fails their own bar while the notes lean on narrative home-draw trends and loosely sourced team news.",
+        "model": "claude-opus-5-5",
+        "graded_at": "2026-11-20T23:12:45",
         "rubric_version": 5
       }
     }
