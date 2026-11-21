@@ -50734,7 +50734,7 @@
         "away_moneyline": 340,
         "draw_moneyline": 330.0
       },
-      "pregame_odds_captured_at": "2026-11-21T17:14:04",
+      "pregame_odds_captured_at": "2026-11-21T22:55:40",
       "kickoff": "2026-11-22T16:30Z",
       "pregame_weather": null,
       "pregame_home_form": {
@@ -50783,14 +50783,14 @@
           "ga": 8
         }
       },
-      "pregame_intel_captured_at": "2026-11-21T17:14:04",
-      "wr_confidence_kickoff": 64.13023255813954,
+      "pregame_intel_captured_at": "2026-11-21T22:55:40",
+      "wr_confidence_kickoff": 64.0,
       "wr_breakdown_kickoff": {
         "base": 64.0,
         "impact_scale": 0.28,
-        "record_mod": 0.13,
-        "record_win_pct": 51.351,
-        "record_settled": 37,
+        "record_mod": 0.0,
+        "record_win_pct": 50.0,
+        "record_settled": 38,
         "agree_mod": 0.0,
         "conflict_mod": 0.0,
         "clv_mod": -0.0,
@@ -51003,8 +51003,8 @@
       "selection": "Under 2.5 Goals",
       "odds": 120,
       "stake": 0.0,
-      "result": "pending",
-      "profit_loss": 0.0,
+      "result": "loss",
+      "profit_loss": -0.0,
       "notes": "A lean, not a stake - big EV but confidence under the 60% bar.\nArsenal games have produced just 20 goals in 10 (15-5); recent wins 1-0, 1-0, 2-0, 1-0, 2-1.\nArsenal without Saka (thigh, ~4 weeks per Arteta 20 Nov), Zubimendi (hamstring) and Dowman (suspended).\nNewcastle 12th with 13 scored, Joelinton out; Jaissle under pressure and facing a touchline ban.\nCold night (2.5C forecast).",
       "wr_confidence": 52.0,
       "war_room_line": "Total ~2.1 xG (NEW 0.7 / ARS 1.4); raw over 38%, market 57% -> blended 47.5% over / 52.5% under",
@@ -51134,6 +51134,13 @@
         "model": "claude-opus-5-5",
         "graded_at": "2026-11-20T23:12:36",
         "rubric_version": 5
+      },
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 2,
+        "away_score": 2,
+        "kickoff": "2026-11-21T17:30Z"
       }
     },
     {
@@ -51172,7 +51179,7 @@
         "away_moneyline": -200,
         "draw_moneyline": 350.0
       },
-      "pregame_odds_captured_at": "2026-11-21T17:14:04",
+      "pregame_odds_captured_at": "2026-11-21T22:55:40",
       "kickoff": "2026-11-22T14:00Z",
       "pregame_weather": null,
       "pregame_home_form": {
@@ -51221,14 +51228,14 @@
           "ga": 6
         }
       },
-      "pregame_intel_captured_at": "2026-11-21T17:14:04",
+      "pregame_intel_captured_at": "2026-11-21T22:55:40",
       "wr_confidence_kickoff": 23.0,
       "wr_breakdown_kickoff": {
         "base": 23.0,
         "impact_scale": 0.0,
         "record_mod": 0.0,
-        "record_win_pct": 51.351,
-        "record_settled": 37,
+        "record_win_pct": 50.0,
+        "record_settled": 38,
         "agree_mod": 0.0,
         "conflict_mod": 0.0,
         "clv_mod": 0.0,
@@ -124180,7 +124187,7 @@
       "league": "EPL",
       "category": "lean",
       "stake": 0.0,
-      "result": "pending",
+      "result": "loss",
       "profit_loss": 0.0,
       "parlay_leg_pick_ids": null,
       "wr_confidence": 16.0,
@@ -124280,7 +124287,14 @@
         "agreeing": 0,
         "opposing": 0
       },
-      "wr_confidence_initial": 13.2
+      "wr_confidence_initial": 13.2,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 2,
+        "away_score": 2,
+        "kickoff": "2026-11-21T17:30Z"
+      }
     },
     {
       "id": 592,
@@ -124316,7 +124330,7 @@
         "away_moneyline": -200,
         "draw_moneyline": 350.0
       },
-      "pregame_odds_captured_at": "2026-11-21T17:14:04",
+      "pregame_odds_captured_at": "2026-11-21T22:55:40",
       "kickoff": "2026-11-22T14:00Z",
       "pregame_weather": null,
       "pregame_home_form": {
@@ -124365,14 +124379,14 @@
           "ga": 6
         }
       },
-      "pregame_intel_captured_at": "2026-11-21T17:14:04",
-      "wr_confidence_kickoff": 51.009302325581395,
+      "pregame_intel_captured_at": "2026-11-21T22:55:40",
+      "wr_confidence_kickoff": 51.0,
       "wr_breakdown_kickoff": {
         "base": 51.0,
         "impact_scale": 0.02,
-        "record_mod": 0.009,
-        "record_win_pct": 51.351,
-        "record_settled": 37,
+        "record_mod": 0.0,
+        "record_win_pct": 50.0,
+        "record_settled": 38,
         "agree_mod": 0.0,
         "conflict_mod": 0.0,
         "clv_mod": 0.0,
@@ -124425,7 +124439,7 @@
         "away_moneyline": 340,
         "draw_moneyline": 330.0
       },
-      "pregame_odds_captured_at": "2026-11-21T17:14:04",
+      "pregame_odds_captured_at": "2026-11-21T22:55:40",
       "kickoff": "2026-11-22T16:30Z",
       "pregame_weather": null,
       "pregame_home_form": {
@@ -124474,14 +124488,14 @@
           "ga": 8
         }
       },
-      "pregame_intel_captured_at": "2026-11-21T17:14:04",
-      "wr_confidence_kickoff": 56.37984496124031,
+      "pregame_intel_captured_at": "2026-11-21T22:55:40",
+      "wr_confidence_kickoff": 56.333333333333336,
       "wr_breakdown_kickoff": {
         "base": 55.0,
         "impact_scale": 0.1,
-        "record_mod": 0.047,
-        "record_win_pct": 51.351,
-        "record_settled": 37,
+        "record_mod": 0.0,
+        "record_win_pct": 50.0,
+        "record_settled": 38,
         "agree_mod": 0.0,
         "conflict_mod": 0.0,
         "clv_mod": 0.0,
@@ -124534,7 +124548,7 @@
         "away_moneyline": 235,
         "draw_moneyline": 250.0
       },
-      "pregame_odds_captured_at": "2026-11-21T17:14:04",
+      "pregame_odds_captured_at": "2026-11-21T22:55:40",
       "kickoff": "2026-11-23T20:00Z",
       "pregame_weather": null,
       "pregame_home_form": {
@@ -124583,14 +124597,14 @@
           "ga": 5
         }
       },
-      "pregame_intel_captured_at": "2026-11-21T17:14:04",
+      "pregame_intel_captured_at": "2026-11-21T22:55:40",
       "wr_confidence_kickoff": 43.0,
       "wr_breakdown_kickoff": {
         "base": 42.0,
         "impact_scale": 0.0,
         "record_mod": 0.0,
-        "record_win_pct": 51.351,
-        "record_settled": 37,
+        "record_win_pct": 50.0,
+        "record_settled": 38,
         "agree_mod": 0.0,
         "conflict_mod": 0.0,
         "clv_mod": 0.0,
@@ -124643,7 +124657,7 @@
         "away_moneyline": 235,
         "draw_moneyline": 250.0
       },
-      "pregame_odds_captured_at": "2026-11-21T17:14:04",
+      "pregame_odds_captured_at": "2026-11-21T22:55:40",
       "kickoff": "2026-11-23T20:00Z",
       "pregame_weather": null,
       "pregame_home_form": {
@@ -124692,14 +124706,14 @@
           "ga": 5
         }
       },
-      "pregame_intel_captured_at": "2026-11-21T17:14:04",
+      "pregame_intel_captured_at": "2026-11-21T22:55:40",
       "wr_confidence_kickoff": 46.0,
       "wr_breakdown_kickoff": {
         "base": 46.0,
         "impact_scale": 0.0,
         "record_mod": 0.0,
-        "record_win_pct": 51.351,
-        "record_settled": 37,
+        "record_win_pct": 50.0,
+        "record_settled": 38,
         "agree_mod": 0.0,
         "conflict_mod": 0.0,
         "clv_mod": 0.0,
