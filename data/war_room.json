@@ -50706,8 +50706,8 @@
       "selection": "Under 3.5 Goals",
       "odds": -150,
       "stake": 50.0,
-      "result": "pending",
-      "profit_loss": 0.0,
+      "result": "loss",
+      "profit_loss": -50.0,
       "notes": "Liverpool home form is poor: 1-2-2, only 4 scored / 6 conceded at Anfield.\nUnited attack depleted: Rashford (hip), Sesko out; Baleba and Ugarte also out (previews 20-21 Nov).\nPochettino's first game after a training-ground drone breach - new coaches usually start compact, not open.\nLiverpool without Ekitike (Achilles), Bradley, Leoni; Gravenberch managing a heel issue, Van Dijk expected fit.\nForm lens (Utd games 3.3 goals/gm) is the risk; context lens and Anfield goal drought favour <=3.\nLine unchanged at -150 on re-pull 23:11 UTC.",
       "wr_confidence": 64.0,
       "war_room_line": "Total ~2.6 xG (LIV 1.6 / MUN 1.0); P(4+) raw 28%, market 43% -> blended 35.5% over / 64.5% under",
@@ -50845,6 +50845,13 @@
         "model": "claude-opus-5-5",
         "graded_at": "2026-11-20T23:12:14",
         "rubric_version": 5
+      },
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 4,
+        "away_score": 0,
+        "kickoff": "2026-11-22T16:30Z"
       }
     },
     {
@@ -51159,8 +51166,8 @@
       "selection": "Draw",
       "odds": 350,
       "stake": 0.0,
-      "result": "pending",
-      "profit_loss": 0.0,
+      "result": "loss",
+      "profit_loss": -0.0,
       "notes": "A lean, not a stake - draw prices never clear the 60% bar.\nHull unbeaten at home (1-4-0), four draws at the MKM.\nHull Live (19-20 Nov) report two key players back for this one.\nBrighton strong (26-7 GD) but away record 3-0-2 is less dominant than home; Mitoma/Tzimas fitness flagged by Hurzeler.",
       "wr_confidence": 23.0,
       "war_room_line": "Brighton 60.6% / Draw 23.0% / Hull 16.4% (blended)",
@@ -51298,6 +51305,13 @@
         "model": "claude-opus-5-5",
         "graded_at": "2026-11-20T23:12:45",
         "rubric_version": 5
+      },
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 2,
+        "away_score": 0,
+        "kickoff": "2026-11-22T14:00Z"
       }
     }
   ],
@@ -124319,7 +124333,7 @@
       "league": "EPL",
       "category": "lean",
       "stake": 0.0,
-      "result": "pending",
+      "result": "loss",
       "profit_loss": 0.0,
       "parlay_leg_pick_ids": null,
       "wr_confidence": 51.0,
@@ -124427,7 +124441,14 @@
         "agreeing": 0,
         "opposing": 0
       },
-      "wr_confidence_initial": 51.0
+      "wr_confidence_initial": 51.0,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 2,
+        "away_score": 0,
+        "kickoff": "2026-11-22T14:00Z"
+      }
     },
     {
       "id": 593,
@@ -124436,7 +124457,7 @@
       "league": "EPL",
       "category": "lean",
       "stake": 0.0,
-      "result": "pending",
+      "result": "win",
       "profit_loss": 0.0,
       "parlay_leg_pick_ids": null,
       "wr_confidence": 55.0,
@@ -124544,7 +124565,14 @@
         "agreeing": 0,
         "opposing": 0
       },
-      "wr_confidence_initial": 56.333333333333336
+      "wr_confidence_initial": 56.333333333333336,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 4,
+        "away_score": 0,
+        "kickoff": "2026-11-22T16:30Z"
+      }
     },
     {
       "id": 594,
@@ -124580,15 +124608,15 @@
         "away_moneyline": 205,
         "draw_moneyline": 250.0
       },
-      "pregame_odds_captured_at": "2026-11-22T10:57:14",
+      "pregame_odds_captured_at": "2026-11-22T18:24:28",
       "kickoff": "2026-11-23T20:00Z",
       "pregame_weather": {
         "city": "Brentford",
-        "temp_c": -1.4,
+        "temp_c": -2.5,
         "precip_probability_pct": 0,
         "precip_mm": 0.0,
-        "wind_kmh": 7.8,
-        "cloud_cover_pct": 7,
+        "wind_kmh": 6.6,
+        "cloud_cover_pct": 98,
         "forecast_hour": "2026-11-23T20:00"
       },
       "pregame_home_form": {
@@ -124637,14 +124665,14 @@
           "ga": 5
         }
       },
-      "pregame_intel_captured_at": "2026-11-22T10:57:14",
+      "pregame_intel_captured_at": "2026-11-22T18:24:28",
       "wr_confidence_kickoff": 43.0,
       "wr_breakdown_kickoff": {
         "base": 42.0,
         "impact_scale": 0.0,
-        "record_mod": 0.0,
-        "record_win_pct": 50.0,
-        "record_settled": 38,
+        "record_mod": -0.0,
+        "record_win_pct": 47.5,
+        "record_settled": 40,
         "agree_mod": 0.0,
         "conflict_mod": 0.0,
         "clv_mod": 0.0,
@@ -124697,15 +124725,15 @@
         "away_moneyline": 205,
         "draw_moneyline": 250.0
       },
-      "pregame_odds_captured_at": "2026-11-22T10:57:14",
+      "pregame_odds_captured_at": "2026-11-22T18:24:28",
       "kickoff": "2026-11-23T20:00Z",
       "pregame_weather": {
         "city": "Brentford",
-        "temp_c": -1.4,
+        "temp_c": -2.5,
         "precip_probability_pct": 0,
         "precip_mm": 0.0,
-        "wind_kmh": 7.8,
-        "cloud_cover_pct": 7,
+        "wind_kmh": 6.6,
+        "cloud_cover_pct": 98,
         "forecast_hour": "2026-11-23T20:00"
       },
       "pregame_home_form": {
@@ -124754,14 +124782,14 @@
           "ga": 5
         }
       },
-      "pregame_intel_captured_at": "2026-11-22T10:57:14",
+      "pregame_intel_captured_at": "2026-11-22T18:24:28",
       "wr_confidence_kickoff": 46.0,
       "wr_breakdown_kickoff": {
         "base": 46.0,
         "impact_scale": 0.0,
-        "record_mod": 0.0,
-        "record_win_pct": 50.0,
-        "record_settled": 38,
+        "record_mod": -0.0,
+        "record_win_pct": 47.5,
+        "record_settled": 40,
         "agree_mod": 0.0,
         "conflict_mod": 0.0,
         "clv_mod": 0.0,
