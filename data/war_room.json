@@ -124597,26 +124597,26 @@
       "note": "Pass; price too rich vs blend. Own 40% / mkt no-vig 44% -> blended 42.2% vs 46.5% implied (-4.3pp, EV -9.4%).",
       "pregame_odds": {
         "provider": "DraftKings",
-        "spread_details": "BRE +130",
+        "spread_details": "BRE +125",
         "home_spread": -0.5,
-        "home_spread_odds": 120.0,
-        "away_spread_odds": -165.0,
+        "home_spread_odds": 115.0,
+        "away_spread_odds": -160.0,
         "total": 2.5,
-        "over_odds": -125.0,
+        "over_odds": -120.0,
         "under_odds": 100.0,
-        "home_moneyline": 130,
-        "away_moneyline": 205,
+        "home_moneyline": 125,
+        "away_moneyline": 215,
         "draw_moneyline": 250.0
       },
-      "pregame_odds_captured_at": "2026-11-23T00:06:01",
+      "pregame_odds_captured_at": "2026-11-23T08:44:53",
       "kickoff": "2026-11-23T20:00Z",
       "pregame_weather": {
         "city": "Brentford",
-        "temp_c": -1.7,
+        "temp_c": -2.4,
         "precip_probability_pct": 0,
         "precip_mm": 0.0,
-        "wind_kmh": 5.0,
-        "cloud_cover_pct": 100,
+        "wind_kmh": 7.7,
+        "cloud_cover_pct": 80,
         "forecast_hour": "2026-11-23T20:00"
       },
       "pregame_home_form": {
@@ -124665,7 +124665,7 @@
           "ga": 5
         }
       },
-      "pregame_intel_captured_at": "2026-11-23T00:06:01",
+      "pregame_intel_captured_at": "2026-11-23T08:44:53",
       "wr_confidence_kickoff": 43.0,
       "wr_breakdown_kickoff": {
         "base": 42.0,
@@ -124714,26 +124714,26 @@
       "note": "Pass; price too rich vs blend. Own 40% / mkt no-vig 53% -> blended 46.2% vs 55.6% implied (-9.4pp, EV -16.9%).",
       "pregame_odds": {
         "provider": "DraftKings",
-        "spread_details": "BRE +130",
+        "spread_details": "BRE +125",
         "home_spread": -0.5,
-        "home_spread_odds": 120.0,
-        "away_spread_odds": -165.0,
+        "home_spread_odds": 115.0,
+        "away_spread_odds": -160.0,
         "total": 2.5,
-        "over_odds": -125.0,
+        "over_odds": -120.0,
         "under_odds": 100.0,
-        "home_moneyline": 130,
-        "away_moneyline": 205,
+        "home_moneyline": 125,
+        "away_moneyline": 215,
         "draw_moneyline": 250.0
       },
-      "pregame_odds_captured_at": "2026-11-23T00:06:01",
+      "pregame_odds_captured_at": "2026-11-23T08:44:53",
       "kickoff": "2026-11-23T20:00Z",
       "pregame_weather": {
         "city": "Brentford",
-        "temp_c": -1.7,
+        "temp_c": -2.4,
         "precip_probability_pct": 0,
         "precip_mm": 0.0,
-        "wind_kmh": 5.0,
-        "cloud_cover_pct": 100,
+        "wind_kmh": 7.7,
+        "cloud_cover_pct": 80,
         "forecast_hour": "2026-11-23T20:00"
       },
       "pregame_home_form": {
@@ -124782,7 +124782,7 @@
           "ga": 5
         }
       },
-      "pregame_intel_captured_at": "2026-11-23T00:06:01",
+      "pregame_intel_captured_at": "2026-11-23T08:44:53",
       "wr_confidence_kickoff": 46.0,
       "wr_breakdown_kickoff": {
         "base": 46.0,
