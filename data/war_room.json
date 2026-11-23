@@ -124608,15 +124608,15 @@
         "away_moneyline": 205,
         "draw_moneyline": 250.0
       },
-      "pregame_odds_captured_at": "2026-11-22T18:24:28",
+      "pregame_odds_captured_at": "2026-11-23T00:06:01",
       "kickoff": "2026-11-23T20:00Z",
       "pregame_weather": {
         "city": "Brentford",
-        "temp_c": -2.5,
+        "temp_c": -1.7,
         "precip_probability_pct": 0,
         "precip_mm": 0.0,
-        "wind_kmh": 6.6,
-        "cloud_cover_pct": 98,
+        "wind_kmh": 5.0,
+        "cloud_cover_pct": 100,
         "forecast_hour": "2026-11-23T20:00"
       },
       "pregame_home_form": {
@@ -124665,7 +124665,7 @@
           "ga": 5
         }
       },
-      "pregame_intel_captured_at": "2026-11-22T18:24:28",
+      "pregame_intel_captured_at": "2026-11-23T00:06:01",
       "wr_confidence_kickoff": 43.0,
       "wr_breakdown_kickoff": {
         "base": 42.0,
@@ -124725,15 +124725,15 @@
         "away_moneyline": 205,
         "draw_moneyline": 250.0
       },
-      "pregame_odds_captured_at": "2026-11-22T18:24:28",
+      "pregame_odds_captured_at": "2026-11-23T00:06:01",
       "kickoff": "2026-11-23T20:00Z",
       "pregame_weather": {
         "city": "Brentford",
-        "temp_c": -2.5,
+        "temp_c": -1.7,
         "precip_probability_pct": 0,
         "precip_mm": 0.0,
-        "wind_kmh": 6.6,
-        "cloud_cover_pct": 98,
+        "wind_kmh": 5.0,
+        "cloud_cover_pct": 100,
         "forecast_hour": "2026-11-23T20:00"
       },
       "pregame_home_form": {
@@ -124782,7 +124782,7 @@
           "ga": 5
         }
       },
-      "pregame_intel_captured_at": "2026-11-22T18:24:28",
+      "pregame_intel_captured_at": "2026-11-23T00:06:01",
       "wr_confidence_kickoff": 46.0,
       "wr_breakdown_kickoff": {
         "base": 46.0,
