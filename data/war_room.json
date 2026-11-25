@@ -1136,7 +1136,7 @@
       "week_number": 5,
       "week_label": "",
       "philosophy": "Blend the number with the market, respect this season's goal glut, stake only what clears both bars.",
-      "blind_spot_notes": "",
+      "blind_spot_notes": "Best near-miss: Sabah FK +3.5 (-160) vs Barcelona - blended 62.7% (clears the 60% bar) but EV only +1.9%, a hair under the +2% stake bar, so it goes in tracked at $0. Second: Stuttgart +1.5 (-125) at Inter - EV +6.9% but blended confidence 59.4%, just under 60%. Method note: own number = hand-set xG (club quality + 4-game UCL form + dated team news), scaled x1.15 to this season's very high-scoring UCL environment (~4.3 goals/game across the MD1-4 form sample), Poisson-converted, then blended 50/50 with the no-vig DraftKings price (every side has 11+ domestic games, so own-weight hits the 0.5 cap). Before the scoring-environment correction my model liked nearly every under; after it, most unders went to fair. The market's 3.5 lines are tracking this season's goal glut, so the remaining under edges (Inter-Stuttgart, Sabah-Barca) are tracked, not staked. uefa.com/bundesliga.com match pages had only placeholder lineups at run time (XIs are published 60 min before kickoff), so team news comes from ESPN plus Google-News club and beat coverage dated Nov 22-24.",
       "lsu_review_notes": "",
       "created_at": "2026-11-25T00:11:39",
       "id": 105
