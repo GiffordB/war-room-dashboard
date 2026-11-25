@@ -1,5 +1,5 @@
 {
-  "next_report_id": 105,
+  "next_report_id": 106,
   "next_pick_id": 457,
   "reports": [
     {
@@ -1128,6 +1128,18 @@
       "lsu_review_notes": "",
       "created_at": "2026-11-20T23:11:34",
       "id": 104
+    },
+    {
+      "source": "Claude - GB",
+      "league": "UCL",
+      "report_date": "2026-11-24",
+      "week_number": 5,
+      "week_label": "",
+      "philosophy": "Blend the number with the market, respect this season's goal glut, stake only what clears both bars.",
+      "blind_spot_notes": "",
+      "lsu_review_notes": "",
+      "created_at": "2026-11-25T00:11:39",
+      "id": 105
     }
   ],
   "picks": [
