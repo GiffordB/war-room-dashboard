@@ -51334,8 +51334,8 @@
       "selection": "Bayern Munich to Win",
       "odds": -150,
       "stake": 60.0,
-      "result": "pending",
-      "profit_loss": 0.0,
+      "result": "loss",
+      "profit_loss": -60.0,
       "notes": "Lille 35th of 36 in the league phase: 1 pt, 4 GF / 10 GA, winless in 4 (incl. a home loss to Betis).\nBayern unbeaten in the UCL (2W 2D, 12 GF / 5 GA) and won 2-0 at Atletico on MD4.\nContext overlay (-10% to Bayern attack): Olise reported set to miss (Get German Football News, Nov 22). Squawka lists no absences, so sources conflict. Musiala is out amid the club health dispute (BBC, Nov 24).\nBayern's domestic form is wobbly (1-1 vs Koln), and Kompany is reportedly planning a rotated XI, so this stays at the low end of the range.\nLine unchanged between 00:07 and 00:10 UTC pulls; no movement.",
       "wr_confidence": 62.0,
       "war_room_line": "Bayern 62% / Draw 21% / Lille 17% (blended; raw xG Lille 0.98 - Bayern 2.30)",
@@ -51473,6 +51473,13 @@
         "model": "claude-opus-5-5",
         "graded_at": "2026-11-25T00:12:05",
         "rubric_version": 5
+      },
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 2,
+        "away_score": 1,
+        "kickoff": "2026-11-25T20:00Z"
       }
     },
     {
@@ -51483,7 +51490,7 @@
       "selection": "Sabah FK +3.5",
       "odds": -160,
       "stake": 0.0,
-      "result": "pending",
+      "result": "win",
       "profit_loss": 0.0,
       "notes": "Barca without Lamine Yamal (Flick: 'we can win without him', ESPN Nov 24). Flick is also managing minutes (LiveScore Nov 24).\nLongest European away trip in club history (FCBarcelona.com, Nov 23), with La Liga at the weekend, so rotation risk.\nBaku forecast: 75% rain chance, ~30 km/h wind. Bad conditions for a 4+ goal margin.\nBarca UCL margins this season: +4, +3, +3, -2. Only 1 of 4 beat 3.5. Sabah lost 0-4 to Man Utd, so a blowout is possible.\nNo bet: confidence clears 60 but EV +1.9% misses the +2% bar.",
       "wr_confidence": 63.0,
@@ -51622,6 +51629,13 @@
         "model": "claude-opus-5-5",
         "graded_at": "2026-11-25T00:12:17",
         "rubric_version": 5
+      },
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 1,
+        "away_score": 4,
+        "kickoff": "2026-11-25T17:45Z"
       }
     },
     {
@@ -51632,8 +51646,8 @@
       "selection": "VfB Stuttgart +1.5",
       "odds": -125,
       "stake": 0.0,
-      "result": "pending",
-      "profit_loss": 0.0,
+      "result": "loss",
+      "profit_loss": -0.0,
       "notes": "Calhanoglu out for at least two games (Football Italia, Nov 23). Zielinski also at risk (Football Italia, Nov 24).\nInter have leaked lately: 3-4 at home to Brugge, 1-2 at Real Madrid, 4-4 at Atalanta at the weekend.\nStuttgart concede little: 4 GA in 4 UCL games, then a 0-0 at Schalke.\nA lean, not a stake: blended confidence 59.4% is just under the 60% bar.",
       "wr_confidence": 59.0,
       "war_room_line": "Inter by ~0.8 (range 0 to 1.5); Inter 56% / Draw 22% / VfB 22% raw",
@@ -51771,6 +51785,13 @@
         "model": "claude-opus-5-5",
         "graded_at": "2026-11-25T00:12:27",
         "rubric_version": 5
+      },
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 2,
+        "away_score": 0,
+        "kickoff": "2026-11-25T20:00Z"
       }
     },
     {
@@ -51781,7 +51802,7 @@
       "selection": "Under 3.5 Goals",
       "odds": 125,
       "stake": 0.0,
-      "result": "pending",
+      "result": "win",
       "profit_loss": 0.0,
       "notes": "Market prices over 3.5 at -155, which is a very high total for this matchup.\nInter are without their deep-lying playmaker (Calhanoglu), and Stuttgart's defence has been tight (4 GA in 4).\nOn the other side: Inter's last two games had 7 and 8 goals, and this season's UCL is averaging ~4.3 goals per game.\nBig price gap, but confidence is only 54%. Tracked, not staked.",
       "wr_confidence": 54.0,
@@ -51920,6 +51941,13 @@
         "model": "claude-opus-5-5",
         "graded_at": "2026-11-25T00:12:40",
         "rubric_version": 5
+      },
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 2,
+        "away_score": 0,
+        "kickoff": "2026-11-25T20:00Z"
       }
     },
     {
@@ -51930,8 +51958,8 @@
       "selection": "Under 4.5 Goals",
       "odds": 110,
       "stake": 0.0,
-      "result": "pending",
-      "profit_loss": 0.0,
+      "result": "loss",
+      "profit_loss": -0.0,
       "notes": "Forecast for Baku: ~30 km/h wind and 75% rain chance.\nNo Lamine Yamal, and likely rotation after a record-long trip.\nSabah have scored 4 in 4. Barca need to do almost all the scoring to get to 5.\nTracked only: confidence 54% is under 60%.",
       "wr_confidence": 54.0,
       "war_room_line": "Total ~4.0 (Sabah 0.7 / Barca 3.3); P(under 4.5) 62.4% raw / 53.7% blended",
@@ -52069,6 +52097,13 @@
         "model": "claude-opus-5-5",
         "graded_at": "2026-11-25T00:12:49",
         "rubric_version": 5
+      },
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 1,
+        "away_score": 4,
+        "kickoff": "2026-11-25T17:45Z"
       }
     },
     {
@@ -52079,8 +52114,8 @@
       "selection": "Sporting CP to Win",
       "odds": 155,
       "stake": 0.0,
-      "result": "pending",
-      "profit_loss": 0.0,
+      "result": "loss",
+      "profit_loss": -0.0,
       "notes": "Man Utd are 19th in the EPL (8 pts from 11). The BBC on Nov 23: 'No-one's coming to save us'.\nCunha suspended per LiveScore (Nov 24) and the Express reports five players unavailable. Squawka's predicted XI includes Cunha, so sources conflict. Confidence is held down for that.\nSporting are 3-1 in the UCL (8 GF / 4 GA) and Irankunda scored a brace at the weekend.\nPrice is close to a pick'em despite the gap in domestic form.\nDog price, so confidence can't reach 60%. Tracked, not staked.",
       "wr_confidence": 44.0,
       "war_room_line": "Sporting 44% / Draw 24% / Man Utd 31% (blended)",
@@ -52218,6 +52253,13 @@
         "quality_win_gap": null,
         "agreeing": 0,
         "opposing": 0
+      },
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 2,
+        "away_score": 2,
+        "kickoff": "2026-11-25T20:00Z"
       }
     },
     {
@@ -52228,8 +52270,8 @@
       "selection": "Shakhtar Donetsk to Win",
       "odds": 195,
       "stake": 0.0,
-      "result": "pending",
-      "profit_loss": 0.0,
+      "result": "loss",
+      "profit_loss": -0.0,
       "notes": "Fenerbahce are in managerial turmoil: Kuyt left a week after beating Liverpool (ESPN, Nov 11), following an earlier resignation in September.\nFener's defence is the worst of the pair: 11 GA in 4, including 0-6 at Aston Villa.\nShakhtar play 'home' at Stamford Bridge, so home edge is reduced in the model.\nSmall edge at a big price. A lean, not a stake.",
       "wr_confidence": 37.0,
       "war_room_line": "Shakhtar 37% / Draw 26% / Fenerbahce 37% (blended)",
@@ -52367,6 +52409,13 @@
         "model": "claude-opus-5-5",
         "graded_at": "2026-11-25T00:13:14",
         "rubric_version": 5
+      },
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 0,
+        "away_score": 1,
+        "kickoff": "2026-11-25T20:00Z"
       }
     }
   ],
@@ -125884,7 +125933,7 @@
       "league": "UCL",
       "category": "lean",
       "stake": 0.0,
-      "result": "pending",
+      "result": "loss",
       "profit_loss": 0.0,
       "parlay_leg_pick_ids": null,
       "wr_confidence": 34.0,
@@ -125992,7 +126041,14 @@
         "agreeing": 0,
         "opposing": 0
       },
-      "wr_confidence_initial": 34.0
+      "wr_confidence_initial": 34.0,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 0,
+        "away_score": 1,
+        "kickoff": "2026-11-25T17:45Z"
+      }
     },
     {
       "id": 617,
@@ -126001,7 +126057,7 @@
       "league": "UCL",
       "category": "lean",
       "stake": 0.0,
-      "result": "pending",
+      "result": "win",
       "profit_loss": 0.0,
       "parlay_leg_pick_ids": null,
       "wr_confidence": 58.0,
@@ -126109,7 +126165,14 @@
         "agreeing": 0,
         "opposing": 0
       },
-      "wr_confidence_initial": 56.857142857142854
+      "wr_confidence_initial": 56.857142857142854,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 0,
+        "away_score": 1,
+        "kickoff": "2026-11-25T17:45Z"
+      }
     },
     {
       "id": 618,
@@ -126118,7 +126181,7 @@
       "league": "UCL",
       "category": "lean",
       "stake": 0.0,
-      "result": "pending",
+      "result": "loss",
       "profit_loss": 0.0,
       "parlay_leg_pick_ids": null,
       "wr_confidence": 57.0,
@@ -126226,7 +126289,14 @@
         "agreeing": 0,
         "opposing": 0
       },
-      "wr_confidence_initial": 56.0
+      "wr_confidence_initial": 56.0,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 0,
+        "away_score": 1,
+        "kickoff": "2026-11-25T17:45Z"
+      }
     },
     {
       "id": 619,
@@ -126235,7 +126305,7 @@
       "league": "UCL",
       "category": "lean",
       "stake": 0.0,
-      "result": "pending",
+      "result": "loss",
       "profit_loss": 0.0,
       "parlay_leg_pick_ids": null,
       "wr_confidence": 5.0,
@@ -126343,7 +126413,14 @@
         "agreeing": 0,
         "opposing": 0
       },
-      "wr_confidence_initial": 3.0
+      "wr_confidence_initial": 3.0,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 2,
+        "away_score": 0,
+        "kickoff": "2026-11-25T20:00Z"
+      }
     },
     {
       "id": 620,
@@ -126352,7 +126429,7 @@
       "league": "UCL",
       "category": "lean",
       "stake": 0.0,
-      "result": "pending",
+      "result": "win",
       "profit_loss": 0.0,
       "parlay_leg_pick_ids": null,
       "wr_confidence": 46.0,
@@ -126460,7 +126537,14 @@
         "agreeing": 0,
         "opposing": 0
       },
-      "wr_confidence_initial": 46.0
+      "wr_confidence_initial": 46.0,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 2,
+        "away_score": 0,
+        "kickoff": "2026-11-25T20:00Z"
+      }
     },
     {
       "id": 621,
@@ -126469,7 +126553,7 @@
       "league": "UCL",
       "category": "lean",
       "stake": 0.0,
-      "result": "pending",
+      "result": "win",
       "profit_loss": 0.0,
       "parlay_leg_pick_ids": null,
       "wr_confidence": 53.0,
@@ -126577,7 +126661,14 @@
         "agreeing": 0,
         "opposing": 0
       },
-      "wr_confidence_initial": 50.57142857142857
+      "wr_confidence_initial": 50.57142857142857,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 2,
+        "away_score": 0,
+        "kickoff": "2026-11-25T20:00Z"
+      }
     },
     {
       "id": 622,
@@ -126586,7 +126677,7 @@
       "league": "UCL",
       "category": "lean",
       "stake": 0.0,
-      "result": "pending",
+      "result": "win",
       "profit_loss": 0.0,
       "parlay_leg_pick_ids": null,
       "wr_confidence": 61.0,
@@ -126694,7 +126785,14 @@
         "agreeing": 0,
         "opposing": 0
       },
-      "wr_confidence_initial": 59.42857142857143
+      "wr_confidence_initial": 59.42857142857143,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 2,
+        "away_score": 1,
+        "kickoff": "2026-11-25T20:00Z"
+      }
     },
     {
       "id": 623,
@@ -126703,7 +126801,7 @@
       "league": "UCL",
       "category": "lean",
       "stake": 0.0,
-      "result": "pending",
+      "result": "loss",
       "profit_loss": 0.0,
       "parlay_leg_pick_ids": null,
       "wr_confidence": 62.0,
@@ -126811,7 +126909,14 @@
         "agreeing": 0,
         "opposing": 0
       },
-      "wr_confidence_initial": 61.48571428571429
+      "wr_confidence_initial": 61.48571428571429,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 2,
+        "away_score": 1,
+        "kickoff": "2026-11-25T20:00Z"
+      }
     },
     {
       "id": 624,
@@ -126820,7 +126925,7 @@
       "league": "UCL",
       "category": "lean",
       "stake": 0.0,
-      "result": "pending",
+      "result": "loss",
       "profit_loss": 0.0,
       "parlay_leg_pick_ids": null,
       "wr_confidence": 62.0,
@@ -126928,7 +127033,14 @@
         "agreeing": 0,
         "opposing": 0
       },
-      "wr_confidence_initial": 60.285714285714285
+      "wr_confidence_initial": 60.285714285714285,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 2,
+        "away_score": 2,
+        "kickoff": "2026-11-25T20:00Z"
+      }
     },
     {
       "id": 625,
@@ -126937,7 +127049,7 @@
       "league": "UCL",
       "category": "lean",
       "stake": 0.0,
-      "result": "pending",
+      "result": "loss",
       "profit_loss": 0.0,
       "parlay_leg_pick_ids": null,
       "wr_confidence": 45.0,
@@ -127045,7 +127157,14 @@
         "agreeing": 0,
         "opposing": 0
       },
-      "wr_confidence_initial": 47.0
+      "wr_confidence_initial": 47.0,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 2,
+        "away_score": 2,
+        "kickoff": "2026-11-25T20:00Z"
+      }
     },
     {
       "id": 626,
@@ -127054,7 +127173,7 @@
       "league": "UCL",
       "category": "lean",
       "stake": 0.0,
-      "result": "pending",
+      "result": "loss",
       "profit_loss": 0.0,
       "parlay_leg_pick_ids": null,
       "wr_confidence": 19.0,
@@ -127162,7 +127281,14 @@
         "agreeing": 0,
         "opposing": 0
       },
-      "wr_confidence_initial": 19.0
+      "wr_confidence_initial": 19.0,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 2,
+        "away_score": 0,
+        "kickoff": "2026-11-25T20:00Z"
+      }
     },
     {
       "id": 627,
@@ -127171,7 +127297,7 @@
       "league": "UCL",
       "category": "lean",
       "stake": 0.0,
-      "result": "pending",
+      "result": "loss",
       "profit_loss": 0.0,
       "parlay_leg_pick_ids": null,
       "wr_confidence": 8.0,
@@ -127279,7 +127405,14 @@
         "agreeing": 0,
         "opposing": 0
       },
-      "wr_confidence_initial": 8.0
+      "wr_confidence_initial": 8.0,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 1,
+        "away_score": 4,
+        "kickoff": "2026-11-25T17:45Z"
+      }
     },
     {
       "id": 628,
@@ -127288,7 +127421,7 @@
       "league": "UCL",
       "category": "lean",
       "stake": 0.0,
-      "result": "pending",
+      "result": "loss",
       "profit_loss": 0.0,
       "parlay_leg_pick_ids": null,
       "wr_confidence": 24.0,
@@ -127396,7 +127529,14 @@
         "agreeing": 0,
         "opposing": 0
       },
-      "wr_confidence_initial": 24.0
+      "wr_confidence_initial": 24.0,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 0,
+        "away_score": 3,
+        "kickoff": "2026-11-25T20:00Z"
+      }
     },
     {
       "id": 629,
@@ -127405,7 +127545,7 @@
       "league": "UCL",
       "category": "lean",
       "stake": 0.0,
-      "result": "pending",
+      "result": "win",
       "profit_loss": 0.0,
       "parlay_leg_pick_ids": null,
       "wr_confidence": 48.0,
@@ -127513,7 +127653,14 @@
         "agreeing": 0,
         "opposing": 0
       },
-      "wr_confidence_initial": 48.0
+      "wr_confidence_initial": 48.0,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 0,
+        "away_score": 3,
+        "kickoff": "2026-11-25T20:00Z"
+      }
     },
     {
       "id": 630,
@@ -127522,7 +127669,7 @@
       "league": "UCL",
       "category": "lean",
       "stake": 0.0,
-      "result": "pending",
+      "result": "loss",
       "profit_loss": 0.0,
       "parlay_leg_pick_ids": null,
       "wr_confidence": 44.0,
@@ -127630,7 +127777,14 @@
         "agreeing": 0,
         "opposing": 0
       },
-      "wr_confidence_initial": 44.0
+      "wr_confidence_initial": 44.0,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 0,
+        "away_score": 3,
+        "kickoff": "2026-11-25T20:00Z"
+      }
     },
     {
       "id": 631,
@@ -127639,7 +127793,7 @@
       "league": "UCL",
       "category": "lean",
       "stake": 0.0,
-      "result": "pending",
+      "result": "loss",
       "profit_loss": 0.0,
       "parlay_leg_pick_ids": null,
       "wr_confidence": 70.0,
@@ -127747,7 +127901,14 @@
         "agreeing": 0,
         "opposing": 0
       },
-      "wr_confidence_initial": 68.34285714285714
+      "wr_confidence_initial": 68.34285714285714,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 2,
+        "away_score": 2,
+        "kickoff": "2026-11-25T20:00Z"
+      }
     },
     {
       "id": 632,
@@ -127756,7 +127917,7 @@
       "league": "UCL",
       "category": "lean",
       "stake": 0.0,
-      "result": "pending",
+      "result": "loss",
       "profit_loss": 0.0,
       "parlay_leg_pick_ids": null,
       "wr_confidence": 49.0,
@@ -127864,7 +128025,14 @@
         "agreeing": 0,
         "opposing": 0
       },
-      "wr_confidence_initial": 49.0
+      "wr_confidence_initial": 49.0,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 2,
+        "away_score": 2,
+        "kickoff": "2026-11-25T20:00Z"
+      }
     },
     {
       "id": 633,
@@ -127873,7 +128041,7 @@
       "league": "UCL",
       "category": "lean",
       "stake": 0.0,
-      "result": "pending",
+      "result": "loss",
       "profit_loss": 0.0,
       "parlay_leg_pick_ids": null,
       "wr_confidence": 48.0,
@@ -127981,7 +128149,14 @@
         "agreeing": 0,
         "opposing": 0
       },
-      "wr_confidence_initial": 49.2
+      "wr_confidence_initial": 49.2,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 2,
+        "away_score": 2,
+        "kickoff": "2026-11-25T20:00Z"
+      }
     },
     {
       "id": 634,
@@ -127990,7 +128165,7 @@
       "league": "UCL",
       "category": "lean",
       "stake": 0.0,
-      "result": "pending",
+      "result": "win",
       "profit_loss": 0.0,
       "parlay_leg_pick_ids": null,
       "wr_confidence": 48.0,
@@ -128098,7 +128273,14 @@
         "agreeing": 0,
         "opposing": 0
       },
-      "wr_confidence_initial": 48.0
+      "wr_confidence_initial": 48.0,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 0,
+        "away_score": 1,
+        "kickoff": "2026-11-25T20:00Z"
+      }
     },
     {
       "id": 635,
@@ -128107,7 +128289,7 @@
       "league": "UCL",
       "category": "lean",
       "stake": 0.0,
-      "result": "pending",
+      "result": "loss",
       "profit_loss": 0.0,
       "parlay_leg_pick_ids": null,
       "wr_confidence": 63.0,
@@ -128215,7 +128397,14 @@
         "agreeing": 0,
         "opposing": 0
       },
-      "wr_confidence_initial": 62.142857142857146
+      "wr_confidence_initial": 62.142857142857146,
+      "final_score": {
+        "completed": true,
+        "state": "post",
+        "home_score": 0,
+        "away_score": 1,
+        "kickoff": "2026-11-25T20:00Z"
+      }
     }
   ],
   "ai_backtest": {
