@@ -1,6 +1,6 @@
 {
   "next_report_id": 106,
-  "next_pick_id": 462,
+  "next_pick_id": 463,
   "reports": [
     {
       "source": "ChatGPT",
@@ -52068,6 +52068,61 @@
         "reason": "It gives a concrete model total and a blended probability with a stated 6pp edge, but the raw-to-blended gap shows low model trust, the weather and Yamal absence are unsourced, and the author tracks it at $0 because it fails their own confidence bar.",
         "model": "claude-opus-5-5",
         "graded_at": "2026-11-25T00:12:49",
+        "rubric_version": 5
+      }
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 105,
+      "category": "sexy_moneyline",
+      "matchup": "Manchester United @ Sporting CP",
+      "selection": "Sporting CP to Win",
+      "odds": 155,
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "Man Utd are 19th in the EPL (8 pts from 11). The BBC on Nov 23: 'No-one's coming to save us'.\nCunha suspended per LiveScore (Nov 24) and the Express reports five players unavailable. Squawka's predicted XI includes Cunha, so sources conflict. Confidence is held down for that.\nSporting are 3-1 in the UCL (8 GF / 4 GA) and Irankunda scored a brace at the weekend.\nPrice is close to a pick'em despite the gap in domestic form.\nDog price, so confidence can't reach 60%. Tracked, not staked.",
+      "wr_confidence": 44.0,
+      "war_room_line": "Sporting 44% / Draw 24% / Man Utd 31% (blended)",
+      "edge": "+155 implies 39.2%; blended 44.2% -> +5.0pp edge, EV +12.8%",
+      "price_discipline": "+150 or better: $0 tracked\n+130 or worse: pass",
+      "espn_event_id": "401915373",
+      "bet_type": "match_result",
+      "bet_side": "home",
+      "bet_line": null,
+      "home_team": "Sporting CP",
+      "away_team": "Manchester United",
+      "created_at": "2026-11-25T00:12:54",
+      "id": 462,
+      "wr_confidence_initial": 44.0,
+      "wr_breakdown_initial": {
+        "base": 44.0,
+        "impact_scale": 0.0,
+        "record_mod": -0.0,
+        "record_win_pct": 20.0,
+        "record_settled": 15,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": null,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "ai_grade": {
+        "quality": 5,
+        "verdict": "mixed",
+        "reason": "There is a stated blended number with a 5pp gap against +155. However, it is a blend that includes the market, the availability facts conflict (the Cunha sources disagree), and much of the support is form narrative, so this is average substance rather than a rigorous edge.",
+        "model": "claude-opus-5-5",
+        "graded_at": "2026-11-25T00:13:02",
         "rubric_version": 5
       }
     }
