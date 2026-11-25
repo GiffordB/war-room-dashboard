@@ -53476,7 +53476,7 @@
   ],
   "next_jesse_wallet_id": 1,
   "jesse_wallet_entries": [],
-  "next_lean_id": 596,
+  "next_lean_id": 616,
   "leans": [
     {
       "id": 1,
@@ -125768,6 +125768,2346 @@
         "opposing": 0
       },
       "wr_confidence_initial": 46.0
+    },
+    {
+      "id": 596,
+      "report_id": 105,
+      "source": "Claude - GB",
+      "league": "UCL",
+      "category": "lean",
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "parlay_leg_pick_ids": null,
+      "wr_confidence": 34.0,
+      "created_at": "2026-11-25T00:13:19",
+      "matchup": "Villarreal @ Slavia Prague",
+      "selection": "Slavia Prague to Win",
+      "bet_type": "match_result",
+      "bet_side": "home",
+      "bet_line": null,
+      "odds": 200,
+      "score": 34.0,
+      "espn_event_id": "401915293",
+      "note": "Pass; blended 33.7% vs 33.3% implied, EV +1.2%. Raw xG 1.55-1.67.",
+      "pregame_odds": {
+        "provider": "DraftKings",
+        "spread_details": "VIL +115",
+        "home_spread": 0.5,
+        "home_spread_odds": -150.0,
+        "away_spread_odds": 110.0,
+        "total": 3.5,
+        "over_odds": 120.0,
+        "under_odds": -145.0,
+        "home_moneyline": 200,
+        "away_moneyline": 115,
+        "draw_moneyline": 290.0
+      },
+      "pregame_odds_captured_at": "2026-11-25T00:13:31",
+      "kickoff": "2026-11-25T17:45Z",
+      "pregame_weather": {
+        "city": "Prague",
+        "temp_c": 0.8,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 4.8,
+        "cloud_cover_pct": 78,
+        "forecast_hour": "2026-11-25T17:00"
+      },
+      "pregame_home_form": {
+        "played": 4,
+        "wins": 0,
+        "win_pct": 0.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 4,
+        "wins": 1,
+        "win_pct": 25.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 0,
+          "d": 0,
+          "l": 2,
+          "gf": 3,
+          "ga": 5
+        },
+        "away": {
+          "w": 0,
+          "d": 1,
+          "l": 1,
+          "gf": 2,
+          "ga": 4
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 1,
+          "gf": 3,
+          "ga": 7
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 2,
+          "gf": 5,
+          "ga": 7
+        }
+      },
+      "pregame_intel_captured_at": "2026-11-25T00:13:31",
+      "wr_confidence_kickoff": 34.0,
+      "wr_breakdown_kickoff": {
+        "base": 34.0,
+        "impact_scale": 0.0,
+        "record_mod": -0.0,
+        "record_win_pct": 20.0,
+        "record_settled": 15,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": null,
+        "weather_mod": 0.0,
+        "form_mod": -0.0,
+        "form_gap": -25.0,
+        "injury_mod": 0.0,
+        "injury_gap": 0.0,
+        "home_away_mod": 0.0,
+        "home_away_gap": 0.0,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 34.0
+    },
+    {
+      "id": 597,
+      "report_id": 105,
+      "source": "Claude - GB",
+      "league": "UCL",
+      "category": "lean",
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "parlay_leg_pick_ids": null,
+      "wr_confidence": 42.0,
+      "created_at": "2026-11-25T00:13:19",
+      "matchup": "Villarreal @ Slavia Prague",
+      "selection": "Over 3.5",
+      "bet_type": "total",
+      "bet_side": "over",
+      "bet_line": 3.5,
+      "odds": 120,
+      "score": 42.0,
+      "espn_event_id": "401915293",
+      "note": "Pass unless picked; blended 41.8% vs 45.5% implied, EV -8.0%.",
+      "pregame_odds": {
+        "provider": "DraftKings",
+        "spread_details": "VIL +115",
+        "home_spread": 0.5,
+        "home_spread_odds": -150.0,
+        "away_spread_odds": 110.0,
+        "total": 3.5,
+        "over_odds": 120.0,
+        "under_odds": -145.0,
+        "home_moneyline": 200,
+        "away_moneyline": 115,
+        "draw_moneyline": 290.0
+      },
+      "pregame_odds_captured_at": "2026-11-25T00:13:31",
+      "kickoff": "2026-11-25T17:45Z",
+      "pregame_weather": {
+        "city": "Prague",
+        "temp_c": 0.8,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 4.8,
+        "cloud_cover_pct": 78,
+        "forecast_hour": "2026-11-25T17:00"
+      },
+      "pregame_home_form": {
+        "played": 4,
+        "wins": 0,
+        "win_pct": 0.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 4,
+        "wins": 1,
+        "win_pct": 25.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 0,
+          "d": 0,
+          "l": 2,
+          "gf": 3,
+          "ga": 5
+        },
+        "away": {
+          "w": 0,
+          "d": 1,
+          "l": 1,
+          "gf": 2,
+          "ga": 4
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 1,
+          "gf": 3,
+          "ga": 7
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 2,
+          "gf": 5,
+          "ga": 7
+        }
+      },
+      "pregame_intel_captured_at": "2026-11-25T00:13:31",
+      "wr_confidence_kickoff": 42.0,
+      "wr_breakdown_kickoff": {
+        "base": 42.0,
+        "impact_scale": 0.0,
+        "record_mod": -0.0,
+        "record_win_pct": 20.0,
+        "record_settled": 15,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": 0.0,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 42.0
+    },
+    {
+      "id": 598,
+      "report_id": 105,
+      "source": "Claude - GB",
+      "league": "UCL",
+      "category": "lean",
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "parlay_leg_pick_ids": null,
+      "wr_confidence": 57.0,
+      "created_at": "2026-11-25T00:13:19",
+      "matchup": "Villarreal @ Slavia Prague",
+      "selection": "Slavia Prague +0.5",
+      "bet_type": "spread",
+      "bet_side": "home",
+      "bet_line": 0.5,
+      "odds": -150,
+      "score": 57.0,
+      "espn_event_id": "401915293",
+      "note": "Blended 57.5% vs 60.0% implied, EV -4.2%.",
+      "pregame_odds": {
+        "provider": "DraftKings",
+        "spread_details": "VIL +115",
+        "home_spread": 0.5,
+        "home_spread_odds": -150.0,
+        "away_spread_odds": 110.0,
+        "total": 3.5,
+        "over_odds": 120.0,
+        "under_odds": -145.0,
+        "home_moneyline": 200,
+        "away_moneyline": 115,
+        "draw_moneyline": 290.0
+      },
+      "pregame_odds_captured_at": "2026-11-25T00:13:31",
+      "kickoff": "2026-11-25T17:45Z",
+      "pregame_weather": {
+        "city": "Prague",
+        "temp_c": 0.8,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 4.8,
+        "cloud_cover_pct": 78,
+        "forecast_hour": "2026-11-25T17:00"
+      },
+      "pregame_home_form": {
+        "played": 4,
+        "wins": 0,
+        "win_pct": 0.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 4,
+        "wins": 1,
+        "win_pct": 25.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 0,
+          "d": 0,
+          "l": 2,
+          "gf": 3,
+          "ga": 5
+        },
+        "away": {
+          "w": 0,
+          "d": 1,
+          "l": 1,
+          "gf": 2,
+          "ga": 4
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 1,
+          "gf": 3,
+          "ga": 7
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 2,
+          "gf": 5,
+          "ga": 7
+        }
+      },
+      "pregame_intel_captured_at": "2026-11-25T00:13:31",
+      "wr_confidence_kickoff": 56.0,
+      "wr_breakdown_kickoff": {
+        "base": 57.0,
+        "impact_scale": 0.14,
+        "record_mod": -1.0,
+        "record_win_pct": 20.0,
+        "record_settled": 15,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": 0.0,
+        "weather_mod": 0.0,
+        "form_mod": -0.0,
+        "form_gap": -25.0,
+        "injury_mod": 0.0,
+        "injury_gap": 0.0,
+        "home_away_mod": 0.0,
+        "home_away_gap": 0.0,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 56.0
+    },
+    {
+      "id": 599,
+      "report_id": 105,
+      "source": "Claude - GB",
+      "league": "UCL",
+      "category": "lean",
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "parlay_leg_pick_ids": null,
+      "wr_confidence": 84.0,
+      "created_at": "2026-11-25T00:13:19",
+      "matchup": "Viking FK @ Atl\u00e9tico Madrid",
+      "selection": "Atl\u00e9tico Madrid to Win",
+      "bet_type": "match_result",
+      "bet_side": "home",
+      "bet_line": null,
+      "odds": -1000,
+      "score": 84.0,
+      "espn_event_id": "401915291",
+      "note": "Pass; blended 84.5% vs 90.9% implied, EV -7.1%. Raw xG 2.99-0.75.",
+      "pregame_odds": {
+        "provider": "DraftKings",
+        "spread_details": "ATM -1000",
+        "home_spread": -2.5,
+        "home_spread_odds": -125.0,
+        "away_spread_odds": -110.0,
+        "total": 3.5,
+        "over_odds": -150.0,
+        "under_odds": 120.0,
+        "home_moneyline": -1000,
+        "away_moneyline": 2000,
+        "draw_moneyline": 1000.0
+      },
+      "pregame_odds_captured_at": "2026-11-25T00:13:31",
+      "kickoff": "2026-11-25T20:00Z",
+      "pregame_weather": {
+        "city": "Madrid",
+        "temp_c": 7.4,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 9.3,
+        "cloud_cover_pct": 0,
+        "forecast_hour": "2026-11-25T20:00"
+      },
+      "pregame_home_form": {
+        "played": 4,
+        "wins": 1,
+        "win_pct": 25.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 4,
+        "wins": 1,
+        "win_pct": 25.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 1,
+          "gf": 2,
+          "ga": 2
+        },
+        "away": {
+          "w": 0,
+          "d": 1,
+          "l": 1,
+          "gf": 2,
+          "ga": 3
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 1,
+          "d": 1,
+          "l": 0,
+          "gf": 7,
+          "ga": 4
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 2,
+          "gf": 2,
+          "ga": 6
+        }
+      },
+      "pregame_intel_captured_at": "2026-11-25T00:13:31",
+      "wr_confidence_kickoff": 81.14285714285714,
+      "wr_breakdown_kickoff": {
+        "base": 84.0,
+        "impact_scale": 0.68,
+        "record_mod": -4.857,
+        "record_win_pct": 20.0,
+        "record_settled": 15,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": null,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": 0.0,
+        "injury_mod": 0.0,
+        "injury_gap": 0.0,
+        "home_away_mod": 2.0,
+        "home_away_gap": 50.0,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 81.14285714285714
+    },
+    {
+      "id": 600,
+      "report_id": 105,
+      "source": "Claude - GB",
+      "league": "UCL",
+      "category": "lean",
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "parlay_leg_pick_ids": null,
+      "wr_confidence": 54.0,
+      "created_at": "2026-11-25T00:13:19",
+      "matchup": "Viking FK @ Atl\u00e9tico Madrid",
+      "selection": "Over 3.5",
+      "bet_type": "total",
+      "bet_side": "over",
+      "bet_line": 3.5,
+      "odds": -150,
+      "score": 54.0,
+      "espn_event_id": "401915291",
+      "note": "Pass unless picked; blended 54.1% vs 60.0% implied, EV -9.8%.",
+      "pregame_odds": {
+        "provider": "DraftKings",
+        "spread_details": "ATM -1000",
+        "home_spread": -2.5,
+        "home_spread_odds": -125.0,
+        "away_spread_odds": -110.0,
+        "total": 3.5,
+        "over_odds": -150.0,
+        "under_odds": 120.0,
+        "home_moneyline": -1000,
+        "away_moneyline": 2000,
+        "draw_moneyline": 1000.0
+      },
+      "pregame_odds_captured_at": "2026-11-25T00:13:31",
+      "kickoff": "2026-11-25T20:00Z",
+      "pregame_weather": {
+        "city": "Madrid",
+        "temp_c": 7.4,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 9.3,
+        "cloud_cover_pct": 0,
+        "forecast_hour": "2026-11-25T20:00"
+      },
+      "pregame_home_form": {
+        "played": 4,
+        "wins": 1,
+        "win_pct": 25.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 4,
+        "wins": 1,
+        "win_pct": 25.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 1,
+          "gf": 2,
+          "ga": 2
+        },
+        "away": {
+          "w": 0,
+          "d": 1,
+          "l": 1,
+          "gf": 2,
+          "ga": 3
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 1,
+          "d": 1,
+          "l": 0,
+          "gf": 7,
+          "ga": 4
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 2,
+          "gf": 2,
+          "ga": 6
+        }
+      },
+      "pregame_intel_captured_at": "2026-11-25T00:13:31",
+      "wr_confidence_kickoff": 53.42857142857143,
+      "wr_breakdown_kickoff": {
+        "base": 54.0,
+        "impact_scale": 0.08,
+        "record_mod": -0.571,
+        "record_win_pct": 20.0,
+        "record_settled": 15,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": 0.0,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 53.42857142857143
+    },
+    {
+      "id": 601,
+      "report_id": 105,
+      "source": "Claude - GB",
+      "league": "UCL",
+      "category": "lean",
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "parlay_leg_pick_ids": null,
+      "wr_confidence": 47.0,
+      "created_at": "2026-11-25T00:13:19",
+      "matchup": "Viking FK @ Atl\u00e9tico Madrid",
+      "selection": "Atl\u00e9tico Madrid -2.5",
+      "bet_type": "spread",
+      "bet_side": "home",
+      "bet_line": -2.5,
+      "odds": -125,
+      "score": 47.0,
+      "espn_event_id": "401915291",
+      "note": "Blended 46.9% vs 55.6% implied, EV -15.6%.",
+      "pregame_odds": {
+        "provider": "DraftKings",
+        "spread_details": "ATM -1000",
+        "home_spread": -2.5,
+        "home_spread_odds": -125.0,
+        "away_spread_odds": -110.0,
+        "total": 3.5,
+        "over_odds": -150.0,
+        "under_odds": 120.0,
+        "home_moneyline": -1000,
+        "away_moneyline": 2000,
+        "draw_moneyline": 1000.0
+      },
+      "pregame_odds_captured_at": "2026-11-25T00:13:31",
+      "kickoff": "2026-11-25T20:00Z",
+      "pregame_weather": {
+        "city": "Madrid",
+        "temp_c": 7.4,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 9.3,
+        "cloud_cover_pct": 0,
+        "forecast_hour": "2026-11-25T20:00"
+      },
+      "pregame_home_form": {
+        "played": 4,
+        "wins": 1,
+        "win_pct": 25.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 4,
+        "wins": 1,
+        "win_pct": 25.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 1,
+          "gf": 2,
+          "ga": 2
+        },
+        "away": {
+          "w": 0,
+          "d": 1,
+          "l": 1,
+          "gf": 2,
+          "ga": 3
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 1,
+          "d": 1,
+          "l": 0,
+          "gf": 7,
+          "ga": 4
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 2,
+          "gf": 2,
+          "ga": 6
+        }
+      },
+      "pregame_intel_captured_at": "2026-11-25T00:13:31",
+      "wr_confidence_kickoff": 49.0,
+      "wr_breakdown_kickoff": {
+        "base": 47.0,
+        "impact_scale": 0.0,
+        "record_mod": -0.0,
+        "record_win_pct": 20.0,
+        "record_settled": 15,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": 0.0,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": 0.0,
+        "injury_mod": 0.0,
+        "injury_gap": 0.0,
+        "home_away_mod": 2.0,
+        "home_away_gap": 50.0,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 49.0
+    },
+    {
+      "id": 602,
+      "report_id": 105,
+      "source": "Claude - GB",
+      "league": "UCL",
+      "category": "lean",
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "parlay_leg_pick_ids": null,
+      "wr_confidence": 61.0,
+      "created_at": "2026-11-25T00:13:19",
+      "matchup": "Bayern Munich @ Lille",
+      "selection": "Over 2.5",
+      "bet_type": "total",
+      "bet_side": "over",
+      "bet_line": 2.5,
+      "odds": -160,
+      "score": 61.0,
+      "espn_event_id": "401915377",
+      "note": "Pass unless picked; blended 60.8% vs 61.5% implied, EV -1.1%.",
+      "pregame_odds": {
+        "provider": "DraftKings",
+        "spread_details": "MUN -150",
+        "home_spread": 0.5,
+        "home_spread_odds": 120.0,
+        "away_spread_odds": -165.0,
+        "total": 2.5,
+        "over_odds": -160.0,
+        "under_odds": 125.0,
+        "home_moneyline": 380,
+        "away_moneyline": -150,
+        "draw_moneyline": 320.0
+      },
+      "pregame_odds_captured_at": "2026-11-25T00:13:31",
+      "kickoff": "2026-11-25T20:00Z",
+      "pregame_weather": {
+        "city": "Lille",
+        "temp_c": 0.7,
+        "precip_probability_pct": 6,
+        "precip_mm": 0.0,
+        "wind_kmh": 14.8,
+        "cloud_cover_pct": 1,
+        "forecast_hour": "2026-11-25T20:00"
+      },
+      "pregame_home_form": {
+        "played": 4,
+        "wins": 0,
+        "win_pct": 0.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 4,
+        "wins": 2,
+        "win_pct": 50.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 0,
+          "d": 0,
+          "l": 2,
+          "gf": 4,
+          "ga": 7
+        },
+        "away": {
+          "w": 0,
+          "d": 1,
+          "l": 1,
+          "gf": 0,
+          "ga": 3
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 1,
+          "d": 1,
+          "l": 0,
+          "gf": 7,
+          "ga": 2
+        },
+        "away": {
+          "w": 1,
+          "d": 1,
+          "l": 0,
+          "gf": 5,
+          "ga": 3
+        }
+      },
+      "pregame_intel_captured_at": "2026-11-25T00:13:31",
+      "wr_confidence_kickoff": 59.42857142857143,
+      "wr_breakdown_kickoff": {
+        "base": 61.0,
+        "impact_scale": 0.22,
+        "record_mod": -1.571,
+        "record_win_pct": 20.0,
+        "record_settled": 15,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": 0.0,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 59.42857142857143
+    },
+    {
+      "id": 603,
+      "report_id": 105,
+      "source": "Claude - GB",
+      "league": "UCL",
+      "category": "lean",
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "parlay_leg_pick_ids": null,
+      "wr_confidence": 38.0,
+      "created_at": "2026-11-25T00:13:19",
+      "matchup": "Bayern Munich @ Lille",
+      "selection": "Lille +0.5",
+      "bet_type": "spread",
+      "bet_side": "home",
+      "bet_line": 0.5,
+      "odds": 120,
+      "score": 38.0,
+      "espn_event_id": "401915377",
+      "note": "Blended 37.6% vs 45.5% implied, EV -17.3%.",
+      "pregame_odds": {
+        "provider": "DraftKings",
+        "spread_details": "MUN -150",
+        "home_spread": 0.5,
+        "home_spread_odds": 120.0,
+        "away_spread_odds": -165.0,
+        "total": 2.5,
+        "over_odds": -160.0,
+        "under_odds": 125.0,
+        "home_moneyline": 380,
+        "away_moneyline": -150,
+        "draw_moneyline": 320.0
+      },
+      "pregame_odds_captured_at": "2026-11-25T00:13:31",
+      "kickoff": "2026-11-25T20:00Z",
+      "pregame_weather": {
+        "city": "Lille",
+        "temp_c": 0.7,
+        "precip_probability_pct": 6,
+        "precip_mm": 0.0,
+        "wind_kmh": 14.8,
+        "cloud_cover_pct": 1,
+        "forecast_hour": "2026-11-25T20:00"
+      },
+      "pregame_home_form": {
+        "played": 4,
+        "wins": 0,
+        "win_pct": 0.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 4,
+        "wins": 2,
+        "win_pct": 50.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 0,
+          "d": 0,
+          "l": 2,
+          "gf": 4,
+          "ga": 7
+        },
+        "away": {
+          "w": 0,
+          "d": 1,
+          "l": 1,
+          "gf": 0,
+          "ga": 3
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 1,
+          "d": 1,
+          "l": 0,
+          "gf": 7,
+          "ga": 2
+        },
+        "away": {
+          "w": 1,
+          "d": 1,
+          "l": 0,
+          "gf": 5,
+          "ga": 3
+        }
+      },
+      "pregame_intel_captured_at": "2026-11-25T00:13:31",
+      "wr_confidence_kickoff": 36.8,
+      "wr_breakdown_kickoff": {
+        "base": 38.0,
+        "impact_scale": 0.0,
+        "record_mod": -0.0,
+        "record_win_pct": 20.0,
+        "record_settled": 15,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": 0.0,
+        "weather_mod": 0.0,
+        "form_mod": -0.0,
+        "form_gap": -50.0,
+        "injury_mod": 0.0,
+        "injury_gap": 0.0,
+        "home_away_mod": -1.2,
+        "home_away_gap": -100.0,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 36.8
+    },
+    {
+      "id": 604,
+      "report_id": 105,
+      "source": "Claude - GB",
+      "league": "UCL",
+      "category": "lean",
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "parlay_leg_pick_ids": null,
+      "wr_confidence": 38.0,
+      "created_at": "2026-11-25T00:13:19",
+      "matchup": "Manchester United @ Sporting CP",
+      "selection": "Over 3.5",
+      "bet_type": "total",
+      "bet_side": "over",
+      "bet_line": 3.5,
+      "odds": 125,
+      "score": 38.0,
+      "espn_event_id": "401915373",
+      "note": "Pass unless picked; blended 38.5% vs 44.4% implied, EV -13.4%.",
+      "pregame_odds": {
+        "provider": "DraftKings",
+        "spread_details": "SCP +155",
+        "home_spread": -0.5,
+        "home_spread_odds": 140.0,
+        "away_spread_odds": -195.0,
+        "total": 3.5,
+        "over_odds": 125.0,
+        "under_odds": -160.0,
+        "home_moneyline": 155,
+        "away_moneyline": 160,
+        "draw_moneyline": 275.0
+      },
+      "pregame_odds_captured_at": "2026-11-25T00:13:31",
+      "kickoff": "2026-11-25T20:00Z",
+      "pregame_weather": {
+        "city": "Lisbon",
+        "temp_c": 13.4,
+        "precip_probability_pct": 5,
+        "precip_mm": 0.0,
+        "wind_kmh": 4.7,
+        "cloud_cover_pct": 64,
+        "forecast_hour": "2026-11-25T20:00"
+      },
+      "pregame_home_form": {
+        "played": 4,
+        "wins": 3,
+        "win_pct": 75.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 4,
+        "wins": 2,
+        "win_pct": 50.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 1,
+          "gf": 5,
+          "ga": 4
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 0,
+          "gf": 3,
+          "ga": 0
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 2,
+          "d": 0,
+          "l": 0,
+          "gf": 7,
+          "ga": 2
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 2,
+          "gf": 1,
+          "ga": 6
+        }
+      },
+      "pregame_intel_captured_at": "2026-11-25T00:13:31",
+      "wr_confidence_kickoff": 38.0,
+      "wr_breakdown_kickoff": {
+        "base": 38.0,
+        "impact_scale": 0.0,
+        "record_mod": -0.0,
+        "record_win_pct": 20.0,
+        "record_settled": 15,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": 0.0,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 38.0
+    },
+    {
+      "id": 605,
+      "report_id": 105,
+      "source": "Claude - GB",
+      "league": "UCL",
+      "category": "lean",
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "parlay_leg_pick_ids": null,
+      "wr_confidence": 45.0,
+      "created_at": "2026-11-25T00:13:19",
+      "matchup": "Manchester United @ Sporting CP",
+      "selection": "Sporting CP -0.5",
+      "bet_type": "spread",
+      "bet_side": "home",
+      "bet_line": -0.5,
+      "odds": 140,
+      "score": 45.0,
+      "espn_event_id": "401915373",
+      "note": "Blended 44.8% vs 41.7% implied, EV +7.4%.",
+      "pregame_odds": {
+        "provider": "DraftKings",
+        "spread_details": "SCP +155",
+        "home_spread": -0.5,
+        "home_spread_odds": 140.0,
+        "away_spread_odds": -195.0,
+        "total": 3.5,
+        "over_odds": 125.0,
+        "under_odds": -160.0,
+        "home_moneyline": 155,
+        "away_moneyline": 160,
+        "draw_moneyline": 275.0
+      },
+      "pregame_odds_captured_at": "2026-11-25T00:13:31",
+      "kickoff": "2026-11-25T20:00Z",
+      "pregame_weather": {
+        "city": "Lisbon",
+        "temp_c": 13.4,
+        "precip_probability_pct": 5,
+        "precip_mm": 0.0,
+        "wind_kmh": 4.7,
+        "cloud_cover_pct": 64,
+        "forecast_hour": "2026-11-25T20:00"
+      },
+      "pregame_home_form": {
+        "played": 4,
+        "wins": 3,
+        "win_pct": 75.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 4,
+        "wins": 2,
+        "win_pct": 50.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 1,
+          "gf": 5,
+          "ga": 4
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 0,
+          "gf": 3,
+          "ga": 0
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 2,
+          "d": 0,
+          "l": 0,
+          "gf": 7,
+          "ga": 2
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 2,
+          "gf": 1,
+          "ga": 6
+        }
+      },
+      "pregame_intel_captured_at": "2026-11-25T00:13:31",
+      "wr_confidence_kickoff": 47.0,
+      "wr_breakdown_kickoff": {
+        "base": 45.0,
+        "impact_scale": 0.0,
+        "record_mod": -0.0,
+        "record_win_pct": 20.0,
+        "record_settled": 15,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": 0.0,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": 25.0,
+        "injury_mod": 0.0,
+        "injury_gap": 0.0,
+        "home_away_mod": 2.0,
+        "home_away_gap": 50.0,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 47.0
+    },
+    {
+      "id": 606,
+      "report_id": 105,
+      "source": "Claude - GB",
+      "league": "UCL",
+      "category": "lean",
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "parlay_leg_pick_ids": null,
+      "wr_confidence": 62.0,
+      "created_at": "2026-11-25T00:13:19",
+      "matchup": "VfB Stuttgart @ Internazionale",
+      "selection": "Internazionale to Win",
+      "bet_type": "match_result",
+      "bet_side": "home",
+      "bet_line": null,
+      "odds": -240,
+      "score": 62.0,
+      "espn_event_id": "401915376",
+      "note": "Pass; blended 61.5% vs 70.6% implied, EV -12.8%. Raw xG 1.90-1.09.",
+      "pregame_odds": {
+        "provider": "DraftKings",
+        "spread_details": "INT -240",
+        "home_spread": -1.5,
+        "home_spread_odds": -110.0,
+        "away_spread_odds": -125.0,
+        "total": 3.5,
+        "over_odds": -155.0,
+        "under_odds": 125.0,
+        "home_moneyline": -240,
+        "away_moneyline": 500,
+        "draw_moneyline": 450.0
+      },
+      "pregame_odds_captured_at": "2026-11-25T00:13:31",
+      "kickoff": "2026-11-25T20:00Z",
+      "pregame_weather": {
+        "city": "Milan",
+        "temp_c": 11.9,
+        "precip_probability_pct": 48,
+        "precip_mm": 0.6,
+        "wind_kmh": 8.7,
+        "cloud_cover_pct": 100,
+        "forecast_hour": "2026-11-25T20:00"
+      },
+      "pregame_home_form": {
+        "played": 4,
+        "wins": 2,
+        "win_pct": 50.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 4,
+        "wins": 2,
+        "win_pct": 50.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 1,
+          "gf": 4,
+          "ga": 4
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 1,
+          "gf": 4,
+          "ga": 2
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 1,
+          "d": 1,
+          "l": 0,
+          "gf": 4,
+          "ga": 2
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 1,
+          "gf": 3,
+          "ga": 2
+        }
+      },
+      "pregame_intel_captured_at": "2026-11-25T00:13:31",
+      "wr_confidence_kickoff": 60.285714285714285,
+      "wr_breakdown_kickoff": {
+        "base": 62.0,
+        "impact_scale": 0.24,
+        "record_mod": -1.714,
+        "record_win_pct": 20.0,
+        "record_settled": 15,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": null,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": 0.0,
+        "injury_mod": 0.0,
+        "injury_gap": 0.0,
+        "home_away_mod": 0.0,
+        "home_away_gap": 0.0,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 60.285714285714285
+    },
+    {
+      "id": 607,
+      "report_id": 105,
+      "source": "Claude - GB",
+      "league": "UCL",
+      "category": "lean",
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "parlay_leg_pick_ids": null,
+      "wr_confidence": 4.0,
+      "created_at": "2026-11-25T00:13:19",
+      "matchup": "Barcelona @ Sabah FK",
+      "selection": "Sabah FK to Win",
+      "bet_type": "match_result",
+      "bet_side": "home",
+      "bet_line": null,
+      "odds": 2000,
+      "score": 4.0,
+      "espn_event_id": "401915378",
+      "note": "Pass; blended 4.5% vs 4.8% implied, EV -6.4%. Raw xG 0.69-3.33.",
+      "pregame_odds": {
+        "provider": "DraftKings",
+        "spread_details": "BAR -1200",
+        "home_spread": 3.5,
+        "home_spread_odds": -160.0,
+        "away_spread_odds": 115.0,
+        "total": 4.5,
+        "over_odds": -140.0,
+        "under_odds": 110.0,
+        "home_moneyline": 2000,
+        "away_moneyline": -1200,
+        "draw_moneyline": 1200.0
+      },
+      "pregame_odds_captured_at": "2026-11-25T00:13:31",
+      "kickoff": "2026-11-25T17:45Z",
+      "pregame_weather": {
+        "city": "Baku",
+        "temp_c": 8.2,
+        "precip_probability_pct": 75,
+        "precip_mm": 1.2,
+        "wind_kmh": 29.9,
+        "cloud_cover_pct": 100,
+        "forecast_hour": "2026-11-25T17:00"
+      },
+      "pregame_home_form": {
+        "played": 4,
+        "wins": 1,
+        "win_pct": 25.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 4,
+        "wins": 3,
+        "win_pct": 75.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 1,
+          "gf": 3,
+          "ga": 2
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 2,
+          "gf": 1,
+          "ga": 8
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 2,
+          "d": 0,
+          "l": 0,
+          "gf": 8,
+          "ga": 1
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 1,
+          "gf": 6,
+          "ga": 5
+        }
+      },
+      "pregame_intel_captured_at": "2026-11-25T00:13:31",
+      "wr_confidence_kickoff": 4.0,
+      "wr_breakdown_kickoff": {
+        "base": 4.0,
+        "impact_scale": 0.0,
+        "record_mod": -0.0,
+        "record_win_pct": 20.0,
+        "record_settled": 15,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": null,
+        "weather_mod": 0.0,
+        "form_mod": -0.0,
+        "form_gap": -50.0,
+        "injury_mod": 0.0,
+        "injury_gap": 0.0,
+        "home_away_mod": 0.0,
+        "home_away_gap": 0.0,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 4.0
+    },
+    {
+      "id": 608,
+      "report_id": 105,
+      "source": "Claude - GB",
+      "league": "UCL",
+      "category": "lean",
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "parlay_leg_pick_ids": null,
+      "wr_confidence": 24.0,
+      "created_at": "2026-11-25T00:13:19",
+      "matchup": "Liverpool @ Club Brugge",
+      "selection": "Club Brugge to Win",
+      "bet_type": "match_result",
+      "bet_side": "home",
+      "bet_line": null,
+      "odds": 340,
+      "score": 24.0,
+      "espn_event_id": "401915292",
+      "note": "Lean; blended 23.9% vs 22.7% implied, EV +5.2%. Raw xG 1.49-2.18.",
+      "pregame_odds": {
+        "provider": "DraftKings",
+        "spread_details": "LIV -155",
+        "home_spread": 0.5,
+        "home_spread_odds": 125.0,
+        "away_spread_odds": -170.0,
+        "total": 3.5,
+        "over_odds": -135.0,
+        "under_odds": 110.0,
+        "home_moneyline": 340,
+        "away_moneyline": -155,
+        "draw_moneyline": 370.0
+      },
+      "pregame_odds_captured_at": "2026-11-25T00:13:31",
+      "kickoff": "2026-11-25T20:00Z",
+      "pregame_weather": {
+        "city": "Bruges",
+        "temp_c": 0.1,
+        "precip_probability_pct": 1,
+        "precip_mm": 0.0,
+        "wind_kmh": 19.1,
+        "cloud_cover_pct": 0,
+        "forecast_hour": "2026-11-25T20:00"
+      },
+      "pregame_home_form": {
+        "played": 4,
+        "wins": 3,
+        "win_pct": 75.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 4,
+        "wins": 3,
+        "win_pct": 75.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 1,
+          "gf": 5,
+          "ga": 3
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 0,
+          "gf": 6,
+          "ga": 4
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 2,
+          "d": 0,
+          "l": 0,
+          "gf": 6,
+          "ga": 4
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 1,
+          "gf": 8,
+          "ga": 6
+        }
+      },
+      "pregame_intel_captured_at": "2026-11-25T00:13:31",
+      "wr_confidence_kickoff": 24.0,
+      "wr_breakdown_kickoff": {
+        "base": 24.0,
+        "impact_scale": 0.0,
+        "record_mod": -0.0,
+        "record_win_pct": 20.0,
+        "record_settled": 15,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": null,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": 0.0,
+        "injury_mod": 0.0,
+        "injury_gap": 0.0,
+        "home_away_mod": 0.0,
+        "home_away_gap": 0.0,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 24.0
+    },
+    {
+      "id": 609,
+      "report_id": 105,
+      "source": "Claude - GB",
+      "league": "UCL",
+      "category": "lean",
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "parlay_leg_pick_ids": null,
+      "wr_confidence": 52.0,
+      "created_at": "2026-11-25T00:13:19",
+      "matchup": "Liverpool @ Club Brugge",
+      "selection": "Over 3.5",
+      "bet_type": "total",
+      "bet_side": "over",
+      "bet_line": 3.5,
+      "odds": -135,
+      "score": 52.0,
+      "espn_event_id": "401915292",
+      "note": "Pass unless picked; blended 52.4% vs 57.4% implied, EV -8.7%.",
+      "pregame_odds": {
+        "provider": "DraftKings",
+        "spread_details": "LIV -155",
+        "home_spread": 0.5,
+        "home_spread_odds": 125.0,
+        "away_spread_odds": -170.0,
+        "total": 3.5,
+        "over_odds": -135.0,
+        "under_odds": 110.0,
+        "home_moneyline": 340,
+        "away_moneyline": -155,
+        "draw_moneyline": 370.0
+      },
+      "pregame_odds_captured_at": "2026-11-25T00:13:31",
+      "kickoff": "2026-11-25T20:00Z",
+      "pregame_weather": {
+        "city": "Bruges",
+        "temp_c": 0.1,
+        "precip_probability_pct": 1,
+        "precip_mm": 0.0,
+        "wind_kmh": 19.1,
+        "cloud_cover_pct": 0,
+        "forecast_hour": "2026-11-25T20:00"
+      },
+      "pregame_home_form": {
+        "played": 4,
+        "wins": 3,
+        "win_pct": 75.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 4,
+        "wins": 3,
+        "win_pct": 75.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 1,
+          "gf": 5,
+          "ga": 3
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 0,
+          "gf": 6,
+          "ga": 4
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 2,
+          "d": 0,
+          "l": 0,
+          "gf": 6,
+          "ga": 4
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 1,
+          "gf": 8,
+          "ga": 6
+        }
+      },
+      "pregame_intel_captured_at": "2026-11-25T00:13:31",
+      "wr_confidence_kickoff": 51.714285714285715,
+      "wr_breakdown_kickoff": {
+        "base": 52.0,
+        "impact_scale": 0.04,
+        "record_mod": -0.286,
+        "record_win_pct": 20.0,
+        "record_settled": 15,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": 0.0,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 51.714285714285715
+    },
+    {
+      "id": 610,
+      "report_id": 105,
+      "source": "Claude - GB",
+      "league": "UCL",
+      "category": "lean",
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "parlay_leg_pick_ids": null,
+      "wr_confidence": 44.0,
+      "created_at": "2026-11-25T00:13:19",
+      "matchup": "Liverpool @ Club Brugge",
+      "selection": "Club Brugge +0.5",
+      "bet_type": "spread",
+      "bet_side": "home",
+      "bet_line": 0.5,
+      "odds": 125,
+      "score": 44.0,
+      "espn_event_id": "401915292",
+      "note": "Blended 44.0% vs 44.4% implied, EV -1.0%.",
+      "pregame_odds": {
+        "provider": "DraftKings",
+        "spread_details": "LIV -155",
+        "home_spread": 0.5,
+        "home_spread_odds": 125.0,
+        "away_spread_odds": -170.0,
+        "total": 3.5,
+        "over_odds": -135.0,
+        "under_odds": 110.0,
+        "home_moneyline": 340,
+        "away_moneyline": -155,
+        "draw_moneyline": 370.0
+      },
+      "pregame_odds_captured_at": "2026-11-25T00:13:31",
+      "kickoff": "2026-11-25T20:00Z",
+      "pregame_weather": {
+        "city": "Bruges",
+        "temp_c": 0.1,
+        "precip_probability_pct": 1,
+        "precip_mm": 0.0,
+        "wind_kmh": 19.1,
+        "cloud_cover_pct": 0,
+        "forecast_hour": "2026-11-25T20:00"
+      },
+      "pregame_home_form": {
+        "played": 4,
+        "wins": 3,
+        "win_pct": 75.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 4,
+        "wins": 3,
+        "win_pct": 75.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 1,
+          "gf": 5,
+          "ga": 3
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 0,
+          "gf": 6,
+          "ga": 4
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 2,
+          "d": 0,
+          "l": 0,
+          "gf": 6,
+          "ga": 4
+        },
+        "away": {
+          "w": 1,
+          "d": 0,
+          "l": 1,
+          "gf": 8,
+          "ga": 6
+        }
+      },
+      "pregame_intel_captured_at": "2026-11-25T00:13:31",
+      "wr_confidence_kickoff": 44.0,
+      "wr_breakdown_kickoff": {
+        "base": 44.0,
+        "impact_scale": 0.0,
+        "record_mod": -0.0,
+        "record_win_pct": 20.0,
+        "record_settled": 15,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": 0.0,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": 0.0,
+        "injury_mod": 0.0,
+        "injury_gap": 0.0,
+        "home_away_mod": 0.0,
+        "home_away_gap": 0.0,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 44.0
+    },
+    {
+      "id": 611,
+      "report_id": 105,
+      "source": "Claude - GB",
+      "league": "UCL",
+      "category": "lean",
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "parlay_leg_pick_ids": null,
+      "wr_confidence": 70.0,
+      "created_at": "2026-11-25T00:13:19",
+      "matchup": "AS Roma @ Paris Saint-Germain",
+      "selection": "Paris Saint-Germain to Win",
+      "bet_type": "match_result",
+      "bet_side": "home",
+      "bet_line": null,
+      "odds": -225,
+      "score": 70.0,
+      "espn_event_id": "401915374",
+      "note": "Pass; blended 69.5% vs 69.2% implied, EV +0.4%. Raw xG 2.64-0.98.",
+      "pregame_odds": {
+        "provider": "DraftKings",
+        "spread_details": "PSG -225",
+        "home_spread": -1.5,
+        "home_spread_odds": 105.0,
+        "away_spread_odds": -145.0,
+        "total": 3.5,
+        "over_odds": -120.0,
+        "under_odds": 100.0,
+        "home_moneyline": -225,
+        "away_moneyline": 550,
+        "draw_moneyline": 400.0
+      },
+      "pregame_odds_captured_at": "2026-11-25T00:13:31",
+      "kickoff": "2026-11-25T20:00Z",
+      "pregame_weather": {
+        "city": "Paris",
+        "temp_c": 6.5,
+        "precip_probability_pct": 25,
+        "precip_mm": 0.0,
+        "wind_kmh": 6.8,
+        "cloud_cover_pct": 100,
+        "forecast_hour": "2026-11-25T20:00"
+      },
+      "pregame_home_form": {
+        "played": 4,
+        "wins": 4,
+        "win_pct": 100.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 4,
+        "wins": 1,
+        "win_pct": 25.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 2,
+          "d": 0,
+          "l": 0,
+          "gf": 10,
+          "ga": 3
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 0,
+          "gf": 10,
+          "ga": 2
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 1,
+          "gf": 7,
+          "ga": 4
+        },
+        "away": {
+          "w": 0,
+          "d": 1,
+          "l": 1,
+          "gf": 3,
+          "ga": 4
+        }
+      },
+      "pregame_intel_captured_at": "2026-11-25T00:13:31",
+      "wr_confidence_kickoff": 68.34285714285714,
+      "wr_breakdown_kickoff": {
+        "base": 70.0,
+        "impact_scale": 0.4,
+        "record_mod": -2.857,
+        "record_win_pct": 20.0,
+        "record_settled": 15,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": null,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": 75.0,
+        "injury_mod": 0.0,
+        "injury_gap": 0.0,
+        "home_away_mod": 1.2,
+        "home_away_gap": 100.0,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 68.34285714285714
+    },
+    {
+      "id": 612,
+      "report_id": 105,
+      "source": "Claude - GB",
+      "league": "UCL",
+      "category": "lean",
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "parlay_leg_pick_ids": null,
+      "wr_confidence": 51.0,
+      "created_at": "2026-11-25T00:13:19",
+      "matchup": "AS Roma @ Paris Saint-Germain",
+      "selection": "Over 3.5",
+      "bet_type": "total",
+      "bet_side": "over",
+      "bet_line": 3.5,
+      "odds": -120,
+      "score": 51.0,
+      "espn_event_id": "401915374",
+      "note": "Pass unless picked; blended 50.6% vs 54.5% implied, EV -7.3%.",
+      "pregame_odds": {
+        "provider": "DraftKings",
+        "spread_details": "PSG -225",
+        "home_spread": -1.5,
+        "home_spread_odds": 105.0,
+        "away_spread_odds": -145.0,
+        "total": 3.5,
+        "over_odds": -120.0,
+        "under_odds": 100.0,
+        "home_moneyline": -225,
+        "away_moneyline": 550,
+        "draw_moneyline": 400.0
+      },
+      "pregame_odds_captured_at": "2026-11-25T00:13:31",
+      "kickoff": "2026-11-25T20:00Z",
+      "pregame_weather": {
+        "city": "Paris",
+        "temp_c": 6.5,
+        "precip_probability_pct": 25,
+        "precip_mm": 0.0,
+        "wind_kmh": 6.8,
+        "cloud_cover_pct": 100,
+        "forecast_hour": "2026-11-25T20:00"
+      },
+      "pregame_home_form": {
+        "played": 4,
+        "wins": 4,
+        "win_pct": 100.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 4,
+        "wins": 1,
+        "win_pct": 25.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 2,
+          "d": 0,
+          "l": 0,
+          "gf": 10,
+          "ga": 3
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 0,
+          "gf": 10,
+          "ga": 2
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 1,
+          "gf": 7,
+          "ga": 4
+        },
+        "away": {
+          "w": 0,
+          "d": 1,
+          "l": 1,
+          "gf": 3,
+          "ga": 4
+        }
+      },
+      "pregame_intel_captured_at": "2026-11-25T00:13:31",
+      "wr_confidence_kickoff": 50.857142857142854,
+      "wr_breakdown_kickoff": {
+        "base": 51.0,
+        "impact_scale": 0.02,
+        "record_mod": -0.143,
+        "record_win_pct": 20.0,
+        "record_settled": 15,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": 0.0,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 50.857142857142854
+    },
+    {
+      "id": 613,
+      "report_id": 105,
+      "source": "Claude - GB",
+      "league": "UCL",
+      "category": "lean",
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "parlay_leg_pick_ids": null,
+      "wr_confidence": 48.0,
+      "created_at": "2026-11-25T00:13:19",
+      "matchup": "AS Roma @ Paris Saint-Germain",
+      "selection": "Paris Saint-Germain -1.5",
+      "bet_type": "spread",
+      "bet_side": "home",
+      "bet_line": -1.5,
+      "odds": 105,
+      "score": 48.0,
+      "espn_event_id": "401915374",
+      "note": "Blended 48.5% vs 48.8% implied, EV -0.6%.",
+      "pregame_odds": {
+        "provider": "DraftKings",
+        "spread_details": "PSG -225",
+        "home_spread": -1.5,
+        "home_spread_odds": 105.0,
+        "away_spread_odds": -145.0,
+        "total": 3.5,
+        "over_odds": -120.0,
+        "under_odds": 100.0,
+        "home_moneyline": -225,
+        "away_moneyline": 550,
+        "draw_moneyline": 400.0
+      },
+      "pregame_odds_captured_at": "2026-11-25T00:13:31",
+      "kickoff": "2026-11-25T20:00Z",
+      "pregame_weather": {
+        "city": "Paris",
+        "temp_c": 6.5,
+        "precip_probability_pct": 25,
+        "precip_mm": 0.0,
+        "wind_kmh": 6.8,
+        "cloud_cover_pct": 100,
+        "forecast_hour": "2026-11-25T20:00"
+      },
+      "pregame_home_form": {
+        "played": 4,
+        "wins": 4,
+        "win_pct": 100.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 4,
+        "wins": 1,
+        "win_pct": 25.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 2,
+          "d": 0,
+          "l": 0,
+          "gf": 10,
+          "ga": 3
+        },
+        "away": {
+          "w": 2,
+          "d": 0,
+          "l": 0,
+          "gf": 10,
+          "ga": 2
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 1,
+          "gf": 7,
+          "ga": 4
+        },
+        "away": {
+          "w": 0,
+          "d": 1,
+          "l": 1,
+          "gf": 3,
+          "ga": 4
+        }
+      },
+      "pregame_intel_captured_at": "2026-11-25T00:13:31",
+      "wr_confidence_kickoff": 49.2,
+      "wr_breakdown_kickoff": {
+        "base": 48.0,
+        "impact_scale": 0.0,
+        "record_mod": -0.0,
+        "record_win_pct": 20.0,
+        "record_settled": 15,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": 0.0,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": 75.0,
+        "injury_mod": 0.0,
+        "injury_gap": 0.0,
+        "home_away_mod": 1.2,
+        "home_away_gap": 100.0,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 49.2
+    },
+    {
+      "id": 614,
+      "report_id": 105,
+      "source": "Claude - GB",
+      "league": "UCL",
+      "category": "lean",
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "parlay_leg_pick_ids": null,
+      "wr_confidence": 52.0,
+      "created_at": "2026-11-25T00:13:19",
+      "matchup": "Fenerbahce @ Shakhtar Donetsk",
+      "selection": "Over 2.5",
+      "bet_type": "total",
+      "bet_side": "over",
+      "bet_line": 2.5,
+      "odds": -130,
+      "score": 52.0,
+      "espn_event_id": "401915375",
+      "note": "Pass unless picked; blended 52.2% vs 56.5% implied, EV -7.7%.",
+      "pregame_odds": {
+        "provider": "DraftKings",
+        "spread_details": "FEN +135",
+        "home_spread": 0.5,
+        "home_spread_odds": -170.0,
+        "away_spread_odds": 125.0,
+        "total": 2.5,
+        "over_odds": -130.0,
+        "under_odds": 105.0,
+        "home_moneyline": 195,
+        "away_moneyline": 135,
+        "draw_moneyline": 255.0
+      },
+      "pregame_odds_captured_at": "2026-11-25T00:13:31",
+      "kickoff": "2026-11-25T20:00Z",
+      "pregame_weather": {
+        "city": "London",
+        "temp_c": 6.2,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 13.0,
+        "cloud_cover_pct": 69,
+        "forecast_hour": "2026-11-25T20:00"
+      },
+      "pregame_home_form": {
+        "played": 4,
+        "wins": 1,
+        "win_pct": 25.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 4,
+        "wins": 1,
+        "win_pct": 25.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 1,
+          "gf": 3,
+          "ga": 2
+        },
+        "away": {
+          "w": 0,
+          "d": 1,
+          "l": 1,
+          "gf": 1,
+          "ga": 2
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 1,
+          "d": 2,
+          "l": 0,
+          "gf": 6,
+          "ga": 5
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 1,
+          "gf": 0,
+          "ga": 6
+        }
+      },
+      "pregame_intel_captured_at": "2026-11-25T00:13:31",
+      "wr_confidence_kickoff": 51.714285714285715,
+      "wr_breakdown_kickoff": {
+        "base": 52.0,
+        "impact_scale": 0.04,
+        "record_mod": -0.286,
+        "record_win_pct": 20.0,
+        "record_settled": 15,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": 0.0,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 51.714285714285715
+    },
+    {
+      "id": 615,
+      "report_id": 105,
+      "source": "Claude - GB",
+      "league": "UCL",
+      "category": "lean",
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "parlay_leg_pick_ids": null,
+      "wr_confidence": 63.0,
+      "created_at": "2026-11-25T00:13:19",
+      "matchup": "Fenerbahce @ Shakhtar Donetsk",
+      "selection": "Shakhtar Donetsk +0.5",
+      "bet_type": "spread",
+      "bet_side": "home",
+      "bet_line": 0.5,
+      "odds": -170,
+      "score": 63.0,
+      "espn_event_id": "401915375",
+      "note": "Blended 62.7% vs 63.0% implied, EV -0.4%.",
+      "pregame_odds": {
+        "provider": "DraftKings",
+        "spread_details": "FEN +135",
+        "home_spread": 0.5,
+        "home_spread_odds": -170.0,
+        "away_spread_odds": 125.0,
+        "total": 2.5,
+        "over_odds": -130.0,
+        "under_odds": 105.0,
+        "home_moneyline": 195,
+        "away_moneyline": 135,
+        "draw_moneyline": 255.0
+      },
+      "pregame_odds_captured_at": "2026-11-25T00:13:31",
+      "kickoff": "2026-11-25T20:00Z",
+      "pregame_weather": {
+        "city": "London",
+        "temp_c": 6.2,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 13.0,
+        "cloud_cover_pct": 69,
+        "forecast_hour": "2026-11-25T20:00"
+      },
+      "pregame_home_form": {
+        "played": 4,
+        "wins": 1,
+        "win_pct": 25.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 4,
+        "wins": 1,
+        "win_pct": 25.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 1,
+          "gf": 3,
+          "ga": 2
+        },
+        "away": {
+          "w": 0,
+          "d": 1,
+          "l": 1,
+          "gf": 1,
+          "ga": 2
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 1,
+          "d": 2,
+          "l": 0,
+          "gf": 6,
+          "ga": 5
+        },
+        "away": {
+          "w": 0,
+          "d": 0,
+          "l": 1,
+          "gf": 0,
+          "ga": 6
+        }
+      },
+      "pregame_intel_captured_at": "2026-11-25T00:13:31",
+      "wr_confidence_kickoff": 62.142857142857146,
+      "wr_breakdown_kickoff": {
+        "base": 63.0,
+        "impact_scale": 0.26,
+        "record_mod": -1.857,
+        "record_win_pct": 20.0,
+        "record_settled": 15,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": 0.0,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": 0.0,
+        "injury_mod": 0.0,
+        "injury_gap": 0.0,
+        "home_away_mod": 1.0,
+        "home_away_gap": 50.0,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 62.142857142857146
     }
   ],
   "ai_backtest": {
