@@ -1,6 +1,6 @@
 {
   "next_report_id": 107,
-  "next_pick_id": 469,
+  "next_pick_id": 470,
   "reports": [
     {
       "source": "ChatGPT",
@@ -53172,6 +53172,155 @@
         "reason": "The write-up sources its suspensions and states a counter-case honestly, but the edge is only +1.3pp. It rests on a form-based 60% 'raw read' blended evenly with the market, so it is essentially a judgment lean tracked at $0 rather than a quantified edge.",
         "model": "claude-opus-5-5",
         "graded_at": "2026-11-27T23:12:05",
+        "rubric_version": 5
+      }
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 106,
+      "category": "sexy_moneyline",
+      "matchup": "Hull City @ Crystal Palace",
+      "selection": "Hull City to Win",
+      "odds": 285,
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "Biggest gap between my number and the market on the slate: raw read Hull 33%, market 25%.\nPalace missing Mateta and Pino (suspended), on a Thursday-Sunday turnaround, and 1-0-4 at home.\nHull unbeaten in 6 of their last 8 league games and beat Brighton 2-0 last week.\nCounter: Hull's results run well ahead of their xG and they have 1 away win.\nTracked at $0: EV is strong but this wins well under half the time (confidence 29%) - no bet without the 60% bar.\nLine pulled 23:08 UTC and re-pulled 23:10 UTC 27 Nov (DraftKings): no movement.",
+      "wr_confidence": 29.0,
+      "war_room_line": "Crystal Palace 45% / Draw 26% / Hull City 29% (blended; raw read 33% this side)",
+      "edge": "Price implies ~26%; blended estimate 29% -> +2.9pp edge, EV +11.1%",
+      "price_discipline": "+285 or better: tracked only ($0)\n+240 or worse: pass",
+      "espn_event_id": "401879230",
+      "bet_type": "match_result",
+      "bet_side": "away",
+      "bet_line": null,
+      "home_team": "Crystal Palace",
+      "away_team": "Hull City",
+      "created_at": "2026-11-27T23:12:10",
+      "id": 469,
+      "pregame_odds": {
+        "provider": "DraftKings",
+        "spread_details": "CRY -110",
+        "home_spread": -0.5,
+        "home_spread_odds": -120.0,
+        "away_spread_odds": -115.0,
+        "total": 2.5,
+        "over_odds": -135.0,
+        "under_odds": 105.0,
+        "home_moneyline": -110,
+        "away_moneyline": 285,
+        "draw_moneyline": 275.0
+      },
+      "pregame_odds_captured_at": "2026-11-27T23:12:12",
+      "kickoff": "2026-11-29T14:05Z",
+      "pregame_weather": {
+        "city": "London",
+        "temp_c": 10.9,
+        "precip_probability_pct": 0,
+        "precip_mm": 0.0,
+        "wind_kmh": 12.2,
+        "cloud_cover_pct": 76,
+        "forecast_hour": "2026-11-29T14:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 0,
+        "win_pct": 0.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 1,
+        "win_pct": 20.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 1,
+          "d": 0,
+          "l": 4,
+          "gf": 7,
+          "ga": 13
+        },
+        "away": {
+          "w": 1,
+          "d": 1,
+          "l": 4,
+          "gf": 5,
+          "ga": 14
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 2,
+          "d": 4,
+          "l": 0,
+          "gf": 9,
+          "ga": 5
+        },
+        "away": {
+          "w": 1,
+          "d": 1,
+          "l": 3,
+          "gf": 4,
+          "ga": 6
+        }
+      },
+      "pregame_intel_captured_at": "2026-11-27T23:12:12",
+      "wr_confidence_kickoff": 29.0,
+      "wr_breakdown_kickoff": {
+        "base": 29.0,
+        "impact_scale": 0.0,
+        "record_mod": -0.0,
+        "record_win_pct": 47.5,
+        "record_settled": 40,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": null,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 29.4,
+      "wr_breakdown_initial": {
+        "base": 29.0,
+        "impact_scale": 0.0,
+        "record_mod": -0.0,
+        "record_win_pct": 47.5,
+        "record_settled": 40,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": null,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": 20.0,
+        "injury_mod": 0.0,
+        "injury_gap": 0.0,
+        "home_away_mod": 0.4,
+        "home_away_gap": 5.0,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "ai_grade": {
+        "quality": 4,
+        "verdict": "mixed",
+        "reason": "The stated +2.9pp edge rests on a judgment blend with an unsourced raw read and form narrative, and the author admits Hull's results outrun their xG, so the quantified gap is thin and weakly supported, though the line check and the pass price are honest.",
+        "model": "claude-opus-5-5",
+        "graded_at": "2026-11-27T23:12:17",
         "rubric_version": 5
       }
     }
