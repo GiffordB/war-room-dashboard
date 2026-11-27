@@ -1,6 +1,6 @@
 {
   "next_report_id": 107,
-  "next_pick_id": 464,
+  "next_pick_id": 465,
   "reports": [
     {
       "source": "ChatGPT",
@@ -52428,6 +52428,155 @@
         "home_score": 0,
         "away_score": 1,
         "kickoff": "2026-11-25T20:00Z"
+      }
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 106,
+      "category": "totals_radar",
+      "matchup": "Tottenham Hotspur @ Sunderland",
+      "selection": "Under 2.5",
+      "odds": -120,
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "Sunderland home games: 6 total goals in 5 (2 for, 4 against); Spurs away games: 8 total goals in 5.\nSunderland have scored 8 in 11 league games; 4 of each side's last 5 league games stayed under 2.5.\nSunderland played Europa League on Thursday and Le Bris says several players have a virus (premierleague.com, 27 Nov).\nSpurs lose Savio for the rest of 2026 (De Zerbi, 27 Nov); Danso ineligible vs parent club.\nA lean, not a stake: blended confidence 58% falls just short of the 60% bar.\nLine pulled 23:08 UTC and re-pulled 23:10 UTC 27 Nov (DraftKings): no movement.",
+      "wr_confidence": 58.0,
+      "war_room_line": "Under 2.5: raw read 63%, market no-vig 52%, blended 58%",
+      "edge": "Price implies ~55%; blended estimate 58% -> +3.0pp edge, EV +5.6%",
+      "price_discipline": "-120 or better: tracked only ($0)\n-135 or worse: pass",
+      "espn_event_id": "401879224",
+      "bet_type": "total",
+      "bet_side": "under",
+      "bet_line": 2.5,
+      "home_team": "Sunderland",
+      "away_team": "Tottenham Hotspur",
+      "created_at": "2026-11-27T23:11:20",
+      "id": 464,
+      "pregame_odds": {
+        "provider": "DraftKings",
+        "spread_details": "TOT +100",
+        "home_spread": 0.5,
+        "home_spread_odds": -125.0,
+        "away_spread_odds": -110.0,
+        "total": 2.5,
+        "over_odds": 100.0,
+        "under_odds": -120.0,
+        "home_moneyline": 290,
+        "away_moneyline": 100,
+        "draw_moneyline": 240.0
+      },
+      "pregame_odds_captured_at": "2026-11-27T23:11:22",
+      "kickoff": "2026-11-29T14:05Z",
+      "pregame_weather": {
+        "city": "Sunderland",
+        "temp_c": 7.6,
+        "precip_probability_pct": 38,
+        "precip_mm": 0.0,
+        "wind_kmh": 15.5,
+        "cloud_cover_pct": 18,
+        "forecast_hour": "2026-11-29T14:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 1,
+        "win_pct": 20.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 4,
+        "win_pct": 80.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 2,
+          "d": 1,
+          "l": 2,
+          "gf": 2,
+          "ga": 4
+        },
+        "away": {
+          "w": 0,
+          "d": 2,
+          "l": 4,
+          "gf": 6,
+          "ga": 13
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 3,
+          "d": 1,
+          "l": 2,
+          "gf": 9,
+          "ga": 6
+        },
+        "away": {
+          "w": 1,
+          "d": 2,
+          "l": 2,
+          "gf": 3,
+          "ga": 5
+        }
+      },
+      "pregame_intel_captured_at": "2026-11-27T23:11:22",
+      "wr_confidence_kickoff": 57.86086956521739,
+      "wr_breakdown_kickoff": {
+        "base": 58.0,
+        "impact_scale": 0.16,
+        "record_mod": -0.139,
+        "record_win_pct": 47.5,
+        "record_settled": 40,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": null,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 57.86086956521739,
+      "wr_breakdown_initial": {
+        "base": 58.0,
+        "impact_scale": 0.16,
+        "record_mod": -0.139,
+        "record_win_pct": 47.5,
+        "record_settled": 40,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": -0.0,
+        "clv_move": -0.0,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "ai_grade": {
+        "quality": 4,
+        "verdict": "mixed",
+        "reason": "The write-up has a quantified 3pp blended edge with sourced, dated team news and a fresh line check, but the edge is small, rests on a judgment-heavy 63% raw read, and the author concedes it misses their own 60% bar, so it is tracked at $0.",
+        "model": "claude-opus-5-5",
+        "graded_at": "2026-11-27T23:11:29",
+        "rubric_version": 5
       }
     }
   ],
