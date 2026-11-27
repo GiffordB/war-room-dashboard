@@ -1,6 +1,6 @@
 {
   "next_report_id": 107,
-  "next_pick_id": 465,
+  "next_pick_id": 466,
   "reports": [
     {
       "source": "ChatGPT",
@@ -52576,6 +52576,155 @@
         "reason": "The write-up has a quantified 3pp blended edge with sourced, dated team news and a fresh line check, but the edge is small, rests on a judgment-heavy 63% raw read, and the author concedes it misses their own 60% bar, so it is tracked at $0.",
         "model": "claude-opus-5-5",
         "graded_at": "2026-11-27T23:11:29",
+        "rubric_version": 5
+      }
+    },
+    {
+      "parlay_leg_pick_ids": null,
+      "report_id": 106,
+      "category": "totals_radar",
+      "matchup": "Liverpool @ Everton",
+      "selection": "Under 2.5",
+      "odds": 125,
+      "stake": 0.0,
+      "result": "pending",
+      "profit_loss": 0.0,
+      "notes": "Derby in heavy rain (92% chance); both teams average ~2.4-2.5 total goals a game.\nLiverpool have conceded 4 in 5 away; Gakpo out and Munoz unlikely (Iraola, 27 Nov).\nCounter: Everton are without the suspended Tarkowski and lost 0-4 at Brentford last week.\nA lean, not a stake: decent EV at plus money but confidence is only 46%.\nLine pulled 23:08 UTC and re-pulled 23:10 UTC 27 Nov (DraftKings): no movement.",
+      "wr_confidence": 46.0,
+      "war_room_line": "Under 2.5: raw read 50%, market no-vig 43%, blended 46%",
+      "edge": "Price implies ~44%; blended estimate 46% -> +1.8pp edge, EV +4.1%",
+      "price_discipline": "+125 or better: tracked only ($0)\n+110 or worse: pass",
+      "espn_event_id": "401879229",
+      "bet_type": "total",
+      "bet_side": "under",
+      "bet_line": 2.5,
+      "home_team": "Everton",
+      "away_team": "Liverpool",
+      "created_at": "2026-11-27T23:11:33",
+      "id": 465,
+      "pregame_odds": {
+        "provider": "DraftKings",
+        "spread_details": "LIV -135",
+        "home_spread": 0.5,
+        "home_spread_odds": 105.0,
+        "away_spread_odds": -145.0,
+        "total": 2.5,
+        "over_odds": -150.0,
+        "under_odds": 125.0,
+        "home_moneyline": 360,
+        "away_moneyline": -135,
+        "draw_moneyline": 285.0
+      },
+      "pregame_odds_captured_at": "2026-11-27T23:11:35",
+      "kickoff": "2026-11-29T12:00Z",
+      "pregame_weather": {
+        "city": "Liverpool",
+        "temp_c": 7.6,
+        "precip_probability_pct": 92,
+        "precip_mm": 0.0,
+        "wind_kmh": 14.8,
+        "cloud_cover_pct": 4,
+        "forecast_hour": "2026-11-29T12:00"
+      },
+      "pregame_home_form": {
+        "played": 5,
+        "wins": 2,
+        "win_pct": 40.0,
+        "quality_wins": 0
+      },
+      "pregame_away_form": {
+        "played": 5,
+        "wins": 4,
+        "win_pct": 80.0,
+        "quality_wins": 0
+      },
+      "pregame_home_injuries": 0.0,
+      "pregame_away_injuries": 0.0,
+      "pregame_home_split": {
+        "home": {
+          "w": 3,
+          "d": 1,
+          "l": 1,
+          "gf": 8,
+          "ga": 5
+        },
+        "away": {
+          "w": 1,
+          "d": 3,
+          "l": 2,
+          "gf": 4,
+          "ga": 9
+        }
+      },
+      "pregame_away_split": {
+        "home": {
+          "w": 2,
+          "d": 2,
+          "l": 2,
+          "gf": 8,
+          "ga": 6
+        },
+        "away": {
+          "w": 4,
+          "d": 1,
+          "l": 0,
+          "gf": 10,
+          "ga": 4
+        }
+      },
+      "pregame_intel_captured_at": "2026-11-27T23:11:35",
+      "wr_confidence_kickoff": 46.0,
+      "wr_breakdown_kickoff": {
+        "base": 46.0,
+        "impact_scale": 0.0,
+        "record_mod": -0.0,
+        "record_win_pct": 47.5,
+        "record_settled": 40,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": 0.0,
+        "clv_move": null,
+        "weather_mod": 0.0,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "wr_confidence_initial": 51.0,
+      "wr_breakdown_initial": {
+        "base": 46.0,
+        "impact_scale": 0.0,
+        "record_mod": -0.0,
+        "record_win_pct": 47.5,
+        "record_settled": 40,
+        "agree_mod": 0.0,
+        "conflict_mod": 0.0,
+        "clv_mod": -0.0,
+        "clv_move": -0.0,
+        "weather_mod": 5,
+        "form_mod": 0.0,
+        "form_gap": null,
+        "injury_mod": 0.0,
+        "injury_gap": null,
+        "home_away_mod": 0.0,
+        "home_away_gap": null,
+        "quality_win_mod": 0.0,
+        "quality_win_gap": null,
+        "agreeing": 0,
+        "opposing": 0
+      },
+      "ai_grade": {
+        "quality": 4,
+        "verdict": "mixed",
+        "reason": "The +1.8pp edge comes mostly from a 50% raw judgment read blended toward the market, which makes it small and weakly supported; the injury notes are muddled (Iraola is not Liverpool's or Everton's manager, so the Gakpo/Munoz sourcing is suspect) and the pick is tracked at $0.",
+        "model": "claude-opus-5-5",
+        "graded_at": "2026-11-27T23:11:38",
         "rubric_version": 5
       }
     }
