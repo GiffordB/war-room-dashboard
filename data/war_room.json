@@ -1148,7 +1148,7 @@
       "week_number": 12,
       "week_label": "",
       "philosophy": "Nine games, no forced action: the market is mostly right, so everything here is tracked at $0.",
-      "blind_spot_notes": "",
+      "blind_spot_notes": "No side cleared both real-stake bars (confidence >= 60% AND EV >= +2%), so every pick this week is tracked at $0. Best near-miss: Sunderland v Tottenham Under 2.5 at -120 - blended confidence 58%, EV +5.6% - it clears the EV bar comfortably and misses the confidence bar by 2 points (my raw read was 63%, the market's 52%). Second: Hull +0.5 at Palace (55%, EV +2.4%). The largest raw disagreement with the market is Crystal Palace at -110 with Mateta and Pino suspended; the market is likely pricing Hull's xG overperformance, which this app's data can't see. Blind spots: Raya's fitness for Arsenal, Fernandes' virus for Man Utd, and the virus in Sunderland's squad were all unresolved at submission. No game is scheduled Monday; Friday's Chelsea v Forest was out of scope.",
       "lsu_review_notes": "",
       "created_at": "2026-11-27T23:11:15",
       "id": 106
